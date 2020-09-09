@@ -29,7 +29,7 @@ header:
 {% assign sorted = site.publications | sort: 'published-date' | reverse %}
 {% for item in sorted %}
   <li>
-  <h4 id="{{ item.title | slugify }}"> <a href="/research/{{ item.slurg }}">{{ item.title }}</a> </h4>
+  <h4 id="{{ item.title | slugify }}"> <a href="/research/"+{{ item.slurg }}>{{ item.title }}</a> </h4>
   {{ item.short-author }} <b>{{ item.year }}</b> <i>{{ item.short-journal }}</i> {{ item.short-ref }}
   </li>
 {% endfor %}
