@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "Research"
-    url: https://mmistakes.github.io/minimal-mistakes/about/
+    url: /year-archive/
   - title: "Softwares"
     url: https://mmistakes.github.io/minimal-mistakes/about/
   - title: "Quick-Start Guide"
