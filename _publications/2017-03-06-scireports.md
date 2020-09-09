@@ -13,7 +13,7 @@ tags:
 header:
   overlay_image: /assets/images/header-research.png
   actions:
-    - label: "Get there"
+    - label: "See on the website"
       url: "https://www.nature.com/articles/srep43963#citeas"
 ---
 
