@@ -280,14 +280,14 @@ defaults:
       comments: false # true
       share: false # true
       related: false # true
-  # _posts
+  # _publications
   - scope:
-      path: ""
-      type: posts
+      path: "_publications"
+      type: publications
     values:
       layout: single
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
+      author_profile: false # true
+      read_time: false # true
+      comments: false # true
+      share: true # true
+      related: false # true
