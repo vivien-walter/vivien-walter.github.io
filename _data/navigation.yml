@@ -20,19 +20,19 @@ sidebar-research:
   - title: "Current Project(s)"
     children:
       - title: "Label-free Optical Imaging"
-        url: /child-page-a1/
+        url: /research/#project-label-free
       - title: "Lipid Thermodynamic Phases"
-        url: /child-page-a2/
+        url: /research/#project-lipid-phase
   - title: "Collaborations"
-    url: /child-page-b1/
+    url: /research/#collaborations
   - title: "Publications"
     children:
       - title: "Peer-Reviewed Journals"
-        url: /child-page-b1/
+        url: /research/#publi-journals
       - title: "Thesis"
-        url: /child-page-b2/
+        url: /research/#publi-thesis
   - title: "Previous Projects"
-    url: /child-page-b1/
+    url: /research/#old-projects
 
 # sidebar navigation list Softwares
 sidebar-softwares:

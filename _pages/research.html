@@ -11,11 +11,11 @@ header:
 
 <h2> Current Project(s) </h2>
 
-<h3> Label-Free Optical Imaging </h3>
+<h3 id="project-label-free"> Label-Free Optical Imaging </h3>
 
-<h3> Lipid Thermodynamic Phases </h3>
+<h3 id="project-lipid-phase"> Lipid Thermodynamic Phases </h3>
 
-<h2> Collaborations </h2>
+<h2 id="collaborations"> Collaborations </h2>
 
 {% for item in site.collaborations %}
   {{ item.content }}
@@ -23,7 +23,7 @@ header:
 
 <h2> Publications </h2>
 
-<h3> Peer-Reviewed Journals </h3>
+<h3 id="publi-journals"> Peer-Reviewed Journals </h3>
 
 <ul>
 {% assign sorted = site.publications | sort: 'published-date' | reverse %}
@@ -35,6 +35,6 @@ header:
 {% endfor %}
 </ul>
 
-<h3> Thesis </h3>
+<h3 id="publi-thesis"> Thesis </h3>
 
-<h2> Previous Projects </h2>
+<h2 id="old-projects"> Previous Projects </h2>
