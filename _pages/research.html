@@ -25,7 +25,8 @@ header:
 
 <h3> Peer-Reviewed Journals </h3>
 
-{% for item in site.publications %}
+{% assign sorted = site.publications | sort: 'published-date' | reverse %}
+{% for item in sorted %}
   <h4> {{ item.title }} </h4>
   {{ item.short-author }} <b>{{ item.year }}</b> <i>{{ item.short-journal }}</i> {{ item.short-ref }}
 {% endfor %}
