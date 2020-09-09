@@ -6,9 +6,12 @@ short-ref: "7, 43963"
 slug: "2017-03-06-scireports"
 year: 2017
 published-date: 2017-03-06
+tagline: "**2017** *Scientific Reports* 43963"
 tags:
   - giant unilamellar vesicles
   - cell-penetrating peptides
+header:
+  overlay_image: /assets/images/header-research.png
 ---
 
 ## Author(s) & Affilation(s)
