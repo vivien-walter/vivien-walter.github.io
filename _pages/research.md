@@ -1,7 +1,7 @@
 ---
 title: "Research"
 permalink: /research/
-entries_layout: post
+entries_layout: categories
 author_profile: true
 ---
 
