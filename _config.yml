@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Vivien WALTER"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Vivien WALTER, PhD"
+name                     : "Vivien WALTER"
 description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -93,21 +93,21 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Vivien WALTER, PhD"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  location         : "London, UK"
+  email            : "vivien.walter@kcl.ac.uk"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:vivien.walter@kcl.ac.uk"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: "https://twitter.com/vwalter_rnk"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
