@@ -21,11 +21,7 @@ header:
 
 <h3> Peer-Reviewed Journals </h3>
 
-{% for post in site.pages limit: 2 %}
-  <h4>Ronron</h4>
-{% endfor %}
-
-{% for post in site.pages limit: 2 %}
+{% for item in site.publications limit: 2 %}
   <h4> {{ item.title }} </h4>
 {% endfor %}
 
