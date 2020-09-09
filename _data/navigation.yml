@@ -17,7 +17,7 @@ main:
 
 # sidebar navigation list Research
 sidebar-research:
-  - title: "Projects"
+  - title: "Current Project(s)"
     children:
       - title: "Label-free Optical Imaging"
         url: /child-page-a1/
@@ -31,6 +31,8 @@ sidebar-research:
         url: /child-page-b1/
       - title: "Thesis"
         url: /child-page-b2/
+  - title: "Previous Projects"
+    url: /child-page-b1/
 
 # sidebar navigation list Softwares
 sidebar-softwares:
