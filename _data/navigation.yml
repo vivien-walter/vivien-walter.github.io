@@ -3,12 +3,29 @@ main:
   - title: "Research"
     url: /research/
   - title: "Softwares"
-    url: https://mmistakes.github.io/minimal-mistakes/about/
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    url: /research/
+  - title: "Teaching"
+    url: /research/
+  - title: "About Me"
+    url: /research/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+# sidebar navigation list Research
+sidebar-research:
+  - title: "Projects"
+    children:
+      - title: "Label-free Optical Imaging"
+        url: /child-page-a1/
+      - title: "Lipid Thermodynamic Phases"
+        url: /child-page-a2/
+  - title: "Publications"
+    children:
+      - title: "Peer-Reviewed Journals"
+        url: /child-page-b1/
+      - title: "Thesis"
+        url: /child-page-b2/
