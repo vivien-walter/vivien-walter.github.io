@@ -266,6 +266,11 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -282,12 +287,8 @@ defaults:
       related: false # true
   # _publications
   - scope:
-      path: "_publications"
+      path: ""
       type: publications
     values:
       layout: single
-      author_profile: false # true
-      read_time: false # true
-      comments: false # true
       share: true # true
-      related: false # true
