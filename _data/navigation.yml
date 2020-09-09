@@ -3,7 +3,7 @@ main:
   - title: "Research"
     url: /research/
   - title: "Softwares"
-    url: /research/
+    url: /softwares/
   - title: "Teaching"
     url: /research/
   - title: "About Me"
@@ -29,3 +29,10 @@ sidebar-research:
         url: /child-page-b1/
       - title: "Thesis"
         url: /child-page-b2/
+
+# sidebar navigation list Softwares
+sidebar-softwares:
+  - title: "MD Simulations"
+    children:
+      - title: "Python"
+        url: /child-page-a1/
