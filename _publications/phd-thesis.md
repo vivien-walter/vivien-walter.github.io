@@ -3,6 +3,7 @@ title: "Lipid Membrane Interactions with Self-Assembling Cell-Penetrating Peptid
 slug: "phd-thesis"
 year: 2017
 thesis: true
+thesis-type: "PhD Thesis"
 tags:
   - giant unilamellar vesicles
   - cell-penetrating peptides

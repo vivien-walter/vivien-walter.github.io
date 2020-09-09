@@ -40,11 +40,12 @@ header:
 <h3 id="publi-thesis"> Thesis </h3>
 
 <ul>
-{% assign sorted = site.publications | sort: 'published-date' | reverse %}
+{% assign sorted = site.publications | sort: 'year' | reverse %}
 {% for item in sorted %}
 {% if item.thesis == true %}
   <li>
   <h5 id="{{ item.title | slugify }}"> <a href="/publications/{{ item.slug }}"">{{ item.title }}</a> </h5>
+  {{ item.thesis-type }} <b>{{ item.year }}</b>
   </li>
 {% endif %}
 {% endfor %}
