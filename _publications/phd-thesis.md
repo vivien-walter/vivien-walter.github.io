@@ -7,9 +7,11 @@ thesis-type: "PhD Thesis"
 tags:
   - giant unilamellar vesicles
   - cell-penetrating peptides
+header:
+  overlay_image: /assets/images/header-research.png
 ---
 
-# Abstract
+## Abstract
 
 Cell-penetrating peptides (CPP) are cationic oligopeptides currently investigated as potential vectors
 for targeted drug delivery design, for applications in cancer treatment and/or gene therapy.
