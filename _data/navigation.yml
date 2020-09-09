@@ -23,6 +23,8 @@ sidebar-research:
         url: /child-page-a1/
       - title: "Lipid Thermodynamic Phases"
         url: /child-page-a2/
+  - title: "Collaborations"
+    url: /child-page-b1/
   - title: "Publications"
     children:
       - title: "Peer-Reviewed Journals"
