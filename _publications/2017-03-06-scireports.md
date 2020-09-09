@@ -3,6 +3,7 @@ title: "Cargo self-assembly rescues affinity of cell-penetrating peptides to lip
 short-author: "Weinberger et al."
 short-journal: "Sci Rep"
 short-ref: "7, 43963"
+slug: "2017-03-06-scireports"
 year: 2017
 published-date: 2017-03-06
 tags:
