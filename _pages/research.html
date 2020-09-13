@@ -10,16 +10,38 @@ header:
   caption: "Source: Growth of GUV on gel"
 ---
 
+Welcome to my <b>Research page</b>. I describe here all the scientific contributions I have made and am still making on the research in <b>Biophysics</b>,
+either in <b>optical microscopy</b> or in <b>molecular dynamics (MD) simulations</b>, which are my two favorite research tools.
+</br>
+</br>
+If you are looking for the softwares and other tools I have developped for my research, please visit the <i>Softwares</i> section of the website.
+
 <h2> Current Project(s) </h2>
 
 <h3 id="project-label-free"> Label-Free Optical Imaging </h3>
 
-<h3 id="project-lipid-phase"> Lipid Thermodynamic Phases </h3>
+{% for item in site.projects %}
+{% if item.slug == "label-free-iscat" %}
+{{ item.excerpt }}
+{% endif %}
+{% endfor %}
+<a href="/projects/label-free-iscat/"><b>Read More...</b></a>
 
-<h2 id="collaborations"> Collaborations </h2>
+<h3 id="project-lipid-phase"> Simulations of Lipid Phases </h3>
+
+{% for item in site.projects %}
+{% if item.slug == "machine-learning" %}
+{{ item.excerpt }}
+{% endif %}
+{% endfor %}
+<a href="/projects/machine-learning/"><b>Read More...</b></a>
+
+<h2 id="current-collab"> Collaborations </h2>
 
 {% for item in site.collaborations %}
+{% if item.active == true %}
   {{ item.content }}
+{% endif %}
 {% endfor %}
 
 <h2> Publications </h2>
@@ -52,4 +74,25 @@ header:
 {% endfor %}
 </ul>
 
-<h2 id="old-projects"> Previous Projects </h2>
+<h2> Previous Work </h2>
+
+<h3 id="past-collab"> Previous Collaborations </h3>
+
+{% for item in site.collaborations %}
+{% if item.active != true %}
+  {{ item.content }}
+{% endif %}
+{% endfor %}
+
+<h3 id="old-projects"> Past Projects </h3>
+
+<ul>
+{% assign sorted = site.projects | sort: 'end-year' | reverse %}
+{% for item in sorted %}
+{% if item.active == false %}
+  <li>
+  <h5> <a href="/projects/{{ item.slug }}"">{{ item.title }}</a> </h5>
+  </li>
+{% endif %}
+{% endfor %}
+</ul>

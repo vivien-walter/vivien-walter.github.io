@@ -8,7 +8,9 @@ tags:
   - giant unilamellar vesicles
   - cell-penetrating peptides
 header:
-  overlay_image: /assets/images/header-research.png
+  overlay_image: /assets/images/header-publications.png
+  caption: "Source: Paper being checked before submission"
+tagline: "PhD Thesis"
 ---
 
 ## Abstract

@@ -146,6 +146,7 @@ include:
   - .htaccess
   - _pages
   - _publications
+  - _projects
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -184,7 +185,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown
 highlighter: rouge
 lsi: false
-excerpt_separator: "\n\n"
+excerpt_separator: "<-more-here->"
 incremental: false
 
 
@@ -271,6 +272,9 @@ collections:
   collaborations:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
@@ -288,6 +292,12 @@ defaults:
       comments: false # true
       share: false # true
       related: false # true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
   # _publications
   - scope:
       path: ""
@@ -295,7 +305,7 @@ defaults:
     values:
       layout: single
       share: true # true
-  # _publications
+  # _collaborations
   - scope:
       path: ""
       type: collaborations

@@ -1,0 +1,19 @@
+---
+title: "Etude de la photo-oxydation de lipides par FRAP ET FRAPP"
+slug: "msc-thesis-frapp"
+year: 2012
+thesis: true
+thesis-type: "MSc Thesis"
+tags:
+  - supported lipid bilayers
+header:
+  overlay_image: /assets/images/header-publications.png
+  caption: "Source: Paper being checked before submission"
+tagline: "MSc Thesis (1)"
+---
+
+## Abstract
+
+Cellular death, or apoptosis, can be caused by an increase of the membrane surface while the volume of the cell remains constant. One way to induce an increase of the membrane surface is by increasing the individual area of the lipids in the membrane, a phenomenon which happen when the lipids are oxidized. In order to oxidize lipids in the membrane, one can use fluorescent molecules which are able to generate reactive singlet oxygens through phosphorescence. Doing so, we talk about lipid photooxidation. The molecules we used here for this purpose were chlorin derivatives, modified with hydrophobic chains to anchor them in the cell membrane. My work was focusing on two aspects of the lipid photooxidation using the chlorin derivatives: (1) the diffusion of the anchored fluorescent molecules inside the cell membrane, and (2) the comparison of the lipid oxidation induced by the photosensitizer to the lipid oxidation which can naturally happen in a lipid bilayer.
+
+For investigating the first point, we used FRAP (Fluorescence Recovery After Photobleaching) and FRAPP (Fluorescence Recovery After Patterned Photobleaching) techniques to measure the coefficient of diffusion of the chlorin derivative and compare it to the diffusion of the lipid in the membrane. We used both methods on the molecules of interest to compare these methods, and assure us of the accuracy of our measurements. In both techniques, we had to work on supported model lipid bilayers, which we created using the Langmuir-Blodgett method. To measure the effects of the lipid oxidation on the area per lipid in the membrane, we used a Langmuir trough coupled with a Wilhelmy plate to measure the surface tension of a lipid film on the surface, and calculate the area per lipid. The increase of the area per lipid through photooxidation was compared to the oxidation naturally occuring with insaturated lipids, such as the ones with oleoyl fatty acid chains.

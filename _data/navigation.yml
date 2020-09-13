@@ -15,18 +15,22 @@ sidebar-research:
     children:
       - title: "Label-free Optical Imaging"
         url: /research/#project-label-free
-      - title: "Lipid Thermodynamic Phases"
+      - title: "Simulations of Lipid Phases"
         url: /research/#project-lipid-phase
   - title: "Collaborations"
-    url: /research/#collaborations
+    url: /research/#current-collab
   - title: "Publications"
     children:
       - title: "Peer-Reviewed Journals"
         url: /research/#publi-journals
       - title: "Thesis"
         url: /research/#publi-thesis
-  - title: "Previous Projects"
-    url: /research/#old-projects
+  - title: "Previous work"
+    children:
+      - title: "Previous Collaborations"
+        url: /research/#past-collab
+      - title: "Past Projects"
+        url: /research/#old-projects
 
 # sidebar navigation list Softwares
 sidebar-softwares:

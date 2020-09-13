@@ -1,5 +1,6 @@
 ---
 title: "Machine Learning for Lipid Phase Analysis"
+active: true
 ---
 
 I am currently working in close collaboration with Drs. **Celine Ruscher**, **Olivier Benzerara** and **Fabrice Thalmann**
