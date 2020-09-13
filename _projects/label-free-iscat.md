@@ -11,7 +11,7 @@ excerpt_separator: <!--more-->
 ---
 
 
-<center><img src="{{ site.url }}{{ site.baseurl }}/assets/images/projects/image-iscat.png" width='300' height='300'/></center>
+<center><img src="{{ site.baseurl }}/assets/images/projects/image-iscat.png" width='300' height='300'/></center>
 <center><sub>Gold nanoparticles (40 nm) imaged in iSCAT</sub></center>
 
 <hr>

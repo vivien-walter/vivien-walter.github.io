@@ -11,7 +11,7 @@ excerpt_separator: <!--more-->
 ---
 
 
-<center><img src="{{ site.url }}{{ site.baseurl }}/assets/images/projects/image-ml.png" width='300' height='300'/></center>
+<center><img src="{{ site.baseurl }}/assets/images/projects/image-ml.png" width='300' height='300'/></center>
 <center><sub>Snapshot of a simulated bilayer in the corrugated ripple phase</sub></center>
 
 <hr>
