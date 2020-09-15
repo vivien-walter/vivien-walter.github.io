@@ -11,11 +11,15 @@ toc: true
 toc_sticky: true
 ---
 
-# Description
+## Description
 
 The context of my M.Sc Thesis was the energy storage, one of the major thematic of research at the time. There is different types of systems and devices to store energy, such as the batteries and capacitors. These devices can be sorted by their power and energy, as shown on the graph below. Supercapacitors are systems in between batteries and conventional capacitors, which can store a lot of energy and charge and discharge it in a short time, typically about one second. To create supercapacitors, electrodes with an important stability through the cycles are required, with high energy and power densities.
 
 These devices can store energy through two types of processes: through oxidation and reduction reactions (Faradic process), or through adsorption and desorption of the charges (non-Faradic process).
+
+<center><img src="{{ site.baseurl }}/assets/images/projects/image-lbl.jpg" width='400' height='400'/></center>
+<center><sub>Representation of the different techniques of layer-by-layer depositions</sub></center>
+<br>
 
 In this project, to create electrodes, we realised layer-by-layer depositions by making alternative depositions of different products. Different interactions are investigated to stabilize the products on the electrodes: electrostatic forces, pi-pi stacking, Van der Waals forces, etc. Layer-by-layer deposition can be made using several methods:
 
@@ -25,10 +29,10 @@ In this project, to create electrodes, we realised layer-by-layer depositions by
 
 For building supercapacitors, several types of products were investigated: polyelectrolytes, electrically charged polymers which are the basis of the layer-by-layer method, graphene, and iron oxide nanoparticles, namely magnetite. Different combinations of the different types of products were tried and compared on their structural and electrochemical properties, such as the surface roughness, the thickness of the layers, the conductivity, or the stability through the cycle of charges and discharges. The different types of layer-by-layer constructions were also compared.
 
-# Supervision
+## Supervision
 
 This project was supervised by Dr. **Fouzia Boulmedais** from the [Institut Charles Sadron](https://www.ics-cnrs.unistra.fr) (CNRS, Universite de Strasbourg, FR).
 
-# Related publication(s)
+## Related publication(s)
 
 * [Walter Vivien, Construction de multicouches de graphène, polyélectrolytes et nanoparticules d'oxydes métalliques pour la création de supercondensateurs, *MSc Thesis*](/publications/msc-thesis-lbl/)

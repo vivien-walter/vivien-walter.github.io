@@ -1,0 +1,58 @@
+<p><img src="https://img.shields.io/badge/version-1.0-f39f37" />
+<img src="https://img.shields.io/badge/release-2017-0377fc" />
+<img src="https://img.shields.io/badge/type-ImageJ-3b9c46" />
+<img src="https://img.shields.io/badge/support-false-8c8c8c" /></p>
+
+<p>The AutoCorrelation function (ACF) is a <strong>plugin</strong> made for <strong>ImageJ</strong> which enable
+the user to perform autocorrelation calculations in <strong>both space and time</strong> on an
+image or a sequence of images. The plugin returns the <em>characteristic time and distance</em>
+of the images.</p>
+
+<!--more-->
+
+<h2 id="description">Description</h2>
+
+<p>The ACF plugin reads an <strong>image or sequence of images</strong> and uses the pixel values to
+measure the <strong>characteristic autocorrelation times and distances</strong>.</p>
+
+<center><img src="/assets/images/softwares/java_acf.png" width="500" height="500" /></center>
+<center><sub>Interface of the ACF plugin, with the typical result obtained on an analysis.</sub></center>
+<p><br /></p>
+
+<p>These characteristic times and distances can be seen as the <em>average period or distances at which one pixel value will be repeated</em>.
+They can be used to calculate the typical frequency of a fluctuation or the size of domains on an image.</p>
+
+<p>ACF can also perform the measurement of the autocorrelation in time after doing the <strong>Fourier transform</strong> of the image.
+By doing so, the different ranges of spatial frequencies are analysed separately to extract their
+period of oscillation in time.</p>
+
+<h2 id="algorithms">Algorithms</h2>
+
+<h3 id="space-correlation">Space correlation</h3>
+
+<p>The correlation in space, which is an 2-D ACF, can be calculated via <strong>two different algorithms</strong>:</p>
+
+<ul>
+  <li>A fast calculation can be made by computing the <strong>FFT</strong> of the image first. The <strong>Wiener-Khinchin theorem</strong>
+indeed specify that the autocorrelation is simply given by the <a href="https://mathworld.wolfram.com/Wiener-KhinchinTheorem.html">Fourier transform of the absolute square of the signal</a>.
+Unfortunately, the FFT in ImageJ can only be made on images with a size N = 2^k, which means that images
+with a different size will need to be resized first. It also raises problem at the edge of the region
+of interest where the signal stops brutally.</li>
+  <li>The second method to calculate the ACF is to use the rough definition and <strong>multiply each pixel value Ixy with all the other pixel values Ix’y’</strong>,
+such as the distance xy to x’y’ is equal to a given radius r. With this methods, there is no issue on the
+edge of the image but the calculation is relatively slow.</li>
+</ul>
+
+<h3 id="time-correlation">Time correlation</h3>
+
+<p>The time correlation, which is a 1-D ACF, is simply done by <strong>multiplying each pixel value Ixy(t) with all the other pixel values Ixy(t+t’)</strong>.</p>
+
+<h2 id="download">Download</h2>
+
+<p>The whole plugin is free to download. Use the link below to start the download (10MB). The source code can also be obtained from
+its GitHub page.</p>
+
+<p><a href="https://mega.nz/file/DN9DHBRD#EQbYkdIygn4P1uIDy714eoyWxP8NJOE9ajYXwoW7HEU" class="btn btn--success"><b>DOWNLOAD</b></a>
+<a href="https://github.com/vivien-walter/autocorrelation" class="btn btn--info"><b>GitHub</b></a></p>
+
+<p><sub><em>Please remember that full support is not provided for this software. You are still free to contact me if you have specific questions on the code, but I cannot guarantee that I will be able to help you.</em></sub></p>

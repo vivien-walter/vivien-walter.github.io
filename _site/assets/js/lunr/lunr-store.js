@@ -5,16 +5,22 @@ var store = [{
         "url": "http://localhost:4000/collaborations/1-ml-lipids/",
         "teaser": "http://localhost:4000/assets/images/logo.png"
       },{
+        "title": "Imaging the reaction of polymerisation",
+        "excerpt":"Through my project on iSCAT, I joined a collaboration between the King’s College London and the Prof. Rachel O’Reilly and Dr. Jeffrey Foster from the University of Birmingham (Birmingham, UK). Through this collaboration, we aim at imaging polymers with our iSCAT microscope and study their properties.  ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/collaborations/2-iscat-polymers/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
         "title": "GUV on Dragonfly Wings",
         "excerpt":"I have worked previously with Drs. Samuel Cheeseman and Vi Khanh Truong from Prof. Elena P. Ivanova group at the Swinburne University of Technology for the study of the interactions of Giant-Unilamellar Vesicles (GUVs) with Dragonfly wings. The results on this collaboration were published in Langmuir.  ","categories": [],
         "tags": [],
-        "url": "http://localhost:4000/collaborations/2-guv-australia/",
+        "url": "http://localhost:4000/collaborations/3-guv-australia/",
         "teaser": "http://localhost:4000/assets/images/logo.png"
       },{
         "title": "Self-assembling Cell-Penetrating peptides",
         "excerpt":"My PhD thesis was part of a collaboration with Prof. Ashutosh Chilkoti and Dr. Sarah MacEwan from Duke University, USA) to study how temperature could trigger the cellular uptake of cell-penetrating peptides (CPP) via self-assembly of elastin-like polypeptides (ELP) with the temperature. More details on the project can be found...","categories": [],
         "tags": [],
-        "url": "http://localhost:4000/collaborations/3-cpp-usa/",
+        "url": "http://localhost:4000/collaborations/4-cpp-usa/",
         "teaser": "http://localhost:4000/assets/images/logo.png"
       },{
         "title": "Lipid membrane interactions with biomolecules",
@@ -81,5 +87,35 @@ var store = [{
         "excerpt":"Abstract Cell-penetrating peptides (CPP) are cationic oligopeptides currently investigated as potential vectors for targeted drug delivery design, for applications in cancer treatment and/or gene therapy. Nevertheless, some drawbacks make the CPPs complex to for medical applications, such as their lack of specifity toward target cells or the loss of their...","categories": [],
         "tags": ["giant unilamellar vesicles","cell-penetrating peptides"],
         "url": "http://localhost:4000/publications/phd-thesis/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "AutoCorrelation Function",
+        "excerpt":"The AutoCorrelation function (ACF) is a plugin made for ImageJ which enable the user to perform autocorrelation calculations in both space and time on an image or a sequence of images. The plugin returns the characteristic time and distance of the images. Description The ACF plugin reads an image or...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/softwares/java/1-acf/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Sentry",
+        "excerpt":"Sentry is a control software for the iSCAT microscope constructed in my current research group. The software is designed to control all the different equipments of the microscope: the cameras, the piezo-electric stage, the LASER light source, the shutter and a spatial light modulator. While the software is specific to...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/softwares/labview/1-sentry/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "MLLPA",
+        "excerpt":"MLLPA (Machine Learning-assisted Lipid Phase Analysis) is a Python 3 library developed to analyse lipid membranes generated during molecular dynamics (MD) simulation runs in order to predict the phase of each lipid and map the local environment of the lipids in the bilayer. The complete documentation of the software, as...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/softwares/python/1-mllpa/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "iSCAN",
+        "excerpt":"iSCAN is a Python software running with a GUI that is used to analyse the images and sequences collected with an interferometric scattering (iSCAT) microscope. It can be used to calculate the contrast of the objects imaged and track particles diffusing in the image. Logo of iSCAN. Presentation iSCAN is...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/softwares/python/2-iscan/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "microImage",
+        "excerpt":"microImage is a Python library that can is used to open and save images in the typical formats used in microscopy. microImage also allows for simple modifications of the images and calibrations of the scale or frame rate in the case of a sequence. The complete documentation of the software,...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/softwares/python/3-microimage/",
         "teaser": "http://localhost:4000/assets/images/logo.png"
       }]

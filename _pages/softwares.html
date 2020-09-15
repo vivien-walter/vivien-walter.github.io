@@ -6,11 +6,60 @@ sidebar:
   nav: "sidebar-softwares"
 header:
   overlay_image: /assets/images/header-software.jpg
-  caption: "Source: Codelines of MLLPA (Link to add)"
+  caption: "Source: Codelines of MLLPA"
 ---
 
-<h2> MD Simulations </h2>
+You can find on this page the list of the <b>softwares</b> I have made and that have been publicly released.
+Please note that I am not able to offer support for all of the softwares presented here;
+but the <b>source code are always available</b> for download and modification.
 
-Miaou
+<h2> Python </h2>
 
-<h2> Microscopy </h2>
+{% for item in site.softwares %}
+{% if item.language == "python" %}
+
+<h3 id="python-{{ item.navslug }}"> {{ item.title }} </h3>
+
+{{ item.excerpt }}
+
+<a href="/softwares/python/{{ item.slug }}/" class="btn btn--primary"><b>Read More...</b></a>
+{% if item.github-enable == true %}
+<a href="{{ item.github-link }}" class="btn btn--info"><b>GitHub</b></a>
+{% endif %}
+
+{% endif %}
+{% endfor %}
+
+<h2> LabVIEW </h2>
+
+{% for item in site.softwares %}
+{% if item.language == "labview" %}
+
+<h3 id="labview-{{ item.navslug }}"> {{ item.title }} </h3>
+
+{{ item.excerpt }}
+
+<a href="/softwares/labview/{{ item.slug }}/" class="btn btn--primary"><b>Read More...</b></a>
+{% if item.github-enable == true %}
+<a href="{{ item.github-link }}" class="btn btn--info"><b>GitHub</b></a>
+{% endif %}
+
+{% endif %}
+{% endfor %}
+
+<h2> Java </h2>
+
+{% for item in site.softwares %}
+{% if item.language == "java" %}
+
+<h3 id="java-{{ item.navslug }}"> {{ item.title }} </h3>
+
+{{ item.excerpt }}
+
+<a href="/softwares/java/{{ item.slug }}/" class="btn btn--primary"><b>Read More...</b></a>
+{% if item.github-enable == true %}
+<a href="{{ item.github-link }}" class="btn btn--info"><b>GitHub</b></a>
+{% endif %}
+
+{% endif %}
+{% endfor %}

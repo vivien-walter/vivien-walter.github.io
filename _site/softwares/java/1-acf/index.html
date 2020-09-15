@@ -1,0 +1,403 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>AutoCorrelation Function - Vivien Walter’s Website</title>
+<meta name="description" content="The AutoCorrelation function (ACF) is a plugin made for ImageJ which enable the user to perform autocorrelation calculations in both space and time on an image or a sequence of images. The plugin returns the characteristic time and distance of the images.">
+
+
+  <meta name="author" content="Vivien WALTER, PhD">
+  
+  <meta property="article:author" content="Vivien WALTER, PhD">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Vivien Walter's Website">
+<meta property="og:title" content="AutoCorrelation Function">
+<meta property="og:url" content="http://localhost:4000/softwares/java/1-acf/">
+
+
+  <meta property="og:description" content="The AutoCorrelation function (ACF) is a plugin made for ImageJ which enable the user to perform autocorrelation calculations in both space and time on an image or a sequence of images. The plugin returns the characteristic time and distance of the images.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/header-software.jpg">
+
+
+
+  <meta name="twitter:site" content="@vwalter_rnk">
+  <meta name="twitter:title" content="AutoCorrelation Function">
+  <meta name="twitter:description" content="The AutoCorrelation function (ACF) is a plugin made for ImageJ which enable the user to perform autocorrelation calculations in both space and time on an image or a sequence of images. The plugin returns the characteristic time and distance of the images.">
+  <meta name="twitter:url" content="http://localhost:4000/softwares/java/1-acf/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/header-software.jpg">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2020-09-15T18:24:15+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/softwares/java/1-acf/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Vivien WALTER",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Vivien Walter's Website Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Vivien WALTER - Research & Programmation
+          <span class="site-subtitle">Lipid Membranes - Microscopy, Simulations & Data Analysis</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/research/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/softwares/">Softwares</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-me/">About Me</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: url('/assets/images/header-software.jpg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          AutoCorrelation Function
+
+        
+      </h1>
+      
+        <p class="page__lead">Measure the space and time autocorrelation on image sequences
+</p>
+      
+      
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption">Source: Codelines of MLLPA
+</span>
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="AutoCorrelation Function">
+    <meta itemprop="description" content="The AutoCorrelation function (ACF) is a plugin made for ImageJ which enablethe user to perform autocorrelation calculations in both space and time on animage or a sequence of images. The plugin returns the characteristic time and distanceof the images.">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#description">Description</a></li>
+  <li><a href="#algorithms">Algorithms</a>
+    <ul>
+      <li><a href="#space-correlation">Space correlation</a></li>
+      <li><a href="#time-correlation">Time correlation</a></li>
+    </ul>
+  </li>
+  <li><a href="#download">Download</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://img.shields.io/badge/version-1.0-f39f37" />
+<img src="https://img.shields.io/badge/release-2017-0377fc" />
+<img src="https://img.shields.io/badge/type-ImageJ-3b9c46" />
+<img src="https://img.shields.io/badge/support-false-8c8c8c" /></p>
+
+<p>The AutoCorrelation function (ACF) is a <strong>plugin</strong> made for <strong>ImageJ</strong> which enable
+the user to perform autocorrelation calculations in <strong>both space and time</strong> on an
+image or a sequence of images. The plugin returns the <em>characteristic time and distance</em>
+of the images.</p>
+
+<!--more-->
+
+<h2 id="description">Description</h2>
+
+<p>The ACF plugin reads an <strong>image or sequence of images</strong> and uses the pixel values to
+measure the <strong>characteristic autocorrelation times and distances</strong>.</p>
+
+<center><img src="/assets/images/softwares/java_acf.png" width="500" height="500" /></center>
+<center><sub>Interface of the ACF plugin, with the typical result obtained on an analysis.</sub></center>
+<p><br /></p>
+
+<p>These characteristic times and distances can be seen as the <em>average period or distances at which one pixel value will be repeated</em>.
+They can be used to calculate the typical frequency of a fluctuation or the size of domains on an image.</p>
+
+<p>ACF can also perform the measurement of the autocorrelation in time after doing the <strong>Fourier transform</strong> of the image.
+By doing so, the different ranges of spatial frequencies are analysed separately to extract their
+period of oscillation in time.</p>
+
+<h2 id="algorithms">Algorithms</h2>
+
+<h3 id="space-correlation">Space correlation</h3>
+
+<p>The correlation in space, which is an 2-D ACF, can be calculated via <strong>two different algorithms</strong>:</p>
+
+<ul>
+  <li>A fast calculation can be made by computing the <strong>FFT</strong> of the image first. The <strong>Wiener-Khinchin theorem</strong>
+indeed specify that the autocorrelation is simply given by the <a href="https://mathworld.wolfram.com/Wiener-KhinchinTheorem.html">Fourier transform of the absolute square of the signal</a>.
+Unfortunately, the FFT in ImageJ can only be made on images with a size N = 2^k, which means that images
+with a different size will need to be resized first. It also raises problem at the edge of the region
+of interest where the signal stops brutally.</li>
+  <li>The second method to calculate the ACF is to use the rough definition and <strong>multiply each pixel value Ixy with all the other pixel values Ix’y’</strong>,
+such as the distance xy to x’y’ is equal to a given radius r. With this methods, there is no issue on the
+edge of the image but the calculation is relatively slow.</li>
+</ul>
+
+<h3 id="time-correlation">Time correlation</h3>
+
+<p>The time correlation, which is a 1-D ACF, is simply done by <strong>multiplying each pixel value Ixy(t) with all the other pixel values Ixy(t+t’)</strong>.</p>
+
+<h2 id="download">Download</h2>
+
+<p>The whole plugin is free to download. Use the link below to start the download (10MB). The source code can also be obtained from
+its GitHub page.</p>
+
+<p><a href="https://mega.nz/file/DN9DHBRD#EQbYkdIygn4P1uIDy714eoyWxP8NJOE9ajYXwoW7HEU" class="btn btn--success"><b>DOWNLOAD</b></a>
+<a href="https://github.com/vivien-walter/autocorrelation" class="btn btn--info"><b>GitHub</b></a></p>
+
+<p><sub><em>Please remember that full support is not provided for this software. You are still free to contact me if you have specific questions on the code, but I cannot guarantee that I will be able to help you.</em></sub></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=vwalter_rnk&text=AutoCorrelation+Function%20http%3A%2F%2Flocalhost%3A4000%2Fsoftwares%2Fjava%2F1-acf%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsoftwares%2Fjava%2F1-acf%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsoftwares%2Fjava%2F1-acf%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/softwares/labview/1-sentry/" class="pagination--pager" title="Sentry
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Vivien WALTER. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

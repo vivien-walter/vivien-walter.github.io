@@ -8,6 +8,8 @@ header:
   caption: "Source: tessellation of a lipid bilayer to highlight the phases of each lipid"
 tagline: "Machine Learning analysis applied to lipid membranes"
 excerpt_separator: <!--more-->
+toc: true
+toc_sticky: true
 ---
 
 
@@ -23,4 +25,42 @@ complex lipid mixtures and phases using a two-state approach.
 
 <!--more-->
 
-(Write more here)
+## Description
+
+### Lipid phases
+
+One of the remarkable property of pure phospholipids bilayers is to exhibit thermodynamic transitions, meaning that they can be found in several phases; from the dense structured **gel phase** at low temperature to the fully **disordered fluid phase** which forms above a sharp transition called the melting transition. Many other phases have been identified in the last decades, such as the corrugated **ripple phase** appearing between the gel and fluid phases of phosphocholine (PC) lipids, or the **ordered liquid phase** formed by the presence of an important amount of cholesterol in the membranes.
+
+<center><img src="{{ site.baseurl }}/assets/images/projects/image_ml2.png" width='400' height='400'/></center>
+<center><sub>Corrugations of the ripple phase in a lipid bilayer</sub></center>
+<br>
+
+We investigate thoroughly these different phases via MD simulations in order to fully characterise the lipid membranes simulated. This allow us to track interactions between various types of molecules, such as **pollutants**, and the membrane; and analyse how these molecules are able to **modify the phase composition** of the lipid membranes.
+
+### Machine Learning
+
+To analyse the phases of the individual lipid composing a cell membrane, we decided to rely on **Machine Learning** (ML) analysis.
+Our key concept is that the configurations of lipid molecules is expected to be radically different from the **elongated densely packed gel** phase
+to the **randomly oriented fluid phase**. ML analysis have been for long proven critically efficient on differenciating objects by
+their appearance, which we tried to apply here to lipids.
+
+<center><img src="{{ site.baseurl }}/assets/images/projects/image_ml3.png" width='400' height='400'/></center>
+<center><sub>Representation of the configurations found in the (Left) gel and (Right) fluid phases</sub></center>
+<br>
+
+Our first codes were found extremely efficient at differentiating lipid phases (Check the section *Related publication(s)* below), with an **average score of 95%**
+for most of the lipids used in all-atom. We are looking for different way to proceed, especially to **unify all models and lipids types**.
+
+## Collaboration(s)
+
+This project is conducted in close collaboration with Drs. **Celine Ruscher**, **Olivier Benzerara** and **Fabrice Thalmann**
+from the [Institut Charles Sadron](https://www.ics-cnrs.unistra.fr) (CNRS, Universite de Strasbourg, FR). Our work are often supported
+by Drs. **Carlos M. Marques** and **Adrien Gola**, also from the Institut Charles Sadron, and by Dr. **Tiago Espinosa de Oliveira** (BR).
+
+## Related publication(s)
+
+* [Walter et al., A machine learning study of the two states model for lipid bilayer phase transitions, *PCCP* **2020**, 22, 19147-54](/publications/2020-08-12-pccp/)
+
+* Walter et al., MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes, *submitted to J. Comp. Chem., Sept. 2020*
+
+* Walter et al., Ripple-like instability in the gel phase of Phosphocholine membranes at finite size, *in preparation.*

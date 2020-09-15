@@ -1,0 +1,481 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Sentry - Vivien Walter’s Website</title>
+<meta name="description" content="Sentry is a control software for the iSCAT microscope constructed in my current research group. The software is designed to control all the different equipments of the microscope: the cameras, the piezo-electric stage, the LASER light source, the shutter and a spatial light modulator. While the software is specific to our microscope, it is modulable enough to be adapted to any kind of setup.">
+
+
+  <meta name="author" content="Vivien WALTER, PhD">
+  
+  <meta property="article:author" content="Vivien WALTER, PhD">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Vivien Walter's Website">
+<meta property="og:title" content="Sentry">
+<meta property="og:url" content="http://localhost:4000/softwares/labview/1-sentry/">
+
+
+  <meta property="og:description" content="Sentry is a control software for the iSCAT microscope constructed in my current research group. The software is designed to control all the different equipments of the microscope: the cameras, the piezo-electric stage, the LASER light source, the shutter and a spatial light modulator. While the software is specific to our microscope, it is modulable enough to be adapted to any kind of setup.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/header-software.jpg">
+
+
+
+  <meta name="twitter:site" content="@vwalter_rnk">
+  <meta name="twitter:title" content="Sentry">
+  <meta name="twitter:description" content="Sentry is a control software for the iSCAT microscope constructed in my current research group. The software is designed to control all the different equipments of the microscope: the cameras, the piezo-electric stage, the LASER light source, the shutter and a spatial light modulator. While the software is specific to our microscope, it is modulable enough to be adapted to any kind of setup.">
+  <meta name="twitter:url" content="http://localhost:4000/softwares/labview/1-sentry/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/header-software.jpg">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2020-09-15T18:24:15+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/softwares/labview/1-sentry/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Vivien WALTER",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Vivien Walter's Website Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Vivien WALTER - Research & Programmation
+          <span class="site-subtitle">Lipid Membranes - Microscopy, Simulations & Data Analysis</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/research/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/softwares/">Softwares</a>
+            </li><li class="masthead__menu-item">
+              <a href="/teaching/">Teaching</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about-me/">About Me</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: url('/assets/images/header-software.jpg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Sentry
+
+        
+      </h1>
+      
+        <p class="page__lead">Microscope control software
+</p>
+      
+      
+
+
+      
+      
+    </div>
+  
+  
+    <span class="page__hero-caption">Source: Codelines of MLLPA
+</span>
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Sentry">
+    <meta itemprop="description" content="Sentry is a control software for the iSCAT microscope constructed in my current research group.The software is designed to control all the different equipments of the microscope: the cameras,the piezo-electric stage, the LASER light source, the shutter and a spatial light modulator.While the software is specific to our microscope, it is modulable enough to be adapted to anykind of setup.">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#description">Description</a></li>
+  <li><a href="#equipment-support">Equipment support</a>
+    <ul>
+      <li><a href="#cameras">Cameras</a></li>
+      <li><a href="#piezoelectric-stage">Piezoelectric stage</a></li>
+      <li><a href="#laser-source">LASER source</a></li>
+      <li><a href="#shutter">Shutter</a></li>
+      <li><a href="#spatial-light-modulator">Spatial Light Modulator</a></li>
+    </ul>
+  </li>
+  <li><a href="#details-on-the-code">Details on the code</a></li>
+  <li><a href="#download">Download</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="https://img.shields.io/badge/version-1.1-f39f37" />
+<img src="https://img.shields.io/badge/release-2020-0377fc" />
+<img src="https://img.shields.io/badge/labview-2018-3b9c46" />
+<img src="https://img.shields.io/badge/support-false-8c8c8c" /></p>
+
+<p>Sentry is a <strong>control software</strong> for the iSCAT microscope constructed in my current research group.
+The software is designed to control all the different equipments of the microscope: the <em>cameras</em>,
+the <em>piezo-electric stage</em>, the <em>LASER</em> light source, the <em>shutter</em> and a <em>spatial light modulator</em>.
+While the software is specific to our microscope, it is <strong>modulable</strong> enough to be adapted to any
+kind of setup.</p>
+
+<!--more-->
+
+<h2 id="description">Description</h2>
+
+<p>Sentry, named after the <em>Boeing E-3</em>, is a software overseeing and controlling our <strong>iSCAT microscope</strong>
+and all its equipments. The design of the user interface has been optimised to gather all the controls on
+the main interface.</p>
+
+<center><img src="/assets/images/softwares/labview-sentry-main.png" width="500" height="500" /></center>
+<center><sub>Main interface of Sentry</sub></center>
+<p><br /></p>
+
+<p>The advanced settings of the different elements can be accessed in separate menus, in order to keep the interface as
+clean and simple as possible.</p>
+
+<center><img src="/assets/images/softwares/labview-sentry-menu.png" width="500" height="500" /></center>
+<center><sub>Menu for camera selections and properties</sub></center>
+
+<p><br /></p>
+
+<h2 id="equipment-support">Equipment support</h2>
+
+<p>You can find described below the list of the different equipments currently supported by Sentry, as
+well as a quick guide on how to integrate similar equipments in the software.</p>
+
+<h3 id="cameras">Cameras</h3>
+
+<p>The current cameras are already supported in Sentry:</p>
+<ul>
+  <li><strong>PCO. dimax</strong> cs1 and cs4</li>
+  <li><strong>PhotonFocus</strong> D1024</li>
+  <li><strong>FLIR</strong> Oryx</li>
+  <li><strong>FLIR</strong> BlackFly S</li>
+</ul>
+
+<p>Please note that the PhotonFocus D1024 is experiencing several bugs that we could not
+solve (<em>e.g.</em> flickering).</p>
+
+<p>To integrate a new camera, the following subVIs should be created:</p>
+<ol>
+  <li>Camera detection and initialisation.</li>
+  <li>Apply settings to the camera: (i) region-of-interest, (ii) exposure time and (iii) frame rate.</li>
+  <li>Grab a single image.</li>
+  <li>Do an high-speed recording to save an image array.</li>
+  <li>Close the camera safely.</li>
+</ol>
+
+<h3 id="piezoelectric-stage">Piezoelectric stage</h3>
+
+<p>The current piezoelectric stage supported by Sentry is the <strong>Physik Instrumente P-545-3R8S</strong>. To integrate
+another piezoelectric stage, the following subVIs should be created:</p>
+<ol>
+  <li>Stage detection and initialisation.</li>
+  <li>Read the current position of the stage.</li>
+  <li>Set a new position to the stage.</li>
+  <li>Close the stage safely.</li>
+</ol>
+
+<h3 id="laser-source">LASER source</h3>
+
+<p>The current LASER light source stage supported by Sentry is the <strong>Kvant Lasers RLM-6000M</strong>. The Kvant
+Lasers is currently controlled by applying a voltage on the external input of the laser module. This
+is done via a DAQ card.</p>
+
+<p>To integrate another LASER or other type of light source, the following subVIs should be created:</p>
+<ol>
+  <li>Laser detection and initialisation.</li>
+  <li>Read the current laser power.</li>
+  <li>Set a new laser power.</li>
+  <li>Close the laser safely.</li>
+</ol>
+
+<h3 id="shutter">Shutter</h3>
+
+<p>The current microscope shutter supported by Sentry is the <strong>Thorlabs SC10</strong>.</p>
+
+<p>To integrate another shutter, the following subVIs should be created:</p>
+<ol>
+  <li>Shutter detection and initialisation.</li>
+  <li>Read the current shutter status.</li>
+  <li>Set the shutter status.</li>
+  <li>Close the shutter safely.</li>
+</ol>
+
+<h3 id="spatial-light-modulator">Spatial Light Modulator</h3>
+
+<p>The current spatial light modulator (SLM) supported by Sentry is the <strong>Meadowlark Optics 1920x1152</strong>.
+Integrating another spatial light modulator might not be as straightforward as the other types
+of equipment. Please refer to the capacity of your SLM and the application desired to
+see which subVIs you might need.</p>
+
+<h2 id="details-on-the-code">Details on the code</h2>
+
+<p>Sentry is based on the <strong>queueing system</strong> of LabVIEW and <strong>parallel loops</strong>. Briefly, only
+the User Interface (UI) is accessible to the user. The user can <em>visualise</em> what is happening in Sentry
+via the display, and can <em>interact</em> with the interface using buttons and all.</p>
+
+<p>The UI does not do anything when a button or so is pressed. The event is captured and the corresponding
+action is written into an <strong>instruction</strong>. This instruction is then sent by the UI to the specific equipment.
+Once the equipment has read the instruction, it does the related <strong>action</strong> and eventually sends data back to the UI
+for display. In this configuration, each equipment are enclosed in a <strong>separate and independant loop</strong>. By doing this,
+the action of one piece of equipment shall not interfere with other equipment or slow down the software.</p>
+
+<center><img src="/assets/images/softwares/labview-sentry-loops.png" width="500" height="500" /></center>
+<center><sub>Design of the code used in Sentry. Instructions and queues are shown in green, while data are shown in gray.</sub></center>
+<p><br /></p>
+
+<p>However, it can happen that two components are or should be connected together. For example, one could
+want to scan the sample and take a picture at each step. In this case, another type of loop is created,
+called <strong>synchronisation loops</strong>. Synchronisation loops receive the orders from the UI, but do not interact
+with the equipment directly. Instead, these loops send new orders to the equipment loops and wait for the results
+to proceed.</p>
+
+<h2 id="download">Download</h2>
+
+<p>The whole software is free to download. Use the link below to start the download (10MB).</p>
+
+<p><a href="https://mega.nz/file/LMkBRTiC#odrktHMCM3Gb93IIwqBv7Wg-MKRO_Na_fomxIsDyx2Y" class="btn btn--success"><b>DOWNLOAD</b></a></p>
+
+<p><sub><em>Please remember that full support is not provided for this software. You are still free to contact me if you have specific questions on the code, but I cannot guarantee that I will be able to help you.</em></sub></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=vwalter_rnk&text=Sentry%20http%3A%2F%2Flocalhost%3A4000%2Fsoftwares%2Flabview%2F1-sentry%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsoftwares%2Flabview%2F1-sentry%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsoftwares%2Flabview%2F1-sentry%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/softwares/java/1-acf/" class="pagination--pager" title="AutoCorrelation Function
+">Previous</a>
+    
+    
+      <a href="/softwares/python/1-mllpa/" class="pagination--pager" title="MLLPA
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Vivien WALTER. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

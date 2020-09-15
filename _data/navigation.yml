@@ -34,7 +34,36 @@ sidebar-research:
 
 # sidebar navigation list Softwares
 sidebar-softwares:
-  - title: "MD Simulations"
+  - title: "Python"
     children:
-      - title: "Python"
-        url: /child-page-a1/
+      - title: "MLLPA"
+        url: /softwares/#python-mllpa
+      - title: "iSCAN"
+        url: /softwares/#python-iscan
+      - title: "microImage"
+        url: /softwares/#python-mim
+  - title: "LabVIEW"
+    children:
+      - title: "Sentry"
+        url: /softwares/#labview-sentry
+  - title: "Java"
+    children:
+      - title: "AutoCorrelation Function"
+        url: /softwares/#java-acf
+
+# sidebar navigation list About
+sidebar-aboutme:
+  - title: "Who am I?"
+    children:
+      - title: "University Education"
+        url: /about-me/#university
+      - title: "Research Interest"
+        url: /about-me/#research
+      - title: "Hobbies and Passions"
+        url: /about-me/#hobbies
+  - title: "Resume"
+    url: /about-me/#resume
+  - title: "Contact"
+    url: /about-me/#contact
+  - title: "Outreach and Work experience"
+    url: /about-me/#outreach

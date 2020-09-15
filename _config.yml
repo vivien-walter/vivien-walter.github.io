@@ -147,6 +147,7 @@ include:
   - _pages
   - _publications
   - _projects
+  - _softwares
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -278,6 +279,9 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
+  softwares:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -311,3 +315,10 @@ defaults:
       type: collaborations
     values:
       layout: single
+  # _softwares
+  - scope:
+      path: ""
+      type: softwares
+    values:
+      layout: single
+      share: true # true

@@ -1,4 +1,4 @@
-<center><img src="http://localhost:4000/assets/images/projects/image-ml.png" width="300" height="300" /></center>
+<center><img src="/assets/images/projects/image-ml.png" width="300" height="300" /></center>
 <center><sub>Snapshot of a simulated bilayer in the corrugated ripple phase</sub></center>
 
 <hr />
@@ -10,4 +10,48 @@ complex lipid mixtures and phases using a two-state approach.</p>
 
 <!--more-->
 
-<p>(Write more here)</p>
+<h2 id="description">Description</h2>
+
+<h3 id="lipid-phases">Lipid phases</h3>
+
+<p>One of the remarkable property of pure phospholipids bilayers is to exhibit thermodynamic transitions, meaning that they can be found in several phases; from the dense structured <strong>gel phase</strong> at low temperature to the fully <strong>disordered fluid phase</strong> which forms above a sharp transition called the melting transition. Many other phases have been identified in the last decades, such as the corrugated <strong>ripple phase</strong> appearing between the gel and fluid phases of phosphocholine (PC) lipids, or the <strong>ordered liquid phase</strong> formed by the presence of an important amount of cholesterol in the membranes.</p>
+
+<center><img src="/assets/images/projects/image_ml2.png" width="400" height="400" /></center>
+<center><sub>Corrugations of the ripple phase in a lipid bilayer</sub></center>
+<p><br /></p>
+
+<p>We investigate thoroughly these different phases via MD simulations in order to fully characterise the lipid membranes simulated. This allow us to track interactions between various types of molecules, such as <strong>pollutants</strong>, and the membrane; and analyse how these molecules are able to <strong>modify the phase composition</strong> of the lipid membranes.</p>
+
+<h3 id="machine-learning">Machine Learning</h3>
+
+<p>To analyse the phases of the individual lipid composing a cell membrane, we decided to rely on <strong>Machine Learning</strong> (ML) analysis.
+Our key concept is that the configurations of lipid molecules is expected to be radically different from the <strong>elongated densely packed gel</strong> phase
+to the <strong>randomly oriented fluid phase</strong>. ML analysis have been for long proven critically efficient on differenciating objects by
+their appearance, which we tried to apply here to lipids.</p>
+
+<center><img src="/assets/images/projects/image_ml3.png" width="400" height="400" /></center>
+<center><sub>Representation of the configurations found in the (Left) gel and (Right) fluid phases</sub></center>
+<p><br /></p>
+
+<p>Our first codes were found extremely efficient at differentiating lipid phases (Check the section <em>Related publication(s)</em> below), with an <strong>average score of 95%</strong>
+for most of the lipids used in all-atom. We are looking for different way to proceed, especially to <strong>unify all models and lipids types</strong>.</p>
+
+<h2 id="collaborations">Collaboration(s)</h2>
+
+<p>This project is conducted in close collaboration with Drs. <strong>Celine Ruscher</strong>, <strong>Olivier Benzerara</strong> and <strong>Fabrice Thalmann</strong>
+from the <a href="https://www.ics-cnrs.unistra.fr">Institut Charles Sadron</a> (CNRS, Universite de Strasbourg, FR). Our work are often supported
+by Drs. <strong>Carlos M. Marques</strong> and <strong>Adrien Gola</strong>, also from the Institut Charles Sadron, and by Dr. <strong>Tiago Espinosa de Oliveira</strong> (BR).</p>
+
+<h2 id="related-publications">Related publication(s)</h2>
+
+<ul>
+  <li>
+    <p><a href="/publications/2020-08-12-pccp/">Walter et al., A machine learning study of the two states model for lipid bilayer phase transitions, <em>PCCP</em> <strong>2020</strong>, 22, 19147-54</a></p>
+  </li>
+  <li>
+    <p>Walter et al., MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes, <em>submitted to J. Comp. Chem., Sept. 2020</em></p>
+  </li>
+  <li>
+    <p>Walter et al., Ripple-like instability in the gel phase of Phosphocholine membranes at finite size, <em>in preparation.</em></p>
+  </li>
+</ul>
