@@ -148,6 +148,7 @@ include:
   - _publications
   - _projects
   - _softwares
+  - _teaching
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -282,6 +283,9 @@ collections:
   softwares:
     output: true
     permalink: /:collection/:path/
+  teaching:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -319,6 +323,13 @@ defaults:
   - scope:
       path: ""
       type: softwares
+    values:
+      layout: single
+      share: true # true
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
     values:
       layout: single
       share: true # true

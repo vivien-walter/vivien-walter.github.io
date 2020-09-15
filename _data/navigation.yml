@@ -51,6 +51,19 @@ sidebar-softwares:
       - title: "AutoCorrelation Function"
         url: /softwares/#java-acf
 
+# sidebar navigation list Teaching
+sidebar-teaching:
+  - title: "Tutorials"
+    children:
+      - title: "Python"
+        url: /teaching/#teaching-python
+      - title: "LabVIEW"
+        url: /teaching/#teaching-labview
+  - title: "Lessons"
+    children:
+      - title: "Statistics"
+        url: /teaching/#teaching-stats
+
 # sidebar navigation list About
 sidebar-aboutme:
   - title: "Who am I?"
