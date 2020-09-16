@@ -7,57 +7,14 @@ tags:
   - update
 ---
 
-Nested and mixed lists are an interesting beast. It's a corner case to make sure that
+Welcome all to my **brand new website**! I was a bit bored and tired of the previous version,
+both because of the design but also because of the Django framework which is not fun at all
+to edit.
 
-* Lists within lists do not break the ordered list numbering order
-* Your list styles go deep enough.
+During the transfer, I updated everything in the **Research** section to make sure it really shows
+what I am doing at the moment. I also replaced the Ressources section, which was showing too
+many things and many useless ones to a simple **Softwares** one. I also decided to put back
+my **Teaching** section, which I will fill over time.
 
-### Ordered -- Unordered -- Ordered
-
-1. ordered item
-2. ordered item
-   * **unordered**
-   * **unordered**
-     1. ordered item
-     2. ordered item
-3. ordered item
-4. ordered item
-
-### Ordered -- Unordered -- Unordered
-
-1. ordered item
-2. ordered item
-   * **unordered**
-   * **unordered**
-     * unordered item
-     * unordered item
-3. ordered item
-4. ordered item
-
-### Unordered -- Ordered -- Unordered
-
-* unordered item
-* unordered item
-  1. ordered
-  2. ordered
-     * unordered item
-     * unordered item
-* unordered item
-* unordered item
-
-### Unordered -- Unordered -- Ordered
-
-* unordered item
-* unordered item
-  * unordered
-  * unordered
-    1. **ordered item**
-    2. **ordered item**
-* unordered item
-* unordered item
-
-### Task Lists
-
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
+There are still things left to do, mostly adding content to the Teaching section, but it is going
+to take so much time that I have decided to deploy the site now and fill the section later.

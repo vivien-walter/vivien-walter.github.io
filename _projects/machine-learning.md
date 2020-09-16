@@ -5,6 +5,7 @@ end-year: 9999
 slug: "machine-learning"
 header:
   overlay_image: /assets/images/projects/header-ml.png
+  overlay_filter: 0.5
   caption: "Source: tessellation of a lipid bilayer to highlight the phases of each lipid"
 tagline: "Machine Learning analysis applied to lipid membranes"
 excerpt_separator: <!--more-->

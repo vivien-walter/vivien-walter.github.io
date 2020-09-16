@@ -120,9 +120,34 @@ For more details on my CV, feel free to download the <b>pdf version</b> below.
 
 <h3>Work Experience</h3>
 
+<ul>
+{% assign sorted = site.aboutme | sort: 'order' | reverse %}
+{% for item in sorted %}
+{% if item.type == "research" %}
+  <li>
+  <b> {{ item.title }} </b> &mdash; <i>{{ item.year }}</i>
+  <br>
+  <sub>{{ item.company }} ( {{ item.location }} )</sub>
+  </li>
+{% endif %}
+{% endfor %}
+</ul>
+
 <h3>Academic Formation</h3>
 
-<br>
+<ul>
+{% assign sorted = site.aboutme | sort: 'order' | reverse %}
+{% for item in sorted %}
+{% if item.type == "formation" %}
+  <li>
+  <b> {{ item.title }} </b> &mdash; <i>{{ item.year }}</i>
+  <br>
+  <sub>{{ item.company }} ( {{ item.location }} )</sub>
+  </li>
+{% endif %}
+{% endfor %}
+</ul>
+
 <br>
 
 <a href="https://mega.nz/file/WdUWTARC#YYGuzA1C8-VA5mvtaw0XiFlxvwCjzQB3-JPMColojo4" class="btn btn--success"><b>COMPLETE RESUME</b></a>

@@ -64,6 +64,27 @@ sidebar-teaching:
       - title: "Statistics"
         url: /teaching/#teaching-stats
 
+# sidebar navigation list Teaching - Statistics
+sidebar-statistics:
+  - title: "Introduction"
+    children:
+      - title: "Introduction on the moments"
+        url: /teaching/lessons/statistics/1-introduction/1-moments/
+      - title: "Errors and Bootstrap"
+        url: /teaching/lessons/statistics/1-introduction/2-errors/
+  - title: "Data Fitting"
+    children:
+      - title: "Linear correlation and regression"
+        url: /teaching/lessons/statistics/2-data-fitting/1-linear-correlation/
+      - title: "Algorithms for data fitting"
+        url: /teaching/lessons/statistics/2-data-fitting/2-algorithms/
+  - title: "Hypothesis Tests"
+    children:
+      - title: "Parametric tests"
+        url: /teaching/lessons/statistics/3-hypothesis-tests/1-parametric/
+      - title: "Non-Parametric tests"
+        url: /teaching/lessons/statistics/3-hypothesis-tests/2-non-parametric/
+
 # sidebar navigation list About
 sidebar-aboutme:
   - title: "Who am I?"

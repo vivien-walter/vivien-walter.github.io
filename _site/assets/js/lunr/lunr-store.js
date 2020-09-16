@@ -1,4 +1,46 @@
 var store = [{
+        "title": "B.Sc. in Maths, Physics & Chemistry",
+        "excerpt":"Empty doc  ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/aboutme/resume/2011-bsc-mpc/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "M.Sc. in Physics & Chemistry",
+        "excerpt":"Empty doc  ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/aboutme/resume/2013-msc-education/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "M.Sc. in Physics of Materials",
+        "excerpt":"Empty doc  ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/aboutme/resume/2014-msc-materials/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Ph.D. Student & Teaching Assistant",
+        "excerpt":"Empty doc  ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/aboutme/resume/2017-institut-charles-sadron/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Ph.D. in Biophysics",
+        "excerpt":"Empty doc  ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/aboutme/resume/2017-phd-thesis/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "PostDoctoral Research Associate",
+        "excerpt":"Empty doc  ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/aboutme/resume/2018-institut-charles-sadron/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "PostDoctoral Research Associate",
+        "excerpt":"Empty doc  ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/aboutme/resume/2021-kings-college-london/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
         "title": "Machine Learning for Lipid Phase Analysis",
         "excerpt":"I am currently working in close collaboration with Drs. Celine Ruscher, Olivier Benzerara and Fabrice Thalmann from the Institut Charles Sadron (CNRS, Universite de Strasbourg, FR) for the study of lipid bilayers in Molecular Dynamics (MD) simulations using Machine Learning. We are often supported on this project by Drs. Carlos...","categories": [],
         "tags": [],
@@ -24,7 +66,7 @@ var store = [{
         "teaser": "http://localhost:4000/assets/images/logo.png"
       },{
         "title": "New Website now online",
-        "excerpt":"Nested and mixed lists are an interesting beast. It’s a corner case to make sure that Lists within lists do not break the ordered list numbering order Your list styles go deep enough. Ordered – Unordered – Ordered ordered item ordered item unordered unordered ordered item ordered item ordered item...","categories": ["General"],
+        "excerpt":"Welcome all to my brand new website! I was a bit bored and tired of the previous version, both because of the design but also because of the Django framework which is not fun at all to edit. During the transfer, I updated everything in the Research section to make...","categories": ["General"],
         "tags": ["website","update"],
         "url": "http://localhost:4000/general/website-online/",
         "teaser": "http://localhost:4000/assets/images/logo.png"
@@ -124,4 +166,58 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/softwares/python/3-microimage/",
         "teaser": "http://localhost:4000/assets/images/logo.png"
-      },]
+      },{
+        "title": "Introduction on the moments",
+        "excerpt":"Content   The written content for this lesson has not been uploaded yet.   Download   The whole lesson is free to download. Use the link below to start the download (6MB).   DOWNLOAD  ","categories": ["lesson","statistics","introduction"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/lessons/statistics/1-introduction/1-moments/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Errors and Bootstrap",
+        "excerpt":"Content   The written content for this lesson has not been uploaded yet.   Download   The whole lesson is free to download. Use the link below to start the download (11MB).   DOWNLOAD  ","categories": ["lesson","statistics","introduction"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/lessons/statistics/1-introduction/2-errors/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Linear correlation and regression",
+        "excerpt":"Content   The written content for this lesson has not been uploaded yet.   Download   The whole lesson is free to download. Use the link below to start the download (2.7MB).   DOWNLOAD  ","categories": ["lesson","statistics","data fit"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/lessons/statistics/2-data-fitting/1-linear-correlation/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Algorithms for data fitting",
+        "excerpt":"Content   The written content for this lesson has not been uploaded yet.   Download   The whole lesson is free to download. Use the link below to start the download (5.3MB).   DOWNLOAD  ","categories": ["lesson","statistics","data fit"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/lessons/statistics/2-data-fitting/2-algorithms/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Parametric tests",
+        "excerpt":"Content   The written content for this lesson has not been uploaded yet.   Download   The whole lesson is free to download. Use the link below to start the download (8.6MB).   DOWNLOAD  ","categories": ["lesson","statistics","hypothesis tests"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/lessons/statistics/3-hypothesis-tests/1-parametric/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Non-Parametric tests",
+        "excerpt":"Content   The written content for this lesson has not been uploaded yet.   Download   The whole lesson is free to download. Use the link below to start the download (1.6MB).   DOWNLOAD  ","categories": ["lesson","statistics","hypothesis tests"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/lessons/statistics/3-hypothesis-tests/2-non-parametric/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Advanced statistics",
+        "excerpt":"Introduction to statistics and data analysis, from simple average and variance to fit algorithms and hypothesis tests. This lesson was made for a workshop on Python and Data Analysis that took place in 2019 at the Department of Chemistry of the King’s College London (London, UK). Content Introduction Introduction on...","categories": ["lesson","statistics"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/lessons/statistics/index/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Getting started in LabVIEW",
+        "excerpt":"The tutorials on LabVIEW have not been uploaded yet. Please bear with me while I add all the documents.  ","categories": ["tutorial","labview"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/tutorials/labview/index/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
+        "title": "Python for Data Analysis",
+        "excerpt":"The tutorials on Python have not been uploaded yet. Please bear with me while I add all the documents.  ","categories": ["tutorial","python"],
+        "tags": [],
+        "url": "http://localhost:4000/teaching/tutorials/python/index/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      }]

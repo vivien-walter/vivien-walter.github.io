@@ -6,6 +6,7 @@ sidebar:
   nav: "sidebar-teaching"
 header:
   overlay_image: /assets/images/header-teaching.png
+  overlay_filter: 0.5
   caption: "Source: [PhD thesis cover](/publications/phd-thesis/)"
 ---
 
@@ -23,7 +24,13 @@ Unlike a lesson which has a set syllabus, the tutorials will likely evolve over 
 
 <h3 id='teaching-python'> Python </h3>
 
+{% assign python = site.teaching | where:"title", "Python for Data Analysis"  | first %}
+{{ python.content }}
+
 <h3 id='teaching-labview'> LabVIEW </h3>
+
+{% assign labview = site.teaching | where:"title", "Getting started in LabVIEW"  | first %}
+{{ labview.content }}
 
 <h2> Lessons </h2>
 
@@ -31,3 +38,8 @@ Lessons are lengthy <b>explanations</b> and <b>demonstrations</b> on a selected 
 the lessons will explore the different subjects in depth to explain all the details.
 
 <h3 id='teaching-stats'> Statistics </h3>
+
+{% assign stats = site.teaching | where:"title", "Advanced statistics"  | first %}
+{{ stats.excerpt }}
+
+<a href="{{ stats.url }}" class="btn btn--success"><b>READ THE TUTORIAL</b></a>

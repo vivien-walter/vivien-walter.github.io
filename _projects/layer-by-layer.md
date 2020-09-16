@@ -5,6 +5,7 @@ end-year: 2014
 slug: "layer-by-layer"
 header:
   overlay_image: /assets/images/projects/header-lbl.png
+  overlay_filter: 0.5
   caption: "Source: Surface of an electrode constructed by layer-by-layer"
 tagline: "Toward better energy storage"
 toc: true

@@ -123,16 +123,16 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url:
+      url: "https://twitter.com/vwalter_rnk"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      url: "https://www.facebook.com/vivien.walter"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/vivien-walter"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
-      # url:
+      url: "https://git.unistra.fr/vivien.walter"
     - label: "Bitbucket"
       icon: "fab fa-fw fa-bitbucket"
       # url:
@@ -149,6 +149,7 @@ include:
   - _projects
   - _softwares
   - _teaching
+  - _aboutme
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -286,6 +287,9 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
+  aboutme:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -341,6 +345,13 @@ defaults:
   - scope:
       path: ""
       type: teaching
+    values:
+      layout: single
+      share: true # true
+  # _teaching
+  - scope:
+      path: ""
+      type: aboutme
     values:
       layout: single
       share: true # true

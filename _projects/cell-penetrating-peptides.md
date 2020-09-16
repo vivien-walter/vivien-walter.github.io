@@ -5,6 +5,7 @@ end-year: 2017
 slug: "cell-penetrating-peptides"
 header:
   overlay_image: /assets/images/projects/header-cpp.png
+  overlay_filter: 0.2
   caption: "Source: Adsorption of fluorescent cell-penetrating peptides on a lipid vesicle."
 tagline: "Thermal control of the cellular uptake"
 toc: true
