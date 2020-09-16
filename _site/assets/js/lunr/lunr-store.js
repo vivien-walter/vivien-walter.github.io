@@ -23,6 +23,12 @@ var store = [{
         "url": "http://localhost:4000/collaborations/4-cpp-usa/",
         "teaser": "http://localhost:4000/assets/images/logo.png"
       },{
+        "title": "New Website now online",
+        "excerpt":"Nested and mixed lists are an interesting beast. It’s a corner case to make sure that Lists within lists do not break the ordered list numbering order Your list styles go deep enough. Ordered – Unordered – Ordered ordered item ordered item unordered unordered ordered item ordered item ordered item...","categories": ["General"],
+        "tags": ["website","update"],
+        "url": "http://localhost:4000/general/website-online/",
+        "teaser": "http://localhost:4000/assets/images/logo.png"
+      },{
         "title": "Lipid membrane interactions with biomolecules",
         "excerpt":"Description Various possibilites are being investigated for the treatment of cancers. One of these possibilities is to bring inside the tumorous cells a molecule which will induce the cell death, a method called drug delivery. The design of a system for drug delivery requires two parts: the drug, or molecular...","categories": [],
         "tags": [],
@@ -118,4 +124,4 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/softwares/python/3-microimage/",
         "teaser": "http://localhost:4000/assets/images/logo.png"
-      }]
+      },]

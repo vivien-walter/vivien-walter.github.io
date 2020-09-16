@@ -12,13 +12,9 @@ header:
 You can find on this page a collection of all the <b>tutorials</b> and <b>lessons</b> I have
 created myself over time. All the materials are available for download as <b>pdf files</b>.
 
-<br>
-<br>
-
-<font color='red'><i><b>Important:</b> uploading all the tutorials and lessons I have made so far will take a long time.
-If the chapter or tutorial you are interested in has not been uploaded yet, please come back later or contact me.</i></font>
-
-</optgroup></i>
+<b>Important:</b> uploading all the tutorials and lessons I have made so far will take a long time.
+If the chapter or tutorial you are interested in has not been uploaded yet, please come back later or contact me.
+{: .notice--warning}
 
 <h2> Tutorials </h2>
 
