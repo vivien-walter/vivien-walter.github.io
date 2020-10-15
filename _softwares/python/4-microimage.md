@@ -1,7 +1,7 @@
 ---
 title: "microImage"
 language: "python"
-slug: "3-microimage"
+slug: "4-microimage"
 navslug: "mim"
 github-enable: true
 github-link: "https://github.com/vivien-walter/microImage"

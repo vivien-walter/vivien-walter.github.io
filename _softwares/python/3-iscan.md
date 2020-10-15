@@ -1,7 +1,7 @@
 ---
 title: "iSCAN"
 language: "python"
-slug: "2-iscan"
+slug: "3-iscan"
 navslug: "iscan"
 github-enable: true
 github-link: "https://github.com/vivien-walter/iscan"
