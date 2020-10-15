@@ -28,7 +28,7 @@ The software includes many options, such as generation of custom displays of the
 
 <!--more-->
 
-<center><img src="https://github.com/vivien-walter/hpymon/blob/main/sources/main/icons/linux/256.png" width='200' height='200'/></center>
+<center><img src="https://github.com/vivien-walter/hpymon/blob/main/sources/main/icons/linux/256.png?raw=true" width='200' height='200'/></center>
 <center><sub>Logo of HPyMon.</sub></center>
 
 ## Presentation
@@ -37,7 +37,7 @@ HPyMon is a complete **Python 3 software** - no terminal lines required and prov
 collect the **list of running jobs** there. HPyMon then display the list of job in its table interface to make it convenient to read for
 the user. The graphic user interface (GUI) of HPyMon is powered by **PyQt5**.
 
-<center><img src="https://github.com/vivien-walter/hpymon/blob/main/sources/main/resources/base/help/main.png" width='600' height='600'/></center>
+<center><img src="https://github.com/vivien-walter/hpymon/blob/main/sources/main/resources/base/help/main.png?raw=true" width='600' height='600'/></center>
 <center><sub>Main interface of HPyMon with displayed jobs.</sub></center>
 <br>
 
