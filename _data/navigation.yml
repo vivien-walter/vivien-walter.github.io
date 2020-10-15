@@ -38,6 +38,8 @@ sidebar-softwares:
     children:
       - title: "MLLPA"
         url: /softwares/#python-mllpa
+      - title: "HPyMon"
+        url: /softwares/#python-hpymon
       - title: "iSCAN"
         url: /softwares/#python-iscan
       - title: "microImage"
