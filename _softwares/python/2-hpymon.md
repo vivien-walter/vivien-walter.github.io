@@ -5,7 +5,7 @@ slug: "2-hpymon"
 navslug: "hpymon"
 github-enable: true
 github-link: "https://github.com/vivien-walter/hpymon"
-version: beta
+version: 1.0.1
 release: 2020
 python-version: 3
 support: true
