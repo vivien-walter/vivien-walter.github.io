@@ -5,7 +5,7 @@ slug: "1-mllpa"
 navslug: "mllpa"
 github-enable: true
 github-link: "https://github.com/vivien-walter/mllpa"
-version: alpha
+version: 1.0
 release: 2020
 python-version: 3
 support: true
