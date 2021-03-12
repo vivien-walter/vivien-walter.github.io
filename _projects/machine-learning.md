@@ -62,6 +62,6 @@ by Drs. **Carlos M. Marques** and **Adrien Gola**, also from the Institut Charle
 
 * [Walter et al., A machine learning study of the two states model for lipid bilayer phase transitions, *PCCP* **2020**, 22, 19147-54](/publications/2020-08-12-pccp/)
 
-* Walter et al., MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes, *submitted to J. Comp. Chem., Sept. 2020*
+* [Walter et al., MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes, *J. Comp. Chem.* **2021**](/publications/2021-03-06-jcompchem/)
 
-* Walter et al., Ripple-like instability in the gel phase of Phosphocholine membranes at finite size, *in preparation.*
+* Walter et al., Ripple-like instability in the gel phase of Phosphocholine membranes at finite size, *Submitted to BBA Biomembranes, March 2021.*
