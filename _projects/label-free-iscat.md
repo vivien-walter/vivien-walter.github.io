@@ -1,7 +1,7 @@
 ---
 title: "Label-Free Optical Imaging"
-active: true
-end-year: 9999
+active: false
+end-year: 2021
 slug: "label-free-iscat"
 header:
   overlay_image: /assets/images/projects/header-iscat.jpg
@@ -12,7 +12,7 @@ toc: true
 toc_sticky: true
 ---
 
-
+<!--
 <center><img src="{{ site.baseurl }}/assets/images/projects/image-iscat.png" width='300' height='300'/></center>
 <center><sub>Gold nanoparticles (40 nm) imaged in iSCAT</sub></center>
 
@@ -25,6 +25,8 @@ beam can interfere with a reference light beam, we are able to image on our micr
 as small as 2nm and **individual proteins and polymers as small as 100kg/mol** at ultra high speeds (> 10kHz).
 Going beyond the limitations in space and time resolutions of other types of optical microscopes, we use this
 technique to visualize key **events and reactions in cells** and other standard biophysical systems.
+
+-->
 
 <!--more-->
 
@@ -46,13 +48,13 @@ with any label-free molecule (*e.g.* nanoparticles, proteins, polymers), and its
 
 <br>
 
-For this project, I have build my own iSCAT microscope, which design can be described simply as it only requires a **coherent light source** (Laser), a **microscope objective**, a **polarised beam splitter** with a **wave plate**, and the **camera** for high-speed recording.
+For this project, I have built my own iSCAT microscope, which design can be described simply as it only requires a **coherent light source** (Laser), a **microscope objective**, a **polarised beam splitter** with a **wave plate**, and the **camera** for high-speed recording.
 
 ### Systems
 
 iSCAT microscopy can be applied to any kind of system, as the method does not require any specific property from the object imaged. For this project, we focussed on two topics:
 
-We first investigate in this project the formation of **membrane pores** in lipid bilayers. With the iSCAT, we can track proteins diffusing on the membrane, and analyse all the **interactions** leading to the formation of
+We first investigated in this project the formation of **membrane pores** in lipid bilayers. With the iSCAT, we can track proteins diffusing on the membrane, and analyse all the **interactions** leading to the formation of
 pores and the **kinetics** associated to these events.
 
 <center><img src="{{ site.baseurl }}/assets/images/projects/image-iscat3.png" width='300' height='300'/></center>
@@ -60,13 +62,17 @@ pores and the **kinetics** associated to these events.
 
 <br>
 
-Exploring more artificial soft matter problematics, we also study **polymers** with the iSCAT. The microscopy technique will allow us to unveil new insights on the polymer **properties** and **formations**.
+Exploring more artificial soft matter problematics, we also studied **polymers** with the iSCAT. The microscopy technique allowed us to unveil new insights on the polymer **properties** and **formations**.
 
 ## Supervision & Collaboration(s)
 
-This project is supervised by Prof. **Mark I Wallace** from the [Department of Chemistry](http://markwallace.org) of the King's College London (London, UK). I am myself co-supervising, along with Prof. Wallace, the
+This project was supervised by Prof. **Mark I Wallace** from the [Department of Chemistry](http://markwallace.org) of the King's College London (London, UK). I was myself co-supervising, along with Prof. Wallace, the
 PhD projects of **Christopher L Parperis** and **Yujie Guo**, respectively on membrane pores and polymers imaged in iSCAT.
 
-The whole project is financed through a **BBSRC grant** with [Oxford Nanopore Technologies](https://nanoporetech.com).
+The whole project was financed through a **BBSRC grant** with [Oxford Nanopore Technologies](https://nanoporetech.com).
 
-The investigation on polymers are made within a collaboration with Prof. **Rachel O'Reilly** and Dr. **Jeffrey Foster** from the [University of Birmingham](https://www.oreillygrouplab.com) (Birmingham, UK).
+The investigation on polymers were made within a collaboration with Prof. **Rachel O'Reilly** and Dr. **Jeffrey Foster** from the [University of Birmingham](https://www.oreillygrouplab.com) (Birmingham, UK).
+
+## Related publication(s)
+
+* Walter et al., Responsive point spread function engineering for interferometric scattering microscopy, *submitted to J Phys D* **2021**
