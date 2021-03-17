@@ -1,9 +1,9 @@
 ---
 title: "PostDoctoral Research Associate"
-order: 4
+order: 5
 type: "research"
-year: "2018 - 2021"
-company: "Department of Chemistry, King's College London"
+year: "2021 - present"
+company: "Department of Engineering, King's College London"
 location: "London (UK)"
 ---
 
