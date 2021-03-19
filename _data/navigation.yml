@@ -45,7 +45,7 @@ sidebar-softwares:
       - title: "microImage"
         url: /softwares/#python-mim
       - title: "md2stl"
-        url: /softwares/#python-mim
+        url: /softwares/#python-md2stl
   - title: "LabVIEW"
     children:
       - title: "Sentry"
