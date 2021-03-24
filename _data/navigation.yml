@@ -13,8 +13,8 @@ main:
 sidebar-research:
   - title: "Current Project(s)"
     children:
-      - title: "Molecular Communication"
-        url: /research/#project-molecular-communication
+      - title: "Label-Free Imaging"
+        url: /research/#project-label-free-iscat
       - title: "Simulations of Lipid Phases"
         url: /research/#project-lipid-phase
   - title: "Collaborations"
