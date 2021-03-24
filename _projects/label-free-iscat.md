@@ -12,7 +12,6 @@ toc: true
 toc_sticky: true
 ---
 
-<!--
 <center><img src="{{ site.baseurl }}/assets/images/projects/image-iscat.png" width='300' height='300'/></center>
 <center><sub>Gold nanoparticles (40 nm) imaged in iSCAT</sub></center>
 
@@ -25,8 +24,6 @@ beam can interfere with a reference light beam, we are able to image on our micr
 as small as 2nm and **individual proteins and polymers as small as 100kg/mol** at ultra high speeds (> 10kHz).
 Going beyond the limitations in space and time resolutions of other types of optical microscopes, we use this
 technique to visualize key **events and reactions in cells** and other standard biophysical systems.
-
--->
 
 <!--more-->
 
