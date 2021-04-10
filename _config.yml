@@ -18,9 +18,9 @@ minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "default"
 locale                   : "en-GB"
 title                    : "Vivien Walter's Website"
 title_separator          : "-"
-subtitle                 : "Lipid Membranes - Microscopy, Simulations & Data Analysis" # site tagline that appears below site title in masthead
+subtitle                 : "Biophysics & Biochemistry" # site tagline that appears below site title in masthead
 name                     : "Vivien WALTER"
-description              : "Website presenting all my research projects on the biophysics of lipid membranes."
+description              : "Website presenting all my research projects on biophysics and biochemistry."
 url                      : "vivien-walter.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Vivien WALTER, PhD"
   avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Research Associate in **Biophysics**"
+  bio              : "Research Associate in **Biophysics** and **Biochemistry**"
   location         : "London, UK"
   email            : # ""
   links:
