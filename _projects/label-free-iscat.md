@@ -1,6 +1,6 @@
 ---
 title: "Label-Free Optical Imaging"
-active: true
+active: false
 end-year: 2021
 slug: "label-free-iscat"
 header:
@@ -11,18 +11,19 @@ excerpt_separator: <!--more-->
 toc: true
 toc_sticky: true
 ---
-
+<!--
 <center><img src="{{ site.baseurl }}/assets/images/projects/image-iscat.png" width='300' height='300'/></center>
 <center><sub>Gold nanoparticles (40 nm) imaged in iSCAT</sub></center>
 
 <hr>
+-->
 
-As part of the [Wallace group](http://markwallace.org) at King's College London, I am
+As part of the [Wallace group](http://markwallace.org) at King's College London, I was
 investigating label-free optical imaging of single molecules, using **Interferometric Scattering**
 (iSCAT) microscopy. Using the fact that all particles can scatter light beams and that this scattered
-beam can interfere with a reference light beam, we are able to image on our microscope individual metal particles
+beam can interfere with a reference light beam, we were able to image on our microscope individual metal particles
 as small as 2nm and **individual proteins and polymers as small as 100kg/mol** at ultra high speeds (> 10kHz).
-Going beyond the limitations in space and time resolutions of other types of optical microscopes, we use this
+Going beyond the limitations in space and time resolutions of other types of optical microscopes, we used this
 technique to visualize key **events and reactions in cells** and other standard biophysical systems.
 
 <!--more-->
