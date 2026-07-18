@@ -1,0 +1,47 @@
+{
+    "site": {
+        "name": "Vivien Praud Walter"
+    },
+    "accessibility": {
+        "skipToContent": "Skip to main content"
+    },
+    "navigation": {
+        "primaryLabel": "Main navigation",
+        "home": "Home",
+        "experience": "Experience",
+        "projects": "Projects",
+        "research": "Research and publications",
+        "software": "Software",
+        "contact": "Contact"
+    },
+    "languageSwitcher": {
+        "label": "Choose language"
+    },
+    "languages": {
+        "fr": "Français",
+        "en": "English"
+    },
+    "pages": {
+        "home": {
+            "title": "Home"
+        },
+        "experience": {
+            "title": "Experience"
+        },
+        "projects": {
+            "title": "Projects"
+        },
+        "research": {
+            "title": "Research and publications"
+        },
+        "software": {
+            "title": "Software"
+        },
+        "contact": {
+            "title": "Contact"
+        }
+    },
+    "footer": {
+        "text": "Vivien Praud Walter"
+    }
+}
