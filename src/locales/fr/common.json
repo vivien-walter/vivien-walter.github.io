@@ -3,7 +3,8 @@
         "name": "Vivien Praud Walter"
     },
     "accessibility": {
-        "skipToContent": "Aller au contenu principal"
+        "skipToContent": "Aller au contenu principal",
+        "externalLink": "Lien externe"
     },
     "navigation": {
         "primaryLabel": "Navigation principale",
@@ -41,7 +42,28 @@
             "title": "Contact"
         }
     },
+    "content": {
+        "period": "Période",
+        "context": "Contexte",
+        "role": "Rôle",
+        "contribution": "Contribution personnelle",
+        "status": "État",
+        "confidentiality": "Confidentialité et limites",
+        "technologies": "Technologies et méthodes",
+        "resources": "Ressources",
+        "organisation": "Organisation",
+        "location": "Localisation",
+        "contractualTitle": "Intitulé contractuel",
+        "publicTitle": "Présentation professionnelle"
+    },
+    "links": {
+        "email": "Email",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "orcid": "ORCID",
+        "mllpa": "Site et documentation de MLLPA"
+    },
     "footer": {
-        "text": "Vivien Praud Walter"
+        "text": "Site professionnel de Vivien Praud Walter"
     }
 }

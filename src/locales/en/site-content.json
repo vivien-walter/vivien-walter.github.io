@@ -1,0 +1,699 @@
+{
+    "profile": {
+        "name": "Vivien Praud Walter",
+        "role": "R&D Project Manager",
+        "domains": "AI, software, scientific instrumentation and complex systems",
+        "introduction": "I lead multidisciplinary projects at the intersection of research, software development, artificial intelligence, instrumentation and real-world use."
+    },
+    "home": {
+        "eyebrow": "R&D Project Manager",
+        "title": "AI, software, scientific instrumentation and complex systems",
+        "introduction": "I support technical projects from initial needs and scoping through to deliverable validation. My background combines team coordination, scientific understanding, technical decision-making and direct development work when a project requires it.",
+        "primaryLinks": [
+            {
+                "label": "Explore projects",
+                "pageId": "projects"
+            },
+            {
+                "label": "View my experience",
+                "pageId": "experience"
+            }
+        ],
+        "dimensionsTitle": "Three dimensions of one profile",
+        "dimensions": [
+            {
+                "id": "project-leadership",
+                "title": "R&D project leadership",
+                "description": "Scoping, requirements analysis, specifications, roadmaps, multidisciplinary coordination, risk management, quality, funding and validation."
+            },
+            {
+                "id": "software-ai",
+                "title": "Software and artificial intelligence",
+                "description": "Python and TypeScript development, generative-AI integration, machine learning, data analysis, interfaces and automation."
+            },
+            {
+                "id": "instrumentation",
+                "title": "Instrumentation and complex systems",
+                "description": "Laboratory creation, experimental platforms, microscopy, microfluidics, electronics, prototyping and control software."
+            }
+        ],
+        "selectedContentTitle": "Selected work",
+        "selectedProjectIds": [
+            "lxp-campus",
+            "molecular-communication"
+        ],
+        "selectedSoftwareIds": [
+            "mllpa"
+        ],
+        "practicalTitle": "Practical information",
+        "practicalItems": [
+            "Based in Vendée, France.",
+            "Primarily interested in permanent employment.",
+            "Available for hybrid and fully remote work.",
+            "Available for occasional travel to client or partner sites.",
+            "Native French speaker with bilingual professional proficiency in English."
+        ],
+        "contactLink": {
+            "label": "Contact me",
+            "pageId": "contact"
+        }
+    },
+    "experiencePage": {
+        "eyebrow": "Experience",
+        "title": "A career across science, software and project leadership",
+        "introduction": [
+            "My career has developed around projects that required an understanding of several disciplines, organised collective work and direct contributions to the solution.",
+            "Following training in physics, chemistry and biophysics, I led experimental research projects, built scientific instruments and software, and later managed the development of a digital platform combining AI and XR."
+        ],
+        "journeyTitle": "Journey",
+        "journey": [
+            {
+                "id": "science-teaching",
+                "title": "Science and teaching",
+                "description": "Training in physics, chemistry, materials and nanoscience, complemented by a French national teaching qualification and several teaching roles."
+            },
+            {
+                "id": "biophysics",
+                "title": "Biophysics and research",
+                "description": "A PhD on lipid membranes and peptides, followed by research involving molecular simulation and machine learning."
+            },
+            {
+                "id": "instrumentation",
+                "title": "Instrumentation and complex systems",
+                "description": "Leadership of iSCAT platforms, creation of a molecular-communication laboratory and development of automated instruments."
+            },
+            {
+                "id": "digital-ai-xr",
+                "title": "Digital products, AI and XR",
+                "description": "Leadership of a virtual campus combining a web platform, educational tools, generative artificial intelligence and immersive applications."
+            },
+            {
+                "id": "current-positioning",
+                "title": "Current positioning",
+                "description": "An R&D Project Manager able to coordinate specialist teams while contributing directly to selected technical developments."
+            }
+        ],
+        "mainExperienceTitle": "Main professional experience",
+        "mainExperiences": [
+            {
+                "id": "imaginexr",
+                "organisation": "i-magineXR",
+                "location": "La Roche-sur-Yon, France",
+                "period": "January 2024 – July 2026",
+                "contractualTitle": "Product Manager",
+                "summary": "Led the creation of a virtual campus for a French digital apprenticeship training centre, combining a web platform, educational tools, generative artificial intelligence and XR.",
+                "highlights": [
+                    "Defined objectives, scope, technical and material resources, organisation and roadmap.",
+                    "Coordinated an average multidisciplinary team of eleven people through direct and matrix management.",
+                    "Gathered requirements, wrote functional and technical specifications and validated deliverables with the client.",
+                    "Contributed directly to the TypeScript, Node.js, Express and MongoDB backend and selected React interfaces.",
+                    "Designed the architecture and integration protocols for several generative-AI providers.",
+                    "Led prompt engineering and coordinated production of four XR applications."
+                ],
+                "projectIds": [
+                    "lxp-campus"
+                ]
+            },
+            {
+                "id": "kcl-molecular-communication",
+                "organisation": "King’s College London — Department of Engineering",
+                "location": "London, United Kingdom",
+                "period": "March 2021 – August 2023",
+                "contractualTitle": "Postdoctoral Research Associate",
+                "publicTitle": "R&D Project Manager",
+                "summary": "Created a molecular-communication laboratory and developed an experimental testbed combining chemistry, microfluidics, instrumentation, electronics and signal processing.",
+                "highlights": [
+                    "Created the laboratory, prepared the premises, selected equipment and established safety and operating protocols.",
+                    "Led an average team of five and trained nine users in total.",
+                    "Managed two EPSRC grants totalling €360,000.",
+                    "Developed a one-dimensional CNN to analyse UV-Visible signals and estimate the composition of aqueous solutions.",
+                    "Designed and manufactured six open-source syringe pumps.",
+                    "Produced work published in Nature Communications and IEEE T-MBMC."
+                ],
+                "projectIds": [
+                    "molecular-communication"
+                ]
+            },
+            {
+                "id": "kcl-iscat",
+                "organisation": "King’s College London",
+                "location": "London, United Kingdom",
+                "period": "March 2018 – March 2021",
+                "contractualTitle": "Postdoctoral Research Associate",
+                "publicTitle": "R&D Project Manager",
+                "summary": "Led a research project funded by the BBSRC and co-funded by Oxford Nanopore Technologies to build and operate an iSCAT microscope.",
+                "highlights": [
+                    "Led a €500,000 project.",
+                    "Managed three PhD researchers and two Master’s interns.",
+                    "Built the microscope from component procurement through optical-table assembly and qualification.",
+                    "Developed LabVIEW control and automation software.",
+                    "Designed most of the experimental chain, including protocols, samples, acquisition, image analysis and result analysis.",
+                    "Delivered a complete operational microscope."
+                ],
+                "projectIds": [
+                    "iscat-platform"
+                ]
+            },
+            {
+                "id": "strasbourg",
+                "organisation": "University of Strasbourg",
+                "location": "Strasbourg, France",
+                "period": "October 2017 – March 2018",
+                "contractualTitle": "Postdoctoral Research Associate",
+                "publicTitle": "R&D Project Manager",
+                "summary": "Provided scientific and operational direction for work involving lipid membranes, molecular simulation and machine learning.",
+                "highlights": [
+                    "Planned methods, milestones and scientific direction.",
+                    "Ran molecular-dynamics simulations using GROMACS.",
+                    "Developed machine-learning approaches followed by a three-dimensional CNN using TensorFlow.",
+                    "Led development of the open-source MLLPA Python module.",
+                    "Created the complete MLLPA website and documentation."
+                ],
+                "projectIds": [
+                    "mllpa-project"
+                ]
+            }
+        ],
+        "parallelTitle": "Alongside my main roles",
+        "parallelIntroduction": "Several assignments and collaborations were carried out alongside my main positions. They complement the overall career without representing a separate commercial activity.",
+        "parallelActivities": [
+            {
+                "id": "vidya-health",
+                "title": "Independent Technical Consultant — Vidya Health Ltd",
+                "period": "April – November 2020",
+                "summary": "Developed an automated medical microscope under NDA during the COVID-19 crisis.",
+                "highlights": [
+                    "Proposed the autofocus algorithm and wrote the technical specifications.",
+                    "Developed, integrated and deployed the LabVIEW software.",
+                    "Produced documentation and trained users.",
+                    "The prototype was reproduced on two additional microscopes."
+                ]
+            },
+            {
+                "id": "independent-consulting",
+                "title": "Independent Python, ML and generative-AI assignments",
+                "period": "Occasional assignments since 2023 — currently paused",
+                "summary": "Three to four paid or pro-bono assignments for teams requiring support with Python development, data analysis, machine learning or prompt engineering.",
+                "highlights": [
+                    "Prompt-engineering advice and training.",
+                    "Development of classification and data-analysis models.",
+                    "Python development and integration.",
+                    "Use of scikit-learn, TensorFlow or PyTorch according to project needs."
+                ]
+            },
+            {
+                "id": "ongoing-research",
+                "title": "Research and software continued in personal time",
+                "period": "Occasional activity",
+                "summary": "Continued scientific collaborations and work associated with MLLPA and lipid-membrane analysis.",
+                "highlights": [
+                    "Discussions with scientific collaborators.",
+                    "Occasional continuation of work associated with MLLPA.",
+                    "Work related to an unpublished three-dimensional CNN."
+                ]
+            }
+        ],
+        "teachingTitle": "Teaching and knowledge transfer",
+        "teaching": [
+            {
+                "id": "kcl-lecturer",
+                "organisation": "King’s College London",
+                "period": "January – June 2023",
+                "title": "Lecturer — Statistical Thermodynamics",
+                "summary": "Designed the complete programme and teaching materials and taught approximately one hundred third-year chemistry undergraduates entirely in English."
+            },
+            {
+                "id": "ecpm",
+                "organisation": "ECPM — University of Strasbourg",
+                "period": "2021 – 2023",
+                "title": "Visiting Lecturer — AI, machine learning, deep learning and Python",
+                "summary": "Designed programmes, teaching materials, exercises and examinations for three cohorts of approximately thirty Master’s-level engineering students."
+            },
+            {
+                "id": "earlier-teaching",
+                "organisation": "French secondary schools",
+                "period": "2008 – 2013",
+                "title": "Physics and chemistry teacher",
+                "summary": "Five intermittent placements or contracts at lower- and upper-secondary-school level."
+            }
+        ],
+        "educationTitle": "Education",
+        "education": [
+            {
+                "id": "phd",
+                "institution": "University of Strasbourg — Institut Charles Sadron",
+                "period": "2014 – 2017",
+                "qualification": "PhD in Biophysics",
+                "detail": "Interactions of lipid membranes with self-assembling cell-penetrating peptides."
+            },
+            {
+                "id": "capes",
+                "institution": "France",
+                "period": "2014",
+                "qualification": "CAPES in Physics and Chemistry",
+                "detail": "French national teaching qualification."
+            },
+            {
+                "id": "msc-materials",
+                "institution": "University of Strasbourg",
+                "period": "2013 – 2014",
+                "qualification": "MSc Physics — Materials and Nanoscience"
+            },
+            {
+                "id": "msc-education",
+                "institution": "University of Strasbourg",
+                "period": "2011 – 2013",
+                "qualification": "MSc Physics and Chemistry — Science Education"
+            }
+        ],
+        "personalTitle": "Outside professional work",
+        "personalIntroduction": "This section will present personal and creative activities as human context without artificially turning them into commercial skills.",
+        "personalActivities": [
+            "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        ]
+    },
+    "projectsPage": {
+        "eyebrow": "Projects",
+        "title": "Technical projects led from definition to working delivery",
+        "introduction": "These projects illustrate several forms of R&D leadership across digital products, artificial intelligence, experimental research, instrumentation, scientific software and automation.",
+        "featuredProjectId": "lxp-campus",
+        "otherProjectsTitle": "Other projects",
+        "otherProjectIds": [
+            "molecular-communication",
+            "iscat-platform",
+            "mllpa-project",
+            "medical-microscope"
+        ],
+        "continuationTitle": "Continue exploring",
+        "continuationText": "Software, publications and career information provide further context for these project summaries.",
+        "continuationLinks": [
+            {
+                "label": "View software",
+                "pageId": "software"
+            },
+            {
+                "label": "View research and publications",
+                "pageId": "research"
+            }
+        ]
+    },
+    "researchPage": {
+        "eyebrow": "Research and publications",
+        "title": "Research, instrumentation and scientific software",
+        "introduction": "My work connects biophysics, instrumentation, signal processing, machine learning and software development. This activity continues through publications, software and occasional collaborations.",
+        "axesTitle": "Research areas",
+        "axes": [
+            {
+                "id": "molecular-communication",
+                "title": "Molecular communication",
+                "description": "Experimental systems using chemical reactions, molecular signals, microfluidics and detection methods."
+            },
+            {
+                "id": "microscopy",
+                "title": "Microscopy and optical instrumentation",
+                "description": "Design of iSCAT platforms and automated instruments for observing and analysing biological and nanoscale systems."
+            },
+            {
+                "id": "lipid-membranes",
+                "title": "Lipid membranes and molecular simulation",
+                "description": "Research into phase transitions, membrane instabilities and interactions with peptides or proteins."
+            },
+            {
+                "id": "machine-learning",
+                "title": "Machine learning for scientific applications",
+                "description": "Classification, image and signal processing, one- and three-dimensional CNNs and scientific data analysis."
+            }
+        ],
+        "currentWorkTitle": "Current work and collaborations",
+        "currentWork": [
+            "Occasional continuation of scientific collaborations associated with lipid membranes and MLLPA.",
+            "Work related to an unpublished three-dimensional CNN.",
+            "Occasional maintenance of scientific and software resources when verified material is available."
+        ],
+        "selectedPublicationsTitle": "Selected publications",
+        "selectedPublicationIds": [
+            "nature-molecular-communication-2023",
+            "ieee-cnn-2026",
+            "jmicroscopy-2024"
+        ],
+        "publicationsTitle": "Available verified publications",
+        "publicationIds": [
+            "nature-molecular-communication-2023",
+            "ieee-cnn-2026",
+            "jmicroscopy-2024",
+            "jacs-2023",
+            "nature-self-assembly-2025",
+            "pccp-2020",
+            "jcc-mllpa-2021",
+            "bba-2021"
+        ],
+        "resourcesTitle": "Scientific software and resources",
+        "softwareIds": [
+            "mllpa",
+            "iscan",
+            "sentry",
+            "microimage",
+            "imagej-autocorrelation"
+        ],
+        "externalLinksTitle": "Identifiers and external resources",
+        "externalLinkIds": [
+            "orcid",
+            "github",
+            "mllpa"
+        ]
+    },
+    "softwarePage": {
+        "eyebrow": "Software",
+        "title": "Tools developed for concrete scientific needs",
+        "introduction": "These applications were created to analyse data, control instruments, automate experiments or make scientific methods reusable.",
+        "featuredSoftwareId": "mllpa",
+        "primaryTitle": "Main software",
+        "primarySoftwareIds": [
+            "iscan",
+            "sentry",
+            "microimage"
+        ],
+        "secondaryTitle": "Secondary or historical tools",
+        "secondarySoftwareIds": [
+            "hpymon",
+            "md2stl",
+            "imagej-autocorrelation"
+        ],
+        "continuationTitle": "Related projects and research",
+        "continuationLinks": [
+            {
+                "label": "View projects",
+                "pageId": "projects"
+            },
+            {
+                "label": "View research and publications",
+                "pageId": "research"
+            },
+            {
+                "label": "View GitHub",
+                "siteLinkId": "github"
+            }
+        ]
+    },
+    "contactPage": {
+        "eyebrow": "Contact",
+        "title": "Discuss a project, role or collaboration",
+        "introduction": "You can contact me directly by email or find my professional, software and research activity through the profiles below.",
+        "channelsTitle": "Contact details and profiles",
+        "channelLinkIds": [
+            "email",
+            "linkedin",
+            "github",
+            "orcid"
+        ],
+        "availabilityTitle": "Location and availability",
+        "availabilityItems": [
+            "Based in Essarts-en-Bocage, Vendée, with a planned move to Mouchamps before October 2026.",
+            "Primarily interested in permanent employment.",
+            "Available for hybrid and fully remote work.",
+            "Locally mobile within approximately one hour of Mouchamps.",
+            "Available for occasional travel.",
+            "Native French speaker with bilingual professional proficiency in English."
+        ],
+        "cvTitle": "Curriculum vitae",
+        "cvNotice": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+    },
+    "projects": {
+        "lxp-campus": {
+            "id": "lxp-campus",
+            "title": "Virtual LXP campus integrating AI and XR",
+            "period": "2024 – 2026",
+            "context": "Creation of a virtual campus for a French digital apprenticeship training centre delivering professional qualifications at levels 3 to 6.",
+            "role": "Product Manager responsible for project leadership, with direct contributions to the backend, selected interfaces and artificial-intelligence integration.",
+            "summary": "The project combined learning content, employment support, health and disability services, generative artificial intelligence and XR applications.",
+            "highlights": [
+                "Scoped the needs, project boundaries, resources and roadmap.",
+                "Coordinated an average multidisciplinary team of eleven people through direct and matrix management.",
+                "Wrote specifications and validated solutions with the client.",
+                "Developed parts of the TypeScript, Node.js, Express and MongoDB backend.",
+                "Designed the multi-provider generative-AI architecture and processing queue.",
+                "Led prompt engineering and coordinated production of four XR applications."
+            ],
+            "status": "When the contract ended, the backend and AI ecosystem were operational, all four XR applications were complete and the interface remained partially unfinished.",
+            "confidentiality": "The client is anonymised. No confidential interface or project material should be published without approval."
+        },
+        "molecular-communication": {
+            "id": "molecular-communication",
+            "title": "Molecular-communication laboratory and testbed",
+            "period": "2021 – 2023",
+            "context": "Creation at King’s College London of a laboratory and experimental platform designed to validate molecular-communication theories.",
+            "role": "R&D Project Manager and Postdoctoral Research Associate.",
+            "summary": "The project combined chemistry, microfluidics, instrumentation, electronics, software, signal processing and machine learning.",
+            "highlights": [
+                "Created the laboratory, selected equipment and established operating protocols.",
+                "Led an average team of five and trained nine users in total.",
+                "Managed two EPSRC grants totalling €360,000.",
+                "Developed a one-dimensional CNN to estimate solution composition from UV-Visible signals.",
+                "Designed and manufactured six open-source syringe pumps.",
+                "Produced publications in Nature Communications and IEEE T-MBMC."
+            ],
+            "status": "The laboratory was created, the experimental testbed became operational and the work resulted in publications."
+        },
+        "iscat-platform": {
+            "id": "iscat-platform",
+            "title": "iSCAT experimental platform",
+            "period": "2018 – 2021",
+            "context": "Research project at King’s College London funded by the BBSRC and co-funded by Oxford Nanopore Technologies.",
+            "role": "R&D Project Manager and Postdoctoral Research Associate.",
+            "summary": "Construction of a complete iSCAT microscope and development of the experimental chain from the instrument through to result analysis.",
+            "highlights": [
+                "Led a €500,000 project.",
+                "Managed three PhD researchers and two Master’s interns.",
+                "Selected components, assembled the optical table and qualified the instrument.",
+                "Developed LabVIEW control and automation software.",
+                "Designed protocols, samples, acquisition and analysis.",
+                "Contributed to several scientific publications."
+            ],
+            "status": "A complete operational microscope was delivered."
+        },
+        "mllpa-project": {
+            "id": "mllpa-project",
+            "title": "MLLPA — Machine Learning-assisted Lipid Phase Analysis",
+            "period": "Since 2017",
+            "context": "Work initiated at the University of Strasbourg to analyse lipid-membrane phases from molecular-dynamics simulations.",
+            "role": "Scientific lead for the initial project and principal developer of the Python module, website and documentation.",
+            "summary": "MLLPA turns a research method into a documented and reusable Python tool for analysing membrane systems.",
+            "highlights": [
+                "Developed approximately 95% of the Python module code.",
+                "Created the complete website and documentation.",
+                "Used NumPy, h5py, MDAnalysis, pandas and scikit-learn.",
+                "Developed machine-learning approaches and a three-dimensional CNN using TensorFlow.",
+                "Published several first-author papers."
+            ],
+            "status": "The open-source software is published, with related research continuing occasionally."
+        },
+        "medical-microscope": {
+            "id": "medical-microscope",
+            "title": "Automated medical microscope under NDA",
+            "period": "2020",
+            "context": "Technical consulting assignment for Vidya Health Ltd during the COVID-19 crisis.",
+            "role": "Independent Technical Consultant responsible for the autofocus algorithm and LabVIEW software.",
+            "summary": "Developed and deployed an automated microscope for medical-sample analysis, while the precise details remain confidential.",
+            "highlights": [
+                "Proposed the autofocus algorithm.",
+                "Wrote the technical specifications.",
+                "Developed, integrated and deployed the LabVIEW software.",
+                "Produced documentation and trained users.",
+                "The prototype was reproduced on two additional microscopes."
+            ],
+            "status": "The prototype was deployed and later reproduced on two additional instruments.",
+            "confidentiality": "The sample type and precise medical purpose are covered by NDA."
+        }
+    },
+    "software": {
+        "mllpa": {
+            "id": "mllpa",
+            "name": "MLLPA",
+            "purpose": "Python module for machine-learning-assisted analysis of lipid-membrane phases.",
+            "context": "Created through research into phase transitions in lipid membranes simulated using molecular dynamics.",
+            "contribution": "Developed approximately 95% of the code and created the complete website and documentation.",
+            "status": "Published open-source project with related scientific work continuing occasionally.",
+            "technologies": [
+                "Python",
+                "NumPy",
+                "h5py",
+                "MDAnalysis",
+                "pandas",
+                "scikit-learn",
+                "TensorFlow"
+            ],
+            "linkIds": [
+                "mllpa",
+                "github"
+            ],
+            "relatedProjectIds": [
+                "mllpa-project"
+            ],
+            "relatedPublicationIds": [
+                "pccp-2020",
+                "jcc-mllpa-2021",
+                "bba-2021"
+            ]
+        },
+        "iscan": {
+            "id": "iscan",
+            "name": "iSCAN",
+            "purpose": "Graphical interface for analysing iSCAT images.",
+            "context": "Developed for microscopy and image-analysis work carried out at King’s College London.",
+            "contribution": "Developed the scientific software.",
+            "status": "[CONTENU À FOURNIR — NE PAS PUBLIER]",
+            "relatedProjectIds": [
+                "iscat-platform"
+            ]
+        },
+        "sentry": {
+            "id": "sentry",
+            "name": "Sentry",
+            "purpose": "LabVIEW software controlling and automating an iSCAT microscope.",
+            "context": "Developed for the iSCAT experimental platform built at King’s College London.",
+            "contribution": "Designed and developed the control and automation software.",
+            "status": "Software used on the delivered operational iSCAT platform.",
+            "technologies": [
+                "LabVIEW"
+            ],
+            "relatedProjectIds": [
+                "iscat-platform"
+            ]
+        },
+        "microimage": {
+            "id": "microimage",
+            "name": "microImage",
+            "purpose": "Library for microscopy-image input, output and processing.",
+            "context": "Created to support scientific image-analysis pipelines.",
+            "contribution": "Developed the library.",
+            "status": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        },
+        "hpymon": {
+            "id": "hpymon",
+            "name": "HPyMon",
+            "purpose": "Graphical interface for monitoring jobs on remote computing infrastructure.",
+            "context": "Created to simplify monitoring of scientific computing jobs.",
+            "contribution": "Developed the interface.",
+            "status": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        },
+        "md2stl": {
+            "id": "md2stl",
+            "name": "md2stl",
+            "purpose": "Python tools for generating printable STL files from molecular-dynamics data.",
+            "context": "Developed to transform structures from molecular simulations into printable three-dimensional objects.",
+            "contribution": "Developed the Python tools.",
+            "status": "[CONTENU À FOURNIR — NE PAS PUBLIER]",
+            "technologies": [
+                "Python",
+                "3D printing"
+            ]
+        },
+        "imagej-autocorrelation": {
+            "id": "imagej-autocorrelation",
+            "name": "ImageJ autocorrelation plugin",
+            "purpose": "Plugin supporting autocorrelation analysis in ImageJ.",
+            "context": "Developed to address a scientific image-analysis requirement.",
+            "contribution": "Developed the plugin.",
+            "status": "[CONTENU À FOURNIR — NE PAS PUBLIER]",
+            "technologies": [
+                "ImageJ",
+                "Java"
+            ]
+        }
+    },
+    "publications": {
+        "nature-molecular-communication-2023": {
+            "id": "nature-molecular-communication-2023",
+            "title": "Real-time signal processing via chemical reactions for a microfluidic molecular communication system",
+            "journal": "Nature Communications",
+            "year": "2023",
+            "contribution": "First author and lead writer.",
+            "relatedProjectIds": [
+                "molecular-communication"
+            ]
+        },
+        "ieee-cnn-2026": {
+            "id": "ieee-cnn-2026",
+            "title": "CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication",
+            "journal": "IEEE Transactions on Molecular, Biological and Multi-Scale Communications",
+            "year": "2026",
+            "contribution": "First author and lead writer.",
+            "relatedProjectIds": [
+                "molecular-communication"
+            ]
+        },
+        "jmicroscopy-2024": {
+            "id": "jmicroscopy-2024",
+            "title": "Spatial light modulation for interferometric scattering microscopy",
+            "journal": "Journal of Microscopy",
+            "year": "2024",
+            "contribution": "Lead author.",
+            "relatedProjectIds": [
+                "iscat-platform"
+            ],
+            "relatedSoftwareIds": [
+                "sentry",
+                "iscan"
+            ]
+        },
+        "jacs-2023": {
+            "id": "jacs-2023",
+            "title": "Real-Time Monitoring and Control of Nanoparticle Formation",
+            "journal": "Journal of the American Chemical Society",
+            "year": "2023",
+            "contribution": "Co-author; contributed equations, calculations, software, analysis scripts, review, advice and mentoring of the first author.",
+            "relatedProjectIds": [
+                "iscat-platform"
+            ]
+        },
+        "nature-self-assembly-2025": {
+            "id": "nature-self-assembly-2025",
+            "title": "Real-time label-free imaging of living crystallization-driven self-assembly",
+            "journal": "Nature Communications",
+            "year": "2025",
+            "contribution": "Co-author; contributed equations, calculations, software, analysis scripts, review, advice and mentoring of the first author.",
+            "relatedProjectIds": [
+                "iscat-platform"
+            ]
+        },
+        "pccp-2020": {
+            "id": "pccp-2020",
+            "title": "A machine learning study of the two states model for lipid bilayer phase transitions",
+            "journal": "Physical Chemistry Chemical Physics",
+            "year": "2020",
+            "contribution": "First author.",
+            "relatedProjectIds": [
+                "mllpa-project"
+            ],
+            "relatedSoftwareIds": [
+                "mllpa"
+            ]
+        },
+        "jcc-mllpa-2021": {
+            "id": "jcc-mllpa-2021",
+            "title": "MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes",
+            "journal": "Journal of Computational Chemistry",
+            "year": "2021",
+            "contribution": "First author.",
+            "relatedProjectIds": [
+                "mllpa-project"
+            ],
+            "relatedSoftwareIds": [
+                "mllpa"
+            ]
+        },
+        "bba-2021": {
+            "id": "bba-2021",
+            "title": "Ripple-like instability in the simulated gel phase of finite size phosphocholine bilayers",
+            "journal": "BBA Biomembranes",
+            "year": "2021",
+            "contribution": "First author.",
+            "relatedProjectIds": [
+                "mllpa-project"
+            ],
+            "relatedSoftwareIds": [
+                "mllpa"
+            ]
+        }
+    }
+}

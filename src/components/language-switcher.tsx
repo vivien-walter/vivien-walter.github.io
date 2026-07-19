@@ -1,18 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
 
 import {
   getEquivalentLanguagePath,
-  isSupportedLanguage,
+  getLanguageFromPathname,
   supportedLanguages,
-  type SupportedLanguage,
 } from "../navigation";
-
-function getLanguageFromPathname(pathname: string): SupportedLanguage {
-  const languageSegment = pathname.split("/")[1];
-
-  return isSupportedLanguage(languageSegment) ? languageSegment : "fr";
-}
 
 function LanguageSwitcher() {
   const location = useLocation();
@@ -21,20 +14,32 @@ function LanguageSwitcher() {
   const currentLanguage = getLanguageFromPathname(location.pathname);
 
   return (
-    <nav aria-label={t("languageSwitcher.label")}>
-      <ul>
-        {supportedLanguages.map((language) => (
-          <li key={language}>
-            <Link
-              to={getEquivalentLanguagePath(location.pathname, language)}
-              lang={language}
-              hrefLang={language}
-              aria-current={language === currentLanguage ? "page" : undefined}
-            >
-              {t(`languages.${language}`)}
-            </Link>
-          </li>
-        ))}
+    <nav
+      className="language-switcher"
+      aria-label={t("languageSwitcher.label", {
+        lng: currentLanguage,
+      })}
+    >
+      <ul className="language-switcher__list">
+        {supportedLanguages.map((language) => {
+          const isCurrentLanguage = language === currentLanguage;
+
+          return (
+            <li className="language-switcher__item" key={language}>
+              <Link
+                className="language-switcher__link"
+                to={getEquivalentLanguagePath(location.pathname, language)}
+                lang={language}
+                hrefLang={language}
+                aria-current={isCurrentLanguage ? "page" : undefined}
+              >
+                {t(`languages.${language}`, {
+                  lng: currentLanguage,
+                })}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

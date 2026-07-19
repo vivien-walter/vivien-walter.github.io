@@ -1,48 +1,72 @@
-import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
 
 import {
+  getLanguageFromPathname,
   getPageIdFromPathname,
   getPageRoute,
-  isSupportedLanguage,
-  primaryNavigationItems,
-  type SupportedLanguage,
+  mobileNavigationItems,
 } from "../navigation";
 import LanguageSwitcher from "./language-switcher";
-
-function getCurrentLanguage(pathname: string): SupportedLanguage {
-  const languageSegment = pathname.split("/")[1];
-
-  return isSupportedLanguage(languageSegment) ? languageSegment : "fr";
-}
 
 function SiteHeader() {
   const location = useLocation();
   const { t } = useTranslation();
 
-  const currentLanguage = getCurrentLanguage(location.pathname);
+  const currentLanguage = getLanguageFromPathname(location.pathname);
   const currentPageId = getPageIdFromPathname(location.pathname);
 
   return (
-    <header>
-      <Link to={getPageRoute("home", currentLanguage)}>{t("site.name")}</Link>
+    <header className="site-header">
+      <div className="site-header__inner">
+        <Link
+          className="site-brand"
+          to={getPageRoute("home", currentLanguage)}
+          aria-current={currentPageId === "home" ? "page" : undefined}
+        >
+          {t("site.name", {
+            lng: currentLanguage,
+          })}
+        </Link>
 
-      <nav aria-label={t("navigation.primaryLabel")}>
-        <ul>
-          {primaryNavigationItems.map((item) => (
-            <li key={item.id}>
-              <Link
-                to={item.routes[currentLanguage]}
-                aria-current={currentPageId === item.id ? "page" : undefined}
-              >
-                {t(item.labelKey)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <nav
+          className="primary-navigation"
+          aria-label={t("navigation.primaryLabel", {
+            lng: currentLanguage,
+          })}
+        >
+          <ul className="primary-navigation__list">
+            {mobileNavigationItems.map((item) => {
+              const itemClassName = [
+                "primary-navigation__item",
+                item.showInPrimaryNavigation
+                  ? ""
+                  : "primary-navigation__item--mobile-only",
+              ]
+                .filter(Boolean)
+                .join(" ");
 
-      <LanguageSwitcher />
+              const isCurrentPage = currentPageId === item.id;
+
+              return (
+                <li className={itemClassName} key={item.id}>
+                  <Link
+                    className="primary-navigation__link"
+                    to={item.routes[currentLanguage]}
+                    aria-current={isCurrentPage ? "page" : undefined}
+                  >
+                    {t(item.labelKey, {
+                      lng: currentLanguage,
+                    })}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        <LanguageSwitcher />
+      </div>
     </header>
   );
 }
