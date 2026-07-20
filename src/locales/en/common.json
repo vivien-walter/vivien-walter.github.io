@@ -31,7 +31,22 @@
             "title": "Experience"
         },
         "projects": {
-            "title": "Projects"
+            "title": "Projects",
+            "controls": {
+                "sortLabel": "Sort projects",
+                "sortPlaceholder": "Sort by",
+                "sortByDateDescending": "Date (newest first)",
+                "sortByDateAscending": "Date (oldest first)",
+                "sortByNameAscending": "Name (A to Z)",
+                "sortByNameDescending": "Name (Z to A)",
+                "filters": "Filters",
+                "filterByProject": "Project",
+                "filterByLanguage": "Language",
+                "clearFilters": "Clear filters",
+                "results_one": "{{count}} project shown",
+                "results_other": "{{count}} projects shown",
+                "noResults": "No projects match the selected filters."
+            }
         },
         "research": {
             "title": "Research and publications"

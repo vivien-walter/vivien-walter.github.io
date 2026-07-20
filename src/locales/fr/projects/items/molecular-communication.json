@@ -85,5 +85,9 @@
         "Impression 3D",
         "Microfluidique",
         "Spectroscopie UV-Visible"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "C++"
     ]
 }

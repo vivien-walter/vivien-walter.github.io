@@ -31,7 +31,22 @@
             "title": "Parcours"
         },
         "projects": {
-            "title": "Projets"
+            "title": "Projets",
+            "controls": {
+                "sortLabel": "Trier les projets",
+                "sortPlaceholder": "Trier par",
+                "sortByDateDescending": "Date (récent d’abord)",
+                "sortByDateAscending": "Date (ancien d’abord)",
+                "sortByNameAscending": "Nom (A à Z)",
+                "sortByNameDescending": "Nom (Z à A)",
+                "filters": "Filtres",
+                "filterByProject": "Projet",
+                "filterByLanguage": "Langage",
+                "clearFilters": "Effacer les filtres",
+                "results_one": "{{count}} projet affiché",
+                "results_other": "{{count}} projets affichés",
+                "noResults": "Aucun projet ne correspond aux filtres sélectionnés."
+            }
         },
         "research": {
             "title": "Recherche et publications"

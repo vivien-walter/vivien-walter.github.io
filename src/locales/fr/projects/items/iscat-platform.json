@@ -67,5 +67,10 @@
         "LabVIEW",
         "Macros ImageJ",
         "Java pour ImageJ"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "LabVIEW",
+        "Java"
     ]
 }

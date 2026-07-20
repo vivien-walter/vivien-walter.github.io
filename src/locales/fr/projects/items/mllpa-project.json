@@ -65,6 +65,10 @@
         "Bash",
         "SLURM"
     ],
+    "programmingLanguages": [
+        "Python",
+        "Bash"
+    ],
     "links": [
         {
             "label": "Site et documentation de MLLPA",

@@ -1,3 +1,9 @@
+import {
+  useMemo,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
@@ -5,12 +11,12 @@ import {
   getLanguageFromPathname,
   getPageRoute,
 } from "@/app/routing/navigation";
-import { Card, CardContent } from "@/components/ui/card";
-import ContentLink from "@/shared/components/content-link";
-import ContentSections from "@/shared/components/content-sections";
 import PageHero from "@/shared/components/page-hero";
 
-import ProjectEntry from "./components/project-entry";
+import ProjectControls, {
+  type ProjectSortOption,
+} from "./components/project-controls";
+import ProjectIndexCard from "./components/project-index-card";
 import {
   getProjectById,
   getProjectIndex,
@@ -23,30 +29,172 @@ function ProjectsPage() {
   const language = getLanguageFromPathname(location.pathname);
   const page = getProjectPage(language);
   const index = getProjectIndex(language);
-  const featuredIds = new Set(index.featured ?? []);
 
-  const projects = index.order.flatMap((projectId) => {
-    const project = getProjectById(language, projectId);
+  const [sortBy, setSortBy] =
+    useState<ProjectSortOption>("date-descending");
 
-    return project ? [{ project, projectId }] : [];
-  });
+  const [selectedProjects, setSelectedProjects] =
+    useState<ReadonlySet<string>>(() => new Set<string>());
+
+  const [selectedLanguages, setSelectedLanguages] =
+    useState<ReadonlySet<string>>(() => new Set<string>());
+
+  const projects = useMemo(
+    () =>
+      index.order.flatMap((projectId, originalIndex) => {
+        const project = getProjectById(language, projectId);
+
+        return project
+          ? [{ project, projectId, originalIndex }]
+          : [];
+      }),
+    [index.order, language],
+  );
+
+  const projectOptions = useMemo(
+    () =>
+      projects.map(({ project, projectId }) => ({
+        value: projectId,
+        label: project.title,
+      })),
+    [projects],
+  );
+
+  const languageOptions = useMemo(() => {
+    const values = new Set<string>();
+
+    projects.forEach(({ project }) => {
+      project.programmingLanguages?.forEach(
+        (programmingLanguage) => {
+          values.add(programmingLanguage);
+        },
+      );
+    });
+
+    const locale = language === "fr" ? "fr-FR" : "en-GB";
+
+    return [...values]
+      .sort((first, second) =>
+        first.localeCompare(second, locale, {
+          sensitivity: "base",
+        }),
+      )
+      .map((value) => ({
+        value,
+        label: value,
+      }));
+  }, [language, projects]);
+
+  const visibleProjects = useMemo(() => {
+    const locale = language === "fr" ? "fr-FR" : "en-GB";
+
+    return projects
+      .filter(({ project, projectId }) => {
+        const matchesProject =
+          selectedProjects.size === 0 ||
+          selectedProjects.has(projectId);
+
+        const matchesLanguage =
+          selectedLanguages.size === 0 ||
+          project.programmingLanguages?.some(
+            (programmingLanguage) =>
+              selectedLanguages.has(programmingLanguage),
+          ) === true;
+
+        return matchesProject && matchesLanguage;
+      })
+      .sort((first, second) => {
+        const firstDate = first.project.period?.start ?? "";
+        const secondDate = second.project.period?.start ?? "";
+
+        let comparison = 0;
+
+        switch (sortBy) {
+          case "date-descending":
+            comparison = secondDate.localeCompare(firstDate);
+            break;
+
+          case "date-ascending":
+            comparison = firstDate.localeCompare(secondDate);
+            break;
+
+          case "name-ascending":
+            comparison = first.project.title.localeCompare(
+              second.project.title,
+              locale,
+              {
+                sensitivity: "base",
+              },
+            );
+            break;
+
+          case "name-descending":
+            comparison = second.project.title.localeCompare(
+              first.project.title,
+              locale,
+              {
+                sensitivity: "base",
+              },
+            );
+            break;
+        }
+
+        return comparison !== 0
+          ? comparison
+          : first.originalIndex - second.originalIndex;
+      });
+  }, [
+    language,
+    projects,
+    selectedLanguages,
+    selectedProjects,
+    sortBy,
+  ]);
+
+  function updateSelection(
+    setter: Dispatch<
+      SetStateAction<ReadonlySet<string>>
+    >,
+    value: string,
+    checked: boolean,
+  ) {
+    setter((currentValues) => {
+      const nextValues = new Set(currentValues);
+
+      if (checked) {
+        nextValues.add(value);
+      } else {
+        nextValues.delete(value);
+      }
+
+      return nextValues;
+    });
+  }
 
   return (
     <div className="overflow-hidden">
       <PageHero
         breadcrumbs={{
-          ariaLabel: t("breadcrumbs.label", { lng: language }),
+          ariaLabel: t("breadcrumbs.label", {
+            lng: language,
+          }),
           items: [
             {
-              label: t("breadcrumbs.home", { lng: language }),
+              label: t("breadcrumbs.home", {
+                lng: language,
+              }),
               to: getPageRoute("home", language),
             },
             {
-              label: t("breadcrumbs.projects", { lng: language }),
+              label: t("breadcrumbs.projects", {
+                lng: language,
+              }),
             },
           ],
         }}
-        eyebrow={t("pages.projects.title", { lng: language })}
+        eyebrow={t("pages.projects.title", {
+          lng: language,
+        })}
         title={page.title}
         introduction={page.introduction}
       />
@@ -54,63 +202,125 @@ function ProjectsPage() {
       <div
         className={[
           "mx-auto w-full max-w-editorial px-page",
-          "py-12 sm:py-14 lg:py-16",
+          "py-10 sm:py-12 lg:py-14",
         ].join(" ")}
       >
-        <ContentSections
-          idPrefix="projects-page"
-          sections={page.sections ?? []}
-        />
+        <section
+          aria-label={t(
+            "pages.projects.controls.filters",
+            {
+              lng: language,
+            },
+          )}
+        >
+          <ProjectControls
+            sortBy={sortBy}
+            projectOptions={projectOptions}
+            languageOptions={languageOptions}
+            selectedProjects={selectedProjects}
+            selectedLanguages={selectedLanguages}
+            labels={{
+              sortLabel: t(
+                "pages.projects.controls.sortLabel",
+                { lng: language },
+              ),
+              sortPlaceholder: t(
+                "pages.projects.controls.sortPlaceholder",
+                { lng: language },
+              ),
+              sortByDateDescending: t(
+                "pages.projects.controls.sortByDateDescending",
+                { lng: language },
+              ),
+              sortByDateAscending: t(
+                "pages.projects.controls.sortByDateAscending",
+                { lng: language },
+              ),
+              sortByNameAscending: t(
+                "pages.projects.controls.sortByNameAscending",
+                { lng: language },
+              ),
+              sortByNameDescending: t(
+                "pages.projects.controls.sortByNameDescending",
+                { lng: language },
+              ),
+              filters: t(
+                "pages.projects.controls.filters",
+                { lng: language },
+              ),
+              filterByProject: t(
+                "pages.projects.controls.filterByProject",
+                { lng: language },
+              ),
+              filterByLanguage: t(
+                "pages.projects.controls.filterByLanguage",
+                { lng: language },
+              ),
+              clearFilters: t(
+                "pages.projects.controls.clearFilters",
+                { lng: language },
+              ),
+            }}
+            onSortChange={setSortBy}
+            onProjectChange={(value, checked) => {
+              updateSelection(
+                setSelectedProjects,
+                value,
+                checked,
+              );
+            }}
+            onLanguageChange={(value, checked) => {
+              updateSelection(
+                setSelectedLanguages,
+                value,
+                checked,
+              );
+            }}
+            onClearFilters={() => {
+              setSelectedProjects(new Set<string>());
+              setSelectedLanguages(new Set<string>());
+            }}
+          />
 
-        {projects.length > 0 ? (
-          <section
-            className="border-t border-border py-12 sm:py-14 lg:py-16"
-            aria-labelledby="projects-list-title"
+          <p
+            className="sr-only"
+            aria-live="polite"
+            aria-atomic="true"
           >
-            <header className="mb-8 max-w-readable">
-              <h2
-                id="projects-list-title"
-                className={[
-                  "!m-0 text-xl font-bold leading-heading",
-                  "tracking-[-0.025em] text-heading",
-                ].join(" ")}
-              >
-                {t("pages.projects.title", { lng: language })}
-              </h2>
-            </header>
+            {t("pages.projects.controls.results", {
+              lng: language,
+              count: visibleProjects.length,
+            })}
+          </p>
 
-            <div className="grid gap-6">
-              {projects.map(({ project, projectId }) => (
-                <ProjectEntry
-                  key={projectId}
-                  featured={featuredIds.has(projectId)}
-                  project={project}
-                  projectId={projectId}
-                  language={language}
-                />
-              ))}
-            </div>
-          </section>
-        ) : null}
-
-        {page.links && page.links.length > 0 ? (
-          <nav
-            className="border-t border-border py-12 sm:py-14 lg:py-16"
-            aria-label={t("content.resources", { lng: language })}
-          >
-            <Card className="gap-0 border-border-strong py-0 shadow-subtle">
-              <CardContent className="grid gap-1 p-3 sm:p-4">
-                {page.links.map((link, indexValue) => (
-                  <ContentLink
-                    key={`${link.href}-${indexValue}`}
-                    link={link}
-                    variant="resource"
+          {visibleProjects.length > 0 ? (
+            <div className="mt-6 grid gap-3 sm:mt-7">
+              {visibleProjects.map(
+                ({ project, projectId }) => (
+                  <ProjectIndexCard
+                    key={projectId}
+                    project={project}
+                    projectId={projectId}
+                    language={language}
                   />
-                ))}
-              </CardContent>
-            </Card>
-          </nav>
-        ) : null}
+                ),
+              )}
+            </div>
+          ) : (
+            <p
+              className={[
+                "!m-0 mt-7 rounded-lg",
+                "border border-border bg-brand-hero",
+                "px-5 py-8 text-center",
+                "text-muted-foreground",
+              ].join(" ")}
+            >
+              {t("pages.projects.controls.noResults", {
+                lng: language,
+              })}
+            </p>
+          )}
+        </section>
       </div>
     </div>
   );

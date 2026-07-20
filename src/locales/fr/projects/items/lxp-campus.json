@@ -72,5 +72,8 @@
         "Mistral",
         "DeepSeek",
         "Réalité virtuelle et augmentée"
+    ],
+    "programmingLanguages": [
+        "TypeScript"
     ]
 }

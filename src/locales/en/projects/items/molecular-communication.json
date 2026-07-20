@@ -85,5 +85,9 @@
         "3D printing",
         "Microfluidics",
         "UV-Visible spectroscopy"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "C++"
     ]
 }

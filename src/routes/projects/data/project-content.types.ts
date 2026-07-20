@@ -11,6 +11,7 @@ export type ProjectContent = {
   readonly period?: ContentDateRange;
   readonly sections: readonly ContentSection[];
   readonly technologies?: readonly string[];
+  readonly programmingLanguages?: readonly string[];
   readonly links?: readonly ContentLink[];
 };
 
