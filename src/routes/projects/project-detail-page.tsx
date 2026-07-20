@@ -10,11 +10,10 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import NotFoundPage from "@/routes/not-found/not-found-page";
-import Breadcrumbs from "@/shared/components/breadcrumbs";
 import ContentLink from "@/shared/components/content-link";
 import ContentSections from "@/shared/components/content-sections";
 import DetailNavigation from "@/shared/components/detail-navigation";
-import PageHeader from "@/shared/components/page-header";
+import PageHero from "@/shared/components/page-hero";
 import { formatContentDateRange } from "@/shared/content/content-formatters";
 
 import {
@@ -44,23 +43,11 @@ function ProjectDetailPage() {
     : undefined;
 
   return (
-    <article
-      className="relative isolate overflow-hidden"
-      aria-labelledby="page-title"
-    >
-      <div
-        aria-hidden="true"
-        className={[
-          "pointer-events-none absolute inset-x-0 top-0 -z-10",
-          "h-[clamp(18rem,42vw,32rem)]",
-          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
-        ].join(" ")}
-      />
-
-      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
-        <Breadcrumbs
-          ariaLabel={t("breadcrumbs.label", { lng: language })}
-          items={[
+    <article className="overflow-hidden" aria-labelledby="page-title">
+      <PageHero
+        breadcrumbs={{
+          ariaLabel: t("breadcrumbs.label", { lng: language }),
+          items: [
             {
               label: t("breadcrumbs.home", { lng: language }),
               to: getPageRoute("home", language),
@@ -72,15 +59,19 @@ function ProjectDetailPage() {
             {
               label: project.title,
             },
-          ]}
-        />
+          ],
+        }}
+        eyebrow={t("projectDetail.eyebrow", { lng: language })}
+        title={project.title}
+        introduction={project.summary}
+      />
 
-        <PageHeader
-          eyebrow={t("projectDetail.eyebrow", { lng: language })}
-          title={project.title}
-          introduction={project.summary}
-        />
-
+      <div
+        className={[
+          "mx-auto w-full max-w-editorial px-page",
+          "py-12 sm:py-14 lg:py-16",
+        ].join(" ")}
+      >
         {project.period ? (
           <section
             className="border-t border-border py-12 sm:py-14 lg:py-16"

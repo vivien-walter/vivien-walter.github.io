@@ -10,6 +10,7 @@ import {
   getNavigationItemFromPathname,
   getRouteMatchFromPathname,
 } from "../routing/navigation";
+import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 
 function AppShell() {
@@ -111,22 +112,7 @@ function AppShell() {
         <Outlet />
       </main>
 
-      <footer className="relative border-t border-border bg-surface-subtle">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-copper/50 to-transparent"
-        />
-
-        <div className="mx-auto flex w-full max-w-wide items-center gap-4 px-page py-7 sm:py-8">
-          <span aria-hidden="true" className="h-px w-8 shrink-0 bg-copper" />
-
-          <p className="m-0 text-sm text-muted-foreground">
-            {t("footer.text", {
-              lng: currentLanguage,
-            })}
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

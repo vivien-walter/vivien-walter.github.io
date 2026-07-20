@@ -1,0 +1,34 @@
+{
+    "title": "Recent work",
+    "items": [
+        {
+            "kind": "project",
+            "contentId": "lxp-campus",
+            "title": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+            "summary": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+            "period": {
+                "start": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+                "end": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]"
+            }
+        },
+        {
+            "kind": "software",
+            "contentId": "mllpa",
+            "projectId": "mllpa-project",
+            "title": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+            "summary": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+            "primaryLanguage": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]"
+        },
+        {
+            "kind": "publication",
+            "contentId": "nature-molecular-communication-2023",
+            "title": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+            "summary": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+            "journal": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+            "doi": {
+                "label": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]",
+                "href": "[CONTENT TO BE PROVIDED — DO NOT PUBLISH]"
+            }
+        }
+    ]
+}

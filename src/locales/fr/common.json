@@ -24,7 +24,8 @@
     },
     "pages": {
         "home": {
-            "title": "Accueil"
+            "title": "Accueil",
+            "followDaily": "Me suivre au quotidien"
         },
         "experience": {
             "title": "Parcours"
@@ -65,6 +66,11 @@
         "relatedSoftware": "Logiciels associés",
         "relatedPublications": "Publications associées"
     },
+    "contentKinds": {
+        "project": "Projet",
+        "software": "Logiciel",
+        "publication": "Publication"
+    },
     "actions": {
         "viewProject": "Voir le projet détaillé",
         "viewSoftware": "Voir le logiciel détaillé",
@@ -74,7 +80,8 @@
         "previousProject": "Projet précédent",
         "nextProject": "Projet suivant",
         "previousSoftware": "Logiciel précédent",
-        "nextSoftware": "Logiciel suivant"
+        "nextSoftware": "Logiciel suivant",
+        "learnMore": "En savoir plus"
     },
     "projectDetail": {
         "eyebrow": "Projet détaillé",

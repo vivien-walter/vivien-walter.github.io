@@ -1,0 +1,29 @@
+{
+    "title": "Axes de recherche",
+    "items": [
+        {
+            "id": "optics-photonics",
+            "icon": "optics",
+            "title": "[CONTENU À FOURNIR — NE PAS PUBLIER]",
+            "description": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        },
+        {
+            "id": "scientific-ai",
+            "icon": "scientific-ai",
+            "title": "[CONTENU À FOURNIR — NE PAS PUBLIER]",
+            "description": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        },
+        {
+            "id": "scientific-software",
+            "icon": "scientific-software",
+            "title": "[CONTENU À FOURNIR — NE PAS PUBLIER]",
+            "description": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        },
+        {
+            "id": "collaborative-systems",
+            "icon": "collaborative-systems",
+            "title": "[CONTENU À FOURNIR — NE PAS PUBLIER]",
+            "description": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        }
+    ]
+}

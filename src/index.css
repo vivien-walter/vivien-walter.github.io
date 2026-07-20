@@ -36,6 +36,14 @@
   --color-copper-soft: var(--copper-soft);
   --color-border-strong: var(--border-strong);
 
+  /* Palette validée du portfolio */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-background: var(--brand-background);
+  --color-brand-hero: var(--brand-hero);
+  --color-brand-ink: var(--brand-ink);
+
   /* Typographie */
   --font-sans: var(--font-family-sans);
   --font-mono: var(--font-family-mono);
@@ -89,46 +97,54 @@
 :root {
   color-scheme: light;
 
+    /* Palette principale validée */
+  --brand-primary: #07429a;
+  --brand-dark: #0e223e;
+  --brand-accent: #a2442f;
+  --brand-background: #fdfcfc;
+  --brand-hero: #f7f6f2;
+  --brand-ink: #021530;
+
   /* Thème sémantique */
-  --background: #f4f3ee;
-  --foreground: #273649;
+  --background: var(--brand-background);
+  --foreground: var(--brand-ink);
 
-  --card: #ffffff;
-  --card-foreground: #273649;
+  --card: var(--brand-background);
+  --card-foreground: var(--brand-ink);
 
-  --popover: #ffffff;
-  --popover-foreground: #273649;
+  --popover: var(--brand-background);
+  --popover-foreground: var(--brand-ink);
 
-  --primary: #205493;
-  --primary-foreground: #ffffff;
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-background);
 
-  --secondary: #ebeae4;
-  --secondary-foreground: #142033;
+  --secondary: var(--brand-hero);
+  --secondary-foreground: var(--brand-ink);
 
-  --muted: #ebeae4;
+  --muted: var(--brand-hero);
   --muted-foreground: #566373;
 
   --accent: #f2e5de;
-  --accent-foreground: #7f3d24;
+  --accent-foreground: var(--brand-accent);
 
   --destructive: #b42318;
-  --destructive-foreground: #ffffff;
+  --destructive-foreground: var(--brand-background);
 
   --border: #cfd4da;
   --input: #aeb7c1;
-  --ring: #005fcc;
+  --ring: var(--brand-primary);
 
   /* Palette « atelier scientifique contemporain » */
-  --heading: #142033;
+  --heading: var(--brand-ink);
 
-  --surface: #ffffff;
-  --surface-subtle: #ebeae4;
+  --surface: var(--brand-background);
+  --surface-subtle: var(--brand-hero);
   --surface-strong: #deddd6;
 
-  --action-strong: #153a69;
+  --action-strong: var(--brand-dark);
   --action-soft: #e5edf7;
 
-  --copper: #ad5937;
+  --copper: var(--brand-accent);
   --copper-strong: #7f3d24;
   --copper-soft: #f2e5de;
 
@@ -404,6 +420,12 @@ main :where(h1, h2, h3, h4, section, article)[id] {
 
 @media (forced-colors: active) {
   :root {
+    --brand-primary: Highlight;
+    --brand-dark: CanvasText;
+    --brand-accent: CanvasText;
+    --brand-background: Canvas;
+    --brand-hero: Canvas;
+    --brand-ink: CanvasText;
     --background: Canvas;
     --foreground: CanvasText;
     --card: Canvas;

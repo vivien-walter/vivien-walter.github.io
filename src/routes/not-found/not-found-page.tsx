@@ -16,7 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import PageHeader from "@/shared/components/page-header";
+import PageHero from "@/shared/components/page-hero";
 
 function NotFoundPage() {
   const location = useLocation();
@@ -25,27 +25,23 @@ function NotFoundPage() {
 
   return (
     <article
-      className="relative isolate overflow-hidden"
+      className="overflow-hidden"
       aria-labelledby="page-title"
     >
-      <div
-        aria-hidden="true"
-        className={[
-          "pointer-events-none absolute inset-x-0 top-0 -z-10",
-          "h-[clamp(18rem,42vw,32rem)]",
-          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
-        ].join(" ")}
+      <PageHero
+        eyebrow={t("notFound.eyebrow", { lng: language })}
+        title={t("notFound.title", { lng: language })}
+        introduction={t("notFound.introduction", {
+          lng: language,
+        })}
       />
 
-      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
-        <PageHeader
-          eyebrow={t("notFound.eyebrow", { lng: language })}
-          title={t("notFound.title", { lng: language })}
-          introduction={t("notFound.introduction", {
-            lng: language,
-          })}
-        />
-
+      <div
+        className={[
+          "mx-auto w-full max-w-editorial px-page",
+          "py-12 sm:py-14 lg:py-16",
+        ].join(" ")}
+      >
         <nav
           aria-label={t("notFound.navigationLabel", {
             lng: language,
@@ -69,6 +65,7 @@ function NotFoundPage() {
               >
                 <Link to={getPageRoute("home", language)}>
                   <HouseIcon aria-hidden="true" weight="bold" />
+
                   {t("notFound.homeLink", { lng: language })}
                 </Link>
               </Button>
@@ -86,6 +83,7 @@ function NotFoundPage() {
               >
                 <Link to={getPageRoute("projects", language)}>
                   {t("notFound.projectsLink", { lng: language })}
+
                   <ArrowRightIcon aria-hidden="true" weight="bold" />
                 </Link>
               </Button>
@@ -103,6 +101,7 @@ function NotFoundPage() {
               >
                 <Link to={getPageRoute("software", language)}>
                   {t("notFound.softwareLink", { lng: language })}
+
                   <ArrowRightIcon aria-hidden="true" weight="bold" />
                 </Link>
               </Button>

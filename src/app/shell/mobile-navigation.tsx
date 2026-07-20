@@ -1,4 +1,14 @@
-import { ListIcon, XIcon } from "@phosphor-icons/react";
+import {
+  BriefcaseIcon,
+  CodeIcon,
+  DownloadSimpleIcon,
+  EnvelopeSimpleIcon,
+  HouseIcon,
+  ListIcon,
+  MicroscopeIcon,
+  UserIcon,
+  XIcon,
+} from "@phosphor-icons/react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
@@ -16,9 +26,11 @@ import {
 import { cn } from "@/lib/utils";
 
 import {
+  getEquivalentLanguagePath,
   getLanguageFromPathname,
   getPageIdFromPathname,
   mobileNavigationItems,
+  supportedLanguages,
 } from "../routing/navigation";
 
 const mobileNavigationLabels = {
@@ -26,12 +38,23 @@ const mobileNavigationLabels = {
     open: "Ouvrir la navigation",
     close: "Fermer la navigation",
     description: "Accéder aux différentes rubriques du portfolio.",
+    cvUnavailable: "CV indisponible pour le moment",
   },
   en: {
     open: "Open navigation",
     close: "Close navigation",
     description: "Access the different sections of the portfolio.",
+    cvUnavailable: "CV currently unavailable",
   },
+} as const;
+
+const navigationIcons = {
+  home: HouseIcon,
+  experience: UserIcon,
+  projects: BriefcaseIcon,
+  research: MicroscopeIcon,
+  software: CodeIcon,
+  contact: EnvelopeSimpleIcon,
 } as const;
 
 function MobileNavigation() {
@@ -47,119 +70,234 @@ function MobileNavigation() {
     lng: currentLanguage,
   });
 
-  return (
-    <div className="xl:hidden">
-      <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger asChild>
-          <Button
-            variant="outline"
-            size="icon"
-            aria-label={labels.open}
-            className="size-11 border-border-strong bg-card shadow-none"
-          >
-            <ListIcon aria-hidden="true" size={20} weight="bold" />
-          </Button>
-        </SheetTrigger>
+  const siteName = t("site.name", {
+    lng: currentLanguage,
+  });
 
-        <SheetContent
-          side="right"
-          showCloseButton={false}
+  return (
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label={labels.open}
           className={cn(
-            "w-[calc(100%-1rem)] max-w-sm gap-0 p-0",
-            "border-border-strong bg-background shadow-elevated",
+            "size-11 rounded-sm text-brand-ink shadow-none",
+            "hover:bg-brand-hero hover:text-brand-primary",
+            "focus-visible:ring-brand-primary/50",
           )}
         >
-          <SheetHeader className="relative gap-2 border-b border-border px-5 py-5 pr-16 text-left">
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 shrink-0 bg-copper"
-              />
+          <ListIcon aria-hidden="true" size={24} weight="bold" />
+        </Button>
+      </SheetTrigger>
 
-              <SheetTitle className="m-0 text-base font-semibold tracking-tight text-heading">
-                {navigationLabel}
-              </SheetTitle>
-            </div>
+      <SheetContent
+        side="right"
+        showCloseButton={false}
+        className={cn(
+          "h-svh w-full max-w-none gap-0 p-0 sm:max-w-none",
+          "border-l border-white/20 bg-brand-dark",
+          "text-brand-background shadow-elevated",
+        )}
+      >
+        <SheetHeader
+          className={cn(
+            "relative grid grid-cols-[minmax(0,1fr)_auto_auto]",
+            "items-center gap-2 border-b border-white/20",
+            "px-6 py-5 pr-4 text-left",
+          )}
+        >
+          <SheetTitle
+            className={cn(
+              "m-0 grid min-w-0 gap-1",
+              "text-brand-background",
+            )}
+          >
+            <span
+              className={cn(
+                "text-xl leading-none font-bold",
+                "tracking-[-0.035em]",
+              )}
+            >
+              VPW
+            </span>
 
-            <SheetDescription className="sr-only">
-              {labels.description}
-            </SheetDescription>
-
-            <SheetClose asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label={labels.close}
-                className="absolute top-3 right-3 size-11"
-              >
-                <XIcon aria-hidden="true" size={20} weight="bold" />
-              </Button>
-            </SheetClose>
-          </SheetHeader>
+            <span
+              className={cn(
+                "truncate text-xs leading-tight font-medium",
+                "tracking-[-0.01em] text-brand-background/85",
+              )}
+            >
+              {siteName}
+            </span>
+          </SheetTitle>
 
           <nav
-            aria-label={navigationLabel}
-            className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-5 sm:px-5"
+            className="shrink-0"
+            aria-label={t("languageSwitcher.label", {
+              lng: currentLanguage,
+            })}
           >
-            <ul className="m-0 grid list-none gap-1 p-0">
-              {mobileNavigationItems.map((item, index) => {
-                const isCurrentPage = currentPageId === item.id;
+            <ul className="m-0 inline-flex list-none items-center p-0">
+              {supportedLanguages.map((language, index) => {
+                const isCurrentLanguage = language === currentLanguage;
+                const languageName = t(`languages.${language}`, {
+                  lng: currentLanguage,
+                });
 
                 return (
-                  <li className="m-0" key={item.id}>
+                  <li className="m-0 inline-flex items-center" key={language}>
+                    {index > 0 && (
+                      <span
+                        aria-hidden="true"
+                        className="text-sm text-brand-background/55"
+                      >
+                        |
+                      </span>
+                    )}
+
                     <Link
+                      to={getEquivalentLanguagePath(location.pathname, language)}
+                      lang={language}
+                      hrefLang={language}
+                      aria-label={languageName}
+                      aria-current={isCurrentLanguage ? "page" : undefined}
+                      title={languageName}
+                      onClick={() => setIsOpen(false)}
                       className={cn(
-                        "grid min-h-14 grid-cols-[2rem_minmax(0,1fr)_0.75rem]",
-                        "items-center gap-3 rounded-md border-l-2 px-4 py-3",
-                        "text-sm font-medium no-underline",
+                        "inline-flex min-h-11 min-w-10",
+                        "items-center justify-center rounded-sm px-1.5",
+                        "text-sm no-underline",
                         "transition-colors duration-150 ease-standard",
-                        "focus-visible:outline-none focus-visible:ring-[3px]",
-                        "focus-visible:ring-ring/50",
-                        isCurrentPage
+                        "focus-visible:outline-none",
+                        "focus-visible:ring-[3px] focus-visible:ring-white/70",
+                        isCurrentLanguage
                           ? [
-                              "border-copper bg-copper-soft",
-                              "font-semibold text-copper-strong",
+                              "font-semibold text-brand-background",
+                              "underline decoration-2",
+                              "decoration-brand-background underline-offset-4",
                             ]
                           : [
-                              "border-transparent text-heading",
-                              "hover:border-border-strong hover:bg-muted",
-                              "hover:text-heading",
-                              "active:border-copper active:bg-copper-soft",
+                              "font-medium text-brand-background/70",
+                              "hover:text-brand-background",
                             ],
                       )}
-                      to={item.routes[currentLanguage]}
-                      aria-current={isCurrentPage ? "page" : undefined}
-                      onClick={() => setIsOpen(false)}
                     >
-                      <span
-                        aria-hidden="true"
-                        className="font-mono text-xs text-muted-foreground"
-                      >
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-
-                      <span>
-                        {t(item.labelKey, {
-                          lng: currentLanguage,
-                        })}
-                      </span>
-
-                      <span
-                        aria-hidden="true"
-                        className={cn(
-                          "size-2 rounded-full",
-                          isCurrentPage ? "bg-copper" : "bg-transparent",
-                        )}
-                      />
+                      {language.toUpperCase()}
                     </Link>
                   </li>
                 );
               })}
             </ul>
           </nav>
-        </SheetContent>
-      </Sheet>
-    </div>
+
+          <SheetClose asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label={labels.close}
+              className={cn(
+                "size-11 rounded-sm text-brand-background shadow-none",
+                "hover:bg-white/10 hover:text-brand-background",
+                "focus-visible:ring-white/70",
+              )}
+            >
+              <XIcon aria-hidden="true" size={24} weight="regular" />
+            </Button>
+          </SheetClose>
+
+          <SheetDescription className="sr-only">
+            {labels.description}
+          </SheetDescription>
+        </SheetHeader>
+
+        <nav
+          aria-label={navigationLabel}
+          className={cn(
+            "min-h-0 flex-1 overflow-y-auto overscroll-contain",
+            "px-6 py-6",
+          )}
+        >
+          <ul className="m-0 grid list-none gap-1 p-0">
+            {mobileNavigationItems.map((item) => {
+              const isCurrentPage = currentPageId === item.id;
+              const Icon = navigationIcons[item.id];
+
+              return (
+                <li className="m-0" key={item.id}>
+                  <Link
+                    to={item.routes[currentLanguage]}
+                    aria-current={isCurrentPage ? "page" : undefined}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "relative grid min-h-12",
+                      "grid-cols-[1.5rem_minmax(0,1fr)]",
+                      "items-center gap-4 px-3 py-3",
+                      "text-base no-underline",
+                      "transition-colors duration-150 ease-standard",
+                      "focus-visible:outline-none",
+                      "focus-visible:ring-[3px] focus-visible:ring-white/70",
+                      isCurrentPage
+                        ? [
+                            "bg-white/10 font-semibold text-brand-background",
+                          ]
+                        : [
+                            "font-medium text-brand-background/90",
+                            "hover:bg-white/10 hover:text-brand-background",
+                          ],
+                    )}
+                  >
+                    <Icon
+                      aria-hidden="true"
+                      size={22}
+                      weight={isCurrentPage ? "bold" : "regular"}
+                    />
+
+                    <span>
+                      {t(item.labelKey, {
+                        lng: currentLanguage,
+                      })}
+                    </span>
+
+                    {isCurrentPage && (
+                      <span
+                        aria-hidden="true"
+                        className="absolute right-3 bottom-0 left-3 h-px bg-white"
+                      />
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        <div className="px-6 pb-8">
+          <div className="border-t border-white/20 pt-5">
+            <Button
+              type="button"
+              variant="ghost"
+              disabled
+              aria-label={labels.cvUnavailable}
+              className={cn(
+                "h-12 w-full justify-start rounded-sm px-3",
+                "text-base font-medium text-brand-background",
+                "shadow-none",
+                "disabled:cursor-not-allowed disabled:opacity-100",
+              )}
+            >
+              <DownloadSimpleIcon
+                aria-hidden="true"
+                size={22}
+                weight="regular"
+              />
+
+              <span>CV (PDF)</span>
+            </Button>
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 }
 

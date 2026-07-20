@@ -10,8 +10,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import i18n from "../i18n";
 import { getLanguageFromPathname, getPageRoute } from "../routing/navigation";
+import i18n from "../i18n";
 
 type ApplicationErrorBoundaryProps = {
   readonly children: ReactNode;

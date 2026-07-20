@@ -24,7 +24,8 @@
     },
     "pages": {
         "home": {
-            "title": "Home"
+            "title": "Home",
+            "followDaily": "Follow my work"
         },
         "experience": {
             "title": "Experience"
@@ -65,6 +66,11 @@
         "relatedSoftware": "Related software",
         "relatedPublications": "Related publications"
     },
+    "contentKinds": {
+        "project": "Project",
+        "software": "Software",
+        "publication": "Publication"
+    },
     "actions": {
         "viewProject": "View project details",
         "viewSoftware": "View software details",
@@ -74,7 +80,8 @@
         "previousProject": "Previous project",
         "nextProject": "Next project",
         "previousSoftware": "Previous software",
-        "nextSoftware": "Next software"
+        "nextSoftware": "Next software",
+        "learnMore": "Learn more"
     },
     "projectDetail": {
         "eyebrow": "Project details",

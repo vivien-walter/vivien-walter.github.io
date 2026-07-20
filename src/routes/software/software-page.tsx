@@ -6,10 +6,9 @@ import {
   getPageRoute,
 } from "@/app/routing/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import Breadcrumbs from "@/shared/components/breadcrumbs";
 import ContentLink from "@/shared/components/content-link";
 import ContentSections from "@/shared/components/content-sections";
-import PageHeader from "@/shared/components/page-header";
+import PageHero from "@/shared/components/page-hero";
 
 import SoftwareEntry from "./components/software-entry";
 import {
@@ -33,23 +32,11 @@ function SoftwarePage() {
   });
 
   return (
-    <div
-      className="relative isolate overflow-hidden"
-      aria-labelledby="page-title"
-    >
-      <div
-        aria-hidden="true"
-        className={[
-          "pointer-events-none absolute inset-x-0 top-0 -z-10",
-          "h-[clamp(18rem,42vw,32rem)]",
-          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
-        ].join(" ")}
-      />
-
-      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
-        <Breadcrumbs
-          ariaLabel={t("breadcrumbs.label", { lng: language })}
-          items={[
+    <div className="overflow-hidden">
+      <PageHero
+        breadcrumbs={{
+          ariaLabel: t("breadcrumbs.label", { lng: language }),
+          items: [
             {
               label: t("breadcrumbs.home", { lng: language }),
               to: getPageRoute("home", language),
@@ -57,15 +44,19 @@ function SoftwarePage() {
             {
               label: t("breadcrumbs.software", { lng: language }),
             },
-          ]}
-        />
+          ],
+        }}
+        eyebrow={t("pages.software.title", { lng: language })}
+        title={page.title}
+        introduction={page.introduction}
+      />
 
-        <PageHeader
-          eyebrow={t("pages.software.title", { lng: language })}
-          title={page.title}
-          introduction={page.introduction}
-        />
-
+      <div
+        className={[
+          "mx-auto w-full max-w-editorial px-page",
+          "py-12 sm:py-14 lg:py-16",
+        ].join(" ")}
+      >
         <ContentSections
           idPrefix="software-page"
           sections={page.sections ?? []}
