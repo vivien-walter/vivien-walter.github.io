@@ -42,6 +42,12 @@
             "title": "Contact"
         }
     },
+    "breadcrumbs": {
+        "label": "Breadcrumb",
+        "home": "Home",
+        "projects": "Projects",
+        "software": "Software"
+    },
     "content": {
         "period": "Period",
         "context": "Context",
@@ -54,7 +60,63 @@
         "organisation": "Organisation",
         "location": "Location",
         "contractualTitle": "Contractual title",
-        "publicTitle": "Professional presentation"
+        "publicTitle": "Professional presentation",
+        "relatedProjects": "Related projects",
+        "relatedSoftware": "Related software",
+        "relatedPublications": "Related publications"
+    },
+    "actions": {
+        "viewProject": "View project details",
+        "viewSoftware": "View software details",
+        "backToHome": "Return to the home page",
+        "backToProjects": "Return to all projects",
+        "backToSoftware": "Return to all software",
+        "previousProject": "Previous project",
+        "nextProject": "Next project",
+        "previousSoftware": "Previous software",
+        "nextSoftware": "Next software"
+    },
+    "projectDetail": {
+        "eyebrow": "Project details",
+        "executiveSummary": "Executive summary",
+        "contextAndObjectives": "Context and objectives",
+        "contributionsAndAchievements": "Contributions and achievements",
+        "resultsAndFinalState": "Results and final state",
+        "technologiesAndMethods": "Technologies and methods",
+        "evidenceAndResources": "Evidence and resources",
+        "confidentialityAndLimits": "Confidentiality and limitations",
+        "navigationLabel": "Project navigation"
+    },
+    "softwareDetail": {
+        "eyebrow": "Software details",
+        "summary": "Overview",
+        "context": "Context and purpose",
+        "contribution": "Personal contribution",
+        "features": "Features and outcomes",
+        "technologies": "Technologies",
+        "resources": "Resources",
+        "navigationLabel": "Software navigation"
+    },
+    "publication": {
+        "contribution": "Contribution"
+    },
+    "notFound": {
+        "eyebrow": "Page not found",
+        "title": "This page does not exist",
+        "introduction": "The requested address does not match any available page. The content may have moved or the link may be incorrect.",
+        "homeLink": "Return to the home page",
+        "projectsLink": "View projects",
+        "softwareLink": "View software",
+        "navigationLabel": "Navigation after a page-not-found error"
+    },
+    "errors": {
+        "eyebrow": "Error",
+        "title": "The page cannot be displayed",
+        "message": "An unexpected error is preventing this page from being displayed. You can return to the home page and continue browsing.",
+        "homeLink": "Return to the home page",
+        "projectNotFound": "Project not found",
+        "softwareNotFound": "Software not found",
+        "pageNotFound": "Page not found"
     },
     "links": {
         "email": "Email",

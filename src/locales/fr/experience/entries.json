@@ -1,0 +1,136 @@
+{
+    "imaginexr": {
+        "role": "Chef de produit / Product Manager",
+        "organization": "i-magineXR",
+        "location": "La Roche-sur-Yon, France",
+        "period": {
+            "start": "2024-01-03",
+            "end": "2026-07-15"
+        },
+        "summary": "Pilotage de la création d’un campus virtuel LXP pour des apprentis du secteur numérique, associant plateforme web, contenus pédagogiques, accompagnement, IA générative et XR.",
+        "sections": [
+            {
+                "title": "Pilotage",
+                "paragraphs": [],
+                "items": [
+                    "Définition des objectifs, du périmètre, des ressources, de l’organisation et de la feuille de route.",
+                    "Recueil des besoins et rédaction de spécifications fonctionnelles et techniques.",
+                    "Présentation des solutions, gestion des décisions et validation des livrables avec le client.",
+                    "Coordination directe et matricielle d’une équipe moyenne de onze personnes."
+                ]
+            },
+            {
+                "title": "Contributions directes",
+                "paragraphs": [],
+                "items": [
+                    "Conception et développement de parties du backend avec TypeScript, Node.js, Express et MongoDB.",
+                    "Migration du backend vers TypeScript, validation Zod, refonte des jetons d’authentification, clés d’accès API et pagination côté serveur.",
+                    "Conception de l’architecture et des protocoles pour plusieurs fournisseurs d’IA générative.",
+                    "Développement de code backend, d’une file de traitement et d’interfaces d’administration.",
+                    "Développement de certaines interfaces React et Tailwind CSS."
+                ]
+            },
+            {
+                "title": "État à la fin du contrat",
+                "paragraphs": [
+                    "Backend et écosystème IA opérationnels, quatre applications XR terminées et interface utilisateur approximativement achevée à 80 %, avec trois espaces secondaires restants."
+                ]
+            }
+        ]
+    },
+    "kcl-molecular-communication": {
+        "role": "Postdoctoral Research Associate — présentation publique : Chef de projet R&D",
+        "organization": "King’s College London",
+        "location": "Londres, Royaume-Uni",
+        "period": {
+            "start": "2021-03",
+            "end": "2023-08"
+        },
+        "summary": "Création d’un laboratoire de communication moléculaire et d’un testbed opérationnel associant chimie, microfluidique, instrumentation, électronique, traitement du signal et apprentissage automatique.",
+        "sections": [
+            {
+                "title": "Laboratoire et équipe",
+                "paragraphs": [],
+                "items": [
+                    "Création du laboratoire depuis zéro : locaux, équipements, hottes, consommables, sécurité et protocoles.",
+                    "Équipe moyenne de cinq personnes et neuf personnes formées au total."
+                ]
+            },
+            {
+                "title": "Financement et réalisations",
+                "paragraphs": [],
+                "items": [
+                    "Gestion de deux financements EPSRC de 300 k€ et 60 k€.",
+                    "Développement d’un CNN 1D avec Python, TensorFlow et scikit-learn pour analyser des signaux UV-Vis.",
+                    "Conception et fabrication de six pompes-seringues open source avec Fusion 360, impression 3D, Arduino, I²C, C++ et Python."
+                ]
+            }
+        ]
+    },
+    "kcl-iscat": {
+        "role": "Postdoctoral Research Associate — présentation publique : Chef de projet R&D",
+        "organization": "King’s College London",
+        "location": "Londres, Royaume-Uni",
+        "period": {
+            "start": "2018-03",
+            "end": "2021-03"
+        },
+        "summary": "Pilotage d’un projet de 500 k€ consacré à la construction, à la qualification et à l’exploitation d’un microscope iSCAT complet.",
+        "sections": [
+            {
+                "title": "Pilotage et équipe",
+                "paragraphs": [],
+                "items": [
+                    "Projet financé par le BBSRC et cofinancé par Oxford Nanopore Technologies.",
+                    "Management de trois doctorants et de deux stagiaires de Master."
+                ]
+            },
+            {
+                "title": "Instrument et logiciels",
+                "paragraphs": [],
+                "items": [
+                    "Construction du microscope depuis l’achat des composants jusqu’à la qualification.",
+                    "Développement du logiciel LabVIEW de contrôle et d’automatisation.",
+                    "Conception des protocoles, échantillons, expériences, acquisitions et analyses.",
+                    "Microscope opérationnel livré."
+                ]
+            }
+        ]
+    },
+    "strasbourg-mllpa": {
+        "role": "R&D Project Manager / Postdoctoral Research Associate",
+        "organization": "Université de Strasbourg",
+        "location": "Strasbourg, France",
+        "period": {
+            "start": "2017-10",
+            "end": "2018-03"
+        },
+        "summary": "Direction scientifique et opérationnelle de travaux sur les membranes lipidiques, la simulation moléculaire et l’apprentissage automatique, avec développement principal de MLLPA.",
+        "sections": [
+            {
+                "title": "Recherche",
+                "paragraphs": [],
+                "items": [
+                    "Planification des méthodes, jalons et orientations avec une grande autonomie.",
+                    "Simulations GROMACS de membranes lipidiques et de transitions de phase.",
+                    "Approches d’apprentissage automatique puis CNN 3D avec TensorFlow."
+                ]
+            },
+            {
+                "title": "MLLPA",
+                "paragraphs": [],
+                "items": [
+                    "Développement d’environ 95 % du code.",
+                    "Création de l’intégralité du site et de la documentation.",
+                    "Travail connexe poursuivi avec les collaborateurs."
+                ]
+            }
+        ],
+        "links": [
+            {
+                "label": "Site et documentation de MLLPA",
+                "href": "https://vivien-walter.github.io/mllpa/"
+            }
+        ]
+    }
+}

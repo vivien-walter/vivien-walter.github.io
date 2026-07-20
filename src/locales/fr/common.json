@@ -42,6 +42,12 @@
             "title": "Contact"
         }
     },
+    "breadcrumbs": {
+        "label": "Fil d’Ariane",
+        "home": "Accueil",
+        "projects": "Projets",
+        "software": "Logiciels"
+    },
     "content": {
         "period": "Période",
         "context": "Contexte",
@@ -54,7 +60,63 @@
         "organisation": "Organisation",
         "location": "Localisation",
         "contractualTitle": "Intitulé contractuel",
-        "publicTitle": "Présentation professionnelle"
+        "publicTitle": "Présentation professionnelle",
+        "relatedProjects": "Projets associés",
+        "relatedSoftware": "Logiciels associés",
+        "relatedPublications": "Publications associées"
+    },
+    "actions": {
+        "viewProject": "Voir le projet détaillé",
+        "viewSoftware": "Voir le logiciel détaillé",
+        "backToHome": "Retour à l’accueil",
+        "backToProjects": "Retour à tous les projets",
+        "backToSoftware": "Retour à tous les logiciels",
+        "previousProject": "Projet précédent",
+        "nextProject": "Projet suivant",
+        "previousSoftware": "Logiciel précédent",
+        "nextSoftware": "Logiciel suivant"
+    },
+    "projectDetail": {
+        "eyebrow": "Projet détaillé",
+        "executiveSummary": "Résumé exécutif",
+        "contextAndObjectives": "Contexte et objectifs",
+        "contributionsAndAchievements": "Contributions et réalisations",
+        "resultsAndFinalState": "Résultats et état final",
+        "technologiesAndMethods": "Technologies et méthodes",
+        "evidenceAndResources": "Preuves et ressources",
+        "confidentialityAndLimits": "Confidentialité et limites",
+        "navigationLabel": "Navigation entre les projets"
+    },
+    "softwareDetail": {
+        "eyebrow": "Logiciel détaillé",
+        "summary": "Présentation",
+        "context": "Contexte et objectif",
+        "contribution": "Contribution personnelle",
+        "features": "Fonctions et apports",
+        "technologies": "Technologies",
+        "resources": "Ressources",
+        "navigationLabel": "Navigation entre les logiciels"
+    },
+    "publication": {
+        "contribution": "Contribution"
+    },
+    "notFound": {
+        "eyebrow": "Page introuvable",
+        "title": "Cette page n’existe pas",
+        "introduction": "L’adresse demandée ne correspond à aucune page disponible. Le contenu a peut-être été déplacé ou le lien est incorrect.",
+        "homeLink": "Retour à l’accueil",
+        "projectsLink": "Voir les projets",
+        "softwareLink": "Voir les logiciels",
+        "navigationLabel": "Navigation après une page introuvable"
+    },
+    "errors": {
+        "eyebrow": "Erreur",
+        "title": "La page ne peut pas être affichée",
+        "message": "Une erreur inattendue empêche l’affichage de cette page. Vous pouvez revenir à l’accueil et poursuivre votre navigation.",
+        "homeLink": "Retour à l’accueil",
+        "projectNotFound": "Projet introuvable",
+        "softwareNotFound": "Logiciel introuvable",
+        "pageNotFound": "Page introuvable"
     },
     "links": {
         "email": "Email",

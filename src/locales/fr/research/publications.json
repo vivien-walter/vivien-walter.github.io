@@ -1,0 +1,58 @@
+{
+    "nature-molecular-communication-2023": {
+        "title": "Real-time signal processing via chemical reactions for a microfluidic molecular communication system",
+        "authors": [],
+        "publication": "Nature Communications",
+        "year": 2023,
+        "summary": "Premier auteur et rédacteur principal."
+    },
+    "ieee-cnn-2026": {
+        "title": "CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication",
+        "authors": [],
+        "publication": "IEEE T-MBMC",
+        "year": 2026,
+        "summary": "Premier auteur et rédacteur principal."
+    },
+    "jmicroscopy-2024": {
+        "title": "Spatial light modulation for interferometric scattering microscopy",
+        "authors": [],
+        "publication": "Journal of Microscopy",
+        "year": 2024,
+        "summary": "Auteur principal."
+    },
+    "jacs-2023": {
+        "title": "Real-Time Monitoring and Control of Nanoparticle Formation",
+        "authors": [],
+        "publication": "Journal of the American Chemical Society",
+        "year": 2023,
+        "summary": "Coauteur ; contribution aux équations, calculs, logiciels, scripts d’analyse, relecture, conseil et mentorat du premier auteur."
+    },
+    "nature-self-assembly-2025": {
+        "title": "Real-time label-free imaging of living crystallization-driven self-assembly",
+        "authors": [],
+        "publication": "Nature Communications",
+        "year": 2025,
+        "summary": "Coauteur ; contribution aux équations, calculs, logiciels, scripts d’analyse, relecture, conseil et mentorat du premier auteur."
+    },
+    "pccp-2020": {
+        "title": "A machine learning study of the two states model for lipid bilayer phase transitions",
+        "authors": [],
+        "publication": "Physical Chemistry Chemical Physics",
+        "year": 2020,
+        "summary": "Premier auteur."
+    },
+    "jcc-mllpa-2021": {
+        "title": "MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes",
+        "authors": [],
+        "publication": "Journal of Computational Chemistry",
+        "year": 2021,
+        "summary": "Premier auteur."
+    },
+    "bba-2021": {
+        "title": "Ripple-like instability in the simulated gel phase of finite size phosphocholine bilayers",
+        "authors": [],
+        "publication": "BBA Biomembranes",
+        "year": 2021,
+        "summary": "Premier auteur."
+    }
+}

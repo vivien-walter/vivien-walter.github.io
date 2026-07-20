@@ -1,0 +1,71 @@
+{
+    "title": "iSCAT experimental platform",
+    "summary": "Management of the construction of a complete iSCAT microscope and development of the experimental workflow, from component selection through acquisition, image analysis and interpretation of results.",
+    "period": {
+        "start": "2018-03",
+        "end": "2021-03"
+    },
+    "sections": [
+        {
+            "title": "Context and funding",
+            "paragraphs": [
+                "The project was carried out at King’s College London as part of a Postdoctoral Research Associate position presented publicly as an R&D Project Manager role."
+            ],
+            "items": [
+                "Management of a €500,000 project funded by the BBSRC and co-funded by Oxford Nanopore Technologies.",
+                "Management of three doctoral researchers and two Master’s interns."
+            ]
+        },
+        {
+            "title": "Instrument construction and qualification",
+            "paragraphs": [
+                "The iSCAT microscope was built from component procurement through optical table assembly and full instrument qualification."
+            ],
+            "items": [
+                "Selection and procurement of optical and instrumental components.",
+                "Assembly of the optical table.",
+                "Qualification of the complete microscope."
+            ]
+        },
+        {
+            "title": "Experimental workflow",
+            "paragraphs": [
+                "The project covered the design of the experimental workflow required for the scientific use of the instrument."
+            ],
+            "items": [
+                "Design of protocols, samples and experiments.",
+                "Implementation of data acquisition.",
+                "Development of image-analysis methods and interpretation of results."
+            ]
+        },
+        {
+            "title": "Control and automation",
+            "paragraphs": [
+                "LabVIEW software was developed to control and automate the microscope."
+            ],
+            "items": [
+                "Development of instrument control using LabVIEW.",
+                "Automation of experimental acquisitions.",
+                "Development of scripts and analysis tools using Python, ImageJ macros and Java for ImageJ."
+            ]
+        },
+        {
+            "title": "Results and publications",
+            "paragraphs": [
+                "The project resulted in the delivery of a complete and operational iSCAT microscope and several scientific publications."
+            ],
+            "items": [
+                "Lead author of Spatial light modulation for interferometric scattering microscopy, Journal of Microscopy, 2024.",
+                "Co-author of Real-Time Monitoring and Control of Nanoparticle Formation, Journal of the American Chemical Society, 2023.",
+                "Co-author of Real-time label-free imaging of living crystallization-driven self-assembly, Nature Communications, 2025.",
+                "For both co-authored publications: contribution to equations, calculations, software, analysis scripts, manuscript review, advice and mentoring of the first author."
+            ]
+        }
+    ],
+    "technologies": [
+        "Python",
+        "LabVIEW",
+        "ImageJ macros",
+        "Java for ImageJ"
+    ]
+}

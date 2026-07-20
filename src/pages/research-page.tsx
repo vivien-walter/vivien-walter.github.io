@@ -1,131 +1,172 @@
-import ExternalLink from "../components/external-link";
+import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+
+import Breadcrumbs from "../components/breadcrumbs";
+import ContentLink from "../components/content-link";
+import ContentSections from "../components/content-sections";
 import PageHeader from "../components/page-header";
 import PublicationEntry from "../components/publication-entry";
 import SoftwareEntry from "../components/software-entry";
-import { useSiteContent } from "../content/use-site-content";
+import { Card, CardContent } from "../components/ui/card";
+import { getLanguageFromPathname, getPageRoute } from "../navigation";
+import {
+  getPublicationById,
+  getPublicationIndex,
+  getResearchPage,
+} from "../routes/research/data/research-content.loader";
+import { getSoftwareById } from "../routes/software/data/software-content.loader";
 
 function ResearchPage() {
-  const { content } = useSiteContent();
-  const page = content.researchPage;
+  const location = useLocation();
+  const { t } = useTranslation();
+  const language = getLanguageFromPathname(location.pathname);
+  const page = getResearchPage(language);
+  const index = getPublicationIndex(language);
+  const featuredIds = new Set(index.featured ?? []);
 
-  const selectedPublicationIds = new Set(page.selectedPublicationIds);
+  const publications = index.order.flatMap((publicationId) => {
+    const publication = getPublicationById(language, publicationId);
 
-  const remainingPublicationIds = page.publicationIds.filter(
-    (publicationId) => !selectedPublicationIds.has(publicationId),
-  );
+    return publication ? [{ publication, publicationId }] : [];
+  });
+
+  const softwareEntries = (page.softwareIds ?? []).flatMap((softwareId) => {
+    const software = getSoftwareById(language, softwareId);
+
+    return software ? [{ software, softwareId }] : [];
+  });
 
   return (
-    <div className="page page--research" aria-labelledby="page-title">
-      <div className="page__inner">
+    <div
+      className="relative isolate overflow-hidden"
+      aria-labelledby="page-title"
+    >
+      <div
+        aria-hidden="true"
+        className={[
+          "pointer-events-none absolute inset-x-0 top-0 -z-10",
+          "h-[clamp(18rem,42vw,32rem)]",
+          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
+        ].join(" ")}
+      />
+
+      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
+        <Breadcrumbs
+          ariaLabel={t("breadcrumbs.label", { lng: language })}
+          items={[
+            {
+              label: t("breadcrumbs.home", { lng: language }),
+              to: getPageRoute("home", language),
+            },
+            {
+              label: t("pages.research.title", { lng: language }),
+            },
+          ]}
+        />
+
         <PageHeader
-          eyebrow={page.eyebrow}
+          eyebrow={t("pages.research.title", { lng: language })}
           title={page.title}
           introduction={page.introduction}
         />
 
-        <section className="page-section" aria-labelledby="research-axes-title">
-          <header className="section-header">
-            <h2 id="research-axes-title">{page.axesTitle}</h2>
-          </header>
+        <ContentSections
+          idPrefix="research-page"
+          sections={page.sections ?? []}
+        />
 
-          <div className="research-axes">
-            {page.axes.map((axis) => (
-              <article className="research-axis" key={axis.id}>
-                <h3>{axis.title}</h3>
-                <p>{axis.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="page-section" aria-labelledby="current-work-title">
-          <header className="section-header">
-            <h2 id="current-work-title">{page.currentWorkTitle}</h2>
-          </header>
-
-          <ul className="current-work-list">
-            {page.currentWork.map((work) => (
-              <li key={work}>{work}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section
-          className="page-section"
-          aria-labelledby="selected-publications-title"
-        >
-          <header className="section-header">
-            <h2 id="selected-publications-title">
-              {page.selectedPublicationsTitle}
-            </h2>
-          </header>
-
-          <div className="publication-list publication-list--selected">
-            {page.selectedPublicationIds.map((publicationId) => (
-              <PublicationEntry
-                featured
-                key={publicationId}
-                publication={content.publications[publicationId]}
-              />
-            ))}
-          </div>
-        </section>
-
-        {remainingPublicationIds.length > 0 ? (
+        {publications.length > 0 ? (
           <section
-            className="page-section"
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
             aria-labelledby="publications-title"
           >
-            <header className="section-header">
-              <h2 id="publications-title">{page.publicationsTitle}</h2>
+            <header className="mb-8 max-w-readable">
+              <h2
+                id="publications-title"
+                className={[
+                  "!m-0 text-xl font-bold leading-heading",
+                  "tracking-[-0.025em] text-heading",
+                ].join(" ")}
+              >
+                {t("pages.research.title", { lng: language })}
+              </h2>
             </header>
 
-            <div className="publication-list">
-              {remainingPublicationIds.map((publicationId) => (
+            <div className="grid gap-6 lg:grid-cols-2">
+              {publications.map(({ publication, publicationId }) => (
                 <PublicationEntry
                   key={publicationId}
-                  publication={content.publications[publicationId]}
+                  featured={featuredIds.has(publicationId)}
+                  publication={publication}
+                  publicationId={publicationId}
+                  language={language}
                 />
               ))}
             </div>
           </section>
         ) : null}
 
-        <section
-          className="page-section"
-          aria-labelledby="research-resources-title"
-        >
-          <header className="section-header">
-            <h2 id="research-resources-title">{page.resourcesTitle}</h2>
-          </header>
+        {softwareEntries.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="research-software-title"
+          >
+            <header className="mb-8 max-w-readable">
+              <h2
+                id="research-software-title"
+                className={[
+                  "!m-0 text-xl font-bold leading-heading",
+                  "tracking-[-0.025em] text-heading",
+                ].join(" ")}
+              >
+                {t("pages.software.title", { lng: language })}
+              </h2>
+            </header>
 
-          <div className="software-list software-list--compact">
-            {page.softwareIds.map((softwareId) => (
-              <SoftwareEntry
-                key={softwareId}
-                software={content.software[softwareId]}
-                variant="summary"
-              />
-            ))}
-          </div>
-        </section>
+            <div className="grid gap-6 lg:grid-cols-2">
+              {softwareEntries.map(({ software, softwareId }) => (
+                <SoftwareEntry
+                  key={softwareId}
+                  software={software}
+                  softwareId={softwareId}
+                  language={language}
+                  variant="summary"
+                />
+              ))}
+            </div>
+          </section>
+        ) : null}
 
-        <section
-          className="page-section external-resources"
-          aria-labelledby="external-resources-title"
-        >
-          <header className="section-header">
-            <h2 id="external-resources-title">{page.externalLinksTitle}</h2>
-          </header>
+        {page.links && page.links.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="research-links-title"
+          >
+            <header className="mb-8 max-w-readable">
+              <h2
+                id="research-links-title"
+                className={[
+                  "!m-0 text-xl font-bold leading-heading",
+                  "tracking-[-0.025em] text-heading",
+                ].join(" ")}
+              >
+                {t("content.resources", { lng: language })}
+              </h2>
+            </header>
 
-          <ul className="resource-list">
-            {page.externalLinkIds.map((linkId) => (
-              <li key={linkId}>
-                <ExternalLink linkId={linkId} />
-              </li>
-            ))}
-          </ul>
-        </section>
+            <Card className="gap-0 border-border-strong py-0 shadow-subtle">
+              <CardContent className="grid gap-1 p-3 sm:p-4">
+                {page.links.map((link, indexValue) => (
+                  <ContentLink
+                    key={`${link.href}-${indexValue}`}
+                    link={link}
+                    variant="resource"
+                  />
+                ))}
+              </CardContent>
+            </Card>
+          </section>
+        ) : null}
       </div>
     </div>
   );

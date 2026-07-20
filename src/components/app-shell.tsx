@@ -2,36 +2,14 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet, useLocation } from "react-router-dom";
 
-import { getProject, getSoftware } from "../content/site-content";
 import {
   getLanguageFromPathname,
   getNavigationItemFromPathname,
   getRouteMatchFromPathname,
-  type SupportedLanguage,
 } from "../navigation";
+import { getProjectById } from "../routes/projects/data/project-content.loader";
+import { getSoftwareById } from "../routes/software/data/software-content.loader";
 import SiteHeader from "./site-header";
-
-const fallbackPageTitles: Readonly<
-  Record<
-    SupportedLanguage,
-    {
-      readonly project: string;
-      readonly software: string;
-      readonly notFound: string;
-    }
-  >
-> = {
-  fr: {
-    project: "Projet introuvable",
-    software: "Logiciel introuvable",
-    notFound: "Page introuvable",
-  },
-  en: {
-    project: "Project not found",
-    software: "Software not found",
-    notFound: "Page not found",
-  },
-};
 
 function AppShell() {
   const location = useLocation();
@@ -52,8 +30,6 @@ function AppShell() {
 
   useEffect(() => {
     const routeMatch = getRouteMatchFromPathname(location.pathname);
-    const fallbackTitles = fallbackPageTitles[currentLanguage];
-
     let pageTitle: string;
 
     if (routeMatch.kind === "page") {
@@ -64,14 +40,14 @@ function AppShell() {
       });
     } else if (routeMatch.kind === "project") {
       pageTitle =
-        getProject(currentLanguage, routeMatch.slug)?.title ??
-        fallbackTitles.project;
+        getProjectById(currentLanguage, routeMatch.slug)?.title ??
+        t("errors.projectNotFound", { lng: currentLanguage });
     } else if (routeMatch.kind === "software") {
       pageTitle =
-        getSoftware(currentLanguage, routeMatch.slug)?.title ??
-        fallbackTitles.software;
+        getSoftwareById(currentLanguage, routeMatch.slug)?.title ??
+        t("errors.softwareNotFound", { lng: currentLanguage });
     } else {
-      pageTitle = fallbackTitles.notFound;
+      pageTitle = t("errors.pageNotFound", { lng: currentLanguage });
     }
 
     const siteName = t("site.name", {
@@ -102,8 +78,22 @@ function AppShell() {
   }, [location.pathname]);
 
   return (
-    <div className="app-shell">
-      <a className="skip-link" href="#main-content">
+    <div className="relative flex min-h-screen min-h-svh flex-col bg-background text-foreground">
+      <a
+        className={[
+          "fixed top-3 left-3 z-[100]",
+          "-translate-y-[calc(100%+2rem)]",
+          "rounded-md border border-border-strong",
+          "bg-heading px-4 py-3",
+          "text-sm font-semibold text-primary-foreground no-underline",
+          "shadow-elevated transition-transform duration-150 ease-standard",
+          "focus:translate-y-0 focus:text-primary-foreground",
+          "focus-visible:outline-none focus-visible:ring-[3px]",
+          "focus-visible:ring-ring focus-visible:ring-offset-2",
+          "focus-visible:ring-offset-background",
+        ].join(" ")}
+        href="#main-content"
+      >
         {t("accessibility.skipToContent", {
           lng: currentLanguage,
         })}
@@ -111,13 +101,25 @@ function AppShell() {
 
       <SiteHeader />
 
-      <main ref={mainRef} className="site-main" id="main-content" tabIndex={-1}>
+      <main
+        ref={mainRef}
+        id="main-content"
+        tabIndex={-1}
+        className="min-w-0 flex-1 focus:outline-none"
+      >
         <Outlet />
       </main>
 
-      <footer className="site-footer">
-        <div className="site-footer__inner">
-          <p className="site-footer__text">
+      <footer className="relative border-t border-border bg-surface-subtle">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-copper/50 to-transparent"
+        />
+
+        <div className="mx-auto flex w-full max-w-wide items-center gap-4 px-page py-7 sm:py-8">
+          <span aria-hidden="true" className="h-px w-8 shrink-0 bg-copper" />
+
+          <p className="m-0 text-sm text-muted-foreground">
             {t("footer.text", {
               lng: currentLanguage,
             })}

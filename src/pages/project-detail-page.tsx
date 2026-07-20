@@ -1,176 +1,71 @@
-import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useLocation, useParams } from "react-router-dom";
 
 import Breadcrumbs from "../components/breadcrumbs";
 import ContentLink from "../components/content-link";
+import ContentSections from "../components/content-sections";
 import DetailNavigation from "../components/detail-navigation";
 import PageHeader from "../components/page-header";
+import { Badge } from "../components/ui/badge";
+import { Card, CardContent } from "../components/ui/card";
+import { cn } from "../lib/utils";
 import {
-  getAdjacentProjectIds,
-  getProject,
-  missingContentPlaceholder,
-} from "../content/site-content";
-import { useSiteContent } from "../content/use-site-content";
-import {
+  getLanguageFromPathname,
   getPageRoute,
   getProjectRoute,
-  getSoftwareRoute,
-  type SupportedLanguage,
 } from "../navigation";
+import {
+  getAdjacentProjectIds,
+  getProjectById,
+} from "../routes/projects/data/project-content.loader";
+import { formatContentDateRange } from "../shared/content/content-formatters";
 import NotFoundPage from "./not-found-page";
 
-const labels: Readonly<
-  Record<
-    SupportedLanguage,
-    {
-      readonly eyebrow: string;
-      readonly home: string;
-      readonly projects: string;
-      readonly breadcrumbLabel: string;
-      readonly executiveSummary: string;
-      readonly contextAndObjectives: string;
-      readonly roleAndResponsibilities: string;
-      readonly contributionDistribution: string;
-      readonly ledOrCoordinated: string;
-      readonly personallyDelivered: string;
-      readonly collectivelyDelivered: string;
-      readonly specialistTeam: string;
-      readonly decisionsAndOrganisation: string;
-      readonly contributionsAndAchievements: string;
-      readonly difficultiesAndTradeoffs: string;
-      readonly resultsAndFinalState: string;
-      readonly technologiesAndMethods: string;
-      readonly evidenceAndResources: string;
-      readonly confidentialityAndLimits: string;
-      readonly skills: string;
-      readonly relatedSoftware: string;
-      readonly relatedPublications: string;
-      readonly navigationLabel: string;
-      readonly backToProjects: string;
-      readonly previousProject: string;
-      readonly nextProject: string;
-      readonly context: string;
-      readonly role: string;
-      readonly period: string;
-      readonly status: string;
-    }
-  >
-> = {
-  fr: {
-    eyebrow: "Projet détaillé",
-    home: "Accueil",
-    projects: "Projets",
-    breadcrumbLabel: "Fil d’Ariane",
-    executiveSummary: "Résumé exécutif",
-    contextAndObjectives: "Contexte et objectifs",
-    roleAndResponsibilities: "Rôle, équipe et responsabilités",
-    contributionDistribution: "Répartition des contributions",
-    ledOrCoordinated: "Piloté ou coordonné",
-    personallyDelivered: "Réalisé personnellement",
-    collectivelyDelivered: "Livré collectivement",
-    specialistTeam: "Réalisé par une équipe spécialisée",
-    decisionsAndOrganisation: "Décisions et organisation",
-    contributionsAndAchievements: "Contributions et réalisations",
-    difficultiesAndTradeoffs: "Difficultés et arbitrages",
-    resultsAndFinalState: "Résultats et état final",
-    technologiesAndMethods: "Technologies et méthodes",
-    evidenceAndResources: "Preuves et ressources",
-    confidentialityAndLimits: "Confidentialité et limites",
-    skills: "Compétences illustrées",
-    relatedSoftware: "Logiciels associés",
-    relatedPublications: "Publications associées",
-    navigationLabel: "Navigation entre les projets",
-    backToProjects: "Retour à tous les projets",
-    previousProject: "Projet précédent",
-    nextProject: "Projet suivant",
-    context: "Contexte",
-    role: "Rôle",
-    period: "Période",
-    status: "État final",
-  },
-  en: {
-    eyebrow: "Project details",
-    home: "Home",
-    projects: "Projects",
-    breadcrumbLabel: "Breadcrumb",
-    executiveSummary: "Executive summary",
-    contextAndObjectives: "Context and objectives",
-    roleAndResponsibilities: "Role, team and responsibilities",
-    contributionDistribution: "Contribution breakdown",
-    ledOrCoordinated: "Led or coordinated",
-    personallyDelivered: "Personally delivered",
-    collectivelyDelivered: "Delivered collectively",
-    specialistTeam: "Delivered by a specialist team",
-    decisionsAndOrganisation: "Decisions and organisation",
-    contributionsAndAchievements: "Contributions and achievements",
-    difficultiesAndTradeoffs: "Difficulties and trade-offs",
-    resultsAndFinalState: "Results and final state",
-    technologiesAndMethods: "Technologies and methods",
-    evidenceAndResources: "Evidence and resources",
-    confidentialityAndLimits: "Confidentiality and limitations",
-    skills: "Skills demonstrated",
-    relatedSoftware: "Related software",
-    relatedPublications: "Related publications",
-    navigationLabel: "Project navigation",
-    backToProjects: "Return to all projects",
-    previousProject: "Previous project",
-    nextProject: "Next project",
-    context: "Context",
-    role: "Role",
-    period: "Period",
-    status: "Final state",
-  },
-};
-
 function ProjectDetailPage() {
+  const location = useLocation();
   const { slug } = useParams<{ slug: string }>();
-  const { language, content } = useSiteContent();
-  const text = labels[language];
+  const { t } = useTranslation();
+  const language = getLanguageFromPathname(location.pathname);
+  const project = slug ? getProjectById(language, slug) : undefined;
 
-  const project = slug ? getProject(language, slug) : undefined;
-
-  if (!project) {
+  if (!project || !slug) {
     return <NotFoundPage />;
   }
 
-  const { previousId, nextId } = getAdjacentProjectIds(language, project.id);
+  const { previousId, nextId } = getAdjacentProjectIds(language, slug);
 
   const previousProject = previousId
-    ? getProject(language, previousId)
+    ? getProjectById(language, previousId)
     : undefined;
 
-  const nextProject = nextId ? getProject(language, nextId) : undefined;
-
-  const relatedSoftware = project.relatedSoftwareIds.flatMap((softwareId) => {
-    const software = content.software[softwareId];
-
-    return software ? [software] : [];
-  });
-
-  const relatedPublications = project.relatedPublicationIds.flatMap(
-    (publicationId) => {
-      const publication = content.publications[publicationId];
-
-      return publication ? [publication] : [];
-    },
-  );
-
-  const description =
-    project.description.trim().length > 0
-      ? project.description
-      : missingContentPlaceholder;
+  const nextProject = nextId
+    ? getProjectById(language, nextId)
+    : undefined;
 
   return (
-    <article className="page detail-page" aria-labelledby="page-title">
-      <div className="page__inner">
+    <article
+      className="relative isolate overflow-hidden"
+      aria-labelledby="page-title"
+    >
+      <div
+        aria-hidden="true"
+        className={[
+          "pointer-events-none absolute inset-x-0 top-0 -z-10",
+          "h-[clamp(18rem,42vw,32rem)]",
+          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
+        ].join(" ")}
+      />
+
+      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
         <Breadcrumbs
-          ariaLabel={text.breadcrumbLabel}
+          ariaLabel={t("breadcrumbs.label", { lng: language })}
           items={[
             {
-              label: text.home,
+              label: t("breadcrumbs.home", { lng: language }),
               to: getPageRoute("home", language),
             },
             {
-              label: text.projects,
+              label: t("breadcrumbs.projects", { lng: language }),
               to: getPageRoute("projects", language),
             },
             {
@@ -180,269 +75,137 @@ function ProjectDetailPage() {
         />
 
         <PageHeader
-          eyebrow={text.eyebrow}
+          eyebrow={t("projectDetail.eyebrow", { lng: language })}
           title={project.title}
           introduction={project.summary}
         />
 
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-executive-summary"
-        >
-          <div className="section-header">
-            <h2 id="project-executive-summary">{text.executiveSummary}</h2>
-          </div>
-
-          <dl className="project-entry__metadata">
-            <div>
-              <dt>{text.period}</dt>
-              <dd>{project.period}</dd>
-            </div>
-
-            <div>
-              <dt>{text.context}</dt>
-              <dd>{project.context}</dd>
-            </div>
-
-            <div>
-              <dt>{text.role}</dt>
-              <dd>{project.role}</dd>
-            </div>
-
-            <div>
-              <dt>{text.status}</dt>
-              <dd>{project.status}</dd>
-            </div>
-          </dl>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-context"
-        >
-          <div className="section-header">
-            <h2 id="project-context">{text.contextAndObjectives}</h2>
-          </div>
-
-          <p>{project.context}</p>
-          <p>{description}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-role"
-        >
-          <div className="section-header">
-            <h2 id="project-role">{text.roleAndResponsibilities}</h2>
-          </div>
-
-          <p>{project.role}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-contributions"
-        >
-          <div className="section-header">
-            <h2 id="project-contributions">{text.contributionDistribution}</h2>
-          </div>
-
-          <dl className="contribution-distribution">
-            <div>
-              <dt>{text.ledOrCoordinated}</dt>
-              <dd>{missingContentPlaceholder}</dd>
-            </div>
-
-            <div>
-              <dt>{text.personallyDelivered}</dt>
-              <dd>{missingContentPlaceholder}</dd>
-            </div>
-
-            <div>
-              <dt>{text.collectivelyDelivered}</dt>
-              <dd>{missingContentPlaceholder}</dd>
-            </div>
-
-            <div>
-              <dt>{text.specialistTeam}</dt>
-              <dd>{missingContentPlaceholder}</dd>
-            </div>
-          </dl>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-decisions"
-        >
-          <div className="section-header">
-            <h2 id="project-decisions">{text.decisionsAndOrganisation}</h2>
-          </div>
-
-          <p className="content-warning">{missingContentPlaceholder}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-achievements"
-        >
-          <div className="section-header">
-            <h2 id="project-achievements">
-              {text.contributionsAndAchievements}
+        {project.period ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="project-period"
+          >
+            <h2
+              id="project-period"
+              className={cn(
+                "!m-0 mb-5 text-xl font-bold leading-heading",
+                "tracking-[-0.025em] text-heading",
+              )}
+            >
+              {t("content.period", { lng: language })}
             </h2>
-          </div>
 
-          {project.highlights.length > 0 ? (
-            <ul>
-              {project.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="content-warning">{missingContentPlaceholder}</p>
-          )}
-        </section>
+            <Badge
+              variant="outline"
+              className={cn(
+                "border-copper/50 bg-copper-soft px-3 py-1",
+                "font-mono font-semibold tracking-[0.04em]",
+                "text-copper-strong uppercase",
+              )}
+            >
+              {formatContentDateRange(project.period, language)}
+            </Badge>
+          </section>
+        ) : null}
 
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-difficulties"
-        >
-          <div className="section-header">
-            <h2 id="project-difficulties">{text.difficultiesAndTradeoffs}</h2>
-          </div>
+        <ContentSections
+          idPrefix={`project-${slug}`}
+          sections={project.sections}
+        />
 
-          <p className="content-warning">{missingContentPlaceholder}</p>
-        </section>
+        {project.technologies && project.technologies.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="project-technologies"
+          >
+            <h2
+              id="project-technologies"
+              className={cn(
+                "!m-0 mb-6 text-xl font-bold leading-heading",
+                "tracking-[-0.025em] text-heading",
+              )}
+            >
+              {t("projectDetail.technologiesAndMethods", {
+                lng: language,
+              })}
+            </h2>
 
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-results"
-        >
-          <div className="section-header">
-            <h2 id="project-results">{text.resultsAndFinalState}</h2>
-          </div>
-
-          <p>{project.status}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-technologies"
-        >
-          <div className="section-header">
-            <h2 id="project-technologies">{text.technologiesAndMethods}</h2>
-          </div>
-
-          {project.technologies.length > 0 ? (
-            <ul className="project-entry__technologies">
+            <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
               {project.technologies.map((technology) => (
-                <li key={technology}>{technology}</li>
+                <li className="m-0" key={technology}>
+                  <Badge
+                    variant="secondary"
+                    className={cn(
+                      "border border-border bg-muted px-3 py-1",
+                      "font-mono font-medium text-muted-foreground",
+                    )}
+                  >
+                    {technology}
+                  </Badge>
+                </li>
               ))}
             </ul>
-          ) : (
-            <p className="content-warning">{missingContentPlaceholder}</p>
-          )}
-        </section>
+          </section>
+        ) : null}
 
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-resources"
-        >
-          <div className="section-header">
-            <h2 id="project-resources">{text.evidenceAndResources}</h2>
-          </div>
-
-          {project.links.length > 0 ? (
-            <div className="project-entry__links">
-              {project.links.map((link, index) => (
-                <ContentLink
-                  key={`${link.label}-${index}`}
-                  className="editorial-link"
-                  language={language}
-                  link={link}
-                />
-              ))}
-            </div>
-          ) : (
-            <p className="content-warning">{missingContentPlaceholder}</p>
-          )}
-
-          {relatedSoftware.length > 0 ? (
-            <>
-              <h3>{text.relatedSoftware}</h3>
-
-              <ul>
-                {relatedSoftware.map((software) => (
-                  <li key={software.id}>
-                    <Link to={getSoftwareRoute(software.id, language)}>
-                      {software.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : null}
-
-          {relatedPublications.length > 0 ? (
-            <>
-              <h3>{text.relatedPublications}</h3>
-
-              <ul>
-                {relatedPublications.map((publication) => (
-                  <li key={publication.id}>
-                    {publication.title} — {publication.venue},{" "}
-                    {publication.year}
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : null}
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-confidentiality"
-        >
-          <div className="section-header">
-            <h2 id="project-confidentiality">
-              {text.confidentialityAndLimits}
+        {project.links && project.links.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="project-resources"
+          >
+            <h2
+              id="project-resources"
+              className={cn(
+                "!m-0 mb-6 text-xl font-bold leading-heading",
+                "tracking-[-0.025em] text-heading",
+              )}
+            >
+              {t("projectDetail.evidenceAndResources", {
+                lng: language,
+              })}
             </h2>
-          </div>
 
-          <p>{project.confidentiality ?? missingContentPlaceholder}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="project-skills"
-        >
-          <div className="section-header">
-            <h2 id="project-skills">{text.skills}</h2>
-          </div>
-
-          <p className="content-warning">{missingContentPlaceholder}</p>
-        </section>
+            <Card className="gap-0 border-border-strong py-0 shadow-subtle">
+              <CardContent className="grid gap-1 p-3 sm:p-4">
+                {project.links.map((link, index) => (
+                  <ContentLink
+                    key={`${link.href}-${index}`}
+                    link={link}
+                    variant="resource"
+                  />
+                ))}
+              </CardContent>
+            </Card>
+          </section>
+        ) : null}
 
         <DetailNavigation
-          ariaLabel={text.navigationLabel}
+          ariaLabel={t("projectDetail.navigationLabel", {
+            lng: language,
+          })}
           backLink={{
-            label: text.backToProjects,
+            label: t("actions.backToProjects", { lng: language }),
             to: getPageRoute("projects", language),
           }}
-          previousLabel={text.previousProject}
-          nextLabel={text.nextProject}
+          previousLabel={t("actions.previousProject", {
+            lng: language,
+          })}
+          nextLabel={t("actions.nextProject", {
+            lng: language,
+          })}
           previousLink={
-            previousProject
+            previousId && previousProject
               ? {
                   label: previousProject.title,
-                  to: getProjectRoute(previousProject.id, language),
+                  to: getProjectRoute(previousId, language),
                 }
               : undefined
           }
           nextLink={
-            nextProject
+            nextId && nextProject
               ? {
                   label: nextProject.title,
-                  to: getProjectRoute(nextProject.id, language),
+                  to: getProjectRoute(nextId, language),
                 }
               : undefined
           }

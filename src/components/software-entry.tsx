@@ -1,162 +1,159 @@
+import { ArrowRightIcon } from "@phosphor-icons/react";
 import { createElement, type ElementType } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import type { SoftwareEntry as SoftwareEntryData } from "../content/site-content";
-import { useSiteContent } from "../content/use-site-content";
+import { cn } from "../lib/utils";
 import { getSoftwareRoute, type SupportedLanguage } from "../navigation";
+import type { SoftwareContent } from "../routes/software/data/software-content.types";
 import ContentLink from "./content-link";
+import ContentSections from "./content-sections";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 type SoftwareEntryProps = {
-  readonly software: SoftwareEntryData;
+  readonly software: SoftwareContent;
+  readonly softwareId: string;
+  readonly language: SupportedLanguage;
   readonly variant?: "summary" | "detailed";
   readonly headingLevel?: 2 | 3;
   readonly featured?: boolean;
 };
 
-const labels: Readonly<
-  Record<
-    SupportedLanguage,
-    {
-      readonly context: string;
-      readonly contribution: string;
-      readonly technologies: string;
-      readonly resources: string;
-      readonly viewDetails: string;
-    }
-  >
-> = {
-  fr: {
-    context: "Contexte",
-    contribution: "Contribution",
-    technologies: "Technologies",
-    resources: "Ressources",
-    viewDetails: "Voir le logiciel détaillé",
-  },
-  en: {
-    context: "Context",
-    contribution: "Contribution",
-    technologies: "Technologies",
-    resources: "Resources",
-    viewDetails: "View software details",
-  },
-};
-
 function SoftwareEntry({
   software,
+  softwareId,
+  language,
   variant = "detailed",
   headingLevel = 3,
   featured = false,
 }: SoftwareEntryProps) {
-  const { language } = useSiteContent();
-  const text = labels[language];
-
-  const headingId = `software-${software.id}-title`;
+  const { t } = useTranslation();
+  const headingId = `software-${softwareId}-title`;
   const Heading = `h${headingLevel}` as ElementType;
 
-  const className = [
-    "software-entry",
-    `software-entry--${variant}`,
-    featured ? "software-entry--featured" : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
   return (
-    <article className={className} aria-labelledby={headingId}>
-      <header className="software-entry__header">
-        {createElement(
-          Heading,
-          {
-            id: headingId,
-            className: "software-entry__title",
-          },
-          software.title,
+    <article className="h-full min-w-0" aria-labelledby={headingId}>
+      <Card
+        className={cn(
+          "h-full gap-0 overflow-hidden py-0",
+          "border-border-strong shadow-subtle",
+          "transition-[border-color,box-shadow,transform]",
+          "duration-150 ease-standard",
+          "hover:border-primary hover:shadow-elevated",
+          featured && [
+            "border-l-4 border-l-copper",
+            "bg-linear-to-br from-card to-action-soft",
+            "shadow-elevated",
+          ],
         )}
+      >
+        <CardHeader className="gap-4 px-5 py-5 sm:px-6 sm:py-6">
+          <CardTitle>
+            {createElement(
+              Heading,
+              {
+                id: headingId,
+                className: cn(
+                  "!m-0 text-lg font-bold leading-heading",
+                  "tracking-[-0.015em] text-heading",
+                  "sm:text-xl",
+                ),
+              },
+              software.title,
+            )}
+          </CardTitle>
 
-        <p className="software-entry__status">{software.status}</p>
-      </header>
+          <p className="!m-0 text-base text-muted-foreground">
+            {software.summary}
+          </p>
+        </CardHeader>
 
-      <p className="software-entry__summary">{software.summary}</p>
-
-      {variant === "detailed" ? (
-        <>
-          <dl className="software-entry__metadata">
-            <div>
-              <dt>{text.context}</dt>
-              <dd>{software.context}</dd>
-            </div>
-
-            <div>
-              <dt>{text.contribution}</dt>
-              <dd>{software.contribution}</dd>
-            </div>
-          </dl>
-
-          {software.description.trim().length > 0 ? (
-            <p className="software-entry__description">
-              {software.description}
-            </p>
-          ) : null}
-
-          {software.highlights.length > 0 ? (
-            <ul className="software-entry__highlights">
-              {software.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          ) : null}
-
-          {software.technologies.length > 0 ? (
-            <ul
-              className="software-entry__technologies"
-              aria-label={text.technologies}
-            >
-              {software.technologies.map((technology) => (
-                <li key={technology}>{technology}</li>
-              ))}
-            </ul>
-          ) : null}
-
-          {software.links.length > 0 ? (
-            <div className="software-entry__links">
-              {software.links.map((link, index) => (
-                <ContentLink
-                  key={`${link.label}-${index}`}
-                  className="editorial-link"
-                  language={language}
-                  link={link}
+        {variant === "detailed" ? (
+          <CardContent className="grid gap-6 px-5 pb-6 sm:px-6">
+            {software.sections.length > 0 ? (
+              <div className="grid gap-6">
+                <ContentSections
+                  className="max-w-none"
+                  headingLevel={4}
+                  idPrefix={`software-${softwareId}`}
+                  sections={software.sections}
+                  variant="compact"
                 />
-              ))}
-            </div>
-          ) : null}
+              </div>
+            ) : null}
 
-          {software.resources.length > 0 ? (
-            <div className="software-entry__resources">
-              <h4>{text.resources}</h4>
+            {software.technologies && software.technologies.length > 0 ? (
+              <ul
+                className="!m-0 flex list-none flex-wrap gap-2 !p-0"
+                aria-label={t("content.technologies", {
+                  lng: language,
+                })}
+              >
+                {software.technologies.map((technology) => (
+                  <li className="!m-0" key={technology}>
+                    <Badge
+                      variant="secondary"
+                      className={cn(
+                        "border border-border",
+                        "bg-muted px-3 py-1",
+                        "font-mono font-medium text-muted-foreground",
+                      )}
+                    >
+                      {technology}
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
 
-              <div className="software-entry__links">
-                {software.resources.map((resource, index) => (
+            {software.links && software.links.length > 0 ? (
+              <div className="flex flex-wrap gap-x-5 gap-y-2">
+                {software.links.map((link, index) => (
                   <ContentLink
-                    key={`${resource.label}-${index}`}
-                    className="editorial-link"
-                    language={language}
-                    link={resource}
+                    key={`${link.href}-${index}`}
+                    link={link}
+                    variant="inline"
                   />
                 ))}
               </div>
-            </div>
-          ) : null}
-        </>
-      ) : null}
+            ) : null}
+          </CardContent>
+        ) : null}
 
-      <div className="software-entry__links">
-        <Link
-          className="editorial-link"
-          to={getSoftwareRoute(software.id, language)}
+        <CardFooter
+          className={cn(
+            "mt-auto border-t border-border",
+            "px-5 py-4 sm:px-6",
+          )}
         >
-          {text.viewDetails}
-        </Link>
-      </div>
+          <Button
+            asChild
+            variant={featured ? "default" : "outline"}
+            className={cn(
+              "min-h-11",
+              !featured && [
+                "border-border-strong bg-card",
+                "text-heading shadow-none",
+                "hover:border-primary hover:bg-action-soft",
+                "hover:text-action-strong",
+              ],
+            )}
+          >
+            <Link to={getSoftwareRoute(softwareId, language)}>
+              {t("actions.viewSoftware", { lng: language })}
+              <ArrowRightIcon aria-hidden="true" weight="bold" />
+            </Link>
+          </Button>
+        </CardFooter>
+      </Card>
     </article>
   );
 }

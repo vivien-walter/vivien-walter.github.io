@@ -1,143 +1,98 @@
+import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+
+import Breadcrumbs from "../components/breadcrumbs";
+import ContentSections from "../components/content-sections";
 import PageHeader from "../components/page-header";
 import TimelineEntry from "../components/timeline-entry";
-import { useSiteContent } from "../content/use-site-content";
+import { getLanguageFromPathname, getPageRoute } from "../navigation";
+import {
+  getExperienceById,
+  getExperienceIndex,
+  getExperiencePage,
+} from "../routes/experience/data/experience-content.loader";
 
 function ExperiencePage() {
-  const { content } = useSiteContent();
-  const page = content.experiencePage;
+  const location = useLocation();
+  const { t } = useTranslation();
+  const language = getLanguageFromPathname(location.pathname);
+  const page = getExperiencePage(language);
+  const index = getExperienceIndex(language);
+
+  const experiences = index.order.flatMap((experienceId) => {
+    const experience = getExperienceById(language, experienceId);
+
+    return experience ? [{ experience, experienceId }] : [];
+  });
 
   return (
-    <div className="page page--experience" aria-labelledby="page-title">
-      <div className="page__inner">
+    <div
+      className="relative isolate overflow-hidden"
+      aria-labelledby="page-title"
+    >
+      <div
+        aria-hidden="true"
+        className={[
+          "pointer-events-none absolute inset-x-0 top-0 -z-10",
+          "h-[clamp(18rem,42vw,32rem)]",
+          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
+        ].join(" ")}
+      />
+
+      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
+        <Breadcrumbs
+          ariaLabel={t("breadcrumbs.label", { lng: language })}
+          items={[
+            {
+              label: t("breadcrumbs.home", { lng: language }),
+              to: getPageRoute("home", language),
+            },
+            {
+              label: t("pages.experience.title", { lng: language }),
+            },
+          ]}
+        />
+
         <PageHeader
-          eyebrow={page.eyebrow}
+          eyebrow={t("pages.experience.title", { lng: language })}
           title={page.title}
           introduction={page.introduction}
         />
 
-        <section className="page-section" aria-labelledby="journey-title">
-          <header className="section-header">
-            <h2 id="journey-title">{page.journeyTitle}</h2>
-          </header>
+        <ContentSections
+          idPrefix="experience-page"
+          sections={page.sections ?? []}
+        />
 
-          <ol className="journey-list">
-            {page.journey.map((step) => (
-              <li className="journey-entry" key={step.id}>
-                <article>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </article>
-              </li>
-            ))}
-          </ol>
-        </section>
+        {experiences.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="experience-list-title"
+          >
+            <header className="mb-8 max-w-readable">
+              <h2
+                id="experience-list-title"
+                className={[
+                  "!m-0 text-xl font-bold leading-heading",
+                  "tracking-[-0.025em] text-heading",
+                ].join(" ")}
+              >
+                {t("pages.experience.title", { lng: language })}
+              </h2>
+            </header>
 
-        <section
-          className="page-section"
-          aria-labelledby="main-experience-title"
-        >
-          <header className="section-header">
-            <h2 id="main-experience-title">{page.mainExperienceTitle}</h2>
-          </header>
-
-          <div className="timeline">
-            {page.mainExperiences.map((experience) => (
-              <TimelineEntry key={experience.id} experience={experience} />
-            ))}
-          </div>
-        </section>
-
-        <section className="page-section" aria-labelledby="parallel-title">
-          <header className="section-header">
-            <h2 id="parallel-title">{page.parallelTitle}</h2>
-            <p>{page.parallelIntroduction}</p>
-          </header>
-
-          <div className="parallel-activities">
-            {page.parallelActivities.map((activity) => (
-              <article className="parallel-activity" key={activity.id}>
-                <header className="parallel-activity__header">
-                  <p className="parallel-activity__period">{activity.period}</p>
-
-                  <h3>{activity.title}</h3>
-                </header>
-
-                <p className="parallel-activity__summary">{activity.summary}</p>
-
-                <ul className="parallel-activity__highlights">
-                  {activity.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="page-section" aria-labelledby="teaching-title">
-          <header className="section-header">
-            <h2 id="teaching-title">{page.teachingTitle}</h2>
-          </header>
-
-          <div className="teaching-list">
-            {page.teaching.map((entry) => (
-              <article className="teaching-entry" key={entry.id}>
-                <header className="teaching-entry__header">
-                  <p className="teaching-entry__period">{entry.period}</p>
-
-                  <h3>{entry.title}</h3>
-
-                  <p className="teaching-entry__organisation">
-                    {entry.organisation}
-                  </p>
-                </header>
-
-                <p className="teaching-entry__summary">{entry.summary}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="page-section" aria-labelledby="education-title">
-          <header className="section-header">
-            <h2 id="education-title">{page.educationTitle}</h2>
-          </header>
-
-          <div className="education-list">
-            {page.education.map((entry) => (
-              <article className="education-entry" key={entry.id}>
-                <header className="education-entry__header">
-                  <p className="education-entry__period">{entry.period}</p>
-
-                  <h3>{entry.qualification}</h3>
-
-                  <p className="education-entry__institution">
-                    {entry.institution}
-                  </p>
-                </header>
-
-                {entry.detail ? (
-                  <p className="education-entry__detail">{entry.detail}</p>
-                ) : null}
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="page-section" aria-labelledby="personal-title">
-          <header className="section-header">
-            <h2 id="personal-title">{page.personalTitle}</h2>
-            <p>{page.personalIntroduction}</p>
-          </header>
-
-          <ul className="personal-activities">
-            {page.personalActivities.map((activity) => (
-              <li className="content-warning" key={activity}>
-                {activity}
-              </li>
-            ))}
-          </ul>
-        </section>
+            <div className="grid gap-6">
+              {experiences.map(({ experience, experienceId }) => (
+                <TimelineEntry
+                  key={experienceId}
+                  experience={experience}
+                  experienceId={experienceId}
+                  language={language}
+                />
+              ))}
+            </div>
+          </section>
+        ) : null}
       </div>
     </div>
   );

@@ -1,4 +1,13 @@
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+} from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
+
+import { cn } from "../lib/utils";
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
+import { Separator } from "./ui/separator";
 
 export type DetailNavigationLink = {
   readonly label: string;
@@ -23,46 +32,154 @@ function DetailNavigation({
   nextLabel,
 }: DetailNavigationProps) {
   return (
-    <nav className="detail-navigation" aria-label={ariaLabel}>
-      <Link className="detail-navigation__back editorial-link" to={backLink.to}>
-        {backLink.label}
-      </Link>
+    <nav
+      className="mt-16 grid gap-6 sm:mt-20"
+      aria-label={ariaLabel}
+    >
+      <Separator />
+
+      <Button
+        asChild
+        variant="link"
+        className={cn(
+          "h-auto min-h-11 w-fit justify-start px-0 py-2",
+          "font-semibold text-primary",
+          "hover:text-action-strong",
+        )}
+      >
+        <Link to={backLink.to}>
+          <ArrowLeftIcon aria-hidden="true" weight="bold" />
+          {backLink.label}
+        </Link>
+      </Button>
 
       {previousLink || nextLink ? (
-        <ul className="detail-navigation__list">
+        <ul
+          className={cn(
+            "m-0 grid list-none gap-4 p-0",
+            "sm:grid-cols-2",
+          )}
+        >
           {previousLink ? (
-            <li className="detail-navigation__item">
-              <Link
-                className="detail-navigation__link"
-                rel="prev"
-                to={previousLink.to}
+            <li className="m-0 min-w-0">
+              <Card
+                className={cn(
+                  "h-full gap-0 overflow-hidden py-0",
+                  "border-border-strong shadow-subtle",
+                  "transition-[border-color,box-shadow]",
+                  "duration-150 ease-standard",
+                  "hover:border-primary hover:shadow-elevated",
+                )}
               >
-                <span className="detail-navigation__direction">
-                  {previousLabel}
-                </span>
+                <Link
+                  className={cn(
+                    "group grid h-full min-h-28 gap-3 p-5",
+                    "text-left text-foreground no-underline",
+                    "focus-visible:outline-none",
+                    "focus-visible:ring-[3px]",
+                    "focus-visible:ring-inset",
+                    "focus-visible:ring-ring/50",
+                  )}
+                  rel="prev"
+                  to={previousLink.to}
+                >
+                  <span
+                    className={cn(
+                      "flex items-center gap-2",
+                      "font-mono text-xs font-semibold",
+                      "tracking-[0.04em] text-muted-foreground",
+                      "uppercase",
+                    )}
+                  >
+                    <ArrowLeftIcon
+                      aria-hidden="true"
+                      className={cn(
+                        "size-4 shrink-0",
+                        "transition-transform",
+                        "duration-150 ease-standard",
+                        "group-hover:-translate-x-1",
+                      )}
+                      weight="bold"
+                    />
 
-                <span className="detail-navigation__title">
-                  {previousLink.label}
-                </span>
-              </Link>
+                    {previousLabel}
+                  </span>
+
+                  <span
+                    className={cn(
+                      "self-end text-base font-semibold",
+                      "leading-heading text-heading",
+                      "group-hover:text-action-strong",
+                    )}
+                  >
+                    {previousLink.label}
+                  </span>
+                </Link>
+              </Card>
             </li>
           ) : null}
 
           {nextLink ? (
-            <li className="detail-navigation__item detail-navigation__item--next">
-              <Link
-                className="detail-navigation__link"
-                rel="next"
-                to={nextLink.to}
+            <li
+              className={cn(
+                "m-0 min-w-0",
+                !previousLink && "sm:col-start-2",
+              )}
+            >
+              <Card
+                className={cn(
+                  "h-full gap-0 overflow-hidden py-0",
+                  "border-border-strong shadow-subtle",
+                  "transition-[border-color,box-shadow]",
+                  "duration-150 ease-standard",
+                  "hover:border-primary hover:shadow-elevated",
+                )}
               >
-                <span className="detail-navigation__direction">
-                  {nextLabel}
-                </span>
+                <Link
+                  className={cn(
+                    "group grid h-full min-h-28 gap-3 p-5",
+                    "text-right text-foreground no-underline",
+                    "focus-visible:outline-none",
+                    "focus-visible:ring-[3px]",
+                    "focus-visible:ring-inset",
+                    "focus-visible:ring-ring/50",
+                  )}
+                  rel="next"
+                  to={nextLink.to}
+                >
+                  <span
+                    className={cn(
+                      "flex items-center justify-end gap-2",
+                      "font-mono text-xs font-semibold",
+                      "tracking-[0.04em] text-muted-foreground",
+                      "uppercase",
+                    )}
+                  >
+                    {nextLabel}
 
-                <span className="detail-navigation__title">
-                  {nextLink.label}
-                </span>
-              </Link>
+                    <ArrowRightIcon
+                      aria-hidden="true"
+                      className={cn(
+                        "size-4 shrink-0",
+                        "transition-transform",
+                        "duration-150 ease-standard",
+                        "group-hover:translate-x-1",
+                      )}
+                      weight="bold"
+                    />
+                  </span>
+
+                  <span
+                    className={cn(
+                      "self-end text-base font-semibold",
+                      "leading-heading text-heading",
+                      "group-hover:text-action-strong",
+                    )}
+                  >
+                    {nextLink.label}
+                  </span>
+                </Link>
+              </Card>
             </li>
           ) : null}
         </ul>

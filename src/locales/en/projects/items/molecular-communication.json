@@ -1,0 +1,89 @@
+{
+    "title": "Molecular communication laboratory and testbed",
+    "summary": "Creation of an operational laboratory and experimental platform combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning to validate molecular communication theories.",
+    "period": {
+        "start": "2021-03",
+        "end": "2023-08"
+    },
+    "sections": [
+        {
+            "title": "Laboratory creation",
+            "paragraphs": [
+                "The project was carried out at King’s College London as part of a Postdoctoral Research Associate position presented publicly as an R&D Project Manager role."
+            ],
+            "items": [
+                "Identification and preparation of the premises.",
+                "Selection and ordering of equipment, fume hoods, heavy equipment and consumables.",
+                "Definition of safety and operating procedures.",
+                "Training teams in the use of the laboratory."
+            ]
+        },
+        {
+            "title": "Experimental platform",
+            "paragraphs": [
+                "The operational testbed enabled the experimental validation of molecular communication theories using chemical reactions to process signals."
+            ],
+            "items": [
+                "Study of filtering, saturation, amplification and encoding functions.",
+                "Design of a system combining chemistry, microfluidics, UV-Visible detection, electronics and software.",
+                "Management of a team averaging five people: one junior PDRA, two doctoral researchers and two Master’s interns.",
+                "Training of nine people in total."
+            ]
+        },
+        {
+            "title": "Funding and project management",
+            "paragraphs": [
+                "Two EPSRC grants of €300,000 and €60,000, totalling €360,000, were managed as part of the project."
+            ],
+            "items": [
+                "Partial contribution to the first funding application.",
+                "Complete drafting of the second funding application."
+            ]
+        },
+        {
+            "title": "Artificial intelligence and signal analysis",
+            "paragraphs": [
+                "A one-dimensional convolutional neural network was developed to analyse UV-Visible signals and estimate the molecular composition and concentrations of aqueous solutions."
+            ],
+            "items": [
+                "Development using Python, TensorFlow and scikit-learn.",
+                "Preparation and analysis of experimental signals.",
+                "Work published in IEEE Transactions on Molecular, Biological and Multi-Scale Communications in 2026."
+            ]
+        },
+        {
+            "title": "Open-source syringe pumps",
+            "paragraphs": [
+                "Six syringe pumps were designed and manufactured for integration into the experimental platform."
+            ],
+            "items": [
+                "Mechanical design using Autodesk Fusion 360.",
+                "Manufacturing through 3D printing.",
+                "Arduino-based electronics and I²C communication.",
+                "Development of control software in C++ and Python."
+            ]
+        },
+        {
+            "title": "Results",
+            "paragraphs": [
+                "The laboratory was created, the experimental testbed was made operational, and the work resulted in two publications for which I was the first author and principal writer."
+            ],
+            "items": [
+                "Real-time signal processing via chemical reactions for a microfluidic molecular communication system — Nature Communications, 2023.",
+                "CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication — IEEE T-MBMC, 2026."
+            ]
+        }
+    ],
+    "technologies": [
+        "Python",
+        "TensorFlow",
+        "scikit-learn",
+        "C++",
+        "Arduino",
+        "I²C",
+        "Autodesk Fusion 360",
+        "3D printing",
+        "Microfluidics",
+        "UV-Visible spectroscopy"
+    ]
+}

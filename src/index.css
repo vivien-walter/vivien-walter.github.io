@@ -1,42 +1,147 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+  /* Couleurs sémantiques shadcn */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Couleurs propres au portfolio */
+  --color-heading: var(--heading);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-strong: var(--surface-strong);
+  --color-action-strong: var(--action-strong);
+  --color-action-soft: var(--action-soft);
+  --color-copper: var(--copper);
+  --color-copper-strong: var(--copper-strong);
+  --color-copper-soft: var(--copper-soft);
+  --color-border-strong: var(--border-strong);
+
+  /* Typographie */
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+
+  --text-xs: var(--font-size-xs);
+  --text-xs--line-height: 1.5;
+
+  --text-sm: var(--font-size-sm);
+  --text-sm--line-height: 1.55;
+
+  --text-base: var(--font-size-base);
+  --text-base--line-height: var(--line-height-body);
+
+  --text-md: var(--font-size-md);
+  --text-md--line-height: 1.55;
+
+  --text-lg: var(--font-size-lg);
+  --text-lg--line-height: var(--line-height-heading);
+
+  --text-xl: var(--font-size-xl);
+  --text-xl--line-height: var(--line-height-heading);
+
+  --text-2xl: var(--font-size-2xl);
+  --text-2xl--line-height: var(--line-height-tight);
+
+  --leading-tight: var(--line-height-tight);
+  --leading-heading: var(--line-height-heading);
+  --leading-body: var(--line-height-body);
+
+  /* Conteneurs et espacement de page */
+  --container-readable: var(--content-readable);
+  --container-editorial: var(--content-editorial);
+  --container-wide: var(--content-wide);
+  --spacing-page: var(--page-gutter);
+
+  /* Rayons utilisés par les composants shadcn */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Ombres et transitions */
+  --shadow-subtle: var(--shadow-subtle-value);
+  --shadow-elevated: var(--shadow-elevated-value);
+  --ease-standard: var(--transition-timing);
+}
+
 :root {
   color-scheme: light;
 
-  /* Palette */
-  --color-background: #f4f3ee;
-  --color-surface: #ffffff;
-  --color-surface-subtle: #ebeae4;
-  --color-surface-strong: #deddd6;
+  /* Thème sémantique */
+  --background: #f4f3ee;
+  --foreground: #273649;
 
-  --color-heading: #142033;
-  --color-text: #273649;
-  --color-text-muted: #566373;
+  --card: #ffffff;
+  --card-foreground: #273649;
 
-  --color-action: #205493;
-  --color-action-strong: #153a69;
-  --color-action-soft: #e5edf7;
+  --popover: #ffffff;
+  --popover-foreground: #273649;
 
-  --color-accent: #ad5937;
-  --color-accent-strong: #7f3d24;
-  --color-accent-soft: #f2e5de;
+  --primary: #205493;
+  --primary-foreground: #ffffff;
 
-  --color-border: #cfd4da;
-  --color-border-strong: #aeb7c1;
-  --color-focus: #005fcc;
+  --secondary: #ebeae4;
+  --secondary-foreground: #142033;
 
-  /* Surfaces */
-  --surface-level-0: var(--color-background);
-  --surface-level-1: var(--color-surface);
-  --surface-level-2: var(--color-surface-subtle);
-  --surface-level-3: var(--color-surface-strong);
+  --muted: #ebeae4;
+  --muted-foreground: #566373;
+
+  --accent: #f2e5de;
+  --accent-foreground: #7f3d24;
+
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+
+  --border: #cfd4da;
+  --input: #aeb7c1;
+  --ring: #005fcc;
+
+  /* Palette « atelier scientifique contemporain » */
+  --heading: #142033;
+
+  --surface: #ffffff;
+  --surface-subtle: #ebeae4;
+  --surface-strong: #deddd6;
+
+  --action-strong: #153a69;
+  --action-soft: #e5edf7;
+
+  --copper: #ad5937;
+  --copper-strong: #7f3d24;
+  --copper-soft: #f2e5de;
+
+  --border-strong: #aeb7c1;
 
   /* Typographie */
   --font-family-sans:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 
   --font-family-mono:
-    "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono",
-    monospace;
+    ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas,
+    "Liberation Mono", monospace;
 
   --font-size-xs: 0.8125rem;
   --font-size-sm: 0.9375rem;
@@ -73,27 +178,23 @@
 
   /* Bordures */
   --border-width: 1px;
-  --border-default: var(--border-width) solid var(--color-border);
-  --border-strong: var(--border-width) solid var(--color-border-strong);
+  --border-default: var(--border-width) solid var(--border);
+  --border-strong: var(--border-width) solid var(--border-strong);
 
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.875rem;
-  --radius-pill: 999px;
+  /* Rayon de base utilisé par shadcn et l’échelle définie dans @theme */
+  --radius: 0.625rem;
 
   /* Ombres */
-  --shadow-subtle:
-    0 0.0625rem 0.125rem rgb(20 32 51 / 5%),
-    0 0.5rem 1.5rem rgb(20 32 51 / 4%);
+  --shadow-subtle-value:
+    0 0.0625rem 0.125rem rgb(20 32 51 / 5%), 0 0.5rem 1.5rem rgb(20 32 51 / 4%);
 
-  --shadow-elevated:
-    0 0.125rem 0.25rem rgb(20 32 51 / 6%),
-    0 1rem 2.5rem rgb(20 32 51 / 8%);
+  --shadow-elevated-value:
+    0 0.125rem 0.25rem rgb(20 32 51 / 6%), 0 1rem 2.5rem rgb(20 32 51 / 8%);
 
   /* Focus */
   --focus-width: 0.1875rem;
   --focus-offset: 0.1875rem;
-  --focus-ring: var(--focus-width) solid var(--color-focus);
+  --focus-ring: var(--focus-width) solid var(--ring);
 
   /* Transitions */
   --transition-duration-fast: 120ms;
@@ -103,8 +204,8 @@
   font-family: var(--font-family-sans);
   font-size: 100%;
   font-synthesis: none;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--foreground);
+  background: var(--background);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -114,12 +215,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  border-color: var(--border);
 }
 
 html {
   min-width: 20rem;
   min-height: 100%;
-  background: var(--color-background);
+  background: var(--background);
   scroll-padding-block-start: var(--space-4);
   text-size-adjust: 100%;
 }
@@ -129,8 +231,9 @@ body {
   min-height: 100vh;
   min-height: 100svh;
   margin: 0;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-family-sans);
   font-size: var(--font-size-base);
   line-height: var(--line-height-body);
   overflow-wrap: break-word;
@@ -145,62 +248,60 @@ main {
   display: block;
 }
 
-h1,
-h2,
-h3,
-h4 {
+/*
+ * Les styles éditoriaux sont limités à main.
+ * Ils ne perturbent plus les composants shadcn, le header, les dialogues
+ * et le pied de page.
+ */
+
+main :where(h1, h2, h3, h4) {
   margin-block-start: 0;
-  color: var(--color-heading);
+  color: var(--heading);
   font-weight: 700;
   line-height: var(--line-height-heading);
   text-wrap: balance;
 }
 
-h1 {
+main h1 {
   margin-block-end: var(--space-6);
   font-size: var(--font-size-2xl);
   line-height: var(--line-height-tight);
   letter-spacing: -0.04em;
 }
 
-h2 {
+main h2 {
   margin-block-end: var(--space-4);
   font-size: var(--font-size-xl);
   letter-spacing: -0.025em;
 }
 
-h3 {
+main h3 {
   margin-block-end: var(--space-3);
   font-size: var(--font-size-lg);
   letter-spacing: -0.0125em;
 }
 
-h4 {
+main h4 {
   margin-block-end: var(--space-2);
   font-size: var(--font-size-md);
 }
 
-p,
-ul,
-ol,
-dl,
-blockquote,
-pre {
+main :where(p, dl, blockquote, pre),
+main :where(ul, ol):not([class]) {
   margin-block-start: 0;
   margin-block-end: var(--space-5);
 }
 
-ul,
-ol {
+main :where(ul, ol):not([class]) {
   padding-inline-start: 1.5em;
 }
 
-li + li {
+main :where(ul, ol):not([class]) > li + li {
   margin-block-start: var(--space-2);
 }
 
-a {
-  color: var(--color-action);
+main a:not([class]) {
+  color: var(--primary);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
   transition:
@@ -209,12 +310,12 @@ a {
       var(--transition-timing);
 }
 
-a:hover {
-  color: var(--color-action-strong);
+main a:not([class]):hover {
+  color: var(--action-strong);
 }
 
-a:active {
-  color: var(--color-accent-strong);
+main a:not([class]):active {
+  color: var(--copper-strong);
 }
 
 button,
@@ -251,21 +352,21 @@ samp {
   font-size: 0.925em;
 }
 
-blockquote {
+main blockquote {
   margin-inline: 0;
   padding-inline-start: var(--space-5);
-  border-inline-start: 0.1875rem solid var(--color-accent);
-  color: var(--color-text-muted);
+  border-inline-start: 0.1875rem solid var(--copper);
+  color: var(--muted-foreground);
 }
 
-hr {
+main hr {
   height: 0;
   margin-block: var(--space-10);
   border: 0;
   border-block-start: var(--border-default);
 }
 
-:where(h1, h2, h3, h4, section, article)[id] {
+main :where(h1, h2, h3, h4, section, article)[id] {
   scroll-margin-block-start: var(--space-6);
 }
 
@@ -275,8 +376,8 @@ hr {
 }
 
 ::selection {
-  color: var(--color-surface);
-  background: var(--color-action);
+  color: var(--primary-foreground);
+  background: var(--primary);
 }
 
 .visually-hidden {
@@ -292,20 +393,53 @@ hr {
 }
 
 @media (max-width: 38rem) {
-  h1 {
+  main h1 {
     letter-spacing: -0.03em;
   }
 
-  ul,
-  ol {
+  main :where(ul, ol):not([class]) {
     padding-inline-start: 1.25em;
   }
 }
 
 @media (forced-colors: active) {
   :root {
-    --color-border: CanvasText;
-    --color-border-strong: CanvasText;
+    --background: Canvas;
+    --foreground: CanvasText;
+    --card: Canvas;
+    --card-foreground: CanvasText;
+    --popover: Canvas;
+    --popover-foreground: CanvasText;
+
+    --primary: Highlight;
+    --primary-foreground: HighlightText;
+    --secondary: Canvas;
+    --secondary-foreground: CanvasText;
+    --muted: Canvas;
+    --muted-foreground: CanvasText;
+    --accent: Highlight;
+    --accent-foreground: HighlightText;
+    --destructive: Highlight;
+    --destructive-foreground: HighlightText;
+
+    --border: CanvasText;
+    --input: CanvasText;
+    --ring: Highlight;
+
+    --heading: CanvasText;
+    --surface: Canvas;
+    --surface-subtle: Canvas;
+    --surface-strong: Canvas;
+    --action-strong: LinkText;
+    --action-soft: Canvas;
+    --copper: CanvasText;
+    --copper-strong: CanvasText;
+    --copper-soft: Canvas;
+    --border-strong: CanvasText;
+  }
+
+  :focus-visible {
+    outline-color: Highlight;
   }
 
   ::selection {

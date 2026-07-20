@@ -1,108 +1,162 @@
-import ContentLink from "../components/content-link";
+import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+
+import ContentSections from "../components/content-sections";
 import PageHeader from "../components/page-header";
 import ProjectEntry from "../components/project-entry";
+import PublicationEntry from "../components/publication-entry";
 import SoftwareEntry from "../components/software-entry";
-import { useSiteContent } from "../content/use-site-content";
+import { getLanguageFromPathname } from "../navigation";
+import { getHomeContent } from "../routes/home/data/home-content.loader";
+import { getProjectById } from "../routes/projects/data/project-content.loader";
+import { getPublicationById } from "../routes/research/data/research-content.loader";
+import { getSoftwareById } from "../routes/software/data/software-content.loader";
 
 function HomePage() {
-  const { content, language } = useSiteContent();
-  const page = content.home;
+  const location = useLocation();
+  const { t } = useTranslation();
+  const language = getLanguageFromPathname(location.pathname);
+  const page = getHomeContent(language);
+
+  const projects = (page.featuredProjects ?? []).flatMap((projectId) => {
+    const project = getProjectById(language, projectId);
+
+    return project ? [{ project, projectId }] : [];
+  });
+
+  const softwareEntries = (page.featuredSoftware ?? []).flatMap(
+    (softwareId) => {
+      const software = getSoftwareById(language, softwareId);
+
+      return software ? [{ software, softwareId }] : [];
+    },
+  );
+
+  const publications = (page.featuredPublications ?? []).flatMap(
+    (publicationId) => {
+      const publication = getPublicationById(language, publicationId);
+
+      return publication ? [{ publication, publicationId }] : [];
+    },
+  );
 
   return (
-    <div className="page page--home" aria-labelledby="page-title">
-      <div className="page__inner">
+    <div
+      className="relative isolate overflow-hidden"
+      aria-labelledby="page-title"
+    >
+      <div
+        aria-hidden="true"
+        className={[
+          "pointer-events-none absolute inset-x-0 top-0 -z-10",
+          "h-[clamp(18rem,42vw,32rem)]",
+          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
+        ].join(" ")}
+      />
+
+      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
         <PageHeader
-          eyebrow={page.eyebrow}
+          eyebrow={t("pages.home.title", { lng: language })}
           title={page.title}
           introduction={page.introduction}
         />
 
-        <div className="page-actions">
-          {page.primaryLinks.map((link, index) => (
-            <ContentLink
-              key={`${link.label}-${index}`}
-              className={
-                index === 0
-                  ? "button-link button-link--primary"
-                  : "button-link button-link--secondary"
-              }
-              language={language}
-              link={link}
-            />
-          ))}
-        </div>
+        <ContentSections
+          idPrefix="home"
+          sections={page.sections}
+        />
 
-        <section
-          className="page-section"
-          aria-labelledby="home-dimensions-title"
-        >
-          <header className="section-header">
-            <h2 id="home-dimensions-title">{page.dimensionsTitle}</h2>
-          </header>
-
-          <div className="profile-dimensions">
-            {page.dimensions.map((dimension) => (
-              <article className="profile-dimension" key={dimension.id}>
-                <h3>{dimension.title}</h3>
-                <p>{dimension.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section
-          className="page-section"
-          aria-labelledby="home-selected-content-title"
-        >
-          <header className="section-header">
-            <h2 id="home-selected-content-title">
-              {page.selectedContentTitle}
-            </h2>
-          </header>
-
-          <div className="selected-content">
-            {page.selectedProjectIds.map((projectId) => (
-              <ProjectEntry
-                key={projectId}
-                project={content.projects[projectId]}
-                variant="summary"
-              />
-            ))}
-
-            {page.selectedSoftwareIds.map((softwareId) => (
-              <SoftwareEntry
-                key={softwareId}
-                software={content.software[softwareId]}
-                variant="summary"
-              />
-            ))}
-          </div>
-        </section>
-
-        <section
-          className="page-section practical-section"
-          aria-labelledby="home-practical-title"
-        >
-          <div className="practical-section__content">
-            <header className="section-header">
-              <h2 id="home-practical-title">{page.practicalTitle}</h2>
+        {projects.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="home-projects-title"
+          >
+            <header className="mb-8 max-w-readable">
+              <h2
+                id="home-projects-title"
+                className={[
+                  "!m-0 text-xl font-bold leading-heading",
+                  "tracking-[-0.025em] text-heading",
+                ].join(" ")}
+              >
+                {t("pages.projects.title", { lng: language })}
+              </h2>
             </header>
 
-            <ul className="practical-list">
-              {page.practicalItems.map((item) => (
-                <li key={item}>{item}</li>
+            <div className="grid gap-5 lg:grid-cols-2">
+              {projects.map(({ project, projectId }) => (
+                <ProjectEntry
+                  key={projectId}
+                  project={project}
+                  projectId={projectId}
+                  language={language}
+                  variant="summary"
+                />
               ))}
-            </ul>
-          </div>
+            </div>
+          </section>
+        ) : null}
 
-          <div className="practical-section__action">
-            <ContentLink
-              className="button-link button-link--primary"
-              language={language}
-              link={page.contactLink}
-            />
-          </div>
-        </section>
+        {softwareEntries.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="home-software-title"
+          >
+            <header className="mb-8 max-w-readable">
+              <h2
+                id="home-software-title"
+                className={[
+                  "!m-0 text-xl font-bold leading-heading",
+                  "tracking-[-0.025em] text-heading",
+                ].join(" ")}
+              >
+                {t("pages.software.title", { lng: language })}
+              </h2>
+            </header>
+
+            <div className="grid gap-5 lg:grid-cols-2">
+              {softwareEntries.map(({ software, softwareId }) => (
+                <SoftwareEntry
+                  key={softwareId}
+                  software={software}
+                  softwareId={softwareId}
+                  language={language}
+                  variant="summary"
+                />
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {publications.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="home-publications-title"
+          >
+            <header className="mb-8 max-w-readable">
+              <h2
+                id="home-publications-title"
+                className={[
+                  "!m-0 text-xl font-bold leading-heading",
+                  "tracking-[-0.025em] text-heading",
+                ].join(" ")}
+              >
+                {t("pages.research.title", { lng: language })}
+              </h2>
+            </header>
+
+            <div className="grid gap-5 lg:grid-cols-2">
+              {publications.map(({ publication, publicationId }) => (
+                <PublicationEntry
+                  key={publicationId}
+                  publication={publication}
+                  publicationId={publicationId}
+                  language={language}
+                />
+              ))}
+            </div>
+          </section>
+        ) : null}
       </div>
     </div>
   );

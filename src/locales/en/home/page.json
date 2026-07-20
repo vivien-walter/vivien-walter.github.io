@@ -1,0 +1,33 @@
+{
+    "title": "AI, software, scientific instrumentation and complex systems",
+    "introduction": "I support technical projects from requirements definition through to deliverable validation. My background combines team coordination, scientific understanding, technical decision-making and direct development work when the project requires it.",
+    "sections": [
+        {
+            "title": "Three dimensions of one profile",
+            "paragraphs": [],
+            "items": [
+                "R&D project management — Scoping, requirements analysis, specifications, roadmaps, multidisciplinary coordination, risk management, quality, funding and validation.",
+                "Software and artificial intelligence — Python and TypeScript development, generative AI integration, machine learning, data analysis, interfaces and automation.",
+                "Instrumentation and complex systems — Creation of laboratories and experimental platforms, microscopy, microfluidics, electronics, prototyping and control software."
+            ]
+        },
+        {
+            "title": "Practical information",
+            "paragraphs": [],
+            "items": [
+                "Based in Vendée, France.",
+                "Primarily open to permanent employment opportunities.",
+                "Available for hybrid or fully remote work.",
+                "Available for occasional travel to client or partner sites.",
+                "Professional working proficiency in French and English."
+            ]
+        }
+    ],
+    "featuredProjects": [
+        "lxp-campus",
+        "molecular-communication"
+    ],
+    "featuredSoftware": [
+        "mllpa"
+    ]
+}

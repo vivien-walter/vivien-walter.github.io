@@ -1,0 +1,76 @@
+{
+    "title": "Campus virtuel LXP intégrant IA et XR",
+    "summary": "Création d’un campus virtuel réunissant contenus pédagogiques, accompagnement vers l’emploi, services liés à la santé et au handicap, intelligence artificielle générative et applications XR.",
+    "period": {
+        "start": "2024-01-03",
+        "end": "2026-07-15"
+    },
+    "sections": [
+        {
+            "title": "Contexte et objectifs",
+            "paragraphs": [
+                "Le projet était destiné à un centre français de formation en apprentissage numérique préparant des titres professionnels de niveaux 3 à 6.",
+                "L’objectif était de concevoir un écosystème associant plateforme web, outils pédagogiques, services d’accompagnement, intelligence artificielle générative et expériences immersives."
+            ]
+        },
+        {
+            "title": "Pilotage et responsabilités",
+            "paragraphs": [
+                "En tant que Chef de produit, j’étais responsable du pilotage du projet et contribuais directement à certaines dimensions techniques."
+            ],
+            "items": [
+                "Définition des objectifs, du périmètre, des ressources, de l’organisation et de la feuille de route.",
+                "Recueil et analyse des besoins, rédaction des spécifications fonctionnelles et techniques, présentation des solutions et validation des livrables avec le client.",
+                "Coordination directe et matricielle d’une équipe multidisciplinaire moyenne de onze personnes.",
+                "Organisation de réunions transverses hebdomadaires et délégation pragmatique par l’intermédiaire du Lead Developer."
+            ]
+        },
+        {
+            "title": "Contributions directes",
+            "paragraphs": [
+                "Mes contributions personnelles portaient principalement sur le backend, l’intégration de l’intelligence artificielle et certaines interfaces d’administration."
+            ],
+            "items": [
+                "Conception et développement de parties du backend avec TypeScript, Node.js, Express et MongoDB.",
+                "Migration du backend vers TypeScript, validation Zod des lectures et écritures, refonte du système de jetons d’authentification, ajout de clés d’accès API et pagination côté serveur.",
+                "Correction de défauts fonctionnels, dont certains bloquants, participation aux revues de code et validation de pull requests.",
+                "Conception de l’architecture et des protocoles d’intégration de plusieurs fournisseurs d’intelligence artificielle générative.",
+                "Développement de code backend, d’une file de traitement et d’interfaces d’administration pour les fonctions d’IA.",
+                "Développement de certaines interfaces React et Tailwind CSS, principalement destinées à l’administration.",
+                "Pilotage du prompt engineering et contribution aux objectifs, scénarios, interfaces, contrôles qualité et tests utilisateurs des applications XR."
+            ]
+        },
+        {
+            "title": "Livraisons collectives",
+            "paragraphs": [
+                "Les livraisons du projet résultaient du travail coordonné de l’équipe multidisciplinaire."
+            ],
+            "items": [
+                "Backend et écosystème d’intelligence artificielle opérationnels.",
+                "Quatre applications XR terminées : simulateur d’entretien, simulation de handicap physique, visualiseur AR de prototypes 3D et formation VR à l’accompagnement de personnes autistes.",
+                "Interface utilisateur approximativement achevée à 80 % à la fin du contrat, avec trois espaces secondaires restant à finaliser."
+            ]
+        },
+        {
+            "title": "Confidentialité et limites",
+            "paragraphs": [
+                "L’identité du client, les captures confidentielles ainsi que les chiffres provisoires de financement, de budget et d’utilisateurs ne sont pas publiés."
+            ]
+        }
+    ],
+    "technologies": [
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Zod",
+        "React",
+        "Tailwind CSS",
+        "OpenAI / ChatGPT",
+        "Claude",
+        "Gemini",
+        "Mistral",
+        "DeepSeek",
+        "Réalité virtuelle et augmentée"
+    ]
+}

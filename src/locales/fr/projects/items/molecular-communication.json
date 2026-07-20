@@ -1,0 +1,89 @@
+{
+    "title": "Laboratoire et testbed de communication moléculaire",
+    "summary": "Création d’un laboratoire et d’une plateforme expérimentale opérationnelle associant chimie, microfluidique, instrumentation, électronique, traitement du signal et apprentissage automatique pour valider des théories de communication moléculaire.",
+    "period": {
+        "start": "2021-03",
+        "end": "2023-08"
+    },
+    "sections": [
+        {
+            "title": "Création du laboratoire",
+            "paragraphs": [
+                "Le projet a été mené à King’s College London dans le cadre d’un poste de Postdoctoral Research Associate présenté publiquement comme une fonction de Chef de projet R&D."
+            ],
+            "items": [
+                "Identification et préparation des locaux.",
+                "Sélection et commande des équipements, hottes, matériels lourds et consommables.",
+                "Définition des protocoles de sécurité et de fonctionnement.",
+                "Formation des équipes à l’utilisation du laboratoire."
+            ]
+        },
+        {
+            "title": "Plateforme expérimentale",
+            "paragraphs": [
+                "Le testbed opérationnel permettait de valider expérimentalement des théories de communication moléculaire en utilisant des réactions chimiques pour traiter des signaux."
+            ],
+            "items": [
+                "Étude de fonctions de filtrage, saturation, amplification et encodage.",
+                "Conception d’une chaîne associant chimie, microfluidique, détection UV-Visible, électronique et logiciel.",
+                "Pilotage d’une équipe moyenne de cinq personnes : un PDRA junior, deux doctorants et deux stagiaires de Master.",
+                "Formation de neuf personnes au total."
+            ]
+        },
+        {
+            "title": "Financement et pilotage",
+            "paragraphs": [
+                "Deux financements EPSRC de 300 000 € et 60 000 €, soit 360 000 € au total, ont été gérés dans le cadre du projet."
+            ],
+            "items": [
+                "Contribution partielle au premier dossier de financement.",
+                "Rédaction complète du second dossier."
+            ]
+        },
+        {
+            "title": "Intelligence artificielle et analyse du signal",
+            "paragraphs": [
+                "Un réseau de neurones convolutif unidimensionnel a été développé pour analyser des signaux UV-Visible et estimer la composition et les concentrations moléculaires de solutions aqueuses."
+            ],
+            "items": [
+                "Développement avec Python, TensorFlow et scikit-learn.",
+                "Préparation et analyse des signaux expérimentaux.",
+                "Travaux publiés dans IEEE Transactions on Molecular, Biological and Multi-Scale Communications en 2026."
+            ]
+        },
+        {
+            "title": "Pompes-seringues open source",
+            "paragraphs": [
+                "Six pompes-seringues ont été conçues et fabriquées pour être intégrées à la plateforme expérimentale."
+            ],
+            "items": [
+                "Conception mécanique avec Autodesk Fusion 360.",
+                "Fabrication par impression 3D.",
+                "Électronique fondée sur Arduino et communication I²C.",
+                "Développement des logiciels de contrôle en C++ et Python."
+            ]
+        },
+        {
+            "title": "Résultats",
+            "paragraphs": [
+                "Le laboratoire a été créé, le testbed expérimental a été rendu opérationnel et les travaux ont donné lieu à deux publications dont j’étais le premier auteur et le rédacteur principal."
+            ],
+            "items": [
+                "Real-time signal processing via chemical reactions for a microfluidic molecular communication system — Nature Communications, 2023.",
+                "CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication — IEEE T-MBMC, 2026."
+            ]
+        }
+    ],
+    "technologies": [
+        "Python",
+        "TensorFlow",
+        "scikit-learn",
+        "C++",
+        "Arduino",
+        "I²C",
+        "Autodesk Fusion 360",
+        "Impression 3D",
+        "Microfluidique",
+        "Spectroscopie UV-Visible"
+    ]
+}

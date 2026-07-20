@@ -1,83 +1,110 @@
+import {
+  ArrowRightIcon,
+  HouseIcon,
+} from "@phosphor-icons/react";
+import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
 import PageHeader from "../components/page-header";
+import { Button } from "../components/ui/button";
 import {
-  getLanguageFromPathname,
-  getPageRoute,
-  type SupportedLanguage,
-} from "../navigation";
-
-const messages: Readonly<
-  Record<
-    SupportedLanguage,
-    {
-      readonly eyebrow: string;
-      readonly title: string;
-      readonly introduction: string;
-      readonly homeLink: string;
-      readonly projectsLink: string;
-      readonly softwareLink: string;
-      readonly navigationLabel: string;
-    }
-  >
-> = {
-  fr: {
-    eyebrow: "Page introuvable",
-    title: "Cette page n’existe pas",
-    introduction:
-      "L’adresse demandée ne correspond à aucune page disponible. Le contenu a peut-être été déplacé ou le lien est incorrect.",
-    homeLink: "Retour à l’accueil",
-    projectsLink: "Voir les projets",
-    softwareLink: "Voir les logiciels",
-    navigationLabel: "Navigation après une page introuvable",
-  },
-  en: {
-    eyebrow: "Page not found",
-    title: "This page does not exist",
-    introduction:
-      "The requested address does not match any available page. The content may have moved or the link may be incorrect.",
-    homeLink: "Return to the home page",
-    projectsLink: "View projects",
-    softwareLink: "View software",
-    navigationLabel: "Navigation after a page-not-found error",
-  },
-};
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { getLanguageFromPathname, getPageRoute } from "../navigation";
 
 function NotFoundPage() {
   const location = useLocation();
+  const { t } = useTranslation();
   const language = getLanguageFromPathname(location.pathname);
-  const content = messages[language];
 
   return (
-    <article className="page" aria-labelledby="page-title">
-      <div className="page__inner">
+    <article
+      className="relative isolate overflow-hidden"
+      aria-labelledby="page-title"
+    >
+      <div
+        aria-hidden="true"
+        className={[
+          "pointer-events-none absolute inset-x-0 top-0 -z-10",
+          "h-[clamp(18rem,42vw,32rem)]",
+          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
+        ].join(" ")}
+      />
+
+      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
         <PageHeader
-          eyebrow={content.eyebrow}
-          title={content.title}
-          introduction={content.introduction}
+          eyebrow={t("notFound.eyebrow", { lng: language })}
+          title={t("notFound.title", { lng: language })}
+          introduction={t("notFound.introduction", {
+            lng: language,
+          })}
         />
 
-        <nav className="page-actions" aria-label={content.navigationLabel}>
-          <Link
-            className="button-link button-link--primary"
-            to={getPageRoute("home", language)}
-          >
-            {content.homeLink}
-          </Link>
+        <nav
+          aria-label={t("notFound.navigationLabel", {
+            lng: language,
+          })}
+          className="max-w-readable"
+        >
+          <Card className="gap-0 border-border-strong py-0 shadow-subtle">
+            <CardHeader className="border-b border-border px-5 py-5 sm:px-6">
+              <CardTitle className="text-base text-heading">
+                {t("notFound.navigationLabel", {
+                  lng: language,
+                })}
+              </CardTitle>
+            </CardHeader>
 
-          <Link
-            className="button-link button-link--secondary"
-            to={getPageRoute("projects", language)}
-          >
-            {content.projectsLink}
-          </Link>
+            <CardContent className="flex flex-col gap-3 p-5 sm:flex-row sm:flex-wrap sm:p-6">
+              <Button
+                asChild
+                size="lg"
+                className="min-h-11 sm:min-w-40"
+              >
+                <Link to={getPageRoute("home", language)}>
+                  <HouseIcon aria-hidden="true" weight="bold" />
+                  {t("notFound.homeLink", { lng: language })}
+                </Link>
+              </Button>
 
-          <Link
-            className="button-link button-link--secondary"
-            to={getPageRoute("software", language)}
-          >
-            {content.softwareLink}
-          </Link>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className={[
+                  "min-h-11 border-border-strong bg-card",
+                  "text-heading shadow-none",
+                  "hover:border-primary hover:bg-action-soft",
+                  "hover:text-action-strong",
+                ].join(" ")}
+              >
+                <Link to={getPageRoute("projects", language)}>
+                  {t("notFound.projectsLink", { lng: language })}
+                  <ArrowRightIcon aria-hidden="true" weight="bold" />
+                </Link>
+              </Button>
+
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className={[
+                  "min-h-11 border-border-strong bg-card",
+                  "text-heading shadow-none",
+                  "hover:border-primary hover:bg-action-soft",
+                  "hover:text-action-strong",
+                ].join(" ")}
+              >
+                <Link to={getPageRoute("software", language)}>
+                  {t("notFound.softwareLink", { lng: language })}
+                  <ArrowRightIcon aria-hidden="true" weight="bold" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
         </nav>
       </div>
     </article>

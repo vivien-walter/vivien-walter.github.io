@@ -1,0 +1,50 @@
+{
+    "title": "Un parcours entre sciences, logiciels et pilotage de projets",
+    "introduction": "Mon parcours s’est construit autour de projets nécessitant de comprendre plusieurs disciplines, d’organiser le travail collectif et de contribuer directement aux solutions.",
+    "sections": [
+        {
+            "title": "Cheminement",
+            "paragraphs": [
+                "Après une formation en physique, chimie et biophysique, j’ai mené des travaux de simulation moléculaire et d’apprentissage automatique, construit des instruments et des plateformes expérimentales, puis piloté un produit numérique associant IA et XR."
+            ]
+        },
+        {
+            "title": "Activités menées en parallèle",
+            "paragraphs": [
+                "Certaines missions et collaborations ont été menées en parallèle des postes principaux."
+            ],
+            "items": [
+                "Consultant technique indépendant pour Vidya Health Ltd d’avril à novembre 2020 : microscope d’épifluorescence automatisé sous NDA, algorithme d’autofocus, spécifications, développement et déploiement LabVIEW, documentation et formation.",
+                "Missions indépendantes occasionnelles depuis 2023, actuellement en pause : conseil et formation en prompt engineering, classification, analyse de données et intégration Python.",
+                "Poursuite ponctuelle de collaborations scientifiques et de travaux associés à MLLPA."
+            ]
+        },
+        {
+            "title": "Enseignement",
+            "paragraphs": [
+                "King’s College London, janvier à juin 2023 : thermodynamique statistique pour environ cent étudiants de troisième année de chimie, programme et supports conçus intégralement, enseignement en anglais.",
+                "ECPM, Université de Strasbourg, 2021 à 2023 : IA, machine learning, deep learning et Python pour trois promotions d’environ trente étudiants de niveau Master ingénieur."
+            ],
+            "items": [
+                "Cinq contrats ou stages intermittents d’enseignement en physique-chimie entre 2008 et 2013, au collège et au lycée."
+            ]
+        },
+        {
+            "title": "Formation",
+            "paragraphs": [],
+            "items": [
+                "Doctorat en biophysique — Université de Strasbourg / Institut Charles Sadron, 2014–2017.",
+                "CAPES de physique-chimie, 2014.",
+                "Master Physique — Matériaux et nanosciences, 2013–2014.",
+                "Master Physique et chimie — Métiers de l’enseignement, 2011–2013.",
+                "Licence Mathématiques, physique et chimie, 2007–2011."
+            ]
+        },
+        {
+            "title": "En dehors du cadre professionnel",
+            "paragraphs": [
+                "Musique, pratique du trombone et de la basse, expérience de groupe et de concerts, dessin, peinture, webcomic et courts-métrages."
+            ]
+        }
+    ]
+}

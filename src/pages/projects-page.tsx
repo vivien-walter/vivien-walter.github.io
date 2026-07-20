@@ -1,72 +1,121 @@
+import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+
+import Breadcrumbs from "../components/breadcrumbs";
 import ContentLink from "../components/content-link";
+import ContentSections from "../components/content-sections";
 import PageHeader from "../components/page-header";
 import ProjectEntry from "../components/project-entry";
-import { useSiteContent } from "../content/use-site-content";
+import { Card, CardContent } from "../components/ui/card";
+import { getLanguageFromPathname, getPageRoute } from "../navigation";
+import {
+  getProjectById,
+  getProjectIndex,
+  getProjectPage,
+} from "../routes/projects/data/project-content.loader";
 
 function ProjectsPage() {
-  const { content, language } = useSiteContent();
-  const page = content.projectsPage;
+  const location = useLocation();
+  const { t } = useTranslation();
+  const language = getLanguageFromPathname(location.pathname);
+  const page = getProjectPage(language);
+  const index = getProjectIndex(language);
+  const featuredIds = new Set(index.featured ?? []);
 
-  const featuredProject = content.projects[page.featuredProjectId];
+  const projects = index.order.flatMap((projectId) => {
+    const project = getProjectById(language, projectId);
+
+    return project ? [{ project, projectId }] : [];
+  });
 
   return (
-    <div className="page page--projects" aria-labelledby="page-title">
-      <div className="page__inner">
+    <div
+      className="relative isolate overflow-hidden"
+      aria-labelledby="page-title"
+    >
+      <div
+        aria-hidden="true"
+        className={[
+          "pointer-events-none absolute inset-x-0 top-0 -z-10",
+          "h-[clamp(18rem,42vw,32rem)]",
+          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
+        ].join(" ")}
+      />
+
+      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
+        <Breadcrumbs
+          ariaLabel={t("breadcrumbs.label", { lng: language })}
+          items={[
+            {
+              label: t("breadcrumbs.home", { lng: language }),
+              to: getPageRoute("home", language),
+            },
+            {
+              label: t("breadcrumbs.projects", { lng: language }),
+            },
+          ]}
+        />
+
         <PageHeader
-          eyebrow={page.eyebrow}
+          eyebrow={t("pages.projects.title", { lng: language })}
           title={page.title}
           introduction={page.introduction}
         />
 
-        <section
-          className="page-section page-section--featured"
-          aria-labelledby={`project-${featuredProject.id}-title`}
-        >
-          <ProjectEntry featured headingLevel={2} project={featuredProject} />
-        </section>
+        <ContentSections
+          idPrefix="projects-page"
+          sections={page.sections ?? []}
+        />
 
-        <section
-          className="page-section"
-          aria-labelledby="other-projects-title"
-        >
-          <header className="section-header">
-            <h2 id="other-projects-title">{page.otherProjectsTitle}</h2>
-          </header>
-
-          <div className="project-list">
-            {page.otherProjectIds.map((projectId) => (
-              <ProjectEntry
-                key={projectId}
-                project={content.projects[projectId]}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section
-          className="page-section continuation-section"
-          aria-labelledby="projects-continuation-title"
-        >
-          <header className="section-header">
-            <h2 id="projects-continuation-title">{page.continuationTitle}</h2>
-
-            <p>{page.continuationText}</p>
-          </header>
-
-          <nav
-            className="continuation-links"
-            aria-label={page.continuationTitle}
+        {projects.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="projects-list-title"
           >
-            {page.continuationLinks.map((link, index) => (
-              <ContentLink
-                key={`${link.label}-${index}`}
-                className="editorial-link"
-                language={language}
-                link={link}
-              />
-            ))}
+            <header className="mb-8 max-w-readable">
+              <h2
+                id="projects-list-title"
+                className={[
+                  "!m-0 text-xl font-bold leading-heading",
+                  "tracking-[-0.025em] text-heading",
+                ].join(" ")}
+              >
+                {t("pages.projects.title", { lng: language })}
+              </h2>
+            </header>
+
+            <div className="grid gap-6">
+              {projects.map(({ project, projectId }) => (
+                <ProjectEntry
+                  key={projectId}
+                  featured={featuredIds.has(projectId)}
+                  project={project}
+                  projectId={projectId}
+                  language={language}
+                />
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {page.links && page.links.length > 0 ? (
+          <nav
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-label={t("content.resources", { lng: language })}
+          >
+            <Card className="gap-0 border-border-strong py-0 shadow-subtle">
+              <CardContent className="grid gap-1 p-3 sm:p-4">
+                {page.links.map((link, indexValue) => (
+                  <ContentLink
+                    key={`${link.href}-${indexValue}`}
+                    link={link}
+                    variant="resource"
+                  />
+                ))}
+              </CardContent>
+            </Card>
           </nav>
-        </section>
+        ) : null}
       </div>
     </div>
   );

@@ -1,57 +1,135 @@
 import { createElement, type ElementType } from "react";
 import { useTranslation } from "react-i18next";
 
-import type { ExperienceEntry } from "../content/site-content";
+import { cn } from "../lib/utils";
+import type { SupportedLanguage } from "../navigation";
+import type { ExperienceContent } from "../routes/experience/data/experience-content.types";
+import { formatContentDateRange } from "../shared/content/content-formatters";
+import ContentLink from "./content-link";
+import ContentSections from "./content-sections";
+import { Badge } from "./ui/badge";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 type TimelineEntryProps = {
-  readonly experience: ExperienceEntry;
+  readonly experience: ExperienceContent;
+  readonly experienceId: string;
+  readonly language: SupportedLanguage;
   readonly headingLevel?: 2 | 3;
 };
 
-function TimelineEntry({ experience, headingLevel = 3 }: TimelineEntryProps) {
+function TimelineEntry({
+  experience,
+  experienceId,
+  language,
+  headingLevel = 3,
+}: TimelineEntryProps) {
   const { t } = useTranslation();
-
-  const headingId = `experience-${experience.id}-title`;
+  const headingId = `experience-${experienceId}-title`;
   const Heading = `h${headingLevel}` as ElementType;
 
   return (
-    <article className="timeline-entry" aria-labelledby={headingId}>
-      <header className="timeline-entry__header">
-        <p className="timeline-entry__period">{experience.period}</p>
-
-        {createElement(
-          Heading,
-          {
-            id: headingId,
-            className: "timeline-entry__title",
-          },
-          experience.organisation,
+    <article className="min-w-0" aria-labelledby={headingId}>
+      <Card
+        className={cn(
+          "gap-0 overflow-hidden border-border-strong py-0",
+          "border-l-4 border-l-primary shadow-subtle",
+          "transition-[border-color,box-shadow]",
+          "duration-150 ease-standard",
+          "hover:border-primary hover:shadow-elevated",
         )}
+      >
+        <CardHeader className="gap-4 px-5 py-5 sm:px-6 sm:py-6">
+          <Badge
+            variant="outline"
+            className={cn(
+              "border-copper/50 bg-copper-soft",
+              "font-mono font-semibold tracking-[0.04em]",
+              "text-copper-strong uppercase",
+            )}
+          >
+            {formatContentDateRange(experience.period, language)}
+          </Badge>
 
-        <p className="timeline-entry__location">{experience.location}</p>
-      </header>
+          <CardTitle>
+            {createElement(
+              Heading,
+              {
+                id: headingId,
+                className: cn(
+                  "!m-0 text-lg font-bold leading-heading",
+                  "tracking-[-0.015em] text-heading",
+                  "sm:text-xl",
+                ),
+              },
+              experience.organization,
+            )}
+          </CardTitle>
 
-      <dl className="timeline-entry__roles">
-        {experience.publicTitle ? (
-          <div className="timeline-entry__role">
-            <dt>{t("content.publicTitle")}</dt>
-            <dd>{experience.publicTitle}</dd>
-          </div>
+          {experience.location ? (
+            <p className="!m-0 text-sm text-muted-foreground">
+              {experience.location}
+            </p>
+          ) : null}
+        </CardHeader>
+
+        <CardContent className="grid gap-6 px-5 pb-6 sm:px-6">
+          <dl className="!m-0 grid gap-2 border-t border-border pt-4">
+            <div>
+              <dt
+                className={cn(
+                  "mb-1 font-mono text-xs font-semibold",
+                  "tracking-[0.04em] text-muted-foreground uppercase",
+                )}
+              >
+                {t("content.role", { lng: language })}
+              </dt>
+
+              <dd className="m-0 font-semibold text-heading">
+                {experience.role}
+              </dd>
+            </div>
+          </dl>
+
+          <p className="!m-0 text-muted-foreground">
+            {experience.summary}
+          </p>
+
+          {experience.sections.length > 0 ? (
+            <div className="grid gap-6">
+              <ContentSections
+                className="max-w-none"
+                headingLevel={4}
+                idPrefix={`experience-${experienceId}`}
+                sections={experience.sections}
+                variant="compact"
+              />
+            </div>
+          ) : null}
+        </CardContent>
+
+        {experience.links && experience.links.length > 0 ? (
+          <CardFooter
+            className={cn(
+              "flex flex-wrap gap-x-5 gap-y-2",
+              "border-t border-border px-5 py-4 sm:px-6",
+            )}
+          >
+            {experience.links.map((link, index) => (
+              <ContentLink
+                key={`${link.href}-${index}`}
+                link={link}
+                variant="inline"
+              />
+            ))}
+          </CardFooter>
         ) : null}
-
-        <div className="timeline-entry__role">
-          <dt>{t("content.contractualTitle")}</dt>
-          <dd>{experience.contractualTitle}</dd>
-        </div>
-      </dl>
-
-      <p className="timeline-entry__summary">{experience.summary}</p>
-
-      <ul className="timeline-entry__highlights">
-        {experience.highlights.map((highlight) => (
-          <li key={highlight}>{highlight}</li>
-        ))}
-      </ul>
+      </Card>
     </article>
   );
 }

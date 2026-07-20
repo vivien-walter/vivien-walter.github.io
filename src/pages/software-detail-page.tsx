@@ -1,152 +1,70 @@
-import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useLocation, useParams } from "react-router-dom";
 
 import Breadcrumbs from "../components/breadcrumbs";
 import ContentLink from "../components/content-link";
+import ContentSections from "../components/content-sections";
 import DetailNavigation from "../components/detail-navigation";
 import PageHeader from "../components/page-header";
+import { Badge } from "../components/ui/badge";
+import { Card, CardContent } from "../components/ui/card";
+import { cn } from "../lib/utils";
+import {
+  getLanguageFromPathname,
+  getPageRoute,
+  getSoftwareRoute,
+} from "../navigation";
 import {
   getAdjacentSoftwareIds,
-  getSoftware,
-  missingContentPlaceholder,
-} from "../content/site-content";
-import { useSiteContent } from "../content/use-site-content";
-import {
-  getPageRoute,
-  getProjectRoute,
-  getSoftwareRoute,
-  type SupportedLanguage,
-} from "../navigation";
+  getSoftwareById,
+} from "../routes/software/data/software-content.loader";
 import NotFoundPage from "./not-found-page";
 
-const labels: Readonly<
-  Record<
-    SupportedLanguage,
-    {
-      readonly eyebrow: string;
-      readonly home: string;
-      readonly software: string;
-      readonly breadcrumbLabel: string;
-      readonly quickSummary: string;
-      readonly problemAndContext: string;
-      readonly operation: string;
-      readonly features: string;
-      readonly personalContribution: string;
-      readonly usageAndDocumentation: string;
-      readonly relatedResearch: string;
-      readonly maintenanceAndLimitations: string;
-      readonly externalResources: string;
-      readonly relatedProjects: string;
-      readonly relatedPublications: string;
-      readonly navigationLabel: string;
-      readonly backToSoftware: string;
-      readonly previousSoftware: string;
-      readonly nextSoftware: string;
-      readonly context: string;
-      readonly contribution: string;
-      readonly status: string;
-    }
-  >
-> = {
-  fr: {
-    eyebrow: "Logiciel détaillé",
-    home: "Accueil",
-    software: "Logiciels",
-    breadcrumbLabel: "Fil d’Ariane",
-    quickSummary: "Résumé rapide",
-    problemAndContext: "Problème et contexte",
-    operation: "Fonctionnement général",
-    features: "Fonctionnalités principales",
-    personalContribution: "Contribution personnelle",
-    usageAndDocumentation: "Utilisation et documentation",
-    relatedResearch: "Recherche et publications associées",
-    maintenanceAndLimitations: "État, maintenance et limites",
-    externalResources: "Ressources externes",
-    relatedProjects: "Projets associés",
-    relatedPublications: "Publications associées",
-    navigationLabel: "Navigation entre les logiciels",
-    backToSoftware: "Retour à tous les logiciels",
-    previousSoftware: "Logiciel précédent",
-    nextSoftware: "Logiciel suivant",
-    context: "Contexte",
-    contribution: "Contribution",
-    status: "Statut",
-  },
-  en: {
-    eyebrow: "Software details",
-    home: "Home",
-    software: "Software",
-    breadcrumbLabel: "Breadcrumb",
-    quickSummary: "Quick summary",
-    problemAndContext: "Problem and context",
-    operation: "General operation",
-    features: "Main features",
-    personalContribution: "Personal contribution",
-    usageAndDocumentation: "Usage and documentation",
-    relatedResearch: "Related research and publications",
-    maintenanceAndLimitations: "Status, maintenance and limitations",
-    externalResources: "External resources",
-    relatedProjects: "Related projects",
-    relatedPublications: "Related publications",
-    navigationLabel: "Software navigation",
-    backToSoftware: "Return to all software",
-    previousSoftware: "Previous software",
-    nextSoftware: "Next software",
-    context: "Context",
-    contribution: "Contribution",
-    status: "Status",
-  },
-};
-
 function SoftwareDetailPage() {
+  const location = useLocation();
   const { slug } = useParams<{ slug: string }>();
-  const { language, content } = useSiteContent();
-  const text = labels[language];
+  const { t } = useTranslation();
+  const language = getLanguageFromPathname(location.pathname);
+  const software = slug ? getSoftwareById(language, slug) : undefined;
 
-  const software = slug ? getSoftware(language, slug) : undefined;
-
-  if (!software) {
+  if (!software || !slug) {
     return <NotFoundPage />;
   }
 
-  const { previousId, nextId } = getAdjacentSoftwareIds(language, software.id);
+  const { previousId, nextId } = getAdjacentSoftwareIds(language, slug);
 
   const previousSoftware = previousId
-    ? getSoftware(language, previousId)
+    ? getSoftwareById(language, previousId)
     : undefined;
 
-  const nextSoftware = nextId ? getSoftware(language, nextId) : undefined;
-
-  const relatedProjects = software.relatedProjectIds.flatMap((projectId) => {
-    const project = content.projects[projectId];
-
-    return project ? [project] : [];
-  });
-
-  const relatedPublications = software.relatedPublicationIds.flatMap(
-    (publicationId) => {
-      const publication = content.publications[publicationId];
-
-      return publication ? [publication] : [];
-    },
-  );
-
-  const description =
-    software.description.trim().length > 0
-      ? software.description
-      : missingContentPlaceholder;
+  const nextSoftware = nextId
+    ? getSoftwareById(language, nextId)
+    : undefined;
 
   return (
-    <article className="page detail-page" aria-labelledby="page-title">
-      <div className="page__inner">
+    <article
+      className="relative isolate overflow-hidden"
+      aria-labelledby="page-title"
+    >
+      <div
+        aria-hidden="true"
+        className={[
+          "pointer-events-none absolute inset-x-0 top-0 -z-10",
+          "h-[clamp(18rem,42vw,32rem)]",
+          "bg-[linear-gradient(135deg,rgb(32_84_147_/_0.07),transparent_55%),linear-gradient(45deg,transparent_58%,rgb(173_89_55_/_0.06))]",
+        ].join(" ")}
+      />
+
+      <div className="mx-auto w-full max-w-editorial px-page py-12 sm:py-16 lg:py-24">
         <Breadcrumbs
-          ariaLabel={text.breadcrumbLabel}
+          ariaLabel={t("breadcrumbs.label", { lng: language })}
           items={[
             {
-              label: text.home,
+              label: t("breadcrumbs.home", { lng: language }),
               to: getPageRoute("home", language),
             },
             {
-              label: text.software,
+              label: t("breadcrumbs.software", { lng: language }),
               to: getPageRoute("software", language),
             },
             {
@@ -156,227 +74,105 @@ function SoftwareDetailPage() {
         />
 
         <PageHeader
-          eyebrow={text.eyebrow}
+          eyebrow={t("softwareDetail.eyebrow", { lng: language })}
           title={software.title}
           introduction={software.summary}
         />
 
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-summary"
-        >
-          <div className="section-header">
-            <h2 id="software-summary">{text.quickSummary}</h2>
-          </div>
+        <ContentSections
+          idPrefix={`software-${slug}`}
+          sections={software.sections}
+        />
 
-          <dl className="software-entry__metadata">
-            <div>
-              <dt>{text.context}</dt>
-              <dd>{software.context}</dd>
-            </div>
-
-            <div>
-              <dt>{text.contribution}</dt>
-              <dd>{software.contribution}</dd>
-            </div>
-
-            <div>
-              <dt>{text.status}</dt>
-              <dd>{software.status}</dd>
-            </div>
-          </dl>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-context"
-        >
-          <div className="section-header">
-            <h2 id="software-context">{text.problemAndContext}</h2>
-          </div>
-
-          <p>{software.context}</p>
-          <p>{description}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-operation"
-        >
-          <div className="section-header">
-            <h2 id="software-operation">{text.operation}</h2>
-          </div>
-
-          <p className="content-warning">{missingContentPlaceholder}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-features"
-        >
-          <div className="section-header">
-            <h2 id="software-features">{text.features}</h2>
-          </div>
-
-          {software.highlights.length > 0 ? (
-            <ul>
-              {software.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="content-warning">{missingContentPlaceholder}</p>
-          )}
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-contribution"
-        >
-          <div className="section-header">
-            <h2 id="software-contribution">{text.personalContribution}</h2>
-          </div>
-
-          <p>{software.contribution}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-usage"
-        >
-          <div className="section-header">
-            <h2 id="software-usage">{text.usageAndDocumentation}</h2>
-          </div>
-
-          {software.resources.length > 0 ? (
-            <div className="software-entry__links">
-              {software.resources.map((resource, index) => (
-                <ContentLink
-                  key={`${resource.label}-${index}`}
-                  className="editorial-link"
-                  language={language}
-                  link={resource}
-                />
-              ))}
-            </div>
-          ) : (
-            <p className="content-warning">{missingContentPlaceholder}</p>
-          )}
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-research"
-        >
-          <div className="section-header">
-            <h2 id="software-research">{text.relatedResearch}</h2>
-          </div>
-
-          {relatedPublications.length > 0 ? (
-            <>
-              <h3>{text.relatedPublications}</h3>
-
-              <ul>
-                {relatedPublications.map((publication) => (
-                  <li key={publication.id}>
-                    {publication.title} — {publication.venue},{" "}
-                    {publication.year}
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : (
-            <p className="content-warning">{missingContentPlaceholder}</p>
-          )}
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-maintenance"
-        >
-          <div className="section-header">
-            <h2 id="software-maintenance">{text.maintenanceAndLimitations}</h2>
-          </div>
-
-          <p>{software.status}</p>
-
-          <p className="content-warning">{missingContentPlaceholder}</p>
-        </section>
-
-        <section
-          className="page-section detail-section"
-          aria-labelledby="software-resources"
-        >
-          <div className="section-header">
-            <h2 id="software-resources">{text.externalResources}</h2>
-          </div>
-
-          {software.links.length > 0 ? (
-            <div className="software-entry__links">
-              {software.links.map((link, index) => (
-                <ContentLink
-                  key={`${link.label}-${index}`}
-                  className="editorial-link"
-                  language={language}
-                  link={link}
-                />
-              ))}
-            </div>
-          ) : (
-            <p className="content-warning">{missingContentPlaceholder}</p>
-          )}
-
-          {software.technologies.length > 0 ? (
-            <ul className="software-entry__technologies">
-              {software.technologies.map((technology) => (
-                <li key={technology}>{technology}</li>
-              ))}
-            </ul>
-          ) : null}
-        </section>
-
-        {relatedProjects.length > 0 ? (
+        {software.technologies && software.technologies.length > 0 ? (
           <section
-            className="page-section detail-section"
-            aria-labelledby="software-projects"
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="software-technologies"
           >
-            <div className="section-header">
-              <h2 id="software-projects">{text.relatedProjects}</h2>
-            </div>
+            <h2
+              id="software-technologies"
+              className={cn(
+                "!mt-0 !mb-6 text-xl font-bold leading-heading",
+                "tracking-[-0.025em] text-heading",
+              )}
+            >
+              {t("softwareDetail.technologies", { lng: language })}
+            </h2>
 
-            <ul>
-              {relatedProjects.map((project) => (
-                <li key={project.id}>
-                  <Link to={getProjectRoute(project.id, language)}>
-                    {project.title}
-                  </Link>
+            <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
+              {software.technologies.map((technology) => (
+                <li className="m-0" key={technology}>
+                  <Badge
+                    variant="secondary"
+                    className={cn(
+                      "border border-border bg-muted px-3 py-1",
+                      "font-mono font-medium text-muted-foreground",
+                    )}
+                  >
+                    {technology}
+                  </Badge>
                 </li>
               ))}
             </ul>
           </section>
         ) : null}
 
+        {software.links && software.links.length > 0 ? (
+          <section
+            className="border-t border-border py-12 sm:py-14 lg:py-16"
+            aria-labelledby="software-resources"
+          >
+            <h2
+              id="software-resources"
+              className={cn(
+                "!mt-0 !mb-6 text-xl font-bold leading-heading",
+                "tracking-[-0.025em] text-heading",
+              )}
+            >
+              {t("softwareDetail.resources", { lng: language })}
+            </h2>
+
+            <Card className="gap-0 border-border-strong py-0 shadow-subtle">
+              <CardContent className="grid gap-1 p-3 sm:p-4">
+                {software.links.map((link, index) => (
+                  <ContentLink
+                    key={`${link.href}-${index}`}
+                    link={link}
+                    variant="resource"
+                  />
+                ))}
+              </CardContent>
+            </Card>
+          </section>
+        ) : null}
+
         <DetailNavigation
-          ariaLabel={text.navigationLabel}
+          ariaLabel={t("softwareDetail.navigationLabel", {
+            lng: language,
+          })}
           backLink={{
-            label: text.backToSoftware,
+            label: t("actions.backToSoftware", { lng: language }),
             to: getPageRoute("software", language),
           }}
-          previousLabel={text.previousSoftware}
-          nextLabel={text.nextSoftware}
+          previousLabel={t("actions.previousSoftware", {
+            lng: language,
+          })}
+          nextLabel={t("actions.nextSoftware", {
+            lng: language,
+          })}
           previousLink={
-            previousSoftware
+            previousId && previousSoftware
               ? {
                   label: previousSoftware.title,
-                  to: getSoftwareRoute(previousSoftware.id, language),
+                  to: getSoftwareRoute(previousId, language),
                 }
               : undefined
           }
           nextLink={
-            nextSoftware
+            nextId && nextSoftware
               ? {
                   label: nextSoftware.title,
-                  to: getSoftwareRoute(nextSoftware.id, language),
+                  to: getSoftwareRoute(nextId, language),
                 }
               : undefined
           }

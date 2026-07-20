@@ -1,0 +1,74 @@
+{
+    "title": "MLLPA — Machine Learning-assisted Lipid Phase Analysis",
+    "summary": "Transformation d’une méthode de recherche sur les membranes lipidiques en un module Python documenté et réutilisable, associant dynamique moléculaire, analyse de données et apprentissage automatique.",
+    "period": {
+        "start": "2017-10"
+    },
+    "sections": [
+        {
+            "title": "Contexte scientifique",
+            "paragraphs": [
+                "Le projet a débuté à l’Université de Strasbourg dans le cadre de recherches consacrées aux transitions de phase de membranes lipidiques simulées par dynamique moléculaire."
+            ],
+            "items": [
+                "Planification des méthodes, des étapes et de l’orientation scientifique avec une large autonomie.",
+                "Étude des bicouches lipidiques et de leurs transitions de phase, notamment de la phase ripple.",
+                "Utilisation de GROMACS, Linux, Bash et SLURM pour les simulations et le calcul scientifique."
+            ]
+        },
+        {
+            "title": "Développement de MLLPA",
+            "paragraphs": [
+                "MLLPA a été conçu pour rendre les méthodes d’analyse développées pendant le projet accessibles sous la forme d’un outil Python réutilisable."
+            ],
+            "items": [
+                "Développement d’environ 95 % du code du module.",
+                "Création de l’intégralité du site et de la documentation.",
+                "Structuration des traitements de données et des analyses de phases membranaires.",
+                "Mise à disposition publique du logiciel, de son site et de sa documentation."
+            ]
+        },
+        {
+            "title": "Apprentissage automatique",
+            "paragraphs": [
+                "Le projet a intégré plusieurs approches d’apprentissage automatique pour analyser les états et transitions des systèmes membranaires."
+            ],
+            "items": [
+                "Développement de méthodes fondées sur scikit-learn.",
+                "Développement ultérieur d’un réseau de neurones convolutif tridimensionnel avec TensorFlow.",
+                "Le travail lié au CNN 3D n’est pas publié et se poursuit ponctuellement dans le cadre de collaborations."
+            ]
+        },
+        {
+            "title": "Résultats scientifiques",
+            "paragraphs": [
+                "Les travaux ont donné lieu à plusieurs publications scientifiques en premier auteur."
+            ],
+            "items": [
+                "A machine learning study of the two states model for lipid bilayer phase transitions — Physical Chemistry Chemical Physics, 2020.",
+                "MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes — Journal of Computational Chemistry, 2021.",
+                "Ripple-like instability in the simulated gel phase of finite size phosphocholine bilayers — BBA Biomembranes, 2021."
+            ]
+        }
+    ],
+    "technologies": [
+        "Python",
+        "GROMACS",
+        "NumPy",
+        "h5py",
+        "MDAnalysis",
+        "pandas",
+        "scikit-learn",
+        "TensorFlow",
+        "tqdm",
+        "Linux",
+        "Bash",
+        "SLURM"
+    ],
+    "links": [
+        {
+            "label": "Site et documentation de MLLPA",
+            "href": "https://vivien-walter.github.io/mllpa/"
+        }
+    ]
+}

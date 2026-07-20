@@ -1,0 +1,42 @@
+{
+    "title": "Échanger autour d’un projet, d’un poste ou d’une collaboration",
+    "introduction": "Vous pouvez me contacter directement par email ou retrouver mes activités professionnelles, logicielles et scientifiques sur les plateformes ci-dessous.",
+    "sections": [
+        {
+            "title": "Localisation et disponibilité",
+            "paragraphs": [
+                "Situation professionnelle vérifiée au 17 juillet 2026."
+            ],
+            "items": [
+                "Basé à Essarts-en-Bocage, en Vendée, avec un déménagement prévu à Mouchamps avant octobre 2026.",
+                "Ouvert en priorité aux postes en CDI.",
+                "Disponible pour le travail hybride ou entièrement à distance.",
+                "Mobile dans un rayon d’environ une heure autour de Mouchamps.",
+                "Disponible pour des déplacements ponctuels.",
+                "Travail professionnel en français et en anglais."
+            ]
+        }
+    ],
+    "links": [
+        {
+            "label": "Email",
+            "href": "mailto:vivien.walter@proton.me"
+        },
+        {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/vivien-walter-4b3068129/"
+        },
+        {
+            "label": "GitHub",
+            "href": "https://github.com/vivien-walter"
+        },
+        {
+            "label": "ORCID",
+            "href": "https://orcid.org/0000-0003-3203-9543"
+        },
+        {
+            "label": "Site et documentation de MLLPA",
+            "href": "https://vivien-walter.github.io/mllpa/"
+        }
+    ]
+}

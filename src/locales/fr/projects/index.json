@@ -1,0 +1,12 @@
+{
+    "order": [
+        "lxp-campus",
+        "molecular-communication",
+        "iscat-platform",
+        "mllpa-project",
+        "medical-microscope"
+    ],
+    "featured": [
+        "lxp-campus"
+    ]
+}

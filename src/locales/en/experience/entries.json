@@ -1,0 +1,136 @@
+{
+    "imaginexr": {
+        "role": "Product Manager",
+        "organization": "i-magineXR",
+        "location": "La Roche-sur-Yon, France",
+        "period": {
+            "start": "2024-01-03",
+            "end": "2026-07-15"
+        },
+        "summary": "Led the creation of a virtual LXP campus for digital-sector apprentices, combining a web platform, educational content, support services, generative AI and XR.",
+        "sections": [
+            {
+                "title": "Project leadership",
+                "paragraphs": [],
+                "items": [
+                    "Definition of objectives, scope, resources, organisation and roadmap.",
+                    "Requirements gathering and drafting of functional and technical specifications.",
+                    "Presentation of solutions, decision management and validation of deliverables with the client.",
+                    "Direct and matrix coordination of a multidisciplinary team averaging eleven people."
+                ]
+            },
+            {
+                "title": "Direct contributions",
+                "paragraphs": [],
+                "items": [
+                    "Design and development of parts of the backend using TypeScript, Node.js, Express and MongoDB.",
+                    "Migration of the backend to TypeScript, Zod validation, authentication-token redesign, API access keys and server-side pagination.",
+                    "Design of the architecture and protocols for several generative-AI providers.",
+                    "Development of backend code, a processing queue and administration interfaces.",
+                    "Development of selected React and Tailwind CSS interfaces."
+                ]
+            },
+            {
+                "title": "State at the end of the contract",
+                "paragraphs": [
+                    "The backend and AI ecosystem were operational, four XR applications were complete and the user interface was approximately 80% complete, with three secondary areas remaining."
+                ]
+            }
+        ]
+    },
+    "kcl-molecular-communication": {
+        "role": "Postdoctoral Research Associate — public presentation: R&D Project Manager",
+        "organization": "King’s College London",
+        "location": "London, United Kingdom",
+        "period": {
+            "start": "2021-03",
+            "end": "2023-08"
+        },
+        "summary": "Created a molecular-communication laboratory and an operational testbed combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning.",
+        "sections": [
+            {
+                "title": "Laboratory and team",
+                "paragraphs": [],
+                "items": [
+                    "Creation of the laboratory from scratch: premises, equipment, fume hoods, consumables, safety and protocols.",
+                    "An average team of five people and nine people trained in total."
+                ]
+            },
+            {
+                "title": "Funding and outcomes",
+                "paragraphs": [],
+                "items": [
+                    "Management of two EPSRC grants of €300,000 and €60,000.",
+                    "Development of a one-dimensional CNN using Python, TensorFlow and scikit-learn to analyse UV-Vis signals.",
+                    "Design and manufacture of six open-source syringe pumps using Fusion 360, 3D printing, Arduino, I²C, C++ and Python."
+                ]
+            }
+        ]
+    },
+    "kcl-iscat": {
+        "role": "Postdoctoral Research Associate — public presentation: R&D Project Manager",
+        "organization": "King’s College London",
+        "location": "London, United Kingdom",
+        "period": {
+            "start": "2018-03",
+            "end": "2021-03"
+        },
+        "summary": "Led a €500,000 project to build, qualify and operate a complete iSCAT microscope.",
+        "sections": [
+            {
+                "title": "Project leadership and team",
+                "paragraphs": [],
+                "items": [
+                    "Project funded by the BBSRC and co-funded by Oxford Nanopore Technologies.",
+                    "Management of three doctoral researchers and two Master’s interns."
+                ]
+            },
+            {
+                "title": "Instrument and software",
+                "paragraphs": [],
+                "items": [
+                    "Construction of the microscope from component procurement through qualification.",
+                    "Development of LabVIEW control and automation software.",
+                    "Design of protocols, samples, experiments, acquisition and analysis.",
+                    "Operational microscope delivered."
+                ]
+            }
+        ]
+    },
+    "strasbourg-mllpa": {
+        "role": "R&D Project Manager / Postdoctoral Research Associate",
+        "organization": "University of Strasbourg",
+        "location": "Strasbourg, France",
+        "period": {
+            "start": "2017-10",
+            "end": "2018-03"
+        },
+        "summary": "Provided scientific and operational direction for work on lipid membranes, molecular simulation and machine learning, while leading the development of MLLPA.",
+        "sections": [
+            {
+                "title": "Research",
+                "paragraphs": [],
+                "items": [
+                    "Planning of methods, milestones and scientific direction with a high degree of autonomy.",
+                    "GROMACS simulations of lipid membranes and phase transitions.",
+                    "Machine-learning approaches followed by a 3D CNN using TensorFlow."
+                ]
+            },
+            {
+                "title": "MLLPA",
+                "paragraphs": [],
+                "items": [
+                    "Development of approximately 95% of the code.",
+                    "Creation of the entire website and documentation.",
+                    "Related work continued with collaborators."
+                ]
+            }
+        ],
+        "links": [
+            {
+                "label": "MLLPA website and documentation",
+                "href": "https://vivien-walter.github.io/mllpa/"
+            }
+        ]
+    }
+}

@@ -1,145 +1,173 @@
+import { ArrowRightIcon } from "@phosphor-icons/react";
 import { createElement, type ElementType } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import type { ProjectEntry as ProjectEntryData } from "../content/site-content";
-import { useSiteContent } from "../content/use-site-content";
+import { cn } from "../lib/utils";
 import { getProjectRoute, type SupportedLanguage } from "../navigation";
+import type { ProjectContent } from "../routes/projects/data/project-content.types";
+import { formatContentDateRange } from "../shared/content/content-formatters";
 import ContentLink from "./content-link";
+import ContentSections from "./content-sections";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 type ProjectEntryProps = {
-  readonly project: ProjectEntryData;
+  readonly project: ProjectContent;
+  readonly projectId: string;
+  readonly language: SupportedLanguage;
   readonly variant?: "summary" | "detailed";
   readonly headingLevel?: 2 | 3;
   readonly featured?: boolean;
 };
 
-const labels: Readonly<
-  Record<
-    SupportedLanguage,
-    {
-      readonly viewDetails: string;
-      readonly confidentiality: string;
-    }
-  >
-> = {
-  fr: {
-    viewDetails: "Voir le projet détaillé",
-    confidentiality: "Confidentialité et limites",
-  },
-  en: {
-    viewDetails: "View project details",
-    confidentiality: "Confidentiality and limitations",
-  },
-};
-
 function ProjectEntry({
   project,
+  projectId,
+  language,
   variant = "detailed",
   headingLevel = 3,
   featured = false,
 }: ProjectEntryProps) {
   const { t } = useTranslation();
-  const { language } = useSiteContent();
-  const text = labels[language];
-
-  const headingId = `project-${project.id}-title`;
+  const headingId = `project-${projectId}-title`;
   const Heading = `h${headingLevel}` as ElementType;
 
-  const className = [
-    "project-entry",
-    `project-entry--${variant}`,
-    featured ? "project-entry--featured" : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
   return (
-    <article className={className} aria-labelledby={headingId}>
-      <header className="project-entry__header">
-        <p className="project-entry__period">{project.period}</p>
-
-        {createElement(
-          Heading,
-          {
-            id: headingId,
-            className: "project-entry__title",
-          },
-          project.title,
+    <article className="h-full min-w-0" aria-labelledby={headingId}>
+      <Card
+        className={cn(
+          "h-full gap-0 overflow-hidden py-0",
+          "border-border-strong shadow-subtle",
+          "transition-[border-color,box-shadow,transform]",
+          "duration-150 ease-standard",
+          "hover:border-primary hover:shadow-elevated",
+          featured && [
+            "border-l-4 border-l-copper",
+            "bg-linear-to-br from-card to-action-soft",
+            "shadow-elevated",
+          ],
         )}
-
-        <p className="project-entry__status">{project.status}</p>
-      </header>
-
-      <p className="project-entry__summary">{project.summary}</p>
-
-      {variant === "detailed" ? (
-        <>
-          <dl className="project-entry__metadata">
-            <div>
-              <dt>{t("content.context")}</dt>
-              <dd>{project.context}</dd>
-            </div>
-
-            <div>
-              <dt>{t("content.role")}</dt>
-              <dd>{project.role}</dd>
-            </div>
-          </dl>
-
-          {project.description.trim().length > 0 ? (
-            <p className="project-entry__description">{project.description}</p>
-          ) : null}
-
-          {project.highlights.length > 0 ? (
-            <ul className="project-entry__highlights">
-              {project.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          ) : null}
-
-          {project.technologies.length > 0 ? (
-            <ul
-              className="project-entry__technologies"
-              aria-label={t("content.technologies")}
+      >
+        <CardHeader className="gap-4 px-5 py-5 sm:px-6 sm:py-6">
+          {project.period ? (
+            <Badge
+              variant="outline"
+              className={cn(
+                "border-copper/50 bg-copper-soft",
+                "font-mono font-semibold tracking-[0.04em]",
+                "text-copper-strong uppercase",
+              )}
             >
-              {project.technologies.map((technology) => (
-                <li key={technology}>{technology}</li>
-              ))}
-            </ul>
+              {formatContentDateRange(project.period, language)}
+            </Badge>
           ) : null}
 
-          {project.confidentiality ? (
-            <div className="project-entry__confidentiality">
-              <h4>{text.confidentiality}</h4>
-              <p>{project.confidentiality}</p>
-            </div>
-          ) : null}
+          <CardTitle>
+            {createElement(
+              Heading,
+              {
+                id: headingId,
+                className: cn(
+                  "!m-0 text-lg font-bold leading-heading",
+                  "tracking-[-0.015em] text-heading",
+                  "sm:text-xl",
+                ),
+              },
+              project.title,
+            )}
+          </CardTitle>
 
-          {project.links.length > 0 ? (
-            <div className="project-entry__links">
-              {project.links.map((link, index) => (
-                <ContentLink
-                  key={`${link.label}-${index}`}
-                  className="editorial-link"
-                  language={language}
-                  link={link}
+          <p className="!m-0 text-base text-muted-foreground">
+            {project.summary}
+          </p>
+        </CardHeader>
+
+        {variant === "detailed" ? (
+          <CardContent className="grid gap-6 px-5 pb-6 sm:px-6">
+            {project.sections.length > 0 ? (
+              <div className="grid gap-6">
+                <ContentSections
+                  className="max-w-none"
+                  headingLevel={4}
+                  idPrefix={`project-${projectId}`}
+                  sections={project.sections}
+                  variant="compact"
                 />
-              ))}
-            </div>
-          ) : null}
-        </>
-      ) : null}
+              </div>
+            ) : null}
 
-      <div className="project-entry__links">
-        <Link
-          className="editorial-link"
-          to={getProjectRoute(project.id, language)}
+            {project.technologies && project.technologies.length > 0 ? (
+              <ul
+                className="!m-0 flex list-none flex-wrap gap-2 !p-0"
+                aria-label={t("content.technologies", {
+                  lng: language,
+                })}
+              >
+                {project.technologies.map((technology) => (
+                  <li className="!m-0" key={technology}>
+                    <Badge
+                      variant="secondary"
+                      className={cn(
+                        "border border-border",
+                        "bg-muted px-3 py-1",
+                        "font-mono font-medium text-muted-foreground",
+                      )}
+                    >
+                      {technology}
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+
+            {project.links && project.links.length > 0 ? (
+              <div className="flex flex-wrap gap-x-5 gap-y-2">
+                {project.links.map((link, index) => (
+                  <ContentLink
+                    key={`${link.href}-${index}`}
+                    link={link}
+                    variant="inline"
+                  />
+                ))}
+              </div>
+            ) : null}
+          </CardContent>
+        ) : null}
+
+        <CardFooter
+          className={cn(
+            "mt-auto border-t border-border",
+            "px-5 py-4 sm:px-6",
+          )}
         >
-          {text.viewDetails}
-        </Link>
-      </div>
+          <Button
+            asChild
+            variant={featured ? "default" : "outline"}
+            className={cn(
+              "min-h-11",
+              !featured && [
+                "border-border-strong bg-card",
+                "text-heading shadow-none",
+                "hover:border-primary hover:bg-action-soft",
+                "hover:text-action-strong",
+              ],
+            )}
+          >
+            <Link to={getProjectRoute(projectId, language)}>
+              {t("actions.viewProject", { lng: language })}
+              <ArrowRightIcon aria-hidden="true" weight="bold" />
+            </Link>
+          </Button>
+        </CardFooter>
+      </Card>
     </article>
   );
 }

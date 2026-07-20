@@ -1,0 +1,49 @@
+{
+    "title": "Microscope médical automatisé sous NDA",
+    "summary": "Développement et déploiement d’un microscope automatisé destiné à l’analyse d’échantillons médicaux pendant la crise de la COVID-19, les détails relatifs aux échantillons et à l’usage médical précis restant confidentiels.",
+    "period": {
+        "start": "2020-04",
+        "end": "2020-11"
+    },
+    "sections": [
+        {
+            "title": "Contexte",
+            "paragraphs": [
+                "Cette mission de conseil technique a été réalisée pour Vidya Health Ltd pendant la crise de la COVID-19.",
+                "Le type d’échantillon analysé et la finalité médicale précise du dispositif sont couverts par un accord de confidentialité."
+            ]
+        },
+        {
+            "title": "Conception et développement",
+            "paragraphs": [
+                "La mission portait sur l’automatisation du microscope et sur le développement du logiciel nécessaire à son fonctionnement."
+            ],
+            "items": [
+                "Proposition de l’algorithme de mise au point automatique.",
+                "Rédaction des spécifications techniques.",
+                "Développement du logiciel de contrôle avec LabVIEW.",
+                "Intégration du logiciel au prototype."
+            ]
+        },
+        {
+            "title": "Déploiement et transmission",
+            "paragraphs": [
+                "Le prototype a été déployé dans son environnement d’utilisation."
+            ],
+            "items": [
+                "Production de la documentation technique et utilisateur.",
+                "Formation des utilisateurs.",
+                "Reproduction ultérieure du prototype sur deux microscopes supplémentaires."
+            ]
+        },
+        {
+            "title": "Résultat",
+            "paragraphs": [
+                "Le microscope automatisé a été déployé, puis la solution a été reproduite sur deux instruments supplémentaires."
+            ]
+        }
+    ],
+    "technologies": [
+        "LabVIEW"
+    ]
+}

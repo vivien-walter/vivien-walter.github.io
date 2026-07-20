@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
-import "./App.css";
 import ApplicationErrorBoundary from "./components/application-error-boundary";
 import AppShell from "./components/app-shell";
 import { getDetailRoutePattern, getPageRoute } from "./navigation";

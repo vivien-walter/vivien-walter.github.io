@@ -1,0 +1,54 @@
+{
+    "title": "Recherche, instrumentation et logiciels scientifiques",
+    "introduction": "Mes travaux relient biophysique, instrumentation, traitement du signal, apprentissage automatique et développement logiciel. Cette activité se poursuit à travers les publications, les logiciels et des collaborations ponctuelles.",
+    "sections": [
+        {
+            "title": "Communication moléculaire",
+            "paragraphs": [
+                "Systèmes expérimentaux utilisant des réactions chimiques, des signaux moléculaires, la microfluidique et des méthodes de détection."
+            ]
+        },
+        {
+            "title": "Microscopie et instrumentation optique",
+            "paragraphs": [
+                "Conception de plateformes iSCAT et d’instruments automatisés pour l’observation et l’analyse de systèmes biologiques et nanométriques."
+            ]
+        },
+        {
+            "title": "Membranes lipidiques et simulation moléculaire",
+            "paragraphs": [
+                "Étude des transitions de phase, des instabilités membranaires et des interactions avec des peptides ou des protéines."
+            ]
+        },
+        {
+            "title": "Apprentissage automatique appliqué aux sciences",
+            "paragraphs": [
+                "Classification, traitement d’images et de signaux, CNN 1D et 3D et analyse de données scientifiques."
+            ]
+        },
+        {
+            "title": "Travaux et collaborations en cours",
+            "paragraphs": [
+                "Poursuite ponctuelle de collaborations scientifiques liées aux membranes lipidiques et à MLLPA.",
+                "Travaux associés à un modèle CNN 3D encore non publié."
+            ]
+        }
+    ],
+    "links": [
+        {
+            "label": "ORCID",
+            "href": "https://orcid.org/0000-0003-3203-9543"
+        },
+        {
+            "label": "GitHub",
+            "href": "https://github.com/vivien-walter"
+        },
+        {
+            "label": "Site et documentation de MLLPA",
+            "href": "https://vivien-walter.github.io/mllpa/"
+        }
+    ],
+    "softwareIds": [
+        "mllpa"
+    ]
+}

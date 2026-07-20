@@ -1,0 +1,54 @@
+{
+    "title": "Research, instrumentation and scientific software",
+    "introduction": "My work connects biophysics, instrumentation, signal processing, machine learning and software development. This activity continues through publications, software and occasional collaborations.",
+    "sections": [
+        {
+            "title": "Molecular communication",
+            "paragraphs": [
+                "Experimental systems using chemical reactions, molecular signals, microfluidics and detection methods."
+            ]
+        },
+        {
+            "title": "Microscopy and optical instrumentation",
+            "paragraphs": [
+                "Design of iSCAT platforms and automated instruments for observing and analysing biological and nanoscale systems."
+            ]
+        },
+        {
+            "title": "Lipid membranes and molecular simulation",
+            "paragraphs": [
+                "Research into phase transitions, membrane instabilities and interactions with peptides or proteins."
+            ]
+        },
+        {
+            "title": "Machine learning for scientific applications",
+            "paragraphs": [
+                "Classification, image and signal processing, one- and three-dimensional CNNs and scientific data analysis."
+            ]
+        },
+        {
+            "title": "Current work and collaborations",
+            "paragraphs": [
+                "Occasional continuation of scientific collaborations associated with lipid membranes and MLLPA.",
+                "Work related to an unpublished three-dimensional CNN."
+            ]
+        }
+    ],
+    "links": [
+        {
+            "label": "ORCID",
+            "href": "https://orcid.org/0000-0003-3203-9543"
+        },
+        {
+            "label": "GitHub",
+            "href": "https://github.com/vivien-walter"
+        },
+        {
+            "label": "MLLPA website and documentation",
+            "href": "https://vivien-walter.github.io/mllpa/"
+        }
+    ],
+    "softwareIds": [
+        "mllpa"
+    ]
+}

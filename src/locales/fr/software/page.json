@@ -1,0 +1,39 @@
+{
+    "title": "Des logiciels scientifiques développés pour des besoins concrets",
+    "introduction": "Ces logiciels ont été créés pour analyser des données, contrôler des instruments, automatiser des expériences ou rendre des méthodes scientifiques réutilisables.",
+    "sections": [
+        {
+            "title": "Logiciel présenté en détail",
+            "paragraphs": [
+                "MLLPA est présenté dans une fiche détaillée parce que son rôle, ses technologies, sa documentation et les contributions personnelles associées sont établis par les sources factuelles du portfolio."
+            ],
+            "items": [
+                "MLLPA — module Python pour l’analyse assistée par apprentissage automatique des phases de membranes lipidiques."
+            ]
+        },
+        {
+            "title": "Autres logiciels conservés dans le portfolio",
+            "paragraphs": [
+                "Les outils suivants font partie du parcours logiciel confirmé. Leur nom est publié sans leur attribuer de métrique, de statut de maintenance ni de description technique non vérifiée."
+            ],
+            "items": [
+                "iSCAN",
+                "Sentry",
+                "microImage",
+                "HPyMon",
+                "md2stl",
+                "Plugin d’autocorrélation ImageJ"
+            ]
+        }
+    ],
+    "links": [
+        {
+            "label": "GitHub",
+            "href": "https://github.com/vivien-walter"
+        },
+        {
+            "label": "Site et documentation de MLLPA",
+            "href": "https://vivien-walter.github.io/mllpa/"
+        }
+    ]
+}

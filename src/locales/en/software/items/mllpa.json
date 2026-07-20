@@ -1,0 +1,50 @@
+{
+    "title": "MLLPA",
+    "summary": "A documented and reusable Python module for machine-learning-assisted analysis of lipid-membrane phases obtained from molecular-dynamics simulations.",
+    "sections": [
+        {
+            "title": "Purpose",
+            "paragraphs": [
+                "MLLPA makes reusable the methods developed to study the phases and transitions of simulated lipid membranes."
+            ]
+        },
+        {
+            "title": "Personal contribution",
+            "paragraphs": [
+                "Development of approximately 95% of the module’s code and creation of the entire website and documentation."
+            ],
+            "items": [
+                "Structuring of data-processing workflows.",
+                "Development of membrane-phase analyses.",
+                "Development of machine-learning approaches using scikit-learn.",
+                "Later work on an unpublished 3D CNN using TensorFlow."
+            ]
+        },
+        {
+            "title": "Availability",
+            "paragraphs": [
+                "The software, its website and documentation are publicly available."
+            ]
+        }
+    ],
+    "technologies": [
+        "Python",
+        "NumPy",
+        "h5py",
+        "MDAnalysis",
+        "pandas",
+        "scikit-learn",
+        "TensorFlow",
+        "tqdm"
+    ],
+    "links": [
+        {
+            "label": "MLLPA website and documentation",
+            "href": "https://vivien-walter.github.io/mllpa/"
+        },
+        {
+            "label": "GitHub",
+            "href": "https://github.com/vivien-walter"
+        }
+    ]
+}
