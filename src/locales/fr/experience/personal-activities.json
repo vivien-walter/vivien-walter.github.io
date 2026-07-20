@@ -1,0 +1,48 @@
+{
+    "order": [
+        "music",
+        "illustrations",
+        "science-communication"
+    ],
+    "entries": {
+        "music": {
+            "title": "Musique",
+            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "sections": [
+                {
+                    "title": "Pratique musicale",
+                    "paragraphs": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+                        "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+                    ]
+                }
+            ]
+        },
+        "illustrations": {
+            "title": "Illustrations",
+            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "sections": [
+                {
+                    "title": "Dessin et création visuelle",
+                    "paragraphs": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.",
+                        "Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum."
+                    ]
+                }
+            ]
+        },
+        "science-communication": {
+            "title": "Communication scientifique",
+            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "sections": [
+                {
+                    "title": "Partager les sciences",
+                    "paragraphs": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur.",
+                        "Morbi leo risus, porta ac consectetur ac, vestibulum at eros."
+                    ]
+                }
+            ]
+        }
+    }
+}

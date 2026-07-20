@@ -1,0 +1,87 @@
+{
+    "order": [
+        "consulting",
+        "scientific-research",
+        "teaching"
+    ],
+    "entries": {
+        "consulting": {
+            "title": "Consulting",
+            "summary": "Independent assignments in instrumentation, prompt engineering, classification, data analysis and Python integration.",
+            "sections": [
+                {
+                    "title": "Independent technical consultant",
+                    "paragraphs": [
+                        "Assignment carried out for Vidya Health Ltd from April to November 2020 as part of work covered by a confidentiality agreement."
+                    ],
+                    "items": [
+                        "Automated epifluorescence microscope.",
+                        "Autofocus algorithm.",
+                        "Drafting of specifications.",
+                        "Development and deployment with LabVIEW.",
+                        "Documentation and training."
+                    ]
+                },
+                {
+                    "title": "Occasional independent assignments",
+                    "paragraphs": [
+                        "Assignments carried out occasionally since 2023 and currently paused."
+                    ],
+                    "items": [
+                        "Prompt-engineering advice and training.",
+                        "Classification.",
+                        "Data analysis.",
+                        "Python integration."
+                    ]
+                }
+            ]
+        },
+        "scientific-research": {
+            "title": "Scientific research",
+            "summary": "Occasional continuation of scientific collaborations and work associated with MLLPA.",
+            "sections": [
+                {
+                    "title": "Collaborations and related work",
+                    "paragraphs": [
+                        "Some scientific collaborations and work related to MLLPA were occasionally continued alongside the main professional activities."
+                    ]
+                }
+            ]
+        },
+        "teaching": {
+            "title": "Teaching",
+            "summary": "Teaching in physics and chemistry, statistical thermodynamics, AI, machine learning, deep learning and Python.",
+            "sections": [
+                {
+                    "title": "King’s College London",
+                    "paragraphs": [
+                        "From January to June 2023, statistical thermodynamics was taught to approximately one hundred third-year chemistry students."
+                    ],
+                    "items": [
+                        "Programme designed in full.",
+                        "Teaching materials designed in full.",
+                        "Teaching delivered in English."
+                    ]
+                },
+                {
+                    "title": "ECPM — University of Strasbourg",
+                    "paragraphs": [
+                        "From 2021 to 2023, teaching was delivered to three cohorts of approximately thirty Master’s-level engineering students."
+                    ],
+                    "items": [
+                        "Artificial intelligence.",
+                        "Machine learning.",
+                        "Deep learning.",
+                        "Python."
+                    ]
+                },
+                {
+                    "title": "Secondary education",
+                    "paragraphs": [
+                        "Five intermittent contracts or teaching placements between 2008 and 2013 in physics and chemistry at lower- and upper-secondary-school level."
+                    ]
+                }
+            ]
+        }
+    }
+}

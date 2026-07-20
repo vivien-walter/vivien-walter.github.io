@@ -46,6 +46,7 @@
     "breadcrumbs": {
         "label": "Fil d’Ariane",
         "home": "Accueil",
+        "experience": "Parcours",
         "projects": "Projets",
         "software": "Logiciels"
     },
@@ -72,16 +73,30 @@
         "publication": "Publication"
     },
     "actions": {
+        "viewExperience": "Voir plus",
         "viewProject": "Voir le projet détaillé",
         "viewSoftware": "Voir le logiciel détaillé",
         "backToHome": "Retour à l’accueil",
+        "backToExperience": "Retour au parcours",
         "backToProjects": "Retour à tous les projets",
         "backToSoftware": "Retour à tous les logiciels",
+        "previousExperience": "Expérience précédente",
+        "nextExperience": "Expérience suivante",
+        "previousParallelActivity": "Activité précédente",
+        "nextParallelActivity": "Activité suivante",
         "previousProject": "Projet précédent",
         "nextProject": "Projet suivant",
         "previousSoftware": "Logiciel précédent",
         "nextSoftware": "Logiciel suivant",
         "learnMore": "En savoir plus"
+    },
+    "experienceDetail": {
+        "eyebrow": "Expérience détaillée",
+        "navigationLabel": "Navigation entre les expériences"
+    },
+    "parallelActivityDetail": {
+        "eyebrow": "Activité menée en parallèle",
+        "navigationLabel": "Navigation entre les activités parallèles"
     },
     "projectDetail": {
         "eyebrow": "Projet détaillé",
@@ -121,6 +136,7 @@
         "title": "La page ne peut pas être affichée",
         "message": "Une erreur inattendue empêche l’affichage de cette page. Vous pouvez revenir à l’accueil et poursuivre votre navigation.",
         "homeLink": "Retour à l’accueil",
+        "experienceNotFound": "Expérience introuvable",
         "projectNotFound": "Projet introuvable",
         "softwareNotFound": "Logiciel introuvable",
         "pageNotFound": "Page introuvable"

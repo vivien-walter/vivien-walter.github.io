@@ -2,7 +2,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import AppShell from "@/app/shell/app-shell";
 import ContactPage from "@/routes/contact/contact-page";
+import ExperienceDetailPage from "@/routes/experience/experience-detail-page";
 import ExperiencePage from "@/routes/experience/experience-page";
+import ParallelActivityDetailPage from "@/routes/experience/parallel-activity-detail-page";
 import HomePage from "@/routes/home/home-page";
 import NotFoundPage from "@/routes/not-found/not-found-page";
 import ProjectDetailPage from "@/routes/projects/project-detail-page";
@@ -17,10 +19,21 @@ function AppRouter() {
   return (
     <Routes>
       <Route element={<AppShell />}>
-        <Route path={getPageRoute("home", "fr")} element={<HomePage />} />
+        <Route
+          path={getPageRoute("home", "fr")}
+          element={<HomePage />}
+        />
         <Route
           path={getPageRoute("experience", "fr")}
           element={<ExperiencePage />}
+        />
+        <Route
+          path={getDetailRoutePattern("parallel-activity", "fr")}
+          element={<ParallelActivityDetailPage />}
+        />
+        <Route
+          path={getDetailRoutePattern("experience", "fr")}
+          element={<ExperienceDetailPage />}
         />
         <Route
           path={getPageRoute("projects", "fr")}
@@ -47,10 +60,21 @@ function AppRouter() {
           element={<ContactPage />}
         />
 
-        <Route path={getPageRoute("home", "en")} element={<HomePage />} />
+        <Route
+          path={getPageRoute("home", "en")}
+          element={<HomePage />}
+        />
         <Route
           path={getPageRoute("experience", "en")}
           element={<ExperiencePage />}
+        />
+        <Route
+          path={getDetailRoutePattern("parallel-activity", "en")}
+          element={<ParallelActivityDetailPage />}
+        />
+        <Route
+          path={getDetailRoutePattern("experience", "en")}
+          element={<ExperienceDetailPage />}
         />
         <Route
           path={getPageRoute("projects", "en")}
@@ -79,7 +103,9 @@ function AppRouter() {
 
         <Route
           path="/"
-          element={<Navigate replace to={getPageRoute("home", "fr")} />}
+          element={
+            <Navigate replace to={getPageRoute("home", "fr")} />
+          }
         />
 
         <Route path="*" element={<NotFoundPage />} />

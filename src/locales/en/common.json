@@ -46,6 +46,7 @@
     "breadcrumbs": {
         "label": "Breadcrumb",
         "home": "Home",
+        "experience": "Experience",
         "projects": "Projects",
         "software": "Software"
     },
@@ -72,16 +73,30 @@
         "publication": "Publication"
     },
     "actions": {
+        "viewExperience": "View more",
         "viewProject": "View project details",
         "viewSoftware": "View software details",
         "backToHome": "Return to the home page",
+        "backToExperience": "Return to experience",
         "backToProjects": "Return to all projects",
         "backToSoftware": "Return to all software",
+        "previousExperience": "Previous experience",
+        "nextExperience": "Next experience",
+        "previousParallelActivity": "Previous activity",
+        "nextParallelActivity": "Next activity",
         "previousProject": "Previous project",
         "nextProject": "Next project",
         "previousSoftware": "Previous software",
         "nextSoftware": "Next software",
         "learnMore": "Learn more"
+    },
+    "experienceDetail": {
+        "eyebrow": "Experience details",
+        "navigationLabel": "Experience navigation"
+    },
+    "parallelActivityDetail": {
+        "eyebrow": "Activity alongside main roles",
+        "navigationLabel": "Parallel activity navigation"
     },
     "projectDetail": {
         "eyebrow": "Project details",
@@ -121,6 +136,7 @@
         "title": "The page cannot be displayed",
         "message": "An unexpected error is preventing this page from being displayed. You can return to the home page and continue browsing.",
         "homeLink": "Return to the home page",
+        "experienceNotFound": "Experience not found",
         "projectNotFound": "Project not found",
         "softwareNotFound": "Software not found",
         "pageNotFound": "Page not found"

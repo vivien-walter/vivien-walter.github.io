@@ -1,19 +1,20 @@
+import {
+  ArrowRightIcon,
+  MagnifyingGlassIcon,
+} from "@phosphor-icons/react";
 import { createElement, type ElementType } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui";
 
-import type { SupportedLanguage } from "@/app/routing/navigation";
-import { Badge } from "@/components/ui/badge";
 import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  getExperienceRoute,
+  getProjectRoute,
+  type SupportedLanguage,
+} from "@/app/routing/navigation";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import ContentLink from "@/shared/components/content-link";
-import ContentSections from "@/shared/components/content-sections";
-import { formatContentDateRange } from "@/shared/content/content-formatters";
+import { getProjectById } from "@/routes/projects/data/project-content.loader";
 
 import type { ExperienceContent } from "../data/experience-content.types";
 
@@ -22,115 +23,235 @@ type TimelineEntryProps = {
   readonly experienceId: string;
   readonly language: SupportedLanguage;
   readonly headingLevel?: 2 | 3;
+  readonly isFirst?: boolean;
+  readonly isLast?: boolean;
 };
+
+function formatExperienceYears(
+  start: string,
+  end: string | undefined,
+): string {
+  const startYear = /^\d{4}/.exec(start)?.[0] ?? start;
+
+  if (!end) {
+    return startYear;
+  }
+
+  const endYear = /^\d{4}/.exec(end)?.[0] ?? end;
+
+  return startYear === endYear
+    ? startYear
+    : `${startYear} – ${endYear}`;
+}
 
 function TimelineEntry({
   experience,
   experienceId,
   language,
   headingLevel = 3,
+  isFirst = false,
+  isLast = false,
 }: TimelineEntryProps) {
   const { t } = useTranslation();
   const headingId = `experience-${experienceId}-title`;
   const Heading = `h${headingLevel}` as ElementType;
 
+  const relatedProjects = (experience.relatedProjects ?? []).flatMap(
+    ({ projectId }) => {
+      const project = getProjectById(language, projectId);
+
+      return project ? [{ project, projectId }] : [];
+    },
+  );
+
   return (
-    <article className="min-w-0" aria-labelledby={headingId}>
-      <Card
+    <article
+      className={cn(
+        "relative grid min-w-0 gap-4 py-8",
+        "first:pt-0 last:pb-0",
+        "md:grid-cols-[8.5rem_2.5rem_minmax(0,1fr)]",
+        "md:gap-x-5 md:gap-y-0",
+      )}
+      aria-labelledby={headingId}
+    >
+      <p
         className={cn(
-          "gap-0 overflow-hidden border-border-strong py-0",
-          "border-l-4 border-l-primary shadow-subtle",
-          "transition-[border-color,box-shadow]",
-          "duration-150 ease-standard",
-          "hover:border-primary hover:shadow-elevated",
+          "!m-0 font-mono text-sm font-semibold",
+          "leading-heading text-brand-primary",
+          "md:pt-1",
         )}
       >
-        <CardHeader className="gap-4 px-5 py-5 sm:px-6 sm:py-6">
-          <Badge
-            variant="outline"
-            className={cn(
-              "border-copper/50 bg-copper-soft",
-              "font-mono font-semibold tracking-[0.04em]",
-              "text-copper-strong uppercase",
-            )}
-          >
-            {formatContentDateRange(experience.period, language)}
-          </Badge>
+        {formatExperienceYears(
+          experience.period.start,
+          experience.period.end,
+        )}
+      </p>
 
-          <CardTitle>
+      <div
+        aria-hidden="true"
+        className={cn(
+          "relative hidden w-px self-stretch",
+          "justify-self-center md:block",
+          "-my-8",
+          isFirst && "mt-0",
+          isLast && "mb-0",
+        )}
+      >
+        <span
+          className={cn(
+            "absolute inset-y-0 left-0 w-px",
+            "bg-brand-primary/35",
+            isFirst && "top-3.5",
+            isLast && "bottom-auto h-[2.875rem]",
+          )}
+        />
+
+        <span
+          className={cn(
+            "absolute left-1/2 size-4",
+            "z-10 -translate-x-1/2 rounded-full",
+            "border-4 border-brand-background",
+            "bg-brand-primary ring-1 ring-border-strong",
+            isFirst ? "top-1.5" : "top-[2.375rem]",
+          )}
+        />
+      </div>
+
+      <div
+        className={cn(
+          "grid min-w-0 gap-6",
+          "lg:grid-cols-[minmax(0,1fr)_auto]",
+        )}
+      >
+        <div className="min-w-0">
+          <header className="min-w-0">
             {createElement(
               Heading,
               {
                 id: headingId,
                 className: cn(
                   "!m-0 text-lg font-bold leading-heading",
-                  "tracking-[-0.015em] text-heading",
-                  "sm:text-xl",
+                  "tracking-[-0.015em] text-brand-ink",
                 ),
               },
-              experience.organization,
+              experience.role,
             )}
-          </CardTitle>
 
-          {experience.location ? (
-            <p className="!m-0 text-sm text-muted-foreground">
-              {experience.location}
+            <p
+              className={cn(
+                "!mt-1 !mb-0 font-semibold",
+                "leading-heading text-brand-primary",
+              )}
+            >
+              {experience.organization}
             </p>
-          ) : null}
-        </CardHeader>
 
-        <CardContent className="grid gap-6 px-5 pb-6 sm:px-6">
-          <dl className="!m-0 grid gap-2 border-t border-border pt-4">
-            <div>
-              <dt
-                className={cn(
-                  "mb-1 font-mono text-xs font-semibold",
-                  "tracking-[0.04em] text-muted-foreground uppercase",
-                )}
-              >
-                {t("content.role", { lng: language })}
-              </dt>
+            {experience.location ? (
+              <p className="!mt-1 !mb-0 text-sm text-muted-foreground">
+                {experience.location}
+              </p>
+            ) : null}
+          </header>
 
-              <dd className="m-0 font-semibold text-heading">
-                {experience.role}
-              </dd>
-            </div>
-          </dl>
-
-          <p className="!m-0 text-muted-foreground">
-            {experience.summary}
-          </p>
-
-          {experience.sections.length > 0 ? (
-            <div className="grid gap-6">
-              <ContentSections
-                className="max-w-none"
-                headingLevel={4}
-                idPrefix={`experience-${experienceId}`}
-                sections={experience.sections}
-                variant="compact"
-              />
-            </div>
-          ) : null}
-        </CardContent>
-
-        {experience.links && experience.links.length > 0 ? (
-          <CardFooter
+          <p
             className={cn(
-              "flex flex-wrap gap-x-5 gap-y-2",
-              "border-t border-border px-5 py-4 sm:px-6",
+              "!mt-4 !mb-0 max-w-readable",
+              "text-foreground",
             )}
           >
-            {experience.links.map((link, index) => (
-              <ContentLink
-                key={`${link.href}-${index}`}
-                link={link}
-                variant="inline"
+            {experience.summary}
+          </p>
+        </div>
+
+        <div
+          className={cn(
+            "flex min-w-0 flex-col items-stretch gap-2",
+            "sm:items-start lg:w-52 lg:items-stretch",
+          )}
+        >
+          <Button
+            asChild
+            className="min-h-11 w-full justify-between"
+          >
+            <Link to={getExperienceRoute(experienceId, language)}>
+              <span className="min-w-0 whitespace-nowrap text-left">
+                {t("actions.viewExperience", { lng: language })}
+              </span>
+
+              <ArrowRightIcon
+                aria-hidden="true"
+                className="shrink-0"
+                weight="bold"
               />
-            ))}
-          </CardFooter>
-        ) : null}
-      </Card>
+            </Link>
+          </Button>
+
+          {relatedProjects.length > 0 ? (
+            <DropdownMenuPrimitive.Root>
+              <DropdownMenuPrimitive.Trigger asChild>
+                <Button
+                  variant="ghost"
+                  className={cn(
+                    "min-h-11 w-full justify-between",
+                    "text-brand-primary",
+                    "hover:bg-action-soft hover:text-action-strong",
+                    "data-[state=open]:bg-action-soft",
+                    "data-[state=open]:text-action-strong",
+                  )}
+                >
+                  <span className="min-w-0 whitespace-normal text-left">
+                    {t("content.relatedProjects", {
+                      lng: language,
+                    })}
+                  </span>
+
+                  <MagnifyingGlassIcon
+                    aria-hidden="true"
+                    className="shrink-0"
+                    weight="bold"
+                  />
+                </Button>
+              </DropdownMenuPrimitive.Trigger>
+
+              <DropdownMenuPrimitive.Portal>
+                <DropdownMenuPrimitive.Content
+                  align="end"
+                  sideOffset={6}
+                  className={cn(
+                    "z-50 min-w-64 max-w-[calc(100vw-2rem)]",
+                    "overflow-hidden rounded-md border",
+                    "border-border-strong bg-popover p-1",
+                    "text-popover-foreground shadow-elevated",
+                  )}
+                >
+                  {relatedProjects.map(({ project, projectId }) => (
+                    <DropdownMenuPrimitive.Item
+                      asChild
+                      key={projectId}
+                    >
+                      <Link
+                        className={cn(
+                          "flex min-h-11 cursor-pointer items-center",
+                          "rounded-sm px-3 py-2",
+                          "text-sm font-medium text-brand-ink",
+                          "no-underline outline-none",
+                          "data-[highlighted]:bg-action-soft",
+                          "data-[highlighted]:text-action-strong",
+                        )}
+                        to={getProjectRoute(projectId, language)}
+                      >
+                        <span className="min-w-0">
+                          {project.title}
+                        </span>
+                      </Link>
+                    </DropdownMenuPrimitive.Item>
+                  ))}
+                </DropdownMenuPrimitive.Content>
+              </DropdownMenuPrimitive.Portal>
+            </DropdownMenuPrimitive.Root>
+          ) : null}
+        </div>
+      </div>
     </article>
   );
 }

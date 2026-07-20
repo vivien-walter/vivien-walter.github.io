@@ -1,50 +1,31 @@
 {
+    "eyebrow": "Across science, software and R&D project leadership",
     "title": "A career across science, software and project leadership",
     "introduction": "My career has developed around projects requiring an understanding of several disciplines, organised collective work and direct contributions to the solution.",
-    "sections": [
+    "timelineTitle": "Professional experience",
+    "parallelActivitiesTitle": "Alongside my main roles",
+    "personalActivitiesTitle": "Personal activities",
+    "expertise": [
         {
-            "title": "Journey",
-            "paragraphs": [
-                "After training in physics, chemistry and biophysics, I worked on molecular simulation and machine learning, built instruments and experimental platforms, and later led a digital product combining AI and XR."
-            ]
+            "id": "project-leadership",
+            "title": "R&D project leadership",
+            "description": "From defining objectives to operational delivery."
         },
         {
-            "title": "Activities alongside main roles",
-            "paragraphs": [
-                "Several assignments and collaborations were carried out alongside the main positions."
-            ],
-            "items": [
-                "Independent technical consultant for Vidya Health Ltd from April to November 2020: automated epifluorescence microscope under NDA, autofocus algorithm, specifications, LabVIEW development and deployment, documentation and training.",
-                "Occasional independent assignments since 2023, currently paused: prompt-engineering advice and training, classification, data analysis and Python integration.",
-                "Occasional continuation of scientific collaborations and work associated with MLLPA."
-            ]
+            "id": "software-ai",
+            "title": "Software & AI",
+            "description": "Scientific tools, computer vision and data analysis."
         },
         {
-            "title": "Teaching",
-            "paragraphs": [
-                "King’s College London, January to June 2023: statistical thermodynamics for approximately one hundred third-year chemistry students, with the programme and materials designed in full and teaching delivered in English.",
-                "ECPM, University of Strasbourg, 2021 to 2023: AI, machine learning, deep learning and Python for three cohorts of approximately thirty Master’s-level engineering students."
-            ],
-            "items": [
-                "Five intermittent physics and chemistry teaching placements or contracts between 2008 and 2013 at lower- and upper-secondary-school level."
-            ]
+            "id": "instrumentation",
+            "title": "Instrumentation",
+            "description": "Optical systems, control, acquisition and analysis."
         },
         {
-            "title": "Education",
-            "paragraphs": [],
-            "items": [
-                "PhD in Biophysics — University of Strasbourg / Institut Charles Sadron, 2014–2017.",
-                "CAPES in Physics and Chemistry, 2014.",
-                "MSc Physics — Materials and Nanoscience, 2013–2014.",
-                "MSc Physics and Chemistry — Science Education, 2011–2013.",
-                "BSc Mathematics, Physics and Chemistry, 2007–2011."
-            ]
-        },
-        {
-            "title": "Outside professional work",
-            "paragraphs": [
-                "Music, trombone and bass, experience performing in bands and concerts, drawing, painting, a webcomic and short films."
-            ]
+            "id": "collaboration",
+            "title": "Collaboration",
+            "description": "Multidisciplinary teams, academic and industrial partners."
         }
-    ]
+    ],
+    "sections": []
 }

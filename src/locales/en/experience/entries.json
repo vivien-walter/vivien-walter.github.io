@@ -36,6 +36,11 @@
                     "The backend and AI ecosystem were operational, four XR applications were complete and the user interface was approximately 80% complete, with three secondary areas remaining."
                 ]
             }
+        ],
+        "relatedProjects": [
+            {
+                "projectId": "lxp-campus"
+            }
         ]
     },
     "kcl-molecular-communication": {
@@ -64,6 +69,11 @@
                     "Development of a one-dimensional CNN using Python, TensorFlow and scikit-learn to analyse UV-Vis signals.",
                     "Design and manufacture of six open-source syringe pumps using Fusion 360, 3D printing, Arduino, I²C, C++ and Python."
                 ]
+            }
+        ],
+        "relatedProjects": [
+            {
+                "projectId": "molecular-communication"
             }
         ]
     },
@@ -95,6 +105,11 @@
                     "Operational microscope delivered."
                 ]
             }
+        ],
+        "relatedProjects": [
+            {
+                "projectId": "iscat-platform"
+            }
         ]
     },
     "strasbourg-mllpa": {
@@ -124,6 +139,11 @@
                     "Creation of the entire website and documentation.",
                     "Related work continued with collaborators."
                 ]
+            }
+        ],
+        "relatedProjects": [
+            {
+                "projectId": "mllpa-project"
             }
         ],
         "links": [

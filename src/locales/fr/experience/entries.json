@@ -36,6 +36,11 @@
                     "Backend et écosystème IA opérationnels, quatre applications XR terminées et interface utilisateur approximativement achevée à 80 %, avec trois espaces secondaires restants."
                 ]
             }
+        ],
+        "relatedProjects": [
+            {
+                "projectId": "lxp-campus"
+            }
         ]
     },
     "kcl-molecular-communication": {
@@ -64,6 +69,11 @@
                     "Développement d’un CNN 1D avec Python, TensorFlow et scikit-learn pour analyser des signaux UV-Vis.",
                     "Conception et fabrication de six pompes-seringues open source avec Fusion 360, impression 3D, Arduino, I²C, C++ et Python."
                 ]
+            }
+        ],
+        "relatedProjects": [
+            {
+                "projectId": "molecular-communication"
             }
         ]
     },
@@ -95,6 +105,11 @@
                     "Microscope opérationnel livré."
                 ]
             }
+        ],
+        "relatedProjects": [
+            {
+                "projectId": "iscat-platform"
+            }
         ]
     },
     "strasbourg-mllpa": {
@@ -124,6 +139,11 @@
                     "Création de l’intégralité du site et de la documentation.",
                     "Travail connexe poursuivi avec les collaborateurs."
                 ]
+            }
+        ],
+        "relatedProjects": [
+            {
+                "projectId": "mllpa-project"
             }
         ],
         "links": [

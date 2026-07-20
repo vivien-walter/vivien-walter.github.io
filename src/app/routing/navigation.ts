@@ -17,7 +17,12 @@ export const navigationPageIds = [
 
 export type NavigationPageId = (typeof navigationPageIds)[number];
 
-export const detailPageKinds = ["project", "software"] as const;
+export const detailPageKinds = [
+  "experience",
+  "parallel-activity",
+  "project",
+  "software",
+] as const;
 
 export type DetailPageKind = (typeof detailPageKinds)[number];
 
@@ -121,6 +126,8 @@ export const primaryNavigationItems = navigationItems.filter(
 export const mobileNavigationItems = navigationItems;
 
 const detailListPageIds = {
+  experience: "experience",
+  "parallel-activity": "experience",
   project: "projects",
   software: "software",
 } as const satisfies Readonly<Record<DetailPageKind, NavigationPageId>>;
@@ -188,7 +195,27 @@ export function getDetailRoute(
     return listRoute;
   }
 
-  return `${listRoute}${encodeURIComponent(normalizedSlug)}/`;
+  const encodedSlug = encodeURIComponent(normalizedSlug);
+
+  if (kind === "parallel-activity") {
+    return `${listRoute}activities/${encodedSlug}/`;
+  }
+
+  return `${listRoute}${encodedSlug}/`;
+}
+
+export function getExperienceRoute(
+  experienceId: string,
+  language: SupportedLanguage,
+): string {
+  return getDetailRoute("experience", experienceId, language);
+}
+
+export function getParallelActivityRoute(
+  activityId: string,
+  language: SupportedLanguage,
+): string {
+  return getDetailRoute("parallel-activity", activityId, language);
 }
 
 export function getProjectRoute(
@@ -210,8 +237,13 @@ export function getDetailRoutePattern(
   language: SupportedLanguage,
 ): string {
   const listPageId = detailListPageIds[kind];
+  const listRoute = getPageRoute(listPageId, language);
 
-  return `${getPageRoute(listPageId, language)}:slug/`;
+  if (kind === "parallel-activity") {
+    return `${listRoute}activities/:slug/`;
+  }
+
+  return `${listRoute}:slug/`;
 }
 
 export function getRouteMatchFromPathname(pathname: string): RouteMatch {
@@ -232,9 +264,34 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
 
   const segments = normalizedPathname.split("/").filter(Boolean);
 
+  if (segments.length === 4) {
+    const [, section, subsection, encodedSlug] = segments;
+    const slug = decodeSlug(encodedSlug);
+
+    if (
+      slug &&
+      section === "experience" &&
+      subsection === "activities"
+    ) {
+      return {
+        kind: "parallel-activity",
+        language,
+        slug,
+      };
+    }
+  }
+
   if (segments.length === 3) {
     const [, section, encodedSlug] = segments;
     const slug = decodeSlug(encodedSlug);
+
+    if (slug && section === "experience") {
+      return {
+        kind: "experience",
+        language,
+        slug,
+      };
+    }
 
     if (slug && section === "projects") {
       return {
@@ -268,6 +325,13 @@ export function getNavigationItemFromPathname(
     return navigationItems.find((item) => item.id === routeMatch.pageId);
   }
 
+  if (
+    routeMatch.kind === "experience" ||
+    routeMatch.kind === "parallel-activity"
+  ) {
+    return navigationItems.find((item) => item.id === "experience");
+  }
+
   if (routeMatch.kind === "project") {
     return navigationItems.find((item) => item.id === "projects");
   }
@@ -286,6 +350,13 @@ export function getPageIdFromPathname(
 
   if (routeMatch.kind === "page") {
     return routeMatch.pageId;
+  }
+
+  if (
+    routeMatch.kind === "experience" ||
+    routeMatch.kind === "parallel-activity"
+  ) {
+    return "experience";
   }
 
   if (routeMatch.kind === "project") {
@@ -307,6 +378,14 @@ export function getEquivalentLanguagePath(
 
   if (routeMatch.kind === "page") {
     return getPageRoute(routeMatch.pageId, language);
+  }
+
+  if (routeMatch.kind === "experience") {
+    return getExperienceRoute(routeMatch.slug, language);
+  }
+
+  if (routeMatch.kind === "parallel-activity") {
+    return getParallelActivityRoute(routeMatch.slug, language);
   }
 
   if (routeMatch.kind === "project") {
