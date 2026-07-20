@@ -1,13 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
-import { cn } from "../lib/utils";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
 import {
   getEquivalentLanguagePath,
   getLanguageFromPathname,
   supportedLanguages,
-} from "../navigation";
-import { Button } from "./ui/button";
+} from "../routing/navigation";
 
 function LanguageSwitcher() {
   const location = useLocation();

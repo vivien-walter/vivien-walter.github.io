@@ -2,13 +2,14 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet, useLocation } from "react-router-dom";
 
+import { getProjectById } from "@/routes/projects/data/project-content.loader";
+import { getSoftwareById } from "@/routes/software/data/software-content.loader";
+
 import {
   getLanguageFromPathname,
   getNavigationItemFromPathname,
   getRouteMatchFromPathname,
-} from "../navigation";
-import { getProjectById } from "../routes/projects/data/project-content.loader";
-import { getSoftwareById } from "../routes/software/data/software-content.loader";
+} from "../routing/navigation";
 import SiteHeader from "./site-header";
 
 function AppShell() {

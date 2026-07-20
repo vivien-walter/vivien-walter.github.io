@@ -1,10 +1,11 @@
-import frHomeContentJson from "../../../locales/fr/home/page.json";
-import enHomeContentJson from "../../../locales/en/home/page.json";
-import type { SupportedLanguage } from "../../../navigation";
+import frHomeContentJson from "@/locales/fr/home/page.json";
+import enHomeContentJson from "@/locales/en/home/page.json";
 import {
   selectLocalizedContent,
   type LocalizedContent,
-} from "../../../shared/content/localized-content";
+  type SupportedLanguage,
+} from "@/shared/content/localized-content";
+
 import type { HomeContent } from "./home-content.types";
 
 const frHomeContent = frHomeContentJson satisfies HomeContent;

@@ -1,19 +1,20 @@
-import enSoftwareIndexJson from "../../../locales/en/software/index.json";
-import enMllpaJson from "../../../locales/en/software/items/mllpa.json";
-import enSoftwarePageJson from "../../../locales/en/software/page.json";
-import frSoftwareIndexJson from "../../../locales/fr/software/index.json";
-import frMllpaJson from "../../../locales/fr/software/items/mllpa.json";
-import frSoftwarePageJson from "../../../locales/fr/software/page.json";
-import type { SupportedLanguage } from "../../../navigation";
+import enSoftwareIndexJson from "@/locales/en/software/index.json";
+import enMllpaJson from "@/locales/en/software/items/mllpa.json";
+import enSoftwarePageJson from "@/locales/en/software/page.json";
+import frSoftwareIndexJson from "@/locales/fr/software/index.json";
+import frMllpaJson from "@/locales/fr/software/items/mllpa.json";
+import frSoftwarePageJson from "@/locales/fr/software/page.json";
 import type {
   ContentId,
   ContentIndex,
   ContentPage,
-} from "../../../shared/content/content.types";
+} from "@/shared/content/content.types";
 import {
   selectLocalizedContent,
   type LocalizedContent,
-} from "../../../shared/content/localized-content";
+  type SupportedLanguage,
+} from "@/shared/content/localized-content";
+
 import type {
   SoftwareCollection,
   SoftwareContent,

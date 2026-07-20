@@ -3,40 +3,45 @@ import { createElement, type ElementType } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import { cn } from "../lib/utils";
-import { getSoftwareRoute, type SupportedLanguage } from "../navigation";
-import type { SoftwareContent } from "../routes/software/data/software-content.types";
-import ContentLink from "./content-link";
-import ContentSections from "./content-sections";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+import {
+  getProjectRoute,
+  type SupportedLanguage,
+} from "@/app/routing/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { formatContentDateRange } from "@/shared/content/content-formatters";
+import ContentLink from "@/shared/components/content-link";
+import ContentSections from "@/shared/components/content-sections";
 
-type SoftwareEntryProps = {
-  readonly software: SoftwareContent;
-  readonly softwareId: string;
+import type { ProjectContent } from "../data/project-content.types";
+
+type ProjectEntryProps = {
+  readonly project: ProjectContent;
+  readonly projectId: string;
   readonly language: SupportedLanguage;
   readonly variant?: "summary" | "detailed";
   readonly headingLevel?: 2 | 3;
   readonly featured?: boolean;
 };
 
-function SoftwareEntry({
-  software,
-  softwareId,
+function ProjectEntry({
+  project,
+  projectId,
   language,
   variant = "detailed",
   headingLevel = 3,
   featured = false,
-}: SoftwareEntryProps) {
+}: ProjectEntryProps) {
   const { t } = useTranslation();
-  const headingId = `software-${softwareId}-title`;
+  const headingId = `project-${projectId}-title`;
   const Heading = `h${headingLevel}` as ElementType;
 
   return (
@@ -56,6 +61,19 @@ function SoftwareEntry({
         )}
       >
         <CardHeader className="gap-4 px-5 py-5 sm:px-6 sm:py-6">
+          {project.period ? (
+            <Badge
+              variant="outline"
+              className={cn(
+                "border-copper/50 bg-copper-soft",
+                "font-mono font-semibold tracking-[0.04em]",
+                "text-copper-strong uppercase",
+              )}
+            >
+              {formatContentDateRange(project.period, language)}
+            </Badge>
+          ) : null}
+
           <CardTitle>
             {createElement(
               Heading,
@@ -67,37 +85,37 @@ function SoftwareEntry({
                   "sm:text-xl",
                 ),
               },
-              software.title,
+              project.title,
             )}
           </CardTitle>
 
           <p className="!m-0 text-base text-muted-foreground">
-            {software.summary}
+            {project.summary}
           </p>
         </CardHeader>
 
         {variant === "detailed" ? (
           <CardContent className="grid gap-6 px-5 pb-6 sm:px-6">
-            {software.sections.length > 0 ? (
+            {project.sections.length > 0 ? (
               <div className="grid gap-6">
                 <ContentSections
                   className="max-w-none"
                   headingLevel={4}
-                  idPrefix={`software-${softwareId}`}
-                  sections={software.sections}
+                  idPrefix={`project-${projectId}`}
+                  sections={project.sections}
                   variant="compact"
                 />
               </div>
             ) : null}
 
-            {software.technologies && software.technologies.length > 0 ? (
+            {project.technologies && project.technologies.length > 0 ? (
               <ul
                 className="!m-0 flex list-none flex-wrap gap-2 !p-0"
                 aria-label={t("content.technologies", {
                   lng: language,
                 })}
               >
-                {software.technologies.map((technology) => (
+                {project.technologies.map((technology) => (
                   <li className="!m-0" key={technology}>
                     <Badge
                       variant="secondary"
@@ -114,9 +132,9 @@ function SoftwareEntry({
               </ul>
             ) : null}
 
-            {software.links && software.links.length > 0 ? (
+            {project.links && project.links.length > 0 ? (
               <div className="flex flex-wrap gap-x-5 gap-y-2">
-                {software.links.map((link, index) => (
+                {project.links.map((link, index) => (
                   <ContentLink
                     key={`${link.href}-${index}`}
                     link={link}
@@ -147,8 +165,8 @@ function SoftwareEntry({
               ],
             )}
           >
-            <Link to={getSoftwareRoute(softwareId, language)}>
-              {t("actions.viewSoftware", { lng: language })}
+            <Link to={getProjectRoute(projectId, language)}>
+              {t("actions.viewProject", { lng: language })}
               <ArrowRightIcon aria-hidden="true" weight="bold" />
             </Link>
           </Button>
@@ -158,4 +176,4 @@ function SoftwareEntry({
   );
 }
 
-export default SoftwareEntry;
+export default ProjectEntry;

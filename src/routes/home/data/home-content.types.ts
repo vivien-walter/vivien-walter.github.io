@@ -2,7 +2,7 @@ import type {
   ContentId,
   ContentPage,
   ContentSection,
-} from "../../../shared/content/content.types";
+} from "@/shared/content/content.types";
 
 export type HomeContent = ContentPage & {
   readonly sections: readonly ContentSection[];

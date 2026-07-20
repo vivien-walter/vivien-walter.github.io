@@ -1,7 +1,8 @@
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
 
-import { cn } from "../lib/utils";
-import type { ContentLink as ContentLinkData } from "../shared/content/content.types";
+import { cn } from "@/lib/utils";
+
+import type { ContentLink as ContentLinkData } from "../content/content.types";
 
 type ContentLinkVariant = "inline" | "resource" | "contact";
 

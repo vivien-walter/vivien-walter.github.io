@@ -1,6 +1,10 @@
-export const supportedLanguages = ["fr", "en"] as const;
+import {
+  supportedLanguages,
+  type SupportedLanguage,
+} from "@/shared/content/localized-content";
 
-export type SupportedLanguage = (typeof supportedLanguages)[number];
+export { supportedLanguages };
+export type { SupportedLanguage };
 
 export const navigationPageIds = [
   "home",

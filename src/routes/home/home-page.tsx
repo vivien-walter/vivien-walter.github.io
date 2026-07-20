@@ -1,16 +1,17 @@
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
-import ContentSections from "../components/content-sections";
-import PageHeader from "../components/page-header";
-import ProjectEntry from "../components/project-entry";
-import PublicationEntry from "../components/publication-entry";
-import SoftwareEntry from "../components/software-entry";
-import { getLanguageFromPathname } from "../navigation";
-import { getHomeContent } from "../routes/home/data/home-content.loader";
-import { getProjectById } from "../routes/projects/data/project-content.loader";
-import { getPublicationById } from "../routes/research/data/research-content.loader";
-import { getSoftwareById } from "../routes/software/data/software-content.loader";
+import { getLanguageFromPathname } from "@/app/routing/navigation";
+import ProjectEntry from "@/routes/projects/components/project-entry";
+import { getProjectById } from "@/routes/projects/data/project-content.loader";
+import PublicationEntry from "@/routes/research/components/publication-entry";
+import { getPublicationById } from "@/routes/research/data/research-content.loader";
+import SoftwareEntry from "@/routes/software/components/software-entry";
+import { getSoftwareById } from "@/routes/software/data/software-content.loader";
+import ContentSections from "@/shared/components/content-sections";
+import PageHeader from "@/shared/components/page-header";
+
+import { getHomeContent } from "./data/home-content.loader";
 
 function HomePage() {
   const location = useLocation();

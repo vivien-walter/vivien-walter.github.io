@@ -1,25 +1,26 @@
 import { useTranslation } from "react-i18next";
 import { useLocation, useParams } from "react-router-dom";
 
-import Breadcrumbs from "../components/breadcrumbs";
-import ContentLink from "../components/content-link";
-import ContentSections from "../components/content-sections";
-import DetailNavigation from "../components/detail-navigation";
-import PageHeader from "../components/page-header";
-import { Badge } from "../components/ui/badge";
-import { Card, CardContent } from "../components/ui/card";
-import { cn } from "../lib/utils";
 import {
   getLanguageFromPathname,
   getPageRoute,
   getProjectRoute,
-} from "../navigation";
+} from "@/app/routing/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import NotFoundPage from "@/routes/not-found/not-found-page";
+import Breadcrumbs from "@/shared/components/breadcrumbs";
+import ContentLink from "@/shared/components/content-link";
+import ContentSections from "@/shared/components/content-sections";
+import DetailNavigation from "@/shared/components/detail-navigation";
+import PageHeader from "@/shared/components/page-header";
+import { formatContentDateRange } from "@/shared/content/content-formatters";
+
 import {
   getAdjacentProjectIds,
   getProjectById,
-} from "../routes/projects/data/project-content.loader";
-import { formatContentDateRange } from "../shared/content/content-formatters";
-import NotFoundPage from "./not-found-page";
+} from "./data/project-content.loader";
 
 function ProjectDetailPage() {
   const location = useLocation();

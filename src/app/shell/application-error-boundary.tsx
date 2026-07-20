@@ -1,16 +1,17 @@
 import { HouseIcon } from "@phosphor-icons/react";
 import { Component, type ErrorInfo, type ReactNode } from "react";
 
-import i18n from "../i18n";
-import { getLanguageFromPathname, getPageRoute } from "../navigation";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "@/components/ui/card";
+
+import i18n from "../i18n";
+import { getLanguageFromPathname, getPageRoute } from "../routing/navigation";
 
 type ApplicationErrorBoundaryProps = {
   readonly children: ReactNode;
@@ -71,7 +72,7 @@ class ApplicationErrorBoundary extends Component<
                 {i18n.t("errors.eyebrow", { lng: language })}
               </p>
 
-              <CardTitle >
+              <CardTitle>
                 <h1
                   id="page-title"
                   className="!m-0 text-xl leading-heading tracking-[-0.025em] text-heading sm:text-2xl"

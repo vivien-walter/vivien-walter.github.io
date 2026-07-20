@@ -1,10 +1,11 @@
-import frContactContentJson from "../../../locales/fr/contact/page.json";
-import enContactContentJson from "../../../locales/en/contact/page.json";
-import type { SupportedLanguage } from "../../../navigation";
+import frContactContentJson from "@/locales/fr/contact/page.json";
+import enContactContentJson from "@/locales/en/contact/page.json";
 import {
   selectLocalizedContent,
   type LocalizedContent,
-} from "../../../shared/content/localized-content";
+  type SupportedLanguage,
+} from "@/shared/content/localized-content";
+
 import type { ContactContent } from "./contact-content.types";
 
 const frContactContent = frContactContentJson satisfies ContactContent;

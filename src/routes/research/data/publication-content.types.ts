@@ -1,7 +1,7 @@
 import type {
   ContentCollection,
   ContentLink,
-} from "../../../shared/content/content.types";
+} from "@/shared/content/content.types";
 
 export type PublicationContent = {
   readonly title: string;

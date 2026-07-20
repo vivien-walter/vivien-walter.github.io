@@ -1,5 +1,5 @@
-import type { SupportedLanguage } from "../../navigation";
 import type { ContentDateRange } from "./content.types";
+import type { SupportedLanguage } from "./localized-content";
 
 const localeByLanguage: Readonly<Record<SupportedLanguage, string>> = {
   fr: "fr-FR",

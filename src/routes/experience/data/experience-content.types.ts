@@ -3,7 +3,7 @@ import type {
   ContentDateRange,
   ContentLink,
   ContentSection,
-} from "../../../shared/content/content.types";
+} from "@/shared/content/content.types";
 
 export type ExperienceContent = {
   readonly role: string;

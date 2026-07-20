@@ -3,13 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
-import { cn } from "../lib/utils";
-import {
-  getLanguageFromPathname,
-  getPageIdFromPathname,
-  mobileNavigationItems,
-} from "../navigation";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -18,7 +12,14 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./ui/sheet";
+} from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
+
+import {
+  getLanguageFromPathname,
+  getPageIdFromPathname,
+  mobileNavigationItems,
+} from "../routing/navigation";
 
 const mobileNavigationLabels = {
   fr: {

@@ -4,10 +4,10 @@ import {
 } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
-import { cn } from "../lib/utils";
-import { Button } from "./ui/button";
-import { Card } from "./ui/card";
-import { Separator } from "./ui/separator";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 export type DetailNavigationLink = {
   readonly label: string;

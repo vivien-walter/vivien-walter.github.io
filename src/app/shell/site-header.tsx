@@ -1,22 +1,23 @@
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
-import { cn } from "../lib/utils";
-import {
-  getLanguageFromPathname,
-  getPageIdFromPathname,
-  getPageRoute,
-  primaryNavigationItems,
-} from "../navigation";
-import LanguageSwitcher from "./language-switcher";
-import MobileNavigation from "./mobile-navigation";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "./ui/navigation-menu";
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+
+import {
+  getLanguageFromPathname,
+  getPageIdFromPathname,
+  getPageRoute,
+  primaryNavigationItems,
+} from "../routing/navigation";
+import LanguageSwitcher from "./language-switcher";
+import MobileNavigation from "./mobile-navigation";
 
 function SiteHeader() {
   const location = useLocation();

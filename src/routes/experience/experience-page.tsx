@@ -1,16 +1,20 @@
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
-import Breadcrumbs from "../components/breadcrumbs";
-import ContentSections from "../components/content-sections";
-import PageHeader from "../components/page-header";
-import TimelineEntry from "../components/timeline-entry";
-import { getLanguageFromPathname, getPageRoute } from "../navigation";
+import {
+  getLanguageFromPathname,
+  getPageRoute,
+} from "@/app/routing/navigation";
+import Breadcrumbs from "@/shared/components/breadcrumbs";
+import ContentSections from "@/shared/components/content-sections";
+import PageHeader from "@/shared/components/page-header";
+
+import TimelineEntry from "./components/timeline-entry";
 import {
   getExperienceById,
   getExperienceIndex,
   getExperiencePage,
-} from "../routes/experience/data/experience-content.loader";
+} from "./data/experience-content.loader";
 
 function ExperiencePage() {
   const location = useLocation();

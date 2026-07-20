@@ -1,18 +1,19 @@
 import { createElement, type ElementType } from "react";
 import { useTranslation } from "react-i18next";
 
-import { cn } from "../lib/utils";
-import type { SupportedLanguage } from "../navigation";
-import type { PublicationContent } from "../routes/research/data/publication-content.types";
-import ContentLink from "./content-link";
-import { Badge } from "./ui/badge";
+import type { SupportedLanguage } from "@/app/routing/navigation";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import ContentLink from "@/shared/components/content-link";
+
+import type { PublicationContent } from "../data/publication-content.types";
 
 type PublicationEntryProps = {
   readonly publication: PublicationContent;

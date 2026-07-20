@@ -1,13 +1,17 @@
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
-import Breadcrumbs from "../components/breadcrumbs";
-import ContentLink from "../components/content-link";
-import ContentSections from "../components/content-sections";
-import PageHeader from "../components/page-header";
-import { Card } from "../components/ui/card";
-import { getLanguageFromPathname, getPageRoute } from "../navigation";
-import { getContactContent } from "../routes/contact/data/contact-content.loader";
+import {
+  getLanguageFromPathname,
+  getPageRoute,
+} from "@/app/routing/navigation";
+import { Card } from "@/components/ui/card";
+import Breadcrumbs from "@/shared/components/breadcrumbs";
+import ContentLink from "@/shared/components/content-link";
+import ContentSections from "@/shared/components/content-sections";
+import PageHeader from "@/shared/components/page-header";
+
+import { getContactContent } from "./data/contact-content.loader";
 
 function ContactPage() {
   const location = useLocation();

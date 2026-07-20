@@ -1,19 +1,20 @@
-import enExperienceEntriesJson from "../../../locales/en/experience/entries.json";
-import enExperienceIndexJson from "../../../locales/en/experience/index.json";
-import enExperiencePageJson from "../../../locales/en/experience/page.json";
-import frExperienceEntriesJson from "../../../locales/fr/experience/entries.json";
-import frExperienceIndexJson from "../../../locales/fr/experience/index.json";
-import frExperiencePageJson from "../../../locales/fr/experience/page.json";
-import type { SupportedLanguage } from "../../../navigation";
+import enExperienceEntriesJson from "@/locales/en/experience/entries.json";
+import enExperienceIndexJson from "@/locales/en/experience/index.json";
+import enExperiencePageJson from "@/locales/en/experience/page.json";
+import frExperienceEntriesJson from "@/locales/fr/experience/entries.json";
+import frExperienceIndexJson from "@/locales/fr/experience/index.json";
+import frExperiencePageJson from "@/locales/fr/experience/page.json";
 import type {
   ContentId,
   ContentIndex,
   ContentPage,
-} from "../../../shared/content/content.types";
+} from "@/shared/content/content.types";
 import {
   selectLocalizedContent,
   type LocalizedContent,
-} from "../../../shared/content/localized-content";
+  type SupportedLanguage,
+} from "@/shared/content/localized-content";
+
 import type {
   ExperienceCollection,
   ExperienceContent,

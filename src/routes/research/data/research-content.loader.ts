@@ -1,18 +1,19 @@
-import enPublicationIndexJson from "../../../locales/en/research/index.json";
-import enPublicationsJson from "../../../locales/en/research/publications.json";
-import enResearchPageJson from "../../../locales/en/research/page.json";
-import frPublicationIndexJson from "../../../locales/fr/research/index.json";
-import frPublicationsJson from "../../../locales/fr/research/publications.json";
-import frResearchPageJson from "../../../locales/fr/research/page.json";
-import type { SupportedLanguage } from "../../../navigation";
+import enPublicationIndexJson from "@/locales/en/research/index.json";
+import enPublicationsJson from "@/locales/en/research/publications.json";
+import enResearchPageJson from "@/locales/en/research/page.json";
+import frPublicationIndexJson from "@/locales/fr/research/index.json";
+import frPublicationsJson from "@/locales/fr/research/publications.json";
+import frResearchPageJson from "@/locales/fr/research/page.json";
 import type {
   ContentId,
   ContentIndex,
-} from "../../../shared/content/content.types";
+} from "@/shared/content/content.types";
 import {
   selectLocalizedContent,
   type LocalizedContent,
-} from "../../../shared/content/localized-content";
+  type SupportedLanguage,
+} from "@/shared/content/localized-content";
+
 import type {
   PublicationCollection,
   PublicationContent,

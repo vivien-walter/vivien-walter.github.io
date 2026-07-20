@@ -5,15 +5,18 @@ import {
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
-import PageHeader from "../components/page-header";
-import { Button } from "../components/ui/button";
+import {
+  getLanguageFromPathname,
+  getPageRoute,
+} from "@/app/routing/navigation";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../components/ui/card";
-import { getLanguageFromPathname, getPageRoute } from "../navigation";
+} from "@/components/ui/card";
+import PageHeader from "@/shared/components/page-header";
 
 function NotFoundPage() {
   const location = useLocation();

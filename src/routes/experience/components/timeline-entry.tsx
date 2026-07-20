@@ -1,20 +1,21 @@
 import { createElement, type ElementType } from "react";
 import { useTranslation } from "react-i18next";
 
-import { cn } from "../lib/utils";
-import type { SupportedLanguage } from "../navigation";
-import type { ExperienceContent } from "../routes/experience/data/experience-content.types";
-import { formatContentDateRange } from "../shared/content/content-formatters";
-import ContentLink from "./content-link";
-import ContentSections from "./content-sections";
-import { Badge } from "./ui/badge";
+import type { SupportedLanguage } from "@/app/routing/navigation";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./ui/card";
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import ContentLink from "@/shared/components/content-link";
+import ContentSections from "@/shared/components/content-sections";
+import { formatContentDateRange } from "@/shared/content/content-formatters";
+
+import type { ExperienceContent } from "../data/experience-content.types";
 
 type TimelineEntryProps = {
   readonly experience: ExperienceContent;

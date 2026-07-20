@@ -1,7 +1,8 @@
 import { createElement, type ElementType } from "react";
 
-import { cn } from "../lib/utils";
-import type { ContentSection } from "../shared/content/content.types";
+import { cn } from "@/lib/utils";
+
+import type { ContentSection } from "../content/content.types";
 
 type ContentSectionsVariant = "page" | "compact";
 

@@ -1,27 +1,28 @@
-import enProjectIndexJson from "../../../locales/en/projects/index.json";
-import enIscatPlatformJson from "../../../locales/en/projects/items/iscat-platform.json";
-import enLxpCampusJson from "../../../locales/en/projects/items/lxp-campus.json";
-import enMedicalMicroscopeJson from "../../../locales/en/projects/items/medical-microscope.json";
-import enMllpaProjectJson from "../../../locales/en/projects/items/mllpa-project.json";
-import enMolecularCommunicationJson from "../../../locales/en/projects/items/molecular-communication.json";
-import enProjectPageJson from "../../../locales/en/projects/page.json";
-import frProjectIndexJson from "../../../locales/fr/projects/index.json";
-import frIscatPlatformJson from "../../../locales/fr/projects/items/iscat-platform.json";
-import frLxpCampusJson from "../../../locales/fr/projects/items/lxp-campus.json";
-import frMedicalMicroscopeJson from "../../../locales/fr/projects/items/medical-microscope.json";
-import frMllpaProjectJson from "../../../locales/fr/projects/items/mllpa-project.json";
-import frMolecularCommunicationJson from "../../../locales/fr/projects/items/molecular-communication.json";
-import frProjectPageJson from "../../../locales/fr/projects/page.json";
-import type { SupportedLanguage } from "../../../navigation";
+import enProjectIndexJson from "@/locales/en/projects/index.json";
+import enIscatPlatformJson from "@/locales/en/projects/items/iscat-platform.json";
+import enLxpCampusJson from "@/locales/en/projects/items/lxp-campus.json";
+import enMedicalMicroscopeJson from "@/locales/en/projects/items/medical-microscope.json";
+import enMllpaProjectJson from "@/locales/en/projects/items/mllpa-project.json";
+import enMolecularCommunicationJson from "@/locales/en/projects/items/molecular-communication.json";
+import enProjectPageJson from "@/locales/en/projects/page.json";
+import frProjectIndexJson from "@/locales/fr/projects/index.json";
+import frIscatPlatformJson from "@/locales/fr/projects/items/iscat-platform.json";
+import frLxpCampusJson from "@/locales/fr/projects/items/lxp-campus.json";
+import frMedicalMicroscopeJson from "@/locales/fr/projects/items/medical-microscope.json";
+import frMllpaProjectJson from "@/locales/fr/projects/items/mllpa-project.json";
+import frMolecularCommunicationJson from "@/locales/fr/projects/items/molecular-communication.json";
+import frProjectPageJson from "@/locales/fr/projects/page.json";
 import type {
   ContentId,
   ContentIndex,
   ContentPage,
-} from "../../../shared/content/content.types";
+} from "@/shared/content/content.types";
 import {
   selectLocalizedContent,
   type LocalizedContent,
-} from "../../../shared/content/localized-content";
+  type SupportedLanguage,
+} from "@/shared/content/localized-content";
+
 import type {
   ProjectCollection,
   ProjectContent,
