@@ -10,10 +10,15 @@ import NotFoundPage from "@/routes/not-found/not-found-page";
 import ProjectDetailPage from "@/routes/projects/project-detail-page";
 import ProjectsPage from "@/routes/projects/projects-page";
 import ResearchPage from "@/routes/research/research-page";
+import ResearchPublicationDetailPage from "@/routes/research/research-publication-detail-page";
+import ResearchThemeDetailPage from "@/routes/research/research-theme-detail-page";
 import SoftwareDetailPage from "@/routes/software/software-detail-page";
 import SoftwarePage from "@/routes/software/software-page";
 
-import { getDetailRoutePattern, getPageRoute } from "./navigation";
+import {
+  getDetailRoutePattern,
+  getPageRoute,
+} from "./navigation";
 
 function AppRouter() {
   return (
@@ -46,6 +51,17 @@ function AppRouter() {
         <Route
           path={getPageRoute("research", "fr")}
           element={<ResearchPage />}
+        />
+        <Route
+          path={getDetailRoutePattern(
+            "research-publication",
+            "fr",
+          )}
+          element={<ResearchPublicationDetailPage />}
+        />
+        <Route
+          path={getDetailRoutePattern("research-theme", "fr")}
+          element={<ResearchThemeDetailPage />}
         />
         <Route
           path={getPageRoute("software", "fr")}
@@ -89,6 +105,17 @@ function AppRouter() {
           element={<ResearchPage />}
         />
         <Route
+          path={getDetailRoutePattern(
+            "research-publication",
+            "en",
+          )}
+          element={<ResearchPublicationDetailPage />}
+        />
+        <Route
+          path={getDetailRoutePattern("research-theme", "en")}
+          element={<ResearchThemeDetailPage />}
+        />
+        <Route
           path={getPageRoute("software", "en")}
           element={<SoftwarePage />}
         />
@@ -104,11 +131,17 @@ function AppRouter() {
         <Route
           path="/"
           element={
-            <Navigate replace to={getPageRoute("home", "fr")} />
+            <Navigate
+              replace
+              to={getPageRoute("home", "fr")}
+            />
           }
         />
 
-        <Route path="*" element={<NotFoundPage />} />
+        <Route
+          path="*"
+          element={<NotFoundPage />}
+        />
       </Route>
     </Routes>
   );

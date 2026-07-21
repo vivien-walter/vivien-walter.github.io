@@ -49,7 +49,47 @@
             }
         },
         "research": {
-            "title": "Recherche et publications"
+            "title": "Recherche et publications",
+            "themesTitle": "Thématiques de recherche",
+            "followActivities": "Suivre mes activités",
+            "publications": {
+                "sectionTitle": "Publications sélectionnées",
+                "tabs": {
+                    "articles": "Articles",
+                    "theses": "Thèses"
+                },
+                "tableLabel": "Liste des publications",
+                "columns": {
+                    "year": "Année",
+                    "publication": "Publication",
+                    "authors": "Auteurs",
+                    "reference": "Référence",
+                    "actions": "Actions"
+                },
+                "actions": {
+                    "viewMore": "Voir plus",
+                    "showMore": "Afficher plus de publication",
+                    "doi": "DOI"
+                },
+                "emptyStates": {
+                    "articles": "Aucun article ne correspond aux critères sélectionnés.",
+                    "theses": "Aucune thèse n’est actuellement renseignée."
+                },
+                "controls": {
+                    "sortLabel": "Trier les publications",
+                    "sortPlaceholder": "Trier les publications",
+                    "sortByYearDescending": "Année : récente à ancienne",
+                    "sortByYearAscending": "Année : ancienne à récente",
+                    "sortByTitleAscending": "Titre : A à Z",
+                    "sortByTitleDescending": "Titre : Z à A",
+                    "sortByJournalAscending": "Journal : A à Z",
+                    "sortByJournalDescending": "Journal : Z à A",
+                    "filters": "Filtres",
+                    "filterByTheme": "Thématique de recherche",
+                    "filterByJournal": "Journal scientifique",
+                    "clearFilters": "Effacer les filtres"
+                }
+            }
         },
         "software": {
             "title": "Logiciels"
@@ -63,6 +103,7 @@
         "home": "Accueil",
         "experience": "Parcours",
         "projects": "Projets",
+        "research": "Recherche et publications",
         "software": "Logiciels"
     },
     "content": {
@@ -94,6 +135,7 @@
         "backToHome": "Retour à l’accueil",
         "backToExperience": "Retour au parcours",
         "backToProjects": "Retour à tous les projets",
+        "backToResearch": "Retour à Recherche et publications",
         "backToSoftware": "Retour à tous les logiciels",
         "previousExperience": "Expérience précédente",
         "nextExperience": "Expérience suivante",
@@ -101,6 +143,10 @@
         "nextParallelActivity": "Activité suivante",
         "previousProject": "Projet précédent",
         "nextProject": "Projet suivant",
+        "previousResearchTheme": "Thématique précédente",
+        "nextResearchTheme": "Thématique suivante",
+        "previousPublication": "Publication précédente",
+        "nextPublication": "Publication suivante",
         "previousSoftware": "Logiciel précédent",
         "nextSoftware": "Logiciel suivant",
         "learnMore": "En savoir plus"
@@ -123,6 +169,22 @@
         "evidenceAndResources": "Preuves et ressources",
         "confidentialityAndLimits": "Confidentialité et limites",
         "navigationLabel": "Navigation entre les projets"
+    },
+    "researchThemeDetail": {
+        "eyebrow": "Thématique de recherche",
+        "navigationLabel": "Navigation entre les thématiques de recherche"
+    },
+    "researchPublicationDetail": {
+        "articleEyebrow": "Article scientifique",
+        "thesisEyebrow": "Thèse",
+        "metadata": "Informations bibliographiques",
+        "year": "Année",
+        "authors": "Auteurs",
+        "reference": "Référence",
+        "contribution": "Contribution",
+        "resources": "Ressources",
+        "openDoi": "Consulter le DOI",
+        "navigationLabel": "Navigation entre les publications"
     },
     "softwareDetail": {
         "eyebrow": "Logiciel détaillé",

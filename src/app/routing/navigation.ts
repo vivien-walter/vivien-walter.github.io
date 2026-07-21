@@ -21,6 +21,8 @@ export const detailPageKinds = [
   "experience",
   "parallel-activity",
   "project",
+  "research-theme",
+  "research-publication",
   "software",
 ] as const;
 
@@ -129,6 +131,8 @@ const detailListPageIds = {
   experience: "experience",
   "parallel-activity": "experience",
   project: "projects",
+  "research-theme": "research",
+  "research-publication": "research",
   software: "software",
 } as const satisfies Readonly<Record<DetailPageKind, NavigationPageId>>;
 
@@ -201,6 +205,10 @@ export function getDetailRoute(
     return `${listRoute}activities/${encodedSlug}/`;
   }
 
+  if (kind === "research-publication") {
+    return `${listRoute}publications/${encodedSlug}/`;
+  }
+
   return `${listRoute}${encodedSlug}/`;
 }
 
@@ -225,6 +233,24 @@ export function getProjectRoute(
   return getDetailRoute("project", projectId, language);
 }
 
+export function getResearchThemeRoute(
+  themeId: string,
+  language: SupportedLanguage,
+): string {
+  return getDetailRoute("research-theme", themeId, language);
+}
+
+export function getResearchPublicationRoute(
+  publicationId: string,
+  language: SupportedLanguage,
+): string {
+  return getDetailRoute(
+    "research-publication",
+    publicationId,
+    language,
+  );
+}
+
 export function getSoftwareRoute(
   softwareId: string,
   language: SupportedLanguage,
@@ -241,6 +267,10 @@ export function getDetailRoutePattern(
 
   if (kind === "parallel-activity") {
     return `${listRoute}activities/:slug/`;
+  }
+
+  if (kind === "research-publication") {
+    return `${listRoute}publications/:slug/`;
   }
 
   return `${listRoute}:slug/`;
@@ -279,6 +309,18 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
         slug,
       };
     }
+
+    if (
+      slug &&
+      section === "research" &&
+      subsection === "publications"
+    ) {
+      return {
+        kind: "research-publication",
+        language,
+        slug,
+      };
+    }
   }
 
   if (segments.length === 3) {
@@ -296,6 +338,14 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
     if (slug && section === "projects") {
       return {
         kind: "project",
+        language,
+        slug,
+      };
+    }
+
+    if (slug && section === "research") {
+      return {
+        kind: "research-theme",
         language,
         slug,
       };
@@ -336,6 +386,13 @@ export function getNavigationItemFromPathname(
     return navigationItems.find((item) => item.id === "projects");
   }
 
+  if (
+    routeMatch.kind === "research-theme" ||
+    routeMatch.kind === "research-publication"
+  ) {
+    return navigationItems.find((item) => item.id === "research");
+  }
+
   if (routeMatch.kind === "software") {
     return navigationItems.find((item) => item.id === "software");
   }
@@ -361,6 +418,13 @@ export function getPageIdFromPathname(
 
   if (routeMatch.kind === "project") {
     return "projects";
+  }
+
+  if (
+    routeMatch.kind === "research-theme" ||
+    routeMatch.kind === "research-publication"
+  ) {
+    return "research";
   }
 
   if (routeMatch.kind === "software") {
@@ -390,6 +454,14 @@ export function getEquivalentLanguagePath(
 
   if (routeMatch.kind === "project") {
     return getProjectRoute(routeMatch.slug, language);
+  }
+
+  if (routeMatch.kind === "research-theme") {
+    return getResearchThemeRoute(routeMatch.slug, language);
+  }
+
+  if (routeMatch.kind === "research-publication") {
+    return getResearchPublicationRoute(routeMatch.slug, language);
   }
 
   if (routeMatch.kind === "software") {

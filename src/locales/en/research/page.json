@@ -1,54 +1,95 @@
 {
-    "title": "Research, instrumentation and scientific software",
-    "introduction": "My work connects biophysics, instrumentation, signal processing, machine learning and software development. This activity continues through publications, software and occasional collaborations.",
-    "sections": [
+    "title": "Recherche et publications",
+    "introduction": "Mes travaux relient biophysique, instrumentation, traitement du signal, apprentissage automatique et développement logiciel. Cette activité se poursuit à travers les publications, les logiciels et des collaborations ponctuelles.",
+    "heroImage": {
+        "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23021530'/%3E%3Cg stroke='%2307429A' stroke-width='8' opacity='.85'%3E%3Cpath d='M40 650L260 390L470 520L690 230L900 430L1120 170L1360 360L1560 120' fill='none'/%3E%3Cpath d='M20 250L230 470L430 280L650 610L870 360L1090 560L1320 250L1580 480' fill='none'/%3E%3C/g%3E%3Cg fill='%23A2442F'%3E%3Ccircle cx='260' cy='390' r='24'/%3E%3Ccircle cx='690' cy='230' r='30'/%3E%3Ccircle cx='900' cy='430' r='22'/%3E%3Ccircle cx='1120' cy='170' r='34'/%3E%3Ccircle cx='1360' cy='360' r='26'/%3E%3C/g%3E%3Cg fill='%23F7F6F2'%3E%3Ccircle cx='230' cy='470' r='15'/%3E%3Ccircle cx='430' cy='280' r='18'/%3E%3Ccircle cx='650' cy='610' r='20'/%3E%3Ccircle cx='1090' cy='560' r='17'/%3E%3Ccircle cx='1320' cy='250' r='19'/%3E%3C/g%3E%3C/svg%3E",
+        "alt": "Visuel abstrait provisoire représentant un réseau scientifique.",
+        "objectPosition": "center"
+    },
+    "themes": [
         {
-            "title": "Molecular communication",
-            "paragraphs": [
-                "Experimental systems using chemical reactions, molecular signals, microfluidics and detection methods."
+            "id": "molecular-interfaces",
+            "icon": "molecular-interfaces",
+            "title": "Interfaces moléculaires et biophysique",
+            "introduction": "Étude des membranes lipidiques, de leurs transitions de phase et de leurs interactions, par simulation moléculaire et analyse de données.",
+            "image": {
+                "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%23E5EDF7'/%3E%3Cg fill='%2307429A'%3E%3Ccircle cx='90' cy='300' r='55'/%3E%3Ccircle cx='230' cy='280' r='55'/%3E%3Ccircle cx='370' cy='310' r='55'/%3E%3Ccircle cx='510' cy='285' r='55'/%3E%3Ccircle cx='650' cy='305' r='55'/%3E%3Ccircle cx='790' cy='280' r='55'/%3E%3Ccircle cx='930' cy='310' r='55'/%3E%3Ccircle cx='1070' cy='285' r='55'/%3E%3C/g%3E%3Cg stroke='%23A2442F' stroke-width='16'%3E%3Cpath d='M90 350V590M230 330V570M370 360V600M510 335V575M650 355V595M790 330V570M930 360V600M1070 335V575'/%3E%3C/g%3E%3C/svg%3E",
+                "alt": "Illustration provisoire d’une interface moléculaire.",
+                "objectPosition": "center"
+            },
+            "sections": [
+                {
+                    "title": "Membranes lipidiques et simulation moléculaire",
+                    "paragraphs": [
+                        "Étude des transitions de phase, des instabilités membranaires et des interactions avec des peptides ou des protéines."
+                    ]
+                },
+                {
+                    "title": "Apprentissage automatique appliqué aux sciences",
+                    "paragraphs": [
+                        "Classification, traitement d’images et de signaux, CNN 1D et 3D et analyse de données scientifiques."
+                    ]
+                },
+                {
+                    "title": "Travaux et collaborations en cours",
+                    "paragraphs": [
+                        "Poursuite ponctuelle de collaborations scientifiques liées aux membranes lipidiques et à MLLPA.",
+                        "Travaux associés à un modèle CNN 3D encore non publié."
+                    ]
+                }
             ]
         },
         {
-            "title": "Microscopy and optical instrumentation",
-            "paragraphs": [
-                "Design of iSCAT platforms and automated instruments for observing and analysing biological and nanoscale systems."
+            "id": "optics-photonics",
+            "icon": "optics-photonics",
+            "title": "Optique et photonique",
+            "introduction": "Conception et exploitation de plateformes optiques avancées pour observer et analyser des systèmes biologiques et nanométriques.",
+            "image": {
+                "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%230E223E'/%3E%3Ccircle cx='670' cy='350' r='210' fill='%23021530' stroke='%23AEB7C1' stroke-width='24'/%3E%3Ccircle cx='670' cy='350' r='85' fill='%23A2442F'/%3E%3Cpath d='M0 430L1200 250' stroke='%23F7F6F2' stroke-width='24'/%3E%3Cpath d='M0 455L1200 275' stroke='%23A2442F' stroke-width='8'/%3E%3C/svg%3E",
+                "alt": "Illustration provisoire d’un montage optique.",
+                "objectPosition": "center"
+            },
+            "sections": [
+                {
+                    "title": "Microscopie et instrumentation optique",
+                    "paragraphs": [
+                        "Conception de plateformes iSCAT et d’instruments automatisés pour l’observation et l’analyse de systèmes biologiques et nanométriques."
+                    ]
+                }
             ]
         },
         {
-            "title": "Lipid membranes and molecular simulation",
-            "paragraphs": [
-                "Research into phase transitions, membrane instabilities and interactions with peptides or proteins."
-            ]
-        },
-        {
-            "title": "Machine learning for scientific applications",
-            "paragraphs": [
-                "Classification, image and signal processing, one- and three-dimensional CNNs and scientific data analysis."
-            ]
-        },
-        {
-            "title": "Current work and collaborations",
-            "paragraphs": [
-                "Occasional continuation of scientific collaborations associated with lipid membranes and MLLPA.",
-                "Work related to an unpublished three-dimensional CNN."
+            "id": "molecular-communication",
+            "icon": "molecular-communication",
+            "title": "Communication moléculaire",
+            "introduction": "Développement de systèmes expérimentaux utilisant des réactions chimiques, des signaux moléculaires, la microfluidique et des méthodes de détection.",
+            "image": {
+                "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%23E5EDF7'/%3E%3Cg fill='none' stroke='%2307429A'%3E%3Cellipse cx='600' cy='520' rx='520' ry='130' stroke-width='22'/%3E%3Cellipse cx='600' cy='520' rx='390' ry='95' stroke-width='18'/%3E%3Cellipse cx='600' cy='520' rx='260' ry='60' stroke-width='14'/%3E%3C/g%3E%3Cpath d='M600 90C545 170 505 225 505 290C505 350 548 395 600 395C652 395 695 350 695 290C695 225 655 170 600 90Z' fill='%2307429A'/%3E%3C/svg%3E",
+                "alt": "Illustration provisoire d’un signal moléculaire dans un fluide.",
+                "objectPosition": "center"
+            },
+            "sections": [
+                {
+                    "title": "Systèmes expérimentaux",
+                    "paragraphs": [
+                        "Systèmes expérimentaux utilisant des réactions chimiques, des signaux moléculaires, la microfluidique et des méthodes de détection."
+                    ]
+                }
             ]
         }
     ],
     "links": [
         {
-            "label": "ORCID",
-            "href": "https://orcid.org/0000-0003-3203-9543"
-        },
-        {
             "label": "GitHub",
             "href": "https://github.com/vivien-walter"
         },
         {
-            "label": "MLLPA website and documentation",
-            "href": "https://vivien-walter.github.io/mllpa/"
+            "label": "ORCID",
+            "href": "https://orcid.org/0000-0003-3203-9543"
+        },
+        {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/vivien-walter-4b3068129/"
         }
-    ],
-    "softwareIds": [
-        "mllpa"
     ]
 }

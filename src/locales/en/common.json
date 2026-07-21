@@ -49,7 +49,47 @@
             }
         },
         "research": {
-            "title": "Research and publications"
+            "title": "Research and publications",
+            "themesTitle": "Research themes",
+            "followActivities": "Follow my activities",
+            "publications": {
+                "sectionTitle": "Selected publications",
+                "tabs": {
+                    "articles": "Articles",
+                    "theses": "Theses"
+                },
+                "tableLabel": "Publication list",
+                "columns": {
+                    "year": "Year",
+                    "publication": "Publication",
+                    "authors": "Authors",
+                    "reference": "Reference",
+                    "actions": "Actions"
+                },
+                "actions": {
+                    "viewMore": "View more",
+                    "showMore": "Show more publications",
+                    "doi": "DOI"
+                },
+                "emptyStates": {
+                    "articles": "No article matches the selected criteria.",
+                    "theses": "No thesis is currently available."
+                },
+                "controls": {
+                    "sortLabel": "Sort publications",
+                    "sortPlaceholder": "Sort publications",
+                    "sortByYearDescending": "Year: newest first",
+                    "sortByYearAscending": "Year: oldest first",
+                    "sortByTitleAscending": "Title: A to Z",
+                    "sortByTitleDescending": "Title: Z to A",
+                    "sortByJournalAscending": "Journal: A to Z",
+                    "sortByJournalDescending": "Journal: Z to A",
+                    "filters": "Filters",
+                    "filterByTheme": "Research theme",
+                    "filterByJournal": "Scientific journal",
+                    "clearFilters": "Clear filters"
+                }
+            }
         },
         "software": {
             "title": "Software"
@@ -63,6 +103,7 @@
         "home": "Home",
         "experience": "Experience",
         "projects": "Projects",
+        "research": "Research and publications",
         "software": "Software"
     },
     "content": {
@@ -94,6 +135,7 @@
         "backToHome": "Return to the home page",
         "backToExperience": "Return to experience",
         "backToProjects": "Return to all projects",
+        "backToResearch": "Return to Research and publications",
         "backToSoftware": "Return to all software",
         "previousExperience": "Previous experience",
         "nextExperience": "Next experience",
@@ -101,6 +143,10 @@
         "nextParallelActivity": "Next activity",
         "previousProject": "Previous project",
         "nextProject": "Next project",
+        "previousResearchTheme": "Previous research theme",
+        "nextResearchTheme": "Next research theme",
+        "previousPublication": "Previous publication",
+        "nextPublication": "Next publication",
         "previousSoftware": "Previous software",
         "nextSoftware": "Next software",
         "learnMore": "Learn more"
@@ -123,6 +169,22 @@
         "evidenceAndResources": "Evidence and resources",
         "confidentialityAndLimits": "Confidentiality and limitations",
         "navigationLabel": "Project navigation"
+    },
+    "researchThemeDetail": {
+        "eyebrow": "Research theme",
+        "navigationLabel": "Research theme navigation"
+    },
+    "researchPublicationDetail": {
+        "articleEyebrow": "Scientific article",
+        "thesisEyebrow": "Thesis",
+        "metadata": "Bibliographic information",
+        "year": "Year",
+        "authors": "Authors",
+        "reference": "Reference",
+        "contribution": "Contribution",
+        "resources": "Resources",
+        "openDoi": "Open DOI",
+        "navigationLabel": "Publication navigation"
     },
     "softwareDetail": {
         "eyebrow": "Software details",
