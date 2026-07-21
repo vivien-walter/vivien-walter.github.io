@@ -92,7 +92,37 @@
             }
         },
         "software": {
-            "title": "Software"
+            "title": "Software",
+            "featuredTitle": "Featured software",
+            "followActivities": "Follow my activities",
+            "catalog": {
+                "sectionTitle": "Software and web applications",
+                "listLabel": "Software and web application list",
+                "tabs": {
+                    "software": "Software",
+                    "webApplications": "Web applications"
+                },
+                "actions": {
+                    "viewSoftware": "View software",
+                    "repository": "GitHub"
+                },
+                "emptyStates": {
+                    "software": "No software matches the selected criteria.",
+                    "webApplications": "No web application matches the selected criteria."
+                },
+                "controls": {
+                    "sortLabel": "Sort software and web applications",
+                    "sortPlaceholder": "Sort by",
+                    "sortByYearDescending": "Year: newest first",
+                    "sortByYearAscending": "Year: oldest first",
+                    "sortByTitleAscending": "Title: A to Z",
+                    "sortByTitleDescending": "Title: Z to A",
+                    "filters": "Filters",
+                    "filterByProject": "Project",
+                    "filterByLanguage": "Language",
+                    "clearFilters": "Clear filters"
+                }
+            }
         },
         "contact": {
             "title": "Contact"

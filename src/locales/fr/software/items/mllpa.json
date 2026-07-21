@@ -1,5 +1,10 @@
 {
+    "kind": "software",
     "title": "MLLPA",
+    "pinned": true,
+    "languages": [
+        "Python"
+    ],
     "summary": "Module Python documenté et réutilisable destiné à l’analyse assistée par apprentissage automatique des phases de membranes lipidiques issues de simulations de dynamique moléculaire.",
     "sections": [
         {

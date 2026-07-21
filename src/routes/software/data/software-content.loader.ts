@@ -18,20 +18,49 @@ import {
 import type {
   SoftwareCollection,
   SoftwareContent,
+  SoftwareKind,
 } from "./software-content.types";
 
-const frSoftwarePage = frSoftwarePageJson satisfies ContentPage;
-const enSoftwarePage = enSoftwarePageJson satisfies ContentPage;
+function parseSoftwareKind(kind: string): SoftwareKind {
+  switch (kind) {
+    case "software":
+    case "web-application":
+      return kind;
 
-const frSoftwareIndex = frSoftwareIndexJson satisfies ContentIndex;
-const enSoftwareIndex = enSoftwareIndexJson satisfies ContentIndex;
+    default:
+      throw new Error(
+        `Type de logiciel ou d’application web inconnu : ${kind}`,
+      );
+  }
+}
+
+function parseSoftwareContent(
+  source: typeof frMllpaJson | typeof enMllpaJson,
+): SoftwareContent {
+  return {
+    ...source,
+    kind: parseSoftwareKind(source.kind),
+  };
+}
+
+const frSoftwarePage =
+  frSoftwarePageJson satisfies ContentPage;
+
+const enSoftwarePage =
+  enSoftwarePageJson satisfies ContentPage;
+
+const frSoftwareIndex =
+  frSoftwareIndexJson satisfies ContentIndex;
+
+const enSoftwareIndex =
+  enSoftwareIndexJson satisfies ContentIndex;
 
 const frSoftware = {
-  mllpa: frMllpaJson,
+  mllpa: parseSoftwareContent(frMllpaJson),
 } satisfies SoftwareCollection;
 
 const enSoftware = {
-  mllpa: enMllpaJson,
+  mllpa: parseSoftwareContent(enMllpaJson),
 } satisfies SoftwareCollection;
 
 const localizedSoftwarePages: LocalizedContent<ContentPage> = {
@@ -52,22 +81,38 @@ const localizedSoftwareCollections: LocalizedContent<SoftwareCollection> = {
 function getSoftwareCollection(
   language: SupportedLanguage,
 ): SoftwareCollection {
-  return selectLocalizedContent(localizedSoftwareCollections, language);
+  return selectLocalizedContent(
+    localizedSoftwareCollections,
+    language,
+  );
 }
 
 function hasOwnSoftware(
   software: SoftwareCollection,
   id: ContentId | undefined,
 ): id is ContentId {
-  return id !== undefined && Object.prototype.hasOwnProperty.call(software, id);
+  return (
+    id !== undefined &&
+    Object.prototype.hasOwnProperty.call(software, id)
+  );
 }
 
-export function getSoftwarePage(language: SupportedLanguage): ContentPage {
-  return selectLocalizedContent(localizedSoftwarePages, language);
+export function getSoftwarePage(
+  language: SupportedLanguage,
+): ContentPage {
+  return selectLocalizedContent(
+    localizedSoftwarePages,
+    language,
+  );
 }
 
-export function getSoftwareIndex(language: SupportedLanguage): ContentIndex {
-  return selectLocalizedContent(localizedSoftwareIndexes, language);
+export function getSoftwareIndex(
+  language: SupportedLanguage,
+): ContentIndex {
+  return selectLocalizedContent(
+    localizedSoftwareIndexes,
+    language,
+  );
 }
 
 export function getSoftwareById(
@@ -76,7 +121,9 @@ export function getSoftwareById(
 ): SoftwareContent | undefined {
   const software = getSoftwareCollection(language);
 
-  return hasOwnSoftware(software, id) ? software[id] : undefined;
+  return hasOwnSoftware(software, id)
+    ? software[id]
+    : undefined;
 }
 
 export function getAdjacentSoftwareIds(
@@ -90,7 +137,10 @@ export function getAdjacentSoftwareIds(
   const software = getSoftwareCollection(language);
   const position = index.order.indexOf(id);
 
-  if (position === -1 || !hasOwnSoftware(software, id)) {
+  if (
+    position === -1 ||
+    !hasOwnSoftware(software, id)
+  ) {
     return {};
   }
 
@@ -98,7 +148,11 @@ export function getAdjacentSoftwareIds(
   const nextId = index.order[position + 1];
 
   return {
-    ...(hasOwnSoftware(software, previousId) ? { previousId } : {}),
-    ...(hasOwnSoftware(software, nextId) ? { nextId } : {}),
+    ...(hasOwnSoftware(software, previousId)
+      ? { previousId }
+      : {}),
+    ...(hasOwnSoftware(software, nextId)
+      ? { nextId }
+      : {}),
   };
 }

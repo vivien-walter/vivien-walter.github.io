@@ -1,5 +1,10 @@
 {
+    "kind": "software",
     "title": "MLLPA",
+    "pinned": true,
+    "languages": [
+        "Python"
+    ],
     "summary": "A documented and reusable Python module for machine-learning-assisted analysis of lipid-membrane phases obtained from molecular-dynamics simulations.",
     "sections": [
         {
