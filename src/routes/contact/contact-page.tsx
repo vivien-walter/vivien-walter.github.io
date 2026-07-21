@@ -5,11 +5,12 @@ import {
   getLanguageFromPathname,
   getPageRoute,
 } from "@/app/routing/navigation";
-import { Card } from "@/components/ui/card";
-import ContentLink from "@/shared/components/content-link";
-import ContentSections from "@/shared/components/content-sections";
 import PageHero from "@/shared/components/page-hero";
+import SectionHeader from "@/shared/components/section-header";
 
+import ContactAvailabilitySection from "./components/contact-availability-section";
+import ContactMethodCard from "./components/contact-method-card";
+import JobSearchBanner from "./components/job-search-banner";
 import { getContactContent } from "./data/contact-content.loader";
 
 function ContactPage() {
@@ -22,75 +23,83 @@ function ContactPage() {
     <div className="overflow-hidden">
       <PageHero
         breadcrumbs={{
-          ariaLabel: t("breadcrumbs.label", { lng: language }),
+          ariaLabel: t("breadcrumbs.label", {
+            lng: language,
+          }),
           items: [
             {
-              label: t("breadcrumbs.home", { lng: language }),
+              label: t("breadcrumbs.home", {
+                lng: language,
+              }),
               to: getPageRoute("home", language),
             },
             {
-              label: t("pages.contact.title", { lng: language }),
+              label: t("pages.contact.title", {
+                lng: language,
+              }),
             },
           ],
         }}
-        eyebrow={t("pages.contact.title", { lng: language })}
+        eyebrow={t("pages.contact.title", {
+          lng: language,
+        })}
         title={page.title}
         introduction={page.introduction}
       />
 
-      <div
-        className={[
-          "mx-auto w-full max-w-editorial px-page",
-          "py-12 sm:py-14 lg:py-16",
-        ].join(" ")}
-      >
-        <ContentSections
-          idPrefix="contact"
-          sections={page.sections ?? []}
-        />
-
+      <div className="mx-auto w-full max-w-editorial px-page">
         <section
-          className="border-t border-border py-12 sm:py-14 lg:py-16"
-          aria-labelledby="contact-links-title"
+          className="py-12 sm:py-14 lg:py-16"
+          aria-labelledby="contact-methods-title"
         >
-          <header className="mb-8 max-w-readable">
-            <h2
-              id="contact-links-title"
-              className={[
-                "!m-0 text-xl font-bold leading-heading",
-                "tracking-[-0.025em] text-heading",
-              ].join(" ")}
-            >
-              {t("content.resources", { lng: language })}
-            </h2>
-          </header>
+          <SectionHeader
+            title={t("pages.contact.methodsTitle", {
+              lng: language,
+            })}
+            titleId="contact-methods-title"
+            className="mb-8 sm:mb-10"
+          />
 
-          <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
-            {page.links.map((link) => (
-              <li className="m-0 min-w-0" key={link.href}>
-                <Card
-                  className={[
-                    "h-full gap-0 overflow-hidden py-0",
-                    "border-border-strong shadow-subtle",
-                    "transition-[border-color,box-shadow]",
-                    "duration-150 ease-standard",
-                    "hover:border-primary hover:shadow-elevated",
-                  ].join(" ")}
-                >
-                  <ContentLink
-                    className={[
-                      "h-full rounded-xl border-0",
-                      "bg-transparent shadow-none",
-                      "hover:bg-action-soft hover:shadow-none",
-                    ].join(" ")}
-                    link={link}
-                    variant="contact"
-                  />
-                </Card>
+          <ul
+            className={[
+              "m-0 grid list-none gap-5 p-0",
+              "sm:grid-cols-2 lg:grid-cols-4",
+            ].join(" ")}
+          >
+            {page.links.map((method) => (
+              <li
+                key={method.href}
+                className="m-0 min-w-0"
+              >
+                <ContactMethodCard method={method} />
               </li>
             ))}
           </ul>
         </section>
+      </div>
+
+      <JobSearchBanner
+        message={t("pages.contact.jobSearch.message", {
+          lng: language,
+        })}
+        frenchCvLabel={t(
+          "pages.contact.jobSearch.downloadCvFr",
+          {
+            lng: language,
+          },
+        )}
+        englishCvLabel={t(
+          "pages.contact.jobSearch.downloadCvEn",
+          {
+            lng: language,
+          },
+        )}
+      />
+
+      <div className="mx-auto w-full max-w-editorial px-page">
+        <ContactAvailabilitySection
+          content={page.availability}
+        />
       </div>
     </div>
   );

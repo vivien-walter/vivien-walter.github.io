@@ -125,7 +125,13 @@
             }
         },
         "contact": {
-            "title": "Contact"
+            "title": "Contact",
+            "methodsTitle": "How to contact me",
+            "jobSearch": {
+                "message": "I am currently looking for a new job opportunity.",
+                "downloadCvFr": "Download the French CV",
+                "downloadCvEn": "Download the English CV"
+            }
         }
     },
     "breadcrumbs": {

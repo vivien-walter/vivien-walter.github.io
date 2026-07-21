@@ -1,42 +1,58 @@
 {
-    "title": "Échanger autour d’un projet, d’un poste ou d’une collaboration",
-    "introduction": "Vous pouvez me contacter directement par email ou retrouver mes activités professionnelles, logicielles et scientifiques sur les plateformes ci-dessous.",
-    "sections": [
-        {
-            "title": "Localisation et disponibilité",
-            "paragraphs": [
-                "Situation professionnelle vérifiée au 17 juillet 2026."
-            ],
-            "items": [
-                "Basé à Essarts-en-Bocage, en Vendée, avec un déménagement prévu à Mouchamps avant octobre 2026.",
-                "Ouvert en priorité aux postes en CDI.",
-                "Disponible pour le travail hybride ou entièrement à distance.",
-                "Mobile dans un rayon d’environ une heure autour de Mouchamps.",
-                "Disponible pour des déplacements ponctuels.",
-                "Travail professionnel en français et en anglais."
-            ]
-        }
-    ],
+    "title": "Contact",
+    "introduction": "N’hésitez pas à me contacter pour des opportunités professionnelles, des collaborations scientifiques ou techniques, ou toute question concernant mes projets, publications et logiciels.",
     "links": [
         {
             "label": "Email",
-            "href": "mailto:vivien.walter@proton.me"
+            "href": "mailto:vivien.walter@proton.me",
+            "icon": "email",
+            "value": "vivien.walter@proton.me",
+            "actionLabel": "Envoyer un courriel"
         },
         {
             "label": "LinkedIn",
-            "href": "https://www.linkedin.com/in/vivien-walter-4b3068129/"
+            "href": "https://www.linkedin.com/in/vivien-walter-4b3068129/",
+            "icon": "linkedin",
+            "value": "linkedin.com/in/vivien-walter-4b3068129",
+            "actionLabel": "Voir le profil"
         },
         {
             "label": "GitHub",
-            "href": "https://github.com/vivien-walter"
+            "href": "https://github.com/vivien-walter",
+            "icon": "github",
+            "value": "github.com/vivien-walter",
+            "actionLabel": "Voir les dépôts"
         },
         {
             "label": "ORCID",
-            "href": "https://orcid.org/0000-0003-3203-9543"
-        },
-        {
-            "label": "Site et documentation de MLLPA",
-            "href": "https://vivien-walter.github.io/mllpa/"
+            "href": "https://orcid.org/0000-0003-3203-9543",
+            "icon": "orcid",
+            "value": "0000-0003-3203-9543",
+            "actionLabel": "Voir le profil"
         }
-    ]
+    ],
+    "availability": {
+        "title": "Localisation et disponibilité",
+        "items": [
+            {
+                "id": "location",
+                "icon": "location",
+                "title": "Localisation",
+                "description": "Basé en Vendée."
+            },
+            {
+                "id": "immediate-availability",
+                "icon": "immediate-availability",
+                "title": "Disponibilité",
+                "description": "Disponible immédiatement.",
+                "highlighted": true
+            },
+            {
+                "id": "work-arrangements",
+                "icon": "work-arrangements",
+                "title": "Modalités de travail",
+                "description": "Ouvert au travail hybride et à distance."
+            }
+        ]
+    }
 }
