@@ -8,35 +8,100 @@
             "end": "2026-07-15"
         },
         "summary": "Led the creation of a virtual LXP campus for digital-sector apprentices, combining a web platform, educational content, support services, generative AI and XR.",
-        "sections": [
+        "highlights": [
             {
-                "title": "Project leadership",
-                "paragraphs": [],
+                "icon": "project",
+                "label": "Project type",
+                "value": "Development of a web application"
+            },
+            {
+                "icon": "funding",
+                "label": "Allocated budget",
+                "value": "€500k funded by OPCO Atlas"
+            },
+            {
+                "icon": "team",
+                "label": "Team managed",
+                "value": "11 people"
+            }
+        ],
+        "description": {
+            "paragraphs": [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Maecenas faucibus mollis interdum.",
+                "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo."
+            ]
+        },
+        "directContributions": [
+            {
+                "label": "Backend",
+                "text": "Designed and developed parts of the backend using TypeScript, Node.js, Express and MongoDB."
+            },
+            {
+                "label": "Technical architecture",
+                "text": "Migrated the backend to TypeScript, introduced Zod validation, redesigned authentication tokens, implemented API access keys and added server-side pagination."
+            },
+            {
+                "label": "Generative AI",
+                "text": "Designed the architecture and protocols for several generative-AI providers."
+            },
+            {
+                "label": "Processing and administration",
+                "text": "Developed backend code, a processing queue and administration interfaces."
+            },
+            {
+                "label": "Interfaces",
+                "text": "Developed selected React and Tailwind CSS interfaces."
+            }
+        ],
+        "technologyGroups": [
+            {
+                "title": "Languages",
                 "items": [
-                    "Definition of objectives, scope, resources, organisation and roadmap.",
-                    "Requirements gathering and drafting of functional and technical specifications.",
-                    "Presentation of solutions, decision management and validation of deliverables with the client.",
-                    "Direct and matrix coordination of a multidisciplinary team averaging eleven people."
+                    {
+                        "label": "Simple example"
+                    },
+                    {
+                        "label": "Example with description",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    },
+                    {
+                        "label": "Example with link",
+                        "href": "https://example.com/"
+                    }
                 ]
             },
             {
-                "title": "Direct contributions",
-                "paragraphs": [],
+                "title": "Frameworks and libraries",
                 "items": [
-                    "Design and development of parts of the backend using TypeScript, Node.js, Express and MongoDB.",
-                    "Migration of the backend to TypeScript, Zod validation, authentication-token redesign, API access keys and server-side pagination.",
-                    "Design of the architecture and protocols for several generative-AI providers.",
-                    "Development of backend code, a processing queue and administration interfaces.",
-                    "Development of selected React and Tailwind CSS interfaces."
+                    {
+                        "label": "Interactive example",
+                        "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur."
+                    },
+                    {
+                        "label": "External example",
+                        "href": "https://example.com/",
+                        "description": "This description will not be displayed because the link takes priority."
+                    }
                 ]
             },
             {
-                "title": "State at the end of the contract",
-                "paragraphs": [
-                    "The backend and AI ecosystem were operational, four XR applications were complete and the user interface was approximately 80% complete, with three secondary areas remaining."
+                "title": "Tools",
+                "items": [
+                    {
+                        "label": "Tool example"
+                    },
+                    {
+                        "label": "Documented example",
+                        "description": "Aenean lacinia bibendum nulla sed consectetur."
+                    }
                 ]
             }
         ],
+        "finalState": {
+            "title": "State at the end of the project",
+            "text": "The backend and AI ecosystem were operational, four XR applications were complete and the user interface was approximately 80% complete, with three secondary areas remaining."
+        },
+        "sections": [],
         "relatedProjects": [
             {
                 "projectId": "lxp-campus"
@@ -52,28 +117,97 @@
             "end": "2023-08"
         },
         "summary": "Created a molecular-communication laboratory and an operational testbed combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning.",
-        "sections": [
+        "highlights": [
             {
-                "title": "Laboratory and team",
-                "paragraphs": [],
+                "icon": "laboratory",
+                "label": "Project type",
+                "value": "Creation of a laboratory and an experimental testbed"
+            },
+            {
+                "icon": "funding",
+                "label": "Funding managed",
+                "value": "Two EPSRC grants of €300k and €60k"
+            },
+            {
+                "icon": "team",
+                "label": "Team managed",
+                "value": "5 people on average"
+            }
+        ],
+        "description": {
+            "paragraphs": [
+                "Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Etiam porta sem malesuada magna mollis euismod.",
+                "Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros."
+            ]
+        },
+        "directContributions": [
+            {
+                "label": "Laboratory",
+                "text": "Created the laboratory from scratch, including premises, equipment, fume hoods, consumables, safety procedures and protocols."
+            },
+            {
+                "label": "Team",
+                "text": "Managed an average team of five people and trained nine people in total."
+            },
+            {
+                "label": "Funding",
+                "text": "Managed two EPSRC grants of €300k and €60k."
+            },
+            {
+                "label": "Artificial intelligence",
+                "text": "Developed a one-dimensional CNN using Python, TensorFlow and scikit-learn to analyse UV-Vis signals."
+            },
+            {
+                "label": "Instrumentation",
+                "text": "Designed and manufactured six open-source syringe pumps using Fusion 360, 3D printing, Arduino, I²C, C++ and Python."
+            }
+        ],
+        "technologyGroups": [
+            {
+                "title": "Methods",
                 "items": [
-                    "Creation of the laboratory from scratch: premises, equipment, fume hoods, consumables, safety and protocols.",
-                    "An average team of five people and nine people trained in total."
+                    {
+                        "label": "Method example"
+                    },
+                    {
+                        "label": "Explained example",
+                        "description": "Curabitur blandit tempus porttitor."
+                    }
                 ]
             },
             {
-                "title": "Funding and outcomes",
-                "paragraphs": [],
+                "title": "Software",
                 "items": [
-                    "Management of two EPSRC grants of €300,000 and €60,000.",
-                    "Development of a one-dimensional CNN using Python, TensorFlow and scikit-learn to analyse UV-Vis signals.",
-                    "Design and manufacture of six open-source syringe pumps using Fusion 360, 3D printing, Arduino, I²C, C++ and Python."
+                    {
+                        "label": "Software example",
+                        "href": "https://example.com/"
+                    },
+                    {
+                        "label": "Additional example"
+                    },
+                    {
+                        "label": "Example with help",
+                        "description": "Vestibulum id ligula porta felis euismod semper."
+                    }
                 ]
             }
         ],
+        "finalState": {
+            "title": "State at the end of the project",
+            "text": "The laboratory was created, the experimental testbed was operational, six open-source syringe pumps were designed and manufactured, and the work produced two scientific publications for which I was the first author and principal writer."
+        },
+        "sections": [],
         "relatedProjects": [
             {
                 "projectId": "molecular-communication"
+            }
+        ],
+        "relatedPublications": [
+            {
+                "publicationId": "nature-molecular-communication-2023"
+            },
+            {
+                "publicationId": "ieee-cnn-2026"
             }
         ]
     },
@@ -86,29 +220,113 @@
             "end": "2021-03"
         },
         "summary": "Led a €500,000 project to build, qualify and operate a complete iSCAT microscope.",
-        "sections": [
+        "highlights": [
             {
-                "title": "Project leadership and team",
-                "paragraphs": [],
+                "icon": "instrumentation",
+                "label": "Project type",
+                "value": "Construction of a complete iSCAT microscope"
+            },
+            {
+                "icon": "funding",
+                "label": "Project budget",
+                "value": "€500k"
+            },
+            {
+                "icon": "team",
+                "label": "Team supervised",
+                "value": "3 doctoral researchers and 2 Master’s interns"
+            }
+        ],
+        "description": {
+            "paragraphs": [
+                "Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam.",
+                "Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh."
+            ]
+        },
+        "directContributions": [
+            {
+                "label": "Project leadership",
+                "text": "Led a project funded by the BBSRC and co-funded by Oxford Nanopore Technologies."
+            },
+            {
+                "label": "Team",
+                "text": "Managed three doctoral researchers and two Master’s interns."
+            },
+            {
+                "label": "Instrumentation",
+                "text": "Built the microscope from component procurement through qualification."
+            },
+            {
+                "label": "Software",
+                "text": "Developed the LabVIEW control and automation software."
+            },
+            {
+                "label": "Experimentation",
+                "text": "Designed the protocols, samples, experiments, acquisitions and analyses."
+            },
+            {
+                "label": "Delivery",
+                "text": "Delivered an operational microscope."
+            }
+        ],
+        "technologyGroups": [
+            {
+                "title": "Instrumentation",
                 "items": [
-                    "Project funded by the BBSRC and co-funded by Oxford Nanopore Technologies.",
-                    "Management of three doctoral researchers and two Master’s interns."
+                    {
+                        "label": "Instrument example"
+                    },
+                    {
+                        "label": "Example with details",
+                        "description": "Donec ullamcorper nulla non metus auctor fringilla."
+                    },
+                    {
+                        "label": "Reference example",
+                        "href": "https://example.com/"
+                    }
                 ]
             },
             {
-                "title": "Instrument and software",
-                "paragraphs": [],
+                "title": "Development",
                 "items": [
-                    "Construction of the microscope from component procurement through qualification.",
-                    "Development of LabVIEW control and automation software.",
-                    "Design of protocols, samples, experiments, acquisition and analysis.",
-                    "Operational microscope delivered."
+                    {
+                        "label": "Development example"
+                    },
+                    {
+                        "label": "Interactive example",
+                        "description": "Maecenas sed diam eget risus varius blandit."
+                    }
+                ]
+            },
+            {
+                "title": "Analysis",
+                "items": [
+                    {
+                        "label": "Analysis example",
+                        "href": "https://example.com/"
+                    }
                 ]
             }
         ],
+        "finalState": {
+            "title": "State at the end of the project",
+            "text": "The iSCAT microscope was complete, qualified and operational, the LabVIEW control and automation software had been developed, the experimental workflow was established and the project had produced several scientific publications."
+        },
+        "sections": [],
         "relatedProjects": [
             {
                 "projectId": "iscat-platform"
+            }
+        ],
+        "relatedPublications": [
+            {
+                "publicationId": "jmicroscopy-2024"
+            },
+            {
+                "publicationId": "jacs-2023"
+            },
+            {
+                "publicationId": "nature-self-assembly-2025"
             }
         ]
     },
@@ -121,35 +339,104 @@
             "end": "2018-03"
         },
         "summary": "Provided scientific and operational direction for work on lipid membranes, molecular simulation and machine learning, while leading the development of MLLPA.",
-        "sections": [
+        "highlights": [
             {
-                "title": "Research",
-                "paragraphs": [],
+                "icon": "research",
+                "label": "Project type",
+                "value": "Research into lipid membranes and their phase transitions"
+            },
+            {
+                "icon": "software",
+                "label": "Software development",
+                "value": "Approximately 95% of the MLLPA code"
+            }
+        ],
+        "description": {
+            "paragraphs": [
+                "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.",
+                "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            ]
+        },
+        "directContributions": [
+            {
+                "label": "Research",
+                "text": "Planned the methods, milestones and scientific direction with a high degree of autonomy."
+            },
+            {
+                "label": "Simulation",
+                "text": "Performed GROMACS simulations of lipid membranes and phase transitions."
+            },
+            {
+                "label": "Machine learning",
+                "text": "Developed machine-learning approaches followed by a three-dimensional CNN using TensorFlow."
+            },
+            {
+                "label": "Software development",
+                "text": "Developed approximately 95% of the MLLPA code."
+            },
+            {
+                "label": "Documentation",
+                "text": "Created the entire website and documentation."
+            },
+            {
+                "label": "Collaboration",
+                "text": "Continued related work with collaborators."
+            }
+        ],
+        "technologyGroups": [
+            {
+                "title": "Languages",
                 "items": [
-                    "Planning of methods, milestones and scientific direction with a high degree of autonomy.",
-                    "GROMACS simulations of lipid membranes and phase transitions.",
-                    "Machine-learning approaches followed by a 3D CNN using TensorFlow."
+                    {
+                        "label": "Language example",
+                        "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                    },
+                    {
+                        "label": "Simple example"
+                    }
                 ]
             },
             {
-                "title": "MLLPA",
-                "paragraphs": [],
+                "title": "Scientific computing",
                 "items": [
-                    "Development of approximately 95% of the code.",
-                    "Creation of the entire website and documentation.",
-                    "Related work continued with collaborators."
+                    {
+                        "label": "Computing example",
+                        "href": "https://example.com/"
+                    },
+                    {
+                        "label": "Documented example",
+                        "description": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula."
+                    },
+                    {
+                        "label": "Additional example"
+                    }
                 ]
             }
         ],
+        "finalState": {
+            "title": "State at the end of the project",
+            "text": "The analysis methods had been transformed into a reusable Python module, approximately 95% of the MLLPA code had been developed, and the website and documentation had been created, with several first-author scientific publications; work related to the 3D CNN continues occasionally."
+        },
+        "sections": [],
         "relatedProjects": [
             {
                 "projectId": "mllpa-project"
             }
         ],
-        "links": [
+        "relatedSoftware": [
             {
-                "label": "MLLPA website and documentation",
-                "href": "https://vivien-walter.github.io/mllpa/"
+                "softwareId": "mllpa"
+            }
+        ],
+        "relatedPublications": [
+            {
+                "publicationId": "pccp-2020"
+            },
+            {
+                "publicationId": "jcc-mllpa-2021"
+            },
+            {
+                "publicationId": "bba-2021"
             }
         ]
     }

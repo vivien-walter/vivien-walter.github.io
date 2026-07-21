@@ -7,17 +7,26 @@ import {
   getLanguageFromPathname,
   getPageRoute,
   getProjectRoute,
+  getResearchPublicationRoute,
+  getSoftwareRoute,
 } from "@/app/routing/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import NotFoundPage from "@/routes/not-found/not-found-page";
 import { getProjectById } from "@/routes/projects/data/project-content.loader";
+import { getPublicationById } from "@/routes/research/data/research-content.loader";
+import { getSoftwareById } from "@/routes/software/data/software-content.loader";
 import ContentLink from "@/shared/components/content-link";
 import ContentSections from "@/shared/components/content-sections";
 import DetailNavigation from "@/shared/components/detail-navigation";
 import PageHero from "@/shared/components/page-hero";
+import SectionHeader from "@/shared/components/section-header";
 import { formatContentDateRange } from "@/shared/content/content-formatters";
 
+import ExperienceDescriptionSection from "./components/experience-description-section";
+import ExperienceDirectContributionsSection from "./components/experience-direct-contributions-section";
+import ExperienceHighlightsBand from "./components/experience-highlights-band";
+import ExperienceTechnologiesSection from "./components/experience-technologies-section";
 import {
   getAdjacentExperienceIds,
   getExperienceById,
@@ -44,6 +53,32 @@ function ExperienceDetailPage() {
     },
   );
 
+  const relatedSoftware = (experience.relatedSoftware ?? []).flatMap(
+    ({ softwareId }) => {
+      const software = getSoftwareById(language, softwareId);
+
+      return software ? [{ software, softwareId }] : [];
+    },
+  );
+
+  const relatedPublications = (
+    experience.relatedPublications ?? []
+  ).flatMap(({ publicationId }) => {
+    const publication = getPublicationById(
+      language,
+      publicationId,
+    );
+
+    return publication
+      ? [{ publication, publicationId }]
+      : [];
+  });
+
+  const hasRelatedItems =
+    relatedProjects.length > 0 ||
+    relatedSoftware.length > 0 ||
+    relatedPublications.length > 0;
+
   const { previousId, nextId } = getAdjacentExperienceIds(
     language,
     slug,
@@ -56,6 +91,35 @@ function ExperienceDetailPage() {
   const nextExperience = nextId
     ? getExperienceById(language, nextId)
     : undefined;
+
+  const directContributionsTitle =
+    language === "fr"
+      ? "Contributions directes"
+      : "Direct contributions";
+
+  const technologiesTitle =
+    language === "fr"
+      ? "Technologies utilisées"
+      : "Technologies used";
+
+  const externalLinkLabel =
+    language === "fr"
+      ? "ouvre dans un nouvel onglet"
+      : "opens in a new tab";
+
+  const relatedButtonClassName = cn(
+    "h-auto min-h-11 w-full justify-between",
+    "whitespace-normal px-4 py-3 text-left",
+    "border-border-strong bg-background",
+    "text-brand-ink shadow-none",
+    "hover:border-brand-primary",
+    "hover:bg-action-soft hover:text-action-strong",
+  );
+
+  const relatedListClassName = cn(
+    "m-0 grid list-none gap-3 p-0",
+    "sm:grid-cols-2",
+  );
 
   return (
     <article
@@ -144,72 +208,234 @@ function ExperienceDetailPage() {
         }
       />
 
+      <ExperienceHighlightsBand items={experience.highlights} />
+
       <div
         className={cn(
           "mx-auto w-full max-w-editorial px-page",
           "py-12 sm:py-14 lg:py-16",
         )}
       >
-        <ContentSections
+        <ExperienceDescriptionSection
+          description={experience.description}
           idPrefix={`experience-${slug}`}
-          sections={experience.sections}
+          title="Description"
         />
 
-        {relatedProjects.length > 0 ? (
+        <ExperienceDirectContributionsSection
+          idPrefix={`experience-${slug}`}
+          items={experience.directContributions}
+          title={directContributionsTitle}
+        />
+
+        <ExperienceTechnologiesSection
+          externalLinkLabel={externalLinkLabel}
+          groups={experience.technologyGroups}
+          idPrefix={`experience-${slug}`}
+          title={technologiesTitle}
+        />
+
+        {experience.sections.length > 0 ? (
+          <ContentSections
+            idPrefix={`experience-${slug}`}
+            sections={experience.sections}
+          />
+        ) : null}
+
+        {experience.finalState ? (
           <section
-            className="border-t border-border py-12 sm:py-14 lg:py-16"
-            aria-labelledby="experience-related-projects"
+            className={cn(
+              "relative left-1/2 w-screen",
+              "-translate-x-1/2 bg-brand-dark",
+            )}
+            aria-labelledby={`experience-${slug}-final-state-title`}
           >
-            <h2
-              id="experience-related-projects"
+            <div
               className={cn(
-                "!m-0 text-xl font-bold leading-heading",
-                "tracking-[-0.025em] text-brand-ink",
+                "mx-auto w-full max-w-editorial px-page",
+                "py-12 sm:py-14 lg:py-16",
               )}
             >
-              {t("content.relatedProjects", { lng: language })}
-            </h2>
+              <SectionHeader
+                title={experience.finalState.title}
+                titleId={`experience-${slug}-final-state-title`}
+                description={experience.finalState.text}
+                variant="inverse"
+                showAccent={false}
+              />
+            </div>
+          </section>
+        ) : null}
 
-            <span
-              aria-hidden="true"
-              className="mt-3 block h-0.5 w-12 bg-brand-accent"
+        {hasRelatedItems ? (
+          <section
+            className={cn(
+              "border-t border-border",
+              "pt-12 pb-6",
+              "sm:pt-14 sm:pb-8",
+              "lg:pt-16 lg:pb-10",
+            )}
+            aria-labelledby={`experience-${slug}-related-items`}
+          >
+            <SectionHeader
+              title={t("content.relatedItems", {
+                lng: language,
+              })}
+              titleId={`experience-${slug}-related-items`}
+              className="mb-8"
             />
 
-            <ul
-              className={cn(
-                "m-0 mt-8 grid list-none gap-3 p-0",
-                "sm:grid-cols-2",
-              )}
-            >
-              {relatedProjects.map(({ project, projectId }) => (
-                <li className="m-0 min-w-0" key={projectId}>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className={cn(
-                      "h-auto min-h-11 w-full justify-between",
-                      "whitespace-normal px-4 py-3 text-left",
-                      "border-border-strong bg-background",
-                      "text-brand-ink shadow-none",
-                      "hover:border-brand-primary",
-                      "hover:bg-action-soft hover:text-action-strong",
-                    )}
-                  >
-                    <Link to={getProjectRoute(projectId, language)}>
-                      <span className="min-w-0">
-                        {project.title}
-                      </span>
+            <div className="grid gap-10">
+              {relatedProjects.length > 0 ? (
+                <section
+                  aria-labelledby={`experience-${slug}-related-projects`}
+                >
+                  <SectionHeader
+                    title={t("content.relatedProjects", {
+                      lng: language,
+                    })}
+                    titleId={`experience-${slug}-related-projects`}
+                    headingLevel={3}
+                    showAccent={false}
+                    className="mb-4"
+                  />
 
-                      <ArrowRightIcon
-                        aria-hidden="true"
-                        className="shrink-0"
-                        weight="bold"
-                      />
-                    </Link>
-                  </Button>
-                </li>
-              ))}
-            </ul>
+                  <ul className={relatedListClassName}>
+                    {relatedProjects.map(
+                      ({ project, projectId }) => (
+                        <li
+                          className="m-0 min-w-0"
+                          key={projectId}
+                        >
+                          <Button
+                            asChild
+                            variant="outline"
+                            className={relatedButtonClassName}
+                          >
+                            <Link
+                              to={getProjectRoute(
+                                projectId,
+                                language,
+                              )}
+                            >
+                              <span className="min-w-0">
+                                {project.title}
+                              </span>
+
+                              <ArrowRightIcon
+                                aria-hidden="true"
+                                className="shrink-0"
+                                weight="bold"
+                              />
+                            </Link>
+                          </Button>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </section>
+              ) : null}
+
+              {relatedSoftware.length > 0 ? (
+                <section
+                  aria-labelledby={`experience-${slug}-related-software`}
+                >
+                  <SectionHeader
+                    title={t("content.relatedSoftware", {
+                      lng: language,
+                    })}
+                    titleId={`experience-${slug}-related-software`}
+                    headingLevel={3}
+                    showAccent={false}
+                    className="mb-4"
+                  />
+
+                  <ul className={relatedListClassName}>
+                    {relatedSoftware.map(
+                      ({ software, softwareId }) => (
+                        <li
+                          className="m-0 min-w-0"
+                          key={softwareId}
+                        >
+                          <Button
+                            asChild
+                            variant="outline"
+                            className={relatedButtonClassName}
+                          >
+                            <Link
+                              to={getSoftwareRoute(
+                                softwareId,
+                                language,
+                              )}
+                            >
+                              <span className="min-w-0">
+                                {software.title}
+                              </span>
+
+                              <ArrowRightIcon
+                                aria-hidden="true"
+                                className="shrink-0"
+                                weight="bold"
+                              />
+                            </Link>
+                          </Button>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </section>
+              ) : null}
+
+              {relatedPublications.length > 0 ? (
+                <section
+                  aria-labelledby={`experience-${slug}-related-publications`}
+                >
+                  <SectionHeader
+                    title={t("content.relatedPublications", {
+                      lng: language,
+                    })}
+                    titleId={`experience-${slug}-related-publications`}
+                    headingLevel={3}
+                    showAccent={false}
+                    className="mb-4"
+                  />
+
+                  <ul className={relatedListClassName}>
+                    {relatedPublications.map(
+                      ({ publication, publicationId }) => (
+                        <li
+                          className="m-0 min-w-0"
+                          key={publicationId}
+                        >
+                          <Button
+                            asChild
+                            variant="outline"
+                            className={relatedButtonClassName}
+                          >
+                            <Link
+                              to={getResearchPublicationRoute(
+                                publicationId,
+                                language,
+                              )}
+                            >
+                              <span className="min-w-0">
+                                {publication.title}
+                              </span>
+
+                              <ArrowRightIcon
+                                aria-hidden="true"
+                                className="shrink-0"
+                                weight="bold"
+                              />
+                            </Link>
+                          </Button>
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                </section>
+              ) : null}
+            </div>
           </section>
         ) : null}
 
@@ -218,22 +444,15 @@ function ExperienceDetailPage() {
             className="border-t border-border py-12 sm:py-14 lg:py-16"
             aria-labelledby="experience-resources"
           >
-            <h2
-              id="experience-resources"
-              className={cn(
-                "!m-0 text-xl font-bold leading-heading",
-                "tracking-[-0.025em] text-brand-ink",
-              )}
-            >
-              {t("content.resources", { lng: language })}
-            </h2>
-
-            <span
-              aria-hidden="true"
-              className="mt-3 block h-0.5 w-12 bg-brand-accent"
+            <SectionHeader
+              title={t("content.resources", {
+                lng: language,
+              })}
+              titleId="experience-resources"
+              className="mb-6"
             />
 
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
               {experience.links.map((link, index) => (
                 <ContentLink
                   key={`${link.href}-${index}`}
@@ -246,6 +465,7 @@ function ExperienceDetailPage() {
         ) : null}
 
         <DetailNavigation
+          className="mt-0 sm:mt-0"
           ariaLabel={t("experienceDetail.navigationLabel", {
             lng: language,
           })}
@@ -265,6 +485,7 @@ function ExperienceDetailPage() {
             previousId && previousExperience
               ? {
                   label: previousExperience.role,
+                  secondaryLabel: previousExperience.organization,
                   to: getExperienceRoute(previousId, language),
                 }
               : undefined
@@ -273,6 +494,7 @@ function ExperienceDetailPage() {
             nextId && nextExperience
               ? {
                   label: nextExperience.role,
+                  secondaryLabel: nextExperience.organization,
                   to: getExperienceRoute(nextId, language),
                 }
               : undefined

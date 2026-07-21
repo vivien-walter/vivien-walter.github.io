@@ -155,9 +155,10 @@
         "location": "Location",
         "contractualTitle": "Contractual title",
         "publicTitle": "Professional presentation",
-        "relatedProjects": "Related projects",
-        "relatedSoftware": "Related software",
-        "relatedPublications": "Related publications"
+        "relatedItems": "Related items",
+        "relatedProjects": "Projects",
+        "relatedSoftware": "Software",
+        "relatedPublications": "Scientific publications"
     },
     "contentKinds": {
         "project": "Project",

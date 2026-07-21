@@ -22,6 +22,8 @@ import type {
   ExperienceCollection,
   ExperienceContent,
   ExperienceExpertiseId,
+  ExperienceHighlightIconId,
+  ExperienceHighlights,
   ExperiencePageContent,
   ExperienceParallelActivitiesContent,
   ExperienceParallelActivityContent,
@@ -42,12 +44,36 @@ type RawExperiencePageContent = Omit<
   }[];
 };
 
+type RawExperienceHighlightContent = {
+  readonly icon: string;
+  readonly label: string;
+  readonly value: string;
+};
+
+type RawExperienceContent = Omit<
+  ExperienceContent,
+  "highlights"
+> & {
+  readonly highlights?: readonly RawExperienceHighlightContent[];
+};
+
+type RawExperienceCollection = Readonly<
+  Record<string, RawExperienceContent>
+>;
+
+type RawParallelActivityContent = Omit<
+  ExperienceParallelActivityContent,
+  "highlights"
+> & {
+  readonly highlights?: readonly RawExperienceHighlightContent[];
+};
+
 type RawParallelActivitiesContent = {
   readonly order: readonly string[];
   readonly entries: {
-    readonly consulting: ExperienceParallelActivityContent;
-    readonly "scientific-research": ExperienceParallelActivityContent;
-    readonly teaching: ExperienceParallelActivityContent;
+    readonly consulting: RawParallelActivityContent;
+    readonly "scientific-research": RawParallelActivityContent;
+    readonly teaching: RawParallelActivityContent;
   };
 };
 
@@ -71,6 +97,21 @@ function isExperienceExpertiseId(
   );
 }
 
+function isExperienceHighlightIconId(
+  value: string,
+): value is ExperienceHighlightIconId {
+  return (
+    value === "project" ||
+    value === "funding" ||
+    value === "team" ||
+    value === "laboratory" ||
+    value === "instrumentation" ||
+    value === "software" ||
+    value === "research" ||
+    value === "publication"
+  );
+}
+
 function isParallelActivityId(
   value: string | undefined,
 ): value is ExperienceParallelActivityId {
@@ -89,6 +130,27 @@ function isPersonalActivityId(
     value === "illustrations" ||
     value === "science-communication"
   );
+}
+
+function createExperienceHighlights(
+  items: readonly RawExperienceHighlightContent[] | undefined,
+  context: string,
+): ExperienceHighlights | undefined {
+  return items?.map((item) => {
+    if (!isExperienceHighlightIconId(item.icon)) {
+      throw new Error(
+        [
+          "Unknown experience highlight icon identifier",
+          `"${item.icon}" for ${context}`,
+        ].join(" "),
+      );
+    }
+
+    return {
+      ...item,
+      icon: item.icon,
+    };
+  });
 }
 
 function createExperiencePageContent(
@@ -111,6 +173,58 @@ function createExperiencePageContent(
   };
 }
 
+function createExperienceCollection(
+  content: RawExperienceCollection,
+): ExperienceCollection {
+  return Object.fromEntries(
+    Object.entries(content).map(
+      ([experienceId, experience]) => {
+        const {
+          highlights: rawHighlights,
+          ...experienceContent
+        } = experience;
+
+        const highlights = createExperienceHighlights(
+          rawHighlights,
+          `experience "${experienceId}"`,
+        );
+
+        return [
+          experienceId,
+          {
+            ...experienceContent,
+            ...(highlights !== undefined
+              ? { highlights }
+              : {}),
+          },
+        ];
+      },
+    ),
+  );
+}
+
+function createParallelActivityContent(
+  activityId: ExperienceParallelActivityId,
+  content: RawParallelActivityContent,
+): ExperienceParallelActivityContent {
+  const {
+    highlights: rawHighlights,
+    ...activityContent
+  } = content;
+
+  const highlights = createExperienceHighlights(
+    rawHighlights,
+    `parallel activity "${activityId}"`,
+  );
+
+  return {
+    ...activityContent,
+    ...(highlights !== undefined
+      ? { highlights }
+      : {}),
+  };
+}
+
 function createParallelActivitiesContent(
   content: RawParallelActivitiesContent,
 ): ExperienceParallelActivitiesContent {
@@ -126,7 +240,20 @@ function createParallelActivitiesContent(
 
   return {
     order,
-    entries: content.entries,
+    entries: {
+      consulting: createParallelActivityContent(
+        "consulting",
+        content.entries.consulting,
+      ),
+      "scientific-research": createParallelActivityContent(
+        "scientific-research",
+        content.entries["scientific-research"],
+      ),
+      teaching: createParallelActivityContent(
+        "teaching",
+        content.entries.teaching,
+      ),
+    },
   };
 }
 
@@ -152,21 +279,29 @@ function createPersonalActivitiesContent(
 const frExperiencePage = createExperiencePageContent(
   frExperiencePageJson,
 );
+
 const enExperiencePage = createExperiencePageContent(
   enExperiencePageJson,
 );
 
-const frExperienceIndex = frExperienceIndexJson satisfies ContentIndex;
-const enExperienceIndex = enExperienceIndexJson satisfies ContentIndex;
+const frExperienceIndex =
+  frExperienceIndexJson satisfies ContentIndex;
 
-const frExperiences =
-  frExperienceEntriesJson satisfies ExperienceCollection;
-const enExperiences =
-  enExperienceEntriesJson satisfies ExperienceCollection;
+const enExperienceIndex =
+  enExperienceIndexJson satisfies ContentIndex;
+
+const frExperiences = createExperienceCollection(
+  frExperienceEntriesJson satisfies RawExperienceCollection,
+);
+
+const enExperiences = createExperienceCollection(
+  enExperienceEntriesJson satisfies RawExperienceCollection,
+);
 
 const frParallelActivities = createParallelActivitiesContent(
   frParallelActivitiesJson,
 );
+
 const enParallelActivities = createParallelActivitiesContent(
   enParallelActivitiesJson,
 );
@@ -174,6 +309,7 @@ const enParallelActivities = createParallelActivitiesContent(
 const frPersonalActivities = createPersonalActivitiesContent(
   frPersonalActivitiesJson,
 );
+
 const enPersonalActivities = createPersonalActivitiesContent(
   enPersonalActivitiesJson,
 );
@@ -227,13 +363,19 @@ function hasOwnExperience(
 export function getExperiencePage(
   language: SupportedLanguage,
 ): ExperiencePageContent {
-  return selectLocalizedContent(localizedExperiencePages, language);
+  return selectLocalizedContent(
+    localizedExperiencePages,
+    language,
+  );
 }
 
 export function getExperienceIndex(
   language: SupportedLanguage,
 ): ContentIndex {
-  return selectLocalizedContent(localizedExperienceIndexes, language);
+  return selectLocalizedContent(
+    localizedExperienceIndexes,
+    language,
+  );
 }
 
 export function getExperienceById(
@@ -258,7 +400,10 @@ export function getAdjacentExperienceIds(
   const experiences = getExperienceCollection(language);
   const position = index.order.indexOf(id);
 
-  if (position === -1 || !hasOwnExperience(experiences, id)) {
+  if (
+    position === -1 ||
+    !hasOwnExperience(experiences, id)
+  ) {
     return {};
   }
 

@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 
 export type DetailNavigationLink = {
   readonly label: string;
+  readonly secondaryLabel?: string;
   readonly to: string;
 };
 
@@ -21,6 +22,7 @@ type DetailNavigationProps = {
   readonly nextLink?: DetailNavigationLink;
   readonly previousLabel: string;
   readonly nextLabel: string;
+  readonly className?: string;
 };
 
 function DetailNavigation({
@@ -30,10 +32,14 @@ function DetailNavigation({
   nextLink,
   previousLabel,
   nextLabel,
+  className,
 }: DetailNavigationProps) {
   return (
     <nav
-      className="mt-16 grid gap-6 sm:mt-20"
+      className={cn(
+        "mt-16 grid gap-6 sm:mt-20",
+        className,
+      )}
       aria-label={ariaLabel}
     >
       <Separator />
@@ -73,7 +79,8 @@ function DetailNavigation({
               >
                 <Link
                   className={cn(
-                    "group grid h-full min-h-28 gap-3 p-5",
+                    "group grid h-full min-h-28 content-start",
+                    "gap-3 p-5",
                     "text-left text-foreground no-underline",
                     "focus-visible:outline-none",
                     "focus-visible:ring-[3px]",
@@ -105,14 +112,27 @@ function DetailNavigation({
                     {previousLabel}
                   </span>
 
-                  <span
-                    className={cn(
-                      "self-end text-base font-semibold",
-                      "leading-heading text-heading",
-                      "group-hover:text-action-strong",
-                    )}
-                  >
-                    {previousLink.label}
+                  <span className="grid gap-1">
+                    <span
+                      className={cn(
+                        "text-base font-semibold",
+                        "leading-heading text-heading",
+                        "group-hover:text-action-strong",
+                      )}
+                    >
+                      {previousLink.label}
+                    </span>
+
+                    {previousLink.secondaryLabel ? (
+                      <span
+                        className={cn(
+                          "text-sm font-normal",
+                          "leading-heading text-muted-foreground",
+                        )}
+                      >
+                        {previousLink.secondaryLabel}
+                      </span>
+                    ) : null}
                   </span>
                 </Link>
               </Card>
@@ -137,7 +157,8 @@ function DetailNavigation({
               >
                 <Link
                   className={cn(
-                    "group grid h-full min-h-28 gap-3 p-5",
+                    "group grid h-full min-h-28 content-start",
+                    "gap-3 p-5",
                     "text-right text-foreground no-underline",
                     "focus-visible:outline-none",
                     "focus-visible:ring-[3px]",
@@ -169,14 +190,27 @@ function DetailNavigation({
                     />
                   </span>
 
-                  <span
-                    className={cn(
-                      "self-end text-base font-semibold",
-                      "leading-heading text-heading",
-                      "group-hover:text-action-strong",
-                    )}
-                  >
-                    {nextLink.label}
+                  <span className="grid gap-1">
+                    <span
+                      className={cn(
+                        "text-base font-semibold",
+                        "leading-heading text-heading",
+                        "group-hover:text-action-strong",
+                      )}
+                    >
+                      {nextLink.label}
+                    </span>
+
+                    {nextLink.secondaryLabel ? (
+                      <span
+                        className={cn(
+                          "text-sm font-normal",
+                          "leading-heading text-muted-foreground",
+                        )}
+                      >
+                        {nextLink.secondaryLabel}
+                      </span>
+                    ) : null}
                   </span>
                 </Link>
               </Card>

@@ -155,9 +155,10 @@
         "location": "Localisation",
         "contractualTitle": "Intitulé contractuel",
         "publicTitle": "Présentation professionnelle",
-        "relatedProjects": "Projets associés",
-        "relatedSoftware": "Logiciels associés",
-        "relatedPublications": "Publications associées"
+        "relatedItems": "Éléments associés",
+        "relatedProjects": "Projets",
+        "relatedSoftware": "Logiciels",
+        "relatedPublications": "Publications scientifiques"
     },
     "contentKinds": {
         "project": "Projet",

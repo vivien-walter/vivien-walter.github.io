@@ -6,6 +6,8 @@ import {
 
 import { cn } from "@/lib/utils";
 
+type SectionHeaderVariant = "default" | "inverse";
+
 type SectionHeaderProps = {
   readonly title: string;
   readonly titleId: string;
@@ -13,6 +15,8 @@ type SectionHeaderProps = {
   readonly action?: ReactNode;
   readonly headingLevel?: 2 | 3;
   readonly className?: string;
+  readonly variant?: SectionHeaderVariant;
+  readonly showAccent?: boolean;
 };
 
 function SectionHeader({
@@ -22,8 +26,11 @@ function SectionHeader({
   action,
   headingLevel = 2,
   className,
+  variant = "default",
+  showAccent = true,
 }: SectionHeaderProps) {
   const Heading = `h${headingLevel}` as ElementType;
+  const isInverse = variant === "inverse";
 
   return (
     <header
@@ -40,16 +47,21 @@ function SectionHeader({
             id: titleId,
             className: cn(
               "!m-0 text-xl font-bold leading-heading",
-              "tracking-[-0.025em] text-brand-ink",
+              "tracking-[-0.025em]",
+              isInverse
+                ? "!text-white"
+                : "text-brand-ink",
             ),
           },
           title,
         )}
 
-        <span
-          aria-hidden="true"
-          className="mt-3 block h-0.5 w-12 bg-brand-accent"
-        />
+        {showAccent ? (
+          <span
+            aria-hidden="true"
+            className="mt-3 block h-0.5 w-12 bg-brand-accent"
+          />
+        ) : null}
       </div>
 
       {action ? (
@@ -62,7 +74,9 @@ function SectionHeader({
         <p
           className={cn(
             "!m-0 max-w-readable text-base",
-            "text-muted-foreground",
+            isInverse
+              ? "font-medium !text-white/90"
+              : "text-muted-foreground",
             action && "sm:col-span-2",
           )}
         >
