@@ -209,19 +209,29 @@
     },
     "researchThemeDetail": {
         "eyebrow": "Research theme",
+        "highlightsLabel": "Key information about the research theme",
+        "description": "Description",
+        "technologies": "Technologies used",
+        "externalLinkLabel": "Opens an external website in a new tab",
         "navigationLabel": "Research theme navigation"
     },
     "researchPublicationDetail": {
         "articleEyebrow": "Scientific article",
         "thesisEyebrow": "Thesis",
         "metadata": "Bibliographic information",
-        "year": "Year",
+        "title": "Full title",
+        "journal": "Journal",
         "authors": "Authors",
+        "year": "Year",
         "reference": "Reference",
-        "contribution": "Contribution",
-        "resources": "Resources",
-        "openDoi": "Open DOI",
-        "navigationLabel": "Publication navigation"
+        "description": "Description",
+        "resources": "Related resources",
+        "relatedItems": "Related items",
+        "relatedThemes": "Research themes",
+        "relatedProjects": "Projects",
+        "relatedSoftware": "Software",
+        "relatedExperiences": "Professional experience",
+        "navigationLabel": "Navigation between publications"
     },
     "softwareDetail": {
         "eyebrow": "Software details",

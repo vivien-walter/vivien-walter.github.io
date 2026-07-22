@@ -32,6 +32,7 @@ type PublicationTableProps = {
   readonly items: readonly PublicationTableItem[];
   readonly themes: readonly ResearchThemeContent[];
   readonly language: SupportedLanguage;
+  readonly showThemeFilter?: boolean;
 };
 
 type PublicationTab = "article" | "thesis";
@@ -58,6 +59,7 @@ function PublicationTable({
   items,
   themes,
   language,
+  showThemeFilter = true,
 }: PublicationTableProps) {
   const { t } = useTranslation();
 
@@ -254,22 +256,24 @@ function PublicationTable({
 
   const themeOptions = useMemo<
     readonly PublicationFilterOption[]
-  >(
-    () =>
-      themes
-        .filter((theme) =>
-          items.some((item) =>
-            item.publication.themeIds?.includes(
-              theme.id,
-            ),
+  >(() => {
+    if (!showThemeFilter) {
+      return [];
+    }
+
+    return themes
+      .filter((theme) =>
+        items.some((item) =>
+          item.publication.themeIds?.includes(
+            theme.id,
           ),
-        )
-        .map((theme) => ({
-          value: theme.id,
-          label: theme.title,
-        })),
-    [items, themes],
-  );
+        ),
+      )
+      .map((theme) => ({
+        value: theme.id,
+        label: theme.title,
+      }));
+  }, [items, showThemeFilter, themes]);
 
   const journalOptions = useMemo<
     readonly PublicationFilterOption[]
@@ -307,6 +311,7 @@ function PublicationTable({
         }
 
         const matchesThemes =
+          !showThemeFilter ||
           selectedThemes.size === 0 ||
           publication.themeIds?.some((themeId) =>
             selectedThemes.has(themeId),
@@ -391,11 +396,12 @@ function PublicationTable({
     items,
     selectedJournals,
     selectedThemes,
+    showThemeFilter,
     sortBy,
   ]);
 
   const hasActiveFilters =
-    selectedThemes.size > 0 ||
+    (showThemeFilter && selectedThemes.size > 0) ||
     selectedJournals.size > 0;
 
   const shouldShowAllPublications =
@@ -576,6 +582,7 @@ function PublicationTable({
             selectedThemes={selectedThemes}
             selectedJournals={selectedJournals}
             labels={labels.controls}
+            showThemeFilter={showThemeFilter}
             onSortChange={(value) => {
               setSortBy(value);
               setHasChangedSort(true);
@@ -727,9 +734,9 @@ function PublicationTable({
                                 {": "}
                               </span>
 
-                              {publication.authors.join(
-                                ", ",
-                              )}
+                            {publication.authors
+  .map((author) => author.name)
+  .join(", ")}
                             </p>
                           ) : null}
 

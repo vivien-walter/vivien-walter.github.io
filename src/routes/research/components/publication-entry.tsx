@@ -83,7 +83,9 @@ function PublicationEntry({
         <CardContent className="grid gap-4 px-5 pb-6 sm:px-6">
           {publication.authors.length > 0 ? (
             <p className="!m-0 font-semibold text-heading">
-              {publication.authors.join(", ")}
+    {publication.authors
+  .map((author) => author.name)
+  .join(", ")}
             </p>
           ) : null}
 

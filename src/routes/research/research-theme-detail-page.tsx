@@ -4,14 +4,19 @@ import { useLocation, useParams } from "react-router-dom";
 import {
   getLanguageFromPathname,
   getPageRoute,
+  getResearchPublicationRoute,
   getResearchThemeRoute,
 } from "@/app/routing/navigation";
 import NotFoundPage from "@/routes/not-found/not-found-page";
-import ContentSections from "@/shared/components/content-sections";
+import DetailDescriptionSection from "@/shared/components/detail-description-section";
+import DetailHighlightsBand from "@/shared/components/detail-highlights-band";
 import DetailNavigation from "@/shared/components/detail-navigation";
+import DetailTechnologiesSection from "@/shared/components/detail-technologies-section";
 import PageHero from "@/shared/components/page-hero";
 
+import PublicationTable from "./components/publication-table";
 import {
+  getPublicationsByThemeId,
   getResearchPage,
   getResearchThemeById,
 } from "./data/research-content.loader";
@@ -20,11 +25,13 @@ function ResearchThemeDetailPage() {
   const location = useLocation();
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
+
   const language = getLanguageFromPathname(
     location.pathname,
   );
 
   const page = getResearchPage(language);
+
   const theme = slug
     ? getResearchThemeById(language, slug)
     : undefined;
@@ -34,6 +41,7 @@ function ResearchThemeDetailPage() {
   }
 
   const themes = page.themes ?? [];
+
   const currentThemeIndex = themes.findIndex(
     (candidate) => candidate.id === slug,
   );
@@ -48,6 +56,20 @@ function ResearchThemeDetailPage() {
     currentThemeIndex < themes.length - 1
       ? themes[currentThemeIndex + 1]
       : undefined;
+
+  const publications = getPublicationsByThemeId(
+    language,
+    slug,
+  ).map(({ publication, publicationId }) => ({
+    publication,
+    publicationId,
+    detailsPath: getResearchPublicationRoute(
+      publicationId,
+      language,
+    ),
+  }));
+
+  const idPrefix = `research-theme-${slug}`;
 
   return (
     <article
@@ -70,31 +92,78 @@ function ResearchThemeDetailPage() {
               label: t("breadcrumbs.research", {
                 lng: language,
               }),
-              to: getPageRoute("research", language),
+              to: getPageRoute(
+                "research",
+                language,
+              ),
             },
             {
               label: theme.title,
             },
           ],
         }}
-        eyebrow={t("researchThemeDetail.eyebrow", {
-          lng: language,
-        })}
+        eyebrow={t(
+          "researchThemeDetail.eyebrow",
+          {
+            lng: language,
+          },
+        )}
         title={theme.title}
         introduction={theme.introduction}
-        image={theme.image}
+      />
+
+      <DetailHighlightsBand
+        ariaLabel={t(
+          "researchThemeDetail.highlightsLabel",
+          {
+            lng: language,
+          },
+        )}
+        items={theme.highlights}
       />
 
       <div
         className={[
           "mx-auto w-full max-w-editorial px-page",
-          "py-12 sm:py-14 lg:py-16",
+          "pt-12 pb-12",
+          "sm:pt-14 sm:pb-14",
+          "lg:pt-16 lg:pb-16",
         ].join(" ")}
       >
-        {theme.sections && theme.sections.length > 0 ? (
-          <ContentSections
-            idPrefix={`research-theme-${slug}`}
-            sections={theme.sections}
+        <DetailDescriptionSection
+          description={theme.description}
+          idPrefix={idPrefix}
+          title={t(
+            "researchThemeDetail.description",
+            {
+              lng: language,
+            },
+          )}
+        />
+
+        <DetailTechnologiesSection
+          externalLinkLabel={t(
+            "researchThemeDetail.externalLinkLabel",
+            {
+              lng: language,
+            },
+          )}
+          groups={theme.technologyGroups}
+          idPrefix={idPrefix}
+          title={t(
+            "researchThemeDetail.technologies",
+            {
+              lng: language,
+            },
+          )}
+        />
+
+        {publications.length > 0 ? (
+          <PublicationTable
+            items={publications}
+            themes={themes}
+            language={language}
+            showThemeFilter={false}
           />
         ) : null}
 
@@ -106,10 +175,16 @@ function ResearchThemeDetailPage() {
             },
           )}
           backLink={{
-            label: t("actions.backToResearch", {
-              lng: language,
-            }),
-            to: getPageRoute("research", language),
+            label: t(
+              "actions.backToResearch",
+              {
+                lng: language,
+              },
+            ),
+            to: getPageRoute(
+              "research",
+              language,
+            ),
           }}
           previousLabel={t(
             "actions.previousResearchTheme",

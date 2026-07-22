@@ -2,82 +2,138 @@
     "nature-molecular-communication-2023": {
         "kind": "article",
         "title": "Real-time signal processing via chemical reactions for a microfluidic molecular communication system",
-        "authors": [
-            "Authors to be provided — placeholder content"
-        ],
+        "authors": [],
         "publication": "Nature Communications",
         "year": 2023,
-        "summary": "First author and lead writer.",
-        "doi": "10.0000/placeholder-nature-2023"
+        "themeIds": [
+            "molecular-communication"
+        ],
+        "projectIds": [
+            "molecular-communication"
+        ],
+        "experienceIds": [
+            "kcl-molecular-communication"
+        ]
     },
     "ieee-cnn-2026": {
         "kind": "article",
         "title": "CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication",
-        "authors": [
-            "Authors to be provided — placeholder content"
-        ],
+        "authors": [],
         "publication": "IEEE T-MBMC",
         "year": 2026,
-        "summary": "First author and lead writer."
+        "themeIds": [
+            "molecular-communication"
+        ],
+        "projectIds": [
+            "molecular-communication"
+        ],
+        "experienceIds": [
+            "kcl-molecular-communication"
+        ]
     },
     "jmicroscopy-2024": {
         "kind": "article",
         "title": "Spatial light modulation for interferometric scattering microscopy",
-        "authors": [
-            "Authors to be provided — placeholder content"
-        ],
+        "authors": [],
         "publication": "Journal of Microscopy",
         "year": 2024,
-        "summary": "Lead author."
+        "themeIds": [
+            "optics-photonics"
+        ],
+        "projectIds": [
+            "iscat-platform"
+        ],
+        "experienceIds": [
+            "kcl-iscat"
+        ]
     },
     "jacs-2023": {
         "kind": "article",
         "title": "Real-Time Monitoring and Control of Nanoparticle Formation",
-        "authors": [
-            "Authors to be provided — placeholder content"
-        ],
+        "authors": [],
         "publication": "Journal of the American Chemical Society",
         "year": 2023,
-        "summary": "Co-author; contributed equations, calculations, software, analysis scripts, manuscript review, advice and mentoring of the first author."
+        "themeIds": [
+            "optics-photonics"
+        ],
+        "projectIds": [
+            "iscat-platform"
+        ],
+        "experienceIds": [
+            "kcl-iscat"
+        ]
     },
     "nature-self-assembly-2025": {
         "kind": "article",
         "title": "Real-time label-free imaging of living crystallization-driven self-assembly",
-        "authors": [
-            "Authors to be provided — placeholder content"
-        ],
+        "authors": [],
         "publication": "Nature Communications",
         "year": 2025,
-        "summary": "Co-author; contributed equations, calculations, software, analysis scripts, manuscript review, advice and mentoring of the first author."
+        "themeIds": [
+            "optics-photonics"
+        ],
+        "projectIds": [
+            "iscat-platform"
+        ],
+        "experienceIds": [
+            "kcl-iscat"
+        ]
     },
     "pccp-2020": {
         "kind": "article",
         "title": "A machine learning study of the two states model for lipid bilayer phase transitions",
-        "authors": [
-            "Authors to be provided — placeholder content"
-        ],
+        "authors": [],
         "publication": "Physical Chemistry Chemical Physics",
         "year": 2020,
-        "summary": "First author."
+        "themeIds": [
+            "molecular-interfaces"
+        ],
+        "projectIds": [
+            "mllpa-project"
+        ],
+        "softwareIds": [
+            "mllpa"
+        ],
+        "experienceIds": [
+            "strasbourg-mllpa"
+        ]
     },
     "jcc-mllpa-2021": {
         "kind": "article",
         "title": "MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes",
-        "authors": [
-            "Authors to be provided — placeholder content"
-        ],
+        "authors": [],
         "publication": "Journal of Computational Chemistry",
         "year": 2021,
-        "summary": "First author."
+        "themeIds": [
+            "molecular-interfaces"
+        ],
+        "projectIds": [
+            "mllpa-project"
+        ],
+        "softwareIds": [
+            "mllpa"
+        ],
+        "experienceIds": [
+            "strasbourg-mllpa"
+        ]
     },
     "bba-2021": {
         "kind": "article",
         "title": "Ripple-like instability in the simulated gel phase of finite size phosphocholine bilayers",
-        "authors": [
-            "Authors to be provided — placeholder content"
-        ],
+        "authors": [],
         "publication": "BBA Biomembranes",
         "year": 2021,
-        "summary": "First author."
+        "themeIds": [
+            "molecular-interfaces"
+        ],
+        "projectIds": [
+            "mllpa-project"
+        ],
+        "softwareIds": [
+            "mllpa"
+        ],
+        "experienceIds": [
+            "strasbourg-mllpa"
+        ]
     }
 }

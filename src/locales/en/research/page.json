@@ -1,40 +1,97 @@
 {
-    "title": "Recherche et publications",
-    "introduction": "Mes travaux relient biophysique, instrumentation, traitement du signal, apprentissage automatique et développement logiciel. Cette activité se poursuit à travers les publications, les logiciels et des collaborations ponctuelles.",
+    "title": "Research and publications",
+    "introduction": "My work connects biophysics, instrumentation, signal processing, machine learning and software development. This activity continues through publications, software and occasional collaborations.",
     "heroImage": {
         "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23021530'/%3E%3Cg stroke='%2307429A' stroke-width='8' opacity='.85'%3E%3Cpath d='M40 650L260 390L470 520L690 230L900 430L1120 170L1360 360L1560 120' fill='none'/%3E%3Cpath d='M20 250L230 470L430 280L650 610L870 360L1090 560L1320 250L1580 480' fill='none'/%3E%3C/g%3E%3Cg fill='%23A2442F'%3E%3Ccircle cx='260' cy='390' r='24'/%3E%3Ccircle cx='690' cy='230' r='30'/%3E%3Ccircle cx='900' cy='430' r='22'/%3E%3Ccircle cx='1120' cy='170' r='34'/%3E%3Ccircle cx='1360' cy='360' r='26'/%3E%3C/g%3E%3Cg fill='%23F7F6F2'%3E%3Ccircle cx='230' cy='470' r='15'/%3E%3Ccircle cx='430' cy='280' r='18'/%3E%3Ccircle cx='650' cy='610' r='20'/%3E%3Ccircle cx='1090' cy='560' r='17'/%3E%3Ccircle cx='1320' cy='250' r='19'/%3E%3C/g%3E%3C/svg%3E",
-        "alt": "Visuel abstrait provisoire représentant un réseau scientifique.",
+        "alt": "Placeholder abstract visual representing a scientific network.",
         "objectPosition": "center"
     },
     "themes": [
         {
             "id": "molecular-interfaces",
             "icon": "molecular-interfaces",
-            "title": "Interfaces moléculaires et biophysique",
-            "introduction": "Étude des membranes lipidiques, de leurs transitions de phase et de leurs interactions, par simulation moléculaire et analyse de données.",
+            "title": "Molecular interfaces and biophysics",
+            "introduction": "Study of lipid membranes, their phase transitions and their interactions through molecular simulation and data analysis.",
             "image": {
                 "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%23E5EDF7'/%3E%3Cg fill='%2307429A'%3E%3Ccircle cx='90' cy='300' r='55'/%3E%3Ccircle cx='230' cy='280' r='55'/%3E%3Ccircle cx='370' cy='310' r='55'/%3E%3Ccircle cx='510' cy='285' r='55'/%3E%3Ccircle cx='650' cy='305' r='55'/%3E%3Ccircle cx='790' cy='280' r='55'/%3E%3Ccircle cx='930' cy='310' r='55'/%3E%3Ccircle cx='1070' cy='285' r='55'/%3E%3C/g%3E%3Cg stroke='%23A2442F' stroke-width='16'%3E%3Cpath d='M90 350V590M230 330V570M370 360V600M510 335V575M650 355V595M790 330V570M930 360V600M1070 335V575'/%3E%3C/g%3E%3C/svg%3E",
-                "alt": "Illustration provisoire d’une interface moléculaire.",
+                "alt": "Placeholder illustration of a molecular interface.",
                 "objectPosition": "center"
             },
-            "sections": [
+            "highlights": [
                 {
-                    "title": "Membranes lipidiques et simulation moléculaire",
-                    "paragraphs": [
-                        "Étude des transitions de phase, des instabilités membranaires et des interactions avec des peptides ou des protéines."
+                    "icon": "research",
+                    "label": "Research focus",
+                    "value": "Lipid membranes, phase transitions and membrane instabilities."
+                },
+                {
+                    "icon": "software",
+                    "label": "Computational approaches",
+                    "value": "Molecular simulation, data analysis and machine learning."
+                },
+                {
+                    "icon": "publication",
+                    "label": "Publications",
+                    "value": "Three first-author articles dedicated to lipid membranes and MLLPA."
+                }
+            ],
+            "description": {
+                "paragraphs": [
+                    "My work focuses on phase transitions, membrane instabilities and the interactions of lipid membranes with peptides or proteins.",
+                    "It combines molecular dynamics simulations, classification, scientific data processing and machine-learning approaches, including three-dimensional convolutional neural networks.",
+                    "This research led to the development of MLLPA, a documented and reusable Python module for machine-learning-assisted analysis of lipid membrane phases.",
+                    "I continue occasional scientific collaborations related to lipid membranes and MLLPA. Work associated with a three-dimensional CNN has not yet been published."
+                ],
+                "image": {
+                    "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%23E5EDF7'/%3E%3Cg fill='%2307429A'%3E%3Ccircle cx='90' cy='300' r='55'/%3E%3Ccircle cx='230' cy='280' r='55'/%3E%3Ccircle cx='370' cy='310' r='55'/%3E%3Ccircle cx='510' cy='285' r='55'/%3E%3Ccircle cx='650' cy='305' r='55'/%3E%3Ccircle cx='790' cy='280' r='55'/%3E%3Ccircle cx='930' cy='310' r='55'/%3E%3Ccircle cx='1070' cy='285' r='55'/%3E%3C/g%3E%3Cg stroke='%23A2442F' stroke-width='16'%3E%3Cpath d='M90 350V590M230 330V570M370 360V600M510 335V575M650 355V595M790 330V570M930 360V600M1070 335V575'/%3E%3C/g%3E%3C/svg%3E",
+                    "alt": "Placeholder illustration of a molecular interface.",
+                    "objectPosition": "center"
+                }
+            },
+            "technologyGroups": [
+                {
+                    "title": "Molecular simulation and analysis",
+                    "items": [
+                        {
+                            "label": "GROMACS"
+                        },
+                        {
+                            "label": "MDAnalysis"
+                        },
+                        {
+                            "label": "NumPy"
+                        },
+                        {
+                            "label": "pandas"
+                        },
+                        {
+                            "label": "h5py"
+                        }
                     ]
                 },
                 {
-                    "title": "Apprentissage automatique appliqué aux sciences",
-                    "paragraphs": [
-                        "Classification, traitement d’images et de signaux, CNN 1D et 3D et analyse de données scientifiques."
+                    "title": "Machine learning",
+                    "items": [
+                        {
+                            "label": "TensorFlow"
+                        },
+                        {
+                            "label": "scikit-learn"
+                        },
+                        {
+                            "label": "3D CNN"
+                        }
                     ]
                 },
                 {
-                    "title": "Travaux et collaborations en cours",
-                    "paragraphs": [
-                        "Poursuite ponctuelle de collaborations scientifiques liées aux membranes lipidiques et à MLLPA.",
-                        "Travaux associés à un modèle CNN 3D encore non publié."
+                    "title": "Development",
+                    "items": [
+                        {
+                            "label": "Python"
+                        },
+                        {
+                            "label": "MLLPA",
+                            "href": "https://vivien-walter.github.io/mllpa/"
+                        }
                     ]
                 }
             ]
@@ -42,18 +99,80 @@
         {
             "id": "optics-photonics",
             "icon": "optics-photonics",
-            "title": "Optique et photonique",
-            "introduction": "Conception et exploitation de plateformes optiques avancées pour observer et analyser des systèmes biologiques et nanométriques.",
+            "title": "Optics and photonics",
+            "introduction": "Design and operation of advanced optical platforms for observing and analysing biological and nanoscale systems.",
             "image": {
                 "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%230E223E'/%3E%3Ccircle cx='670' cy='350' r='210' fill='%23021530' stroke='%23AEB7C1' stroke-width='24'/%3E%3Ccircle cx='670' cy='350' r='85' fill='%23A2442F'/%3E%3Cpath d='M0 430L1200 250' stroke='%23F7F6F2' stroke-width='24'/%3E%3Cpath d='M0 455L1200 275' stroke='%23A2442F' stroke-width='8'/%3E%3C/svg%3E",
-                "alt": "Illustration provisoire d’un montage optique.",
+                "alt": "Placeholder illustration of an optical setup.",
                 "objectPosition": "center"
             },
-            "sections": [
+            "highlights": [
                 {
-                    "title": "Microscopie et instrumentation optique",
-                    "paragraphs": [
-                        "Conception de plateformes iSCAT et d’instruments automatisés pour l’observation et l’analyse de systèmes biologiques et nanométriques."
+                    "icon": "instrumentation",
+                    "label": "Microscopy",
+                    "value": "Construction, qualification and operation of a complete iSCAT microscope."
+                },
+                {
+                    "icon": "software",
+                    "label": "Automation",
+                    "value": "Development of LabVIEW software for control, acquisition and analysis."
+                },
+                {
+                    "icon": "publication",
+                    "label": "Main publication",
+                    "value": "Lead author of an article on spatial light modulation for iSCAT microscopy."
+                }
+            ],
+            "description": {
+                "paragraphs": [
+                    "My work in optics and photonics focuses on the design, construction and operation of instrumental platforms for observing biological and nanoscale systems.",
+                    "It includes the construction and qualification of a complete interferometric scattering microscope, the design of experimental protocols, sample preparation, and data acquisition and analysis.",
+                    "It also includes the development of LabVIEW software for controlling and automating scientific instruments, together with work on an automated epifluorescence microscope conducted under a confidentiality agreement."
+                ],
+                "image": {
+                    "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%230E223E'/%3E%3Ccircle cx='670' cy='350' r='210' fill='%23021530' stroke='%23AEB7C1' stroke-width='24'/%3E%3Ccircle cx='670' cy='350' r='85' fill='%23A2442F'/%3E%3Cpath d='M0 430L1200 250' stroke='%23F7F6F2' stroke-width='24'/%3E%3Cpath d='M0 455L1200 275' stroke='%23A2442F' stroke-width='8'/%3E%3C/svg%3E",
+                    "alt": "Placeholder illustration of an optical setup.",
+                    "objectPosition": "center"
+                }
+            },
+            "technologyGroups": [
+                {
+                    "title": "Microscopy and instrumentation",
+                    "items": [
+                        {
+                            "label": "iSCAT microscopy"
+                        },
+                        {
+                            "label": "Epifluorescence microscopy"
+                        },
+                        {
+                            "label": "Spatial light modulation"
+                        }
+                    ]
+                },
+                {
+                    "title": "Control and automation",
+                    "items": [
+                        {
+                            "label": "LabVIEW"
+                        },
+                        {
+                            "label": "Automated acquisition"
+                        },
+                        {
+                            "label": "Autofocus"
+                        }
+                    ]
+                },
+                {
+                    "title": "Analysis",
+                    "items": [
+                        {
+                            "label": "Image processing"
+                        },
+                        {
+                            "label": "Scientific data analysis"
+                        }
                     ]
                 }
             ]
@@ -61,18 +180,93 @@
         {
             "id": "molecular-communication",
             "icon": "molecular-communication",
-            "title": "Communication moléculaire",
-            "introduction": "Développement de systèmes expérimentaux utilisant des réactions chimiques, des signaux moléculaires, la microfluidique et des méthodes de détection.",
+            "title": "Molecular communication",
+            "introduction": "Development of experimental systems using chemical reactions, molecular signals, microfluidics and detection methods.",
             "image": {
                 "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%23E5EDF7'/%3E%3Cg fill='none' stroke='%2307429A'%3E%3Cellipse cx='600' cy='520' rx='520' ry='130' stroke-width='22'/%3E%3Cellipse cx='600' cy='520' rx='390' ry='95' stroke-width='18'/%3E%3Cellipse cx='600' cy='520' rx='260' ry='60' stroke-width='14'/%3E%3C/g%3E%3Cpath d='M600 90C545 170 505 225 505 290C505 350 548 395 600 395C652 395 695 350 695 290C695 225 655 170 600 90Z' fill='%2307429A'/%3E%3C/svg%3E",
-                "alt": "Illustration provisoire d’un signal moléculaire dans un fluide.",
+                "alt": "Placeholder illustration of a molecular signal in a fluid.",
                 "objectPosition": "center"
             },
-            "sections": [
+            "highlights": [
                 {
-                    "title": "Systèmes expérimentaux",
-                    "paragraphs": [
-                        "Systèmes expérimentaux utilisant des réactions chimiques, des signaux moléculaires, la microfluidique et des méthodes de détection."
+                    "icon": "laboratory",
+                    "label": "Experimental infrastructure",
+                    "value": "Creation of a molecular communication laboratory and an operational testbed."
+                },
+                {
+                    "icon": "instrumentation",
+                    "label": "Interdisciplinary system",
+                    "value": "Chemistry, microfluidics, instrumentation, electronics and signal processing."
+                },
+                {
+                    "icon": "publication",
+                    "label": "Publications",
+                    "value": "Two articles as first author and lead writer."
+                }
+            ],
+            "description": {
+                "paragraphs": [
+                    "My work in molecular communication involved creating a laboratory and an experimental platform combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning.",
+                    "The testbed enabled the production, transmission and detection of molecular signals to experimentally validate chemical-reaction-based communication concepts.",
+                    "I also developed a one-dimensional CNN with Python, TensorFlow and scikit-learn to analyse UV-Visible spectroscopy signals, together with six open-source syringe pumps combining mechanical design, 3D printing, Arduino, I²C communication, C++ and Python.",
+                    "This work led to two publications for which I was the first author and lead writer."
+                ],
+                "image": {
+                    "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%23E5EDF7'/%3E%3Cg fill='none' stroke='%2307429A'%3E%3Cellipse cx='600' cy='520' rx='520' ry='130' stroke-width='22'/%3E%3Cellipse cx='600' cy='520' rx='390' ry='95' stroke-width='18'/%3E%3Cellipse cx='600' cy='520' rx='260' ry='60' stroke-width='14'/%3E%3C/g%3E%3Cpath d='M600 90C545 170 505 225 505 290C505 350 548 395 600 395C652 395 695 350 695 290C695 225 655 170 600 90Z' fill='%2307429A'/%3E%3C/svg%3E",
+                    "alt": "Placeholder illustration of a molecular signal in a fluid.",
+                    "objectPosition": "center"
+                }
+            },
+            "technologyGroups": [
+                {
+                    "title": "Experimental methods",
+                    "items": [
+                        {
+                            "label": "Microfluidics"
+                        },
+                        {
+                            "label": "UV-Visible spectroscopy"
+                        },
+                        {
+                            "label": "Chemical reactions"
+                        }
+                    ]
+                },
+                {
+                    "title": "Machine learning",
+                    "items": [
+                        {
+                            "label": "Python"
+                        },
+                        {
+                            "label": "TensorFlow"
+                        },
+                        {
+                            "label": "scikit-learn"
+                        },
+                        {
+                            "label": "1D CNN"
+                        }
+                    ]
+                },
+                {
+                    "title": "Instrumentation and prototyping",
+                    "items": [
+                        {
+                            "label": "Autodesk Fusion 360"
+                        },
+                        {
+                            "label": "3D printing"
+                        },
+                        {
+                            "label": "Arduino"
+                        },
+                        {
+                            "label": "I²C"
+                        },
+                        {
+                            "label": "C++"
+                        }
                     ]
                 }
             ]

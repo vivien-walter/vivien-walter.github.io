@@ -15,18 +15,39 @@ import {
 } from "@/shared/content/localized-content";
 
 import type {
+  PublicationAuthor,
   PublicationCollection,
   PublicationContent,
   PublicationKind,
 } from "./publication-content.types";
 import type {
   ResearchContent,
+  ResearchThemeContent,
+  ResearchThemeHighlightContent,
+  ResearchThemeHighlightIcon,
   ResearchThemeIcon,
 } from "./research-content.types";
 
 export type AdjacentPublicationIds = {
   readonly previousId?: ContentId;
   readonly nextId?: ContentId;
+};
+
+export type ResearchThemePublication = {
+  readonly publicationId: ContentId;
+  readonly publication: PublicationContent;
+};
+
+type ResearchThemeSource = Omit<
+  ResearchThemeContent,
+  "icon" | "highlights"
+> & {
+  readonly icon: string;
+  readonly highlights?: readonly (
+    Omit<ResearchThemeHighlightContent, "icon"> & {
+      readonly icon: string;
+    }
+  )[];
 };
 
 function parseResearchThemeIcon(
@@ -41,6 +62,27 @@ function parseResearchThemeIcon(
     default:
       throw new Error(
         `Icône de thématique de recherche inconnue : ${icon}`,
+      );
+  }
+}
+
+function parseResearchThemeHighlightIcon(
+  icon: string,
+): ResearchThemeHighlightIcon {
+  switch (icon) {
+    case "project":
+    case "funding":
+    case "team":
+    case "laboratory":
+    case "instrumentation":
+    case "software":
+    case "research":
+    case "publication":
+      return icon;
+
+    default:
+      throw new Error(
+        `Icône d’information clé de recherche inconnue : ${icon}`,
       );
   }
 }
@@ -60,6 +102,33 @@ function parsePublicationKind(
   }
 }
 
+function parsePublicationAuthors(
+  authors: readonly (string | PublicationAuthor)[],
+): readonly PublicationAuthor[] {
+  return authors.map((author) =>
+    typeof author === "string"
+      ? {
+          name: author,
+        }
+      : author,
+  );
+}
+
+function parseResearchTheme(
+  source: ResearchThemeSource,
+): ResearchThemeContent {
+  return {
+    ...source,
+    icon: parseResearchThemeIcon(source.icon),
+    highlights: source.highlights?.map((highlight) => ({
+      ...highlight,
+      icon: parseResearchThemeHighlightIcon(
+        highlight.icon,
+      ),
+    })),
+  };
+}
+
 function parseResearchContent(
   source:
     | typeof frResearchPageJson
@@ -67,10 +136,9 @@ function parseResearchContent(
 ): ResearchContent {
   return {
     ...source,
-    themes: source.themes.map((theme) => ({
-      ...theme,
-      icon: parseResearchThemeIcon(theme.icon),
-    })),
+    themes: source.themes.map((theme) =>
+      parseResearchTheme(theme),
+    ),
   };
 }
 
@@ -90,6 +158,9 @@ function parsePublicationCollection(
     publications[publicationId] = {
       ...publication,
       kind: parsePublicationKind(publication.kind),
+      authors: parsePublicationAuthors(
+        publication.authors,
+      ),
     };
   }
 
@@ -198,6 +269,34 @@ export function getPublicationById(
   return hasOwnPublication(publications, id)
     ? publications[id]
     : undefined;
+}
+
+export function getPublicationsByThemeId(
+  language: SupportedLanguage,
+  themeId: ContentId,
+): readonly ResearchThemePublication[] {
+  return getPublicationIndex(language).order.flatMap(
+    (publicationId) => {
+      const publication = getPublicationById(
+        language,
+        publicationId,
+      );
+
+      if (
+        !publication ||
+        !publication.themeIds?.includes(themeId)
+      ) {
+        return [];
+      }
+
+      return [
+        {
+          publicationId,
+          publication,
+        },
+      ];
+    },
+  );
 }
 
 export function getAdjacentPublicationIds(
