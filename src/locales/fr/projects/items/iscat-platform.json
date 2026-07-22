@@ -5,72 +5,107 @@
         "start": "2018-03",
         "end": "2021-03"
     },
-    "sections": [
+    "overview": {
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Microscope iSCAT et plateforme expérimentale complète"
+            },
+            {
+                "label": "Rôle",
+                "value": "Chef de projet R&D / Postdoctoral Research Associate"
+            },
+            {
+                "label": "Équipe",
+                "value": "Trois doctorants et deux stagiaires de Master"
+            },
+            {
+                "label": "Financement",
+                "value": "Projet de 500 k€ financé par le BBSRC et cofinancé par Oxford Nanopore Technologies"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Le projet a été mené à King’s College London afin de construire, qualifier et exploiter un microscope iSCAT complet.",
+            "Il couvrait l’ensemble de la chaîne expérimentale, depuis la sélection et l’acquisition des composants jusqu’à la conception des protocoles, des échantillons et des expériences.",
+            "Le projet représentait un financement de 500 k€ assuré par le BBSRC avec un cofinancement d’Oxford Nanopore Technologies."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "J’ai piloté le projet et encadré trois doctorants ainsi que deux stagiaires de Master.",
+            "J’ai sélectionné et acquis les composants optiques et instrumentaux, assemblé la table optique et participé à la qualification du microscope complet.",
+            "J’ai conçu les protocoles, les échantillons et les expériences, mis en place l’acquisition des données et développé les méthodes d’analyse d’images et d’interprétation des résultats.",
+            "J’ai également développé le logiciel LabVIEW de contrôle et d’automatisation ainsi que des scripts et outils d’analyse avec Python, les macros ImageJ et Java pour ImageJ."
+        ]
+    },
+    "features": [
         {
-            "title": "Contexte et financement",
-            "paragraphs": [
-                "Le projet a été mené à King’s College London dans le cadre d’un poste de Postdoctoral Research Associate présenté publiquement comme une fonction de Chef de projet R&D."
-            ],
-            "items": [
-                "Pilotage d’un projet de 500 k€ financé par le BBSRC et cofinancé par Oxford Nanopore Technologies.",
-                "Management de trois doctorants et de deux stagiaires de Master."
-            ]
+            "icon": "microscopy",
+            "title": "Construction du microscope",
+            "description": "Sélection et acquisition des composants optiques et instrumentaux, puis assemblage de la table optique."
         },
         {
-            "title": "Construction et qualification de l’instrument",
-            "paragraphs": [
-                "Le microscope iSCAT a été construit depuis l’achat des composants jusqu’à l’assemblage de la table optique et à la qualification de l’instrument."
-            ],
-            "items": [
-                "Sélection et acquisition des composants optiques et instrumentaux.",
-                "Assemblage de la table optique.",
-                "Qualification du microscope complet."
-            ]
+            "icon": "instrumentation",
+            "title": "Qualification de l’instrument",
+            "description": "Mise au point et qualification du microscope iSCAT complet avant son exploitation scientifique."
         },
         {
+            "icon": "research",
             "title": "Chaîne expérimentale",
-            "paragraphs": [
-                "Le projet couvrait la conception de la chaîne expérimentale nécessaire à l’utilisation scientifique de l’instrument."
-            ],
-            "items": [
-                "Conception des protocoles, échantillons et expériences.",
-                "Mise en place de l’acquisition des données.",
-                "Développement des méthodes d’analyse d’images et d’interprétation des résultats."
-            ]
+            "description": "Conception des protocoles, des échantillons et des expériences nécessaires à l’utilisation scientifique du microscope."
         },
         {
+            "icon": "automation",
             "title": "Contrôle et automatisation",
-            "paragraphs": [
-                "Un logiciel LabVIEW a été développé pour contrôler et automatiser le microscope."
-            ],
-            "items": [
-                "Développement du contrôle instrumental avec LabVIEW.",
-                "Automatisation des acquisitions expérimentales.",
-                "Développement de scripts et d’outils d’analyse avec Python, les macros ImageJ et Java pour ImageJ."
-            ]
+            "description": "Développement du logiciel LabVIEW permettant de contrôler l’instrument et d’automatiser les acquisitions expérimentales."
         },
         {
-            "title": "Résultats et publications",
-            "paragraphs": [
-                "Le projet a abouti à la livraison d’un microscope iSCAT complet et opérationnel ainsi qu’à plusieurs publications scientifiques."
-            ],
-            "items": [
-                "Auteur principal de Spatial light modulation for interferometric scattering microscopy, Journal of Microscopy, 2024.",
-                "Coauteur de Real-Time Monitoring and Control of Nanoparticle Formation, Journal of the American Chemical Society, 2023.",
-                "Coauteur de Real-time label-free imaging of living crystallization-driven self-assembly, Nature Communications, 2025.",
-                "Pour les deux publications en coauteur : contribution aux équations, calculs, logiciels, scripts d’analyse, relecture, conseil et mentorat du premier auteur."
-            ]
+            "icon": "analysis",
+            "title": "Acquisition et analyse d’images",
+            "description": "Mise en place de l’acquisition des données et développement des méthodes d’analyse et d’interprétation des résultats."
+        },
+        {
+            "icon": "code",
+            "title": "Outils logiciels scientifiques",
+            "description": "Développement d’outils avec Python, les macros ImageJ et Java pour ImageJ en complément du logiciel LabVIEW."
         }
     ],
+    "results": [
+        "Livraison d’un microscope iSCAT complet, qualifié et opérationnel.",
+        "Développement d’une chaîne expérimentale couvrant les protocoles, les échantillons, les acquisitions et les analyses.",
+        "Publication de « Spatial light modulation for interferometric scattering microscopy » dans le Journal of Microscopy en 2024, en tant qu’auteur principal.",
+        "Publication de « Real-Time Monitoring and Control of Nanoparticle Formation » dans le Journal of the American Chemical Society en 2023, en tant que coauteur.",
+        "Publication de « Real-time label-free imaging of living crystallization-driven self-assembly » dans Nature Communications en 2025, en tant que coauteur."
+    ],
+    "sections": [],
     "technologies": [
-        "Python",
         "LabVIEW",
-        "Macros ImageJ",
-        "Java pour ImageJ"
+        "ImageJ",
+        "Microscopie iSCAT",
+        "Instrumentation optique",
+        "Analyse d’images"
     ],
     "programmingLanguages": [
         "Python",
         "LabVIEW",
         "Java"
+    ],
+    "relatedExperiences": [
+        {
+            "experienceId": "kcl-iscat"
+        }
+    ],
+    "relatedPublications": [
+        {
+            "publicationId": "jmicroscopy-2024"
+        },
+        {
+            "publicationId": "jacs-2023"
+        },
+        {
+            "publicationId": "nature-self-assembly-2025"
+        }
     ]
 }

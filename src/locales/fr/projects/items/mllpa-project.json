@@ -4,55 +4,72 @@
     "period": {
         "start": "2017-10"
     },
-    "sections": [
+    "overview": {
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Module Python d’analyse assistée par apprentissage automatique"
+            },
+            {
+                "label": "Rôle",
+                "value": "Développeur principal du module, du site et de la documentation"
+            },
+            {
+                "label": "Disponibilité",
+                "value": "Logiciel, site et documentation disponibles publiquement"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Le projet a débuté à l’Université de Strasbourg dans le cadre de recherches consacrées aux transitions de phase de membranes lipidiques simulées par dynamique moléculaire.",
+            "Les travaux portaient sur l’étude des bicouches lipidiques et de leurs transitions de phase, notamment de la phase ripple, avec une planification autonome des méthodes, des étapes et des orientations scientifiques.",
+            "Les simulations et le calcul scientifique reposaient notamment sur GROMACS, Linux, Bash et SLURM."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "J’ai développé environ 95 % du code de MLLPA afin de transformer les méthodes d’analyse produites pendant le projet en un outil Python documenté et réutilisable.",
+            "J’ai structuré les traitements de données et les analyses de phases membranaires, puis développé des approches d’apprentissage automatique avec scikit-learn et, ultérieurement, un réseau de neurones convolutif tridimensionnel avec TensorFlow.",
+            "J’ai également créé l’intégralité du site et de la documentation. Les travaux liés au CNN 3D ne sont pas publiés et se poursuivent ponctuellement dans le cadre de collaborations."
+        ]
+    },
+    "features": [
         {
-            "title": "Contexte scientifique",
-            "paragraphs": [
-                "Le projet a débuté à l’Université de Strasbourg dans le cadre de recherches consacrées aux transitions de phase de membranes lipidiques simulées par dynamique moléculaire."
-            ],
-            "items": [
-                "Planification des méthodes, des étapes et de l’orientation scientifique avec une large autonomie.",
-                "Étude des bicouches lipidiques et de leurs transitions de phase, notamment de la phase ripple.",
-                "Utilisation de GROMACS, Linux, Bash et SLURM pour les simulations et le calcul scientifique."
-            ]
+            "icon": "simulation",
+            "title": "Analyse de simulations moléculaires",
+            "description": "Exploitation de données issues de simulations de dynamique moléculaire pour étudier les phases et transitions de membranes lipidiques."
         },
         {
-            "title": "Développement de MLLPA",
-            "paragraphs": [
-                "MLLPA a été conçu pour rendre les méthodes d’analyse développées pendant le projet accessibles sous la forme d’un outil Python réutilisable."
-            ],
-            "items": [
-                "Développement d’environ 95 % du code du module.",
-                "Création de l’intégralité du site et de la documentation.",
-                "Structuration des traitements de données et des analyses de phases membranaires.",
-                "Mise à disposition publique du logiciel, de son site et de sa documentation."
-            ]
+            "icon": "analysis",
+            "title": "Analyse des phases membranaires",
+            "description": "Structuration des traitements de données nécessaires à l’identification et à l’étude des états des systèmes membranaires."
         },
         {
+            "icon": "machine-learning",
             "title": "Apprentissage automatique",
-            "paragraphs": [
-                "Le projet a intégré plusieurs approches d’apprentissage automatique pour analyser les états et transitions des systèmes membranaires."
-            ],
-            "items": [
-                "Développement de méthodes fondées sur scikit-learn.",
-                "Développement ultérieur d’un réseau de neurones convolutif tridimensionnel avec TensorFlow.",
-                "Le travail lié au CNN 3D n’est pas publié et se poursuit ponctuellement dans le cadre de collaborations."
-            ]
+            "description": "Développement d’approches avec scikit-learn, puis d’un réseau de neurones convolutif tridimensionnel avec TensorFlow."
         },
         {
-            "title": "Résultats scientifiques",
-            "paragraphs": [
-                "Les travaux ont donné lieu à plusieurs publications scientifiques en premier auteur."
-            ],
-            "items": [
-                "A machine learning study of the two states model for lipid bilayer phase transitions — Physical Chemistry Chemical Physics, 2020.",
-                "MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes — Journal of Computational Chemistry, 2021.",
-                "Ripple-like instability in the simulated gel phase of finite size phosphocholine bilayers — BBA Biomembranes, 2021."
-            ]
+            "icon": "code",
+            "title": "Module Python réutilisable",
+            "description": "Organisation des méthodes scientifiques sous la forme d’un module documenté pouvant être réutilisé dans d’autres analyses."
+        },
+        {
+            "icon": "web",
+            "title": "Site et documentation",
+            "description": "Création de l’intégralité du site et de la documentation accompagnant le logiciel."
         }
     ],
+    "results": [
+        "Développement d’environ 95 % du code du module MLLPA.",
+        "Mise à disposition publique du logiciel, de son site et de sa documentation.",
+        "Publication de « A machine learning study of the two states model for lipid bilayer phase transitions » dans Physical Chemistry Chemical Physics en 2020.",
+        "Publication de « MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes » dans le Journal of Computational Chemistry en 2021.",
+        "Publication de « Ripple-like instability in the simulated gel phase of finite size phosphocholine bilayers » dans BBA Biomembranes en 2021."
+    ],
+    "sections": [],
     "technologies": [
-        "Python",
         "GROMACS",
         "NumPy",
         "h5py",
@@ -62,12 +79,32 @@
         "TensorFlow",
         "tqdm",
         "Linux",
-        "Bash",
         "SLURM"
     ],
     "programmingLanguages": [
         "Python",
         "Bash"
+    ],
+    "relatedExperiences": [
+        {
+            "experienceId": "strasbourg-mllpa"
+        }
+    ],
+    "relatedSoftware": [
+        {
+            "softwareId": "mllpa"
+        }
+    ],
+    "relatedPublications": [
+        {
+            "publicationId": "pccp-2020"
+        },
+        {
+            "publicationId": "jcc-mllpa-2021"
+        },
+        {
+            "publicationId": "bba-2021"
+        }
     ],
     "links": [
         {

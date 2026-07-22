@@ -23,32 +23,125 @@ import {
   type SupportedLanguage,
 } from "@/shared/content/localized-content";
 
-import type {
-  ProjectCollection,
-  ProjectContent,
+import {
+  projectFeatureIconIds,
+  type ProjectCollection,
+  type ProjectContent,
+  type ProjectFeatureContent,
+  type ProjectFeatureIconId,
 } from "./project-content.types";
 
-const frProjectPage = frProjectPageJson satisfies ContentPage;
-const enProjectPage = enProjectPageJson satisfies ContentPage;
+type RawProjectFeatureContent = Omit<
+  ProjectFeatureContent,
+  "icon"
+> & {
+  readonly icon: string;
+};
 
-const frProjectIndex = frProjectIndexJson satisfies ContentIndex;
-const enProjectIndex = enProjectIndexJson satisfies ContentIndex;
+type RawProjectContent = Omit<
+  ProjectContent,
+  "features"
+> & {
+  readonly features?: readonly RawProjectFeatureContent[];
+};
 
-const frProjects = {
-  "lxp-campus": frLxpCampusJson,
-  "molecular-communication": frMolecularCommunicationJson,
-  "iscat-platform": frIscatPlatformJson,
-  "mllpa-project": frMllpaProjectJson,
-  "medical-microscope": frMedicalMicroscopeJson,
-} satisfies ProjectCollection;
+type RawProjectCollection = Readonly<
+  Record<string, RawProjectContent>
+>;
 
-const enProjects = {
-  "lxp-campus": enLxpCampusJson,
-  "molecular-communication": enMolecularCommunicationJson,
-  "iscat-platform": enIscatPlatformJson,
-  "mllpa-project": enMllpaProjectJson,
-  "medical-microscope": enMedicalMicroscopeJson,
-} satisfies ProjectCollection;
+function isProjectFeatureIconId(
+  value: string,
+): value is ProjectFeatureIconId {
+  return projectFeatureIconIds.some(
+    (iconId) => iconId === value,
+  );
+}
+
+function createProjectContent(
+  content: RawProjectContent,
+  context: string,
+): ProjectContent {
+  const {
+    features: rawFeatures,
+    ...projectContent
+  } = content;
+
+  const features = rawFeatures?.map((feature) => {
+    if (!isProjectFeatureIconId(feature.icon)) {
+      throw new Error(
+        [
+          "Unknown project feature icon identifier",
+          `"${feature.icon}" for ${context}`,
+        ].join(" "),
+      );
+    }
+
+    return {
+      ...feature,
+      icon: feature.icon,
+    };
+  });
+
+  return {
+    ...projectContent,
+    ...(features !== undefined
+      ? { features }
+      : {}),
+  };
+}
+
+function createProjectCollection(
+  content: RawProjectCollection,
+  language: SupportedLanguage,
+): ProjectCollection {
+  return Object.fromEntries(
+    Object.entries(content).map(
+      ([projectId, project]) => [
+        projectId,
+        createProjectContent(
+          project,
+          `project "${projectId}" (${language})`,
+        ),
+      ],
+    ),
+  );
+}
+
+const frProjectPage =
+  frProjectPageJson satisfies ContentPage;
+
+const enProjectPage =
+  enProjectPageJson satisfies ContentPage;
+
+const frProjectIndex =
+  frProjectIndexJson satisfies ContentIndex;
+
+const enProjectIndex =
+  enProjectIndexJson satisfies ContentIndex;
+
+const frProjects = createProjectCollection(
+  {
+    "lxp-campus": frLxpCampusJson,
+    "molecular-communication":
+      frMolecularCommunicationJson,
+    "iscat-platform": frIscatPlatformJson,
+    "mllpa-project": frMllpaProjectJson,
+    "medical-microscope": frMedicalMicroscopeJson,
+  } satisfies RawProjectCollection,
+  "fr",
+);
+
+const enProjects = createProjectCollection(
+  {
+    "lxp-campus": enLxpCampusJson,
+    "molecular-communication":
+      enMolecularCommunicationJson,
+    "iscat-platform": enIscatPlatformJson,
+    "mllpa-project": enMllpaProjectJson,
+    "medical-microscope": enMedicalMicroscopeJson,
+  } satisfies RawProjectCollection,
+  "en",
+);
 
 const localizedProjectPages: LocalizedContent<ContentPage> = {
   fr: frProjectPage,
@@ -65,23 +158,41 @@ const localizedProjectCollections: LocalizedContent<ProjectCollection> = {
   en: enProjects,
 };
 
-function getProjectCollection(language: SupportedLanguage): ProjectCollection {
-  return selectLocalizedContent(localizedProjectCollections, language);
+function getProjectCollection(
+  language: SupportedLanguage,
+): ProjectCollection {
+  return selectLocalizedContent(
+    localizedProjectCollections,
+    language,
+  );
 }
 
 function hasOwnProject(
   projects: ProjectCollection,
   id: ContentId | undefined,
 ): id is ContentId {
-  return id !== undefined && Object.prototype.hasOwnProperty.call(projects, id);
+  return (
+    id !== undefined &&
+    Object.prototype.hasOwnProperty.call(projects, id)
+  );
 }
 
-export function getProjectPage(language: SupportedLanguage): ContentPage {
-  return selectLocalizedContent(localizedProjectPages, language);
+export function getProjectPage(
+  language: SupportedLanguage,
+): ContentPage {
+  return selectLocalizedContent(
+    localizedProjectPages,
+    language,
+  );
 }
 
-export function getProjectIndex(language: SupportedLanguage): ContentIndex {
-  return selectLocalizedContent(localizedProjectIndexes, language);
+export function getProjectIndex(
+  language: SupportedLanguage,
+): ContentIndex {
+  return selectLocalizedContent(
+    localizedProjectIndexes,
+    language,
+  );
 }
 
 export function getProjectById(
@@ -90,7 +201,9 @@ export function getProjectById(
 ): ProjectContent | undefined {
   const projects = getProjectCollection(language);
 
-  return hasOwnProject(projects, id) ? projects[id] : undefined;
+  return hasOwnProject(projects, id)
+    ? projects[id]
+    : undefined;
 }
 
 export function getAdjacentProjectIds(
@@ -104,7 +217,10 @@ export function getAdjacentProjectIds(
   const projects = getProjectCollection(language);
   const position = index.order.indexOf(id);
 
-  if (position === -1 || !hasOwnProject(projects, id)) {
+  if (
+    position === -1 ||
+    !hasOwnProject(projects, id)
+  ) {
     return {};
   }
 
@@ -112,7 +228,11 @@ export function getAdjacentProjectIds(
   const nextId = index.order[position + 1];
 
   return {
-    ...(hasOwnProject(projects, previousId) ? { previousId } : {}),
-    ...(hasOwnProject(projects, nextId) ? { nextId } : {}),
+    ...(hasOwnProject(projects, previousId)
+      ? { previousId }
+      : {}),
+    ...(hasOwnProject(projects, nextId)
+      ? { nextId }
+      : {}),
   };
 }

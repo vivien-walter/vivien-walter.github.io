@@ -5,75 +5,93 @@
         "start": "2024-01-03",
         "end": "2026-07-15"
     },
-    "sections": [
+    "overview": {
+        "facts": [
+            {
+                "label": "Project type",
+                "value": "Virtual campus and LXP platform"
+            },
+            {
+                "label": "Role",
+                "value": "Product Manager"
+            },
+            {
+                "label": "Team",
+                "value": "Multidisciplinary team averaging eleven people"
+            },
+            {
+                "label": "Confidentiality",
+                "value": "Client anonymised"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "The project was developed for a French digital apprenticeship training centre preparing learners for professional qualifications at levels 3 to 6.",
+            "The objective was to design an ecosystem combining a web platform, educational tools, support services, generative artificial intelligence and immersive experiences."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "As Product Manager, I was responsible for defining the objectives, scope, resources, organisation and roadmap.",
+            "I handled requirements gathering and analysis, drafted functional and technical specifications, presented solutions, managed decisions and validated deliverables with the client.",
+            "I directly and matrix-managed a multidisciplinary team averaging eleven people while personally contributing to the backend, the generative-AI ecosystem and selected interfaces."
+        ]
+    },
+    "features": [
         {
-            "title": "Context and objectives",
-            "paragraphs": [
-                "The project was developed for a French digital apprenticeship training centre preparing learners for professional qualifications at levels 3 to 6.",
-                "The objective was to design an ecosystem combining a web platform, educational tools, support services, generative artificial intelligence and immersive experiences."
-            ]
+            "icon": "project",
+            "title": "Product leadership",
+            "description": "Definition of the scope, resources, organisation and roadmap, followed by decision management and validation of deliverables."
         },
         {
-            "title": "Project management and responsibilities",
-            "paragraphs": [
-                "As Product Manager, I was responsible for managing the project and also contributed directly to selected technical areas."
-            ],
-            "items": [
-                "Definition of objectives, scope, resources, organisation and roadmap.",
-                "Requirements gathering and analysis, drafting of functional and technical specifications, presentation of solutions and validation of deliverables with the client.",
-                "Direct and matrix coordination of a multidisciplinary team averaging eleven people.",
-                "Organisation of weekly cross-functional meetings and pragmatic delegation through the Lead Developer."
-            ]
+            "icon": "code",
+            "title": "TypeScript backend",
+            "description": "Design and development of parts of the backend using TypeScript, Node.js, Express and MongoDB."
         },
         {
-            "title": "Direct contributions",
-            "paragraphs": [
-                "My personal contributions focused primarily on the backend, artificial intelligence integration and selected administration interfaces."
-            ],
-            "items": [
-                "Design and development of parts of the backend using TypeScript, Node.js, Express and MongoDB.",
-                "Migration of the backend to TypeScript, Zod validation for reads and writes, redesign of the authentication token system, addition of API access keys and server-side pagination.",
-                "Correction of functional defects, including blocking issues, participation in code reviews and validation of pull requests.",
-                "Design of the architecture and integration protocols for several generative artificial intelligence providers.",
-                "Development of backend code, a processing queue and administration interfaces for AI features.",
-                "Development of selected React and Tailwind CSS interfaces, mainly for administration.",
-                "Management of prompt engineering and contribution to the objectives, scenarios, interfaces, quality controls and user testing of the XR applications."
-            ]
+            "icon": "automation",
+            "title": "Architecture and security",
+            "description": "Migration of the backend to TypeScript, Zod validation, redesign of authentication tokens, API access keys and server-side pagination."
         },
         {
-            "title": "Collective deliveries",
-            "paragraphs": [
-                "The project deliveries resulted from the coordinated work of the multidisciplinary team."
-            ],
-            "items": [
-                "Operational backend and artificial intelligence ecosystem.",
-                "Four completed XR applications: an interview simulator, a physical disability simulation, an AR viewer for 3D prototypes and a VR training application for supporting autistic people.",
-                "User interface approximately 80% complete at the end of the contract, with three secondary areas still requiring completion."
-            ]
+            "icon": "machine-learning",
+            "title": "Generative-AI ecosystem",
+            "description": "Design of the architecture and protocols required to use several generative-artificial-intelligence providers."
         },
         {
-            "title": "Confidentiality and limitations",
-            "paragraphs": [
-                "The client’s identity, confidential screenshots and provisional figures relating to funding, budget and user numbers are not published."
-            ]
+            "icon": "web",
+            "title": "Processing and administration",
+            "description": "Development of a processing queue, administration interfaces and selected interfaces using React and Tailwind CSS."
+        },
+        {
+            "icon": "visualization",
+            "title": "XR applications",
+            "description": "Leadership of prompt engineering and coordination of the production of four XR applications integrated into the campus ecosystem."
         }
     ],
+    "results": [
+        "Backend and artificial-intelligence ecosystem operational at the end of the contract.",
+        "Four XR applications completed.",
+        "User interface approximately 80% complete, with three secondary areas still outstanding."
+    ],
+    "sections": [],
     "technologies": [
-        "TypeScript",
         "Node.js",
         "Express",
         "MongoDB",
         "Zod",
         "React",
         "Tailwind CSS",
-        "OpenAI / ChatGPT",
-        "Claude",
-        "Gemini",
-        "Mistral",
-        "DeepSeek",
-        "Virtual and augmented reality"
+        "Generative AI",
+        "XR"
     ],
     "programmingLanguages": [
         "TypeScript"
+    ],
+    "relatedExperiences": [
+        {
+            "experienceId": "imaginexr"
+        }
     ]
 }

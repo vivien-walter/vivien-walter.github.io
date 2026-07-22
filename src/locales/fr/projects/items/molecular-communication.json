@@ -5,80 +5,84 @@
         "start": "2021-03",
         "end": "2023-08"
     },
-    "sections": [
+    "overview": {
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Laboratoire et plateforme expérimentale de communication moléculaire"
+            },
+            {
+                "label": "Rôle",
+                "value": "Chef de projet R&D / Postdoctoral Research Associate"
+            },
+            {
+                "label": "Équipe",
+                "value": "Équipe moyenne de cinq personnes et neuf personnes formées au total"
+            },
+            {
+                "label": "Financements",
+                "value": "Deux financements EPSRC de 300 000 € et 60 000 €"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Le projet a été mené à King’s College London afin de créer depuis zéro un laboratoire de communication moléculaire et une plateforme expérimentale permettant de confronter les modèles théoriques à des systèmes réels.",
+            "Le testbed associait chimie, microfluidique, détection UV-Visible, instrumentation, électronique, logiciels et traitement du signal.",
+            "Les expériences étudiaient notamment l’utilisation de réactions chimiques pour réaliser des fonctions de filtrage, de saturation, d’amplification et d’encodage."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "J’ai identifié et préparé les locaux, sélectionné et commandé les équipements, hottes, matériels lourds et consommables, puis contribué à la définition des protocoles de sécurité et de fonctionnement.",
+            "J’ai piloté une équipe moyenne de cinq personnes composée d’un PDRA junior, de deux doctorants et de deux stagiaires de Master. Neuf personnes ont été formées au total.",
+            "J’ai géré deux financements EPSRC de 300 000 € et 60 000 €, contribué partiellement au premier dossier et rédigé intégralement le second.",
+            "J’ai également développé les outils logiciels et d’apprentissage automatique associés à la plateforme, ainsi que les pompes-seringues utilisées dans le dispositif expérimental."
+        ]
+    },
+    "features": [
         {
+            "icon": "instrumentation",
             "title": "Création du laboratoire",
-            "paragraphs": [
-                "Le projet a été mené à King’s College London dans le cadre d’un poste de Postdoctoral Research Associate présenté publiquement comme une fonction de Chef de projet R&D."
-            ],
-            "items": [
-                "Identification et préparation des locaux.",
-                "Sélection et commande des équipements, hottes, matériels lourds et consommables.",
-                "Définition des protocoles de sécurité et de fonctionnement.",
-                "Formation des équipes à l’utilisation du laboratoire."
-            ]
+            "description": "Préparation des locaux, sélection des équipements et définition des protocoles nécessaires au fonctionnement du laboratoire."
         },
         {
-            "title": "Plateforme expérimentale",
-            "paragraphs": [
-                "Le testbed opérationnel permettait de valider expérimentalement des théories de communication moléculaire en utilisant des réactions chimiques pour traiter des signaux."
-            ],
-            "items": [
-                "Étude de fonctions de filtrage, saturation, amplification et encodage.",
-                "Conception d’une chaîne associant chimie, microfluidique, détection UV-Visible, électronique et logiciel.",
-                "Pilotage d’une équipe moyenne de cinq personnes : un PDRA junior, deux doctorants et deux stagiaires de Master.",
-                "Formation de neuf personnes au total."
-            ]
+            "icon": "research",
+            "title": "Testbed expérimental",
+            "description": "Conception d’une plateforme opérationnelle associant chimie, microfluidique, détection UV-Visible, électronique et logiciel."
         },
         {
-            "title": "Financement et pilotage",
-            "paragraphs": [
-                "Deux financements EPSRC de 300 000 € et 60 000 €, soit 360 000 € au total, ont été gérés dans le cadre du projet."
-            ],
-            "items": [
-                "Contribution partielle au premier dossier de financement.",
-                "Rédaction complète du second dossier."
-            ]
+            "icon": "analysis",
+            "title": "Traitement chimique du signal",
+            "description": "Étude expérimentale de fonctions de filtrage, de saturation, d’amplification et d’encodage fondées sur des réactions chimiques."
         },
         {
-            "title": "Intelligence artificielle et analyse du signal",
-            "paragraphs": [
-                "Un réseau de neurones convolutif unidimensionnel a été développé pour analyser des signaux UV-Visible et estimer la composition et les concentrations moléculaires de solutions aqueuses."
-            ],
-            "items": [
-                "Développement avec Python, TensorFlow et scikit-learn.",
-                "Préparation et analyse des signaux expérimentaux.",
-                "Travaux publiés dans IEEE Transactions on Molecular, Biological and Multi-Scale Communications en 2026."
-            ]
+            "icon": "machine-learning",
+            "title": "Analyse par CNN 1D",
+            "description": "Développement d’un réseau de neurones convolutif unidimensionnel pour estimer la composition et les concentrations moléculaires de solutions aqueuses à partir de signaux UV-Visible."
         },
         {
+            "icon": "automation",
             "title": "Pompes-seringues open source",
-            "paragraphs": [
-                "Six pompes-seringues ont été conçues et fabriquées pour être intégrées à la plateforme expérimentale."
-            ],
-            "items": [
-                "Conception mécanique avec Autodesk Fusion 360.",
-                "Fabrication par impression 3D.",
-                "Électronique fondée sur Arduino et communication I²C.",
-                "Développement des logiciels de contrôle en C++ et Python."
-            ]
+            "description": "Conception et fabrication de six pompes avec Fusion 360, impression 3D, électronique Arduino, communication I²C et logiciels de contrôle."
         },
         {
-            "title": "Résultats",
-            "paragraphs": [
-                "Le laboratoire a été créé, le testbed expérimental a été rendu opérationnel et les travaux ont donné lieu à deux publications dont j’étais le premier auteur et le rédacteur principal."
-            ],
-            "items": [
-                "Real-time signal processing via chemical reactions for a microfluidic molecular communication system — Nature Communications, 2023.",
-                "CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication — IEEE T-MBMC, 2026."
-            ]
+            "icon": "project",
+            "title": "Pilotage et financement",
+            "description": "Coordination de l’équipe, formation des utilisateurs et gestion de deux financements EPSRC représentant 360 000 € au total."
         }
     ],
+    "results": [
+        "Création depuis zéro d’un laboratoire de communication moléculaire.",
+        "Mise en fonctionnement d’un testbed expérimental associant chimie, microfluidique, instrumentation, électronique et logiciel.",
+        "Conception et fabrication de six pompes-seringues open source intégrées à la plateforme.",
+        "Publication de « Real-time signal processing via chemical reactions for a microfluidic molecular communication system » dans Nature Communications en 2023, en tant que premier auteur et rédacteur principal.",
+        "Publication de « CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication » dans IEEE T-MBMC en 2026, en tant que premier auteur et rédacteur principal."
+    ],
+    "sections": [],
     "technologies": [
-        "Python",
         "TensorFlow",
         "scikit-learn",
-        "C++",
         "Arduino",
         "I²C",
         "Autodesk Fusion 360",
@@ -89,5 +93,18 @@
     "programmingLanguages": [
         "Python",
         "C++"
+    ],
+    "relatedExperiences": [
+        {
+            "experienceId": "kcl-molecular-communication"
+        }
+    ],
+    "relatedPublications": [
+        {
+            "publicationId": "nature-molecular-communication-2023"
+        },
+        {
+            "publicationId": "ieee-cnn-2026"
+        }
     ]
 }

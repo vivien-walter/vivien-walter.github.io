@@ -1,48 +1,77 @@
 {
     "title": "Automated medical microscope under NDA",
-    "summary": "Development and deployment of an automated microscope for analysing medical samples during the COVID-19 crisis, while details concerning the samples and the precise medical use remain confidential.",
+    "summary": "Development and deployment of an automated microscope for analysing medical samples during the COVID-19 crisis, while details concerning the samples and their precise medical use remain confidential.",
     "period": {
         "start": "2020-04",
         "end": "2020-11"
     },
-    "sections": [
+    "overview": {
+        "facts": [
+            {
+                "label": "Project type",
+                "value": "Automated epifluorescence microscope"
+            },
+            {
+                "label": "Role",
+                "value": "Independent Technical Consultant"
+            },
+            {
+                "label": "Organisation",
+                "value": "Vidya Health Ltd"
+            },
+            {
+                "label": "Confidentiality",
+                "value": "Sample type and precise medical purpose covered by NDA"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "This technical consulting assignment was carried out for Vidya Health Ltd during the COVID-19 crisis.",
+            "The project concerned an automated epifluorescence microscope used to analyse medical samples.",
+            "The type of sample analysed and the precise medical purpose of the device are covered by a confidentiality agreement."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "The physical construction of the microscope followed the project manager’s specifications. My contribution focused primarily on the autofocus system and the software required to operate the instrument.",
+            "I proposed the autofocus algorithm, drafted the technical specifications and developed the control software using LabVIEW.",
+            "I integrated and deployed the software on the prototype, produced the technical and user documentation and trained the users."
+        ]
+    },
+    "features": [
         {
-            "title": "Context",
-            "paragraphs": [
-                "This technical consulting assignment was carried out for Vidya Health Ltd during the COVID-19 crisis.",
-                "The type of sample analysed and the precise medical purpose of the device are covered by a confidentiality agreement."
-            ]
+            "icon": "automation",
+            "title": "Automatic focusing",
+            "description": "Proposal and development of the autofocus algorithm for the automated microscope."
         },
         {
-            "title": "Design and development",
-            "paragraphs": [
-                "The assignment focused on microscope automation and development of the software required for its operation."
-            ],
-            "items": [
-                "Proposal of the autofocus algorithm.",
-                "Drafting of the technical specifications.",
-                "Development of the control software using LabVIEW.",
-                "Integration of the software into the prototype."
-            ]
+            "icon": "project",
+            "title": "Technical specifications",
+            "description": "Drafting of the specifications describing the expected behaviour of the system and its software."
         },
         {
-            "title": "Deployment and knowledge transfer",
-            "paragraphs": [
-                "The prototype was deployed in its operating environment."
-            ],
-            "items": [
-                "Production of technical and user documentation.",
-                "Training of users.",
-                "Subsequent replication of the prototype on two additional microscopes."
-            ]
+            "icon": "code",
+            "title": "LabVIEW control software",
+            "description": "Development of the software required to control and automate the microscope."
         },
         {
-            "title": "Result",
-            "paragraphs": [
-                "The automated microscope was deployed, and the solution was subsequently replicated on two additional instruments."
-            ]
+            "icon": "instrumentation",
+            "title": "Integration and deployment",
+            "description": "Integration of the software into the prototype followed by deployment of the system in its operating environment."
+        },
+        {
+            "icon": "research",
+            "title": "Documentation and training",
+            "description": "Production of technical and user documentation followed by training for the people responsible for operating the device."
         }
     ],
+    "results": [
+        "Deployment of the automated prototype in its operating environment.",
+        "Subsequent replication of the solution on two additional microscopes.",
+        "Delivery of the documentation and training of the users."
+    ],
+    "sections": [],
     "technologies": [
         "LabVIEW"
     ],

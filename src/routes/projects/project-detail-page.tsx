@@ -1,21 +1,34 @@
+import {
+  ArticleIcon,
+  CodeIcon,
+  TargetIcon,
+} from "@phosphor-icons/react";
 import { useTranslation } from "react-i18next";
-import { useLocation, useParams } from "react-router-dom";
+import {
+  useLocation,
+  useParams,
+} from "react-router-dom";
 
 import {
+  getExperienceRoute,
   getLanguageFromPathname,
   getPageRoute,
   getProjectRoute,
+  getResearchPublicationRoute,
+  getSoftwareRoute,
 } from "@/app/routing/navigation";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import NotFoundPage from "@/routes/not-found/not-found-page";
-import ContentLink from "@/shared/components/content-link";
-import ContentSections from "@/shared/components/content-sections";
+import { getExperienceById } from "@/routes/experience/data/experience-content.loader";
+import { getPublicationById } from "@/routes/research/data/research-content.loader";
+import { getSoftwareById } from "@/routes/software/data/software-content.loader";
 import DetailNavigation from "@/shared/components/detail-navigation";
 import PageHero from "@/shared/components/page-hero";
-import { formatContentDateRange } from "@/shared/content/content-formatters";
 
+import ProjectFeaturesSection from "./components/project-features-section";
+import ProjectNarrativeSection from "./components/project-narrative-section";
+import ProjectOverviewCard from "./components/project-overview-card";
+import ProjectRelatedItemsSection from "./components/project-related-items-section";
+import ProjectResourcesSection from "./components/project-resources-section";
 import {
   getAdjacentProjectIds,
   getProjectById,
@@ -25,14 +38,87 @@ function ProjectDetailPage() {
   const location = useLocation();
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
-  const language = getLanguageFromPathname(location.pathname);
-  const project = slug ? getProjectById(language, slug) : undefined;
+
+  const language = getLanguageFromPathname(
+    location.pathname,
+  );
+
+  const project = slug
+    ? getProjectById(language, slug)
+    : undefined;
 
   if (!project || !slug) {
     return <NotFoundPage />;
   }
 
-  const { previousId, nextId } = getAdjacentProjectIds(language, slug);
+  const relatedExperiences = (
+    project.relatedExperiences ?? []
+  ).flatMap(({ experienceId }) => {
+    const experience = getExperienceById(
+      language,
+      experienceId,
+    );
+
+    return experience
+      ? [
+          {
+            id: experienceId,
+            label: experience.role,
+            to: getExperienceRoute(
+              experienceId,
+              language,
+            ),
+          },
+        ]
+      : [];
+  });
+
+  const relatedSoftware = (
+    project.relatedSoftware ?? []
+  ).flatMap(({ softwareId }) => {
+    const software = getSoftwareById(
+      language,
+      softwareId,
+    );
+
+    return software
+      ? [
+          {
+            id: softwareId,
+            label: software.title,
+            to: getSoftwareRoute(
+              softwareId,
+              language,
+            ),
+          },
+        ]
+      : [];
+  });
+
+  const relatedPublications = (
+    project.relatedPublications ?? []
+  ).flatMap(({ publicationId }) => {
+    const publication = getPublicationById(
+      language,
+      publicationId,
+    );
+
+    return publication
+      ? [
+          {
+            id: publicationId,
+            label: publication.title,
+            to: getResearchPublicationRoute(
+              publicationId,
+              language,
+            ),
+          },
+        ]
+      : [];
+  });
+
+  const { previousId, nextId } =
+    getAdjacentProjectIds(language, slug);
 
   const previousProject = previousId
     ? getProjectById(language, previousId)
@@ -42,18 +128,50 @@ function ProjectDetailPage() {
     ? getProjectById(language, nextId)
     : undefined;
 
+  const labels =
+    language === "fr"
+      ? {
+          overview: "Résumé du projet",
+          context: "Contexte et objectifs",
+          contribution: "Ma contribution",
+          features: "Fonctionnalités clés",
+          results: "Résultats et impact",
+          resources: "Ressources",
+          tags: "Technologies et langages",
+        }
+      : {
+          overview: "Project overview",
+          context: "Context and objectives",
+          contribution: "My contribution",
+          features: "Key features",
+          results: "Results and impact",
+          resources: "Resources",
+          tags: "Technologies and languages",
+        };
+
+  const idPrefix = `project-${slug}`;
+
   return (
-    <article className="overflow-hidden" aria-labelledby="page-title">
+    <article
+      className="overflow-hidden"
+      aria-labelledby="page-title"
+    >
       <PageHero
         breadcrumbs={{
-          ariaLabel: t("breadcrumbs.label", { lng: language }),
+          ariaLabel: t("breadcrumbs.label", {
+            lng: language,
+          }),
           items: [
             {
-              label: t("breadcrumbs.home", { lng: language }),
+              label: t("breadcrumbs.home", {
+                lng: language,
+              }),
               to: getPageRoute("home", language),
             },
             {
-              label: t("breadcrumbs.projects", { lng: language }),
+              label: t("breadcrumbs.projects", {
+                lng: language,
+              }),
               to: getPageRoute("projects", language),
             },
             {
@@ -61,7 +179,9 @@ function ProjectDetailPage() {
             },
           ],
         }}
-        eyebrow={t("projectDetail.eyebrow", { lng: language })}
+        eyebrow={t("projectDetail.eyebrow", {
+          lng: language,
+        })}
         title={project.title}
         introduction={project.summary}
       />
@@ -72,116 +192,99 @@ function ProjectDetailPage() {
           "py-12 sm:py-14 lg:py-16",
         ].join(" ")}
       >
-        {project.period ? (
-          <section
-            className="border-t border-border py-12 sm:py-14 lg:py-16"
-            aria-labelledby="project-period"
-          >
-            <h2
-              id="project-period"
-              className={cn(
-                "!m-0 mb-5 text-xl font-bold leading-heading",
-                "tracking-[-0.025em] text-heading",
-              )}
-            >
-              {t("content.period", { lng: language })}
-            </h2>
-
-            <Badge
-              variant="outline"
-              className={cn(
-                "border-copper/50 bg-copper-soft px-3 py-1",
-                "font-mono font-semibold tracking-[0.04em]",
-                "text-copper-strong uppercase",
-              )}
-            >
-              {formatContentDateRange(project.period, language)}
-            </Badge>
-          </section>
-        ) : null}
-
-        <ContentSections
-          idPrefix={`project-${slug}`}
-          sections={project.sections}
+        <ProjectOverviewCard
+          ariaLabel={labels.overview}
+          language={language}
+          overview={project.overview}
+          period={project.period}
+          periodLabel={t("content.period", {
+            lng: language,
+          })}
+          programmingLanguages={
+            project.programmingLanguages
+          }
+          tagsLabel={labels.tags}
+          technologies={project.technologies}
         />
 
-        {project.technologies && project.technologies.length > 0 ? (
-          <section
-            className="border-t border-border py-12 sm:py-14 lg:py-16"
-            aria-labelledby="project-technologies"
-          >
-            <h2
-              id="project-technologies"
-              className={cn(
-                "!m-0 mb-6 text-xl font-bold leading-heading",
-                "tracking-[-0.025em] text-heading",
-              )}
-            >
-              {t("projectDetail.technologiesAndMethods", {
-                lng: language,
-              })}
-            </h2>
+        <ProjectNarrativeSection
+          title={labels.context}
+          titleId={`${idPrefix}-context-title`}
+          icon={TargetIcon}
+          paragraphs={project.context?.paragraphs}
+        />
 
-            <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
-              {project.technologies.map((technology) => (
-                <li className="m-0" key={technology}>
-                  <Badge
-                    variant="secondary"
-                    className={cn(
-                      "border border-border bg-muted px-3 py-1",
-                      "font-mono font-medium text-muted-foreground",
-                    )}
-                  >
-                    {technology}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
+        <ProjectNarrativeSection
+          title={labels.contribution}
+          titleId={`${idPrefix}-contribution-title`}
+          icon={CodeIcon}
+          paragraphs={project.contribution?.paragraphs}
+        />
 
-        {project.links && project.links.length > 0 ? (
-          <section
-            className="border-t border-border py-12 sm:py-14 lg:py-16"
-            aria-labelledby="project-resources"
-          >
-            <h2
-              id="project-resources"
-              className={cn(
-                "!m-0 mb-6 text-xl font-bold leading-heading",
-                "tracking-[-0.025em] text-heading",
-              )}
-            >
-              {t("projectDetail.evidenceAndResources", {
-                lng: language,
-              })}
-            </h2>
+        <ProjectFeaturesSection
+          title={labels.features}
+          titleId={`${idPrefix}-features-title`}
+          features={project.features}
+        />
 
-            <Card className="gap-0 border-border-strong py-0 shadow-subtle">
-              <CardContent className="grid gap-1 p-3 sm:p-4">
-                {project.links.map((link, index) => (
-                  <ContentLink
-                    key={`${link.href}-${index}`}
-                    link={link}
-                    variant="resource"
-                  />
-                ))}
-              </CardContent>
-            </Card>
-          </section>
-        ) : null}
+        <ProjectNarrativeSection
+          title={labels.results}
+          titleId={`${idPrefix}-results-title`}
+          icon={ArticleIcon}
+          items={project.results}
+        />
+
+        <ProjectResourcesSection
+          title={labels.resources}
+          titleId={`${idPrefix}-resources-title`}
+          links={project.links}
+        />
+
+        <ProjectRelatedItemsSection
+          title={t("content.relatedItems", {
+            lng: language,
+          })}
+          titleId={`${idPrefix}-related-items-title`}
+          experiencesTitle={t(
+            "pages.experience.title",
+            {
+              lng: language,
+            },
+          )}
+          softwareTitle={t("pages.software.title", {
+            lng: language,
+          })}
+          publicationsTitle={t(
+            "pages.research.publications.sectionTitle",
+            {
+              lng: language,
+            },
+          )}
+          experiences={relatedExperiences}
+          software={relatedSoftware}
+          publications={relatedPublications}
+        />
 
         <DetailNavigation
-          ariaLabel={t("projectDetail.navigationLabel", {
-            lng: language,
-          })}
+          className="mt-0 sm:mt-0"
+          ariaLabel={t(
+            "projectDetail.navigationLabel",
+            {
+              lng: language,
+            },
+          )}
           backLink={{
-            label: t("actions.backToProjects", { lng: language }),
+            label: t("actions.backToProjects", {
+              lng: language,
+            }),
             to: getPageRoute("projects", language),
           }}
-          previousLabel={t("actions.previousProject", {
-            lng: language,
-          })}
+          previousLabel={t(
+            "actions.previousProject",
+            {
+              lng: language,
+            },
+          )}
           nextLabel={t("actions.nextProject", {
             lng: language,
           })}
@@ -189,7 +292,10 @@ function ProjectDetailPage() {
             previousId && previousProject
               ? {
                   label: previousProject.title,
-                  to: getProjectRoute(previousId, language),
+                  to: getProjectRoute(
+                    previousId,
+                    language,
+                  ),
                 }
               : undefined
           }
@@ -197,7 +303,10 @@ function ProjectDetailPage() {
             nextId && nextProject
               ? {
                   label: nextProject.title,
-                  to: getProjectRoute(nextId, language),
+                  to: getProjectRoute(
+                    nextId,
+                    language,
+                  ),
                 }
               : undefined
           }

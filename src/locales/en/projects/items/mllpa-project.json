@@ -4,55 +4,72 @@
     "period": {
         "start": "2017-10"
     },
-    "sections": [
+    "overview": {
+        "facts": [
+            {
+                "label": "Project type",
+                "value": "Python module for machine learning-assisted analysis"
+            },
+            {
+                "label": "Role",
+                "value": "Lead developer of the module, website and documentation"
+            },
+            {
+                "label": "Availability",
+                "value": "Software, website and documentation publicly available"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "The project began at the University of Strasbourg as part of research into phase transitions in lipid membranes simulated through molecular dynamics.",
+            "The work focused on lipid bilayers and their phase transitions, including the ripple phase, with a high degree of autonomy in planning the methods, stages and scientific direction.",
+            "The simulations and scientific computing workflows notably relied on GROMACS, Linux, Bash and SLURM."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "I developed approximately 95% of the MLLPA code to transform the analysis methods produced during the project into a documented and reusable Python tool.",
+            "I structured the data-processing workflows and membrane-phase analyses, then developed machine-learning approaches using scikit-learn and, subsequently, a three-dimensional convolutional neural network with TensorFlow.",
+            "I also created the entire website and documentation. The work related to the 3D CNN remains unpublished and continues occasionally through collaborations."
+        ]
+    },
+    "features": [
         {
-            "title": "Scientific context",
-            "paragraphs": [
-                "The project began at the University of Strasbourg as part of research into phase transitions in lipid membranes simulated through molecular dynamics."
-            ],
-            "items": [
-                "Planning of methods, stages and scientific direction with a high degree of autonomy.",
-                "Study of lipid bilayers and their phase transitions, including the ripple phase.",
-                "Use of GROMACS, Linux, Bash and SLURM for simulations and scientific computing."
-            ]
+            "icon": "simulation",
+            "title": "Molecular simulation analysis",
+            "description": "Processing of molecular-dynamics simulation data to study the phases and phase transitions of lipid membranes."
         },
         {
-            "title": "Development of MLLPA",
-            "paragraphs": [
-                "MLLPA was designed to make the analysis methods developed during the project available as a reusable Python tool."
-            ],
-            "items": [
-                "Development of approximately 95% of the module’s code.",
-                "Creation of the entire website and documentation.",
-                "Structuring of data-processing workflows and membrane-phase analyses.",
-                "Public availability of the software, its website and documentation."
-            ]
+            "icon": "analysis",
+            "title": "Membrane-phase analysis",
+            "description": "Structuring of the data-processing workflows required to identify and study the states of membrane systems."
         },
         {
+            "icon": "machine-learning",
             "title": "Machine learning",
-            "paragraphs": [
-                "The project incorporated several machine-learning approaches to analyse the states and transitions of membrane systems."
-            ],
-            "items": [
-                "Development of methods based on scikit-learn.",
-                "Subsequent development of a three-dimensional convolutional neural network using TensorFlow.",
-                "The work related to the 3D CNN remains unpublished and continues occasionally through collaborations."
-            ]
+            "description": "Development of approaches using scikit-learn, followed by a three-dimensional convolutional neural network using TensorFlow."
         },
         {
-            "title": "Scientific results",
-            "paragraphs": [
-                "The work resulted in several scientific publications as first author."
-            ],
-            "items": [
-                "A machine learning study of the two states model for lipid bilayer phase transitions — Physical Chemistry Chemical Physics, 2020.",
-                "MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes — Journal of Computational Chemistry, 2021.",
-                "Ripple-like instability in the simulated gel phase of finite size phosphocholine bilayers — BBA Biomembranes, 2021."
-            ]
+            "icon": "code",
+            "title": "Reusable Python module",
+            "description": "Organisation of the scientific methods into a documented module that can be reused for other analyses."
+        },
+        {
+            "icon": "web",
+            "title": "Website and documentation",
+            "description": "Creation of the entire website and documentation accompanying the software."
         }
     ],
+    "results": [
+        "Development of approximately 95% of the MLLPA module’s code.",
+        "Public availability of the software, its website and its documentation.",
+        "Publication of “A machine learning study of the two states model for lipid bilayer phase transitions” in Physical Chemistry Chemical Physics in 2020.",
+        "Publication of “MLLPA: A Machine Learning-assisted Python module to study phase-specific events in lipid membranes” in the Journal of Computational Chemistry in 2021.",
+        "Publication of “Ripple-like instability in the simulated gel phase of finite size phosphocholine bilayers” in BBA Biomembranes in 2021."
+    ],
+    "sections": [],
     "technologies": [
-        "Python",
         "GROMACS",
         "NumPy",
         "h5py",
@@ -62,12 +79,32 @@
         "TensorFlow",
         "tqdm",
         "Linux",
-        "Bash",
         "SLURM"
     ],
     "programmingLanguages": [
         "Python",
         "Bash"
+    ],
+    "relatedExperiences": [
+        {
+            "experienceId": "strasbourg-mllpa"
+        }
+    ],
+    "relatedSoftware": [
+        {
+            "softwareId": "mllpa"
+        }
+    ],
+    "relatedPublications": [
+        {
+            "publicationId": "pccp-2020"
+        },
+        {
+            "publicationId": "jcc-mllpa-2021"
+        },
+        {
+            "publicationId": "bba-2021"
+        }
     ],
     "links": [
         {

@@ -5,44 +5,73 @@
         "start": "2020-04",
         "end": "2020-11"
     },
-    "sections": [
+    "overview": {
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Microscope d’épifluorescence automatisé"
+            },
+            {
+                "label": "Rôle",
+                "value": "Consultant technique indépendant"
+            },
+            {
+                "label": "Organisation",
+                "value": "Vidya Health Ltd"
+            },
+            {
+                "label": "Confidentialité",
+                "value": "Type d’échantillon et finalité médicale précise couverts par NDA"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Cette mission de conseil technique a été réalisée pour Vidya Health Ltd pendant la crise de la COVID-19.",
+            "Le projet concernait un microscope d’épifluorescence automatisé utilisé pour l’analyse d’échantillons médicaux.",
+            "Le type d’échantillon analysé et la finalité médicale précise du dispositif sont couverts par un accord de confidentialité."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "La construction physique du microscope suivait les spécifications du chef de projet. Ma contribution portait principalement sur le système de mise au point automatique et sur le logiciel nécessaire au fonctionnement de l’instrument.",
+            "J’ai proposé l’algorithme d’autofocus, rédigé les spécifications techniques, puis développé le logiciel de contrôle avec LabVIEW.",
+            "J’ai intégré et déployé le logiciel sur le prototype, produit la documentation technique et utilisateur, puis formé les utilisateurs."
+        ]
+    },
+    "features": [
         {
-            "title": "Contexte",
-            "paragraphs": [
-                "Cette mission de conseil technique a été réalisée pour Vidya Health Ltd pendant la crise de la COVID-19.",
-                "Le type d’échantillon analysé et la finalité médicale précise du dispositif sont couverts par un accord de confidentialité."
-            ]
+            "icon": "automation",
+            "title": "Mise au point automatique",
+            "description": "Proposition et développement de l’algorithme d’autofocus destiné au microscope automatisé."
         },
         {
-            "title": "Conception et développement",
-            "paragraphs": [
-                "La mission portait sur l’automatisation du microscope et sur le développement du logiciel nécessaire à son fonctionnement."
-            ],
-            "items": [
-                "Proposition de l’algorithme de mise au point automatique.",
-                "Rédaction des spécifications techniques.",
-                "Développement du logiciel de contrôle avec LabVIEW.",
-                "Intégration du logiciel au prototype."
-            ]
+            "icon": "project",
+            "title": "Spécifications techniques",
+            "description": "Rédaction des spécifications décrivant le comportement attendu du système et du logiciel."
         },
         {
-            "title": "Déploiement et transmission",
-            "paragraphs": [
-                "Le prototype a été déployé dans son environnement d’utilisation."
-            ],
-            "items": [
-                "Production de la documentation technique et utilisateur.",
-                "Formation des utilisateurs.",
-                "Reproduction ultérieure du prototype sur deux microscopes supplémentaires."
-            ]
+            "icon": "code",
+            "title": "Logiciel de contrôle LabVIEW",
+            "description": "Développement du logiciel nécessaire au contrôle et à l’automatisation du microscope."
         },
         {
-            "title": "Résultat",
-            "paragraphs": [
-                "Le microscope automatisé a été déployé, puis la solution a été reproduite sur deux instruments supplémentaires."
-            ]
+            "icon": "instrumentation",
+            "title": "Intégration et déploiement",
+            "description": "Intégration du logiciel au prototype puis déploiement du système dans son environnement d’utilisation."
+        },
+        {
+            "icon": "research",
+            "title": "Documentation et formation",
+            "description": "Production de la documentation technique et utilisateur, puis formation des personnes chargées d’utiliser le dispositif."
         }
     ],
+    "results": [
+        "Déploiement du prototype automatisé dans son environnement d’utilisation.",
+        "Reproduction ultérieure de la solution sur deux microscopes supplémentaires.",
+        "Transmission de la documentation et formation des utilisateurs."
+    ],
+    "sections": [],
     "technologies": [
         "LabVIEW"
     ],

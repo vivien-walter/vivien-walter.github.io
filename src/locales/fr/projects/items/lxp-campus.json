@@ -5,75 +5,93 @@
         "start": "2024-01-03",
         "end": "2026-07-15"
     },
-    "sections": [
+    "overview": {
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Campus virtuel et plateforme LXP"
+            },
+            {
+                "label": "Rôle",
+                "value": "Chef de produit / Product Manager"
+            },
+            {
+                "label": "Équipe",
+                "value": "Équipe multidisciplinaire moyenne de onze personnes"
+            },
+            {
+                "label": "Confidentialité",
+                "value": "Client anonymisé"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Le projet était destiné à un centre français de formation en apprentissage numérique préparant des titres professionnels de niveaux 3 à 6.",
+            "L’objectif était de concevoir un écosystème associant plateforme web, outils pédagogiques, services d’accompagnement, intelligence artificielle générative et expériences immersives."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "En tant que Chef de produit, j’étais responsable de la définition des objectifs, du périmètre, des ressources, de l’organisation et de la feuille de route.",
+            "J’assurais le recueil et l’analyse des besoins, la rédaction des spécifications fonctionnelles et techniques, la présentation des solutions, la gestion des décisions et la validation des livrables avec le client.",
+            "Je coordonnais directement et matriciellement une équipe multidisciplinaire moyenne de onze personnes, tout en contribuant personnellement au backend, à l’écosystème d’intelligence artificielle générative et à certaines interfaces."
+        ]
+    },
+    "features": [
         {
-            "title": "Contexte et objectifs",
-            "paragraphs": [
-                "Le projet était destiné à un centre français de formation en apprentissage numérique préparant des titres professionnels de niveaux 3 à 6.",
-                "L’objectif était de concevoir un écosystème associant plateforme web, outils pédagogiques, services d’accompagnement, intelligence artificielle générative et expériences immersives."
-            ]
+            "icon": "project",
+            "title": "Pilotage du produit",
+            "description": "Définition du périmètre, des ressources, de l’organisation et de la feuille de route, puis coordination des décisions et validation des livrables."
         },
         {
-            "title": "Pilotage et responsabilités",
-            "paragraphs": [
-                "En tant que Chef de produit, j’étais responsable du pilotage du projet et contribuais directement à certaines dimensions techniques."
-            ],
-            "items": [
-                "Définition des objectifs, du périmètre, des ressources, de l’organisation et de la feuille de route.",
-                "Recueil et analyse des besoins, rédaction des spécifications fonctionnelles et techniques, présentation des solutions et validation des livrables avec le client.",
-                "Coordination directe et matricielle d’une équipe multidisciplinaire moyenne de onze personnes.",
-                "Organisation de réunions transverses hebdomadaires et délégation pragmatique par l’intermédiaire du Lead Developer."
-            ]
+            "icon": "code",
+            "title": "Backend TypeScript",
+            "description": "Conception et développement de parties du backend avec TypeScript, Node.js, Express et MongoDB."
         },
         {
-            "title": "Contributions directes",
-            "paragraphs": [
-                "Mes contributions personnelles portaient principalement sur le backend, l’intégration de l’intelligence artificielle et certaines interfaces d’administration."
-            ],
-            "items": [
-                "Conception et développement de parties du backend avec TypeScript, Node.js, Express et MongoDB.",
-                "Migration du backend vers TypeScript, validation Zod des lectures et écritures, refonte du système de jetons d’authentification, ajout de clés d’accès API et pagination côté serveur.",
-                "Correction de défauts fonctionnels, dont certains bloquants, participation aux revues de code et validation de pull requests.",
-                "Conception de l’architecture et des protocoles d’intégration de plusieurs fournisseurs d’intelligence artificielle générative.",
-                "Développement de code backend, d’une file de traitement et d’interfaces d’administration pour les fonctions d’IA.",
-                "Développement de certaines interfaces React et Tailwind CSS, principalement destinées à l’administration.",
-                "Pilotage du prompt engineering et contribution aux objectifs, scénarios, interfaces, contrôles qualité et tests utilisateurs des applications XR."
-            ]
+            "icon": "automation",
+            "title": "Architecture et sécurisation",
+            "description": "Migration du backend vers TypeScript, validation Zod, refonte des jetons d’authentification, clés d’accès API et pagination côté serveur."
         },
         {
-            "title": "Livraisons collectives",
-            "paragraphs": [
-                "Les livraisons du projet résultaient du travail coordonné de l’équipe multidisciplinaire."
-            ],
-            "items": [
-                "Backend et écosystème d’intelligence artificielle opérationnels.",
-                "Quatre applications XR terminées : simulateur d’entretien, simulation de handicap physique, visualiseur AR de prototypes 3D et formation VR à l’accompagnement de personnes autistes.",
-                "Interface utilisateur approximativement achevée à 80 % à la fin du contrat, avec trois espaces secondaires restant à finaliser."
-            ]
+            "icon": "machine-learning",
+            "title": "Écosystème d’IA générative",
+            "description": "Conception de l’architecture et des protocoles nécessaires à l’utilisation de plusieurs fournisseurs d’intelligence artificielle générative."
         },
         {
-            "title": "Confidentialité et limites",
-            "paragraphs": [
-                "L’identité du client, les captures confidentielles ainsi que les chiffres provisoires de financement, de budget et d’utilisateurs ne sont pas publiés."
-            ]
+            "icon": "web",
+            "title": "Traitement et administration",
+            "description": "Développement d’une file de traitement, d’interfaces d’administration et de certaines interfaces avec React et Tailwind CSS."
+        },
+        {
+            "icon": "visualization",
+            "title": "Applications XR",
+            "description": "Pilotage du prompt engineering et de la production de quatre applications XR intégrées à l’écosystème du campus."
         }
     ],
+    "results": [
+        "Backend et écosystème d’intelligence artificielle opérationnels à la fin du contrat.",
+        "Quatre applications XR terminées.",
+        "Interface utilisateur approximativement achevée à 80 %, avec trois espaces secondaires restants."
+    ],
+    "sections": [],
     "technologies": [
-        "TypeScript",
         "Node.js",
         "Express",
         "MongoDB",
         "Zod",
         "React",
         "Tailwind CSS",
-        "OpenAI / ChatGPT",
-        "Claude",
-        "Gemini",
-        "Mistral",
-        "DeepSeek",
-        "Réalité virtuelle et augmentée"
+        "IA générative",
+        "XR"
     ],
     "programmingLanguages": [
         "TypeScript"
+    ],
+    "relatedExperiences": [
+        {
+            "experienceId": "imaginexr"
+        }
     ]
 }
