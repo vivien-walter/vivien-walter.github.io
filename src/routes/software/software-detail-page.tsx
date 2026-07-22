@@ -1,20 +1,22 @@
 import { useTranslation } from "react-i18next";
-import { useLocation, useParams } from "react-router-dom";
+import {
+  useLocation,
+  useParams,
+} from "react-router-dom";
 
 import {
   getLanguageFromPathname,
   getPageRoute,
   getSoftwareRoute,
 } from "@/app/routing/navigation";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import NotFoundPage from "@/routes/not-found/not-found-page";
-import ContentLink from "@/shared/components/content-link";
-import ContentSections from "@/shared/components/content-sections";
+import DetailDescriptionSection from "@/shared/components/detail-description-section";
+import DetailHighlightsBand from "@/shared/components/detail-highlights-band";
 import DetailNavigation from "@/shared/components/detail-navigation";
+import DetailTechnologiesSection from "@/shared/components/detail-technologies-section";
 import PageHero from "@/shared/components/page-hero";
 
+import SoftwareResourcesSection from "./components/software-resources-section";
 import {
   getAdjacentSoftwareIds,
   getSoftwareById,
@@ -24,14 +26,21 @@ function SoftwareDetailPage() {
   const location = useLocation();
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
-  const language = getLanguageFromPathname(location.pathname);
-  const software = slug ? getSoftwareById(language, slug) : undefined;
+
+  const language = getLanguageFromPathname(
+    location.pathname,
+  );
+
+  const software = slug
+    ? getSoftwareById(language, slug)
+    : undefined;
 
   if (!software || !slug) {
     return <NotFoundPage />;
   }
 
-  const { previousId, nextId } = getAdjacentSoftwareIds(language, slug);
+  const { previousId, nextId } =
+    getAdjacentSoftwareIds(language, slug);
 
   const previousSoftware = previousId
     ? getSoftwareById(language, previousId)
@@ -41,28 +50,63 @@ function SoftwareDetailPage() {
     ? getSoftwareById(language, nextId)
     : undefined;
 
+  const labels =
+    language === "fr"
+      ? {
+          highlights:
+            "Informations clés sur le logiciel",
+          description: "Description",
+          externalLink: "Lien externe",
+        }
+      : {
+          highlights: "Key software information",
+          description: "Description",
+          externalLink: "External link",
+        };
+
+  const idPrefix = `software-${slug}`;
+
   return (
-    <article className="overflow-hidden" aria-labelledby="page-title">
+    <article
+      className="overflow-hidden"
+      aria-labelledby="page-title"
+    >
       <PageHero
         breadcrumbs={{
-          ariaLabel: t("breadcrumbs.label", { lng: language }),
+          ariaLabel: t("breadcrumbs.label", {
+            lng: language,
+          }),
           items: [
             {
-              label: t("breadcrumbs.home", { lng: language }),
+              label: t("breadcrumbs.home", {
+                lng: language,
+              }),
               to: getPageRoute("home", language),
             },
             {
-              label: t("breadcrumbs.software", { lng: language }),
-              to: getPageRoute("software", language),
+              label: t("breadcrumbs.software", {
+                lng: language,
+              }),
+              to: getPageRoute(
+                "software",
+                language,
+              ),
             },
             {
               label: software.title,
             },
           ],
         }}
-        eyebrow={t("softwareDetail.eyebrow", { lng: language })}
+        eyebrow={t("softwareDetail.eyebrow", {
+          lng: language,
+        })}
         title={software.title}
         introduction={software.summary}
+      />
+
+      <DetailHighlightsBand
+        ariaLabel={labels.highlights}
+        items={software.highlights}
       />
 
       <div
@@ -71,92 +115,75 @@ function SoftwareDetailPage() {
           "py-12 sm:py-14 lg:py-16",
         ].join(" ")}
       >
-        <ContentSections
-          idPrefix={`software-${slug}`}
-          sections={software.sections}
+        <DetailDescriptionSection
+          description={software.description}
+          idPrefix={idPrefix}
+          title={labels.description}
         />
 
-        {software.technologies && software.technologies.length > 0 ? (
-          <section
-            className="border-t border-border py-12 sm:py-14 lg:py-16"
-            aria-labelledby="software-technologies"
-          >
-            <h2
-              id="software-technologies"
-              className={cn(
-                "!mt-0 !mb-6 text-xl font-bold leading-heading",
-                "tracking-[-0.025em] text-heading",
-              )}
-            >
-              {t("softwareDetail.technologies", { lng: language })}
-            </h2>
+        <DetailTechnologiesSection
+          externalLinkLabel={labels.externalLink}
+          groups={software.technologyGroups}
+          idPrefix={idPrefix}
+          title={t(
+            "softwareDetail.technologies",
+            {
+              lng: language,
+            },
+          )}
+        />
 
-            <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
-              {software.technologies.map((technology) => (
-                <li className="m-0" key={technology}>
-                  <Badge
-                    variant="secondary"
-                    className={cn(
-                      "border border-border bg-muted px-3 py-1",
-                      "font-mono font-medium text-muted-foreground",
-                    )}
-                  >
-                    {technology}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
-
-        {software.links && software.links.length > 0 ? (
-          <section
-            className="border-t border-border py-12 sm:py-14 lg:py-16"
-            aria-labelledby="software-resources"
-          >
-            <h2
-              id="software-resources"
-              className={cn(
-                "!mt-0 !mb-6 text-xl font-bold leading-heading",
-                "tracking-[-0.025em] text-heading",
-              )}
-            >
-              {t("softwareDetail.resources", { lng: language })}
-            </h2>
-
-            <Card className="gap-0 border-border-strong py-0 shadow-subtle">
-              <CardContent className="grid gap-1 p-3 sm:p-4">
-                {software.links.map((link, index) => (
-                  <ContentLink
-                    key={`${link.href}-${index}`}
-                    link={link}
-                    variant="resource"
-                  />
-                ))}
-              </CardContent>
-            </Card>
-          </section>
-        ) : null}
+        <SoftwareResourcesSection
+          links={software.links}
+          title={t(
+            "softwareDetail.resources",
+            {
+              lng: language,
+            },
+          )}
+          titleId={`${idPrefix}-resources-title`}
+        />
 
         <DetailNavigation
-          ariaLabel={t("softwareDetail.navigationLabel", {
-            lng: language,
-          })}
+          ariaLabel={t(
+            "softwareDetail.navigationLabel",
+            {
+              lng: language,
+            },
+          )}
           backLink={{
-            label: t("actions.backToSoftware", { lng: language }),
-            to: getPageRoute("software", language),
+            label: t(
+              "actions.backToSoftware",
+              {
+                lng: language,
+              },
+            ),
+            to: getPageRoute(
+              "software",
+              language,
+            ),
           }}
-          previousLabel={t("actions.previousSoftware", {
-            lng: language,
-          })}
-          nextLabel={t("actions.nextSoftware", {
-            lng: language,
-          })}
+          previousLabel={t(
+            "actions.previousSoftware",
+            {
+              lng: language,
+            },
+          )}
+          nextLabel={t(
+            "actions.nextSoftware",
+            {
+              lng: language,
+            },
+          )}
           previousLink={
             previousId && previousSoftware
               ? {
-                  label: previousSoftware.title,
-                  to: getSoftwareRoute(previousId, language),
+                  label:
+                    previousSoftware.title,
+                  to: getSoftwareRoute(
+                    previousId,
+                    language,
+                  ),
                 }
               : undefined
           }
@@ -164,7 +191,10 @@ function SoftwareDetailPage() {
             nextId && nextSoftware
               ? {
                   label: nextSoftware.title,
-                  to: getSoftwareRoute(nextId, language),
+                  to: getSoftwareRoute(
+                    nextId,
+                    language,
+                  ),
                 }
               : undefined
           }

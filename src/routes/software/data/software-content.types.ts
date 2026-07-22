@@ -2,8 +2,10 @@ import type {
   ContentCollection,
   ContentId,
   ContentLink,
-  ContentSection,
 } from "@/shared/content/content.types";
+import type { DetailDescriptionContent } from "@/shared/components/detail-description-section";
+import type { DetailHighlightItem } from "@/shared/components/detail-highlights-band";
+import type { DetailTechnologyGroup } from "@/shared/components/detail-technologies-section";
 
 export const softwareKinds = [
   "software",
@@ -23,7 +25,11 @@ export type SoftwareContent = {
   readonly kind: SoftwareKind;
   readonly title: string;
   readonly summary: string;
-  readonly sections: readonly ContentSection[];
+
+  readonly description: DetailDescriptionContent;
+  readonly highlights?: readonly DetailHighlightItem[];
+  readonly technologyGroups: readonly DetailTechnologyGroup[];
+
   readonly year?: number;
   readonly projectIds?: readonly ContentId[];
   readonly languages?: readonly string[];

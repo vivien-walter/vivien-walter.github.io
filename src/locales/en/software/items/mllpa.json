@@ -6,29 +6,63 @@
         "Python"
     ],
     "summary": "A documented and reusable Python module for machine-learning-assisted analysis of lipid-membrane phases obtained from molecular-dynamics simulations.",
-    "sections": [
+    "highlights": [
         {
-            "title": "Purpose",
-            "paragraphs": [
-                "MLLPA makes reusable the methods developed to study the phases and transitions of simulated lipid membranes."
-            ]
+            "icon": "research",
+            "label": "Research topic",
+            "value": "Lipid membranes, phase transitions and membrane instabilities."
         },
         {
-            "title": "Personal contribution",
-            "paragraphs": [
-                "Development of approximately 95% of the module’s code and creation of the entire website and documentation."
-            ],
+            "icon": "software",
+            "label": "Computational approaches",
+            "value": "Molecular simulation, data analysis and machine learning."
+        },
+        {
+            "icon": "publication",
+            "label": "Publications",
+            "value": "Three first-author articles on lipid membranes and MLLPA."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "MLLPA makes reusable the methods developed to study the phases and transitions of simulated lipid membranes.",
+            "The module structures the processing of data obtained from molecular-dynamics simulations and supports the analysis of membrane phases using machine-learning approaches.",
+            "Vivien developed approximately 95% of the module’s code and created its entire website and documentation. The software, its website and documentation are publicly available."
+        ]
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
             "items": [
-                "Structuring of data-processing workflows.",
-                "Development of membrane-phase analyses.",
-                "Development of machine-learning approaches using scikit-learn.",
-                "Later work on an unpublished 3D CNN using TensorFlow."
+                {
+                    "label": "Python"
+                }
             ]
         },
         {
-            "title": "Availability",
-            "paragraphs": [
-                "The software, its website and documentation are publicly available."
+            "title": "Libraries and frameworks",
+            "items": [
+                {
+                    "label": "NumPy"
+                },
+                {
+                    "label": "h5py"
+                },
+                {
+                    "label": "MDAnalysis"
+                },
+                {
+                    "label": "pandas"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "tqdm"
+                }
             ]
         }
     ],
