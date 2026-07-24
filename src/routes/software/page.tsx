@@ -661,7 +661,7 @@ function SoftwarePage() {
 
           <div
             className={cn(
-              "flex flex-col gap-5",
+              "flex flex-col",
               "lg:flex-row",
               "lg:items-end",
               "lg:justify-between",
@@ -673,10 +673,11 @@ function SoftwarePage() {
                 page.catalog.sectionTitle
               }
               className={cn(
-                "inline-flex w-fit",
-                "rounded-md border",
-                "border-border-strong",
-                "bg-brand-background p-1",
+                "order-2 flex min-w-0",
+                "items-end gap-7",
+                "overflow-x-auto",
+                "sm:gap-10",
+                "lg:order-1",
               )}
             >
               <Button
@@ -698,16 +699,26 @@ function SoftwarePage() {
                     : -1
                 }
                 className={cn(
-                  "min-h-10 px-4",
+                  "relative min-h-12",
+                  "shrink-0 rounded-none",
+                  "border-0 bg-transparent",
+                  "px-1 py-3",
+                  "text-sm font-semibold",
                   "text-muted-foreground",
-                  "hover:bg-action-soft",
-                  "hover:text-action-strong",
+                  "shadow-none",
+                  "hover:bg-transparent",
+                  "hover:text-brand-primary",
+                  "focus-visible:bg-transparent",
                   activeKind ===
                     "software" && [
-                    "bg-brand-primary",
-                    "text-white",
-                    "hover:bg-brand-primary",
-                    "hover:text-white",
+                    "text-brand-primary",
+                    "after:absolute",
+                    "after:right-0",
+                    "after:bottom-0",
+                    "after:left-0",
+                    "after:z-10",
+                    "after:h-0.5",
+                    "after:bg-brand-primary",
                   ],
                 )}
                 onClick={() => {
@@ -741,16 +752,26 @@ function SoftwarePage() {
                     : -1
                 }
                 className={cn(
-                  "min-h-10 px-4",
+                  "relative min-h-12",
+                  "shrink-0 rounded-none",
+                  "border-0 bg-transparent",
+                  "px-1 py-3",
+                  "text-sm font-semibold",
                   "text-muted-foreground",
-                  "hover:bg-action-soft",
-                  "hover:text-action-strong",
+                  "shadow-none",
+                  "hover:bg-transparent",
+                  "hover:text-brand-primary",
+                  "focus-visible:bg-transparent",
                   activeKind ===
                     "web-application" && [
-                    "bg-brand-primary",
-                    "text-white",
-                    "hover:bg-brand-primary",
-                    "hover:text-white",
+                    "text-brand-primary",
+                    "after:absolute",
+                    "after:right-0",
+                    "after:bottom-0",
+                    "after:left-0",
+                    "after:z-10",
+                    "after:h-0.5",
+                    "after:bg-brand-primary",
                   ],
                 )}
                 onClick={() => {
@@ -766,60 +787,68 @@ function SoftwarePage() {
               </Button>
             </div>
 
-            <SoftwareControls
-              sortBy={sortBy}
-              projectOptions={
-                projectOptions
-              }
-              languageOptions={
-                languageOptions
-              }
-              selectedProjects={
-                selectedProjects
-              }
-              selectedLanguages={
-                selectedLanguages
-              }
-              labels={
-                page.catalog.controls
-              }
-              onSortChange={setSortBy}
-              onProjectChange={(
-                value,
-                checked,
-              ) => {
-                setSelectedProjects(
-                  (currentValues) =>
-                    updateSelection(
-                      currentValues,
-                      value,
-                      checked,
-                    ),
-                );
-              }}
-              onLanguageChange={(
-                value,
-                checked,
-              ) => {
-                setSelectedLanguages(
-                  (currentValues) =>
-                    updateSelection(
-                      currentValues,
-                      value,
-                      checked,
-                    ),
-                );
-              }}
-              onClearFilters={() => {
-                setSelectedProjects(
-                  new Set<string>(),
-                );
+            <div
+              className={cn(
+                "order-1 mb-4",
+                "flex justify-end",
+                "lg:order-2 lg:mb-2",
+              )}
+            >
+              <SoftwareControls
+                sortBy={sortBy}
+                projectOptions={
+                  projectOptions
+                }
+                languageOptions={
+                  languageOptions
+                }
+                selectedProjects={
+                  selectedProjects
+                }
+                selectedLanguages={
+                  selectedLanguages
+                }
+                labels={
+                  page.catalog.controls
+                }
+                onSortChange={setSortBy}
+                onProjectChange={(
+                  value,
+                  checked,
+                ) => {
+                  setSelectedProjects(
+                    (currentValues) =>
+                      updateSelection(
+                        currentValues,
+                        value,
+                        checked,
+                      ),
+                  );
+                }}
+                onLanguageChange={(
+                  value,
+                  checked,
+                ) => {
+                  setSelectedLanguages(
+                    (currentValues) =>
+                      updateSelection(
+                        currentValues,
+                        value,
+                        checked,
+                      ),
+                  );
+                }}
+                onClearFilters={() => {
+                  setSelectedProjects(
+                    new Set<string>(),
+                  );
 
-                setSelectedLanguages(
-                  new Set<string>(),
-                );
-              }}
-            />
+                  setSelectedLanguages(
+                    new Set<string>(),
+                  );
+                }}
+              />
+            </div>
           </div>
 
           <div
@@ -830,7 +859,7 @@ function SoftwarePage() {
                 ? articlesTabId
                 : webApplicationsTabId
             }
-            className="mt-6 sm:mt-7"
+            className="mt-3 sm:mt-4"
           >
             {visibleSoftware.length >
             0 ? (

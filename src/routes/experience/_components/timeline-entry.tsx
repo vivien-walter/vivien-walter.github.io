@@ -7,13 +7,18 @@ import {
   type ElementType,
 } from "react";
 import { Link } from "react-router-dom";
-import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui";
 
 import {
   getExperienceRoute,
   getProjectRoute,
 } from "@/app/routing/navigation";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import type { ExperienceId } from "@/content/experience/registry";
 import type { ProjectId } from "@/content/projects/registry";
 import { cn } from "@/lib/utils";
@@ -78,6 +83,7 @@ function TimelineEntry({
 }: TimelineEntryProps) {
   const headingId =
     `experience-${experience.id}-title`;
+
   const Heading =
     `h${headingLevel}` as ElementType;
 
@@ -213,16 +219,15 @@ function TimelineEntry({
 
           {experience.relatedProjects.length >
           0 ? (
-            <DropdownMenuPrimitive.Root>
-              <DropdownMenuPrimitive.Trigger
-                asChild
-              >
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
                   className={cn(
                     "min-h-11 w-full justify-between",
                     "text-brand-primary",
-                    "hover:bg-action-soft hover:text-action-strong",
+                    "hover:bg-action-soft",
+                    "hover:text-action-strong",
                     "data-[state=open]:bg-action-soft",
                     "data-[state=open]:text-action-strong",
                   )}
@@ -237,50 +242,47 @@ function TimelineEntry({
                     weight="bold"
                   />
                 </Button>
-              </DropdownMenuPrimitive.Trigger>
+              </DropdownMenuTrigger>
 
-              <DropdownMenuPrimitive.Portal>
-                <DropdownMenuPrimitive.Content
-                  align="end"
-                  sideOffset={6}
-                  className={cn(
-                    "z-50 min-w-64",
-                    "max-w-[calc(100vw-2rem)]",
-                    "overflow-hidden rounded-md border",
-                    "border-border-strong bg-popover p-1",
-                    "text-popover-foreground shadow-elevated",
-                  )}
-                >
-                  {experience.relatedProjects.map(
-                    (project) => (
-                      <DropdownMenuPrimitive.Item
-                        asChild
-                        key={project.id}
+              <DropdownMenuContent
+                align="end"
+                sideOffset={6}
+                className={cn(
+                  "min-w-64",
+                  "max-w-[calc(100vw-2rem)]",
+                  "border-border-strong",
+                  "shadow-elevated",
+                )}
+              >
+                {experience.relatedProjects.map(
+                  (project) => (
+                    <DropdownMenuItem
+                      asChild
+                      key={project.id}
+                      className={cn(
+                        "min-h-11 cursor-pointer",
+                        "px-3 py-2",
+                        "font-medium text-brand-ink",
+                        "focus:bg-action-soft",
+                        "focus:text-action-strong",
+                      )}
+                    >
+                      <Link
+                        to={getProjectRoute(
+                          project.id,
+                          language,
+                        )}
+                        className="no-underline"
                       >
-                        <Link
-                          className={cn(
-                            "flex min-h-11 cursor-pointer items-center",
-                            "rounded-sm px-3 py-2",
-                            "text-sm font-medium text-brand-ink",
-                            "no-underline outline-none",
-                            "data-[highlighted]:bg-action-soft",
-                            "data-[highlighted]:text-action-strong",
-                          )}
-                          to={getProjectRoute(
-                            project.id,
-                            language,
-                          )}
-                        >
-                          <span className="min-w-0">
-                            {project.title}
-                          </span>
-                        </Link>
-                      </DropdownMenuPrimitive.Item>
-                    ),
-                  )}
-                </DropdownMenuPrimitive.Content>
-              </DropdownMenuPrimitive.Portal>
-            </DropdownMenuPrimitive.Root>
+                        <span className="min-w-0">
+                          {project.title}
+                        </span>
+                      </Link>
+                    </DropdownMenuItem>
+                  ),
+                )}
+              </DropdownMenuContent>
+            </DropdownMenu>
           ) : null}
         </div>
       </div>

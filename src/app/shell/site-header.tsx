@@ -24,14 +24,17 @@ import LanguageSwitcher from "./language-switcher";
 import MobileNavigation from "./mobile-navigation";
 
 function SiteHeader() {
+  /* Check the location on the website */
   const location = useLocation();
+  
+  /* Fetch all data for the translation */
   const { t } = useTranslation();
-
   const currentLanguage =
     getLanguageFromPathname(
       location.pathname,
     );
 
+  /* Fetch the page */
   const currentPageId =
     getPageIdFromPathname(
       location.pathname,
@@ -39,14 +42,12 @@ function SiteHeader() {
 
   const isHomePage =
     currentPageId === "home";
-
   const navigationLabel = t(
     "navigation.primaryLabel",
     {
       lng: currentLanguage,
     },
   );
-
   const siteName = t("site.name", {
     lng: currentLanguage,
   });
