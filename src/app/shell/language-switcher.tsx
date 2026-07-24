@@ -6,16 +6,13 @@ import { cn } from '@/lib/utils';
 
 import { getEquivalentLanguagePath, getLanguageFromPathname } from '../routing/navigation';
 
-type LanguageSwitcherProps = {
-  readonly variant?: 'light' | 'dark';
-};
-
-export default function LanguageSwitcher({ variant = 'light' }: LanguageSwitcherProps) {
+export default function LanguageSwitcher() {
+  /* Check the location on the website */
   const location = useLocation();
-  const { t } = useTranslation();
 
+  /* Fetch all data for the translation */
+  const { t } = useTranslation();
   const currentLanguage = getLanguageFromPathname(location.pathname);
-  const isDark = variant === 'dark';
 
   return (
     <nav
@@ -27,17 +24,18 @@ export default function LanguageSwitcher({ variant = 'light' }: LanguageSwitcher
       <ul className="m-0 inline-flex list-none items-center p-0">
         {supportedLanguages.map((language, index) => {
           const isCurrentLanguage = language === currentLanguage;
+
           const languageName = t(`languages.${language}`, {
             lng: currentLanguage,
           });
 
           return (
-            <li className="m-0 inline-flex items-center" key={language}>
-              {index > 0 && (
-                <span aria-hidden="true" className={cn('text-sm', isDark ? 'text-brand-background/55' : 'text-brand-ink/55')}>
+            <li key={language} className="m-0 inline-flex items-center">
+              {index > 0 ? (
+                <span aria-hidden="true" className="text-brand-ink/55 text-sm">
                   |
                 </span>
-              )}
+              ) : null}
 
               <Link
                 to={getEquivalentLanguagePath(location.pathname, language)}
@@ -52,18 +50,12 @@ export default function LanguageSwitcher({ variant = 'light' }: LanguageSwitcher
                   'text-sm tracking-[0.02em] no-underline',
                   'ease-standard transition-colors duration-150',
                   'focus-visible:ring-[3px] focus-visible:outline-none',
+                  'focus-visible:ring-ring/50',
                   'focus-visible:ring-offset-2',
-                  isDark
-                    ? ['focus-visible:ring-white/70', 'focus-visible:ring-offset-brand-dark']
-                    : ['focus-visible:ring-ring/50', 'focus-visible:ring-offset-background'],
-                  isCurrentLanguage &&
-                    (isDark
-                      ? ['text-brand-background font-semibold underline', 'decoration-brand-background decoration-2', 'underline-offset-4']
-                      : ['text-brand-ink font-semibold underline', 'decoration-brand-primary decoration-2', 'underline-offset-4']),
-                  !isCurrentLanguage &&
-                    (isDark
-                      ? ['text-brand-background/70 font-medium', 'hover:text-brand-background']
-                      : ['text-brand-ink/75 font-medium', 'hover:text-brand-primary']),
+                  'focus-visible:ring-offset-background',
+                  isCurrentLanguage
+                    ? ['text-brand-ink font-semibold underline', 'decoration-brand-primary decoration-2', 'underline-offset-4']
+                    : ['text-brand-ink/75 font-medium', 'hover:text-brand-primary'],
                 )}
               >
                 {language.toUpperCase()}
