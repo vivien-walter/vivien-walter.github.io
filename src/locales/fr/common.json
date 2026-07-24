@@ -1,7 +1,4 @@
 {
-    "site": {
-        "name": "Vivien Praud Walter"
-    },
     "accessibility": {
         "skipToContent": "Aller au contenu principal"
     },
@@ -11,6 +8,7 @@
         "experience": "Parcours",
         "projects": "Projets",
         "research": "Recherche et publications",
+        "researchCompact": "Recherche",
         "software": "Logiciels",
         "contact": "Contact",
         "mobile": {

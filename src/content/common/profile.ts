@@ -1,19 +1,8 @@
-import {
-  EnvelopeSimpleIcon,
-  GithubLogoIcon,
-  IdentificationBadgeIcon,
-  LinkedinLogoIcon,
-  type Icon,
-} from "@phosphor-icons/react";
+import { GithubLogoIcon, type Icon, IdentificationBadgeIcon, LinkedinLogoIcon } from '@phosphor-icons/react';
 
 type PublicPersonName = {
   readonly firstName: string;
   readonly lastName: string;
-};
-
-type PublicEmailContact = {
-  readonly icon: Icon;
-  readonly address: string;
 };
 
 type PublicExternalLink = {
@@ -25,39 +14,33 @@ type PublicExternalLink = {
 
 type PublicProfile = {
   readonly person: PublicPersonName;
-  readonly email: PublicEmailContact;
   readonly externalLinks: readonly PublicExternalLink[];
 };
 
 export const publicProfile = {
   person: {
-    firstName: "Vivien",
-    lastName: "Praud Walter",
-  },
-
-  email: {
-    icon: EnvelopeSimpleIcon,
-    address: "vivien.walter@proton.me",
+    firstName: 'Vivien',
+    lastName: 'Praud Walter',
   },
 
   externalLinks: [
     {
-      id: "linkedin",
+      id: 'linkedin',
       icon: LinkedinLogoIcon,
-      href: "https://www.linkedin.com/in/vivien-walter-4b3068129/",
-      displayValue: "linkedin.com/in/vivien-walter-4b3068129",
+      href: 'https://www.linkedin.com/in/vivien-walter-4b3068129/',
+      displayValue: 'linkedin.com/in/vivien-walter-4b3068129',
     },
     {
-      id: "github",
+      id: 'github',
       icon: GithubLogoIcon,
-      href: "https://github.com/vivien-walter",
-      displayValue: "github.com/vivien-walter",
+      href: 'https://github.com/vivien-walter',
+      displayValue: 'github.com/vivien-walter',
     },
     {
-      id: "orcid",
+      id: 'orcid',
       icon: IdentificationBadgeIcon,
-      href: "https://orcid.org/0000-0003-3203-9543",
-      displayValue: "0000-0003-3203-9543",
+      href: 'https://orcid.org/0000-0003-3203-9543',
+      displayValue: '0000-0003-3203-9543',
     },
   ],
 } as const satisfies PublicProfile;
