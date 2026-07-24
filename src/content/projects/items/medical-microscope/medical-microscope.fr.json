@@ -1,0 +1,71 @@
+{
+    "title": "Microscope médical automatisé sous NDA",
+    "summary": "Développement et déploiement d’un microscope automatisé destiné à l’analyse d’échantillons médicaux pendant la crise de la COVID-19, les détails relatifs aux échantillons et à l’usage médical précis restant confidentiels.",
+    "overview": {
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Microscope d’épifluorescence automatisé"
+            },
+            {
+                "label": "Rôle",
+                "value": "Consultant technique indépendant"
+            },
+            {
+                "label": "Organisation",
+                "value": "Vidya Health Ltd"
+            },
+            {
+                "label": "Confidentialité",
+                "value": "Type d’échantillon et finalité médicale précise couverts par NDA"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Cette mission de conseil technique a été réalisée pour Vidya Health Ltd pendant la crise de la COVID-19.",
+            "Le projet concernait un microscope d’épifluorescence automatisé utilisé pour l’analyse d’échantillons médicaux.",
+            "Le type d’échantillon analysé et la finalité médicale précise du dispositif sont couverts par un accord de confidentialité."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "La construction physique du microscope suivait les spécifications du chef de projet. Ma contribution portait principalement sur le système de mise au point automatique et sur le logiciel nécessaire au fonctionnement de l’instrument.",
+            "J’ai proposé l’algorithme d’autofocus, rédigé les spécifications techniques, puis développé le logiciel de contrôle avec LabVIEW.",
+            "J’ai intégré et déployé le logiciel sur le prototype, produit la documentation technique et utilisateur, puis formé les utilisateurs."
+        ]
+    },
+    "features": {
+        "automaticFocusing": {
+            "title": "Mise au point automatique",
+            "description": "Proposition et développement de l’algorithme d’autofocus destiné au microscope automatisé."
+        },
+        "technicalSpecifications": {
+            "title": "Spécifications techniques",
+            "description": "Rédaction des spécifications décrivant le comportement attendu du système et de son logiciel."
+        },
+        "labviewControlSoftware": {
+            "title": "Logiciel de contrôle LabVIEW",
+            "description": "Développement du logiciel nécessaire au contrôle et à l’automatisation du microscope."
+        },
+        "integrationAndDeployment": {
+            "title": "Intégration et déploiement",
+            "description": "Intégration du logiciel au prototype, puis déploiement du système dans son environnement d’utilisation."
+        },
+        "documentationAndTraining": {
+            "title": "Documentation et formation",
+            "description": "Production de la documentation technique et utilisateur, suivie de la formation des personnes chargées d’utiliser le dispositif."
+        }
+    },
+    "results": [
+        "Déploiement du prototype automatisé dans son environnement d’utilisation.",
+        "Reproduction ultérieure de la solution sur deux microscopes supplémentaires.",
+        "Livraison de la documentation et formation des utilisateurs."
+    ],
+    "technologies": [
+        "LabVIEW"
+    ],
+    "programmingLanguages": [
+        "LabVIEW"
+    ]
+}

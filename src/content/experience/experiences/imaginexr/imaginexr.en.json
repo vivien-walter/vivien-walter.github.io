@@ -1,0 +1,55 @@
+{
+    "role": "Product Manager",
+    "summary": "Led the creation of a virtual LXP campus for digital-sector apprentices, combining a web platform, educational content, support services, generative AI and XR.",
+    "highlights": {
+        "projectType": {
+            "label": "Project type",
+            "value": "Development of a web application"
+        },
+        "budget": {
+            "label": "Allocated budget",
+            "value": "€500k funded by OPCO Atlas"
+        },
+        "team": {
+            "label": "Team managed",
+            "value": "11 people"
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "Temporary text currently under editorial review."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Backend",
+            "text": "Designed and developed parts of the backend using TypeScript, Node.js, Express and MongoDB."
+        },
+        {
+            "label": "Technical architecture",
+            "text": "Migrated the backend to TypeScript, introduced Zod validation, redesigned authentication tokens, implemented API access keys and added server-side pagination."
+        },
+        {
+            "label": "Generative AI",
+            "text": "Designed the architecture and protocols for several generative-AI providers."
+        },
+        {
+            "label": "Processing and administration",
+            "text": "Developed backend code, a processing queue and administration interfaces."
+        },
+        {
+            "label": "Interfaces",
+            "text": "Developed selected interfaces using React and Tailwind CSS."
+        }
+    ],
+    "technologyGroupTitles": {
+        "languages": "Languages",
+        "backendAndData": "Backend and data",
+        "interfaces": "Interfaces",
+        "aiAndXr": "Generative AI and XR"
+    },
+    "finalState": {
+        "title": "Project status at completion",
+        "text": "The backend and AI ecosystem were operational, four XR applications were completed, and the user interface was approximately 80% complete, with three secondary areas remaining."
+    }
+}

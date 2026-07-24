@@ -1,0 +1,84 @@
+{
+    "title": "iSCAT experimental platform",
+    "summary": "Leadership of the construction of a complete iSCAT microscope and development of the experimental workflow, from component selection through acquisition, image analysis and interpretation of results.",
+    "overview": {
+        "facts": [
+            {
+                "label": "Project type",
+                "value": "iSCAT microscope and complete experimental platform"
+            },
+            {
+                "label": "Role",
+                "value": "R&D Project Manager / Postdoctoral Research Associate"
+            },
+            {
+                "label": "Team",
+                "value": "Three doctoral researchers and two Master’s interns"
+            },
+            {
+                "label": "Funding",
+                "value": "€500,000 project funded by the BBSRC and co-funded by Oxford Nanopore Technologies"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "The project was conducted at King’s College London to build, qualify and operate a complete iSCAT microscope.",
+            "It covered the entire experimental workflow, from the selection and procurement of components through the design of protocols, samples and experiments.",
+            "The project represented €500,000 in funding from the BBSRC, with co-funding from Oxford Nanopore Technologies."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "I led the project and managed three doctoral researchers and two Master’s interns.",
+            "I selected and procured the optical and instrumental components, assembled the optical table and contributed to the qualification of the complete microscope.",
+            "I designed the protocols, samples and experiments, implemented data acquisition and developed the image-analysis and result-interpretation methods.",
+            "I also developed the LabVIEW control and automation software, together with analysis scripts and tools using Python, ImageJ macros and Java for ImageJ."
+        ]
+    },
+    "features": {
+        "microscopeConstruction": {
+            "title": "Microscope construction",
+            "description": "Selection and procurement of optical and instrumental components, followed by assembly of the optical table."
+        },
+        "instrumentQualification": {
+            "title": "Instrument qualification",
+            "description": "Commissioning and qualification of the complete iSCAT microscope before its scientific operation."
+        },
+        "experimentalWorkflow": {
+            "title": "Experimental workflow",
+            "description": "Design of the protocols, samples and experiments required for the scientific use of the microscope."
+        },
+        "controlAndAutomation": {
+            "title": "Control and automation",
+            "description": "Development of the LabVIEW software used to control the instrument and automate experimental acquisitions."
+        },
+        "acquisitionAndImageAnalysis": {
+            "title": "Acquisition and image analysis",
+            "description": "Implementation of data acquisition and development of methods for image analysis and interpretation of results."
+        },
+        "scientificSoftwareTools": {
+            "title": "Scientific software tools",
+            "description": "Development of tools using Python, ImageJ macros and Java for ImageJ alongside the LabVIEW software."
+        }
+    },
+    "results": [
+        "Delivery of a complete, qualified and operational iSCAT microscope.",
+        "Development of an experimental workflow covering protocols, samples, acquisitions and analyses.",
+        "Publication of “Spatial light modulation for interferometric scattering microscopy” in the Journal of Microscopy in 2024, as lead author.",
+        "Publication of “Real-Time Monitoring and Control of Nanoparticle Formation” in the Journal of the American Chemical Society in 2023, as co-author.",
+        "Publication of “Real-time label-free imaging of living crystallization-driven self-assembly” in Nature Communications in 2025, as co-author."
+    ],
+    "technologies": [
+        "LabVIEW",
+        "ImageJ",
+        "iSCAT microscopy",
+        "Optical instrumentation",
+        "Image analysis"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "LabVIEW",
+        "Java"
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "role": "R&D Project Manager / Postdoctoral Research Associate",
+    "summary": "Direction scientifique et opérationnelle de travaux sur les membranes lipidiques, la simulation moléculaire et l’apprentissage automatique, avec développement principal de MLLPA.",
+    "highlights": {
+        "projectType": {
+            "label": "Nature du projet",
+            "value": "Recherche sur les membranes lipidiques et leurs transitions de phase"
+        },
+        "softwareDevelopment": {
+            "label": "Développement logiciel",
+            "value": "Environ 95 % du code de MLLPA"
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "À l’Université de Strasbourg, j’ai conduit avec une grande autonomie des travaux sur les membranes lipidiques, leurs transitions de phase et leur simulation moléculaire.",
+            "Les recherches associaient des simulations réalisées avec GROMACS, des approches d’apprentissage automatique et le développement d’un CNN 3D avec TensorFlow.",
+            "Les méthodes d’analyse produites pendant ces travaux ont été transformées en MLLPA, un module Python documenté et réutilisable. J’ai développé environ 95 % de son code et créé l’intégralité de son site et de sa documentation."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Recherche",
+            "text": "Planification des méthodes, des jalons et des orientations scientifiques avec une grande autonomie."
+        },
+        {
+            "label": "Simulation",
+            "text": "Réalisation de simulations GROMACS de membranes lipidiques et de transitions de phase."
+        },
+        {
+            "label": "Apprentissage automatique",
+            "text": "Développement d’approches d’apprentissage automatique puis d’un CNN 3D avec TensorFlow."
+        },
+        {
+            "label": "Développement logiciel",
+            "text": "Développement d’environ 95 % du code de MLLPA."
+        },
+        {
+            "label": "Documentation",
+            "text": "Création de l’intégralité du site et de la documentation de MLLPA."
+        },
+        {
+            "label": "Collaboration",
+            "text": "Poursuite ponctuelle des travaux connexes avec les collaborateurs."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Simulation moléculaire",
+            "items": [
+                {
+                    "label": "GROMACS"
+                },
+                {
+                    "label": "Dynamique moléculaire"
+                }
+            ]
+        },
+        {
+            "title": "Développement et apprentissage automatique",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "Apprentissage automatique"
+                },
+                {
+                    "label": "CNN 3D"
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "mllpaWebsite": "Site et documentation de MLLPA"
+    },
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Méthodes d’analyse transformées en un module Python réutilisable, environ 95 % du code de MLLPA développé, site et documentation créés, avec plusieurs publications scientifiques en premier auteur ; les travaux liés au CNN 3D se poursuivent ponctuellement."
+    }
+}

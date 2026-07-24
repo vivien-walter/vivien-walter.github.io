@@ -1,10 +1,8 @@
 import {
-  supportedLanguages,
-  type SupportedLanguage,
-} from "@/shared/content/localized-content";
-
-export { supportedLanguages };
-export type { SupportedLanguage };
+  defaultLanguage,
+  isSupportedLanguage,
+} from "@/lib/content/localization";
+import type { SupportedLanguage } from "@/types/localization";
 
 export const navigationPageIds = [
   "home",
@@ -15,7 +13,8 @@ export const navigationPageIds = [
   "contact",
 ] as const;
 
-export type NavigationPageId = (typeof navigationPageIds)[number];
+export type NavigationPageId =
+  (typeof navigationPageIds)[number];
 
 export const detailPageKinds = [
   "experience",
@@ -26,13 +25,16 @@ export const detailPageKinds = [
   "software",
 ] as const;
 
-export type DetailPageKind = (typeof detailPageKinds)[number];
+export type DetailPageKind =
+  (typeof detailPageKinds)[number];
 
 export type NavigationItem = {
   readonly id: NavigationPageId;
   readonly labelKey: string;
   readonly titleKey: string;
-  readonly routes: Readonly<Record<SupportedLanguage, string>>;
+  readonly routes: Readonly<
+    Record<SupportedLanguage, string>
+  >;
   readonly showInPrimaryNavigation: boolean;
 };
 
@@ -62,7 +64,7 @@ export const navigationItems = [
   {
     id: "home",
     labelKey: "navigation.home",
-    titleKey: "pages.home.title",
+    titleKey: "navigation.home",
     routes: {
       fr: "/fr/",
       en: "/en/",
@@ -72,7 +74,7 @@ export const navigationItems = [
   {
     id: "experience",
     labelKey: "navigation.experience",
-    titleKey: "pages.experience.title",
+    titleKey: "navigation.experience",
     routes: {
       fr: "/fr/experience/",
       en: "/en/experience/",
@@ -82,7 +84,7 @@ export const navigationItems = [
   {
     id: "projects",
     labelKey: "navigation.projects",
-    titleKey: "pages.projects.title",
+    titleKey: "navigation.projects",
     routes: {
       fr: "/fr/projects/",
       en: "/en/projects/",
@@ -92,7 +94,7 @@ export const navigationItems = [
   {
     id: "research",
     labelKey: "navigation.research",
-    titleKey: "pages.research.title",
+    titleKey: "navigation.research",
     routes: {
       fr: "/fr/research/",
       en: "/en/research/",
@@ -102,7 +104,7 @@ export const navigationItems = [
   {
     id: "software",
     labelKey: "navigation.software",
-    titleKey: "pages.software.title",
+    titleKey: "navigation.software",
     routes: {
       fr: "/fr/software/",
       en: "/en/software/",
@@ -112,7 +114,7 @@ export const navigationItems = [
   {
     id: "contact",
     labelKey: "navigation.contact",
-    titleKey: "pages.contact.title",
+    titleKey: "navigation.contact",
     routes: {
       fr: "/fr/contact/",
       en: "/en/contact/",
@@ -121,11 +123,10 @@ export const navigationItems = [
   },
 ] as const satisfies readonly NavigationItem[];
 
-export const primaryNavigationItems = navigationItems.filter(
-  (item) => item.showInPrimaryNavigation,
-);
-
-export const mobileNavigationItems = navigationItems;
+export const primaryNavigationItems =
+  navigationItems.filter(
+    (item) => item.showInPrimaryNavigation,
+  );
 
 const detailListPageIds = {
   experience: "experience",
@@ -134,16 +135,26 @@ const detailListPageIds = {
   "research-theme": "research",
   "research-publication": "research",
   software: "software",
-} as const satisfies Readonly<Record<DetailPageKind, NavigationPageId>>;
+} as const satisfies Readonly<
+  Record<DetailPageKind, NavigationPageId>
+>;
 
-export function normalizePathname(pathname: string): string {
-  const pathnameWithoutQueryOrHash = pathname.split(/[?#]/, 1)[0] || "/";
+export function normalizePathname(
+  pathname: string,
+): string {
+  const pathnameWithoutQueryOrHash =
+    pathname.split(/[?#]/, 1)[0] || "/";
 
-  const pathnameWithLeadingSlash = pathnameWithoutQueryOrHash.startsWith("/")
-    ? pathnameWithoutQueryOrHash
-    : `/${pathnameWithoutQueryOrHash}`;
+  const pathnameWithLeadingSlash =
+    pathnameWithoutQueryOrHash.startsWith("/")
+      ? pathnameWithoutQueryOrHash
+      : `/${pathnameWithoutQueryOrHash}`;
 
-  const collapsedPathname = pathnameWithLeadingSlash.replace(/\/{2,}/g, "/");
+  const collapsedPathname =
+    pathnameWithLeadingSlash.replace(
+      /\/{2,}/g,
+      "/",
+    );
 
   if (collapsedPathname === "/") {
     return "/";
@@ -154,35 +165,46 @@ export function normalizePathname(pathname: string): string {
     : `${collapsedPathname}/`;
 }
 
-export function isSupportedLanguage(value: string): value is SupportedLanguage {
-  return supportedLanguages.some((language) => language === value);
-}
-
-function decodeSlug(value: string): string | undefined {
+function decodeSlug(
+  value: string,
+): string | undefined {
   try {
-    const decodedValue = decodeURIComponent(value).trim();
+    const decodedValue =
+      decodeURIComponent(value).trim();
 
-    return decodedValue.length > 0 ? decodedValue : undefined;
+    return decodedValue.length > 0
+      ? decodedValue
+      : undefined;
   } catch {
     return undefined;
   }
 }
 
-export function getLanguageFromPathname(pathname: string): SupportedLanguage {
-  const normalizedPathname = normalizePathname(pathname);
-  const languageSegment = normalizedPathname.split("/")[1];
+export function getLanguageFromPathname(
+  pathname: string,
+): SupportedLanguage {
+  const normalizedPathname =
+    normalizePathname(pathname);
 
-  return isSupportedLanguage(languageSegment) ? languageSegment : "fr";
+  const languageSegment =
+    normalizedPathname.split("/")[1];
+
+  return isSupportedLanguage(languageSegment)
+    ? languageSegment
+    : defaultLanguage;
 }
 
 export function getPageRoute(
   pageId: NavigationPageId,
   language: SupportedLanguage,
 ): string {
-  const navigationItem = navigationItems.find((item) => item.id === pageId);
+  const navigationItem = navigationItems.find(
+    (item) => item.id === pageId,
+  );
 
   return (
-    navigationItem?.routes[language] ?? navigationItems[0].routes[language]
+    navigationItem?.routes[language] ??
+    navigationItems[0].routes[language]
   );
 }
 
@@ -192,14 +214,18 @@ export function getDetailRoute(
   language: SupportedLanguage,
 ): string {
   const listPageId = detailListPageIds[kind];
-  const listRoute = getPageRoute(listPageId, language);
+  const listRoute = getPageRoute(
+    listPageId,
+    language,
+  );
   const normalizedSlug = slug.trim();
 
   if (!normalizedSlug) {
     return listRoute;
   }
 
-  const encodedSlug = encodeURIComponent(normalizedSlug);
+  const encodedSlug =
+    encodeURIComponent(normalizedSlug);
 
   if (kind === "parallel-activity") {
     return `${listRoute}activities/${encodedSlug}/`;
@@ -216,28 +242,44 @@ export function getExperienceRoute(
   experienceId: string,
   language: SupportedLanguage,
 ): string {
-  return getDetailRoute("experience", experienceId, language);
+  return getDetailRoute(
+    "experience",
+    experienceId,
+    language,
+  );
 }
 
 export function getParallelActivityRoute(
   activityId: string,
   language: SupportedLanguage,
 ): string {
-  return getDetailRoute("parallel-activity", activityId, language);
+  return getDetailRoute(
+    "parallel-activity",
+    activityId,
+    language,
+  );
 }
 
 export function getProjectRoute(
   projectId: string,
   language: SupportedLanguage,
 ): string {
-  return getDetailRoute("project", projectId, language);
+  return getDetailRoute(
+    "project",
+    projectId,
+    language,
+  );
 }
 
 export function getResearchThemeRoute(
   themeId: string,
   language: SupportedLanguage,
 ): string {
-  return getDetailRoute("research-theme", themeId, language);
+  return getDetailRoute(
+    "research-theme",
+    themeId,
+    language,
+  );
 }
 
 export function getResearchPublicationRoute(
@@ -255,7 +297,11 @@ export function getSoftwareRoute(
   softwareId: string,
   language: SupportedLanguage,
 ): string {
-  return getDetailRoute("software", softwareId, language);
+  return getDetailRoute(
+    "software",
+    softwareId,
+    language,
+  );
 }
 
 export function getDetailRoutePattern(
@@ -263,7 +309,10 @@ export function getDetailRoutePattern(
   language: SupportedLanguage,
 ): string {
   const listPageId = detailListPageIds[kind];
-  const listRoute = getPageRoute(listPageId, language);
+  const listRoute = getPageRoute(
+    listPageId,
+    language,
+  );
 
   if (kind === "parallel-activity") {
     return `${listRoute}activities/:slug/`;
@@ -276,12 +325,20 @@ export function getDetailRoutePattern(
   return `${listRoute}:slug/`;
 }
 
-export function getRouteMatchFromPathname(pathname: string): RouteMatch {
-  const normalizedPathname = normalizePathname(pathname);
-  const language = getLanguageFromPathname(normalizedPathname);
+export function getRouteMatchFromPathname(
+  pathname: string,
+): RouteMatch {
+  const normalizedPathname =
+    normalizePathname(pathname);
+
+  const language = getLanguageFromPathname(
+    normalizedPathname,
+  );
 
   const navigationItem = navigationItems.find(
-    (item) => item.routes[language] === normalizedPathname,
+    (item) =>
+      item.routes[language] ===
+      normalizedPathname,
   );
 
   if (navigationItem) {
@@ -292,10 +349,18 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
     };
   }
 
-  const segments = normalizedPathname.split("/").filter(Boolean);
+  const segments = normalizedPathname
+    .split("/")
+    .filter(Boolean);
 
   if (segments.length === 4) {
-    const [, section, subsection, encodedSlug] = segments;
+    const [
+      ,
+      section,
+      subsection,
+      encodedSlug,
+    ] = segments;
+
     const slug = decodeSlug(encodedSlug);
 
     if (
@@ -327,7 +392,10 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
     const [, section, encodedSlug] = segments;
     const slug = decodeSlug(encodedSlug);
 
-    if (slug && section === "experience") {
+    if (
+      slug &&
+      section === "experience"
+    ) {
       return {
         kind: "experience",
         language,
@@ -335,7 +403,10 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
       };
     }
 
-    if (slug && section === "projects") {
+    if (
+      slug &&
+      section === "projects"
+    ) {
       return {
         kind: "project",
         language,
@@ -343,7 +414,10 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
       };
     }
 
-    if (slug && section === "research") {
+    if (
+      slug &&
+      section === "research"
+    ) {
       return {
         kind: "research-theme",
         language,
@@ -351,7 +425,10 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
       };
     }
 
-    if (slug && section === "software") {
+    if (
+      slug &&
+      section === "software"
+    ) {
       return {
         kind: "software",
         language,
@@ -369,32 +446,46 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
 export function getNavigationItemFromPathname(
   pathname: string,
 ): NavigationItem | undefined {
-  const routeMatch = getRouteMatchFromPathname(pathname);
+  const routeMatch =
+    getRouteMatchFromPathname(pathname);
 
   if (routeMatch.kind === "page") {
-    return navigationItems.find((item) => item.id === routeMatch.pageId);
+    return navigationItems.find(
+      (item) =>
+        item.id === routeMatch.pageId,
+    );
   }
 
   if (
     routeMatch.kind === "experience" ||
-    routeMatch.kind === "parallel-activity"
+    routeMatch.kind ===
+      "parallel-activity"
   ) {
-    return navigationItems.find((item) => item.id === "experience");
+    return navigationItems.find(
+      (item) => item.id === "experience",
+    );
   }
 
   if (routeMatch.kind === "project") {
-    return navigationItems.find((item) => item.id === "projects");
+    return navigationItems.find(
+      (item) => item.id === "projects",
+    );
   }
 
   if (
     routeMatch.kind === "research-theme" ||
-    routeMatch.kind === "research-publication"
+    routeMatch.kind ===
+      "research-publication"
   ) {
-    return navigationItems.find((item) => item.id === "research");
+    return navigationItems.find(
+      (item) => item.id === "research",
+    );
   }
 
   if (routeMatch.kind === "software") {
-    return navigationItems.find((item) => item.id === "software");
+    return navigationItems.find(
+      (item) => item.id === "software",
+    );
   }
 
   return undefined;
@@ -403,7 +494,8 @@ export function getNavigationItemFromPathname(
 export function getPageIdFromPathname(
   pathname: string,
 ): NavigationPageId | undefined {
-  const routeMatch = getRouteMatchFromPathname(pathname);
+  const routeMatch =
+    getRouteMatchFromPathname(pathname);
 
   if (routeMatch.kind === "page") {
     return routeMatch.pageId;
@@ -411,7 +503,8 @@ export function getPageIdFromPathname(
 
   if (
     routeMatch.kind === "experience" ||
-    routeMatch.kind === "parallel-activity"
+    routeMatch.kind ===
+      "parallel-activity"
   ) {
     return "experience";
   }
@@ -422,7 +515,8 @@ export function getPageIdFromPathname(
 
   if (
     routeMatch.kind === "research-theme" ||
-    routeMatch.kind === "research-publication"
+    routeMatch.kind ===
+      "research-publication"
   ) {
     return "research";
   }
@@ -438,39 +532,75 @@ export function getEquivalentLanguagePath(
   pathname: string,
   language: SupportedLanguage,
 ): string {
-  const routeMatch = getRouteMatchFromPathname(pathname);
+  const routeMatch =
+    getRouteMatchFromPathname(pathname);
 
   if (routeMatch.kind === "page") {
-    return getPageRoute(routeMatch.pageId, language);
+    return getPageRoute(
+      routeMatch.pageId,
+      language,
+    );
   }
 
   if (routeMatch.kind === "experience") {
-    return getExperienceRoute(routeMatch.slug, language);
+    return getExperienceRoute(
+      routeMatch.slug,
+      language,
+    );
   }
 
-  if (routeMatch.kind === "parallel-activity") {
-    return getParallelActivityRoute(routeMatch.slug, language);
+  if (
+    routeMatch.kind ===
+    "parallel-activity"
+  ) {
+    return getParallelActivityRoute(
+      routeMatch.slug,
+      language,
+    );
   }
 
   if (routeMatch.kind === "project") {
-    return getProjectRoute(routeMatch.slug, language);
+    return getProjectRoute(
+      routeMatch.slug,
+      language,
+    );
   }
 
-  if (routeMatch.kind === "research-theme") {
-    return getResearchThemeRoute(routeMatch.slug, language);
+  if (
+    routeMatch.kind ===
+    "research-theme"
+  ) {
+    return getResearchThemeRoute(
+      routeMatch.slug,
+      language,
+    );
   }
 
-  if (routeMatch.kind === "research-publication") {
-    return getResearchPublicationRoute(routeMatch.slug, language);
+  if (
+    routeMatch.kind ===
+    "research-publication"
+  ) {
+    return getResearchPublicationRoute(
+      routeMatch.slug,
+      language,
+    );
   }
 
   if (routeMatch.kind === "software") {
-    return getSoftwareRoute(routeMatch.slug, language);
+    return getSoftwareRoute(
+      routeMatch.slug,
+      language,
+    );
   }
 
   return getPageRoute("home", language);
 }
 
-export function getFallbackRoute(pathname: string): string {
-  return getPageRoute("home", getLanguageFromPathname(pathname));
+export function getFallbackRoute(
+  pathname: string,
+): string {
+  return getPageRoute(
+    "home",
+    getLanguageFromPathname(pathname),
+  );
 }

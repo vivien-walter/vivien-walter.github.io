@@ -1,0 +1,78 @@
+{
+    "title": "Communication moléculaire",
+    "introduction": "Développement de systèmes expérimentaux utilisant des réactions chimiques, des signaux moléculaires, la microfluidique et des méthodes de détection.",
+    "highlights": {
+        "experimentalInfrastructure": {
+            "label": "Infrastructure expérimentale",
+            "value": "Création d’un laboratoire de communication moléculaire et d’un testbed opérationnel."
+        },
+        "interdisciplinarySystem": {
+            "label": "Système interdisciplinaire",
+            "value": "Chimie, microfluidique, instrumentation, électronique et traitement du signal."
+        },
+        "publications": {
+            "label": "Publications",
+            "value": "Deux articles en premier auteur et rédacteur principal."
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "Mes travaux en communication moléculaire ont consisté à créer un laboratoire et une plateforme expérimentale associant chimie, microfluidique, instrumentation, électronique, traitement du signal et apprentissage automatique.",
+            "Le testbed permettait de produire, transmettre et détecter des signaux moléculaires afin de valider expérimentalement des concepts de communication fondés sur des réactions chimiques.",
+            "J’ai également développé un CNN 1D avec Python, TensorFlow et scikit-learn pour analyser des signaux de spectroscopie UV-Visible, ainsi que six pompes-seringues open source associant conception mécanique, impression 3D, Arduino, communication I²C, C++ et Python."
+        ]
+    },
+    "technologyGroups": [
+        {
+            "title": "Expérimentation",
+            "items": [
+                {
+                    "label": "Microfluidique"
+                },
+                {
+                    "label": "Spectroscopie UV-Visible"
+                },
+                {
+                    "label": "Réactions chimiques"
+                }
+            ]
+        },
+        {
+            "title": "Apprentissage automatique",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "CNN 1D"
+                }
+            ]
+        },
+        {
+            "title": "Instrumentation et prototypage",
+            "items": [
+                {
+                    "label": "Autodesk Fusion 360"
+                },
+                {
+                    "label": "Impression 3D"
+                },
+                {
+                    "label": "Arduino"
+                },
+                {
+                    "label": "I²C"
+                },
+                {
+                    "label": "C++"
+                }
+            ]
+        }
+    ]
+}

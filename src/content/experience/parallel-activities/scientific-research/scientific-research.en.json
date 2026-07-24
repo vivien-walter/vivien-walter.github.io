@@ -1,0 +1,80 @@
+{
+    "title": "Scientific research",
+    "summary": "Occasional continuation of scientific collaborations and work associated with MLLPA.",
+    "highlights": {
+        "activity": {
+            "label": "Activity",
+            "value": "Scientific collaborations continued occasionally"
+        },
+        "relatedSoftware": {
+            "label": "Related software",
+            "value": "MLLPA"
+        },
+        "researchTopics": {
+            "label": "Research topics",
+            "value": "Lipid membranes and machine learning"
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "Some scientific collaborations were occasionally continued alongside my main professional activities.",
+            "This work is notably associated with MLLPA, a Python module dedicated to machine-learning-assisted analysis of lipid-membrane phases."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Collaboration",
+            "text": "Occasionally continued work with scientific collaborators."
+        },
+        {
+            "label": "Software development",
+            "text": "Continued work associated with MLLPA, for which I developed approximately 95% of the code."
+        },
+        {
+            "label": "Documentation",
+            "text": "Continued work associated with the MLLPA website and documentation, which I originally created in full."
+        },
+        {
+            "label": "Machine learning",
+            "text": "Occasionally continued work related to lipid-membrane analysis and the three-dimensional CNN developed with TensorFlow."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "Python"
+                }
+            ]
+        },
+        {
+            "title": "Scientific computing and data",
+            "items": [
+                {
+                    "label": "NumPy"
+                },
+                {
+                    "label": "h5py"
+                },
+                {
+                    "label": "MDAnalysis"
+                },
+                {
+                    "label": "pandas"
+                }
+            ]
+        },
+        {
+            "title": "Machine learning",
+            "items": [
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "TensorFlow"
+                }
+            ]
+        }
+    ]
+}

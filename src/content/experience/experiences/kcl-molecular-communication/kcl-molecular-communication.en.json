@@ -1,0 +1,102 @@
+{
+    "role": "Postdoctoral Research Associate — public presentation: R&D Project Manager",
+    "summary": "Created a molecular-communication laboratory and an operational testbed combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning.",
+    "highlights": {
+        "projectType": {
+            "label": "Project type",
+            "value": "Creation of a laboratory and an experimental testbed"
+        },
+        "funding": {
+            "label": "Funding managed",
+            "value": "Two EPSRC grants of €300k and €60k"
+        },
+        "team": {
+            "label": "Team managed",
+            "value": "5 people on average"
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Laboratory",
+            "text": "Created the laboratory from scratch, including premises, equipment, fume hoods, consumables, safety procedures and protocols."
+        },
+        {
+            "label": "Team",
+            "text": "Managed an average team of five people and trained nine people in total."
+        },
+        {
+            "label": "Funding",
+            "text": "Managed two EPSRC grants of €300k and €60k."
+        },
+        {
+            "label": "Artificial intelligence",
+            "text": "Developed a one-dimensional CNN using Python, TensorFlow and scikit-learn to analyse UV-Vis signals."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Designed and manufactured six open-source syringe pumps using Fusion 360, 3D printing, Arduino, I²C, C++ and Python."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Experimental methods",
+            "items": [
+                {
+                    "label": "Microfluidics"
+                },
+                {
+                    "label": "UV-Visible spectroscopy"
+                },
+                {
+                    "label": "Chemical reactions"
+                }
+            ]
+        },
+        {
+            "title": "Machine learning",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "1D CNN"
+                }
+            ]
+        },
+        {
+            "title": "Instrumentation and prototyping",
+            "items": [
+                {
+                    "label": "Autodesk Fusion 360"
+                },
+                {
+                    "label": "3D printing"
+                },
+                {
+                    "label": "Arduino"
+                },
+                {
+                    "label": "I²C"
+                },
+                {
+                    "label": "C++"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "The laboratory was created, the experimental testbed was operational, six open-source syringe pumps were designed and manufactured, and the work produced two scientific publications for which I was the first author and principal writer."
+    }
+}

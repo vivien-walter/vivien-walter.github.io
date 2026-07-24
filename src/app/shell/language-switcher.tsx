@@ -2,11 +2,11 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
 import { cn } from "@/lib/utils";
+import { supportedLanguages } from "@/lib/content/localization";
 
 import {
   getEquivalentLanguagePath,
   getLanguageFromPathname,
-  supportedLanguages,
 } from "../routing/navigation";
 
 type LanguageSwitcherProps = {

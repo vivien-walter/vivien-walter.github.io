@@ -3,17 +3,23 @@
         "name": "Vivien Praud Walter"
     },
     "accessibility": {
-        "skipToContent": "Skip to main content",
-        "externalLink": "External link"
+        "skipToContent": "Skip to main content"
     },
     "navigation": {
-        "primaryLabel": "Main navigation",
+        "primaryLabel": "Primary navigation",
         "home": "Home",
         "experience": "Experience",
         "projects": "Projects",
         "research": "Research and publications",
         "software": "Software",
-        "contact": "Contact"
+        "contact": "Contact",
+        "mobile": {
+            "open": "Open navigation",
+            "close": "Close navigation",
+            "description": "Access the different sections of the portfolio.",
+            "cvUnavailable": "CV currently unavailable",
+            "cvLabel": "CV (PDF)"
+        }
     },
     "languageSwitcher": {
         "label": "Choose language"
@@ -31,134 +37,15 @@
             "title": "Experience"
         },
         "projects": {
-            "title": "Projects",
-            "controls": {
-                "sortLabel": "Sort projects",
-                "sortPlaceholder": "Sort by",
-                "sortByDateDescending": "Date (newest first)",
-                "sortByDateAscending": "Date (oldest first)",
-                "sortByNameAscending": "Name (A to Z)",
-                "sortByNameDescending": "Name (Z to A)",
-                "filters": "Filters",
-                "filterByProject": "Project",
-                "filterByLanguage": "Language",
-                "clearFilters": "Clear filters",
-                "results_one": "{{count}} project shown",
-                "results_other": "{{count}} projects shown",
-                "noResults": "No projects match the selected filters."
-            }
+            "title": "Projects"
         },
         "research": {
-            "title": "Research and publications",
-            "themesTitle": "Research themes",
-            "followActivities": "Follow my activities",
-            "publications": {
-                "sectionTitle": "Selected publications",
-                "tabs": {
-                    "articles": "Articles",
-                    "theses": "Theses"
-                },
-                "tableLabel": "Publication list",
-                "columns": {
-                    "year": "Year",
-                    "publication": "Publication",
-                    "authors": "Authors",
-                    "reference": "Reference",
-                    "actions": "Actions"
-                },
-                "actions": {
-                    "viewMore": "View more",
-                    "showMore": "Show more publications",
-                    "doi": "DOI"
-                },
-                "emptyStates": {
-                    "articles": "No article matches the selected criteria.",
-                    "theses": "No thesis is currently available."
-                },
-                "controls": {
-                    "sortLabel": "Sort publications",
-                    "sortPlaceholder": "Sort publications",
-                    "sortByYearDescending": "Year: newest first",
-                    "sortByYearAscending": "Year: oldest first",
-                    "sortByTitleAscending": "Title: A to Z",
-                    "sortByTitleDescending": "Title: Z to A",
-                    "sortByJournalAscending": "Journal: A to Z",
-                    "sortByJournalDescending": "Journal: Z to A",
-                    "filters": "Filters",
-                    "filterByTheme": "Research theme",
-                    "filterByJournal": "Scientific journal",
-                    "clearFilters": "Clear filters"
-                }
-            }
-        },
-        "software": {
-            "title": "Software",
-            "featuredTitle": "Featured software",
-            "followActivities": "Follow my activities",
-            "catalog": {
-                "sectionTitle": "Software and web applications",
-                "listLabel": "Software and web application list",
-                "tabs": {
-                    "software": "Software",
-                    "webApplications": "Web applications"
-                },
-                "actions": {
-                    "viewSoftware": "View software",
-                    "repository": "GitHub"
-                },
-                "emptyStates": {
-                    "software": "No software matches the selected criteria.",
-                    "webApplications": "No web application matches the selected criteria."
-                },
-                "controls": {
-                    "sortLabel": "Sort software and web applications",
-                    "sortPlaceholder": "Sort by",
-                    "sortByYearDescending": "Year: newest first",
-                    "sortByYearAscending": "Year: oldest first",
-                    "sortByTitleAscending": "Title: A to Z",
-                    "sortByTitleDescending": "Title: Z to A",
-                    "filters": "Filters",
-                    "filterByProject": "Project",
-                    "filterByLanguage": "Language",
-                    "clearFilters": "Clear filters"
-                }
-            }
-        },
-        "contact": {
-            "title": "Contact",
-            "methodsTitle": "How to contact me",
-            "jobSearch": {
-                "message": "I am currently looking for a new job opportunity.",
-                "downloadCvFr": "Download the French CV",
-                "downloadCvEn": "Download the English CV"
-            }
+            "title": "Research and publications"
         }
     },
     "breadcrumbs": {
         "label": "Breadcrumb",
-        "home": "Home",
-        "experience": "Experience",
-        "projects": "Projects",
-        "research": "Research and publications",
-        "software": "Software"
-    },
-    "content": {
-        "period": "Period",
-        "context": "Context",
-        "role": "Role",
-        "contribution": "Personal contribution",
-        "status": "Status",
-        "confidentiality": "Confidentiality and limitations",
-        "technologies": "Technologies and methods",
-        "resources": "Resources",
-        "organisation": "Organisation",
-        "location": "Location",
-        "contractualTitle": "Contractual title",
-        "publicTitle": "Professional presentation",
-        "relatedItems": "Related items",
-        "relatedProjects": "Projects",
-        "relatedSoftware": "Software",
-        "relatedPublications": "Scientific publications"
+        "home": "Home"
     },
     "contentKinds": {
         "project": "Project",
@@ -166,85 +53,8 @@
         "publication": "Publication"
     },
     "actions": {
-        "viewExperience": "View more",
         "viewProject": "View project details",
-        "viewSoftware": "View software details",
-        "backToHome": "Return to the home page",
-        "backToExperience": "Return to experience",
-        "backToProjects": "Return to all projects",
-        "backToResearch": "Return to Research and publications",
-        "backToSoftware": "Return to all software",
-        "previousExperience": "Previous experience",
-        "nextExperience": "Next experience",
-        "previousParallelActivity": "Previous activity",
-        "nextParallelActivity": "Next activity",
-        "previousProject": "Previous project",
-        "nextProject": "Next project",
-        "previousResearchTheme": "Previous research theme",
-        "nextResearchTheme": "Next research theme",
-        "previousPublication": "Previous publication",
-        "nextPublication": "Next publication",
-        "previousSoftware": "Previous software",
-        "nextSoftware": "Next software",
         "learnMore": "Learn more"
-    },
-    "experienceDetail": {
-        "eyebrow": "Experience details",
-        "navigationLabel": "Experience navigation"
-    },
-    "parallelActivityDetail": {
-        "eyebrow": "Activity alongside main roles",
-        "navigationLabel": "Parallel activity navigation"
-    },
-    "projectDetail": {
-        "eyebrow": "Project details",
-        "executiveSummary": "Executive summary",
-        "contextAndObjectives": "Context and objectives",
-        "contributionsAndAchievements": "Contributions and achievements",
-        "resultsAndFinalState": "Results and final state",
-        "technologiesAndMethods": "Technologies and methods",
-        "evidenceAndResources": "Evidence and resources",
-        "confidentialityAndLimits": "Confidentiality and limitations",
-        "navigationLabel": "Project navigation"
-    },
-    "researchThemeDetail": {
-        "eyebrow": "Research theme",
-        "highlightsLabel": "Key information about the research theme",
-        "description": "Description",
-        "technologies": "Technologies used",
-        "externalLinkLabel": "Opens an external website in a new tab",
-        "navigationLabel": "Research theme navigation"
-    },
-    "researchPublicationDetail": {
-        "articleEyebrow": "Scientific article",
-        "thesisEyebrow": "Thesis",
-        "metadata": "Bibliographic information",
-        "title": "Full title",
-        "journal": "Journal",
-        "authors": "Authors",
-        "year": "Year",
-        "reference": "Reference",
-        "description": "Description",
-        "resources": "Related resources",
-        "relatedItems": "Related items",
-        "relatedThemes": "Research themes",
-        "relatedProjects": "Projects",
-        "relatedSoftware": "Software",
-        "relatedExperiences": "Professional experience",
-        "navigationLabel": "Navigation between publications"
-    },
-    "softwareDetail": {
-        "eyebrow": "Software details",
-        "summary": "Overview",
-        "context": "Context and purpose",
-        "contribution": "Personal contribution",
-        "features": "Features and outcomes",
-        "technologies": "Technologies",
-        "resources": "Resources",
-        "navigationLabel": "Software navigation"
-    },
-    "publication": {
-        "contribution": "Contribution"
     },
     "notFound": {
         "eyebrow": "Page not found",
@@ -260,19 +70,6 @@
         "title": "The page cannot be displayed",
         "message": "An unexpected error is preventing this page from being displayed. You can return to the home page and continue browsing.",
         "homeLink": "Return to the home page",
-        "experienceNotFound": "Experience not found",
-        "projectNotFound": "Project not found",
-        "softwareNotFound": "Software not found",
         "pageNotFound": "Page not found"
-    },
-    "links": {
-        "email": "Email",
-        "linkedin": "LinkedIn",
-        "github": "GitHub",
-        "orcid": "ORCID",
-        "mllpa": "MLLPA website and documentation"
-    },
-    "footer": {
-        "text": "Professional website of Vivien Praud Walter"
     }
 }

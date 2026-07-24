@@ -1,0 +1,67 @@
+{
+    "eyebrow": "Home",
+    "title": "AI, software, scientific instrumentation and complex systems",
+    "introduction": "I support technical projects from requirements definition through to deliverable validation. My background combines team coordination, scientific understanding, technical decision-making and direct development work when the project requires it.",
+    "profileDimensions": {
+        "title": "Three dimensions of one profile",
+        "projectManagement": {
+            "title": "R&D project management",
+            "description": "Scoping, requirements analysis, specifications, roadmaps, multidisciplinary coordination, risk management, quality, funding and validation."
+        },
+        "softwareAndAi": {
+            "title": "Software and artificial intelligence",
+            "description": "Python and TypeScript development, generative AI integration, machine learning, data analysis, interfaces and automation."
+        },
+        "instrumentation": {
+            "title": "Instrumentation and complex systems",
+            "description": "Creation of laboratories and experimental platforms, microscopy, microfluidics, electronics, prototyping and control software."
+        }
+    },
+    "practicalInformation": {
+        "title": "Practical information",
+        "location": "Based in Vendée, France.",
+        "employment": "Primarily open to permanent employment opportunities.",
+        "workMode": "Available for hybrid or fully remote work.",
+        "travel": "Available for occasional travel to client or partner sites.",
+        "languages": "Professional working proficiency in French and English."
+    },
+    "featuredWorks": {
+        "title": "Recent work",
+        "kindLabels": {
+            "project": "Project",
+            "software": "Software",
+            "publication": "Publication"
+        },
+        "projectActionLabel": "View project details",
+        "molecularCommunicationPublication": {
+            "actionLabel": "View the publication"
+        }
+    },
+    "statement": {
+        "text": "I design and develop useful, sustainable and understandable systems that strengthen confidence in measurements, analyses and decisions.",
+        "actionLabel": "Learn more about my approach"
+    },
+    "researchAxes": {
+        "title": "Research areas",
+        "actionLabel": "Learn more",
+        "opticsAndPhotonics": {
+            "title": "Optics and photonics",
+            "description": "Design, construction and operation of microscopy and optical instrumentation systems, including iSCAT."
+        },
+        "scientificAi": {
+            "title": "Scientific artificial intelligence",
+            "description": "Machine learning and deep learning applied to scientific signals, images and simulations."
+        },
+        "scientificSoftware": {
+            "title": "Scientific software",
+            "description": "Development of Python, TypeScript and LabVIEW tools for analysis, automation and the control of scientific systems."
+        },
+        "collaborativeSystems": {
+            "title": "Multidisciplinary systems",
+            "description": "Management of projects combining experimental science, software, instrumentation, electronics and team coordination."
+        }
+    },
+    "follow": {
+        "title": "Follow my work"
+    }
+}

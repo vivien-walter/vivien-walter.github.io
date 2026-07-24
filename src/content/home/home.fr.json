@@ -1,0 +1,67 @@
+{
+    "eyebrow": "Accueil",
+    "title": "IA, logiciels, instrumentation scientifique et systèmes complexes",
+    "introduction": "J’accompagne des projets techniques depuis la définition du besoin jusqu’à la validation des livrables. Mon parcours associe coordination d’équipes, compréhension scientifique, arbitrage technique et contribution directe au développement lorsque le projet le nécessite.",
+    "profileDimensions": {
+        "title": "Trois dimensions d’un même profil",
+        "projectManagement": {
+            "title": "Pilotage de projets R&D",
+            "description": "Cadrage, analyse des besoins, spécifications, feuille de route, coordination multidisciplinaire, gestion des risques, qualité, financement et validation."
+        },
+        "softwareAndAi": {
+            "title": "Logiciels et intelligence artificielle",
+            "description": "Développement Python et TypeScript, intégration d’IA générative, apprentissage automatique, analyse de données, interfaces et automatisation."
+        },
+        "instrumentation": {
+            "title": "Instrumentation et systèmes complexes",
+            "description": "Création de laboratoires, plateformes expérimentales, microscopie, microfluidique, électronique, prototypage et logiciels de contrôle."
+        }
+    },
+    "practicalInformation": {
+        "title": "Informations pratiques",
+        "location": "Basé en Vendée, France.",
+        "employment": "Ouvert en priorité aux postes en CDI.",
+        "workMode": "Disponible pour le travail hybride ou entièrement à distance.",
+        "travel": "Disponible pour des déplacements ponctuels sur des sites clients ou partenaires.",
+        "languages": "Travail professionnel en français et en anglais."
+    },
+    "featuredWorks": {
+        "title": "Travaux récents",
+        "kindLabels": {
+            "project": "Projet",
+            "software": "Logiciel",
+            "publication": "Publication"
+        },
+        "projectActionLabel": "Voir le projet détaillé",
+        "molecularCommunicationPublication": {
+            "actionLabel": "Consulter la publication"
+        }
+    },
+    "statement": {
+        "text": "Je conçois et développe des systèmes utiles, pérennes et compréhensibles, qui renforcent la confiance dans les mesures, les analyses et les décisions.",
+        "actionLabel": "En savoir plus sur ma démarche"
+    },
+    "researchAxes": {
+        "title": "Axes de recherche",
+        "actionLabel": "En savoir plus",
+        "opticsAndPhotonics": {
+            "title": "Optique et photonique",
+            "description": "Conception, construction et exploitation de systèmes de microscopie et d’instrumentation optique, notamment en iSCAT."
+        },
+        "scientificAi": {
+            "title": "Intelligence artificielle scientifique",
+            "description": "Apprentissage automatique et deep learning appliqués aux signaux scientifiques, aux images et aux simulations."
+        },
+        "scientificSoftware": {
+            "title": "Logiciels scientifiques",
+            "description": "Développement d’outils Python, TypeScript et LabVIEW pour l’analyse, l’automatisation et le contrôle de systèmes scientifiques."
+        },
+        "collaborativeSystems": {
+            "title": "Systèmes multidisciplinaires",
+            "description": "Pilotage de projets associant sciences expérimentales, logiciels, instrumentation, électronique et coordination d’équipes."
+        }
+    },
+    "follow": {
+        "title": "Me suivre au quotidien"
+    }
+}

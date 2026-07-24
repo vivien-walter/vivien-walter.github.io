@@ -1,0 +1,84 @@
+{
+    "title": "Research and publications",
+    "introduction": "My work connects biophysics, instrumentation, signal processing, machine learning and software development. This activity continues through publications, software and occasional collaborations.",
+    "sectionTitles": {
+        "themes": "Research themes",
+        "publications": "Selected publications",
+        "activities": "Follow my activities"
+    },
+    "publications": {
+        "tabs": {
+            "articles": "Articles",
+            "theses": "Theses"
+        },
+        "tableLabel": "Publication list",
+        "columns": {
+            "year": "Year",
+            "publication": "Publication",
+            "authors": "Authors",
+            "reference": "Reference",
+            "actions": "Actions"
+        },
+        "actions": {
+            "viewMore": "View more",
+            "showMore": "Show more publications",
+            "doi": "DOI"
+        },
+        "emptyStates": {
+            "articles": "No article matches the selected criteria.",
+            "theses": "No thesis is currently available."
+        },
+        "controls": {
+            "sortLabel": "Sort publications",
+            "sortPlaceholder": "Sort publications",
+            "sortByYearDescending": "Year: newest first",
+            "sortByYearAscending": "Year: oldest first",
+            "sortByTitleAscending": "Title: A to Z",
+            "sortByTitleDescending": "Title: Z to A",
+            "sortByJournalAscending": "Journal: A to Z",
+            "sortByJournalDescending": "Journal: Z to A",
+            "filters": "Filters",
+            "filterByTheme": "Research theme",
+            "filterByJournal": "Scientific journal",
+            "clearFilters": "Clear filters"
+        }
+    },
+    "themeDetail": {
+        "eyebrow": "Research theme",
+        "highlightsLabel": "Key information about the research theme",
+        "description": "Description",
+        "technologies": "Technologies used",
+        "externalLinkLabel": "Opens an external website in a new tab",
+        "navigationLabel": "Research theme navigation",
+        "backLabel": "Return to Research and publications",
+        "previousLabel": "Previous research theme",
+        "nextLabel": "Next research theme"
+    },
+    "publicationDetail": {
+        "articleEyebrow": "Scientific article",
+        "thesisEyebrow": "Thesis",
+        "metadata": "Bibliographic information",
+        "title": "Full title",
+        "journal": "Journal",
+        "authors": "Authors",
+        "year": "Year",
+        "reference": "Reference",
+        "contribution": "Contribution",
+        "description": "Description",
+        "resources": "Related resources",
+        "relatedItems": "Related items",
+        "relatedThemes": "Research themes",
+        "relatedProjects": "Projects",
+        "relatedSoftware": "Software",
+        "relatedExperiences": "Professional experience",
+        "navigationLabel": "Navigation between publications",
+        "backLabel": "Return to Research and publications",
+        "previousLabel": "Previous publication",
+        "nextLabel": "Next publication"
+    },
+    "resourceLabels": {
+        "github": "GitHub",
+        "orcid": "ORCID",
+        "linkedin": "LinkedIn"
+    }
+}

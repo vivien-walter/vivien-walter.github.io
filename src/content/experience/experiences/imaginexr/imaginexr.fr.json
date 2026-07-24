@@ -1,0 +1,55 @@
+{
+    "role": "Chef de produit / Product Manager",
+    "summary": "Pilotage de la création d’un campus virtuel LXP pour des apprentis du secteur numérique, associant plateforme web, contenus pédagogiques, accompagnement, IA générative et XR.",
+    "highlights": {
+        "projectType": {
+            "label": "Nature du projet",
+            "value": "Développement d’une application web"
+        },
+        "budget": {
+            "label": "Budget débloqué",
+            "value": "500 k€ financés par l’OPCO Atlas"
+        },
+        "team": {
+            "label": "Équipe gérée",
+            "value": "11 personnes"
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "Texte temporaire en cours de révision éditoriale."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Backend",
+            "text": "Conception et développement de parties du backend avec TypeScript, Node.js, Express et MongoDB."
+        },
+        {
+            "label": "Architecture technique",
+            "text": "Migration du backend vers TypeScript, validation Zod, refonte des jetons d’authentification, clés d’accès API et pagination côté serveur."
+        },
+        {
+            "label": "IA générative",
+            "text": "Conception de l’architecture et des protocoles pour plusieurs fournisseurs d’IA générative."
+        },
+        {
+            "label": "Traitement et administration",
+            "text": "Développement de code backend, d’une file de traitement et d’interfaces d’administration."
+        },
+        {
+            "label": "Interfaces",
+            "text": "Développement de certaines interfaces React et Tailwind CSS."
+        }
+    ],
+    "technologyGroupTitles": {
+        "languages": "Langages",
+        "backendAndData": "Backend et données",
+        "interfaces": "Interfaces",
+        "aiAndXr": "IA générative et XR"
+    },
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Backend et écosystème IA opérationnels, quatre applications XR terminées et interface utilisateur approximativement achevée à 80 %, avec trois espaces secondaires restants."
+    }
+}

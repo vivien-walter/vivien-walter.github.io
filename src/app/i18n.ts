@@ -3,17 +3,23 @@ import { initReactI18next } from "react-i18next";
 
 import {
   getLanguageFromPathname,
-  type SupportedLanguage,
 } from "@/app/routing/navigation";
+import {
+  defaultLanguage,
+  supportedLanguages,
+} from "@/lib/content/localization";
 import enCommon from "@/locales/en/common.json";
 import frCommon from "@/locales/fr/common.json";
+import type { SupportedLanguage } from "@/types/localization";
 
 function getInitialLanguage(): SupportedLanguage {
   if (typeof window === "undefined") {
-    return "fr";
+    return defaultLanguage;
   }
 
-  return getLanguageFromPathname(window.location.pathname);
+  return getLanguageFromPathname(
+    window.location.pathname,
+  );
 }
 
 void i18n.use(initReactI18next).init({
@@ -26,8 +32,8 @@ void i18n.use(initReactI18next).init({
     },
   },
   lng: getInitialLanguage(),
-  supportedLngs: ["fr", "en"],
-  fallbackLng: "fr",
+  supportedLngs: supportedLanguages,
+  fallbackLng: defaultLanguage,
   defaultNS: "common",
   ns: ["common"],
   initAsync: false,

@@ -1,5 +1,9 @@
 import { HouseIcon } from "@phosphor-icons/react";
-import { Component, type ErrorInfo, type ReactNode } from "react";
+import {
+  Component,
+  type ErrorInfo,
+  type ReactNode,
+} from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -9,9 +13,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { defaultLanguage } from "@/lib/content/localization";
 
-import { getLanguageFromPathname, getPageRoute } from "../routing/navigation";
 import i18n from "../i18n";
+import {
+  getLanguageFromPathname,
+  getPageRoute,
+} from "../routing/navigation";
 
 type ApplicationErrorBoundaryProps = {
   readonly children: ReactNode;
@@ -37,8 +45,15 @@ class ApplicationErrorBoundary extends Component<
     };
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    console.error("Application rendering error", error, errorInfo);
+  public componentDidCatch(
+    error: Error,
+    errorInfo: ErrorInfo,
+  ): void {
+    console.error(
+      "Application rendering error",
+      error,
+      errorInfo,
+    );
   }
 
   public render(): ReactNode {
@@ -47,9 +62,15 @@ class ApplicationErrorBoundary extends Component<
     }
 
     const pathname =
-      typeof window === "undefined" ? "/fr/" : window.location.pathname;
+      typeof window === "undefined"
+        ? getPageRoute(
+            "home",
+            defaultLanguage,
+          )
+        : window.location.pathname;
 
-    const language = getLanguageFromPathname(pathname);
+    const language =
+      getLanguageFromPathname(pathname);
 
     return (
       <main
@@ -69,7 +90,12 @@ class ApplicationErrorBoundary extends Component<
           <Card className="w-full border-border-strong shadow-elevated">
             <CardHeader className="gap-4">
               <p className="!m-0 font-mono text-xs font-semibold tracking-[0.08em] text-copper-strong uppercase">
-                {i18n.t("errors.eyebrow", { lng: language })}
+                {i18n.t(
+                  "errors.eyebrow",
+                  {
+                    lng: language,
+                  },
+                )}
               </p>
 
               <CardTitle>
@@ -77,20 +103,48 @@ class ApplicationErrorBoundary extends Component<
                   id="page-title"
                   className="!m-0 text-xl leading-heading tracking-[-0.025em] text-heading sm:text-2xl"
                 >
-                  {i18n.t("errors.title", { lng: language })}
+                  {i18n.t(
+                    "errors.title",
+                    {
+                      lng: language,
+                    },
+                  )}
                 </h1>
               </CardTitle>
 
               <CardDescription className="text-base leading-body">
-                {i18n.t("errors.message", { lng: language })}
+                {i18n.t(
+                  "errors.message",
+                  {
+                    lng: language,
+                  },
+                )}
               </CardDescription>
             </CardHeader>
 
             <CardContent>
-              <Button asChild size="lg" className="min-h-11">
-                <a href={getPageRoute("home", language)}>
-                  <HouseIcon aria-hidden="true" weight="bold" />
-                  {i18n.t("errors.homeLink", { lng: language })}
+              <Button
+                asChild
+                size="lg"
+                className="min-h-11"
+              >
+                <a
+                  href={getPageRoute(
+                    "home",
+                    language,
+                  )}
+                >
+                  <HouseIcon
+                    aria-hidden="true"
+                    weight="bold"
+                  />
+
+                  {i18n.t(
+                    "errors.homeLink",
+                    {
+                      lng: language,
+                    },
+                  )}
                 </a>
               </Button>
             </CardContent>

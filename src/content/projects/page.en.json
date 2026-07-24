@@ -1,0 +1,45 @@
+{
+    "eyebrow": "Projects",
+    "title": "Projects at the intersection of research and innovation",
+    "introduction": "Design, management and delivery of complex systems combining scientific research, software and instrumentation. Each project addresses scientific and operational challenges while ensuring rigour, collaboration and high-quality deliverables.",
+    "catalog": {
+        "listLabel": "Project list",
+        "periodLabel": "Period",
+        "languagesLabel": "Languages",
+        "technologiesLabel": "Technologies and methods",
+        "controls": {
+            "sortLabel": "Sort projects",
+            "sortPlaceholder": "Sort by",
+            "sortByDateDescending": "Date (newest first)",
+            "sortByDateAscending": "Date (oldest first)",
+            "sortByNameAscending": "Name (A to Z)",
+            "sortByNameDescending": "Name (Z to A)",
+            "filters": "Filters",
+            "filterByProject": "Project",
+            "filterByLanguage": "Language",
+            "clearFilters": "Clear filters",
+            "resultsOne": "{{count}} project shown",
+            "resultsOther": "{{count}} projects shown",
+            "noResults": "No projects match the selected filters."
+        }
+    },
+    "detail": {
+        "eyebrow": "Project details",
+        "overview": "Project overview",
+        "context": "Context and objectives",
+        "contribution": "My contribution",
+        "features": "Key features",
+        "results": "Results and impact",
+        "resources": "Resources",
+        "tags": "Technologies and languages",
+        "period": "Period",
+        "relatedItems": "Related items",
+        "relatedExperiences": "Experience",
+        "relatedSoftware": "Software",
+        "relatedPublications": "Scientific publications",
+        "navigationLabel": "Project navigation",
+        "backLabel": "Return to all projects",
+        "previousLabel": "Previous project",
+        "nextLabel": "Next project"
+    }
+}

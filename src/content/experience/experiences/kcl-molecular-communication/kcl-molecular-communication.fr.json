@@ -1,0 +1,102 @@
+{
+    "role": "Postdoctoral Research Associate — présentation publique : Chef de projet R&D",
+    "summary": "Création d’un laboratoire de communication moléculaire et d’un testbed opérationnel associant chimie, microfluidique, instrumentation, électronique, traitement du signal et apprentissage automatique.",
+    "highlights": {
+        "projectType": {
+            "label": "Nature du projet",
+            "value": "Création d’un laboratoire et d’un testbed expérimental"
+        },
+        "funding": {
+            "label": "Financements gérés",
+            "value": "Deux financements EPSRC de 300 k€ et 60 k€"
+        },
+        "team": {
+            "label": "Équipe pilotée",
+            "value": "5 personnes en moyenne"
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Laboratoire",
+            "text": "Création du laboratoire depuis zéro : locaux, équipements, hottes, consommables, sécurité et protocoles."
+        },
+        {
+            "label": "Équipe",
+            "text": "Gestion d’une équipe moyenne de cinq personnes et formation de neuf personnes au total."
+        },
+        {
+            "label": "Financement",
+            "text": "Gestion de deux financements EPSRC de 300 k€ et 60 k€."
+        },
+        {
+            "label": "Intelligence artificielle",
+            "text": "Développement d’un CNN 1D avec Python, TensorFlow et scikit-learn pour analyser des signaux UV-Vis."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Conception et fabrication de six pompes-seringues open source avec Fusion 360, impression 3D, Arduino, I²C, C++ et Python."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Expérimentation",
+            "items": [
+                {
+                    "label": "Microfluidique"
+                },
+                {
+                    "label": "Spectroscopie UV-Visible"
+                },
+                {
+                    "label": "Réactions chimiques"
+                }
+            ]
+        },
+        {
+            "title": "Apprentissage automatique",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "CNN 1D"
+                }
+            ]
+        },
+        {
+            "title": "Instrumentation et prototypage",
+            "items": [
+                {
+                    "label": "Autodesk Fusion 360"
+                },
+                {
+                    "label": "Impression 3D"
+                },
+                {
+                    "label": "Arduino"
+                },
+                {
+                    "label": "I²C"
+                },
+                {
+                    "label": "C++"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Laboratoire créé, testbed expérimental opérationnel, six pompes-seringues open source conçues et fabriquées, et deux publications scientifiques produites en premier auteur et rédacteur principal."
+    }
+}

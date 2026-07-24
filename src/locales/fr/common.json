@@ -3,8 +3,7 @@
         "name": "Vivien Praud Walter"
     },
     "accessibility": {
-        "skipToContent": "Aller au contenu principal",
-        "externalLink": "Lien externe"
+        "skipToContent": "Aller au contenu principal"
     },
     "navigation": {
         "primaryLabel": "Navigation principale",
@@ -13,7 +12,14 @@
         "projects": "Projets",
         "research": "Recherche et publications",
         "software": "Logiciels",
-        "contact": "Contact"
+        "contact": "Contact",
+        "mobile": {
+            "open": "Ouvrir la navigation",
+            "close": "Fermer la navigation",
+            "description": "Accéder aux différentes rubriques du portfolio.",
+            "cvUnavailable": "CV indisponible pour le moment",
+            "cvLabel": "CV (PDF)"
+        }
     },
     "languageSwitcher": {
         "label": "Choisir la langue"
@@ -31,134 +37,15 @@
             "title": "Parcours"
         },
         "projects": {
-            "title": "Projets",
-            "controls": {
-                "sortLabel": "Trier les projets",
-                "sortPlaceholder": "Trier par",
-                "sortByDateDescending": "Date (récent d’abord)",
-                "sortByDateAscending": "Date (ancien d’abord)",
-                "sortByNameAscending": "Nom (A à Z)",
-                "sortByNameDescending": "Nom (Z à A)",
-                "filters": "Filtres",
-                "filterByProject": "Projet",
-                "filterByLanguage": "Langage",
-                "clearFilters": "Effacer les filtres",
-                "results_one": "{{count}} projet affiché",
-                "results_other": "{{count}} projets affichés",
-                "noResults": "Aucun projet ne correspond aux filtres sélectionnés."
-            }
+            "title": "Projets"
         },
         "research": {
-            "title": "Recherche et publications",
-            "themesTitle": "Thématiques de recherche",
-            "followActivities": "Suivre mes activités",
-            "publications": {
-                "sectionTitle": "Publications sélectionnées",
-                "tabs": {
-                    "articles": "Articles",
-                    "theses": "Thèses"
-                },
-                "tableLabel": "Liste des publications",
-                "columns": {
-                    "year": "Année",
-                    "publication": "Publication",
-                    "authors": "Auteurs",
-                    "reference": "Référence",
-                    "actions": "Actions"
-                },
-                "actions": {
-                    "viewMore": "Voir plus",
-                    "showMore": "Afficher plus de publication",
-                    "doi": "DOI"
-                },
-                "emptyStates": {
-                    "articles": "Aucun article ne correspond aux critères sélectionnés.",
-                    "theses": "Aucune thèse n’est actuellement renseignée."
-                },
-                "controls": {
-                    "sortLabel": "Trier les publications",
-                    "sortPlaceholder": "Trier les publications",
-                    "sortByYearDescending": "Année : récente à ancienne",
-                    "sortByYearAscending": "Année : ancienne à récente",
-                    "sortByTitleAscending": "Titre : A à Z",
-                    "sortByTitleDescending": "Titre : Z à A",
-                    "sortByJournalAscending": "Journal : A à Z",
-                    "sortByJournalDescending": "Journal : Z à A",
-                    "filters": "Filtres",
-                    "filterByTheme": "Thématique de recherche",
-                    "filterByJournal": "Journal scientifique",
-                    "clearFilters": "Effacer les filtres"
-                }
-            }
-        },
-        "software": {
-            "title": "Logiciels",
-            "featuredTitle": "Logiciel mis en avant",
-            "followActivities": "Suivre mes activités",
-            "catalog": {
-                "sectionTitle": "Logiciels et applications web",
-                "listLabel": "Liste des logiciels et applications web",
-                "tabs": {
-                    "software": "Logiciels",
-                    "webApplications": "Applications web"
-                },
-                "actions": {
-                    "viewSoftware": "Voir le logiciel",
-                    "repository": "GitHub"
-                },
-                "emptyStates": {
-                    "software": "Aucun logiciel ne correspond aux critères sélectionnés.",
-                    "webApplications": "Aucune application web ne correspond aux critères sélectionnés."
-                },
-                "controls": {
-                    "sortLabel": "Trier les logiciels et applications web",
-                    "sortPlaceholder": "Trier par",
-                    "sortByYearDescending": "Année : récente à ancienne",
-                    "sortByYearAscending": "Année : ancienne à récente",
-                    "sortByTitleAscending": "Titre : A à Z",
-                    "sortByTitleDescending": "Titre : Z à A",
-                    "filters": "Filtres",
-                    "filterByProject": "Projet",
-                    "filterByLanguage": "Langage",
-                    "clearFilters": "Effacer les filtres"
-                }
-            }
-        },
-        "contact": {
-            "title": "Contact",
-            "methodsTitle": "Comment me contacter",
-            "jobSearch": {
-                "message": "Je suis actuellement à la recherche d’un emploi.",
-                "downloadCvFr": "Télécharger le CV en français",
-                "downloadCvEn": "Télécharger le CV en anglais"
-            }
+            "title": "Recherche et publications"
         }
     },
     "breadcrumbs": {
         "label": "Fil d’Ariane",
-        "home": "Accueil",
-        "experience": "Parcours",
-        "projects": "Projets",
-        "research": "Recherche et publications",
-        "software": "Logiciels"
-    },
-    "content": {
-        "period": "Période",
-        "context": "Contexte",
-        "role": "Rôle",
-        "contribution": "Contribution personnelle",
-        "status": "État",
-        "confidentiality": "Confidentialité et limites",
-        "technologies": "Technologies et méthodes",
-        "resources": "Ressources",
-        "organisation": "Organisation",
-        "location": "Localisation",
-        "contractualTitle": "Intitulé contractuel",
-        "publicTitle": "Présentation professionnelle",
-        "relatedItems": "Éléments associés",
-        "relatedProjects": "Projets",
-        "relatedSoftware": "Logiciels",
-        "relatedPublications": "Publications scientifiques"
+        "home": "Accueil"
     },
     "contentKinds": {
         "project": "Projet",
@@ -166,85 +53,8 @@
         "publication": "Publication"
     },
     "actions": {
-        "viewExperience": "Voir plus",
         "viewProject": "Voir le projet détaillé",
-        "viewSoftware": "Voir le logiciel détaillé",
-        "backToHome": "Retour à l’accueil",
-        "backToExperience": "Retour au parcours",
-        "backToProjects": "Retour à tous les projets",
-        "backToResearch": "Retour à Recherche et publications",
-        "backToSoftware": "Retour à tous les logiciels",
-        "previousExperience": "Expérience précédente",
-        "nextExperience": "Expérience suivante",
-        "previousParallelActivity": "Activité précédente",
-        "nextParallelActivity": "Activité suivante",
-        "previousProject": "Projet précédent",
-        "nextProject": "Projet suivant",
-        "previousResearchTheme": "Thématique précédente",
-        "nextResearchTheme": "Thématique suivante",
-        "previousPublication": "Publication précédente",
-        "nextPublication": "Publication suivante",
-        "previousSoftware": "Logiciel précédent",
-        "nextSoftware": "Logiciel suivant",
         "learnMore": "En savoir plus"
-    },
-    "experienceDetail": {
-        "eyebrow": "Expérience détaillée",
-        "navigationLabel": "Navigation entre les expériences"
-    },
-    "parallelActivityDetail": {
-        "eyebrow": "Activité menée en parallèle",
-        "navigationLabel": "Navigation entre les activités parallèles"
-    },
-    "projectDetail": {
-        "eyebrow": "Projet détaillé",
-        "executiveSummary": "Résumé exécutif",
-        "contextAndObjectives": "Contexte et objectifs",
-        "contributionsAndAchievements": "Contributions et réalisations",
-        "resultsAndFinalState": "Résultats et état final",
-        "technologiesAndMethods": "Technologies et méthodes",
-        "evidenceAndResources": "Preuves et ressources",
-        "confidentialityAndLimits": "Confidentialité et limites",
-        "navigationLabel": "Navigation entre les projets"
-    },
-    "researchThemeDetail": {
-        "eyebrow": "Thématique de recherche",
-        "highlightsLabel": "Informations clés sur la thématique",
-        "description": "Description",
-        "technologies": "Technologies utilisées",
-        "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
-        "navigationLabel": "Navigation entre les thématiques de recherche"
-    },
-    "researchPublicationDetail": {
-        "articleEyebrow": "Article scientifique",
-        "thesisEyebrow": "Thèse",
-        "metadata": "Informations bibliographiques",
-        "title": "Titre complet",
-        "journal": "Journal",
-        "authors": "Auteurs",
-        "year": "Année",
-        "reference": "Référence",
-        "description": "Description",
-        "resources": "Ressources liées",
-        "relatedItems": "Éléments associés",
-        "relatedThemes": "Thématiques de recherche",
-        "relatedProjects": "Projets",
-        "relatedSoftware": "Logiciels",
-        "relatedExperiences": "Expériences professionnelles",
-        "navigationLabel": "Navigation entre les publications"
-    },
-    "softwareDetail": {
-        "eyebrow": "Logiciel détaillé",
-        "summary": "Présentation",
-        "context": "Contexte et objectif",
-        "contribution": "Contribution personnelle",
-        "features": "Fonctions et apports",
-        "technologies": "Technologies",
-        "resources": "Ressources",
-        "navigationLabel": "Navigation entre les logiciels"
-    },
-    "publication": {
-        "contribution": "Contribution"
     },
     "notFound": {
         "eyebrow": "Page introuvable",
@@ -260,19 +70,6 @@
         "title": "La page ne peut pas être affichée",
         "message": "Une erreur inattendue empêche l’affichage de cette page. Vous pouvez revenir à l’accueil et poursuivre votre navigation.",
         "homeLink": "Retour à l’accueil",
-        "experienceNotFound": "Expérience introuvable",
-        "projectNotFound": "Projet introuvable",
-        "softwareNotFound": "Logiciel introuvable",
         "pageNotFound": "Page introuvable"
-    },
-    "links": {
-        "email": "Email",
-        "linkedin": "LinkedIn",
-        "github": "GitHub",
-        "orcid": "ORCID",
-        "mllpa": "Site et documentation de MLLPA"
-    },
-    "footer": {
-        "text": "Site professionnel de Vivien Praud Walter"
     }
 }

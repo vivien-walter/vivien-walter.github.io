@@ -1,0 +1,84 @@
+{
+    "title": "Recherche et publications",
+    "introduction": "Mes travaux relient biophysique, instrumentation, traitement du signal, apprentissage automatique et développement logiciel. Cette activité se poursuit à travers les publications, les logiciels et des collaborations ponctuelles.",
+    "sectionTitles": {
+        "themes": "Thématiques de recherche",
+        "publications": "Publications sélectionnées",
+        "activities": "Suivre mes activités"
+    },
+    "publications": {
+        "tabs": {
+            "articles": "Articles",
+            "theses": "Thèses"
+        },
+        "tableLabel": "Liste des publications",
+        "columns": {
+            "year": "Année",
+            "publication": "Publication",
+            "authors": "Auteurs",
+            "reference": "Référence",
+            "actions": "Actions"
+        },
+        "actions": {
+            "viewMore": "Voir plus",
+            "showMore": "Afficher plus de publications",
+            "doi": "DOI"
+        },
+        "emptyStates": {
+            "articles": "Aucun article ne correspond aux critères sélectionnés.",
+            "theses": "Aucune thèse n’est actuellement renseignée."
+        },
+        "controls": {
+            "sortLabel": "Trier les publications",
+            "sortPlaceholder": "Trier les publications",
+            "sortByYearDescending": "Année : récente à ancienne",
+            "sortByYearAscending": "Année : ancienne à récente",
+            "sortByTitleAscending": "Titre : A à Z",
+            "sortByTitleDescending": "Titre : Z à A",
+            "sortByJournalAscending": "Journal : A à Z",
+            "sortByJournalDescending": "Journal : Z à A",
+            "filters": "Filtres",
+            "filterByTheme": "Thématique de recherche",
+            "filterByJournal": "Journal scientifique",
+            "clearFilters": "Effacer les filtres"
+        }
+    },
+    "themeDetail": {
+        "eyebrow": "Thématique de recherche",
+        "highlightsLabel": "Informations clés sur la thématique",
+        "description": "Description",
+        "technologies": "Technologies utilisées",
+        "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
+        "navigationLabel": "Navigation entre les thématiques de recherche",
+        "backLabel": "Retour à Recherche et publications",
+        "previousLabel": "Thématique précédente",
+        "nextLabel": "Thématique suivante"
+    },
+    "publicationDetail": {
+        "articleEyebrow": "Article scientifique",
+        "thesisEyebrow": "Thèse",
+        "metadata": "Informations bibliographiques",
+        "title": "Titre complet",
+        "journal": "Journal",
+        "authors": "Auteurs",
+        "year": "Année",
+        "reference": "Référence",
+        "contribution": "Contribution",
+        "description": "Description",
+        "resources": "Ressources liées",
+        "relatedItems": "Éléments associés",
+        "relatedThemes": "Thématiques de recherche",
+        "relatedProjects": "Projets",
+        "relatedSoftware": "Logiciels",
+        "relatedExperiences": "Expériences professionnelles",
+        "navigationLabel": "Navigation entre les publications",
+        "backLabel": "Retour à Recherche et publications",
+        "previousLabel": "Publication précédente",
+        "nextLabel": "Publication suivante"
+    },
+    "resourceLabels": {
+        "github": "GitHub",
+        "orcid": "ORCID",
+        "linkedin": "LinkedIn"
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "title": "Logiciels",
+    "introduction": "Conception, développement et mise en production de logiciels scientifiques, d’outils d’instrumentation et de solutions d’analyse de données.",
+    "hero": {
+        "githubAction": "GitHub"
+    },
+    "featured": {
+        "title": "Logiciel mis en avant",
+        "viewAction": "Voir le logiciel détaillé"
+    },
+    "followActivities": {
+        "title": "Suivre mes activités"
+    },
+    "kindLabels": {
+        "software": "Logiciel",
+        "web-application": "Application web"
+    },
+    "catalog": {
+        "sectionTitle": "Logiciels et applications web",
+        "listLabel": "Liste des logiciels et applications web",
+        "technologiesLabel": "Technologies et méthodes",
+        "tabs": {
+            "software": "Logiciels",
+            "webApplications": "Applications web"
+        },
+        "actions": {
+            "viewSoftware": "Voir le logiciel",
+            "repository": "GitHub"
+        },
+        "emptyStates": {
+            "software": "Aucun logiciel ne correspond aux critères sélectionnés.",
+            "webApplications": "Aucune application web ne correspond aux critères sélectionnés."
+        },
+        "controls": {
+            "sortLabel": "Trier les logiciels et applications web",
+            "sortPlaceholder": "Trier par",
+            "sortByYearDescending": "Année : récente à ancienne",
+            "sortByYearAscending": "Année : ancienne à récente",
+            "sortByTitleAscending": "Titre : A à Z",
+            "sortByTitleDescending": "Titre : Z à A",
+            "filters": "Filtres",
+            "filterByProject": "Projet",
+            "filterByLanguage": "Langage",
+            "clearFilters": "Effacer les filtres"
+        }
+    },
+    "detail": {
+        "eyebrow": "Logiciel détaillé",
+        "highlightsLabel": "Informations clés sur le logiciel",
+        "descriptionTitle": "Description",
+        "technologiesTitle": "Technologies",
+        "resourcesTitle": "Ressources",
+        "externalLinkLabel": "Lien externe",
+        "navigationLabel": "Navigation entre les logiciels",
+        "backLabel": "Retour à tous les logiciels",
+        "previousLabel": "Logiciel précédent",
+        "nextLabel": "Logiciel suivant"
+    }
+}

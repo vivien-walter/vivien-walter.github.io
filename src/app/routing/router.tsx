@@ -1,19 +1,23 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 import AppShell from "@/app/shell/app-shell";
-import ContactPage from "@/routes/contact/contact-page";
-import ExperienceDetailPage from "@/routes/experience/experience-detail-page";
-import ExperiencePage from "@/routes/experience/experience-page";
-import ParallelActivityDetailPage from "@/routes/experience/parallel-activity-detail-page";
-import HomePage from "@/routes/home/home-page";
-import NotFoundPage from "@/routes/not-found/not-found-page";
-import ProjectDetailPage from "@/routes/projects/project-detail-page";
-import ProjectsPage from "@/routes/projects/projects-page";
-import ResearchPage from "@/routes/research/research-page";
-import ResearchPublicationDetailPage from "@/routes/research/research-publication-detail-page";
-import ResearchThemeDetailPage from "@/routes/research/research-theme-detail-page";
-import SoftwareDetailPage from "@/routes/software/software-detail-page";
-import SoftwarePage from "@/routes/software/software-page";
+import ContactPage from "@/routes/contact/page";
+import ExperienceDetailPage from "@/routes/experience/experience-detail/page";
+import ExperiencePage from "@/routes/experience/page";
+import ParallelActivityDetailPage from "@/routes/experience/parallel-activity-detail/page";
+import HomePage from "@/routes/home/page";
+import NotFoundPage from "@/routes/not-found/page";
+import ProjectDetailPage from "@/routes/projects/project-detail/page";
+import ProjectsPage from "@/routes/projects/page";
+import ResearchPage from "@/routes/research/page";
+import ResearchPublicationDetailPage from "@/routes/research/research-publication-detail/page";
+import ResearchThemeDetailPage from "@/routes/research/research-theme-detail/page";
+import SoftwareDetailPage from "@/routes/software/software-detail/page";
+import SoftwarePage from "@/routes/software/page";
 
 import {
   getDetailRoutePattern,
@@ -29,27 +33,47 @@ function AppRouter() {
           element={<HomePage />}
         />
         <Route
-          path={getPageRoute("experience", "fr")}
+          path={getPageRoute(
+            "experience",
+            "fr",
+          )}
           element={<ExperiencePage />}
         />
         <Route
-          path={getDetailRoutePattern("parallel-activity", "fr")}
-          element={<ParallelActivityDetailPage />}
+          path={getDetailRoutePattern(
+            "parallel-activity",
+            "fr",
+          )}
+          element={
+            <ParallelActivityDetailPage />
+          }
         />
         <Route
-          path={getDetailRoutePattern("experience", "fr")}
+          path={getDetailRoutePattern(
+            "experience",
+            "fr",
+          )}
           element={<ExperienceDetailPage />}
         />
         <Route
-          path={getPageRoute("projects", "fr")}
+          path={getPageRoute(
+            "projects",
+            "fr",
+          )}
           element={<ProjectsPage />}
         />
         <Route
-          path={getDetailRoutePattern("project", "fr")}
+          path={getDetailRoutePattern(
+            "project",
+            "fr",
+          )}
           element={<ProjectDetailPage />}
         />
         <Route
-          path={getPageRoute("research", "fr")}
+          path={getPageRoute(
+            "research",
+            "fr",
+          )}
           element={<ResearchPage />}
         />
         <Route
@@ -57,22 +81,38 @@ function AppRouter() {
             "research-publication",
             "fr",
           )}
-          element={<ResearchPublicationDetailPage />}
+          element={
+            <ResearchPublicationDetailPage />
+          }
         />
         <Route
-          path={getDetailRoutePattern("research-theme", "fr")}
-          element={<ResearchThemeDetailPage />}
+          path={getDetailRoutePattern(
+            "research-theme",
+            "fr",
+          )}
+          element={
+            <ResearchThemeDetailPage />
+          }
         />
         <Route
-          path={getPageRoute("software", "fr")}
+          path={getPageRoute(
+            "software",
+            "fr",
+          )}
           element={<SoftwarePage />}
         />
         <Route
-          path={getDetailRoutePattern("software", "fr")}
+          path={getDetailRoutePattern(
+            "software",
+            "fr",
+          )}
           element={<SoftwareDetailPage />}
         />
         <Route
-          path={getPageRoute("contact", "fr")}
+          path={getPageRoute(
+            "contact",
+            "fr",
+          )}
           element={<ContactPage />}
         />
 
@@ -81,27 +121,47 @@ function AppRouter() {
           element={<HomePage />}
         />
         <Route
-          path={getPageRoute("experience", "en")}
+          path={getPageRoute(
+            "experience",
+            "en",
+          )}
           element={<ExperiencePage />}
         />
         <Route
-          path={getDetailRoutePattern("parallel-activity", "en")}
-          element={<ParallelActivityDetailPage />}
+          path={getDetailRoutePattern(
+            "parallel-activity",
+            "en",
+          )}
+          element={
+            <ParallelActivityDetailPage />
+          }
         />
         <Route
-          path={getDetailRoutePattern("experience", "en")}
+          path={getDetailRoutePattern(
+            "experience",
+            "en",
+          )}
           element={<ExperienceDetailPage />}
         />
         <Route
-          path={getPageRoute("projects", "en")}
+          path={getPageRoute(
+            "projects",
+            "en",
+          )}
           element={<ProjectsPage />}
         />
         <Route
-          path={getDetailRoutePattern("project", "en")}
+          path={getDetailRoutePattern(
+            "project",
+            "en",
+          )}
           element={<ProjectDetailPage />}
         />
         <Route
-          path={getPageRoute("research", "en")}
+          path={getPageRoute(
+            "research",
+            "en",
+          )}
           element={<ResearchPage />}
         />
         <Route
@@ -109,22 +169,38 @@ function AppRouter() {
             "research-publication",
             "en",
           )}
-          element={<ResearchPublicationDetailPage />}
+          element={
+            <ResearchPublicationDetailPage />
+          }
         />
         <Route
-          path={getDetailRoutePattern("research-theme", "en")}
-          element={<ResearchThemeDetailPage />}
+          path={getDetailRoutePattern(
+            "research-theme",
+            "en",
+          )}
+          element={
+            <ResearchThemeDetailPage />
+          }
         />
         <Route
-          path={getPageRoute("software", "en")}
+          path={getPageRoute(
+            "software",
+            "en",
+          )}
           element={<SoftwarePage />}
         />
         <Route
-          path={getDetailRoutePattern("software", "en")}
+          path={getDetailRoutePattern(
+            "software",
+            "en",
+          )}
           element={<SoftwareDetailPage />}
         />
         <Route
-          path={getPageRoute("contact", "en")}
+          path={getPageRoute(
+            "contact",
+            "en",
+          )}
           element={<ContactPage />}
         />
 
@@ -133,7 +209,10 @@ function AppRouter() {
           element={
             <Navigate
               replace
-              to={getPageRoute("home", "fr")}
+              to={getPageRoute(
+                "home",
+                "fr",
+              )}
             />
           }
         />

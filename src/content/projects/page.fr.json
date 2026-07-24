@@ -1,0 +1,45 @@
+{
+    "eyebrow": "Projets",
+    "title": "Des projets au croisement de la recherche et de l’innovation",
+    "introduction": "Conception, pilotage et réalisation de systèmes complexes mêlant recherche scientifique, logiciels et instrumentation. Chaque projet répond à des enjeux scientifiques et opérationnels tout en garantissant rigueur, collaboration et livrables de qualité.",
+    "catalog": {
+        "listLabel": "Liste des projets",
+        "periodLabel": "Période",
+        "languagesLabel": "Langages",
+        "technologiesLabel": "Technologies et méthodes",
+        "controls": {
+            "sortLabel": "Trier les projets",
+            "sortPlaceholder": "Trier par",
+            "sortByDateDescending": "Date (récent d’abord)",
+            "sortByDateAscending": "Date (ancien d’abord)",
+            "sortByNameAscending": "Nom (A à Z)",
+            "sortByNameDescending": "Nom (Z à A)",
+            "filters": "Filtres",
+            "filterByProject": "Projet",
+            "filterByLanguage": "Langage",
+            "clearFilters": "Effacer les filtres",
+            "resultsOne": "{{count}} projet affiché",
+            "resultsOther": "{{count}} projets affichés",
+            "noResults": "Aucun projet ne correspond aux filtres sélectionnés."
+        }
+    },
+    "detail": {
+        "eyebrow": "Projet détaillé",
+        "overview": "Résumé du projet",
+        "context": "Contexte et objectifs",
+        "contribution": "Ma contribution",
+        "features": "Fonctionnalités clés",
+        "results": "Résultats et impact",
+        "resources": "Ressources",
+        "tags": "Technologies et langages",
+        "period": "Période",
+        "relatedItems": "Éléments associés",
+        "relatedExperiences": "Parcours",
+        "relatedSoftware": "Logiciels",
+        "relatedPublications": "Publications scientifiques",
+        "navigationLabel": "Navigation entre les projets",
+        "backLabel": "Retour à tous les projets",
+        "previousLabel": "Projet précédent",
+        "nextLabel": "Projet suivant"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "title": "Contact",
+    "introduction": "Please feel free to contact me about professional opportunities, scientific or technical collaborations, or any questions regarding my projects, publications and software.",
+    "methodsTitle": "How to contact me",
+    "methods": {
+        "email": {
+            "label": "Email",
+            "actionLabel": "Send an email"
+        },
+        "linkedin": {
+            "label": "LinkedIn",
+            "actionLabel": "View profile"
+        },
+        "github": {
+            "label": "GitHub",
+            "actionLabel": "View repositories"
+        },
+        "orcid": {
+            "label": "ORCID",
+            "actionLabel": "View profile"
+        }
+    },
+    "jobSearch": {
+        "message": "I am currently looking for a new job opportunity.",
+        "downloadCvFr": "Download the French CV",
+        "downloadCvEn": "Download the English CV"
+    },
+    "availability": {
+        "title": "Location and availability",
+        "items": {
+            "location": {
+                "title": "Location",
+                "description": "Based in Vendée."
+            },
+            "immediateAvailability": {
+                "title": "Availability",
+                "description": "Available immediately."
+            },
+            "workArrangements": {
+                "title": "Work arrangements",
+                "description": "Open to hybrid and remote work."
+            }
+        }
+    }
+}

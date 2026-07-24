@@ -1,0 +1,96 @@
+{
+    "role": "Postdoctoral Research Associate — présentation publique : Chef de projet R&D",
+    "summary": "Pilotage d’un projet de 500 k€ consacré à la construction, à la qualification et à l’exploitation d’un microscope iSCAT complet.",
+    "highlights": {
+        "projectType": {
+            "label": "Nature du projet",
+            "value": "Construction d’un microscope iSCAT complet"
+        },
+        "budget": {
+            "label": "Budget du projet",
+            "value": "500 k€"
+        },
+        "team": {
+            "label": "Équipe encadrée",
+            "value": "3 doctorants et 2 stagiaires de Master"
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "Le projet a été mené à King’s College London afin de construire, qualifier et exploiter un microscope iSCAT complet.",
+            "Il couvrait l’ensemble de la chaîne expérimentale, depuis la sélection et l’acquisition des composants optiques et instrumentaux jusqu’à la conception des protocoles, des échantillons et des expériences.",
+            "Le projet représentait un financement de 500 k€ assuré par le BBSRC avec un cofinancement d’Oxford Nanopore Technologies."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Pilotage",
+            "text": "Pilotage du projet financé par le BBSRC et cofinancé par Oxford Nanopore Technologies."
+        },
+        {
+            "label": "Équipe",
+            "text": "Encadrement de trois doctorants et de deux stagiaires de Master."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Sélection et acquisition des composants optiques et instrumentaux, assemblage de la table optique et qualification du microscope complet."
+        },
+        {
+            "label": "Contrôle et automatisation",
+            "text": "Développement du logiciel LabVIEW utilisé pour contrôler l’instrument et automatiser les acquisitions expérimentales."
+        },
+        {
+            "label": "Expérimentation",
+            "text": "Conception des protocoles, des échantillons et des expériences, puis mise en place de l’acquisition des données."
+        },
+        {
+            "label": "Analyse scientifique",
+            "text": "Développement de méthodes d’analyse d’images et d’interprétation des résultats avec Python, des macros ImageJ et Java pour ImageJ."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Instrumentation",
+            "items": [
+                {
+                    "label": "Microscopie iSCAT"
+                },
+                {
+                    "label": "Instrumentation optique"
+                },
+                {
+                    "label": "Acquisition expérimentale"
+                }
+            ]
+        },
+        {
+            "title": "Contrôle et automatisation",
+            "items": [
+                {
+                    "label": "LabVIEW"
+                }
+            ]
+        },
+        {
+            "title": "Analyse d’images",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "ImageJ"
+                },
+                {
+                    "label": "Macros ImageJ"
+                },
+                {
+                    "label": "Java pour ImageJ"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Microscope iSCAT complet, qualifié et opérationnel, logiciel LabVIEW de contrôle et d’automatisation développé, chaîne expérimentale mise en place et plusieurs publications scientifiques issues du projet."
+    }
+}

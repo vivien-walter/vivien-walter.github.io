@@ -1,0 +1,45 @@
+{
+    "title": "Contact",
+    "introduction": "N’hésitez pas à me contacter pour des opportunités professionnelles, des collaborations scientifiques ou techniques, ou toute question concernant mes projets, publications et logiciels.",
+    "methodsTitle": "Comment me contacter",
+    "methods": {
+        "email": {
+            "label": "Email",
+            "actionLabel": "Envoyer un courriel"
+        },
+        "linkedin": {
+            "label": "LinkedIn",
+            "actionLabel": "Voir le profil"
+        },
+        "github": {
+            "label": "GitHub",
+            "actionLabel": "Voir les dépôts"
+        },
+        "orcid": {
+            "label": "ORCID",
+            "actionLabel": "Voir le profil"
+        }
+    },
+    "jobSearch": {
+        "message": "Je suis actuellement à la recherche d’une nouvelle opportunité professionnelle.",
+        "downloadCvFr": "Télécharger le CV en français",
+        "downloadCvEn": "Télécharger le CV en anglais"
+    },
+    "availability": {
+        "title": "Localisation et disponibilité",
+        "items": {
+            "location": {
+                "title": "Localisation",
+                "description": "Basé en Vendée."
+            },
+            "immediateAvailability": {
+                "title": "Disponibilité",
+                "description": "Disponible immédiatement."
+            },
+            "workArrangements": {
+                "title": "Modalités de travail",
+                "description": "Ouvert au travail hybride et à distance."
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "role": "Postdoctoral Research Associate — public presentation: R&D Project Manager",
+    "summary": "Led a €500,000 project to build, qualify and operate a complete iSCAT microscope.",
+    "highlights": {
+        "projectType": {
+            "label": "Project type",
+            "value": "Construction of a complete iSCAT microscope"
+        },
+        "budget": {
+            "label": "Project budget",
+            "value": "€500k"
+        },
+        "team": {
+            "label": "Team supervised",
+            "value": "3 doctoral researchers and 2 Master’s interns"
+        }
+    },
+    "description": {
+        "paragraphs": [
+            "The project was conducted at King’s College London to build, qualify and operate a complete iSCAT microscope.",
+            "It covered the entire experimental workflow, from the selection and procurement of optical and instrumental components through the design of protocols, samples and experiments.",
+            "The project represented €500,000 in funding from the BBSRC, with co-funding from Oxford Nanopore Technologies."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Project leadership",
+            "text": "Led the project funded by the BBSRC and co-funded by Oxford Nanopore Technologies."
+        },
+        {
+            "label": "Team",
+            "text": "Managed three doctoral researchers and two Master’s interns."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Selected and procured the optical and instrumental components, assembled the optical table and qualified the complete microscope."
+        },
+        {
+            "label": "Control and automation",
+            "text": "Developed the LabVIEW software used to control the instrument and automate experimental acquisitions."
+        },
+        {
+            "label": "Experimental work",
+            "text": "Designed the protocols, samples and experiments, then implemented data acquisition."
+        },
+        {
+            "label": "Scientific analysis",
+            "text": "Developed image-analysis and result-interpretation methods using Python, ImageJ macros and Java for ImageJ."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Instrumentation",
+            "items": [
+                {
+                    "label": "iSCAT microscopy"
+                },
+                {
+                    "label": "Optical instrumentation"
+                },
+                {
+                    "label": "Experimental acquisition"
+                }
+            ]
+        },
+        {
+            "title": "Control and automation",
+            "items": [
+                {
+                    "label": "LabVIEW"
+                }
+            ]
+        },
+        {
+            "title": "Image analysis",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "ImageJ"
+                },
+                {
+                    "label": "ImageJ macros"
+                },
+                {
+                    "label": "Java for ImageJ"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "The iSCAT microscope was complete, qualified and operational, the LabVIEW control and automation software had been developed, the experimental workflow was established and the project had produced several scientific publications."
+    }
+}

@@ -1,14 +1,16 @@
-import { useEffect, useRef } from "react";
+import {
+  useEffect,
+  useRef,
+} from "react";
 import { useTranslation } from "react-i18next";
-import { Outlet, useLocation } from "react-router-dom";
-
-import { getProjectById } from "@/routes/projects/data/project-content.loader";
-import { getSoftwareById } from "@/routes/software/data/software-content.loader";
+import {
+  Outlet,
+  useLocation,
+} from "react-router-dom";
 
 import {
   getLanguageFromPathname,
   getNavigationItemFromPathname,
-  getRouteMatchFromPathname,
 } from "../routing/navigation";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
@@ -18,51 +20,87 @@ function AppShell() {
   const { i18n, t } = useTranslation();
 
   const mainRef = useRef<HTMLElement>(null);
-  const previousPathnameRef = useRef(location.pathname);
 
-  const currentLanguage = getLanguageFromPathname(location.pathname);
+  const previousPathnameRef = useRef(
+    location.pathname,
+  );
+
+  const currentLanguage =
+    getLanguageFromPathname(
+      location.pathname,
+    );
 
   useEffect(() => {
-    document.documentElement.lang = currentLanguage;
+    document.documentElement.lang =
+      currentLanguage;
 
-    if (i18n.resolvedLanguage !== currentLanguage) {
-      void i18n.changeLanguage(currentLanguage);
+    if (
+      i18n.resolvedLanguage !==
+      currentLanguage
+    ) {
+      void i18n.changeLanguage(
+        currentLanguage,
+      );
     }
-  }, [currentLanguage, i18n]);
+  }, [
+    currentLanguage,
+    i18n,
+  ]);
 
   useEffect(() => {
-    const routeMatch = getRouteMatchFromPathname(location.pathname);
-    let pageTitle: string;
+    const animationFrameId =
+      window.requestAnimationFrame(() => {
+        const renderedPageTitle =
+          document
+            .getElementById("page-title")
+            ?.textContent?.trim();
 
-    if (routeMatch.kind === "page") {
-      const navigationItem = getNavigationItemFromPathname(location.pathname);
+        const navigationItem =
+          getNavigationItemFromPathname(
+            location.pathname,
+          );
 
-      pageTitle = t(navigationItem?.titleKey ?? "pages.home.title", {
-        lng: currentLanguage,
+        const fallbackPageTitle = t(
+          navigationItem?.titleKey ??
+            "errors.pageNotFound",
+          {
+            lng: currentLanguage,
+          },
+        );
+
+        const pageTitle =
+          renderedPageTitle ||
+          fallbackPageTitle;
+
+        const siteName = t(
+          "site.name",
+          {
+            lng: currentLanguage,
+          },
+        );
+
+        document.title =
+          `${pageTitle} | ${siteName}`;
       });
-    } else if (routeMatch.kind === "project") {
-      pageTitle =
-        getProjectById(currentLanguage, routeMatch.slug)?.title ??
-        t("errors.projectNotFound", { lng: currentLanguage });
-    } else if (routeMatch.kind === "software") {
-      pageTitle =
-        getSoftwareById(currentLanguage, routeMatch.slug)?.title ??
-        t("errors.softwareNotFound", { lng: currentLanguage });
-    } else {
-      pageTitle = t("errors.pageNotFound", { lng: currentLanguage });
-    }
 
-    const siteName = t("site.name", {
-      lng: currentLanguage,
-    });
-
-    document.title = `${pageTitle} | ${siteName}`;
-  }, [currentLanguage, location.pathname, t]);
+    return () => {
+      window.cancelAnimationFrame(
+        animationFrameId,
+      );
+    };
+  }, [
+    currentLanguage,
+    location.pathname,
+    t,
+  ]);
 
   useEffect(() => {
-    const pathnameChanged = previousPathnameRef.current !== location.pathname;
+    const pathnameChanged =
+      previousPathnameRef.current !==
+      location.pathname;
 
-    previousPathnameRef.current = location.pathname;
+    previousPathnameRef.current =
+      location.pathname;
 
     if (!pathnameChanged) {
       return;
@@ -96,9 +134,12 @@ function AppShell() {
         ].join(" ")}
         href="#main-content"
       >
-        {t("accessibility.skipToContent", {
-          lng: currentLanguage,
-        })}
+        {t(
+          "accessibility.skipToContent",
+          {
+            lng: currentLanguage,
+          },
+        )}
       </a>
 
       <SiteHeader />
