@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
+import { curriculumVitaeDocuments } from '@/content/common/documents';
 import { siteIdentity } from '@/content/common/site';
 import { cn } from '@/lib/utils';
 
@@ -18,6 +19,9 @@ export default function SiteHeader() {
   /* Fetch all data for the translation */
   const { t } = useTranslation();
   const currentLanguage = getLanguageFromPathname(location.pathname);
+
+  /* Fetch the resume document for download */
+  const curriculumVitae = curriculumVitaeDocuments[currentLanguage];
 
   /* Fetch the page */
   const currentPageId = getPageIdFromPathname(location.pathname);
@@ -70,8 +74,7 @@ export default function SiteHeader() {
             <LanguageSwitcher />
           </div>
           <Button
-            type="button"
-            disabled
+            asChild
             className={cn(
               'hidden h-12',
               'rounded-sm px-5',
@@ -79,17 +82,18 @@ export default function SiteHeader() {
               'text-base font-medium',
               'text-primary-foreground',
               'shadow-subtle',
-              'disabled:cursor-not-allowed',
-              'disabled:opacity-100',
               'lg:inline-flex',
             )}
           >
-            <DownloadSimpleIcon aria-hidden="true" size={20} weight="bold" />
-            <span>
-              {t('navigation.mobile.cvLabel', {
-                lng: currentLanguage,
-              })}
-            </span>
+            <a href={curriculumVitae.href} download={curriculumVitae.downloadName}>
+              <DownloadSimpleIcon aria-hidden="true" size={20} weight="bold" />
+
+              <span>
+                {t('navigation.mobile.cvLabel', {
+                  lng: currentLanguage,
+                })}
+              </span>
+            </a>
           </Button>
 
           <div className="lg:hidden">

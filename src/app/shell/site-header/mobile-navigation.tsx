@@ -15,6 +15,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { curriculumVitaeDocuments } from '@/content/common/documents';
 import { supportedLanguages } from '@/lib/content/localization';
 import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
@@ -43,9 +44,7 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const cvUnavailableLabel = t('navigation.mobile.cvUnavailable', {
-    lng: currentLanguage,
-  });
+  const curriculumVitae = curriculumVitaeDocuments[currentLanguage];
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -242,11 +241,8 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
         <div className="px-6 pb-8">
           <div className="border-t border-white/20 pt-5">
             <Button
-              type="button"
+              asChild
               variant="ghost"
-              disabled
-              aria-label={cvUnavailableLabel}
-              title={cvUnavailableLabel}
               className={cn(
                 'h-12 w-full',
                 'justify-start rounded-sm',
@@ -254,17 +250,26 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
                 'font-medium',
                 'text-brand-background',
                 'shadow-none',
-                'disabled:cursor-not-allowed',
-                'disabled:opacity-100',
+                'hover:bg-white/10',
+                'hover:text-brand-background',
+                'focus-visible:ring-white/70',
               )}
             >
-              <DownloadSimpleIcon aria-hidden="true" size={22} weight="regular" />
+              <a
+                href={curriculumVitae.href}
+                download={curriculumVitae.downloadName}
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                <DownloadSimpleIcon aria-hidden="true" size={22} weight="regular" />
 
-              <span>
-                {t('navigation.mobile.cvLabel', {
-                  lng: currentLanguage,
-                })}
-              </span>
+                <span>
+                  {t('navigation.mobile.cvLabel', {
+                    lng: currentLanguage,
+                  })}
+                </span>
+              </a>
             </Button>
           </div>
         </div>
