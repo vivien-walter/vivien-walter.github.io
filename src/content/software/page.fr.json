@@ -1,8 +1,11 @@
 {
     "title": "Mes logiciels et applications",
     "introduction": "Conception, développement et mise en production de logiciels scientifiques, d’outils d’instrumentation et de solutions d’analyse de données.",
-    "hero": {
-        "githubAction": "Découvrir mes repos GitHub"
+    "heroActions": {
+        "github": "Découvrir mes repos GitHub"
+    },
+    "heroImage": {
+        "alt": "Lorem ipsum dolor sit amet."
     },
     "featured": {
         "title": "Logiciel mis en avant",

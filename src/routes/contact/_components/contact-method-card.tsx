@@ -1,14 +1,15 @@
-import { ArrowRightIcon } from '@phosphor-icons/react';
+import { ArrowRightIcon, ArrowSquareOutIcon } from '@phosphor-icons/react';
 
 import { InteractiveCard } from '@/components/interactive-card';
 import type { ContactMethod } from '@/content/contact/contact';
 import { cn } from '@/lib/utils';
 
 type ContactMethodCardProps = {
+  readonly externalLinkLabel: string;
   readonly method: ContactMethod;
 };
 
-function ContactMethodCard({ method }: ContactMethodCardProps) {
+function ContactMethodCard({ externalLinkLabel, method }: ContactMethodCardProps) {
   const Icon = method.icon;
   const opensInNewTab = method.href.startsWith('https://');
 
@@ -28,16 +29,24 @@ function ContactMethodCard({ method }: ContactMethodCardProps) {
     >
       <InteractiveCard interaction="group" className={cn('h-full gap-0 rounded-lg p-5', 'border-border bg-brand-background shadow-none')}>
         <div className="flex min-w-0 flex-col items-start">
-          <span
-            aria-hidden="true"
-            className={cn('text-brand-primary', 'ease-standard transition-colors duration-200', 'group-hover:text-brand-dark')}
+          <div className="flex min-w-0 items-center gap-3">
+            <span
+              aria-hidden="true"
+              className={cn('text-brand-primary shrink-0', 'ease-standard transition-colors duration-200', 'group-hover:text-brand-dark')}
+            >
+              <Icon className="size-9" weight="regular" />
+            </span>
+
+            <h3 className={cn('!m-0 min-w-0', '!leading-heading !text-base !font-bold', 'text-brand-ink !tracking-[-0.0125em]')}>{method.label}</h3>
+          </div>
+
+          <p
+            className={cn(
+              'sr-only max-w-full [overflow-wrap:anywhere]',
+              'text-muted-foreground text-sm leading-relaxed',
+              'sm:not-sr-only sm:!mt-1.5 sm:!mb-0 sm:block sm:min-h-12',
+            )}
           >
-            <Icon className="size-9" weight="regular" />
-          </span>
-
-          <h3 className={cn('!mt-3 !mb-0', '!leading-heading !text-base !font-bold', 'text-brand-ink !tracking-[-0.0125em]')}>{method.label}</h3>
-
-          <p className={cn('!mt-1.5 !mb-0 min-h-12 max-w-full', 'text-muted-foreground text-sm leading-relaxed', '[overflow-wrap:anywhere]')}>
             {method.value}
           </p>
 
@@ -51,7 +60,13 @@ function ContactMethodCard({ method }: ContactMethodCardProps) {
           >
             <span>{method.actionLabel}</span>
 
-            <ArrowRightIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
+            {opensInNewTab ? <span className="sr-only"> — {externalLinkLabel}</span> : null}
+
+            {opensInNewTab ? (
+              <ArrowSquareOutIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
+            ) : (
+              <ArrowRightIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
+            )}
           </span>
         </div>
       </InteractiveCard>

@@ -1,8 +1,11 @@
 {
     "title": "Software",
     "introduction": "Design, development and production deployment of scientific software, instrumentation tools and data-analysis solutions.",
-    "hero": {
-        "githubAction": "GitHub"
+    "heroActions": {
+        "github": " GitHub"
+    },
+    "heroImage": {
+        "alt": "Lorem ipsum dolor sit amet."
     },
     "featured": {
         "title": "Featured software",

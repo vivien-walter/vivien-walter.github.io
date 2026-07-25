@@ -20,34 +20,32 @@ function AvailabilityCard({ item }: AvailabilityCardProps) {
       <Card
         className={cn(
           'h-full gap-0 rounded-lg p-5 shadow-none',
-          item.highlighted ? ['border-brand-primary', 'bg-brand-primary text-white'] : ['border-border-strong', 'bg-brand-background text-brand-ink'],
+          item.highlighted ? 'border-brand-primary bg-brand-primary text-white' : 'border-border-strong bg-brand-background text-brand-ink',
         )}
       >
-        <div className={cn('grid h-full min-w-0', 'grid-cols-[3rem_minmax(0,1fr)]', 'items-center gap-4')}>
+        <div className="grid h-full min-w-0 grid-cols-[3rem_minmax(0,1fr)] items-center gap-4">
           <span
             aria-hidden="true"
             className={cn(
-              'flex size-12 shrink-0',
-              'items-center justify-center rounded-md',
+              'flex size-12 shrink-0 items-center justify-center rounded-md',
               item.highlighted ? 'bg-white/15 text-white' : 'bg-action-soft text-brand-primary',
             )}
           >
-            <Icon aria-hidden="true" className="size-6" weight="regular" />
+            <Icon className="size-6" weight="regular" />
           </span>
 
           <div className="min-w-0">
             <h3
               id={titleId}
               className={cn(
-                '!m-0 !text-base !font-bold',
-                '!leading-heading !tracking-[-0.0125em]',
+                '!leading-heading !m-0 !text-base !font-bold !tracking-[-0.0125em]',
                 item.highlighted ? '!text-white' : '!text-brand-ink',
               )}
             >
               {item.title}
             </h3>
 
-            <p className={cn('!mt-1.5 !mb-0', 'text-sm leading-relaxed', item.highlighted ? '!text-white/90' : 'text-muted-foreground')}>
+            <p className={cn('!mt-1.5 !mb-0 text-sm leading-relaxed', item.highlighted ? '!text-white/90' : 'text-muted-foreground')}>
               {item.description}
             </p>
           </div>
@@ -59,7 +57,7 @@ function AvailabilityCard({ item }: AvailabilityCardProps) {
 
 function ContactAvailabilitySection({ content }: ContactAvailabilitySectionProps) {
   return (
-    <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby="contact-availability-title">
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="contact-availability-title">
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id="contact-availability-title">{content.title}</SectionTitle>
       </SectionHeader>

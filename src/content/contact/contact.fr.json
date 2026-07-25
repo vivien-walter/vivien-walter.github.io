@@ -6,6 +6,7 @@
         "alt": "Lorem ipsum dolor sit amet."
     },
     "methodsTitle": "Me contacter et me suivre",
+    "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
     "methods": {
         "email": {
             "label": "Email",

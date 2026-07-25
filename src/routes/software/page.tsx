@@ -1,22 +1,21 @@
 import { ArrowRightIcon, ArrowUpRightIcon, type Icon } from '@phosphor-icons/react';
 import { useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 
-import { getLanguageFromPathname, getPageRoute, getSoftwareRoute } from '@/app/routing/navigation';
-import PageHero from '@/components/page-hero';
+import { getLanguageFromPathname, getSoftwareRoute } from '@/app/routing/navigation';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { getProjectCollection } from '@/content/projects/page';
 import type { ProjectId } from '@/content/projects/registry';
-import { getSoftwareCollection, getSoftwarePage } from '@/content/software/page';
+import { getSoftwareCollection, getSoftwareContent } from '@/content/software/page';
 import type { SoftwareId } from '@/content/software/registry';
 import { cn } from '@/lib/utils';
 
 import SoftwareCatalogEntry, { type SoftwareCatalogEntryContent } from './_components/software-catalog-entry';
 import SoftwareControls, { type SoftwareSortOption } from './_components/software-controls';
+import SoftwareHero from './_components/software-hero';
 
 type SoftwareKind = 'software' | 'web-application';
 
@@ -83,11 +82,10 @@ function compareOptionalYears(firstYear: number | undefined, secondYear: number 
 
 function SoftwarePage() {
   const location = useLocation();
-  const { t } = useTranslation();
 
   const language = getLanguageFromPathname(location.pathname);
 
-  const page = getSoftwarePage(language);
+  const page = getSoftwareContent(language);
 
   const [activeKind, setActiveKind] = useState<SoftwareKind>('software');
 
@@ -201,8 +199,6 @@ function SoftwarePage() {
     return entry ? [entry.software] : [];
   })[0];
 
-  const GithubIcon = page.githubResource.icon;
-
   const articlesTabId = 'software-catalog-software-tab';
 
   const webApplicationsTabId = 'software-catalog-web-applications-tab';
@@ -213,35 +209,7 @@ function SoftwarePage() {
 
   return (
     <div className="overflow-hidden">
-      <PageHero
-        breadcrumbs={{
-          ariaLabel: t('breadcrumbs.label', {
-            lng: language,
-          }),
-          items: [
-            {
-              label: t('breadcrumbs.home', {
-                lng: language,
-              }),
-              to: getPageRoute('home', language),
-            },
-            {
-              label: page.title,
-            },
-          ],
-        }}
-        title={page.title}
-        introduction={page.introduction}
-        actions={
-          <Button asChild size="lg" className="min-h-11">
-            <a href={page.githubResource.href} target="_blank" rel="noreferrer" data-external="true">
-              <GithubIcon aria-hidden="true" weight="bold" />
-
-              {page.githubResource.label}
-            </a>
-          </Button>
-        }
-      />
+      <SoftwareHero language={language} />
 
       {featuredSoftware ? (
         <Section className="border-border border-b" containerClassName="py-12 sm:py-14 lg:py-16" aria-labelledby="featured-software-title">

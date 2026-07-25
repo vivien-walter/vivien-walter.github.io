@@ -1,5 +1,7 @@
 import { CalendarCheckIcon, EnvelopeSimpleIcon, type Icon, LaptopIcon, MapPinIcon } from '@phosphor-icons/react';
 
+import englishCvUrl from '@/assets/documents/cv/vivien-praud-walter-cv-en.pdf';
+import frenchCvUrl from '@/assets/documents/cv/vivien-praud-walter-cv-fr.pdf';
 import heroImageSrc from '@/assets/images/contact/hero.jpg';
 import { publicProfile } from '@/content/common/profile';
 import { selectLocalizedContent } from '@/lib/content/localization';
@@ -23,6 +25,7 @@ type LocalizedContactContent = {
   };
 
   readonly methodsTitle: string;
+  readonly externalLinkLabel: string;
 
   readonly methods: {
     readonly email: LocalizedContactMethod;
@@ -90,7 +93,9 @@ export type ContactAvailabilitySection = {
 export type ContactJobSearchContent = {
   readonly message: string;
   readonly frenchCvLabel: string;
+  readonly frenchCvHref: string;
   readonly englishCvLabel: string;
+  readonly englishCvHref: string;
 };
 
 export type ContactContent = {
@@ -99,6 +104,7 @@ export type ContactContent = {
   readonly introduction: string;
   readonly heroImage: ContactHeroImage;
   readonly methodsTitle: string;
+  readonly externalLinkLabel: string;
   readonly links: readonly ContactMethod[];
   readonly jobSearch: ContactJobSearchContent;
   readonly availability: ContactAvailabilitySection;
@@ -139,6 +145,7 @@ function assembleContactContent(localizedContent: LocalizedContactContent): Cont
     },
 
     methodsTitle: localizedContent.methodsTitle,
+    externalLinkLabel: localizedContent.externalLinkLabel,
 
     links: [
       {
@@ -178,7 +185,9 @@ function assembleContactContent(localizedContent: LocalizedContactContent): Cont
     jobSearch: {
       message: localizedContent.jobSearch.message,
       frenchCvLabel: localizedContent.jobSearch.downloadCvFr,
+      frenchCvHref: frenchCvUrl,
       englishCvLabel: localizedContent.jobSearch.downloadCvEn,
+      englishCvHref: englishCvUrl,
     },
 
     availability: {
