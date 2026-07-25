@@ -1,7 +1,11 @@
 {
-    "title": "Contact",
-    "introduction": "N’hésitez pas à me contacter pour des opportunités professionnelles, des collaborations scientifiques ou techniques, ou toute question concernant mes projets, publications et logiciels.",
-    "methodsTitle": "Comment me contacter",
+    "eyebrow": "Contact",
+    "title": "Vous souhaitez en savoir plus ?",
+    "introduction": "N’hésitez pas à me contacter si vous désirez échanger, que ce soit pour des opportunités professionnelles, des collaborations scientifiques ou techniques, ou toute question concernant mes projets, publications et logiciels.",
+    "heroImage": {
+        "alt": "Lorem ipsum dolor sit amet."
+    },
+    "methodsTitle": "Me contacter et me suivre",
     "methods": {
         "email": {
             "label": "Email",
@@ -21,9 +25,9 @@
         }
     },
     "jobSearch": {
-        "message": "Je suis actuellement à la recherche d’une nouvelle opportunité professionnelle.",
-        "downloadCvFr": "Télécharger le CV en français",
-        "downloadCvEn": "Télécharger le CV en anglais"
+        "message": "Je suis actuellement à la recherche d’une nouvelle opportunité professionnelle !",
+        "downloadCvFr": "Télécharger mon CV en français",
+        "downloadCvEn": "Télécharger mon CV en anglais"
     },
     "availability": {
         "title": "Localisation et disponibilité",
@@ -38,7 +42,7 @@
             },
             "workArrangements": {
                 "title": "Modalités de travail",
-                "description": "Ouvert au travail hybride et à distance."
+                "description": "Ouvert à tous les modes : présentiel, hybride et distanciel complet."
             }
         }
     }

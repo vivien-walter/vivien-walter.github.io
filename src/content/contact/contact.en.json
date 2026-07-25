@@ -1,6 +1,10 @@
 {
+    "eyebrow": "Contact",
     "title": "Contact",
     "introduction": "Please feel free to contact me about professional opportunities, scientific or technical collaborations, or any questions regarding my projects, publications and software.",
+    "heroImage": {
+        "alt": "Lorem ipsum dolor sit amet."
+    },
     "methodsTitle": "How to contact me",
     "methods": {
         "email": {

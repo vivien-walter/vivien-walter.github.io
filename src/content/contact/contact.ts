@@ -1,5 +1,6 @@
 import { CalendarCheckIcon, EnvelopeSimpleIcon, type Icon, LaptopIcon, MapPinIcon } from '@phosphor-icons/react';
 
+import heroImageSrc from '@/assets/images/contact/hero.jpg';
 import { publicProfile } from '@/content/common/profile';
 import { selectLocalizedContent } from '@/lib/content/localization';
 import type { LocalizedContent, SupportedLanguage } from '@/types/localization';
@@ -13,8 +14,14 @@ type LocalizedContactMethod = {
 };
 
 type LocalizedContactContent = {
+  readonly eyebrow: string;
   readonly title: string;
   readonly introduction: string;
+
+  readonly heroImage: {
+    readonly alt: string;
+  };
+
   readonly methodsTitle: string;
 
   readonly methods: {
@@ -47,6 +54,11 @@ type LocalizedContactContent = {
       };
     };
   };
+};
+
+export type ContactHeroImage = {
+  readonly src: string;
+  readonly alt: string;
 };
 
 export type ContactMethodId = 'email' | 'linkedin' | 'github' | 'orcid';
@@ -82,8 +94,10 @@ export type ContactJobSearchContent = {
 };
 
 export type ContactContent = {
+  readonly eyebrow: string;
   readonly title: string;
   readonly introduction: string;
+  readonly heroImage: ContactHeroImage;
   readonly methodsTitle: string;
   readonly links: readonly ContactMethod[];
   readonly jobSearch: ContactJobSearchContent;
@@ -115,8 +129,15 @@ const orcidProfile = getPublicExternalLink('orcid');
 
 function assembleContactContent(localizedContent: LocalizedContactContent): ContactContent {
   return {
+    eyebrow: localizedContent.eyebrow,
     title: localizedContent.title,
     introduction: localizedContent.introduction,
+
+    heroImage: {
+      src: heroImageSrc,
+      alt: localizedContent.heroImage.alt,
+    },
+
     methodsTitle: localizedContent.methodsTitle,
 
     links: [
@@ -137,20 +158,20 @@ function assembleContactContent(localizedContent: LocalizedContactContent): Cont
         actionLabel: localizedContent.methods.linkedin.actionLabel,
       },
       {
-        id: 'github',
-        icon: githubProfile.icon,
-        label: localizedContent.methods.github.label,
-        href: githubProfile.href,
-        value: githubProfile.displayValue,
-        actionLabel: localizedContent.methods.github.actionLabel,
-      },
-      {
         id: 'orcid',
         icon: orcidProfile.icon,
         label: localizedContent.methods.orcid.label,
         href: orcidProfile.href,
         value: orcidProfile.displayValue,
         actionLabel: localizedContent.methods.orcid.actionLabel,
+      },
+      {
+        id: 'github',
+        icon: githubProfile.icon,
+        label: localizedContent.methods.github.label,
+        href: githubProfile.href,
+        value: githubProfile.displayValue,
+        actionLabel: localizedContent.methods.github.actionLabel,
       },
     ],
 
