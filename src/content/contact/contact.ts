@@ -15,23 +15,29 @@ type LocalizedContactMethod = {
   readonly actionLabel: string;
 };
 
-type LocalizedContactContent = {
-  readonly eyebrow: string;
+type LocalizedAvailabilityItem = {
   readonly title: string;
-  readonly introduction: string;
+  readonly description: string;
+};
 
-  readonly heroImage: {
-    readonly alt: string;
+type LocalizedContactContent = {
+  readonly hero: {
+    readonly eyebrow: string;
+    readonly title: string;
+    readonly introduction: string;
+    readonly image: {
+      readonly alt: string;
+    };
   };
 
-  readonly methodsTitle: string;
-  readonly externalLinkLabel: string;
-
   readonly methods: {
-    readonly email: LocalizedContactMethod;
-    readonly linkedin: LocalizedContactMethod;
-    readonly github: LocalizedContactMethod;
-    readonly orcid: LocalizedContactMethod;
+    readonly title: string;
+    readonly items: {
+      readonly email: LocalizedContactMethod;
+      readonly linkedin: LocalizedContactMethod;
+      readonly github: LocalizedContactMethod;
+      readonly orcid: LocalizedContactMethod;
+    };
   };
 
   readonly jobSearch: {
@@ -43,18 +49,9 @@ type LocalizedContactContent = {
   readonly availability: {
     readonly title: string;
     readonly items: {
-      readonly location: {
-        readonly title: string;
-        readonly description: string;
-      };
-      readonly immediateAvailability: {
-        readonly title: string;
-        readonly description: string;
-      };
-      readonly workArrangements: {
-        readonly title: string;
-        readonly description: string;
-      };
+      readonly location: LocalizedAvailabilityItem;
+      readonly immediateAvailability: LocalizedAvailabilityItem;
+      readonly workArrangements: LocalizedAvailabilityItem;
     };
   };
 };
@@ -73,6 +70,7 @@ export type ContactMethod = {
   readonly href: string;
   readonly value: string;
   readonly actionLabel: string;
+  readonly opensInNewTab: boolean;
 };
 
 export type ContactAvailabilityId = 'location' | 'immediate-availability' | 'work-arrangements';
@@ -104,7 +102,6 @@ export type ContactContent = {
   readonly introduction: string;
   readonly heroImage: ContactHeroImage;
   readonly methodsTitle: string;
-  readonly externalLinkLabel: string;
   readonly links: readonly ContactMethod[];
   readonly jobSearch: ContactJobSearchContent;
   readonly availability: ContactAvailabilitySection;
@@ -115,7 +112,7 @@ const localizedContactContent = {
   en: enContactJson,
 } satisfies LocalizedContent<LocalizedContactContent>;
 
-type PublicExternalLinkId = 'linkedin' | 'github' | 'orcid';
+type PublicExternalLinkId = Exclude<ContactMethodId, 'email'>;
 
 function getPublicExternalLink(id: PublicExternalLinkId): (typeof publicProfile.externalLinks)[number] {
   const link = publicProfile.externalLinks.find((candidate) => candidate.id === id);
@@ -128,89 +125,96 @@ function getPublicExternalLink(id: PublicExternalLinkId): (typeof publicProfile.
 }
 
 const linkedinProfile = getPublicExternalLink('linkedin');
-
 const githubProfile = getPublicExternalLink('github');
-
 const orcidProfile = getPublicExternalLink('orcid');
 
 function assembleContactContent(localizedContent: LocalizedContactContent): ContactContent {
+  const { availability, hero, jobSearch, methods } = localizedContent;
+
+  const { email, github, linkedin, orcid } = methods.items;
+
+  const { immediateAvailability, location, workArrangements } = availability.items;
+
   return {
-    eyebrow: localizedContent.eyebrow,
-    title: localizedContent.title,
-    introduction: localizedContent.introduction,
+    eyebrow: hero.eyebrow,
+    title: hero.title,
+    introduction: hero.introduction,
 
     heroImage: {
       src: heroImageSrc,
-      alt: localizedContent.heroImage.alt,
+      alt: hero.image.alt,
     },
 
-    methodsTitle: localizedContent.methodsTitle,
-    externalLinkLabel: localizedContent.externalLinkLabel,
+    methodsTitle: methods.title,
 
     links: [
       {
         id: 'email',
         icon: EnvelopeSimpleIcon,
-        label: localizedContent.methods.email.label,
+        label: email.label,
         href: `mailto:${publicProfile.email}`,
         value: publicProfile.email,
-        actionLabel: localizedContent.methods.email.actionLabel,
+        actionLabel: email.actionLabel,
+        opensInNewTab: false,
       },
       {
         id: 'linkedin',
         icon: linkedinProfile.icon,
-        label: localizedContent.methods.linkedin.label,
+        label: linkedin.label,
         href: linkedinProfile.href,
         value: linkedinProfile.displayValue,
-        actionLabel: localizedContent.methods.linkedin.actionLabel,
-      },
-      {
-        id: 'orcid',
-        icon: orcidProfile.icon,
-        label: localizedContent.methods.orcid.label,
-        href: orcidProfile.href,
-        value: orcidProfile.displayValue,
-        actionLabel: localizedContent.methods.orcid.actionLabel,
+        actionLabel: linkedin.actionLabel,
+        opensInNewTab: true,
       },
       {
         id: 'github',
         icon: githubProfile.icon,
-        label: localizedContent.methods.github.label,
+        label: github.label,
         href: githubProfile.href,
         value: githubProfile.displayValue,
-        actionLabel: localizedContent.methods.github.actionLabel,
+        actionLabel: github.actionLabel,
+        opensInNewTab: true,
+      },
+      {
+        id: 'orcid',
+        icon: orcidProfile.icon,
+        label: orcid.label,
+        href: orcidProfile.href,
+        value: orcidProfile.displayValue,
+        actionLabel: orcid.actionLabel,
+        opensInNewTab: true,
       },
     ],
 
     jobSearch: {
-      message: localizedContent.jobSearch.message,
-      frenchCvLabel: localizedContent.jobSearch.downloadCvFr,
+      message: jobSearch.message,
+      frenchCvLabel: jobSearch.downloadCvFr,
       frenchCvHref: frenchCvUrl,
-      englishCvLabel: localizedContent.jobSearch.downloadCvEn,
+      englishCvLabel: jobSearch.downloadCvEn,
       englishCvHref: englishCvUrl,
     },
 
     availability: {
-      title: localizedContent.availability.title,
+      title: availability.title,
       items: [
         {
           id: 'location',
           icon: MapPinIcon,
-          title: localizedContent.availability.items.location.title,
-          description: localizedContent.availability.items.location.description,
+          title: location.title,
+          description: location.description,
         },
         {
           id: 'immediate-availability',
           icon: CalendarCheckIcon,
-          title: localizedContent.availability.items.immediateAvailability.title,
-          description: localizedContent.availability.items.immediateAvailability.description,
+          title: immediateAvailability.title,
+          description: immediateAvailability.description,
           highlighted: true,
         },
         {
           id: 'work-arrangements',
           icon: LaptopIcon,
-          title: localizedContent.availability.items.workArrangements.title,
-          description: localizedContent.availability.items.workArrangements.description,
+          title: workArrangements.title,
+          description: workArrangements.description,
         },
       ],
     },

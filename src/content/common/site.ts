@@ -24,6 +24,9 @@ export const siteMetadata = {
 } as const satisfies SiteMetadata;
 
 type LocalizedSiteContent = {
+  readonly accessibility: {
+    readonly externalLinkNewTab: string;
+  };
   readonly breadcrumbs: {
     readonly label: string;
     readonly home: string;
@@ -34,9 +37,15 @@ export type SiteContent = LocalizedSiteContent;
 
 const localizedSiteContent = {
   fr: {
+    accessibility: {
+      externalLinkNewTab: frCommonJson.accessibility.externalLinkNewTab,
+    },
     breadcrumbs: frCommonJson.breadcrumbs,
   },
   en: {
+    accessibility: {
+      externalLinkNewTab: enCommonJson.accessibility.externalLinkNewTab,
+    },
     breadcrumbs: enCommonJson.breadcrumbs,
   },
 } satisfies LocalizedContent<LocalizedSiteContent>;

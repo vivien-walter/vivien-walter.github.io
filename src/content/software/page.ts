@@ -4,6 +4,8 @@ import type { ProjectId } from '@/content/projects/registry';
 import { selectLocalizedContent } from '@/lib/content/localization';
 import type { SupportedLanguage } from '@/types/localization';
 
+import { getFormaoContent } from './items/formao/formao';
+import { getHPyMonContent } from './items/hpymon/hpymon';
 import { getMllpaContent } from './items/mllpa/mllpa';
 import enSoftwarePageJson from './page.en.json';
 import frSoftwarePageJson from './page.fr.json';
@@ -56,6 +58,8 @@ export function getSoftwareContent(language: SupportedLanguage) {
 function getSoftwareCollectionById(language: SupportedLanguage) {
   return {
     mllpa: getMllpaContent(language),
+    hpymon: getHPyMonContent(language),
+    formao: getFormaoContent(language),
   } as const satisfies Readonly<Record<SoftwareId, unknown>>;
 }
 

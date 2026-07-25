@@ -1,34 +1,37 @@
 {
-    "eyebrow": "Contact",
-    "title": "Contact",
-    "introduction": "Please feel free to contact me about professional opportunities, scientific or technical collaborations, or any questions regarding my projects, publications and software.",
-    "heroImage": {
-        "alt": "Lorem ipsum dolor sit amet."
+    "hero": {
+        "eyebrow": "Contact",
+        "title": "Would you like to learn more?",
+        "introduction": "Please feel free to contact me to discuss a professional opportunity, a scientific or technical collaboration, or my projects, publications, and software.",
+        "image": {
+            "alt": "Portrait of Vivien Praud Walter."
+        }
     },
-    "methodsTitle": "How to contact me",
-    "externalLinkLabel": "Opens an external website in a new tab",
     "methods": {
-        "email": {
-            "label": "Email",
-            "actionLabel": "Send an email"
-        },
-        "linkedin": {
-            "label": "LinkedIn",
-            "actionLabel": "View profile"
-        },
-        "github": {
-            "label": "GitHub",
-            "actionLabel": "View repositories"
-        },
-        "orcid": {
-            "label": "ORCID",
-            "actionLabel": "View profile"
+        "title": "Contact me and follow my work",
+        "items": {
+            "email": {
+                "label": "Email",
+                "actionLabel": "Email me"
+            },
+            "linkedin": {
+                "label": "LinkedIn",
+                "actionLabel": "View my profile"
+            },
+            "github": {
+                "label": "GitHub",
+                "actionLabel": "View my repositories"
+            },
+            "orcid": {
+                "label": "ORCID",
+                "actionLabel": "View my profile"
+            }
         }
     },
     "jobSearch": {
-        "message": "I am currently looking for a new job opportunity.",
-        "downloadCvFr": "Download the French CV",
-        "downloadCvEn": "Download the English CV"
+        "message": "I am currently looking for a new professional opportunity!",
+        "downloadCvFr": "Download my CV in French",
+        "downloadCvEn": "Download my CV in English"
     },
     "availability": {
         "title": "Location and availability",
@@ -43,7 +46,7 @@
             },
             "workArrangements": {
                 "title": "Work arrangements",
-                "description": "Open to hybrid and remote work."
+                "description": "Open to on-site, hybrid, or fully remote work."
             }
         }
     }

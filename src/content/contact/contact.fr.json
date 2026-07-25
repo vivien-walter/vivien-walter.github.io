@@ -1,28 +1,31 @@
 {
-    "eyebrow": "Contact",
-    "title": "Vous souhaitez en savoir plus ?",
-    "introduction": "N’hésitez pas à me contacter si vous désirez échanger, que ce soit pour des opportunités professionnelles, des collaborations scientifiques ou techniques, ou toute question concernant mes projets, publications et logiciels.",
-    "heroImage": {
-        "alt": "Lorem ipsum dolor sit amet."
+    "hero": {
+        "eyebrow": "Contact",
+        "title": "Vous souhaitez en savoir plus ?",
+        "introduction": "N’hésitez pas à me contacter pour échanger au sujet d’une opportunité professionnelle, d’une collaboration scientifique ou technique, ou de mes projets, publications et logiciels.",
+        "image": {
+            "alt": "Portrait de Vivien Praud Walter."
+        }
     },
-    "methodsTitle": "Me contacter et me suivre",
-    "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
     "methods": {
-        "email": {
-            "label": "Email",
-            "actionLabel": "Envoyer un courriel"
-        },
-        "linkedin": {
-            "label": "LinkedIn",
-            "actionLabel": "Voir le profil"
-        },
-        "github": {
-            "label": "GitHub",
-            "actionLabel": "Voir les dépôts"
-        },
-        "orcid": {
-            "label": "ORCID",
-            "actionLabel": "Voir le profil"
+        "title": "Me contacter et suivre mes travaux",
+        "items": {
+            "email": {
+                "label": "Email",
+                "actionLabel": "M’écrire"
+            },
+            "linkedin": {
+                "label": "LinkedIn",
+                "actionLabel": "Voir mon profil"
+            },
+            "github": {
+                "label": "GitHub",
+                "actionLabel": "Voir mes dépôts"
+            },
+            "orcid": {
+                "label": "ORCID",
+                "actionLabel": "Voir mon profil"
+            }
         }
     },
     "jobSearch": {
@@ -35,7 +38,7 @@
         "items": {
             "location": {
                 "title": "Localisation",
-                "description": "Basé en Vendée."
+                "description": "Installé en Vendée."
             },
             "immediateAvailability": {
                 "title": "Disponibilité",
@@ -43,7 +46,7 @@
             },
             "workArrangements": {
                 "title": "Modalités de travail",
-                "description": "Ouvert à tous les modes : présentiel, hybride et distanciel complet."
+                "description": "Ouvert au travail sur site, en mode hybride ou entièrement à distance."
             }
         }
     }

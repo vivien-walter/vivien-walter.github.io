@@ -9,7 +9,7 @@ type JobSearchBannerProps = {
   readonly content: ContactJobSearchContent;
 };
 
-function JobSearchBanner({ content }: JobSearchBannerProps) {
+export default function JobSearchBanner({ content }: JobSearchBannerProps) {
   const cvButtonClassName = cn(
     'min-h-11 w-full justify-between',
     'rounded-sm border-white',
@@ -50,5 +50,3 @@ function JobSearchBanner({ content }: JobSearchBannerProps) {
     </Section>
   );
 }
-
-export default JobSearchBanner;

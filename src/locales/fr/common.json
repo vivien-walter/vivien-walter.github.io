@@ -1,6 +1,7 @@
 {
     "accessibility": {
-        "skipToContent": "Aller au contenu principal"
+        "skipToContent": "Aller au contenu principal",
+        "externalLinkNewTab": "Ouvre un lien externe dans un nouvel onglet"
     },
     "navigation": {
         "primaryLabel": "Navigation principale",
