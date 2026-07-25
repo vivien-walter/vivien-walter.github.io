@@ -1,16 +1,10 @@
-import {
-  ArrowUpRightIcon,
-  InfoIcon,
-} from "@phosphor-icons/react";
-import { useState } from "react";
+import { ArrowUpRightIcon, InfoIcon } from '@phosphor-icons/react';
+import { useState } from 'react';
 
-import SectionHeader from "@/components/section-header";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
+
+import { Section, SectionHeader, SectionTitle } from './section';
 
 export type DetailTechnologyItem = {
   readonly label: string;
@@ -36,17 +30,14 @@ type TechnologyDescriptionBadgeProps = {
 };
 
 const badgeClassName = cn(
-  "inline-flex min-h-9 max-w-full items-center gap-2",
-  "rounded-full border border-border-strong",
-  "bg-brand-hero px-3 py-1.5",
-  "font-mono text-sm font-medium leading-heading",
-  "text-brand-ink no-underline",
+  'inline-flex min-h-9 max-w-full items-center gap-2',
+  'border-border-strong rounded-full border',
+  'bg-brand-hero px-3 py-1.5',
+  'leading-heading font-mono text-sm font-medium',
+  'text-brand-ink no-underline',
 );
 
-function TechnologyDescriptionBadge({
-  item,
-  popoverId,
-}: TechnologyDescriptionBadgeProps) {
+function TechnologyDescriptionBadge({ item, popoverId }: TechnologyDescriptionBadgeProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!item.description) {
@@ -54,10 +45,7 @@ function TechnologyDescriptionBadge({
   }
 
   return (
-    <Popover
-      open={isOpen}
-      onOpenChange={setIsOpen}
-    >
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
       <div
         className="inline-flex max-w-full"
         onMouseEnter={() => {
@@ -78,28 +66,20 @@ function TechnologyDescriptionBadge({
             type="button"
             className={cn(
               badgeClassName,
-              "cursor-help outline-none",
-              "transition-[border-color,background-color,color]",
-              "duration-150 ease-standard",
-              "hover:border-brand-primary hover:bg-action-soft",
-              "hover:text-action-strong",
-              "focus-visible:border-brand-primary",
-              "focus-visible:ring-[3px]",
-              "focus-visible:ring-ring/50",
+              'cursor-help outline-none',
+              'transition-[border-color,background-color,color]',
+              'ease-standard duration-150',
+              'hover:border-brand-primary hover:bg-action-soft',
+              'hover:text-action-strong',
+              'focus-visible:border-brand-primary',
+              'focus-visible:ring-[3px]',
+              'focus-visible:ring-ring/50',
             )}
-            aria-describedby={
-              isOpen ? popoverId : undefined
-            }
+            aria-describedby={isOpen ? popoverId : undefined}
           >
-            <span className="min-w-0 break-words">
-              {item.label}
-            </span>
+            <span className="min-w-0 break-words">{item.label}</span>
 
-            <InfoIcon
-              aria-hidden="true"
-              className="size-4 shrink-0"
-              weight="bold"
-            />
+            <InfoIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
           </button>
         </PopoverTrigger>
 
@@ -110,11 +90,11 @@ function TechnologyDescriptionBadge({
           side="top"
           sideOffset={8}
           className={cn(
-            "w-80 max-w-[calc(100vw-2rem)]",
-            "border-border-strong",
-            "bg-brand-background",
-            "text-sm leading-body text-brand-ink",
-            "shadow-elevated",
+            'w-80 max-w-[calc(100vw-2rem)]',
+            'border-border-strong',
+            'bg-brand-background',
+            'leading-body text-brand-ink text-sm',
+            'shadow-elevated',
           )}
           onOpenAutoFocus={(event) => {
             event.preventDefault();
@@ -123,152 +103,87 @@ function TechnologyDescriptionBadge({
             event.preventDefault();
           }}
         >
-          <p className="!m-0">
-            {item.description}
-          </p>
+          <p className="!m-0">{item.description}</p>
         </PopoverContent>
       </div>
     </Popover>
   );
 }
 
-function DetailTechnologiesSection({
-  externalLinkLabel,
-  groups,
-  idPrefix,
-  title,
-}: DetailTechnologiesSectionProps) {
-  const populatedGroups =
-    groups?.filter(
-      (group) => group.items.length > 0,
-    ) ?? [];
+function DetailTechnologiesSection({ externalLinkLabel, groups, idPrefix, title }: DetailTechnologiesSectionProps) {
+  const populatedGroups = groups?.filter((group) => group.items.length > 0) ?? [];
 
   if (populatedGroups.length === 0) {
     return null;
   }
 
-  const titleId =
-    `${idPrefix}-technologies-title`;
+  const titleId = `${idPrefix}-technologies-title`;
 
   return (
-    <section
-      className={[
-        "border-t border-border",
-        "py-12 sm:py-14 lg:py-16",
-      ].join(" ")}
-      aria-labelledby={titleId}
-    >
-      <SectionHeader
-        title={title}
-        titleId={titleId}
-        className="mb-8"
-      />
+    <Section contained={false} className={cn('border-border border-t', 'py-12 sm:py-14 lg:py-16')} aria-labelledby={titleId}>
+      <SectionHeader className="mb-8">
+        <SectionTitle id={titleId}>{title}</SectionTitle>
+      </SectionHeader>
 
       <div className="grid gap-8">
-        {populatedGroups.map(
-          (group, groupIndex) => {
-            const groupTitleId =
-              `${idPrefix}-technology-group-` +
-              `${groupIndex + 1}`;
+        {populatedGroups.map((group, groupIndex) => {
+          const groupTitleId = `${idPrefix}-technology-group-` + `${groupIndex + 1}`;
 
-            return (
-              <section
-                key={`${group.title}-${groupIndex}`}
-                className="grid gap-4"
-                aria-labelledby={groupTitleId}
-              >
-                <h3
-                  id={groupTitleId}
-                  className={cn(
-                    "!m-0 text-lg font-bold",
-                    "leading-heading",
-                    "tracking-[-0.0125em]",
-                    "text-brand-ink",
-                  )}
-                >
+          return (
+            <Section contained={false} key={`${group.title}-${groupIndex}`} className="grid gap-4" aria-labelledby={groupTitleId}>
+              <SectionHeader>
+                <SectionTitle id={groupTitleId} headingLevel={3} showAccent={false} className="text-lg tracking-[-0.0125em]">
                   {group.title}
-                </h3>
+                </SectionTitle>
+              </SectionHeader>
 
-                <ul
-                  className={cn(
-                    "m-0 flex list-none flex-wrap",
-                    "items-center gap-2 p-0",
-                  )}
-                >
-                  {group.items.map(
-                    (item, itemIndex) => {
-                      const itemKey =
-                        `${groupIndex}-` +
-                        `${itemIndex}-` +
-                        item.label;
+              <ul className={cn('m-0 flex list-none flex-wrap', 'items-center gap-2 p-0')}>
+                {group.items.map((item, itemIndex) => {
+                  const itemKey = `${groupIndex}-` + `${itemIndex}-` + item.label;
 
-                      return (
-                        <li
-                          key={itemKey}
-                          className="m-0 max-w-full"
-                        >
-                          {item.href ? (
-                            <a
-                              href={item.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className={cn(
-                                badgeClassName,
-                                "transition-[border-color,background-color,color]",
-                                "duration-150 ease-standard",
-                                "hover:border-brand-primary",
-                                "hover:bg-action-soft",
-                                "hover:text-action-strong",
-                                "focus-visible:outline-none",
-                                "focus-visible:ring-[3px]",
-                                "focus-visible:ring-ring/50",
-                              )}
-                              aria-label={
-                                `${item.label} — ` +
-                                externalLinkLabel
-                              }
-                            >
-                              <span className="min-w-0 break-words">
-                                {item.label}
-                              </span>
-
-                              <ArrowUpRightIcon
-                                aria-hidden="true"
-                                className="size-4 shrink-0"
-                                weight="bold"
-                              />
-                            </a>
-                          ) : item.description ? (
-                            <TechnologyDescriptionBadge
-                              item={item}
-                              popoverId={
-                                `${idPrefix}-technology-description-` +
-                                `${groupIndex + 1}-` +
-                                `${itemIndex + 1}`
-                              }
-                            />
-                          ) : (
-                            <span
-                              className={
-                                badgeClassName
-                              }
-                            >
-                              <span className="min-w-0 break-words">
-                                {item.label}
-                              </span>
-                            </span>
+                  return (
+                    <li key={itemKey} className="m-0 max-w-full">
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={cn(
+                            badgeClassName,
+                            'transition-[border-color,background-color,color]',
+                            'ease-standard duration-150',
+                            'hover:border-brand-primary',
+                            'hover:bg-action-soft',
+                            'hover:text-action-strong',
+                            'focus-visible:outline-none',
+                            'focus-visible:ring-[3px]',
+                            'focus-visible:ring-ring/50',
                           )}
-                        </li>
-                      );
-                    },
-                  )}
-                </ul>
-              </section>
-            );
-          },
-        )}
+                          aria-label={`${item.label} — ` + externalLinkLabel}
+                        >
+                          <span className="min-w-0 break-words">{item.label}</span>
+
+                          <ArrowUpRightIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
+                        </a>
+                      ) : item.description ? (
+                        <TechnologyDescriptionBadge
+                          item={item}
+                          popoverId={`${idPrefix}-technology-description-` + `${groupIndex + 1}-` + `${itemIndex + 1}`}
+                        />
+                      ) : (
+                        <span className={badgeClassName}>
+                          <span className="min-w-0 break-words">{item.label}</span>
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </Section>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }
 

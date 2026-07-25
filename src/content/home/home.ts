@@ -4,28 +4,26 @@ import {
   BriefcaseIcon,
   CodeIcon,
   GithubLogoIcon,
-  IdentificationBadgeIcon,
   LinkedinLogoIcon,
   MapPinIcon,
   MicroscopeIcon,
   UsersThreeIcon,
-} from "@phosphor-icons/react";
+} from '@phosphor-icons/react';
 
-import { publicProfile } from "@/content/common/profile";
-import { getProjectById } from "@/content/projects/page";
-import type { ProjectId } from "@/content/projects/registry";
-import { getPublicationById } from "@/content/research/page";
-import type { PublicationId } from "@/content/research/publications/registry";
-import { getSoftwareById } from "@/content/software/page";
-import type { SoftwareId } from "@/content/software/registry";
-import { selectLocalizedContent } from "@/lib/content/localization";
-import type {
-  LocalizedContent,
-  SupportedLanguage,
-} from "@/types/localization";
+import heroImageSrc from '@/assets/images/home/hero.jpg';
+import { OrcidIcon } from '@/components/icons/orcid';
+import { publicProfile } from '@/content/common/profile';
+import { getProjectById } from '@/content/projects/page';
+import type { ProjectId } from '@/content/projects/registry';
+import { getPublicationById } from '@/content/research/page';
+import type { PublicationId } from '@/content/research/publications/registry';
+import { getSoftwareById } from '@/content/software/page';
+import type { SoftwareId } from '@/content/software/registry';
+import { selectLocalizedContent } from '@/lib/content/localization';
+import type { LocalizedContent, SupportedLanguage } from '@/types/localization';
 
-import enHomeJson from "./home.en.json";
-import frHomeJson from "./home.fr.json";
+import enHomeJson from './home.en.json';
+import frHomeJson from './home.fr.json';
 
 type LocalizedProfileDimension = {
   readonly title: string;
@@ -36,6 +34,20 @@ type LocalizedHomeContent = {
   readonly eyebrow: string;
   readonly title: string;
   readonly introduction: string;
+
+  readonly heroActions: {
+    readonly projects: string;
+    readonly experience: string;
+  };
+  readonly heroImage: {
+    readonly alt: string;
+  };
+  readonly heroHighlights: {
+    readonly projectManagement: string;
+    readonly softwareAndAi: string;
+    readonly instrumentation: string;
+    readonly location: string;
+  };
 
   readonly profileDimensions: {
     readonly title: string;
@@ -55,6 +67,7 @@ type LocalizedHomeContent = {
 
   readonly featuredWorks: {
     readonly title: string;
+    readonly description: string;
     readonly kindLabels: {
       readonly project: string;
       readonly software: string;
@@ -73,6 +86,7 @@ type LocalizedHomeContent = {
 
   readonly researchAxes: {
     readonly title: string;
+    readonly description: string;
     readonly actionLabel: string;
     readonly opticsAndPhotonics: LocalizedProfileDimension;
     readonly scientificAi: LocalizedProfileDimension;
@@ -82,26 +96,30 @@ type LocalizedHomeContent = {
 
   readonly follow: {
     readonly title: string;
+    readonly description: string;
   };
 };
 
 export type HomeIcon = typeof BriefcaseIcon;
 
+export type HomeHeroActionsContent = {
+  readonly projects: string;
+  readonly experience: string;
+};
+
+export type HomeHeroImage = {
+  readonly src: string;
+  readonly alt: string;
+};
+
 export type HomeHeroHighlight = {
-  readonly id:
-    | "project-management"
-    | "software-and-ai"
-    | "instrumentation"
-    | "location";
+  readonly id: 'project-management' | 'software-and-ai' | 'instrumentation' | 'location';
   readonly label: string;
   readonly icon: HomeIcon;
 };
 
 export type HomeProfileDimension = {
-  readonly id:
-    | "project-management"
-    | "software-and-ai"
-    | "instrumentation";
+  readonly id: 'project-management' | 'software-and-ai' | 'instrumentation';
   readonly title: string;
   readonly description: string;
   readonly icon: HomeIcon;
@@ -127,9 +145,7 @@ export type HomeFeaturedWorkImage = {
   readonly objectPosition?: string;
 };
 
-type HomeFeaturedWorkBase<
-  ContentId extends string,
-> = {
+type HomeFeaturedWorkBase<ContentId extends string> = {
   readonly contentId: ContentId;
   readonly kindLabel: string;
   readonly title: string;
@@ -137,50 +153,40 @@ type HomeFeaturedWorkBase<
   readonly image?: HomeFeaturedWorkImage;
 };
 
-export type HomeFeaturedProject =
-  HomeFeaturedWorkBase<ProjectId> & {
-    readonly kind: "project";
-    readonly actionLabel: string;
-    readonly period: {
-      readonly start: string;
-      readonly end?: string;
-    };
+export type HomeFeaturedProject = HomeFeaturedWorkBase<ProjectId> & {
+  readonly kind: 'project';
+  readonly actionLabel: string;
+  readonly period: {
+    readonly start: string;
+    readonly end?: string;
   };
+};
 
-export type HomeFeaturedSoftware =
-  HomeFeaturedWorkBase<SoftwareId> & {
-    readonly kind: "software";
-    readonly actionLabel: string;
-    readonly projectId: ProjectId;
-    readonly primaryLanguage: string;
+export type HomeFeaturedSoftware = HomeFeaturedWorkBase<SoftwareId> & {
+  readonly kind: 'software';
+  readonly actionLabel: string;
+  readonly projectId: ProjectId;
+  readonly primaryLanguage: string;
+};
+
+export type HomeFeaturedPublication = HomeFeaturedWorkBase<PublicationId> & {
+  readonly kind: 'publication';
+  readonly journal: string;
+  readonly doi: {
+    readonly label: string;
+    readonly href: string;
   };
+};
 
-export type HomeFeaturedPublication =
-  HomeFeaturedWorkBase<PublicationId> & {
-    readonly kind: "publication";
-    readonly journal: string;
-    readonly doi: {
-      readonly label: string;
-      readonly href: string;
-    };
-  };
-
-export type HomeFeaturedWork =
-  | HomeFeaturedProject
-  | HomeFeaturedSoftware
-  | HomeFeaturedPublication;
+export type HomeFeaturedWork = HomeFeaturedProject | HomeFeaturedSoftware | HomeFeaturedPublication;
 
 export type HomeFeaturedWorksContent = {
   readonly title: string;
+  readonly description: string;
   readonly items: readonly HomeFeaturedWork[];
 };
 
-export type HomeStatementPageId =
-  | "experience"
-  | "projects"
-  | "research"
-  | "software"
-  | "contact";
+export type HomeStatementPageId = 'experience' | 'projects' | 'research' | 'software' | 'contact';
 
 export type HomeStatementContent = {
   readonly text: string;
@@ -191,11 +197,7 @@ export type HomeStatementContent = {
 };
 
 export type HomeResearchAxis = {
-  readonly id:
-    | "optics-photonics"
-    | "scientific-ai"
-    | "scientific-software"
-    | "collaborative-systems";
+  readonly id: 'optics-photonics' | 'scientific-ai' | 'scientific-software' | 'collaborative-systems';
   readonly title: string;
   readonly description: string;
   readonly icon: HomeIcon;
@@ -203,15 +205,13 @@ export type HomeResearchAxis = {
 
 export type HomeResearchAxesContent = {
   readonly title: string;
+  readonly description: string;
   readonly actionLabel: string;
   readonly items: readonly HomeResearchAxis[];
 };
 
 export type HomeFollowLink = {
-  readonly id:
-    | "linkedin"
-    | "github"
-    | "orcid";
+  readonly id: 'linkedin' | 'github' | 'orcid';
   readonly label: string;
   readonly href: string;
   readonly icon: HomeIcon;
@@ -219,6 +219,7 @@ export type HomeFollowLink = {
 
 export type HomeFollowContent = {
   readonly title: string;
+  readonly description: string;
   readonly location: {
     readonly label: string;
     readonly icon: HomeIcon;
@@ -230,17 +231,14 @@ export type HomeContent = {
   readonly eyebrow: string;
   readonly title: string;
   readonly introduction: string;
-  readonly heroHighlights:
-    readonly HomeHeroHighlight[];
-  readonly profileDimensions:
-    HomeProfileDimensionsContent;
-  readonly practicalInformation:
-    HomePracticalInformationContent;
-  readonly featuredWorks:
-    HomeFeaturedWorksContent;
+  readonly heroActions: HomeHeroActionsContent;
+  readonly heroImage: HomeHeroImage;
+  readonly heroHighlights: HomeHeroHighlight[];
+  readonly profileDimensions: HomeProfileDimensionsContent;
+  readonly practicalInformation: HomePracticalInformationContent;
+  readonly featuredWorks: HomeFeaturedWorksContent;
   readonly statement: HomeStatementContent;
-  readonly researchAxes:
-    HomeResearchAxesContent;
+  readonly researchAxes: HomeResearchAxesContent;
   readonly follow: HomeFollowContent;
 };
 
@@ -249,179 +247,94 @@ const localizedHomeContent = {
   en: enHomeJson,
 } satisfies LocalizedContent<LocalizedHomeContent>;
 
-function getPublicProfileLink(
-  id: HomeFollowLink["id"],
-): (typeof publicProfile.externalLinks)[number] {
-  const link =
-    publicProfile.externalLinks.find(
-      (candidate) =>
-        candidate.id === id,
-    );
+function getPublicProfileLink(id: HomeFollowLink['id']): (typeof publicProfile.externalLinks)[number] {
+  const link = publicProfile.externalLinks.find((candidate) => candidate.id === id);
 
   if (!link) {
-    throw new Error(
-      `Missing public profile link: ${id}`,
-    );
+    throw new Error(`Missing public profile link: ${id}`);
   }
 
   return link;
 }
 
-function getRequiredProject(
-  language: SupportedLanguage,
-  projectId: ProjectId,
-) {
-  const project = getProjectById(
-    language,
-    projectId,
-  );
+function getRequiredProject(language: SupportedLanguage, projectId: ProjectId) {
+  const project = getProjectById(language, projectId);
 
   if (!project) {
-    throw new Error(
-      `Missing canonical project: ${projectId}`,
-    );
+    throw new Error(`Missing canonical project: ${projectId}`);
   }
 
   return project;
 }
 
-function getRequiredSoftware(
-  language: SupportedLanguage,
-  softwareId: SoftwareId,
-) {
-  const software = getSoftwareById(
-    language,
-    softwareId,
-  );
+function getRequiredSoftware(language: SupportedLanguage, softwareId: SoftwareId) {
+  const software = getSoftwareById(language, softwareId);
 
   if (!software) {
-    throw new Error(
-      `Missing canonical software: ${softwareId}`,
-    );
+    throw new Error(`Missing canonical software: ${softwareId}`);
   }
 
   return software;
 }
 
-function getRequiredPublication(
-  language: SupportedLanguage,
-  publicationId: PublicationId,
-) {
-  const publication =
-    getPublicationById(
-      language,
-      publicationId,
-    );
+function getRequiredPublication(language: SupportedLanguage, publicationId: PublicationId) {
+  const publication = getPublicationById(language, publicationId);
 
   if (!publication) {
-    throw new Error(
-      `Missing canonical publication: ${publicationId}`,
-    );
+    throw new Error(`Missing canonical publication: ${publicationId}`);
   }
 
   return publication;
 }
 
-function assembleHomeContent(
-  localizedContent: LocalizedHomeContent,
-  language: SupportedLanguage,
-): HomeContent {
-  const linkedinProfile =
-    getPublicProfileLink("linkedin");
+function assembleHomeContent(localizedContent: LocalizedHomeContent, language: SupportedLanguage): HomeContent {
+  const linkedinProfile = getPublicProfileLink('linkedin');
 
-  const githubProfile =
-    getPublicProfileLink("github");
+  const githubProfile = getPublicProfileLink('github');
 
-  const orcidProfile =
-    getPublicProfileLink("orcid");
+  const orcidProfile = getPublicProfileLink('orcid');
 
-  const lxpCampus = getRequiredProject(
-    language,
-    "lxp-campus",
-  );
+  const lxpCampus = getRequiredProject(language, 'lxp-campus');
 
-  const mllpa = getRequiredSoftware(
-    language,
-    "mllpa",
-  );
+  const mllpa = getRequiredSoftware(language, 'mllpa');
 
-  const molecularCommunicationPublication =
-    getRequiredPublication(
-      language,
-      "nature-molecular-communication-2023",
-    );
+  const molecularCommunicationPublication = getRequiredPublication(language, 'nature-molecular-communication-2023');
 
-  const [
-    mllpaProjectId,
-  ] = mllpa.projectIds;
+  const [mllpaProjectId] = mllpa.projectIds;
 
-  const [
-    mllpaPrimaryLanguage,
-  ] = mllpa.languages;
+  const [mllpaPrimaryLanguage] = mllpa.languages;
 
-  const publicationSummary =
-    molecularCommunicationPublication
-      .description.paragraphs[0];
+  const publicationSummary = molecularCommunicationPublication.description.paragraphs[0];
 
   if (!mllpaProjectId) {
-    throw new Error(
-      "Missing canonical project relation for software: mllpa",
-    );
+    throw new Error('Missing canonical project relation for software: mllpa');
   }
 
   if (!mllpaPrimaryLanguage) {
-    throw new Error(
-      "Missing canonical language for software: mllpa",
-    );
+    throw new Error('Missing canonical language for software: mllpa');
   }
 
   if (!publicationSummary) {
-    throw new Error(
-      "Missing canonical description for publication: nature-molecular-communication-2023",
-    );
+    throw new Error('Missing canonical description for publication: nature-molecular-communication-2023');
   }
 
   const profileDimensions = [
     {
-      id: "project-management",
-      title:
-        localizedContent
-          .profileDimensions
-          .projectManagement
-          .title,
-      description:
-        localizedContent
-          .profileDimensions
-          .projectManagement
-          .description,
+      id: 'project-management',
+      title: localizedContent.profileDimensions.projectManagement.title,
+      description: localizedContent.profileDimensions.projectManagement.description,
       icon: BriefcaseIcon,
     },
     {
-      id: "software-and-ai",
-      title:
-        localizedContent
-          .profileDimensions
-          .softwareAndAi
-          .title,
-      description:
-        localizedContent
-          .profileDimensions
-          .softwareAndAi
-          .description,
+      id: 'software-and-ai',
+      title: localizedContent.profileDimensions.softwareAndAi.title,
+      description: localizedContent.profileDimensions.softwareAndAi.description,
       icon: CodeIcon,
     },
     {
-      id: "instrumentation",
-      title:
-        localizedContent
-          .profileDimensions
-          .instrumentation
-          .title,
-      description:
-        localizedContent
-          .profileDimensions
-          .instrumentation
-          .description,
+      id: 'instrumentation',
+      title: localizedContent.profileDimensions.instrumentation.title,
+      description: localizedContent.profileDimensions.instrumentation.description,
       icon: MicroscopeIcon,
     },
   ] satisfies readonly HomeProfileDimension[];
@@ -429,285 +342,169 @@ function assembleHomeContent(
   return {
     eyebrow: localizedContent.eyebrow,
     title: localizedContent.title,
-    introduction:
-      localizedContent.introduction,
+    introduction: localizedContent.introduction,
 
+    heroActions: localizedContent.heroActions,
+    heroImage: {
+      src: heroImageSrc,
+      alt: localizedContent.heroImage.alt,
+    },
     heroHighlights: [
       {
-        id: "project-management",
-        label:
-          localizedContent
-            .profileDimensions
-            .projectManagement
-            .title,
+        id: 'project-management',
+        label: localizedContent.heroHighlights.projectManagement,
         icon: BriefcaseIcon,
       },
       {
-        id: "software-and-ai",
-        label:
-          localizedContent
-            .profileDimensions
-            .softwareAndAi
-            .title,
+        id: 'software-and-ai',
+        label: localizedContent.heroHighlights.softwareAndAi,
         icon: CodeIcon,
       },
       {
-        id: "instrumentation",
-        label:
-          localizedContent
-            .profileDimensions
-            .instrumentation
-            .title,
+        id: 'instrumentation',
+        label: localizedContent.heroHighlights.instrumentation,
         icon: MicroscopeIcon,
       },
       {
-        id: "location",
-        label:
-          localizedContent
-            .practicalInformation
-            .location,
+        id: 'location',
+        label: localizedContent.heroHighlights.location,
         icon: MapPinIcon,
       },
     ],
 
     profileDimensions: {
-      title:
-        localizedContent
-          .profileDimensions
-          .title,
+      title: localizedContent.profileDimensions.title,
       items: profileDimensions,
     },
 
     practicalInformation: {
-      title:
-        localizedContent
-          .practicalInformation
-          .title,
-      location:
-        localizedContent
-          .practicalInformation
-          .location,
-      employment:
-        localizedContent
-          .practicalInformation
-          .employment,
-      workMode:
-        localizedContent
-          .practicalInformation
-          .workMode,
-      travel:
-        localizedContent
-          .practicalInformation
-          .travel,
-      languages:
-        localizedContent
-          .practicalInformation
-          .languages,
+      title: localizedContent.practicalInformation.title,
+      location: localizedContent.practicalInformation.location,
+      employment: localizedContent.practicalInformation.employment,
+      workMode: localizedContent.practicalInformation.workMode,
+      travel: localizedContent.practicalInformation.travel,
+      languages: localizedContent.practicalInformation.languages,
     },
 
     featuredWorks: {
-      title:
-        localizedContent
-          .featuredWorks
-          .title,
+      title: localizedContent.featuredWorks.title,
+
+      description: localizedContent.featuredWorks.description,
 
       items: [
         {
-          kind: "project",
-          kindLabel:
-            localizedContent
-              .featuredWorks
-              .kindLabels
-              .project,
+          kind: 'project',
+          kindLabel: localizedContent.featuredWorks.kindLabels.project,
           contentId: lxpCampus.id,
           title: lxpCampus.title,
           summary: lxpCampus.summary,
-          actionLabel:
-            localizedContent
-              .featuredWorks
-              .projectActionLabel,
+          actionLabel: localizedContent.featuredWorks.projectActionLabel,
           period: lxpCampus.period,
         },
         {
-          kind: "software",
-          kindLabel:
-            localizedContent
-              .featuredWorks
-              .kindLabels
-              .software,
+          kind: 'software',
+          kindLabel: localizedContent.featuredWorks.kindLabels.software,
           contentId: mllpa.id,
           projectId: mllpaProjectId,
           title: mllpa.title,
           summary: mllpa.summary,
-          actionLabel:
-            localizedContent
-              .featuredWorks
-              .projectActionLabel,
-          primaryLanguage:
-            mllpaPrimaryLanguage,
+          actionLabel: localizedContent.featuredWorks.projectActionLabel,
+          primaryLanguage: mllpaPrimaryLanguage,
         },
         {
-          kind: "publication",
-          kindLabel:
-            localizedContent
-              .featuredWorks
-              .kindLabels
-              .publication,
-          contentId:
-            molecularCommunicationPublication.id,
-          title:
-            molecularCommunicationPublication.title,
+          kind: 'publication',
+          kindLabel: localizedContent.featuredWorks.kindLabels.publication,
+          contentId: molecularCommunicationPublication.id,
+          title: molecularCommunicationPublication.title,
           summary: publicationSummary,
-          journal:
-            molecularCommunicationPublication
-              .publication,
+          journal: molecularCommunicationPublication.publication,
           doi: {
-            label:
-              localizedContent
-                .featuredWorks
-                .molecularCommunicationPublication
-                .actionLabel,
-            href:
-              molecularCommunicationPublication
-                .doi.href,
+            label: localizedContent.featuredWorks.molecularCommunicationPublication.actionLabel,
+            href: molecularCommunicationPublication.doi.href,
           },
         },
       ],
     },
 
     statement: {
-      text:
-        localizedContent
-          .statement
-          .text,
+      text: localizedContent.statement.text,
       action: {
-        label:
-          localizedContent
-            .statement
-            .actionLabel,
-        pageId: "experience",
+        label: localizedContent.statement.actionLabel,
+        pageId: 'experience',
       },
     },
 
     researchAxes: {
-      title:
-        localizedContent
-          .researchAxes
-          .title,
-      actionLabel:
-        localizedContent
-          .researchAxes
-          .actionLabel,
+      title: localizedContent.researchAxes.title,
+
+      description: localizedContent.researchAxes.description,
+
+      actionLabel: localizedContent.researchAxes.actionLabel,
 
       items: [
         {
-          id: "optics-photonics",
-          title:
-            localizedContent
-              .researchAxes
-              .opticsAndPhotonics
-              .title,
-          description:
-            localizedContent
-              .researchAxes
-              .opticsAndPhotonics
-              .description,
+          id: 'optics-photonics',
+          title: localizedContent.researchAxes.opticsAndPhotonics.title,
+          description: localizedContent.researchAxes.opticsAndPhotonics.description,
           icon: AtomIcon,
         },
         {
-          id: "scientific-ai",
-          title:
-            localizedContent
-              .researchAxes
-              .scientificAi
-              .title,
-          description:
-            localizedContent
-              .researchAxes
-              .scientificAi
-              .description,
+          id: 'scientific-ai',
+          title: localizedContent.researchAxes.scientificAi.title,
+          description: localizedContent.researchAxes.scientificAi.description,
           icon: BrainIcon,
         },
         {
-          id: "scientific-software",
-          title:
-            localizedContent
-              .researchAxes
-              .scientificSoftware
-              .title,
-          description:
-            localizedContent
-              .researchAxes
-              .scientificSoftware
-              .description,
+          id: 'scientific-software',
+          title: localizedContent.researchAxes.scientificSoftware.title,
+          description: localizedContent.researchAxes.scientificSoftware.description,
           icon: CodeIcon,
         },
         {
-          id: "collaborative-systems",
-          title:
-            localizedContent
-              .researchAxes
-              .collaborativeSystems
-              .title,
-          description:
-            localizedContent
-              .researchAxes
-              .collaborativeSystems
-              .description,
+          id: 'collaborative-systems',
+          title: localizedContent.researchAxes.collaborativeSystems.title,
+          description: localizedContent.researchAxes.collaborativeSystems.description,
           icon: UsersThreeIcon,
         },
       ],
     },
 
     follow: {
-      title:
-        localizedContent
-          .follow
-          .title,
+      title: localizedContent.follow.title,
+
+      description: localizedContent.follow.description,
 
       location: {
-        label:
-          localizedContent
-            .practicalInformation
-            .location,
+        label: localizedContent.practicalInformation.location,
         icon: MapPinIcon,
       },
 
       links: [
         {
-          id: "linkedin",
-          label: "LinkedIn",
+          id: 'linkedin',
+          label: 'LinkedIn',
           href: linkedinProfile.href,
           icon: LinkedinLogoIcon,
         },
         {
-          id: "github",
-          label: "GitHub",
+          id: 'github',
+          label: 'GitHub',
           href: githubProfile.href,
           icon: GithubLogoIcon,
         },
         {
-          id: "orcid",
-          label: "ORCID",
+          id: 'orcid',
+          label: 'ORCID',
           href: orcidProfile.href,
-          icon: IdentificationBadgeIcon,
+          icon: OrcidIcon,
         },
       ],
     },
   };
 }
 
-export function getHomeContent(
-  language: SupportedLanguage,
-): HomeContent {
-  const localizedContent =
-    selectLocalizedContent(
-      localizedHomeContent,
-      language,
-    );
+export function getHomeContent(language: SupportedLanguage): HomeContent {
+  const localizedContent = selectLocalizedContent(localizedHomeContent, language);
 
-  return assembleHomeContent(
-    localizedContent,
-    language,
-  );
+  return assembleHomeContent(localizedContent, language);
 }

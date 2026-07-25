@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { siteIdentity } from '@/content/common/site';
 import { defaultLanguage } from '@/lib/content/localization';
+import { cn } from '@/lib/utils';
 
 import i18n from '../i18n';
 import { getLanguageFromPathname, getPageRoute } from '../routing/navigation';
@@ -55,11 +56,11 @@ export default class ApplicationErrorBoundary extends Component<ApplicationError
       <main id="main-content" className="bg-background text-foreground relative isolate min-h-screen min-h-svh">
         <div
           aria-hidden="true"
-          className={[
+          className={cn(
             'pointer-events-none absolute inset-x-0 top-0 -z-10',
             'h-[clamp(18rem,42vw,32rem)]',
             'bg-[linear-gradient(135deg,color-mix(in_srgb,var(--brand-primary)_7%,transparent),transparent_55%),linear-gradient(45deg,transparent_58%,color-mix(in_srgb,var(--brand-accent)_6%,transparent))]',
-          ].join(' ')}
+          )}
         />
 
         <div className="max-w-readable px-page mx-auto flex min-h-screen min-h-svh w-full items-center py-12">

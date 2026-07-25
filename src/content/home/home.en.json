@@ -2,6 +2,19 @@
     "eyebrow": "Home",
     "title": "AI, software, scientific instrumentation and complex systems",
     "introduction": "I support technical projects from requirements definition through to deliverable validation. My background combines team coordination, scientific understanding, technical decision-making and direct development work when the project requires it.",
+    "heroActions": {
+        "projects": "View my projects",
+        "experience": "Explore my experience"
+    },
+    "heroImage": {
+        "alt": "Lorem ipsum dolor sit amet."
+    },
+    "heroHighlights": {
+        "projectManagement": "Complex and multidisciplinary project management",
+        "softwareAndAi": "Software, web applications and artificial intelligence",
+        "instrumentation": "Scientific and medical instrumentation",
+        "location": "Based in Vendée, France."
+    },
     "profileDimensions": {
         "title": "Three dimensions of one profile",
         "projectManagement": {
@@ -27,6 +40,7 @@
     },
     "featuredWorks": {
         "title": "Recent work",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "kindLabels": {
             "project": "Project",
             "software": "Software",
@@ -43,6 +57,7 @@
     },
     "researchAxes": {
         "title": "Research areas",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "actionLabel": "Learn more",
         "opticsAndPhotonics": {
             "title": "Optics and photonics",
@@ -62,6 +77,7 @@
         }
     },
     "follow": {
-        "title": "Follow my work"
+        "title": "Follow my work",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
 }

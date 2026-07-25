@@ -89,7 +89,7 @@ export default function SiteHeader() {
               <DownloadSimpleIcon aria-hidden="true" size={20} weight="bold" />
 
               <span>
-                {t('navigation.mobile.cvLabel', {
+                {t('navigation.desktop.cvLabel', {
                   lng: currentLanguage,
                 })}
               </span>

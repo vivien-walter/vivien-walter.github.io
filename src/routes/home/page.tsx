@@ -3,110 +3,41 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 
 import { getLanguageFromPathname, getPageRoute } from '@/app/routing/navigation';
-import PageHero from '@/components/page-hero';
-import SectionHeader from '@/components/section-header';
+import { Section, SectionAction, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Button } from '@/components/ui/button';
 import { getHomeContent } from '@/content/home/home';
+import { cn } from '@/lib/utils';
 
 import FeaturedWorkCard from './_components/featured-work-card';
 import HomeFollowGrid from './_components/home-follow-grid';
+import HomeHero from './_components/home-hero';
 import HomeStatement from './_components/home-statement';
 import ResearchAxisList from './_components/research-axis-list';
 
-function HomePage() {
-  const location = useLocation();
+export default function HomePage() {
+  /* Fetch all data for the translation */
   const { t } = useTranslation();
-
+  const location = useLocation();
   const language = getLanguageFromPathname(location.pathname);
-
   const content = getHomeContent(language);
 
   return (
     <div className="overflow-hidden">
-      <PageHero
-        eyebrow={t('pages.home.title', {
-          lng: language,
-        })}
-        title={content.title}
-        introduction={content.introduction}
-        actions={
-          <>
-            <Button asChild size="lg" className="min-h-11 rounded-sm px-5 shadow-none">
-              <Link to={getPageRoute('projects', language)}>
-                <span>
-                  {t('pages.projects.title', {
-                    lng: language,
-                  })}
-                </span>
+      <HomeHero language={language} />
 
-                <ArrowRightIcon aria-hidden="true" weight="bold" />
-              </Link>
-            </Button>
-
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className={[
-                'min-h-11 rounded-sm px-5',
-                'border-brand-primary bg-transparent',
-                'text-brand-primary shadow-none',
-                'hover:bg-action-soft hover:text-brand-primary',
-              ].join(' ')}
-            >
-              <Link to={getPageRoute('experience', language)}>
-                {t('pages.experience.title', {
-                  lng: language,
-                })}
-              </Link>
-            </Button>
-          </>
-        }
-        footer={
-          <ul className={['m-0 grid list-none gap-x-5 gap-y-6 p-0', 'grid-cols-2 lg:grid-cols-4'].join(' ')}>
-            {content.heroHighlights.map(({ id, label, icon: HighlightIcon }) => (
-              <li key={id} className="m-0 grid content-start gap-2">
-                <HighlightIcon aria-hidden="true" className="text-brand-accent size-6" weight="regular" />
-
-                <span className={['text-xs leading-normal font-medium', 'text-brand-ink'].join(' ')}>{label}</span>
-              </li>
+      {content.featuredWorks.items.length > 0 ? (
+        <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="home-featured-works-title">
+          <SectionHeader className="mb-8 sm:mb-10">
+            <SectionTitle id="home-featured-works-title">{content.featuredWorks.title}</SectionTitle>
+            <SectionDescription>{content.featuredWorks.description}</SectionDescription>
+          </SectionHeader>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {content.featuredWorks.items.map((work, index) => (
+              <FeaturedWorkCard key={`featured-work-${index}`} work={work} language={language} />
             ))}
-          </ul>
-        }
-      />
-
-      <div className="max-w-editorial px-page mx-auto w-full">
-        {content.featuredWorks.items.length > 0 ? (
-          <section className="py-12 sm:py-14 lg:py-16" aria-labelledby="home-featured-works-title">
-            <SectionHeader
-              title={content.featuredWorks.title}
-              titleId="home-featured-works-title"
-              className="mb-8 sm:mb-10"
-              action={
-                <Button
-                  asChild
-                  variant="ghost"
-                  className={['min-h-11 px-2', 'text-brand-primary', 'hover:bg-action-soft', 'hover:text-brand-primary'].join(' ')}
-                >
-                  <Link to={getPageRoute('projects', language)}>
-                    {t('pages.projects.title', {
-                      lng: language,
-                    })}
-
-                    <ArrowRightIcon aria-hidden="true" weight="bold" />
-                  </Link>
-                </Button>
-              }
-            />
-
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {content.featuredWorks.items.map((work) => (
-                <FeaturedWorkCard key={`${work.kind}-${work.contentId}`} work={work} language={language} />
-              ))}
-            </div>
-          </section>
-        ) : null}
-      </div>
+          </div>
+        </Section>
+      ) : null}
 
       <div className="bg-brand-dark py-12 sm:py-14 lg:py-16">
         <div className="max-w-editorial px-page mx-auto w-full">
@@ -114,48 +45,57 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="max-w-editorial px-page mx-auto w-full">
-        {content.researchAxes.items.length > 0 ? (
-          <section className="py-12 sm:py-14 lg:py-16" aria-labelledby="home-research-axes-title">
-            <SectionHeader
-              title={content.researchAxes.title}
-              titleId="home-research-axes-title"
-              className="mb-8 sm:mb-10"
-              action={
-                <Button
-                  asChild
-                  variant="ghost"
-                  className={['min-h-11 px-2', 'text-brand-primary', 'hover:bg-action-soft', 'hover:text-brand-primary'].join(' ')}
-                >
-                  <Link to={getPageRoute('research', language)}>
-                    {t('pages.research.title', {
-                      lng: language,
-                    })}
+      {content.researchAxes.items.length > 0 ? (
+        <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="home-research-axes-title">
+          <SectionHeader className="mb-8 sm:mb-10">
+            <SectionTitle id="home-research-axes-title">{content.researchAxes.title}</SectionTitle>
 
-                    <ArrowRightIcon aria-hidden="true" weight="bold" />
-                  </Link>
-                </Button>
-              }
-            />
+            <SectionAction className="hidden sm:flex">
+              <Button
+                asChild
+                variant="ghost"
+                className={cn('min-h-11 px-2', 'text-brand-primary', 'hover:bg-action-soft', 'hover:text-brand-primary')}
+              >
+                <Link to={getPageRoute('research', language)}>
+                  {t('pages.research.title', {
+                    lng: language,
+                  })}
 
-            <ResearchAxisList items={content.researchAxes.items} language={language} />
-          </section>
-        ) : null}
+                  <ArrowRightIcon aria-hidden="true" weight="bold" />
+                </Link>
+              </Button>
+            </SectionAction>
 
-        <section className={['border-border border-t', 'py-12 sm:py-14 lg:py-16'].join(' ')} aria-labelledby="home-follow-daily-title">
-          <SectionHeader
-            title={t('pages.home.followDaily', {
+            <SectionDescription>{content.researchAxes.description}</SectionDescription>
+          </SectionHeader>
+
+          <ResearchAxisList items={content.researchAxes.items} language={language} />
+
+          <SectionAction className="mt-6 w-full sm:hidden">
+            <Button asChild className="min-h-11 w-full px-5">
+              <Link to={getPageRoute('research', language)}>
+                {t('pages.research.title', {
+                  lng: language,
+                })}
+              </Link>
+            </Button>
+          </SectionAction>
+        </Section>
+      ) : null}
+
+      <Section aria-labelledby="home-follow-daily-title" containerClassName={cn('border-border border-t', 'py-12 sm:py-14 lg:py-16')}>
+        <SectionHeader className="mb-8 sm:mb-10">
+          <SectionTitle id="home-follow-daily-title">
+            {t('pages.home.followDaily', {
               lng: language,
             })}
-            titleId="home-follow-daily-title"
-            className="mb-8 sm:mb-10"
-          />
+          </SectionTitle>
 
-          <HomeFollowGrid content={content.follow} />
-        </section>
-      </div>
+          <SectionDescription>{content.follow.description}</SectionDescription>
+        </SectionHeader>
+
+        <HomeFollowGrid content={content.follow} />
+      </Section>
     </div>
   );
 }
-
-export default HomePage;

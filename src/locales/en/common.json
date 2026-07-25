@@ -11,6 +11,9 @@
         "researchCompact": "Research",
         "software": "Software",
         "contact": "Contact",
+        "desktop": {
+            "cvLabel": "CV (PDF)"
+        },
         "mobile": {
             "open": "Open navigation",
             "close": "Close navigation",

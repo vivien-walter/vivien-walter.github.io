@@ -1,11 +1,7 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useRef, useState } from 'react';
 
-import SectionHeader from "@/components/section-header";
-import { cn } from "@/lib/utils";
+import { Section, SectionHeader, SectionTitle } from '@/components/section';
+import { cn } from '@/lib/utils';
 
 export type DetailDescriptionImage = {
   readonly src: string;
@@ -26,24 +22,16 @@ type DetailDescriptionSectionProps = {
 
 const EMPTY_PARAGRAPHS: readonly string[] = [];
 
-function DetailDescriptionSection({
-  description,
-  idPrefix,
-  title,
-}: DetailDescriptionSectionProps) {
+function DetailDescriptionSection({ description, idPrefix, title }: DetailDescriptionSectionProps) {
   const textRef = useRef<HTMLDivElement>(null);
   const [textHeight, setTextHeight] = useState<number>();
-  const [failedImageSrc, setFailedImageSrc] =
-    useState<string>();
+  const [failedImageSrc, setFailedImageSrc] = useState<string>();
 
-  const paragraphs =
-    description?.paragraphs ?? EMPTY_PARAGRAPHS;
+  const paragraphs = description?.paragraphs ?? EMPTY_PARAGRAPHS;
 
   const image = description?.image;
 
-  const showImage =
-    image !== undefined &&
-    failedImageSrc !== image.src;
+  const showImage = image !== undefined && failedImageSrc !== image.src;
 
   const titleId = `${idPrefix}-description-title`;
 
@@ -55,33 +43,22 @@ function DetailDescriptionSection({
     }
 
     const updateTextHeight = () => {
-      const measuredHeight = Math.ceil(
-        textElement.getBoundingClientRect().height,
-      );
+      const measuredHeight = Math.ceil(textElement.getBoundingClientRect().height);
 
-      setTextHeight(
-        measuredHeight > 0 ? measuredHeight : undefined,
-      );
+      setTextHeight(measuredHeight > 0 ? measuredHeight : undefined);
     };
 
     updateTextHeight();
 
-    if (typeof ResizeObserver === "undefined") {
-      window.addEventListener(
-        "resize",
-        updateTextHeight,
-      );
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', updateTextHeight);
 
       return () => {
-        window.removeEventListener(
-          "resize",
-          updateTextHeight,
-        );
+        window.removeEventListener('resize', updateTextHeight);
       };
     }
 
-    const resizeObserver =
-      new ResizeObserver(updateTextHeight);
+    const resizeObserver = new ResizeObserver(updateTextHeight);
 
     resizeObserver.observe(textElement);
 
@@ -95,40 +72,21 @@ function DetailDescriptionSection({
   }
 
   return (
-    <section
-      className="pb-12 sm:pb-14 lg:pb-16"
-      aria-labelledby={titleId}
-    >
-      <SectionHeader
-        title={title}
-        titleId={titleId}
-        className="mb-8"
-      />
+    <Section contained={false} className="pb-12 sm:pb-14 lg:pb-16" aria-labelledby={titleId}>
+      <SectionHeader className="mb-8">
+        <SectionTitle id={titleId}>{title}</SectionTitle>
+      </SectionHeader>
 
       <div className="flow-root">
         {showImage ? (
-          <figure
-            className={cn(
-              "float-right m-0 mb-4 ml-5",
-              "w-1/2 max-w-[50%]",
-              "sm:mb-5 sm:ml-8",
-            )}
-          >
+          <figure className={cn('float-right m-0 mb-4 ml-5', 'w-1/2 max-w-[50%]', 'sm:mb-5 sm:ml-8')}>
             <img
               src={image.src}
               alt={image.alt}
-              className={cn(
-                "mx-auto block h-auto w-full",
-                "rounded-lg border border-border-strong",
-                "object-contain",
-              )}
+              className={cn('mx-auto block h-auto w-full', 'border-border-strong rounded-lg border', 'object-contain')}
               style={{
-                maxHeight:
-                  textHeight !== undefined
-                    ? `${textHeight}px`
-                    : undefined,
-                objectPosition:
-                  image.objectPosition ?? "center",
+                maxHeight: textHeight !== undefined ? `${textHeight}px` : undefined,
+                objectPosition: image.objectPosition ?? 'center',
               }}
               loading="lazy"
               decoding="async"
@@ -139,29 +97,15 @@ function DetailDescriptionSection({
           </figure>
         ) : null}
 
-        <div
-          ref={textRef}
-          className="text-foreground"
-        >
-          {paragraphs.map(
-            (paragraph, paragraphIndex) => (
-              <p
-                className={cn(
-                  "!mt-0",
-                  paragraphIndex ===
-                    paragraphs.length - 1
-                    ? "!mb-0"
-                    : "!mb-5",
-                )}
-                key={`${paragraphIndex}-${paragraph}`}
-              >
-                {paragraph}
-              </p>
-            ),
-          )}
+        <div ref={textRef} className="text-foreground">
+          {paragraphs.map((paragraph, paragraphIndex) => (
+            <p className={cn('!mt-0', paragraphIndex === paragraphs.length - 1 ? '!mb-0' : '!mb-5')} key={`${paragraphIndex}-${paragraph}`}>
+              {paragraph}
+            </p>
+          ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

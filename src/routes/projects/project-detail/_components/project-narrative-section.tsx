@@ -1,7 +1,7 @@
-import type { Icon } from "@phosphor-icons/react";
+import type { Icon } from '@phosphor-icons/react';
 
-import SectionHeader from "@/components/section-header";
-import { cn } from "@/lib/utils";
+import { Section, SectionHeader, SectionTitle } from '@/components/section';
+import { cn } from '@/lib/utils';
 
 type ProjectNarrativeSectionProps = {
   readonly title: string;
@@ -12,113 +12,51 @@ type ProjectNarrativeSectionProps = {
   readonly className?: string;
 };
 
-function ProjectNarrativeSection({
-  title,
-  titleId,
-  icon: SectionIcon,
-  paragraphs,
-  items,
-  className,
-}: ProjectNarrativeSectionProps) {
-  const visibleParagraphs =
-    paragraphs?.filter(
-      (paragraph) =>
-        paragraph.trim().length > 0,
-    ) ?? [];
+function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, paragraphs, items, className }: ProjectNarrativeSectionProps) {
+  const visibleParagraphs = paragraphs?.filter((paragraph) => paragraph.trim().length > 0) ?? [];
 
-  const visibleItems =
-    items?.filter(
-      (item) => item.trim().length > 0,
-    ) ?? [];
+  const visibleItems = items?.filter((item) => item.trim().length > 0) ?? [];
 
-  if (
-    visibleParagraphs.length === 0 &&
-    visibleItems.length === 0
-  ) {
+  if (visibleParagraphs.length === 0 && visibleItems.length === 0) {
     return null;
   }
 
   return (
-    <section
-      className={cn(
-        "border-t border-border py-12",
-        "sm:py-14 lg:py-16",
-        className,
-      )}
-      aria-labelledby={titleId}
-    >
-      <SectionHeader
-        title={title}
-        titleId={titleId}
-        className="mb-8"
-      />
+    <Section contained={false} className={cn('border-border border-t py-12', 'sm:py-14 lg:py-16', className)} aria-labelledby={titleId}>
+      <SectionHeader className="mb-8">
+        <SectionTitle id={titleId}>{title}</SectionTitle>
+      </SectionHeader>
 
-      <div
-        className={cn(
-          "grid min-w-0 gap-5",
-          "sm:grid-cols-[4rem_minmax(0,1fr)]",
-          "sm:items-start sm:gap-7",
-        )}
-      >
+      <div className={cn('grid min-w-0 gap-5', 'sm:grid-cols-[4rem_minmax(0,1fr)]', 'sm:items-start sm:gap-7')}>
         <span
           aria-hidden="true"
-          className={cn(
-            "flex size-14 items-center justify-center",
-            "rounded-md bg-brand-primary",
-            "text-white shadow-subtle",
-          )}
+          className={cn('flex size-14 items-center justify-center', 'bg-brand-primary rounded-md', 'shadow-subtle text-white')}
         >
-          <SectionIcon
-            className="size-7"
-            weight="regular"
-          />
+          <SectionIcon className="size-7" weight="regular" />
         </span>
 
-        <div className="min-w-0 max-w-readable">
-          {visibleParagraphs.map(
-            (
-              paragraph,
-              paragraphIndex,
-            ) => (
-              <p
-                key={`${paragraphIndex}-${paragraph}`}
-                className={cn(
-                  "!mt-0",
-                  paragraphIndex ===
-                    visibleParagraphs.length -
-                      1 &&
-                    visibleItems.length === 0
-                    ? "!mb-0"
-                    : "!mb-5",
-                )}
-              >
-                {paragraph}
-              </p>
-            ),
-          )}
+        <div className="max-w-readable min-w-0">
+          {visibleParagraphs.map((paragraph, paragraphIndex) => (
+            <p
+              key={`${paragraphIndex}-${paragraph}`}
+              className={cn('!mt-0', paragraphIndex === visibleParagraphs.length - 1 && visibleItems.length === 0 ? '!mb-0' : '!mb-5')}
+            >
+              {paragraph}
+            </p>
+          ))}
 
           {visibleItems.length > 0 ? (
-            <ul
-              className={cn(
-                "!m-0 grid list-disc gap-3",
-                "!pl-6 marker:text-brand-accent",
-              )}
-            >
-              {visibleItems.map(
-                (item, itemIndex) => (
-                  <li
-                    key={`${itemIndex}-${item}`}
-                    className="!m-0 pl-1 text-foreground"
-                  >
-                    {item}
-                  </li>
-                ),
-              )}
+            <ul className={cn('!m-0 grid list-disc gap-3', 'marker:text-brand-accent !pl-6')}>
+              {visibleItems.map((item, itemIndex) => (
+                <li key={`${itemIndex}-${item}`} className="text-foreground !m-0 pl-1">
+                  {item}
+                </li>
+              ))}
             </ul>
           ) : null}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

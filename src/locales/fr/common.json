@@ -11,6 +11,9 @@
         "researchCompact": "Recherche",
         "software": "Logiciels",
         "contact": "Contact",
+        "desktop": {
+            "cvLabel": "CV (PDF)"
+        },
         "mobile": {
             "open": "Ouvrir la navigation",
             "close": "Fermer la navigation",

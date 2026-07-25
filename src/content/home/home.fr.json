@@ -1,19 +1,32 @@
 {
-    "eyebrow": "Accueil",
-    "title": "IA, logiciels, instrumentation scientifique et systèmes complexes",
-    "introduction": "J’accompagne des projets techniques depuis la définition du besoin jusqu’à la validation des livrables. Mon parcours associe coordination d’équipes, compréhension scientifique, arbitrage technique et contribution directe au développement lorsque le projet le nécessite.",
+    "eyebrow": "Chef de projet multidisciplinaire et polyvalent",
+    "title": "Accompagner le succès des projets scientifiques et numériques",
+    "introduction": "Je m'appelle Vivien PRAUD WALTER et je suis un chef de projet multidisciplinaire, ayant piloté des projets allant la recherche scientifique au développement web en passant par la construction de plateformes d'imagerie. Ce site présente tous mes travaux dans ces différents domaines pour vous permettre de découvrir mon activité.",
+    "heroActions": {
+        "projects": "Explorer mes projets",
+        "experience": "Découvrir mon parcours"
+    },
+    "heroImage": {
+        "alt": "Lorem ipsum dolor sit amet."
+    },
+    "heroHighlights": {
+        "projectManagement": "Pilotage de projets multidisciplinaires",
+        "softwareAndAi": "Logiciels, applications web et intelligence artificielle",
+        "instrumentation": "Instrumentation scientifique et médicale",
+        "location": "Profil international basé en Vendée (France)."
+    },
     "profileDimensions": {
         "title": "Trois dimensions d’un même profil",
         "projectManagement": {
-            "title": "Pilotage de projets R&D",
+            "title": "Pilotage de projets multidisciplinaires",
             "description": "Cadrage, analyse des besoins, spécifications, feuille de route, coordination multidisciplinaire, gestion des risques, qualité, financement et validation."
         },
         "softwareAndAi": {
-            "title": "Logiciels et intelligence artificielle",
+            "title": "Logiciels, applications web et intelligence artificielle",
             "description": "Développement Python et TypeScript, intégration d’IA générative, apprentissage automatique, analyse de données, interfaces et automatisation."
         },
         "instrumentation": {
-            "title": "Instrumentation et systèmes complexes",
+            "title": "Instrumentation scientifique et médicale",
             "description": "Création de laboratoires, plateformes expérimentales, microscopie, microfluidique, électronique, prototypage et logiciels de contrôle."
         }
     },
@@ -27,6 +40,7 @@
     },
     "featuredWorks": {
         "title": "Travaux récents",
+        "description": "Retrouvez ici mes derniers travaux, logiciels et publications scientifiques. Vous souhaitez en découvrir plus ? Rendez-vous dans les sections correspondantes pour y retrouver tous les détails !",
         "kindLabels": {
             "project": "Projet",
             "software": "Logiciel",
@@ -43,6 +57,7 @@
     },
     "researchAxes": {
         "title": "Axes de recherche",
+        "description": "Contribuer à la recherche scientifique, y compris au travers de collaborations ponctuelles, est un de mes engagements les plus fort. N'hésitez pas à découvrir les différents domaines que j'explore au travers de mes travaux.",
         "actionLabel": "En savoir plus",
         "opticsAndPhotonics": {
             "title": "Optique et photonique",
@@ -62,6 +77,7 @@
         }
     },
     "follow": {
-        "title": "Me suivre au quotidien"
+        "title": "Me suivre au quotidien",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
 }

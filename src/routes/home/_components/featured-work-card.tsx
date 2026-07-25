@@ -1,29 +1,16 @@
-import {
-  ArrowRightIcon,
-  ArrowUpRightIcon,
-} from "@phosphor-icons/react";
-import {
-  createElement,
-  type ElementType,
-} from "react";
-import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { ArrowRightIcon, ArrowUpRightIcon } from '@phosphor-icons/react';
+import { createElement, type ElementType } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-import {
-  getProjectRoute,
-} from "@/app/routing/navigation";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import type { HomeFeaturedWork } from "@/content/home/home";
-import { cn } from "@/lib/utils";
-import type { SupportedLanguage } from "@/types/localization";
+import { getProjectRoute } from '@/app/routing/navigation';
+import { InteractiveCard } from '@/components/interactive-card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import type { HomeFeaturedWork } from '@/content/home/home';
+import { cn } from '@/lib/utils';
+import type { SupportedLanguage } from '@/types/localization';
 
 type FeaturedWorkCardProps = {
   readonly work: HomeFeaturedWork;
@@ -31,20 +18,14 @@ type FeaturedWorkCardProps = {
   readonly headingLevel?: 2 | 3;
 };
 
-type FeaturedProjectPeriod = Extract<
-  HomeFeaturedWork,
-  { readonly kind: "project" }
->["period"];
+type FeaturedProjectPeriod = Extract<HomeFeaturedWork, { readonly kind: 'project' }>['period'];
 
 const localeByLanguage = {
-  fr: "fr-FR",
-  en: "en-GB",
+  fr: 'fr-FR',
+  en: 'en-GB',
 } satisfies Readonly<Record<SupportedLanguage, string>>;
 
-function formatDate(
-  value: string,
-  language: SupportedLanguage,
-): string {
+function formatDate(value: string, language: SupportedLanguage): string {
   const yearMatch = /^(\d{4})$/.exec(value);
 
   if (yearMatch) {
@@ -55,50 +36,33 @@ function formatDate(
 
   if (monthMatch) {
     const [, year, month] = monthMatch;
-    const date = new Date(
-      Date.UTC(Number(year), Number(month) - 1, 1),
-    );
+    const date = new Date(Date.UTC(Number(year), Number(month) - 1, 1));
 
-    return new Intl.DateTimeFormat(
-      localeByLanguage[language],
-      {
-        month: "long",
-        year: "numeric",
-        timeZone: "UTC",
-      },
-    ).format(date);
+    return new Intl.DateTimeFormat(localeByLanguage[language], {
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }).format(date);
   }
 
   const dayMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
 
   if (dayMatch) {
     const [, year, month, day] = dayMatch;
-    const date = new Date(
-      Date.UTC(
-        Number(year),
-        Number(month) - 1,
-        Number(day),
-      ),
-    );
+    const date = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
 
-    return new Intl.DateTimeFormat(
-      localeByLanguage[language],
-      {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        timeZone: "UTC",
-      },
-    ).format(date);
+    return new Intl.DateTimeFormat(localeByLanguage[language], {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }).format(date);
   }
 
   return value;
 }
 
-function formatDateRange(
-  period: FeaturedProjectPeriod,
-  language: SupportedLanguage,
-): string {
+function formatDateRange(period: FeaturedProjectPeriod, language: SupportedLanguage): string {
   const start = formatDate(period.start, language);
 
   if (!period.end) {
@@ -108,138 +72,68 @@ function formatDateRange(
   return `${start} – ${formatDate(period.end, language)}`;
 }
 
-function FeaturedWorkCard({
-  work,
-  language,
-  headingLevel = 3,
-}: FeaturedWorkCardProps) {
+function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCardProps) {
   const { t } = useTranslation();
   const Heading = `h${headingLevel}` as ElementType;
-  const headingId =
-    `featured-${work.kind}-${work.contentId}-title`;
+  const headingId = `featured-${work.kind}-${work.contentId}-title`;
 
   const footer =
-    work.kind === "project" ? (
+    work.kind === 'project' ? (
       <>
-        <span className="text-sm text-muted-foreground">
-          {formatDateRange(work.period, language)}
-        </span>
+        <span className="text-muted-foreground text-sm">{formatDateRange(work.period, language)}</span>
 
-        <Button
-          asChild
-          variant="ghost"
-          className={cn(
-            "min-h-10 px-2 text-brand-primary",
-            "hover:bg-action-soft hover:text-brand-primary",
-          )}
-        >
-          <Link
-            to={getProjectRoute(
-              work.contentId,
-              language,
-            )}
-          >
-            {t("actions.viewProject", {
+        <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+          <Link to={getProjectRoute(work.contentId, language)}>
+            {t('actions.viewProject', {
               lng: language,
             })}
 
-            <ArrowRightIcon
-              aria-hidden="true"
-              weight="bold"
-            />
+            <ArrowRightIcon aria-hidden="true" weight="bold" />
           </Link>
         </Button>
       </>
-    ) : work.kind === "software" ? (
+    ) : work.kind === 'software' ? (
       <>
-        <span
-          className={cn(
-            "font-mono text-sm font-medium",
-            "text-muted-foreground",
-          )}
-        >
-          {work.primaryLanguage}
-        </span>
+        <span className={cn('font-mono text-sm font-medium', 'text-muted-foreground')}>{work.primaryLanguage}</span>
 
-        <Button
-          asChild
-          variant="ghost"
-          className={cn(
-            "min-h-10 px-2 text-brand-primary",
-            "hover:bg-action-soft hover:text-brand-primary",
-          )}
-        >
-          <Link
-            to={getProjectRoute(
-              work.projectId,
-              language,
-            )}
-          >
-            {t("actions.viewProject", {
+        <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+          <Link to={getProjectRoute(work.projectId, language)}>
+            {t('actions.viewProject', {
               lng: language,
             })}
 
-            <ArrowRightIcon
-              aria-hidden="true"
-              weight="bold"
-            />
+            <ArrowRightIcon aria-hidden="true" weight="bold" />
           </Link>
         </Button>
       </>
     ) : (
       <>
-        <span className="text-sm text-muted-foreground">
-          {work.journal}
-        </span>
+        <span className="text-muted-foreground text-sm">{work.journal}</span>
 
-        <Button
-          asChild
-          variant="ghost"
-          className={cn(
-            "min-h-10 px-2 text-brand-primary",
-            "hover:bg-action-soft hover:text-brand-primary",
-          )}
-        >
-          <a
-            href={work.doi.href}
-            target="_blank"
-            rel="noreferrer"
-          >
+        <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+          <a href={work.doi.href} target="_blank" rel="noreferrer">
             {work.doi.label}
 
-            <ArrowUpRightIcon
-              aria-hidden="true"
-              weight="bold"
-            />
+            <ArrowUpRightIcon aria-hidden="true" weight="bold" />
           </a>
         </Button>
       </>
     );
 
   return (
-    <article
-      className="h-full min-w-0"
-      aria-labelledby={headingId}
-    >
-      <Card
-        className={cn(
-          "h-full gap-0 overflow-hidden rounded-sm py-0",
-          "border-border-strong shadow-subtle",
-          "transition-[border-color,box-shadow,transform]",
-          "duration-150 ease-standard",
-          "hover:-translate-y-0.5",
-          "hover:border-brand-primary hover:shadow-elevated",
-        )}
+    <article className="h-full min-w-0" aria-labelledby={headingId}>
+      <InteractiveCard
+        interaction="self"
+        className={cn('h-full gap-0 overflow-hidden rounded-sm py-0', 'border-border-strong bg-brand-background', 'shadow-subtle')}
       >
         {work.image ? (
-          <div className="aspect-[16/9] overflow-hidden bg-muted">
+          <div className="bg-muted aspect-[16/9] overflow-hidden">
             <img
               src={work.image.src}
               alt={work.image.alt}
               className="h-full w-full object-cover"
               style={{
-                objectPosition:
-                  work.image.objectPosition ?? "center",
+                objectPosition: work.image.objectPosition ?? 'center',
               }}
               loading="lazy"
               decoding="async"
@@ -251,10 +145,10 @@ function FeaturedWorkCard({
           <Badge
             variant="secondary"
             className={cn(
-              "w-fit rounded-sm border border-border",
-              "bg-brand-hero px-2.5 py-1",
-              "font-mono text-xs font-semibold",
-              "tracking-[0.06em] text-brand-primary uppercase",
+              'border-border w-fit rounded-sm border',
+              'bg-brand-hero px-2.5 py-1',
+              'font-mono text-xs font-semibold',
+              'text-brand-primary tracking-[0.06em] uppercase',
             )}
           >
             {t(`contentKinds.${work.kind}`, {
@@ -267,11 +161,7 @@ function FeaturedWorkCard({
               Heading,
               {
                 id: headingId,
-                className: cn(
-                  "!m-0 text-lg font-bold leading-heading",
-                  "tracking-[-0.015em] text-brand-ink",
-                  "sm:text-xl",
-                ),
+                className: cn('leading-heading !m-0 text-lg font-bold', 'text-brand-ink tracking-[-0.015em]', 'sm:text-xl'),
               },
               work.title,
             )}
@@ -279,21 +169,15 @@ function FeaturedWorkCard({
         </CardHeader>
 
         <CardContent className="px-5 pb-6 sm:px-6">
-          <p className="!m-0 text-base text-muted-foreground">
-            {work.summary}
-          </p>
+          <p className="text-muted-foreground !m-0 text-base">{work.summary}</p>
         </CardContent>
 
         <CardFooter
-          className={cn(
-            "mt-auto flex min-h-16 flex-wrap",
-            "items-center justify-between gap-3",
-            "border-t border-border px-5 py-3 sm:px-6",
-          )}
+          className={cn('mt-auto flex min-h-16 flex-wrap', 'items-center justify-between gap-3', 'border-border border-t px-5 py-3 sm:px-6')}
         >
           {footer}
         </CardFooter>
-      </Card>
+      </InteractiveCard>
     </article>
   );
 }

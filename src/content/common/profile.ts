@@ -1,20 +1,23 @@
-import { GithubLogoIcon, type Icon, IdentificationBadgeIcon, LinkedinLogoIcon } from '@phosphor-icons/react';
+import { GithubLogoIcon, type Icon, LinkedinLogoIcon } from '@phosphor-icons/react';
+
+import { OrcidIcon } from '@/components/icons/orcid';
 
 type PublicPersonName = {
-  readonly firstName: string;
-  readonly lastName: string;
+  firstName: string;
+  lastName: string;
 };
 
 type PublicExternalLink = {
-  readonly id: string;
-  readonly icon: Icon;
-  readonly href: string;
-  readonly displayValue: string;
+  id: string;
+  icon: Icon;
+  href: string;
+  displayValue: string;
 };
 
 type PublicProfile = {
-  readonly person: PublicPersonName;
-  readonly externalLinks: readonly PublicExternalLink[];
+  person: PublicPersonName;
+  email: string;
+  externalLinks: PublicExternalLink[];
 };
 
 export const publicProfile = {
@@ -22,6 +25,8 @@ export const publicProfile = {
     firstName: 'Vivien',
     lastName: 'Praud Walter',
   },
+
+  email: 'vivien.walter@proton.me',
 
   externalLinks: [
     {
@@ -38,7 +43,7 @@ export const publicProfile = {
     },
     {
       id: 'orcid',
-      icon: IdentificationBadgeIcon,
+      icon: OrcidIcon,
       href: 'https://orcid.org/0000-0003-3203-9543',
       displayValue: '0000-0003-3203-9543',
     },

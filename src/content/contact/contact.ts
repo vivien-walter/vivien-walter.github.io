@@ -1,19 +1,11 @@
-import {
-  CalendarCheckIcon,
-  LaptopIcon,
-  MapPinIcon,
-  type Icon,
-} from "@phosphor-icons/react";
+import { CalendarCheckIcon, EnvelopeSimpleIcon, type Icon, LaptopIcon, MapPinIcon } from '@phosphor-icons/react';
 
-import { publicProfile } from "@/content/common/profile";
-import { selectLocalizedContent } from "@/lib/content/localization";
-import type {
-  LocalizedContent,
-  SupportedLanguage,
-} from "@/types/localization";
+import { publicProfile } from '@/content/common/profile';
+import { selectLocalizedContent } from '@/lib/content/localization';
+import type { LocalizedContent, SupportedLanguage } from '@/types/localization';
 
-import enContactJson from "./contact.en.json";
-import frContactJson from "./contact.fr.json";
+import enContactJson from './contact.en.json';
+import frContactJson from './contact.fr.json';
 
 type LocalizedContactMethod = {
   readonly label: string;
@@ -57,11 +49,7 @@ type LocalizedContactContent = {
   };
 };
 
-export type ContactMethodId =
-  | "email"
-  | "linkedin"
-  | "github"
-  | "orcid";
+export type ContactMethodId = 'email' | 'linkedin' | 'github' | 'orcid';
 
 export type ContactMethod = {
   readonly id: ContactMethodId;
@@ -72,10 +60,7 @@ export type ContactMethod = {
   readonly actionLabel: string;
 };
 
-export type ContactAvailabilityId =
-  | "location"
-  | "immediate-availability"
-  | "work-arrangements";
+export type ContactAvailabilityId = 'location' | 'immediate-availability' | 'work-arrangements';
 
 export type ContactAvailabilityCard = {
   readonly id: ContactAvailabilityId;
@@ -110,39 +95,25 @@ const localizedContactContent = {
   en: enContactJson,
 } satisfies LocalizedContent<LocalizedContactContent>;
 
-type PublicExternalLinkId =
-  | "linkedin"
-  | "github"
-  | "orcid";
+type PublicExternalLinkId = 'linkedin' | 'github' | 'orcid';
 
-function getPublicExternalLink(
-  id: PublicExternalLinkId,
-): (typeof publicProfile.externalLinks)[number] {
-  const link = publicProfile.externalLinks.find(
-    (candidate) => candidate.id === id,
-  );
+function getPublicExternalLink(id: PublicExternalLinkId): (typeof publicProfile.externalLinks)[number] {
+  const link = publicProfile.externalLinks.find((candidate) => candidate.id === id);
 
   if (!link) {
-    throw new Error(
-      `Missing public profile link: ${id}`,
-    );
+    throw new Error(`Missing public profile link: ${id}`);
   }
 
   return link;
 }
 
-const linkedinProfile =
-  getPublicExternalLink("linkedin");
+const linkedinProfile = getPublicExternalLink('linkedin');
 
-const githubProfile =
-  getPublicExternalLink("github");
+const githubProfile = getPublicExternalLink('github');
 
-const orcidProfile =
-  getPublicExternalLink("orcid");
+const orcidProfile = getPublicExternalLink('orcid');
 
-function assembleContactContent(
-  localizedContent: LocalizedContactContent,
-): ContactContent {
+function assembleContactContent(localizedContent: LocalizedContactContent): ContactContent {
   return {
     title: localizedContent.title,
     introduction: localizedContent.introduction,
@@ -150,97 +121,72 @@ function assembleContactContent(
 
     links: [
       {
-        id: "email",
-        icon: publicProfile.email.icon,
+        id: 'email',
+        icon: EnvelopeSimpleIcon,
         label: localizedContent.methods.email.label,
-        href: `mailto:${publicProfile.email.address}`,
-        value: publicProfile.email.address,
-        actionLabel:
-          localizedContent.methods.email.actionLabel,
+        href: `mailto:${publicProfile.email}`,
+        value: publicProfile.email,
+        actionLabel: localizedContent.methods.email.actionLabel,
       },
       {
-        id: "linkedin",
+        id: 'linkedin',
         icon: linkedinProfile.icon,
         label: localizedContent.methods.linkedin.label,
         href: linkedinProfile.href,
         value: linkedinProfile.displayValue,
-        actionLabel:
-          localizedContent.methods.linkedin.actionLabel,
+        actionLabel: localizedContent.methods.linkedin.actionLabel,
       },
       {
-        id: "github",
+        id: 'github',
         icon: githubProfile.icon,
         label: localizedContent.methods.github.label,
         href: githubProfile.href,
         value: githubProfile.displayValue,
-        actionLabel:
-          localizedContent.methods.github.actionLabel,
+        actionLabel: localizedContent.methods.github.actionLabel,
       },
       {
-        id: "orcid",
+        id: 'orcid',
         icon: orcidProfile.icon,
         label: localizedContent.methods.orcid.label,
         href: orcidProfile.href,
         value: orcidProfile.displayValue,
-        actionLabel:
-          localizedContent.methods.orcid.actionLabel,
+        actionLabel: localizedContent.methods.orcid.actionLabel,
       },
     ],
 
     jobSearch: {
       message: localizedContent.jobSearch.message,
-      frenchCvLabel:
-        localizedContent.jobSearch.downloadCvFr,
-      englishCvLabel:
-        localizedContent.jobSearch.downloadCvEn,
+      frenchCvLabel: localizedContent.jobSearch.downloadCvFr,
+      englishCvLabel: localizedContent.jobSearch.downloadCvEn,
     },
 
     availability: {
       title: localizedContent.availability.title,
       items: [
         {
-          id: "location",
+          id: 'location',
           icon: MapPinIcon,
-          title:
-            localizedContent.availability.items.location
-              .title,
-          description:
-            localizedContent.availability.items.location
-              .description,
+          title: localizedContent.availability.items.location.title,
+          description: localizedContent.availability.items.location.description,
         },
         {
-          id: "immediate-availability",
+          id: 'immediate-availability',
           icon: CalendarCheckIcon,
-          title:
-            localizedContent.availability.items
-              .immediateAvailability.title,
-          description:
-            localizedContent.availability.items
-              .immediateAvailability.description,
+          title: localizedContent.availability.items.immediateAvailability.title,
+          description: localizedContent.availability.items.immediateAvailability.description,
           highlighted: true,
         },
         {
-          id: "work-arrangements",
+          id: 'work-arrangements',
           icon: LaptopIcon,
-          title:
-            localizedContent.availability.items
-              .workArrangements.title,
-          description:
-            localizedContent.availability.items
-              .workArrangements.description,
+          title: localizedContent.availability.items.workArrangements.title,
+          description: localizedContent.availability.items.workArrangements.description,
         },
       ],
     },
   };
 }
 
-export function getContactContent(
-  language: SupportedLanguage,
-): ContactContent {
-  return assembleContactContent(
-    selectLocalizedContent(
-      localizedContactContent,
-      language,
-    ),
-  );
+export function getContactContent(language: SupportedLanguage): ContactContent {
+  return assembleContactContent(selectLocalizedContent(localizedContactContent, language));
 }
