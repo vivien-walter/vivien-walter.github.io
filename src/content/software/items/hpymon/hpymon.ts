@@ -16,11 +16,13 @@ const localizedHPyMonContent = {
   en: enHPyMonJson,
 } as const;
 
+const year = 2025;
+
 const languages = ['Python'] as const;
 
-const projectIds = ['mllpa-project'] as const satisfies readonly ProjectId[];
+const projectIds = [] as const satisfies readonly ProjectId[];
 
-const experienceIds = ['strasbourg-mllpa'] as const satisfies readonly ExperienceId[];
+const experienceIds = [] as const satisfies readonly ExperienceId[];
 
 export function getHPyMonContent(language: SupportedLanguage) {
   const localized = selectLocalizedContent(localizedHPyMonContent, language);
@@ -29,7 +31,9 @@ export function getHPyMonContent(language: SupportedLanguage) {
     id: hPyMonId,
     icon: CodeIcon,
     kind: 'software',
+    year,
     languages,
+    eyebrow: localized.eyebrow,
     title: localized.title,
     summary: localized.summary,
     highlights: [

@@ -1,25 +1,26 @@
 {
-    "title": "MLLPA",
-    "summary": "A documented and reusable Python module for machine-learning-assisted analysis of lipid-membrane phases obtained from molecular-dynamics simulations.",
+    "eyebrow": "Python software",
+    "title": "HPyMon",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "highlights": {
         "researchTopic": {
-            "label": "Research topic",
-            "value": "Lipid membranes, phase transitions and membrane instabilities."
+            "label": "Purpose",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
         "computationalApproaches": {
-            "label": "Computational approaches",
-            "value": "Molecular simulation, data analysis and machine learning."
+            "label": "Operation",
+            "value": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         "publications": {
-            "label": "Publications",
-            "value": "Three first-author articles on lipid membranes and MLLPA."
+            "label": "Usage",
+            "value": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
         }
     },
     "description": {
         "paragraphs": [
-            "MLLPA makes reusable the methods developed to study the phases and transitions of simulated lipid membranes.",
-            "The module structures the processing of data obtained from molecular-dynamics simulations and supports the analysis of membrane phases using machine-learning approaches.",
-            "Vivien developed approximately 95% of the module’s code and created its entire website and documentation. The software, its website and documentation are publicly available."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         ]
     },
     "technologyGroups": [
@@ -30,35 +31,9 @@
                     "label": "Python"
                 }
             ]
-        },
-        {
-            "title": "Libraries and frameworks",
-            "items": [
-                {
-                    "label": "NumPy"
-                },
-                {
-                    "label": "h5py"
-                },
-                {
-                    "label": "MDAnalysis"
-                },
-                {
-                    "label": "pandas"
-                },
-                {
-                    "label": "scikit-learn"
-                },
-                {
-                    "label": "TensorFlow"
-                },
-                {
-                    "label": "tqdm"
-                }
-            ]
         }
     ],
     "linkLabels": {
-        "website": "MLLPA website and documentation"
+        "website": "HPyMon website"
     }
 }

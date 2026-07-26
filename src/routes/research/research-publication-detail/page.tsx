@@ -21,7 +21,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { getExperienceById } from '@/content/experience/page';
 import { getProjectById } from '@/content/projects/page';
 import { getPublicationById, getPublicationNavigation, getResearchPage, getResearchThemeById } from '@/content/research/page';
-import { getSoftwareById } from '@/content/software/page';
+import { getSoftwareById } from '@/content/software/catalog';
 import { cn } from '@/lib/utils';
 import NotFoundPage from '@/routes/not-found/page';
 

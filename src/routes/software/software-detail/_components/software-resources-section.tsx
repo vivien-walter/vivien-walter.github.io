@@ -1,7 +1,7 @@
 import type { Icon } from '@phosphor-icons/react';
 
+import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
-import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 type SoftwareResource = {
@@ -34,17 +34,16 @@ function SoftwareResourcesSection({ resources, title, titleId }: SoftwareResourc
       </SectionHeader>
 
       <ul className={cn('m-0 grid list-none gap-5 p-0', 'sm:grid-cols-2 lg:grid-cols-3')}>
-        {visibleResources.map((resource, index) => {
+        {visibleResources.map((resource) => {
           const ResourceIcon = resource.icon;
-
           const isExternal = isExternalResource(resource.href);
 
           return (
-            <li key={`${resource.href}-${index}`} className="m-0 min-w-0">
+            <li key={resource.href} className="m-0 min-w-0">
               <a
                 href={resource.href}
                 target={isExternal ? '_blank' : undefined}
-                rel={isExternal ? 'noreferrer' : undefined}
+                rel={isExternal ? 'noopener noreferrer' : undefined}
                 data-external={isExternal ? 'true' : undefined}
                 className={cn(
                   'group block h-full rounded-lg',
@@ -55,22 +54,9 @@ function SoftwareResourcesSection({ resources, title, titleId }: SoftwareResourc
                   'focus-visible:ring-offset-2',
                 )}
               >
-                <Card
-                  className={cn(
-                    'h-full min-h-40 gap-0',
-                    'rounded-lg py-0',
-                    'border-border-strong',
-                    'bg-brand-background',
-                    'shadow-none',
-                    'transition-[transform,border-color,background-color,box-shadow]',
-                    'ease-standard duration-200',
-                    'group-hover:-translate-y-1',
-                    'group-hover:border-brand-primary',
-                    'group-hover:bg-action-soft/70',
-                    'group-hover:shadow-elevated',
-                    'group-hover:ring-2',
-                    'group-hover:ring-brand-primary/30',
-                  )}
+                <InteractiveCard
+                  interaction="group"
+                  className={cn('h-full min-h-40', 'gap-0 rounded-lg py-0', 'border-border-strong', 'bg-brand-background', 'shadow-none')}
                 >
                   <span
                     className={cn(
@@ -88,12 +74,10 @@ function SoftwareResourcesSection({ resources, title, titleId }: SoftwareResourc
 
                   <span
                     className={cn(
-                      'flex min-h-14',
-                      'items-center justify-center',
-                      'px-5 py-3',
+                      'flex min-h-14 items-center',
+                      'justify-center px-5 py-3',
                       'text-center font-semibold',
-                      'leading-heading',
-                      'text-brand-ink',
+                      'leading-heading text-brand-ink',
                       'transition-colors',
                       'duration-200',
                       'group-hover:text-brand-primary',
@@ -101,7 +85,7 @@ function SoftwareResourcesSection({ resources, title, titleId }: SoftwareResourc
                   >
                     {resource.label}
                   </span>
-                </Card>
+                </InteractiveCard>
               </a>
             </li>
           );

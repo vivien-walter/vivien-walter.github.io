@@ -1,18 +1,21 @@
 {
+    "eyebrow": "Software and applications",
     "title": "Software",
     "introduction": "Design, development and production deployment of scientific software, instrumentation tools and data-analysis solutions.",
     "heroActions": {
-        "github": " GitHub"
+        "github": "View my GitHub repositories"
     },
     "heroImage": {
-        "alt": "Lorem ipsum dolor sit amet."
+        "alt": ""
     },
     "featured": {
         "title": "Featured software",
+        "description": "A random selection highlights one of the software products or applications presented on this page.",
         "viewAction": "View software details"
     },
     "followActivities": {
-        "title": "Follow my activities"
+        "title": "Follow my activities",
+        "description": "Access the public resources associated with my software development activities."
     },
     "kindLabels": {
         "software": "Software",
@@ -20,6 +23,7 @@
     },
     "catalog": {
         "sectionTitle": "Software and web applications",
+        "description": "Browse the list and use sorting and filters to explore the software products and web applications.",
         "listLabel": "Software and web application list",
         "technologiesLabel": "Technologies and methods",
         "tabs": {
@@ -46,17 +50,5 @@
             "filterByLanguage": "Language",
             "clearFilters": "Clear filters"
         }
-    },
-    "detail": {
-        "eyebrow": "Software details",
-        "highlightsLabel": "Key software information",
-        "descriptionTitle": "Description",
-        "technologiesTitle": "Technologies",
-        "resourcesTitle": "Resources",
-        "externalLinkLabel": "External link",
-        "navigationLabel": "Software navigation",
-        "backLabel": "Return to all software",
-        "previousLabel": "Previous software",
-        "nextLabel": "Next software"
     }
 }

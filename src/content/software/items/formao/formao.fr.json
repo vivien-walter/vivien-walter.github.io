@@ -1,25 +1,26 @@
 {
-    "title": "Formao Campus Virtuel",
-    "summary": "Module Python documenté et réutilisable destiné à l’analyse assistée par apprentissage automatique des phases de membranes lipidiques issues de simulations de dynamique moléculaire.",
+    "eyebrow": "Application web",
+    "title": "Formao",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "highlights": {
-        "researchTopic": {
-            "label": "Sujet d’étude",
-            "value": "Membranes lipidiques, transitions de phase et instabilités membranaires."
+        "purpose": {
+            "label": "Objectif",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
-        "computationalApproaches": {
-            "label": "Approches numériques",
-            "value": "Simulation moléculaire, analyse de données et apprentissage automatique."
+        "features": {
+            "label": "Fonctionnalités",
+            "value": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
-        "publications": {
-            "label": "Publications",
-            "value": "Trois articles en premier auteur consacrés aux membranes lipidiques et à MLLPA."
+        "usage": {
+            "label": "Utilisation",
+            "value": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
         }
     },
     "description": {
         "paragraphs": [
-            "MLLPA rend réutilisables les méthodes développées pour étudier les phases et les transitions de membranes lipidiques simulées.",
-            "Le module structure le traitement des données issues de simulations de dynamique moléculaire et permet d’analyser les phases membranaires à l’aide d’approches d’apprentissage automatique.",
-            "Vivien a développé environ 95 % du code du module et créé l’intégralité de son site et de sa documentation. Le logiciel, son site et sa documentation sont publiquement accessibles."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
         ]
     },
     "technologyGroups": [
@@ -27,23 +28,9 @@
             "title": "Langage",
             "items": [
                 {
-                    "label": "Python"
-                }
-            ]
-        },
-        {
-            "title": "Bibliothèques et frameworks",
-            "items": [
-                {
-                    "label": "NumPy"
-                },
-                {
-                    "label": "PyQt"
+                    "label": "TypeScript"
                 }
             ]
         }
-    ],
-    "linkLabels": {
-        "website": "Site et documentation de MLLPA"
-    }
+    ]
 }

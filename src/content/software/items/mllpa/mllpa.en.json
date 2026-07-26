@@ -1,4 +1,5 @@
 {
+    "eyebrow": "Scientific software",
     "title": "MLLPA",
     "summary": "A documented and reusable Python module for machine-learning-assisted analysis of lipid-membrane phases obtained from molecular-dynamics simulations.",
     "highlights": {

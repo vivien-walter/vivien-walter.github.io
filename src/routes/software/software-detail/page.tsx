@@ -6,8 +6,10 @@ import DetailDescriptionSection from '@/components/detail-description-section';
 import DetailHighlightsBand from '@/components/detail-highlights-band';
 import DetailNavigation from '@/components/detail-navigation';
 import DetailTechnologiesSection from '@/components/detail-technologies-section';
-import PageHero from '@/components/page-hero';
-import { getSoftwareById, getSoftwareContent, getSoftwareNavigation } from '@/content/software/page';
+import { Hero, HeroBreadcrumbs, HeroContainer, HeroContent, HeroDescription, HeroEyebrow, HeroHeader, HeroMedia, HeroTitle } from '@/components/hero';
+import { getSoftwareDetailById, getSoftwareDetailContent, getSoftwareDetailNavigation } from '@/content/software/detail/page';
+import { getSoftwareContent } from '@/content/software/page';
+import { cn } from '@/lib/utils';
 import NotFoundPage from '@/routes/not-found/page';
 
 import SoftwareResourcesSection from './_components/software-resources-section';
@@ -23,68 +25,85 @@ function SoftwareDetailPage() {
 
   const language = getLanguageFromPathname(location.pathname);
 
-  const page = getSoftwareContent(language);
+  const softwarePage = getSoftwareContent(language);
+  const detail = getSoftwareDetailContent(language);
 
-  const software = slug ? getSoftwareById(language, slug) : undefined;
+  const software = slug ? getSoftwareDetailById(language, slug) : undefined;
 
   if (!software) {
     return <NotFoundPage />;
   }
 
-  const { previous: previousSoftware, next: nextSoftware } = getSoftwareNavigation(language, software.id);
+  const { previous: previousSoftware, next: nextSoftware } = getSoftwareDetailNavigation(language, software.id);
 
+  const SoftwareIcon = software.icon;
   const idPrefix = `software-${software.id}`;
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
-      <PageHero
-        breadcrumbs={{
-          ariaLabel: t('breadcrumbs.label', {
-            lng: language,
-          }),
-          items: [
-            {
-              label: t('breadcrumbs.home', {
+      <Hero aria-labelledby="page-title">
+        <HeroContainer>
+          <HeroContent>
+            <HeroBreadcrumbs
+              ariaLabel={t('breadcrumbs.label', {
                 lng: language,
-              }),
-              to: getPageRoute('home', language),
-            },
-            {
-              label: page.title,
-              to: getPageRoute('software', language),
-            },
-            {
-              label: software.title,
-            },
-          ],
-        }}
-        eyebrow={page.detail.eyebrow}
-        title={software.title}
-        introduction={software.summary}
-      />
+              })}
+              items={[
+                {
+                  label: t('breadcrumbs.home', {
+                    lng: language,
+                  }),
+                  to: getPageRoute('home', language),
+                },
+                {
+                  label: softwarePage.title,
+                  to: getPageRoute('software', language),
+                },
+                {
+                  label: software.title,
+                },
+              ]}
+            />
 
-      <DetailHighlightsBand ariaLabel={page.detail.highlightsLabel} items={software.highlights} />
+            <HeroHeader className="mt-4 sm:mt-5">
+              <HeroEyebrow>{software.eyebrow}</HeroEyebrow>
 
-      <div className={['mx-auto w-full', 'max-w-editorial px-page', 'pt-12 pb-12', 'sm:pt-14 sm:pb-14', 'lg:pt-16 lg:pb-16'].join(' ')}>
-        <DetailDescriptionSection description={software.description} idPrefix={idPrefix} title={page.detail.descriptionTitle} />
+              <HeroTitle id="page-title">{software.title}</HeroTitle>
+
+              <HeroDescription>
+                <p className="!m-0">{software.summary}</p>
+              </HeroDescription>
+            </HeroHeader>
+          </HeroContent>
+
+          <HeroMedia className={cn('flex items-center justify-center', 'bg-action-soft text-brand-primary', 'p-8 sm:p-10 lg:p-12')}>
+            <SoftwareIcon aria-hidden="true" className="size-24 sm:size-28 lg:size-32" weight="regular" />
+          </HeroMedia>
+        </HeroContainer>
+      </Hero>
+
+      <DetailHighlightsBand ariaLabel={detail.highlightsLabel} items={software.highlights} />
+
+      <div className={cn('max-w-editorial px-page mx-auto w-full', 'pt-12 pb-12', 'sm:pt-14 sm:pb-14', 'lg:pt-16 lg:pb-16')}>
+        <DetailDescriptionSection description={software.description} idPrefix={idPrefix} title={detail.descriptionTitle} />
 
         <DetailTechnologiesSection
-          externalLinkLabel={page.detail.externalLinkLabel}
+          externalLinkLabel={detail.externalLinkLabel}
           groups={software.technologyGroups}
           idPrefix={idPrefix}
-          title={page.detail.technologiesTitle}
+          title={detail.technologiesTitle}
         />
 
-        <SoftwareResourcesSection resources={software.resources} title={page.detail.resourcesTitle} titleId={`${idPrefix}-resources-title`} />
+        <SoftwareResourcesSection resources={software.resources} title={detail.resourcesTitle} titleId={`${idPrefix}-resources-title`} />
 
         <DetailNavigation
-          ariaLabel={page.detail.navigationLabel}
+          ariaLabel={detail.navigationLabel}
           backLink={{
-            label: page.detail.backLabel,
+            label: detail.backLabel,
             to: getPageRoute('software', language),
           }}
-          previousLabel={page.detail.previousLabel}
-          nextLabel={page.detail.nextLabel}
+          previousLabel={detail.previousLabel}
+          nextLabel={detail.nextLabel}
           previousLink={
             previousSoftware
               ? {

@@ -17,7 +17,7 @@ import { getProjectById } from '@/content/projects/page';
 import type { ProjectId } from '@/content/projects/registry';
 import { getPublicationById } from '@/content/research/page';
 import type { PublicationId } from '@/content/research/publications/registry';
-import { getSoftwareById } from '@/content/software/page';
+import { getSoftwareById } from '@/content/software/catalog';
 import type { SoftwareId } from '@/content/software/registry';
 import { selectLocalizedContent } from '@/lib/content/localization';
 import type { LocalizedContent, SupportedLanguage } from '@/types/localization';

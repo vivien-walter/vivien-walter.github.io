@@ -1,13 +1,6 @@
-import {
-  ArticleIcon,
-  CodeIcon,
-  TargetIcon,
-} from "@phosphor-icons/react";
-import { useTranslation } from "react-i18next";
-import {
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { ArticleIcon, CodeIcon, TargetIcon } from '@phosphor-icons/react';
+import { useTranslation } from 'react-i18next';
+import { useLocation, useParams } from 'react-router-dom';
 
 import {
   getExperienceRoute,
@@ -16,24 +9,20 @@ import {
   getProjectRoute,
   getResearchPublicationRoute,
   getSoftwareRoute,
-} from "@/app/routing/navigation";
-import DetailNavigation from "@/components/detail-navigation";
-import PageHero from "@/components/page-hero";
-import { getExperienceById } from "@/content/experience/page";
-import {
-  getProjectById,
-  getProjectNavigation,
-  getProjectsPage,
-} from "@/content/projects/page";
-import { getPublicationsByProjectId } from "@/content/research/page";
-import { getSoftwareByProjectId } from "@/content/software/page";
-import NotFoundPage from "@/routes/not-found/page";
+} from '@/app/routing/navigation';
+import DetailNavigation from '@/components/detail-navigation';
+import PageHero from '@/components/page-hero';
+import { getExperienceById } from '@/content/experience/page';
+import { getProjectById, getProjectNavigation, getProjectsPage } from '@/content/projects/page';
+import { getPublicationsByProjectId } from '@/content/research/page';
+import { getSoftwareByProjectId } from '@/content/software/catalog';
+import NotFoundPage from '@/routes/not-found/page';
 
-import ProjectFeaturesSection from "./_components/project-features-section";
-import ProjectNarrativeSection from "./_components/project-narrative-section";
-import ProjectOverviewCard from "./_components/project-overview-card";
-import ProjectRelatedItemsSection from "./_components/project-related-items-section";
-import ProjectResourcesSection from "./_components/project-resources-section";
+import ProjectFeaturesSection from './_components/project-features-section';
+import ProjectNarrativeSection from './_components/project-narrative-section';
+import ProjectOverviewCard from './_components/project-overview-card';
+import ProjectRelatedItemsSection from './_components/project-related-items-section';
+import ProjectResourcesSection from './_components/project-resources-section';
 
 function ProjectDetailPage() {
   const location = useLocation();
@@ -44,121 +33,65 @@ function ProjectDetailPage() {
 
   const { t } = useTranslation();
 
-  const language = getLanguageFromPathname(
-    location.pathname,
-  );
+  const language = getLanguageFromPathname(location.pathname);
 
   const page = getProjectsPage(language);
 
-  const project = slug
-    ? getProjectById(
-        language,
-        slug,
-      )
-    : undefined;
+  const project = slug ? getProjectById(language, slug) : undefined;
 
   if (!project) {
     return <NotFoundPage />;
   }
 
-  const relatedExperiences =
-    project.experienceIds.flatMap(
-      (experienceId) => {
-        const experience =
-          getExperienceById(
-            language,
-            experienceId,
-          );
+  const relatedExperiences = project.experienceIds.flatMap((experienceId) => {
+    const experience = getExperienceById(language, experienceId);
 
-        return experience
-          ? [
-              {
-                id: experience.id,
-                label: experience.role,
-                to: getExperienceRoute(
-                  experience.id,
-                  language,
-                ),
-              },
-            ]
-          : [];
-      },
-    );
+    return experience
+      ? [
+          {
+            id: experience.id,
+            label: experience.role,
+            to: getExperienceRoute(experience.id, language),
+          },
+        ]
+      : [];
+  });
 
-  const relatedSoftware =
-    getSoftwareByProjectId(
-      language,
-      project.id,
-    ).map((software) => ({
-      id: software.id,
-      label: software.title,
-      to: getSoftwareRoute(
-        software.id,
-        language,
-      ),
-    }));
+  const relatedSoftware = getSoftwareByProjectId(language, project.id).map((software) => ({
+    id: software.id,
+    label: software.title,
+    to: getSoftwareRoute(software.id, language),
+  }));
 
-  const relatedPublications =
-    getPublicationsByProjectId(
-      language,
-      project.id,
-    ).map((publication) => ({
-      id: publication.id,
-      label: publication.title,
-      to: getResearchPublicationRoute(
-        publication.id,
-        language,
-      ),
-    }));
+  const relatedPublications = getPublicationsByProjectId(language, project.id).map((publication) => ({
+    id: publication.id,
+    label: publication.title,
+    to: getResearchPublicationRoute(publication.id, language),
+  }));
 
-  const {
-    previous: previousProject,
-    next: nextProject,
-  } = getProjectNavigation(
-    language,
-    project.id,
-  );
+  const { previous: previousProject, next: nextProject } = getProjectNavigation(language, project.id);
 
-  const resources =
-    "resources" in project
-      ? project.resources
-      : undefined;
+  const resources = 'resources' in project ? project.resources : undefined;
 
-  const idPrefix =
-    `project-${project.id}`;
+  const idPrefix = `project-${project.id}`;
 
   return (
-    <article
-      className="overflow-hidden"
-      aria-labelledby="page-title"
-    >
+    <article className="overflow-hidden" aria-labelledby="page-title">
       <PageHero
         breadcrumbs={{
-          ariaLabel: t(
-            "breadcrumbs.label",
-            {
-              lng: language,
-            },
-          ),
+          ariaLabel: t('breadcrumbs.label', {
+            lng: language,
+          }),
           items: [
             {
-              label: t(
-                "breadcrumbs.home",
-                {
-                  lng: language,
-                },
-              ),
-              to: getPageRoute(
-                "home",
-                language,
-              ),
+              label: t('breadcrumbs.home', {
+                lng: language,
+              }),
+              to: getPageRoute('home', language),
             },
             {
               label: page.eyebrow,
-              to: getPageRoute(
-                "projects",
-                language,
-              ),
+              to: getPageRoute('projects', language),
             },
             {
               label: project.title,
@@ -170,126 +103,71 @@ function ProjectDetailPage() {
         introduction={project.summary}
       />
 
-      <div
-        className={[
-          "mx-auto w-full max-w-editorial px-page",
-          "py-12 sm:py-14 lg:py-16",
-        ].join(" ")}
-      >
+      <div className={['max-w-editorial px-page mx-auto w-full', 'py-12 sm:py-14 lg:py-16'].join(' ')}>
         <ProjectOverviewCard
           ariaLabel={page.detail.overview}
           language={language}
           overview={project.overview}
           period={project.period}
           periodLabel={page.detail.period}
-          programmingLanguages={
-            project.programmingLanguages
-          }
+          programmingLanguages={project.programmingLanguages}
           tagsLabel={page.detail.tags}
-          technologies={
-            project.technologies
-          }
+          technologies={project.technologies}
         />
 
         <ProjectNarrativeSection
           title={page.detail.context}
           titleId={`${idPrefix}-context-title`}
           icon={TargetIcon}
-          paragraphs={
-            project.context?.paragraphs
-          }
+          paragraphs={project.context?.paragraphs}
         />
 
         <ProjectNarrativeSection
           title={page.detail.contribution}
           titleId={`${idPrefix}-contribution-title`}
           icon={CodeIcon}
-          paragraphs={
-            project.contribution
-              ?.paragraphs
-          }
+          paragraphs={project.contribution?.paragraphs}
         />
 
-        <ProjectFeaturesSection
-          title={page.detail.features}
-          titleId={`${idPrefix}-features-title`}
-          features={project.features}
-        />
+        <ProjectFeaturesSection title={page.detail.features} titleId={`${idPrefix}-features-title`} features={project.features} />
 
-        <ProjectNarrativeSection
-          title={page.detail.results}
-          titleId={`${idPrefix}-results-title`}
-          icon={ArticleIcon}
-          items={project.results}
-        />
+        <ProjectNarrativeSection title={page.detail.results} titleId={`${idPrefix}-results-title`} icon={ArticleIcon} items={project.results} />
 
-        <ProjectResourcesSection
-          title={page.detail.resources}
-          titleId={`${idPrefix}-resources-title`}
-          resources={resources}
-        />
+        <ProjectResourcesSection title={page.detail.resources} titleId={`${idPrefix}-resources-title`} resources={resources} />
 
         <ProjectRelatedItemsSection
           title={page.detail.relatedItems}
           titleId={`${idPrefix}-related-items-title`}
-          experiencesTitle={
-            page.detail.relatedExperiences
-          }
-          softwareTitle={
-            page.detail.relatedSoftware
-          }
-          publicationsTitle={
-            page.detail
-              .relatedPublications
-          }
-          experiences={
-            relatedExperiences
-          }
+          experiencesTitle={page.detail.relatedExperiences}
+          softwareTitle={page.detail.relatedSoftware}
+          publicationsTitle={page.detail.relatedPublications}
+          experiences={relatedExperiences}
           software={relatedSoftware}
-          publications={
-            relatedPublications
-          }
+          publications={relatedPublications}
         />
 
         <DetailNavigation
           className="mt-0 sm:mt-0"
-          ariaLabel={
-            page.detail.navigationLabel
-          }
+          ariaLabel={page.detail.navigationLabel}
           backLink={{
             label: page.detail.backLabel,
-            to: getPageRoute(
-              "projects",
-              language,
-            ),
+            to: getPageRoute('projects', language),
           }}
-          previousLabel={
-            page.detail.previousLabel
-          }
-          nextLabel={
-            page.detail.nextLabel
-          }
+          previousLabel={page.detail.previousLabel}
+          nextLabel={page.detail.nextLabel}
           previousLink={
             previousProject
               ? {
-                  label:
-                    previousProject.title,
-                  to: getProjectRoute(
-                    previousProject.id,
-                    language,
-                  ),
+                  label: previousProject.title,
+                  to: getProjectRoute(previousProject.id, language),
                 }
               : undefined
           }
           nextLink={
             nextProject
               ? {
-                  label:
-                    nextProject.title,
-                  to: getProjectRoute(
-                    nextProject.id,
-                    language,
-                  ),
+                  label: nextProject.title,
+                  to: getProjectRoute(nextProject.id, language),
                 }
               : undefined
           }

@@ -16,11 +16,13 @@ const localizedFormaoContent = {
   en: enFormaoJson,
 } as const;
 
+const year = 2026;
+
 const languages = ['TypeScript'] as const;
 
-const projectIds = ['mllpa-project'] as const satisfies readonly ProjectId[];
+const projectIds = [] as const satisfies readonly ProjectId[];
 
-const experienceIds = ['strasbourg-mllpa'] as const satisfies readonly ExperienceId[];
+const experienceIds = [] as const satisfies readonly ExperienceId[];
 
 export function getFormaoContent(language: SupportedLanguage) {
   const localized = selectLocalizedContent(localizedFormaoContent, language);
@@ -29,20 +31,22 @@ export function getFormaoContent(language: SupportedLanguage) {
     id: formaoId,
     icon: CodeIcon,
     kind: 'web-application',
+    year,
     languages,
+    eyebrow: localized.eyebrow,
     title: localized.title,
     summary: localized.summary,
     highlights: [
       {
-        ...localized.highlights.researchTopic,
+        ...localized.highlights.purpose,
         icon: AtomIcon,
       },
       {
-        ...localized.highlights.computationalApproaches,
+        ...localized.highlights.features,
         icon: CodeIcon,
       },
       {
-        ...localized.highlights.publications,
+        ...localized.highlights.usage,
         icon: ArticleIcon,
       },
     ],

@@ -1,55 +1,41 @@
-import {
-  ArticleIcon,
-  AtomIcon,
-  CodeIcon,
-  GlobeHemisphereWestIcon,
-} from "@phosphor-icons/react";
+import { ArticleIcon, AtomIcon, CodeIcon, GlobeHemisphereWestIcon } from '@phosphor-icons/react';
 
-import type { ExperienceId } from "@/content/experience/registry";
-import type { ProjectId } from "@/content/projects/registry";
-import { selectLocalizedContent } from "@/lib/content/localization";
-import type { SupportedLanguage } from "@/types/localization";
+import type { ExperienceId } from '@/content/experience/registry';
+import type { ProjectId } from '@/content/projects/registry';
+import { selectLocalizedContent } from '@/lib/content/localization';
+import type { SupportedLanguage } from '@/types/localization';
 
-import type { SoftwareId } from "../../registry";
-import enMllpaJson from "./mllpa.en.json";
-import frMllpaJson from "./mllpa.fr.json";
+import type { SoftwareId } from '../../registry';
+import enMllpaJson from './mllpa.en.json';
+import frMllpaJson from './mllpa.fr.json';
 
-export const mllpaId =
-  "mllpa" as const satisfies SoftwareId;
+export const mllpaId = 'mllpa' as const satisfies SoftwareId;
 
 const localizedMllpaContent = {
   fr: frMllpaJson,
   en: enMllpaJson,
 } as const;
 
-const languages = [
-  "Python",
-] as const;
+const year = 2024;
 
-const projectIds = [
-  "mllpa-project",
-] as const satisfies readonly ProjectId[];
+const languages = ['Python'] as const;
 
-const experienceIds = [
-  "strasbourg-mllpa",
-] as const satisfies readonly ExperienceId[];
+const projectIds = ['mllpa-project'] as const satisfies readonly ProjectId[];
 
-const mllpaWebsiteUrl =
-  "https://vivien-walter.github.io/mllpa/";
+const experienceIds = ['strasbourg-mllpa'] as const satisfies readonly ExperienceId[];
 
-export function getMllpaContent(
-  language: SupportedLanguage,
-) {
-  const localized = selectLocalizedContent(
-    localizedMllpaContent,
-    language,
-  );
+const mllpaWebsiteUrl = 'https://vivien-walter.github.io/mllpa/';
+
+export function getMllpaContent(language: SupportedLanguage) {
+  const localized = selectLocalizedContent(localizedMllpaContent, language);
 
   return {
     id: mllpaId,
     icon: CodeIcon,
-    kind: "software",
+    kind: 'software',
+    year,
     languages,
+    eyebrow: localized.eyebrow,
     title: localized.title,
     summary: localized.summary,
     highlights: [
@@ -58,8 +44,7 @@ export function getMllpaContent(
         icon: AtomIcon,
       },
       {
-        ...localized.highlights
-          .computationalApproaches,
+        ...localized.highlights.computationalApproaches,
         icon: CodeIcon,
       },
       {
@@ -68,8 +53,7 @@ export function getMllpaContent(
       },
     ],
     description: localized.description,
-    technologyGroups:
-      localized.technologyGroups,
+    technologyGroups: localized.technologyGroups,
     resources: [
       {
         label: localized.linkLabels.website,
@@ -82,5 +66,4 @@ export function getMllpaContent(
   } as const;
 }
 
-export type MllpaContent =
-  ReturnType<typeof getMllpaContent>;
+export type MllpaContent = ReturnType<typeof getMllpaContent>;

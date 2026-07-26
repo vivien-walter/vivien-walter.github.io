@@ -1,18 +1,21 @@
 {
+    "eyebrow": "Logiciels et applications",
     "title": "Mes logiciels et applications",
     "introduction": "Conception, développement et mise en production de logiciels scientifiques, d’outils d’instrumentation et de solutions d’analyse de données.",
     "heroActions": {
-        "github": "Découvrir mes repos GitHub"
+        "github": "Découvrir mes dépôts GitHub"
     },
     "heroImage": {
-        "alt": "Lorem ipsum dolor sit amet."
+        "alt": ""
     },
     "featured": {
         "title": "Logiciel mis en avant",
+        "description": "Une sélection aléatoire met en avant l’un des logiciels ou applications présentés sur cette page.",
         "viewAction": "Voir le logiciel détaillé"
     },
     "followActivities": {
-        "title": "Suivre mes activités"
+        "title": "Suivre mes activités",
+        "description": "Accédez aux ressources publiques associées à mes activités de développement logiciel."
     },
     "kindLabels": {
         "software": "Logiciel",
@@ -20,6 +23,7 @@
     },
     "catalog": {
         "sectionTitle": "Logiciels et applications web",
+        "description": "Parcourez la liste et utilisez le tri et les filtres pour explorer les logiciels et applications web.",
         "listLabel": "Liste des logiciels et applications web",
         "technologiesLabel": "Technologies et méthodes",
         "tabs": {
@@ -27,7 +31,7 @@
             "webApplications": "Applications web"
         },
         "actions": {
-            "viewSoftware": "Voir le logiciel",
+            "viewSoftware": "En savoir plus",
             "repository": "GitHub"
         },
         "emptyStates": {
@@ -46,17 +50,5 @@
             "filterByLanguage": "Langage",
             "clearFilters": "Effacer les filtres"
         }
-    },
-    "detail": {
-        "eyebrow": "Logiciel détaillé",
-        "highlightsLabel": "Informations clés sur le logiciel",
-        "descriptionTitle": "Description",
-        "technologiesTitle": "Technologies",
-        "resourcesTitle": "Ressources",
-        "externalLinkLabel": "Lien externe",
-        "navigationLabel": "Navigation entre les logiciels",
-        "backLabel": "Retour à tous les logiciels",
-        "previousLabel": "Logiciel précédent",
-        "nextLabel": "Logiciel suivant"
     }
 }
