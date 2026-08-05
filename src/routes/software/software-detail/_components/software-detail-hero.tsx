@@ -33,11 +33,11 @@ function SoftwareDetailHero({ language, software }: SoftwareDetailHeroProps) {
                 to: getPageRoute('home', language),
               },
               {
-                label: softwarePage.title,
+                label: softwarePage.breadcrumbLabel,
                 to: getPageRoute('software', language),
               },
               {
-                label: software.title,
+                label: software.breadcrumbLabel,
               },
             ]}
           />

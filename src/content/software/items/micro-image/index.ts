@@ -18,7 +18,7 @@ export function getMicroImageContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
     id: itemId,
     icon: CodeIcon,
-    kind: 'software',
+    kind: 'library',
     year: 2020,
     languages: ['Python'],
     localizedContent,

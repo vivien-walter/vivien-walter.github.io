@@ -1,12 +1,13 @@
 {
     "eyebrow": "Logiciels et applications",
     "title": "Mes logiciels et applications",
+    "breadcrumbLabel": "Logiciels",
     "introduction": "Conception, développement et mise en production de logiciels scientifiques, d’outils d’instrumentation et de solutions d’analyse de données.",
     "heroActions": {
         "github": "Découvrir mes dépôts GitHub"
     },
     "heroImage": {
-        "alt": ""
+        "alt": "Photographie d'un développeur travaillant sur un code."
     },
     "featured": {
         "title": "Logiciel mis en avant",
@@ -19,15 +20,17 @@
     },
     "kindLabels": {
         "software": "Logiciel",
+        "library": "Bibliothèque",
         "web-application": "Application web"
     },
     "catalog": {
-        "sectionTitle": "Logiciels et applications web",
-        "description": "Parcourez la liste et utilisez le tri et les filtres pour explorer les logiciels et applications web.",
-        "listLabel": "Liste des logiciels et applications web",
+        "sectionTitle": "Logiciels, bibliothèques et applications web",
+        "description": "Parcourez la liste et utilisez le tri et les filtres pour explorer les logiciels, applications web et bibliothèques.",
+        "listLabel": "Liste des logiciels, applications web et bibliothèques",
         "technologiesLabel": "Technologies et méthodes",
         "tabs": {
             "software": "Logiciels",
+            "libraries": "Bibliothèque",
             "webApplications": "Applications web"
         },
         "actions": {
@@ -36,7 +39,8 @@
         },
         "emptyStates": {
             "software": "Aucun logiciel ne correspond aux critères sélectionnés.",
-            "webApplications": "Aucune application web ne correspond aux critères sélectionnés."
+            "webApplications": "Aucune application web ne correspond aux critères sélectionnés.",
+            "libraries": "Aucune bibliothèque ne correspond aux critères sélectionnés."
         },
         "controls": {
             "sortLabel": "Trier les logiciels et applications web",

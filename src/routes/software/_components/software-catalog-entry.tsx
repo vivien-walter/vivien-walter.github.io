@@ -46,8 +46,36 @@ export default function SoftwareCatalogEntry({ software, language, technologiesL
     <article className="min-w-0" aria-labelledby={headingId}>
       <Card className="group border-border-strong bg-brand-background shadow-subtle ease-standard hover:border-brand-primary hover:bg-action-soft/70 hover:shadow-elevated hover:ring-brand-primary/30 focus-within:border-brand-primary focus-within:bg-action-soft/70 focus-within:shadow-elevated focus-within:ring-brand-primary/30 gap-0 overflow-hidden rounded-lg py-0 transition-[border-color,background-color,box-shadow] duration-200 focus-within:ring-2 hover:ring-2">
         <div className="grid min-w-0 sm:grid-cols-[9rem_minmax(0,1fr)] lg:grid-cols-[11rem_minmax(0,1fr)_13rem]">
-          <div className="bg-action-soft text-brand-primary group-hover:bg-brand-primary group-hover:text-primary-foreground group-focus-within:bg-brand-primary group-focus-within:text-primary-foreground flex min-h-36 items-center justify-center transition-colors duration-200 sm:row-span-2 sm:min-h-full lg:row-span-1">
-            <SoftwareIcon aria-hidden="true" className="size-12" weight="regular" />
+          <div
+            className={cn(
+              'relative flex min-h-36 items-center justify-center overflow-hidden',
+              'sm:row-span-2 sm:min-h-full lg:row-span-1',
+              software.heroImage
+                ? 'bg-brand-background'
+                : [
+                    'bg-action-soft text-brand-primary',
+                    'transition-colors duration-200',
+                    'group-hover:bg-brand-primary',
+                    'group-hover:text-primary-foreground',
+                    'group-focus-within:bg-brand-primary',
+                    'group-focus-within:text-primary-foreground',
+                  ],
+            )}
+          >
+            {software.heroImage ? (
+              <img
+                src={software.heroImage.src}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{
+                  objectPosition: software.heroImage.objectPosition ?? 'center',
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <SoftwareIcon aria-hidden="true" className="size-12" weight="regular" />
+            )}
           </div>
 
           <div className="min-w-0 p-5 sm:p-6">

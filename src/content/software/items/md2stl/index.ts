@@ -20,7 +20,7 @@ export function getMd2StlContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
     id: itemId,
     icon: CodeIcon,
-    kind: 'software',
+    kind: 'library',
     year: 2021,
     languages: ['Python'],
     localizedContent,

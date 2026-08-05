@@ -7,13 +7,16 @@ import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/comp
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { getSoftwareCollection } from '@/content/software/catalog';
+import { getSoftwareByIds } from '@/content/software/catalog';
 import { getSoftwareContent } from '@/content/software/page';
 import type { SoftwareId } from '@/content/software/registry';
 import { getSoftwareTags } from '@/content/software/tags';
+import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
 
 const MAXIMUM_VISIBLE_TAG_COUNT = 5;
+
+const FEATURED_SOFTWARE_IDS = ['formao', 'mllpa', 'molcomm'] as const satisfies readonly SoftwareId[];
 
 interface FeaturedSectionProps {
   readonly language: SupportedLanguage;
@@ -22,23 +25,22 @@ interface FeaturedSectionProps {
 export default function FeaturedSection({ language }: FeaturedSectionProps) {
   const page = getSoftwareContent(language);
 
-  const softwareCollection = useMemo(() => getSoftwareCollection(language), [language]);
+  const featuredSoftwareCollection = useMemo(() => getSoftwareByIds(language, FEATURED_SOFTWARE_IDS), [language]);
 
   const [featuredSoftwareId, setFeaturedSoftwareId] = useState<SoftwareId | null>(null);
 
-  /* Select a random index */
   useEffect(() => {
-    if (softwareCollection.length === 0) {
+    if (featuredSoftwareCollection.length === 0) {
       setFeaturedSoftwareId(null);
       return;
     }
 
-    const randomIndex = Math.floor(Math.random() * softwareCollection.length);
+    const randomIndex = Math.floor(Math.random() * featuredSoftwareCollection.length);
 
-    setFeaturedSoftwareId(softwareCollection[randomIndex]?.id ?? softwareCollection[0]?.id ?? null);
-  }, [softwareCollection]);
+    setFeaturedSoftwareId(featuredSoftwareCollection[randomIndex]?.id ?? featuredSoftwareCollection[0]?.id ?? null);
+  }, [featuredSoftwareCollection]);
 
-  const featuredSoftware = softwareCollection.find((software) => software.id === featuredSoftwareId) ?? softwareCollection[0];
+  const featuredSoftware = featuredSoftwareCollection.find((software) => software.id === featuredSoftwareId) ?? featuredSoftwareCollection[0];
 
   /* If no featured software is selected */
   if (!featuredSoftware) {
@@ -62,8 +64,27 @@ export default function FeaturedSection({ language }: FeaturedSectionProps) {
 
       <Card className="border-border-strong bg-brand-background shadow-subtle gap-0 overflow-hidden rounded-lg py-0">
         <article className="grid min-w-0 md:grid-cols-[10rem_minmax(0,1fr)]" aria-labelledby={`featured-software-${featuredSoftware.id}`}>
-          <div className="bg-action-soft text-brand-primary flex min-h-36 items-center justify-center md:min-h-full">
-            <FeaturedSoftwareIcon aria-hidden="true" className="size-14" weight="regular" />
+          <div
+            className={cn(
+              'relative flex min-h-36 items-center justify-center overflow-hidden',
+              'md:min-h-full',
+              featuredSoftware.heroImage ? 'bg-brand-background' : 'bg-action-soft text-brand-primary',
+            )}
+          >
+            {featuredSoftware.heroImage ? (
+              <img
+                src={featuredSoftware.heroImage.src}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{
+                  objectPosition: featuredSoftware.heroImage.objectPosition ?? 'center',
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <FeaturedSoftwareIcon aria-hidden="true" className="size-14" weight="regular" />
+            )}
           </div>
 
           <div className="min-w-0 p-5 sm:p-7">

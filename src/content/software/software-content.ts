@@ -7,7 +7,7 @@ import type { SupportedLanguage } from '@/types/localization';
 
 import type { SoftwareId } from './registry';
 
-export type SoftwareKind = 'software' | 'web-application';
+export type SoftwareKind = 'software' | 'library' | 'web-application';
 
 export type SoftwareLocalizedHighlight = {
   readonly label: string;
@@ -28,6 +28,7 @@ export type SoftwareLocalizedTechnologyGroup = {
 export type SoftwareLocalizedContent = {
   readonly eyebrow: string;
   readonly title: string;
+  readonly breadcrumbLabel?: string;
   readonly summary: string;
   readonly highlights: readonly SoftwareLocalizedHighlight[];
   readonly heroImage?: {
@@ -69,6 +70,7 @@ export type SoftwareContent<TId extends SoftwareId = SoftwareId, TKind extends S
   readonly languages: readonly string[];
   readonly eyebrow: string;
   readonly title: string;
+  readonly breadcrumbLabel: string;
   readonly summary: string;
   readonly heroImage?: SoftwareImage;
   readonly highlights: readonly SoftwareHighlight[];
@@ -145,6 +147,8 @@ export function createSoftwareContent<
 
   const disclaimer = localized.disclaimer?.trim() ? localized.disclaimer : undefined;
 
+  const breadcrumbLabel = localized.breadcrumbLabel?.trim() ? localized.breadcrumbLabel : localized.title;
+
   return {
     id: definition.id,
     icon: definition.icon,
@@ -153,6 +157,7 @@ export function createSoftwareContent<
     languages: definition.languages,
     eyebrow: localized.eyebrow,
     title: localized.title,
+    breadcrumbLabel,
     summary: localized.summary,
     ...(heroImage ? { heroImage } : {}),
     highlights: localized.highlights.map((highlight, index) => ({

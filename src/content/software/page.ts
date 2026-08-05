@@ -28,6 +28,11 @@ export function getSoftwareContent(language: SupportedLanguage) {
   const mllpa = getMllpaContent(language);
   const [mllpaWebsite] = mllpa.resources;
 
+  const breadcrumbLabel =
+    'breadcrumbLabel' in localized && typeof localized.breadcrumbLabel === 'string' && localized.breadcrumbLabel.trim().length > 0
+      ? localized.breadcrumbLabel
+      : localized.title;
+
   const githubResource = {
     id: 'github',
     icon: githubProfile.icon,
@@ -37,6 +42,7 @@ export function getSoftwareContent(language: SupportedLanguage) {
 
   return {
     ...localized,
+    breadcrumbLabel,
     githubResource,
     resources: [
       githubResource,

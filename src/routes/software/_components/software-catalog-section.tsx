@@ -150,8 +150,14 @@ export default function SoftwareCatalogSection({ language, content }: SoftwareCa
   const panelId = `${catalogId}-panel`;
   const softwareTabId = `${catalogId}-software-tab`;
   const webApplicationsTabId = `${catalogId}-web-applications-tab`;
+  const librariesTabId = `${catalogId}-libraries-tab`;
 
-  const emptyState = activeKind === 'software' ? content.catalog.emptyStates.software : content.catalog.emptyStates.webApplications;
+  const emptyState =
+    activeKind === 'software'
+      ? content.catalog.emptyStates.software
+      : activeKind === 'web-application'
+        ? content.catalog.emptyStates.webApplications
+        : content.catalog.emptyStates.libraries;
 
   return (
     <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
@@ -161,6 +167,7 @@ export default function SoftwareCatalogSection({ language, content }: SoftwareCa
         panelId={panelId}
         softwareTabId={softwareTabId}
         webApplicationsTabId={webApplicationsTabId}
+        librariesTabId={librariesTabId}
         activeKind={activeKind}
         controls={{
           sortBy,
@@ -184,7 +191,12 @@ export default function SoftwareCatalogSection({ language, content }: SoftwareCa
         onKindChange={setActiveKind}
       />
 
-      <div id={panelId} role="tabpanel" aria-labelledby={activeKind === 'software' ? softwareTabId : webApplicationsTabId} className="mt-3 sm:mt-4">
+      <div
+        id={panelId}
+        role="tabpanel"
+        aria-labelledby={activeKind === 'software' ? softwareTabId : activeKind === 'web-application' ? webApplicationsTabId : librariesTabId}
+        className="mt-3 sm:mt-4"
+      >
         {visibleSoftware.length > 0 ? (
           <ul className="m-0 grid list-none gap-5 p-0" aria-label={content.catalog.listLabel}>
             {visibleSoftware.map(({ software }) => (

@@ -44,7 +44,7 @@ export default function SoftwareHero({ language }: SoftwareHeroProps) {
                 to: getPageRoute('home', language),
               },
               {
-                label: content.title,
+                label: content.breadcrumbLabel,
               },
             ]}
           />

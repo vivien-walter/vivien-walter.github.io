@@ -16,10 +16,13 @@ type CatalogHeaderProps = {
   readonly panelId: string;
   readonly softwareTabId: string;
   readonly webApplicationsTabId: string;
+  readonly librariesTabId: string;
   readonly activeKind: SoftwareKind;
   readonly controls: ComponentProps<typeof SoftwareControls>;
   readonly onKindChange: (kind: SoftwareKind) => void;
 };
+
+const softwareKinds = ['software', 'web-application', 'library'] as const satisfies readonly SoftwareKind[];
 
 const tabClassName = cn(
   'relative min-h-12 shrink-0',
@@ -46,13 +49,14 @@ export default function CatalogHeader({
   panelId,
   softwareTabId,
   webApplicationsTabId,
+  librariesTabId,
   activeKind,
   controls,
   onKindChange,
 }: CatalogHeaderProps) {
   const softwareTabRef = useRef<HTMLButtonElement>(null);
-
   const webApplicationsTabRef = useRef<HTMLButtonElement>(null);
+  const librariesTabRef = useRef<HTMLButtonElement>(null);
 
   function activateTab(kind: SoftwareKind, focusTab: boolean) {
     onKindChange(kind);
@@ -61,18 +65,24 @@ export default function CatalogHeader({
       return;
     }
 
-    const target = kind === 'software' ? softwareTabRef.current : webApplicationsTabRef.current;
+    const target =
+      kind === 'software' ? softwareTabRef.current : kind === 'web-application' ? webApplicationsTabRef.current : librariesTabRef.current;
 
     target?.focus();
   }
 
   function handleTabKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
+    const activeIndex = softwareKinds.indexOf(activeKind);
+
     switch (event.key) {
       case 'ArrowLeft':
+        event.preventDefault();
+        activateTab(softwareKinds[(activeIndex - 1 + softwareKinds.length) % softwareKinds.length], true);
+        break;
+
       case 'ArrowRight':
         event.preventDefault();
-
-        activateTab(activeKind === 'software' ? 'web-application' : 'software', true);
+        activateTab(softwareKinds[(activeIndex + 1) % softwareKinds.length], true);
         break;
 
       case 'Home':
@@ -82,7 +92,7 @@ export default function CatalogHeader({
 
       case 'End':
         event.preventDefault();
-        activateTab('web-application', true);
+        activateTab('library', true);
         break;
     }
   }
@@ -131,6 +141,24 @@ export default function CatalogHeader({
             onKeyDown={handleTabKeyDown}
           >
             {content.tabs.webApplications}
+          </Button>
+
+          <Button
+            ref={librariesTabRef}
+            id={librariesTabId}
+            type="button"
+            role="tab"
+            variant="ghost"
+            aria-selected={activeKind === 'library'}
+            aria-controls={panelId}
+            tabIndex={activeKind === 'library' ? 0 : -1}
+            className={cn(tabClassName, activeKind === 'library' && activeTabClassName)}
+            onClick={() => {
+              activateTab('library', false);
+            }}
+            onKeyDown={handleTabKeyDown}
+          >
+            {content.tabs.libraries}
           </Button>
         </div>
 

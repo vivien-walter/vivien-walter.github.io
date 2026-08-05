@@ -1,6 +1,7 @@
 {
     "eyebrow": "Software and applications",
-    "title": "Software",
+    "title": "My software and applications",
+    "breadcrumbLabel": "Software",
     "introduction": "Design, development and production deployment of scientific software, instrumentation tools and data-analysis solutions.",
     "heroActions": {
         "github": "View my GitHub repositories"
@@ -19,16 +20,18 @@
     },
     "kindLabels": {
         "software": "Software",
-        "web-application": "Web application"
+        "web-application": "Web application",
+        "library": "Library"
     },
     "catalog": {
-        "sectionTitle": "Software and web applications",
-        "description": "Browse the list and use sorting and filters to explore the software products and web applications.",
-        "listLabel": "Software and web application list",
+        "sectionTitle": "Software, libraries and web applications",
+        "description": "Browse the list and use sorting and filters to explore the software products, web applications and libraries.",
+        "listLabel": "Software, web application and library list",
         "technologiesLabel": "Technologies and methods",
         "tabs": {
             "software": "Software",
-            "webApplications": "Web applications"
+            "webApplications": "Web applications",
+            "libraries": "Libraries"
         },
         "actions": {
             "viewSoftware": "View software",
@@ -36,7 +39,8 @@
         },
         "emptyStates": {
             "software": "No software matches the selected criteria.",
-            "webApplications": "No web application matches the selected criteria."
+            "webApplications": "No web application matches the selected criteria.",
+            "libraries": "No library matches the selected criteria."
         },
         "controls": {
             "sortLabel": "Sort software and web applications",
