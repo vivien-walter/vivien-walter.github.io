@@ -1,0 +1,74 @@
+{
+    "eyebrow": "Pour les microscopes iSCAT",
+    "title": "iSCAN",
+    "summary": "Logiciel permettant d'analyser des images réalisées en microscopie à diffusion interférométrique pour mesurer les propriétés physico-chimiques des objets visualisés.",
+    "heroImage": {
+        "alt": "Logo de iSCAN."
+    },
+    "highlights": [
+        {
+            "label": "Traitement d'image",
+            "value": "Logiciel conçu pour corriger, analyser et réaliser des montages d'images prises avec un microscope."
+        },
+        {
+            "label": "Interface graphique",
+            "value": "Utilisation pensée pour le confort de l'utilisateur avec une interface graphique complète grâce à PyQt5."
+        },
+        {
+            "label": "Microscopie iSCAT",
+            "value": "Conçu spécifiquement pour l'analyse d'images collectées avec un microscope à diffusion interférométrique."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "iSCAN est un logiciel conçu spécifiquement pour traiter des images et des séquences collectées avec un microscope à diffusion interférométrique. Dans cette application, mesurer l'intensité lumineuse des objets et leur variation permet de suivre l'évolution d'un système physico-chimique voire biologique au cours du temps, et au niveau des molécules individuelles. Pour cela, iSCAT permet de corriger et filtrer les images et séquences afin d'isoler les particules filmées à l'aide d'un microscope, ce qui permet à l'utilisateur (1) de mesurer le contraste des particules, et (2) de suivre la diffusion des particules au cours du temps. Des outils statistiques sont également disponibles pour étudier plusieurs particules d'un même échantillon.",
+            "Le logiciel a été réalisé et fonctionne entièrement grâce à Python 3 : aucune ligne de commande n'est requise, et le logiciel est fourni avec son propre exécutable. L'interface utilisateur graphique (GUI) tourne grâce à la bibliothèque PyQt5, et utilise les bibliothèques Pillow et scikit-image pour Python afin de réaliser les traitements d'images requis par l'utilisateur. Les résultats, qu'il s'agisse des images et séquences traitées ou des données numériques, peuvent ensuite être exportés au format préféré par l'utilisateur.",
+            "iSCAN a été réalisé dans le cadre de mes travaux au sein du laboratoire de recherche de Mark Ian WALLACE, au département de chimie du King's College London, afin de permettre aux postdoctorants, doctorants et stagiaires de mon équipe de réaliser des analyses rapides et précises de leurs prises de vue sur le microscope iSCAT que j'ai conçu et assemblé."
+        ],
+        "image": {
+            "alt": "Capture d'écran du logiciel iSCAN en cours d'utilisation."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks",
+            "items": [
+                {
+                    "label": "PyQt5",
+                    "description": "Utilisé pour créer une application avec une interface utilisateur graphique."
+                },
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "bottleneck",
+                    "description": "Utilisé pour traiter les fonctions NumPy en C directement et diminuer le temps de calcul."
+                },
+                {
+                    "label": "pandas",
+                    "href": "https://pandas.pydata.org"
+                },
+                {
+                    "label": "Pillow",
+                    "href": "https://pillow.readthedocs.io/en/stable/"
+                },
+                {
+                    "label": "scikit-image",
+                    "href": "https://scikit-image.org"
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "Dépôt GitHub"
+    }
+}

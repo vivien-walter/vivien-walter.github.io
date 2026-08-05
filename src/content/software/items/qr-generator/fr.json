@@ -1,0 +1,55 @@
+{
+    "eyebrow": "Génération de QR codes stylisés",
+    "title": "QR Lodinator",
+    "summary": "Logiciel permettant de créer des QR cdes et personnaliser intégralement leur apparence pour les adapter à tous les besoins.",
+    "heroImage": {
+        "alt": "Logo de QR Lodinator."
+    },
+    "highlights": [
+        {
+            "label": "QR codes",
+            "value": "Logiciel conçu pour permettre la création et la modification de QR codes afin d'adapter leur style à tous les supports."
+        },
+        {
+            "label": "Interface graphique",
+            "value": "Utilisation pensée pour le confort de l'utilisateur avec une interface graphique complète grâce à PyQt5."
+        },
+        {
+            "label": "Communication",
+            "value": "Fonctionnalités pensées avant tout pour les besoins de l'équipe de design et de communication d'une entreprise."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "QR Lodinator est un logiciel utilitaire très simple qui permet de générer des QR codes, que ce soit pour des liens ou pour l'accès à des réseaux Wi-Fi. Le logiciel permet en outre de contrôler totalement les différents éléments de style : forme des points, espacement entre les points, espace central pour un logo, couleur, etc. Les QR codes ainsi générés peuvent ensuite être exportés en SVG pour être facilement intégré à tout support de communication ou modifié davantage.",
+            "Le logiciel a été réalisé et fonctionne entièrement grâce à Python 3 : aucune ligne de commande n'est requise, et le logiciel est fourni avec son propre exécutable. L'interface utilisateur graphique (GUI) tourne grâce à la bibliothèque PyQt5, et utilise la bibliothèque qrcode pour générer les matrices de points.",
+            "QR Lodinator a été réalisé dans le cadre de mon contrat en tant que chef de projet chez i-magineXR, afin d'offrir à l'équipe de design et de communication une solution gratuite et propriétaire pour générer tous les QR codes nécessaires à leurs missions. Les fonctionnalités du programme ont été sélectionnées et développées pour répondre spécifiquement à leurs besoins."
+        ],
+        "image": {
+            "alt": "Capture d'écran du logiciel QR Lodinator en cours d'utilisation."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks",
+            "items": [
+                {
+                    "label": "PyQt5",
+                    "description": "Utilisé pour créer une application avec une interface utilisateur graphique."
+                },
+                {
+                    "label": "qrcode",
+                    "description": "Utilisé pour générer des QR codes."
+                }
+            ]
+        }
+    ]
+}

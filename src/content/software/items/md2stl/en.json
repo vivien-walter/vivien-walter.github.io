@@ -1,0 +1,66 @@
+{
+    "eyebrow": "Molecular dynamics and 3D printing",
+    "title": "md2stl",
+    "summary": "A library for converting molecular dynamics simulation files into STL files that can be printed in 3D.",
+    "heroImage": {
+        "alt": "Visualisation of an STL file generated from a numerical simulation converted with md2stl."
+    },
+    "highlights": [
+        {
+            "label": "Python library",
+            "value": "A collection of functions that can be imported and used directly in Python code."
+        },
+        {
+            "label": "3D printing",
+            "value": "Generates STL files that can be printed directly in 3D or modified using appropriate software."
+        },
+        {
+            "label": "Molecular dynamics",
+            "value": "Compatible with common formats used in molecular dynamics, including GROMACS and LAMMPS."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "md2stl is a Python 3 library designed to convert molecular dynamics simulation files, representing molecules or complete chemical systems in three dimensions, into STL files compatible with common CAD software and 3D printers.",
+            "The library works by assigning each atom a sphere with a fixed radius proportional to its atomic radius. The topology file is then analysed to reconstruct the bonds between atoms. Users can adjust the parameters to select which atoms are displayed, their size, the distances between them and other properties.",
+            "md2stl was developed during my contract in the Department of Chemistry at King's College London, at the request of Professor Andre COBB, to provide a tangible three-dimensional representation of proteins and other complex molecular systems. This approach can help identify active sites within a molecule and anticipate potential reactions."
+        ],
+        "image": {
+            "alt": "Photograph of a 3D print produced from a numerical simulation converted with md2stl."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Libraries and frameworks",
+            "items": [
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "MDAnalysis",
+                    "href": "https://www.mdanalysis.org"
+                },
+                {
+                    "label": "numpy-stl",
+                    "href": "https://numpy-stl.readthedocs.io/en/latest/"
+                },
+                {
+                    "label": "tqdm",
+                    "description": "Used to display progress bars."
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "GitHub repository"
+    }
+}

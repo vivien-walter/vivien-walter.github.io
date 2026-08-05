@@ -1,0 +1,71 @@
+{
+    "eyebrow": "HPC Python Monitor",
+    "title": "HPyMon",
+    "summary": "Python software with a graphical user interface (GUI) for remotely viewing and managing activity on a high-performance computing server (HPC).",
+    "heroImage": {
+        "alt": "HPyMon logo."
+    },
+    "highlights": [
+        {
+            "label": "HPC communication",
+            "value": "Software designed to communicate with a computing server using Slurm and monitor job execution."
+        },
+        {
+            "label": "Graphical interface",
+            "value": "Designed for ease of use, with a complete graphical interface built with PyQt5."
+        },
+        {
+            "label": "Scientific research",
+            "value": "Developed as part of numerical simulations used to study biological systems."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "HPyMon is designed to connect to a high-performance computing server (HPC) via SSH in order to view and manage running and queued jobs. The retrieved list is displayed in the interface, allowing users to monitor the progress of calculations, stop them and restart them.",
+            "The software was developed entirely with Python 3. No command line is required, and the application is provided with its own executable. The graphical user interface (GUI) is built with PyQt5, and the software can also operate through SSH tunnels. HPyMon is only compatible with computing servers that use Slurm to manage jobs and calculations.",
+            "HPyMon was developed as a personal project during my PhD. Its purpose was both to learn how to build a Python application with a graphical interface and to test communication and command execution through automated SSH requests."
+        ],
+        "image": {
+            "alt": "Screenshot of HPyMon in use."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Libraries and frameworks",
+            "items": [
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "pandas",
+                    "href": "https://pandas.pydata.org"
+                },
+                {
+                    "label": "PyQt5",
+                    "description": "Used to create an application with a graphical user interface."
+                },
+                {
+                    "label": "paramiko",
+                    "description": "Used to execute SSH requests."
+                },
+                {
+                    "label": "sshtunnel",
+                    "description": "Used to create SSH tunnels when required."
+                }
+            ]
+        }
+    ],
+    "disclaimer": "Warning: HPyMon is primarily demonstration software developed during my PhD research. Its source code is shared for informational and educational purposes, but its security is very basic and using it as-is is not recommended. If you intend to use HPyMon, I recommend forking the project and modifying the code to address the existing security vulnerabilities.",
+    "linkLabels": {
+        "github": "GitHub repository"
+    }
+}

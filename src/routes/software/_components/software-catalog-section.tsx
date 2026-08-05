@@ -191,7 +191,6 @@ export default function SoftwareCatalogSection({ language, content }: SoftwareCa
               <li key={software.id} className="m-0 min-w-0">
                 <SoftwareCatalogEntry
                   software={software}
-                  kindLabel={content.kindLabels[software.kind]}
                   language={language}
                   technologiesLabel={content.catalog.technologiesLabel}
                   viewLabel={content.catalog.actions.viewSoftware}

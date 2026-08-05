@@ -1,26 +1,23 @@
-import type { Icon } from '@phosphor-icons/react';
+import { ArrowRightIcon, ArrowUpRightIcon } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 
 import { InteractiveCard } from '@/components/interactive-card';
-import { Section, SectionHeader, SectionTitle } from '@/components/section';
+import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
+import type { SoftwareCatalogItem } from '@/content/software/catalog';
 import { cn } from '@/lib/utils';
 
-type SoftwareResource = {
-  readonly icon: Icon;
-  readonly label: string;
-  readonly href: string;
-};
-
 type SoftwareResourcesSectionProps = {
-  readonly resources?: readonly SoftwareResource[];
+  readonly description: string;
+  readonly resources?: SoftwareCatalogItem['resources'];
+  readonly showTopSeparator?: boolean;
   readonly title: string;
   readonly titleId: string;
 };
 
-function isExternalResource(href: string): boolean {
-  return /^https?:\/\//i.test(href);
-}
+function SoftwareResourcesSection({ description, resources, showTopSeparator = true, title, titleId }: SoftwareResourcesSectionProps) {
+  const resourceLinkClassName =
+    'group text-brand-ink focus-visible:ring-ring/50 block h-full rounded-lg no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none';
 
-function SoftwareResourcesSection({ resources, title, titleId }: SoftwareResourcesSectionProps) {
   const visibleResources = resources?.filter((resource) => resource.label.trim().length > 0 && resource.href.trim().length > 0) ?? [];
 
   if (visibleResources.length === 0) {
@@ -28,65 +25,46 @@ function SoftwareResourcesSection({ resources, title, titleId }: SoftwareResourc
   }
 
   return (
-    <Section contained={false} className={cn('border-border border-t', 'py-12 sm:py-14 lg:py-16')} aria-labelledby={titleId}>
+    <Section contained={false} className={cn('pt-12 sm:py-14 lg:py-16', showTopSeparator && 'border-border border-t')} aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
+
+        <SectionDescription>{description}</SectionDescription>
       </SectionHeader>
 
-      <ul className={cn('m-0 grid list-none gap-5 p-0', 'sm:grid-cols-2 lg:grid-cols-3')}>
+      <ul className="m-0 grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {visibleResources.map((resource) => {
           const ResourceIcon = resource.icon;
-          const isExternal = isExternalResource(resource.href);
+          const LinkIndicatorIcon = resource.isExternal ? ArrowUpRightIcon : ArrowRightIcon;
+
+          const resourceCard = (
+            <InteractiveCard
+              interaction="group"
+              className="border-border-strong bg-brand-background h-full min-h-40 gap-0 rounded-lg py-0 shadow-none"
+            >
+              <span className="text-brand-primary group-hover:text-brand-dark flex flex-1 items-center justify-center px-5 pt-7 pb-4 transition-colors duration-200">
+                <ResourceIcon aria-hidden="true" className="size-12" weight="regular" />
+              </span>
+
+              <span className="leading-heading text-brand-ink group-hover:text-brand-primary flex min-h-14 items-center justify-center gap-2 px-5 py-3 text-center font-semibold transition-colors duration-200">
+                <span>{resource.label}</span>
+
+                <LinkIndicatorIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
+              </span>
+            </InteractiveCard>
+          );
 
           return (
             <li key={resource.href} className="m-0 min-w-0">
-              <a
-                href={resource.href}
-                target={isExternal ? '_blank' : undefined}
-                rel={isExternal ? 'noopener noreferrer' : undefined}
-                data-external={isExternal ? 'true' : undefined}
-                className={cn(
-                  'group block h-full rounded-lg',
-                  'text-brand-ink no-underline',
-                  'focus-visible:outline-none',
-                  'focus-visible:ring-[3px]',
-                  'focus-visible:ring-ring/50',
-                  'focus-visible:ring-offset-2',
-                )}
-              >
-                <InteractiveCard
-                  interaction="group"
-                  className={cn('h-full min-h-40', 'gap-0 rounded-lg py-0', 'border-border-strong', 'bg-brand-background', 'shadow-none')}
-                >
-                  <span
-                    className={cn(
-                      'flex flex-1 items-center',
-                      'justify-center',
-                      'px-5 pt-7 pb-4',
-                      'text-brand-primary',
-                      'transition-colors',
-                      'duration-200',
-                      'group-hover:text-brand-dark',
-                    )}
-                  >
-                    <ResourceIcon aria-hidden="true" className="size-12" weight="regular" />
-                  </span>
-
-                  <span
-                    className={cn(
-                      'flex min-h-14 items-center',
-                      'justify-center px-5 py-3',
-                      'text-center font-semibold',
-                      'leading-heading text-brand-ink',
-                      'transition-colors',
-                      'duration-200',
-                      'group-hover:text-brand-primary',
-                    )}
-                  >
-                    {resource.label}
-                  </span>
-                </InteractiveCard>
-              </a>
+              {resource.isExternal ? (
+                <a href={resource.href} target="_blank" rel="noopener noreferrer" data-external="true" className={resourceLinkClassName}>
+                  {resourceCard}
+                </a>
+              ) : (
+                <Link to={resource.href} className={resourceLinkClassName}>
+                  {resourceCard}
+                </Link>
+              )}
             </li>
           );
         })}

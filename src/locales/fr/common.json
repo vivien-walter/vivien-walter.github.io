@@ -1,7 +1,9 @@
 {
     "accessibility": {
         "skipToContent": "Aller au contenu principal",
-        "externalLinkNewTab": "Ouvre un lien externe dans un nouvel onglet"
+        "externalLinkNewTab": "Ouvre un lien externe dans un nouvel onglet",
+        "openImage": "Agrandir l’image : {{alt}}",
+        "closeImage": "Fermer l’agrandissement"
     },
     "navigation": {
         "primaryLabel": "Navigation principale",

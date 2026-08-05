@@ -1,0 +1,77 @@
+{
+    "eyebrow": "A library for microscopists",
+    "title": "microImage",
+    "summary": "A Python library designed to open and save images in the formats commonly used in microscopy.",
+    "heroImage": {
+        "alt": "microImage logo."
+    },
+    "highlights": [
+        {
+            "label": "Python library",
+            "value": "A collection of functions that can be imported and used directly in Python code."
+        },
+        {
+            "label": "Reading and writing",
+            "value": "A library designed to work with the image formats commonly used in scientific imaging."
+        },
+        {
+            "label": "Microscopy",
+            "value": "Designed specifically for the analysis of images acquired using optical and interferometric microscopes."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "microImage is a Python 3 library designed to help developers and scientists using Python easily open image, sequence and video files acquired through microscopy, regardless of the format used. It can also save images, sequences and videos in the required format after processing.",
+            "The library was developed as part of my work in Mark Ian WALLACE's research laboratory in the Department of Chemistry at King's College London. It enabled the postdoctoral researchers, PhD students and Master's students in my team to create their own image-analysis scripts in Python."
+        ],
+        "image": {
+            "alt": "Example of microscopy images processed using microImage."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Libraries and frameworks",
+            "items": [
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "bottleneck",
+                    "description": "Used to process NumPy functions directly in C and reduce computation time."
+                },
+                {
+                    "label": "Matplotlib",
+                    "href": "https://matplotlib.org"
+                },
+                {
+                    "label": "ffmpeg-python",
+                    "description": "Used to read and write video files."
+                },
+                {
+                    "label": "pims",
+                    "href": "https://soft-matter.github.io/pims/v0.7/"
+                },
+                {
+                    "label": "Pillow",
+                    "href": "https://pillow.readthedocs.io/en/stable/"
+                },
+                {
+                    "label": "scikit-image",
+                    "href": "https://scikit-image.org"
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "GitHub repository"
+    }
+}

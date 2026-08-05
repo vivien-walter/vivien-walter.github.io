@@ -2,7 +2,7 @@ import { publicProfile } from '@/content/common/profile';
 import { selectLocalizedContent } from '@/lib/content/localization';
 import type { SupportedLanguage } from '@/types/localization';
 
-import { getMllpaContent } from './items/mllpa/mllpa';
+import { getMllpaContent } from './items/mllpa';
 import enSoftwarePageJson from './page.en.json';
 import frSoftwarePageJson from './page.fr.json';
 

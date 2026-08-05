@@ -1,0 +1,74 @@
+{
+    "eyebrow": "For iSCAT microscopes",
+    "title": "iSCAN",
+    "summary": "Software designed to analyse images acquired using interferometric scattering microscopy in order to measure the physicochemical properties of the observed objects.",
+    "heroImage": {
+        "alt": "iSCAN logo."
+    },
+    "highlights": [
+        {
+            "label": "Image processing",
+            "value": "Software designed to correct, analyse and assemble images acquired with a microscope."
+        },
+        {
+            "label": "Graphical interface",
+            "value": "Designed for ease of use, with a complete graphical interface built with PyQt5."
+        },
+        {
+            "label": "iSCAT microscopy",
+            "value": "Designed specifically for the analysis of images acquired using an interferometric scattering microscope."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "iSCAN is software designed specifically to process images and sequences acquired using an interferometric scattering microscope. In this type of application, measuring the light intensity of objects and how it changes over time makes it possible to monitor the evolution of a physicochemical or biological system, including at the level of individual molecules. To achieve this, iSCAN corrects and filters images and sequences in order to isolate particles recorded with the microscope. Users can then measure particle contrast, track particle diffusion over time and apply statistical tools to study multiple particles from the same sample.",
+            "The software was developed entirely with Python 3. No command line is required, and the application is provided with its own executable. The graphical user interface (GUI) is built with PyQt5, while Pillow and scikit-image are used to perform the image processing required by the user. The resulting images, processed sequences and numerical data can then be exported in the user's preferred format.",
+            "iSCAN was developed as part of my work in Mark Ian WALLACE's research laboratory in the Department of Chemistry at King's College London. It enabled the postdoctoral researchers, PhD students and Master's students in my team to perform rapid and accurate analyses of images acquired using the iSCAT microscope that I designed and assembled."
+        ],
+        "image": {
+            "alt": "Screenshot of iSCAN in use."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Libraries and frameworks",
+            "items": [
+                {
+                    "label": "PyQt5",
+                    "description": "Used to create an application with a graphical user interface."
+                },
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "bottleneck",
+                    "description": "Used to process NumPy functions directly in C and reduce computation time."
+                },
+                {
+                    "label": "pandas",
+                    "href": "https://pandas.pydata.org"
+                },
+                {
+                    "label": "Pillow",
+                    "href": "https://pillow.readthedocs.io/en/stable/"
+                },
+                {
+                    "label": "scikit-image",
+                    "href": "https://scikit-image.org"
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "GitHub repository"
+    }
+}

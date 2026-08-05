@@ -1,0 +1,76 @@
+{
+    "eyebrow": "Using Machine Learning",
+    "title": "ML-LPA",
+    "summary": "Python module designed to identify and classify, using Machine Learning (ML), the phases of lipid membranes generated through molecular dynamics simulations, as well as the transitions between these phases over time.",
+    "heroImage": {
+        "alt": "ML-LPA logo."
+    },
+    "highlights": [
+        {
+            "label": "Artificial intelligence",
+            "value": "Analysis performed using several Machine Learning algorithms compared with one another."
+        },
+        {
+            "label": "Scientific research",
+            "value": "Designed to analyse lipid membranes generated through molecular dynamics simulations."
+        },
+        {
+            "label": "Peer-reviewed publication",
+            "value": "The code and use of ML-LPA were presented in a scientific article published in the Journal of Computational Chemistry."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "ML-LPA is a Python module designed to analyse molecular dynamics simulations of lipid membranes in order to identify the phase in which each lipid in the membrane is most likely to be found. This analysis makes it possible both to map the membrane's phase domains and to study how these domains evolve over time, particularly during a phase transition.",
+            "The module works by analysing the overall geometry of a lipid, particularly the spatial configuration of the molecules' tails. This analysis is performed using Machine Learning algorithms: K-Nearest Neighbors, Support Vector Machine, etc. The algorithms are then compared to determine the most likely phase.",
+            "By integrating the MDAnalysis module library, ML-LPA can work with most file formats used in molecular dynamics (GROMACS, LAMMPS, etc.).",
+            "ML-LPA was originally developed as part of my postdoctoral research within the MCUBE group at the Institut Charles Sadron in Strasbourg, in collaboration with Céline RUSCHER, Fabrice THALMANN and Olivier BENZERARA, before continuing as an international project after I left for King's College London. ML-LPA was used to analyse the results presented in three scientific publications. Since then, we have been working on ML-LPA's successor, which is based on convolutional neural networks."
+        ],
+        "image": {
+            "alt": "Illustration of different lipids."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Libraries and frameworks",
+            "items": [
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "h5py",
+                    "description": "Used to save data in HDF5 format."
+                },
+                {
+                    "label": "MDAnalysis",
+                    "href": "https://www.mdanalysis.org"
+                },
+                {
+                    "label": "pandas",
+                    "href": "https://pandas.pydata.org"
+                },
+                {
+                    "label": "scikit-learn",
+                    "href": "https://scikit-learn.org/stable/"
+                },
+                {
+                    "label": "tqdm",
+                    "description": "Used to display progress bars."
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "website": "Official website",
+        "github": "GitHub repository"
+    }
+}

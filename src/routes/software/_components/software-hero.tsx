@@ -1,9 +1,12 @@
 import { GithubLogoIcon } from '@phosphor-icons/react';
+import { useTranslation } from 'react-i18next';
 
+import { getPageRoute } from '@/app/routing/navigation';
 import heroImageSrc from '@/assets/images/softwares/hero.png';
 import {
   Hero,
   HeroActions,
+  HeroBreadcrumbs,
   HeroContainer,
   HeroContent,
   HeroDescription,
@@ -22,13 +25,29 @@ interface SoftwareHeroProps {
 }
 
 export default function SoftwareHero({ language }: SoftwareHeroProps) {
+  const { t } = useTranslation();
   const content = getSoftwareContent(language);
 
   return (
     <Hero aria-labelledby="page-title">
       <HeroContainer>
         <HeroContent>
-          <div className="min-h-6" aria-hidden="true" />
+          <HeroBreadcrumbs
+            ariaLabel={t('breadcrumbs.label', {
+              lng: language,
+            })}
+            items={[
+              {
+                label: t('breadcrumbs.home', {
+                  lng: language,
+                }),
+                to: getPageRoute('home', language),
+              },
+              {
+                label: content.title,
+              },
+            ]}
+          />
 
           <HeroHeader className="mt-4 sm:mt-5">
             <HeroEyebrow>{content.eyebrow}</HeroEyebrow>

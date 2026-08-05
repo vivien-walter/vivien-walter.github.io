@@ -1,0 +1,46 @@
+{
+    "eyebrow": "Control and automation",
+    "title": "Sentry",
+    "summary": "Software developed with NI LabVIEW to control and synchronise all the equipment in an optical microscope, facilitating image acquisition and automating sample processing.",
+    "heroImage": {
+        "alt": "Excerpt from the logic used in Sentry."
+    },
+    "highlights": [
+        {
+            "label": "iSCAT microscopy",
+            "value": "Designed to control an optical microscope, particularly an interferometric scattering microscope."
+        },
+        {
+            "label": "Connected equipment",
+            "value": "Synchronises all microscope equipment, from the camera to specialised devices such as spatial light modulators."
+        },
+        {
+            "label": "Automation",
+            "value": "Enables the microscope to operate autonomously in order to analyse how samples evolve over time."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Sentry is software designed to control a custom-built optical microscope, particularly for interferometric scattering microscopy (iSCAT). It synchronises all the microscope components, enabling a wide range of experiments, including tracking particle movement through control of the piezoelectric stage, photobleaching and fluorescence recovery monitoring through control of light intensity, and three-dimensional reconstruction through control of the objective's position relative to the sample.",
+            "The software was developed entirely with NI LabVIEW 2018. All the microscope's key functions are accessible from the main screen, including camera controls (intensity, gain and image or sequence capture), stage controls (movement and scanning), and objective controls (aperture and Z position). More advanced functions, including control of the spatial light modulator (SLM), are available through tabs and modal windows.",
+            "Sentry is designed to operate with the following equipment: cameras (PCO.dimax cs1 and cs4, PhotonFocus D1024, FLIR Oryx and FLIR Blackfly S), a piezoelectric stage (Physik Instrumente P-545-3R8S), a laser (Kvant Lasers RLM-6000M), a shutter controller (Thorlabs SC10), and a spatial light modulator (Meadowlark Optics 1920 × 1152).",
+            "Sentry was developed as part of my work in Mark Ian WALLACE's research laboratory in the Department of Chemistry at King's College London. It enabled the entire team to operate the iSCAT microscope that I designed and assembled and to use it for their own experiments."
+        ],
+        "image": {
+            "alt": "Screenshot of Sentry in use."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "LabVIEW 2018"
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "GitHub repository"
+    }
+}

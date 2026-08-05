@@ -1,0 +1,46 @@
+{
+    "eyebrow": "Contrôle et automatisation",
+    "title": "Sentry",
+    "summary": "Logiciel fonctionnant sur NI LabVIEW permettant de contrôler et synchroniser tous les équipements d'un microscope photonique pour faciliter la capture d'images et assurer l'automatisation du traitement d'échantillons.",
+    "heroImage": {
+        "alt": "Extrait de la logique utilisée dans Sentry."
+    },
+    "highlights": [
+        {
+            "label": "Microscopie iSCAT",
+            "value": "Conçu pour contrôler un microscope photonique, en particulier les microscopes à diffusion interférométrique."
+        },
+        {
+            "label": "Equipements connectés",
+            "value": "Synchronise tous les équipements d'un microscope, de la caméra aux équipements spécifiques (SLM, etc.)."
+        },
+        {
+            "label": "Automatisation",
+            "value": "Permet un fonctionnement autonome du microscope pour analyser l'évolution d'échantillons au cours du temps."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Sentry est un logiciel conçu pour permettre de contrôler un microscope photonique réalisé sur mesure, notamment pour des analyses par microscopie de diffusion interférométrique (iSCAT). En particulier, Sentry permet de synchroniser tous les éléments du microscope, ce qui permet de réaliser un grand nombre d'expériences : suivi du déplacement de particules grâce au contrôle de la platine piézoélectrique, photoblanchiment et suivi de la récupération en fluorescence au cours du temps grâce au contrôle de l'intensité lumineuse, reconstruction tridimensionnelle grâce au contrôle de la position relative de l'objectif par rapport à l'échantillon, etc.",
+            "Le logiciel a été réalisé et fonctionne entièrement grâce à NI LabVIEW 2018. L'intégralité des fonctionnalités clés du microscope est accessible depuis l'écran principal : contrôle de la caméra (intensité, gain, capture d'images ou de séquences, etc.), contrôle de la platine (déplacement, scan, etc.), contrôle de l'objectif (diaphragme, position en Z, etc.), ... Les fonctionnalités plus avancées, dont le contrôle du modulateur spatial de lumière (SLM), sont disponibles dans des onglets et fenêtres modales.",
+            "Sentry est conçu pour fonctionner avec les équipements suivants : caméras (PCO. dimax cs1 et cs4, PhotonFocus D1024, FLIR Oryx, FLIR BlackFly S), platine piézoélectrique (Physik Instrumente P-545-3R8S), laser (Kvant Lasers RLM-6000M), ouverture (Thorlabs SC10), et modulateur spatial de lumière (Meadowlark Optics 1920x1152).",
+            "Sentry a été réalisé dans le cadre de mes travaux au sein du laboratoire de recherche de Mark Ian WALLACE, au département de chimie du King's College London, afin de permettre à l'ensemble du personnel d'opérer le microscope iSCAT que j'ai conçu et assemblé et ainsi l'utiliser pour leurs propres expériences."
+        ],
+        "image": {
+            "alt": "Capture d'écran du logiciel Sentry en cours d'utilisation."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "LabVIEW 2018"
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "Dépôt GitHub"
+    }
+}

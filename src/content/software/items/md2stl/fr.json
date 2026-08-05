@@ -1,0 +1,66 @@
+{
+    "eyebrow": "De la simulation à l'impression",
+    "title": "md2stl",
+    "summary": "Bibliothèque permettant de convertir des fichiers de simulations de dynamique moléculaire en fichiers STL imprimables en 3D.",
+    "heroImage": {
+        "alt": "Visualisation d'un fichier STL généré depuis une simulation numérique convertie avec md2stl."
+    },
+    "highlights": [
+        {
+            "label": "Bibliothèque Python",
+            "value": "Collection de fonctions importables et utilisables directement dans des codes Python."
+        },
+        {
+            "label": "Impression 3D",
+            "value": "Génération de fichiers STL pouvant être directement imprimés en 3D ou modifiés dans les éditeurs appropriés."
+        },
+        {
+            "label": "Dynamique moléculaire",
+            "value": "Compatible avec les formats courants utilisés en dynamique moléculaire (GROMACS, LAMMPS, etc.)."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "md2stl est une bibliothèque Python 3 qui a été conçue dans le but de convertir des fichiers de simulations de dynamique moléculaire, représentant des molécules ou systèmes chimiques complets en 3D, en fichiers STL compatibles avec les logiciels de CAO courants ainsi que les imprimantes 3D.",
+            "La bibliothèque fonctionne en assignant à chaque atome une sphère de rayon fixe et proportionnelle à son rayon atomique. Le fichier de topologie est ensuite analysé pour reconstruire les liaisons entre atomes. L'utilisateur peut ensuite modifier les paramètres pour sélectionner les atomes à visualiser, leur taille, leur distance, etc.",
+            "md2stl a été réalisé au cours de mon contrat au département de chimie du King's College London à la demande du professeur Andre COBB, afin de permettre une visualisation tridimensionnelle concrète de protéines et autres systèmes moléculaires complexes. Cette approche permet de mieux identifier les sites actifs d'une molécule et prévoir les réactions potentiellement envisageables."
+        ],
+        "image": {
+            "alt": "Photographie d'une impression 3D réalisée à partir d'une simulation numérique convertie avec md2stl."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks",
+            "items": [
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "MDAnalysis",
+                    "href": "https://www.mdanalysis.org"
+                },
+                {
+                    "label": "numpy-stl",
+                    "href": "https://numpy-stl.readthedocs.io/en/latest/"
+                },
+                {
+                    "label": "tqdm",
+                    "description": "Utilisé pour l’affichage des barres de progression."
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "Dépôt GitHub"
+    }
+}

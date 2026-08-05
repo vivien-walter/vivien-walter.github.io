@@ -1,0 +1,98 @@
+{
+    "eyebrow": "Campus Virtuel",
+    "title": "Formao",
+    "summary": "Plateforme de formation en ligne de type LXP (Learning eXperience Platform), conçue comme un campus virtuel regroupant des cours et l'ensemble des services liés à la formation.",
+    "heroImage": {
+        "alt": "Logo de Formao Campus Virtuel."
+    },
+    "highlights": [
+        {
+            "label": "Plateforme pédagogique",
+            "value": "Mise à disposition de contenus pédagogiques et d'applications pour le monde de la formation."
+        },
+        {
+            "label": "Expérience personnalisée",
+            "value": "Formao est conçu pour adapter les contenus au profil de chaque utilisateur et répondre à ses besoins."
+        },
+        {
+            "label": "IA et XR",
+            "value": "Les IA génératives et les réalités étendues (VR et AR) sont utilisées pour enrichir les outils de la plateforme."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Formao Campus Virtuel est une LXP : une plateforme d'expérience d'apprentissage (Learning eXperience Platform). Ce type de plateforme pédagogique diffère des LMS (Learning Management System) tels que Moodle en se concentrant sur l'expérience de l'utilisateur et en s'assurant que la plateforme et son contenu s'adaptent au profil et aux besoins de l'utilisateur. Pour cela, Formao Campus Virtuel intègre notamment des outils et applications basées sur les IA génératives (ChatGPT, Mistral AI, DeepSeek, etc.) mais également sur les technologies de réalité étendue : réalité virtuelle (VR), réalité augmentée (AR) ou encore réalité mixte (MR), afin de créer des expériences adaptives et immersives pour chaque apprenant.",
+            "Le Campus Virtuel est constitué de différents espaces accessibles aux utilisateurs : l'Espace Cours, dans lequel l'utilisateur retrouve tous les contenus pédagogiques nécessaires à sa formation ; l'Espace Avenir, qui permet d'accompagner l'utilisateur dans sa recherche d'emploi ; l'Espace Boîte à Outils, dans lequel l'utilisateur a accès à des outils et applications, dont des applications basées sur les IA génératives ou les réalités étendues, pour s'entraîner à son rythme ; l'Espace Santé & Handicap, dans lequel l'utilisateur peut se renseigner et être accompagné dans ses démarches liées à sa santé ; etc. En plus des espaces, les administrateurs ont accès à un espace de gestion de la plateforme, appelé back-office.",
+            "La plateforme repose sur une architecture client-serveur découplée composée de trois applications indépendantes : une interface utilisateur développée avec Next.js et React, une interface d'administration (Back-Office) reposant également sur Next.js et React, et une API métier développée avec Node.js, Express et TypeScript qui centralise la logique métier, l'accès aux données et les échanges en temps réel. Le front-end s'appuie sur Tailwind CSS ainsi que sur la bibliothèque de composants Shadcn. Les formulaires reposent sur React Hook Form et Zod, tandis que SWR prend en charge la récupération et la mise à jour des données échangées avec l'API. Côté back-end, Mongoose assure l'intégration avec MongoDB et la validation des données est partagée avec le front-end grâce à Zod. L'accès aux API des IA génératives se fait grâce à un système de file d'attente réalisé sur mesure qui permet une gestion de la charge.",
+            "Formao Campus Virtuel a été réalisé dans le cadre de mon contrat de chef de projet au sein de la société i-magineXR. Au cours de ce projet, j'ai été notamment accompagné par Joachim BRASIER (lead developer, sélection et mise en place du stack technologique, développement full-stack et formation aux nouvelles technologies), Tristan ALBERT (coordinateur pédagogique, orientations pédagogiques et création du design des interfaces), ainsi que par notre équipe d'alternants."
+        ],
+        "image": {
+            "alt": "Capture d'écran de Formao Campus Virtuel (espace Avenir, dédié à la recherche d'emploi)."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "TypeScript"
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks (front end)",
+            "items": [
+                {
+                    "label": "Next.js",
+                    "href": "https://nextjs.org"
+                },
+                {
+                    "label": "React",
+                    "href": "https://fr.react.dev"
+                },
+                {
+                    "label": "Tailwind CSS",
+                    "href": "https://tailwindcss.com"
+                },
+                {
+                    "label": "Shadcn",
+                    "href": "https://ui.shadcn.com"
+                },
+                {
+                    "label": "Zod",
+                    "href": "https://zod.dev"
+                },
+                {
+                    "label": "React Hook Form",
+                    "description": "Utilisé pour la gestion des formulaires utilisateurs."
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks (back end)",
+            "items": [
+                {
+                    "label": "Node.js",
+                    "href": "https://nodejs.org/en"
+                },
+                {
+                    "label": "Express",
+                    "href": "https://expressjs.com"
+                },
+                {
+                    "label": "MongoDB",
+                    "href": "https://www.mongodb.com"
+                },
+                {
+                    "label": "mongoose",
+                    "description": "Utilisé pour interagir avec la base de données MongoDB."
+                },
+                {
+                    "label": "Zod",
+                    "href": "https://zod.dev"
+                }
+            ]
+        }
+    ],
+    "disclaimer": "Suite à la liquidation judiciaire de la société SAS I-MAGINEXR le 15 juillet 2026, Formao Campus Virtuel n'a pas pu être déployé et commercialisé, et son code n'est pas public."
+}

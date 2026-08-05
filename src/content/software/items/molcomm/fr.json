@@ -1,0 +1,80 @@
+{
+    "eyebrow": "Et les shadok pompaient, pompaient...",
+    "title": "MolCommUI",
+    "summary": "Logiciel permettant de contrôler les différents équipements d'un banc d'essai microfluidique. Spécialement conçu pour des expériences de communication moléculaire.",
+    "heroImage": {
+        "alt": "Capture d'écran du logiciel MolCommUI en cours d'utilisation."
+    },
+    "highlights": [
+        {
+            "label": "Microfluidique",
+            "value": "Logiciel conçu pour contrôler tous les équipements typiques en microfluidique : pompes, débitmètres, détecteurs, etc."
+        },
+        {
+            "label": "Interface graphique",
+            "value": "Utilisation pensée pour le confort de l'utilisateur avec une interface graphique complète grâce à PyQt5."
+        },
+        {
+            "label": "Connexion et automatisation",
+            "value": "Conçu pour permettre une synchronisation totale entre tous les équipements du banc d'essai et d'automatiser les expériences."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "MolCommUI est un logiciel conçu pour le contrôle et la programmation d'un banc d'essai microfluidique. L'accent est particulièrement mis sur les capacités de synchronisation et d'automatisation du logiciel et de l'ensemble du banc d'essai afin de permettre des expériences de communication moléculaire complexes : des pompes à seringue injectent des molécules spécifiques à des intervalles de temps et des débits contrôlés afin de transmettre des messages encodés dans la composition moléculaire du fluide. Grâce à sa connexion aux différents détecteurs disponibles (débitmètre, spectromètre UV-Visible), le banc d'essai permet également de détecter et décoder les messages détectés par le banc d'essai.",
+            "Le logiciel central a été réalisé et fonctionne entièrement grâce à Python 3 : aucune ligne de commande n'est requise. L'interface utilisateur graphique (GUI) tourne grâce à la bibliothèque PyQt5, et communique avec l'ensemble des équipements connectés à l'ordinateur grâce à un protocole I2C standard (excepté pour le spectromètre UV-Visible qui utilise une bibliothèque conçue spécifiquement pour cet appareil). Les équipements conçus sur mesure (pompe à seringue, sonde pH, etc.) sont contôlés par des cartes Arduino entièrement programmées en C++.",
+            "MolCommUI a été réalisé dans le cadre de mes travaux au sein du laboratoire de recherche de Yansha DENG, au département d'ingénierie du King's College London, afin de permettre à l'ensemble du personnel d'opérer le banc d'essai microfluidique que j'ai conçu et assemblé et ainsi l'utiliser pour leurs propres expériences."
+        ],
+        "image": {
+            "alt": "Extrait de la logique utilisée dans MolCommUI."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "Python 3",
+                    "description": "Pour développer le programme de contrôle et synchronisation des équipements du banc d'essai."
+                },
+                {
+                    "label": "C++",
+                    "description": "Pour développer les programmes de contrôle et synchronisation de chaque Arduino (pompe à seringue, sonde pH, etc.)."
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks pour Python",
+            "items": [
+                {
+                    "label": "PyQt5",
+                    "description": "Utilisé pour créer une application avec une interface utilisateur graphique."
+                },
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "seabreeze",
+                    "description": "Utilisé pour communiquer avec les spectromètres UV-Visible produits par Ocean Optics."
+                },
+                {
+                    "label": "pyqtgraph",
+                    "href": "https://www.pyqtgraph.org"
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks pour C++",
+            "items": [
+                {
+                    "label": "AccelStepper",
+                    "description": "Utilisé pour contrôler les moteurs pas à pas (stepper motors)."
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "Dépôt GitHub"
+    }
+}

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
-import { Section, SectionHeader, SectionTitle } from './section';
+import { Section, SectionDescription, SectionHeader, SectionTitle } from './section';
 
 export type DetailTechnologyItem = {
   readonly label: string;
@@ -18,6 +18,7 @@ export type DetailTechnologyGroup = {
 };
 
 type DetailTechnologiesSectionProps = {
+  readonly description?: string;
   readonly externalLinkLabel: string;
   readonly groups?: readonly DetailTechnologyGroup[];
   readonly idPrefix: string;
@@ -30,9 +31,9 @@ type TechnologyDescriptionBadgeProps = {
 };
 
 const badgeClassName = cn(
-  'inline-flex min-h-9 max-w-full items-center gap-2',
+  'inline-flex min-h-10 max-w-full items-center gap-2',
   'border-border-strong rounded-full border',
-  'bg-brand-hero px-3 py-1.5',
+  'bg-brand-hero px-3',
   'leading-heading font-mono text-sm font-medium',
   'text-brand-ink no-underline',
 );
@@ -110,7 +111,7 @@ function TechnologyDescriptionBadge({ item, popoverId }: TechnologyDescriptionBa
   );
 }
 
-function DetailTechnologiesSection({ externalLinkLabel, groups, idPrefix, title }: DetailTechnologiesSectionProps) {
+function DetailTechnologiesSection({ description, externalLinkLabel, groups, idPrefix, title }: DetailTechnologiesSectionProps) {
   const populatedGroups = groups?.filter((group) => group.items.length > 0) ?? [];
 
   if (populatedGroups.length === 0) {
@@ -123,6 +124,8 @@ function DetailTechnologiesSection({ externalLinkLabel, groups, idPrefix, title 
     <Section contained={false} className={cn('border-border border-t', 'py-12 sm:py-14 lg:py-16')} aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
+
+        {description?.trim() ? <SectionDescription>{description}</SectionDescription> : null}
       </SectionHeader>
 
       <div className="grid gap-8">

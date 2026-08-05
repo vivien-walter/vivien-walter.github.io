@@ -1,0 +1,55 @@
+{
+    "eyebrow": "Customised QR code generation",
+    "title": "QR Lodinator",
+    "summary": "Software for creating QR codes and fully customising their appearance to suit different formats and requirements.",
+    "heroImage": {
+        "alt": "QR Lodinator logo."
+    },
+    "highlights": [
+        {
+            "label": "QR codes",
+            "value": "Software designed to create and customise QR codes so that their appearance can be adapted to different media."
+        },
+        {
+            "label": "Graphical interface",
+            "value": "Designed for ease of use, with a complete graphical interface built with PyQt5."
+        },
+        {
+            "label": "Communication",
+            "value": "Features designed primarily to meet the needs of a company's design and communication team."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "QR Lodinator is a simple utility for generating QR codes, whether for links or access to Wi-Fi networks. It also provides extensive control over their appearance, including dot shapes, spacing, a central area for a logo and colours. The generated QR codes can then be exported as SVG files for easy integration into communication materials or further editing.",
+            "The software was developed entirely with Python 3. No command line is required, and the application is provided with its own executable. The graphical user interface (GUI) is built with PyQt5 and uses the qrcode library to generate the dot matrices.",
+            "QR Lodinator was developed as part of my work as a project manager at i-magineXR. Its purpose was to provide the design and communication team with a free, in-house solution for generating the QR codes required for their work. The application's features were selected and developed specifically to meet their needs."
+        ],
+        "image": {
+            "alt": "Screenshot of QR Lodinator in use."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Libraries and frameworks",
+            "items": [
+                {
+                    "label": "PyQt5",
+                    "description": "Used to create an application with a graphical user interface."
+                },
+                {
+                    "label": "qrcode",
+                    "description": "Used to generate QR codes."
+                }
+            ]
+        }
+    ]
+}

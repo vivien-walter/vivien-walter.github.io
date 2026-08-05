@@ -1,0 +1,71 @@
+{
+    "eyebrow": "HPC Python Monitor",
+    "title": "HPyMon",
+    "summary": "Logiciel Python muni d'une interface utilisateur graphique (GUI) permettant d'afficher et gérer à distance l'activité sur un serveur de calcul (HPC).",
+    "heroImage": {
+        "alt": "Logo de HPyMon."
+    },
+    "highlights": [
+        {
+            "label": "Communication HPC",
+            "value": "Logiciel conçu pour communiquer avec un serveur de calcul utilisant Slurm et suivre l'exécution des tâches."
+        },
+        {
+            "label": "Interface graphique",
+            "value": "Utilisation pensée pour le confort de l'utilisateur avec une interface graphique complète grâce à PyQt5."
+        },
+        {
+            "label": "Recherche scientifique",
+            "value": "Conçu dans le cadre de simulations numériques pour étudier des systèmes biologiques."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "HPyMon est un logiciel conçu pour être connecté à un serveur de calcul (HPC) via SSH, afin de consulter et gérer les tâches en cours d'exécution ainsi qu'en file d'attente. La liste récupérée est affichée, et l'utilisateur peut suivre la progression des calculs, les interrompre mais également les redémarrer.",
+            "Le logiciel a été réalisé et fonctionne entièrement grâce à Python 3 : aucune ligne de commande n'est requise, et le logiciel est fourni avec son propre exécutable. L'interface utilisateur graphique (GUI) tourne grâce à la bibliothèque PyQt5, et le logiciel est également conçu pour travailler via des tunnels SSH. HPyMon n'est compatible qu'avec des serveurs de calcul utilisant Slurm pour gérer les tâches et calculs.",
+            "HPyMon a été réalisé comme projet personnel au cours de mon doctorat afin d'apprendre à réaliser une application dotée d'une interface graphique en Python et également pour tester la communication et l'exécution de commandes via des requêtes SSH automatisées."
+        ],
+        "image": {
+            "alt": "Capture d'écran du logiciel HPyMon en cours d'utilisation."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks",
+            "items": [
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "pandas",
+                    "href": "https://pandas.pydata.org"
+                },
+                {
+                    "label": "PyQt5",
+                    "description": "Utilisé pour créer une application avec une interface utilisateur graphique."
+                },
+                {
+                    "label": "paramiko",
+                    "description": "Utilisé pour exécuter des requêtes SSH."
+                },
+                {
+                    "label": "sshtunnel",
+                    "description": "Utilisé pour créer des tunnels SSH, si nécessaire."
+                }
+            ]
+        }
+    ],
+    "disclaimer": "Attention ! HPyMon est avant tout un logiciel de démonstration réalisé pendant mes travaux de thèse ! Son code est diffusé à titre informatif et pour servir d'inspiration, mais sa sécurité est très basique et son utilisation en l'état n'est pas recommandée. Si vous souhaitez utiliser HPyMon, je vous recommande de faire un fork du projet et de modifier le code pour combler les failles de sécurité existantes.",
+    "linkLabels": {
+        "github": "Dépôt GitHub"
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "eyebrow": "Analyse par Machine Learning",
+    "title": "ML-LPA",
+    "summary": "Module Python conçu pour identifier et classifier, à l’aide du machine learning, les phases de membranes lipidiques issues de simulations de dynamique moléculaire, ainsi que leur évolution et leurs transitions au cours du temps.",
+    "heroImage": {
+        "alt": "Logo de ML-LPA."
+    },
+    "highlights": [
+        {
+            "label": "Intelligence artificielle",
+            "value": "Analyse reposant sur plusieurs algorithmes de machine learning comparés afin de déterminer la phase la plus probable."
+        },
+        {
+            "label": "Recherche scientifique",
+            "value": "Conçu pour analyser des membranes lipidiques issues de simulations de dynamique moléculaire."
+        },
+        {
+            "label": "Publication évaluée par les pairs",
+            "value": "Le code et l’utilisation de ML-LPA ont été présentés dans un article scientifique publié dans le Journal of Computational Chemistry."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "ML-LPA est un module Python conçu pour analyser des simulations de dynamique moléculaire de membranes lipidiques afin d’identifier la phase dans laquelle chaque lipide se trouve le plus probablement. Cette analyse permet de cartographier les domaines de phase de la membrane et d’étudier leur évolution au cours du temps, notamment pendant les transitions de phase.",
+            "Le module analyse la géométrie globale des lipides, notamment la configuration spatiale de leurs chaînes hydrophobes. Cette analyse repose sur plusieurs algorithmes de machine learning, notamment les méthodes K-Nearest Neighbors et Support Vector Machine. Leurs résultats sont ensuite comparés afin de déterminer la phase la plus probable.",
+            "Grâce à l’intégration de la bibliothèque MDAnalysis, ML-LPA peut fonctionner avec la plupart des formats de fichiers utilisés en dynamique moléculaire (GROMACS, LAMMPS, etc.).",
+            "ML-LPA a été initialement développé dans le cadre de mes travaux postdoctoraux au sein du groupe MCUBE de l’Institut Charles Sadron, à Strasbourg, en collaboration avec Céline RUSCHER, Fabrice THALMANN et Olivier BENZERARA. Son développement s’est ensuite poursuivi dans le cadre d’une collaboration internationale après mon départ pour le King’s College London. ML-LPA a été utilisé pour analyser les résultats présentés dans trois publications scientifiques. Nous travaillons désormais sur son successeur, fondé sur des réseaux neuronaux convolutifs."
+        ],
+        "image": {
+            "alt": "Illustration de lipides présentant différentes configurations moléculaires analysées par ML-LPA."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "Python 3"
+                }
+            ]
+        },
+        {
+            "title": "Bibliothèques et frameworks",
+            "items": [
+                {
+                    "label": "NumPy",
+                    "href": "https://numpy.org"
+                },
+                {
+                    "label": "h5py",
+                    "description": "Utilisé pour sauvegarder les données au format HDF5."
+                },
+                {
+                    "label": "MDAnalysis",
+                    "href": "https://www.mdanalysis.org"
+                },
+                {
+                    "label": "pandas",
+                    "href": "https://pandas.pydata.org"
+                },
+                {
+                    "label": "scikit-learn",
+                    "href": "https://scikit-learn.org/stable/"
+                },
+                {
+                    "label": "tqdm",
+                    "description": "Utilisé pour l’affichage des barres de progression."
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "website": "Site officiel",
+        "github": "Dépôt GitHub"
+    }
+}

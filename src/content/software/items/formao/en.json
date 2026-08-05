@@ -1,0 +1,98 @@
+{
+    "eyebrow": "Virtual Campus",
+    "title": "Formao",
+    "summary": "An online training platform based on the LXP model (Learning Experience Platform), designed as a virtual campus bringing together courses and a full range of training-related services.",
+    "heroImage": {
+        "alt": "Formao Virtual Campus logo."
+    },
+    "highlights": [
+        {
+            "label": "Learning platform",
+            "value": "Provides educational content and applications for the training sector."
+        },
+        {
+            "label": "Personalised experience",
+            "value": "Formao is designed to adapt content to each user's profile and meet their individual needs."
+        },
+        {
+            "label": "AI and XR",
+            "value": "Generative AI and extended reality technologies, including VR and AR, are used to enhance the platform's tools."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Formao Virtual Campus is an LXP, or Learning Experience Platform. This type of learning platform differs from Learning Management Systems (LMS) such as Moodle by focusing on the user experience and ensuring that both the platform and its content adapt to each user's profile and needs. To achieve this, Formao Virtual Campus integrates tools and applications based on generative AI, including ChatGPT, Mistral AI and DeepSeek, as well as extended reality technologies such as virtual reality (VR), augmented reality (AR) and mixed reality (MR), in order to create adaptive and immersive experiences for each learner.",
+            "The Virtual Campus is organised into several areas available to users: the Course Area, where users can access the educational content required for their training; the Career Area, which supports them in their job search; the Toolbox Area, which provides tools and applications, including solutions based on generative AI and extended reality, so that users can practise at their own pace; and the Health and Disability Area, where users can find information and support for health-related matters. Administrators also have access to a platform management area known as the back office.",
+            "The platform is built on a decoupled client-server architecture composed of three independent applications: a user interface developed with Next.js and React, an administration interface also based on Next.js and React, and a business API developed with Node.js, Express and TypeScript that centralises business logic, data access and real-time communication. The front end uses Tailwind CSS and the Shadcn component library. Forms are built with React Hook Form and Zod, while SWR handles the retrieval and updating of data exchanged with the API. On the back end, Mongoose provides integration with MongoDB, and data validation is shared with the front end through Zod. Access to generative AI APIs is managed through a custom queueing system designed to control workload.",
+            "Formao Virtual Campus was developed as part of my work as a project manager at i-magineXR. During the project, I worked in particular with Joachim BRASIER, lead developer responsible for selecting and implementing the technology stack, full-stack development and training on new technologies; Tristan ALBERT, educational coordinator responsible for pedagogical direction and interface design; and our team of apprentices."
+        ],
+        "image": {
+            "alt": "Screenshot of Formao Virtual Campus showing the Career Area dedicated to job searching."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Language",
+            "items": [
+                {
+                    "label": "TypeScript"
+                }
+            ]
+        },
+        {
+            "title": "Libraries and frameworks (front end)",
+            "items": [
+                {
+                    "label": "Next.js",
+                    "href": "https://nextjs.org"
+                },
+                {
+                    "label": "React",
+                    "href": "https://react.dev"
+                },
+                {
+                    "label": "Tailwind CSS",
+                    "href": "https://tailwindcss.com"
+                },
+                {
+                    "label": "Shadcn",
+                    "href": "https://ui.shadcn.com"
+                },
+                {
+                    "label": "Zod",
+                    "href": "https://zod.dev"
+                },
+                {
+                    "label": "React Hook Form",
+                    "description": "Used to manage user forms."
+                }
+            ]
+        },
+        {
+            "title": "Libraries and frameworks (back end)",
+            "items": [
+                {
+                    "label": "Node.js",
+                    "href": "https://nodejs.org/en"
+                },
+                {
+                    "label": "Express",
+                    "href": "https://expressjs.com"
+                },
+                {
+                    "label": "MongoDB",
+                    "href": "https://www.mongodb.com"
+                },
+                {
+                    "label": "mongoose",
+                    "description": "Used to interact with the MongoDB database."
+                },
+                {
+                    "label": "Zod",
+                    "href": "https://zod.dev"
+                }
+            ]
+        }
+    ],
+    "disclaimer": "Following the compulsory liquidation of SAS I-MAGINEXR on 15 July 2026, Formao Virtual Campus could not be deployed or commercialised, and its source code is not publicly available."
+}

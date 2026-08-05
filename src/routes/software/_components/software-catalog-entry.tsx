@@ -34,7 +34,7 @@ const tagDisplays = [
   },
 ] as const;
 
-function SoftwareCatalogEntry({ software, language, technologiesLabel, viewLabel, headingLevel = 3 }: SoftwareCatalogEntryProps) {
+export default function SoftwareCatalogEntry({ software, language, technologiesLabel, viewLabel, headingLevel = 3 }: SoftwareCatalogEntryProps) {
   const headingId = `software-catalog-${software.id}-title`;
 
   const Heading = `h${headingLevel}` as ElementType;
@@ -123,5 +123,3 @@ function SoftwareCatalogEntry({ software, language, technologiesLabel, viewLabel
     </article>
   );
 }
-
-export default SoftwareCatalogEntry;
