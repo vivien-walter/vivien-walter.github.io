@@ -1,0 +1,12 @@
+{
+    "breadcrumbLabel": "J. Comp. Chem. (2021)",
+    "eyebrow": "Journal of Computational Chemistry",
+    "description": {
+        "paragraphs": [
+            "Machine Learning-assisted Lipid Phase Analysis (MLLPA) is a new Python 3 module developed to analyze phase domains in a lipid membrane based on lipid molecular states. Reading standard simulation coordinate and trajectory files, the software first analyze the phase composition of the lipid membrane by using machine learning tools to label each individual molecules with respect to their state, and then decompose the simulation box using Voronoi tessellations to analyze the local environment of all the molecules of interest. MLLPA is versatile as it can read from multiple format (e.g., GROMACS, LAMMPS) and from either all-atom (e.g., CHARMM36) or coarse-grain models (e.g., Martini). It can also analyze multiple geometries of membranes (e.g., bilayers, vesicles). Finally, the software allows for training with more than two phases, allowing for multiple phase coexistence analysis."
+        ],
+        "image": {
+            "alt": "Analyse de l'environnement direct d'un lipide au sein d'une membrane."
+        }
+    }
+}

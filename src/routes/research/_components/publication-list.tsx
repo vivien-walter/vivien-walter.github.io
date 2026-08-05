@@ -112,8 +112,10 @@ function PublicationList({ title, titleId, items, themes, language, labels, show
     const journals = new Set<string>();
 
     items.forEach((item) => {
-      if (item.kind === 'article' && item.publication.trim().length > 0) {
-        journals.add(item.publication);
+      const journal = item.publication?.trim();
+
+      if (item.kind === 'article' && journal) {
+        journals.add(journal);
       }
     });
 
@@ -138,7 +140,8 @@ function PublicationList({ title, titleId, items, themes, language, labels, show
 
         const matchesTheme = !showThemeFilter || selectedThemes.size === 0 || item.themeIds.some((themeId) => selectedThemes.has(themeId));
 
-        const matchesJournal = item.kind === 'thesis' || selectedJournals.size === 0 || selectedJournals.has(item.publication);
+        const matchesJournal =
+          item.kind === 'thesis' || selectedJournals.size === 0 || (item.publication !== undefined && selectedJournals.has(item.publication));
 
         return matchesTheme && matchesJournal;
       })
@@ -163,11 +166,11 @@ function PublicationList({ title, titleId, items, themes, language, labels, show
             break;
 
           case 'journal-ascending':
-            comparison = collator.compare(first.item.publication, second.item.publication);
+            comparison = collator.compare(first.item.publication ?? '', second.item.publication ?? '');
             break;
 
           case 'journal-descending':
-            comparison = collator.compare(second.item.publication, first.item.publication);
+            comparison = collator.compare(second.item.publication ?? '', first.item.publication ?? '');
             break;
         }
 

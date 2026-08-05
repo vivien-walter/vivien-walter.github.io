@@ -15,7 +15,7 @@ import { OrcidIcon } from '@/components/icons/orcid';
 import { publicProfile } from '@/content/common/profile';
 import { getProjectById } from '@/content/projects/page';
 import type { ProjectId } from '@/content/projects/registry';
-import { getPublicationById } from '@/content/research/page';
+import { getPublicationById } from '@/content/research/publications/catalog';
 import type { PublicationId } from '@/content/research/publications/registry';
 import { getSoftwareById } from '@/content/software/catalog';
 import type { SoftwareId } from '@/content/software/registry';
@@ -304,7 +304,11 @@ function assembleHomeContent(localizedContent: LocalizedHomeContent, language: S
 
   const [mllpaPrimaryLanguage] = mllpa.languages;
 
-  const publicationSummary = molecularCommunicationPublication.description.paragraphs[0];
+  const publicationSummary = molecularCommunicationPublication.description?.paragraphs[0];
+
+  const publicationDoi = molecularCommunicationPublication.doi;
+
+  const publicationJournal = molecularCommunicationPublication.publication;
 
   if (!mllpaProjectId) {
     throw new Error('Missing canonical project relation for software: mllpa');
@@ -316,6 +320,14 @@ function assembleHomeContent(localizedContent: LocalizedHomeContent, language: S
 
   if (!publicationSummary) {
     throw new Error('Missing canonical description for publication: nature-molecular-communication-2023');
+  }
+
+  if (!publicationDoi) {
+    throw new Error('Missing canonical DOI for publication: nature-molecular-communication-2023');
+  }
+
+  if (!publicationJournal) {
+    throw new Error('Missing canonical journal for publication: nature-molecular-communication-2023');
   }
 
   const profileDimensions = [
@@ -417,10 +429,10 @@ function assembleHomeContent(localizedContent: LocalizedHomeContent, language: S
           contentId: molecularCommunicationPublication.id,
           title: molecularCommunicationPublication.title,
           summary: publicationSummary,
-          journal: molecularCommunicationPublication.publication,
+          journal: publicationJournal,
           doi: {
             label: localizedContent.featuredWorks.molecularCommunicationPublication.actionLabel,
-            href: molecularCommunicationPublication.doi.href,
+            href: publicationDoi.href,
           },
         },
       ],

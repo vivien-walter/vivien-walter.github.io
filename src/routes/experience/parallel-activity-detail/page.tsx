@@ -16,7 +16,7 @@ import DetailTechnologiesSection from '@/components/detail-technologies-section'
 import PageHero from '@/components/page-hero';
 import { getExperiencePage, getParallelActivityById, getParallelActivityNavigation } from '@/content/experience/page';
 import { getProjectById } from '@/content/projects/page';
-import { getPublicationById } from '@/content/research/page';
+import { getPublicationById } from '@/content/research/publications/catalog';
 import { getSoftwareById } from '@/content/software/catalog';
 import NotFoundPage from '@/routes/not-found/page';
 

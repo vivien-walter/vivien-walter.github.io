@@ -1,0 +1,73 @@
+{
+    "title": "Molecular interfaces and biophysics",
+    "introduction": "Study of lipid membranes, their phase transitions and their interactions through molecular simulation and data analysis.",
+    "highlights": [
+        {
+            "label": "Research focus",
+            "value": "Lipid membranes, phase transitions and membrane instabilities."
+        },
+        {
+            "label": "Computational approaches",
+            "value": "Molecular simulation, data analysis and machine learning."
+        },
+        {
+            "label": "Publications",
+            "value": "Three first-author articles dedicated to lipid membranes and MLLPA."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "My work focuses on phase transitions, membrane instabilities and the interactions of lipid membranes with peptides or proteins.",
+            "It combines molecular dynamics simulations, classification, scientific data processing and machine-learning approaches, including three-dimensional convolutional neural networks.",
+            "This research led to the development of MLLPA, a documented and reusable Python module for machine-learning-assisted analysis of lipid membrane phases.",
+            "I continue occasional scientific collaborations related to lipid membranes and MLLPA. Work associated with a three-dimensional CNN has not yet been published."
+        ]
+    },
+    "technologyGroups": [
+        {
+            "title": "Molecular simulation and analysis",
+            "items": [
+                {
+                    "label": "GROMACS"
+                },
+                {
+                    "label": "MDAnalysis"
+                },
+                {
+                    "label": "NumPy"
+                },
+                {
+                    "label": "pandas"
+                },
+                {
+                    "label": "h5py"
+                }
+            ]
+        },
+        {
+            "title": "Machine learning",
+            "items": [
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "3D CNN"
+                }
+            ]
+        },
+        {
+            "title": "Development",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "MLLPA"
+                }
+            ]
+        }
+    ]
+}

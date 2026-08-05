@@ -1,0 +1,66 @@
+{
+    "title": "Optics and photonics",
+    "introduction": "Design and operation of advanced optical platforms for observing and analysing biological and nanoscale systems.",
+    "highlights": [
+        {
+            "label": "Microscopy",
+            "value": "Construction, qualification and operation of a complete iSCAT microscope."
+        },
+        {
+            "label": "Automation",
+            "value": "Development of LabVIEW software for control, acquisition and analysis."
+        },
+        {
+            "label": "Main publication",
+            "value": "Lead author of an article on spatial light modulation for iSCAT microscopy."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "My work in optics and photonics focuses on the design, construction and operation of instrumental platforms for observing biological and nanoscale systems.",
+            "It includes the construction and qualification of a complete interferometric scattering microscope, the design of experimental protocols, sample preparation, and data acquisition and analysis.",
+            "It also includes the development of LabVIEW software for controlling and automating scientific instruments, together with work on an automated epifluorescence microscope conducted under a confidentiality agreement."
+        ]
+    },
+    "technologyGroups": [
+        {
+            "title": "Microscopy and instrumentation",
+            "items": [
+                {
+                    "label": "iSCAT microscopy"
+                },
+                {
+                    "label": "Epifluorescence microscopy"
+                },
+                {
+                    "label": "Spatial light modulation"
+                }
+            ]
+        },
+        {
+            "title": "Control and automation",
+            "items": [
+                {
+                    "label": "LabVIEW"
+                },
+                {
+                    "label": "Automated acquisition"
+                },
+                {
+                    "label": "Autofocus"
+                }
+            ]
+        },
+        {
+            "title": "Analysis",
+            "items": [
+                {
+                    "label": "Image processing"
+                },
+                {
+                    "label": "Scientific data analysis"
+                }
+            ]
+        }
+    ]
+}

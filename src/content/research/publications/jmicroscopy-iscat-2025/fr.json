@@ -1,0 +1,12 @@
+{
+    "breadcrumbLabel": "J. Microscopy (2025)",
+    "eyebrow": "Journal of Microscopy",
+    "description": {
+        "paragraphs": [
+            "Interferometric scattering (iSCAT) microscopy enables high-speed and label-free detection of individual molecules and small nanoparticles. Here we apply point spread function engineering to provide adaptive control of iSCAT images using spatial light modulation. With this approach, we demonstrate improved dynamic spatial filtering, real-time background subtraction, focus control, and signal modulation based on sample orientation."
+        ],
+        "image": {
+            "alt": "Illustration du chemin optique du microscope à diffusion interférométrique utilisé pour cet article avec l'effet de l'affichage du modulateur de lumière spatiale sur l'échantillon."
+        }
+    }
+}

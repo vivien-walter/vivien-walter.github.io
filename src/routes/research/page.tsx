@@ -5,7 +5,9 @@ import { getLanguageFromPathname, getPageRoute, getResearchPublicationRoute, get
 import PageHero from '@/components/page-hero';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
-import { getPublicationCollection, getResearchPage, getResearchThemeCollection } from '@/content/research/page';
+import { getResearchPageContent } from '@/content/research/page';
+import { getPublicationCollection } from '@/content/research/publications/catalog';
+import { getResearchThemeCollection } from '@/content/research/themes/catalog';
 import { cn } from '@/lib/utils';
 
 import type { PublicationEntryItem } from './_components/publication-entry';
@@ -18,7 +20,7 @@ function ResearchPage() {
 
   const language = getLanguageFromPathname(location.pathname);
 
-  const page = getResearchPage(language);
+  const page = getResearchPageContent(language);
 
   const themes = getResearchThemeCollection(language);
 
@@ -27,7 +29,11 @@ function ResearchPage() {
     kind: publication.kind,
     title: publication.title,
     authors: publication.authors,
-    publication: publication.publication,
+    ...(publication.publication
+      ? {
+          publication: publication.publication,
+        }
+      : {}),
     year: publication.year,
     themeIds: publication.themeIds,
     detailsPath: getResearchPublicationRoute(publication.id, language),
@@ -54,7 +60,7 @@ function ResearchPage() {
               to: getPageRoute('home', language),
             },
             {
-              label: page.title,
+              label: page.breadcrumbLabel,
             },
           ],
         }}

@@ -1,0 +1,73 @@
+{
+    "title": "Interfaces moléculaires et biophysique",
+    "introduction": "Étude des membranes lipidiques, de leurs transitions de phase et de leurs interactions, par simulation moléculaire et analyse de données.",
+    "highlights": [
+        {
+            "label": "Sujet d’étude",
+            "value": "Membranes lipidiques, transitions de phase et instabilités membranaires."
+        },
+        {
+            "label": "Approches numériques",
+            "value": "Simulation moléculaire, analyse de données et apprentissage automatique."
+        },
+        {
+            "label": "Publications",
+            "value": "Trois articles en premier auteur consacrés aux membranes lipidiques et à MLLPA."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Mes travaux portent sur les transitions de phase, les instabilités membranaires et les interactions de membranes lipidiques avec des peptides ou des protéines.",
+            "Ils associent simulations de dynamique moléculaire, classification, traitement de données scientifiques et approches d’apprentissage automatique, notamment des réseaux de neurones convolutifs tridimensionnels.",
+            "Ces recherches ont conduit au développement de MLLPA, un module Python documenté et réutilisable pour l’analyse assistée par apprentissage automatique des phases de membranes lipidiques.",
+            "Je poursuis ponctuellement des collaborations scientifiques liées aux membranes lipidiques et à MLLPA. Des travaux associés à un modèle CNN 3D ne sont pas encore publiés."
+        ]
+    },
+    "technologyGroups": [
+        {
+            "title": "Simulation et analyse moléculaire",
+            "items": [
+                {
+                    "label": "GROMACS"
+                },
+                {
+                    "label": "MDAnalysis"
+                },
+                {
+                    "label": "NumPy"
+                },
+                {
+                    "label": "pandas"
+                },
+                {
+                    "label": "h5py"
+                }
+            ]
+        },
+        {
+            "title": "Apprentissage automatique",
+            "items": [
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "CNN 3D"
+                }
+            ]
+        },
+        {
+            "title": "Développement",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "MLLPA"
+                }
+            ]
+        }
+    ]
+}

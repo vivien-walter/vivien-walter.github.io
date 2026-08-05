@@ -1,0 +1,12 @@
+{
+    "breadcrumbLabel": "Nat. Comm. (2025)",
+    "eyebrow": "Nature Communications",
+    "description": {
+        "paragraphs": [
+            "Living crystallization-driven self-assembly (CDSA) of semicrystalline block copolymers is a powerful method for the bottom-up construction of uniform polymer microstructures with complex hierarchies. Improving our ability to engineer such complex particles demands a better understanding of how to precisely control the self-assembly process. Here, we apply interferometric scattering (iSCAT) microscopy to observe the real-time growth of individual poly(ε-caprolactone)-based fibers and platelets. This label-free method enables us to map the role of key reaction parameters on platelet growth rate, size, and morphology. Furthermore, iSCAT provides a contrast mechanism for studying multi-annulus platelets formed via the sequential addition of different unimers, offering insights into the spatial distribution of polymer compositions within a single platelet."
+        ],
+        "image": {
+            "alt": "Présentation du processus de polymérisation dont la dynamique a été observé en utilisant la microscopie à diffusion interférométrique."
+        }
+    }
+}

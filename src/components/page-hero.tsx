@@ -16,7 +16,7 @@ type PageHeroImage = {
 
 type PageHeroProps = {
   readonly title: string;
-  readonly introduction: string | readonly string[];
+  readonly introduction?: string | readonly string[];
   readonly eyebrow?: string;
   readonly breadcrumbs?: PageHeroBreadcrumbs;
   readonly actions?: ReactNode;
@@ -25,7 +25,7 @@ type PageHeroProps = {
 };
 
 function PageHero({ title, introduction, eyebrow, breadcrumbs, actions, footer, image }: PageHeroProps) {
-  const paragraphs = typeof introduction === 'string' ? [introduction] : introduction;
+  const paragraphs = introduction ? (typeof introduction === 'string' ? [introduction] : introduction) : [];
 
   return (
     <section className="border-border bg-brand-hero border-b" aria-labelledby="page-title">
@@ -51,13 +51,15 @@ function PageHero({ title, introduction, eyebrow, breadcrumbs, actions, footer, 
               {title}
             </h1>
 
-            <div className={cn('mt-6 max-w-[42rem]', 'text-md text-muted-foreground')}>
-              {paragraphs.map((paragraph, index) => (
-                <p className={cn('!m-0', index > 0 && '!mt-4')} key={`${index}-${paragraph}`}>
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+            {paragraphs.length > 0 ? (
+              <div className={cn('mt-6 max-w-[42rem]', 'text-md text-muted-foreground')}>
+                {paragraphs.map((paragraph, index) => (
+                  <p className={cn('!m-0', index > 0 && '!mt-4')} key={`${index}-${paragraph}`}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : null}
           </header>
 
           {actions ? <div className={cn('mt-8 flex flex-wrap items-center', 'gap-3 sm:gap-4')}>{actions}</div> : null}

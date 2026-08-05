@@ -1,0 +1,78 @@
+{
+    "title": "Molecular communication",
+    "introduction": "Development of experimental systems using chemical reactions, molecular signals, microfluidics and detection methods.",
+    "highlights": [
+        {
+            "label": "Experimental infrastructure",
+            "value": "Creation of a molecular communication laboratory and an operational testbed."
+        },
+        {
+            "label": "Interdisciplinary system",
+            "value": "Chemistry, microfluidics, instrumentation, electronics and signal processing."
+        },
+        {
+            "label": "Publications",
+            "value": "Two articles as first author and lead writer."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "My work in molecular communication involved creating a laboratory and an experimental platform combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning.",
+            "The testbed enabled the production, transmission and detection of molecular signals to experimentally validate chemical-reaction-based communication concepts.",
+            "I also developed a one-dimensional CNN with Python, TensorFlow and scikit-learn to analyse UV-Visible spectroscopy signals, together with six open-source syringe pumps combining mechanical design, 3D printing, Arduino, I²C communication, C++ and Python."
+        ]
+    },
+    "technologyGroups": [
+        {
+            "title": "Experimental methods",
+            "items": [
+                {
+                    "label": "Microfluidics"
+                },
+                {
+                    "label": "UV-Visible spectroscopy"
+                },
+                {
+                    "label": "Chemical reactions"
+                }
+            ]
+        },
+        {
+            "title": "Machine learning",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "1D CNN"
+                }
+            ]
+        },
+        {
+            "title": "Instrumentation and prototyping",
+            "items": [
+                {
+                    "label": "Autodesk Fusion 360"
+                },
+                {
+                    "label": "3D printing"
+                },
+                {
+                    "label": "Arduino"
+                },
+                {
+                    "label": "I²C"
+                },
+                {
+                    "label": "C++"
+                }
+            ]
+        }
+    ]
+}

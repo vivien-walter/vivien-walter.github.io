@@ -14,7 +14,7 @@ import DetailNavigation from '@/components/detail-navigation';
 import PageHero from '@/components/page-hero';
 import { getExperienceById } from '@/content/experience/page';
 import { getProjectById, getProjectNavigation, getProjectsPage } from '@/content/projects/page';
-import { getPublicationsByProjectId } from '@/content/research/page';
+import { getPublicationsByProjectId } from '@/content/research/publications/catalog';
 import { getSoftwareByProjectId } from '@/content/software/catalog';
 import NotFoundPage from '@/routes/not-found/page';
 

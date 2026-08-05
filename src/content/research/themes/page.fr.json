@@ -1,0 +1,11 @@
+{
+    "eyebrow": "Thématique de recherche",
+    "highlightsLabel": "Informations clés sur la thématique",
+    "description": "Description",
+    "technologies": "Technologies utilisées",
+    "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
+    "navigationLabel": "Navigation entre les thématiques de recherche",
+    "backLabel": "Retour à Recherche et publications",
+    "previousLabel": "Thématique précédente",
+    "nextLabel": "Thématique suivante"
+}

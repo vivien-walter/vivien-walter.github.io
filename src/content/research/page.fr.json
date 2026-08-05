@@ -1,4 +1,5 @@
 {
+    "breadcrumbLabel": "Recherche",
     "title": "Recherche et publications",
     "introduction": "Mes travaux relient biophysique, instrumentation, traitement du signal, apprentissage automatique et développement logiciel. Cette activité se poursuit à travers les publications, les logiciels et des collaborations ponctuelles.",
     "sectionTitles": {
@@ -42,39 +43,6 @@
             "filterByJournal": "Journal scientifique",
             "clearFilters": "Effacer les filtres"
         }
-    },
-    "themeDetail": {
-        "eyebrow": "Thématique de recherche",
-        "highlightsLabel": "Informations clés sur la thématique",
-        "description": "Description",
-        "technologies": "Technologies utilisées",
-        "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
-        "navigationLabel": "Navigation entre les thématiques de recherche",
-        "backLabel": "Retour à Recherche et publications",
-        "previousLabel": "Thématique précédente",
-        "nextLabel": "Thématique suivante"
-    },
-    "publicationDetail": {
-        "articleEyebrow": "Article scientifique",
-        "thesisEyebrow": "Thèse",
-        "metadata": "Informations bibliographiques",
-        "title": "Titre complet",
-        "journal": "Journal",
-        "authors": "Auteurs",
-        "year": "Année",
-        "reference": "Référence",
-        "contribution": "Contribution",
-        "description": "Description",
-        "resources": "Ressources liées",
-        "relatedItems": "Éléments associés",
-        "relatedThemes": "Thématiques de recherche",
-        "relatedProjects": "Projets",
-        "relatedSoftware": "Logiciels",
-        "relatedExperiences": "Expériences professionnelles",
-        "navigationLabel": "Navigation entre les publications",
-        "backLabel": "Retour à Recherche et publications",
-        "previousLabel": "Publication précédente",
-        "nextLabel": "Publication suivante"
     },
     "resourceLabels": {
         "github": "GitHub",
