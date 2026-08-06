@@ -1,34 +1,34 @@
 {
     "breadcrumbLabel": "Pédagogie",
     "eyebrow": "Prise en charge des handicaps",
-    "title": "Pédagogique inclusive",
-    "introduction": "Etude et conception d'approches et d'outils pédagogiques, alliant les réalités étendues (VR, AR) et l'intelligence artificielle, pour former les enseignants à mieux prendre en charge les apprenants présentant un handicap.",
+    "title": "Pédagogie inclusive",
+    "introduction": "Étude et conception d'approches et d'outils pédagogiques associant les réalités étendues (VR, AR) et l'intelligence artificielle afin de former les enseignants à mieux prendre en charge les apprenants en situation de handicap.",
     "heroImage": {
-        "alt": "Photographie du banc d'essai microfluidique développé pour le projet."
+        "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
     },
     "highlights": [
         {
             "label": "Pédagogie inclusive",
-            "value": "Création de contenus pédagogiques permettant de former les éducateurs à une meilleure prise en charge des handicaps."
+            "value": "Création de contenus pédagogiques permettant de former les éducateurs à une meilleure prise en charge des apprenants en situation de handicap."
         },
         {
             "label": "Réalité étendue",
-            "value": "Utilisation de la réalité virtuelle (VR) et de la réalité étendue (AR) pour créer des scénarios pédagogiques immersifs."
+            "value": "Utilisation de la réalité virtuelle (VR) et de la réalité augmentée (AR) pour créer des scénarios pédagogiques immersifs."
         },
         {
-            "label": "Intelligence Artificielle",
+            "label": "Intelligence artificielle",
             "value": "Utilisation de l'IA générative pour créer des applications réagissant de façon naturelle aux actions de l'utilisateur."
         }
     ],
     "description": {
         "paragraphs": [
-            "Au cours de mon contrat au sein de la société I-MAGINEXR, j'ai eu pour mission d'encadrer une étudiante en thèse CIFRE dont les travaux portaient sur l'utilisation de la réalité virtuelle (VR) et de l'intelligence artificielle (IA) générative pour permettre une meilleure formation des enseignants à la prise en charge des apprenants en situation de handicap, en particulier ceux présentant un trouble du spectre autistique (TSA). L'encadrement de cette thèse était géré par une collaboration avec Karine GALMICHE (I-MAGINEXR également), Simon RICHIR, Sylvain FLEURY (ENSAM) et Nour EL-MAWAS (Université de Lorraine).",
-            "En décidant d'appliquer une méthodologie de type recherche orientée design (design-based recherche), nous avons dans un premier temps étudié les besoins actuels des enseignants, notamment ceux ayant déjà eu des expériences avec soit des formations de prise en charge du handicap, soit des expériences avec la prise en charge d'au moins un apprenant présentant un TSA. Au travers de questionnaires, d'entretiens et d'ateliers de co-conception, nous avons pu identifier à la fois ces besoins, mais avons également conçu 3 scénarios pédagogiques qui se montreraient pertinents pour une application pédagogique.",
-            "Nous avons ensuite commencé à concevoir et développer des applications VR intégrant ces différents scénarios. Nous avons pour cela utilisé le moteur open source OpenSpace3D développé par I-MAGINEXR qui permet une conception complète de ces scénarios. Tous ces scénarios se basant sur des interactions avec des avatars virtuels représentant les apprenants, nous avons également utilisé l'IA générative pour créer des agents jouant le rôle des apprenants. Ce faisant, les réactions des avatars apparaissent naturels et s'adaptent toujours parfaitement aux actions de l'utilisateur. L'IA générative est également utilisé à la fin de l'application, pour réaliser un debriefing avec l'utilisateur et lui permettre d'avoir une évaluation de sa performance au cours du scénario.",
-            "A l'heure actuelle, deux publications scientifiques sont en cours de rédaction sur cette thématique de recherche, et les travaux de préparation de l'application VR se poursuivent."
+            "Au cours de mon contrat au sein de la société I-MAGINEXR, j'ai eu pour mission d'encadrer une étudiante en thèse CIFRE dont les travaux portaient sur l'utilisation de la réalité virtuelle (VR) et de l'intelligence artificielle (IA) générative afin de mieux former les enseignants à la prise en charge des apprenants en situation de handicap, en particulier de ceux présentant un trouble du spectre de l'autisme (TSA). L'encadrement de cette thèse s'inscrivait dans une collaboration avec Karine GALMICHE, également au sein d'I-MAGINEXR, Simon RICHIR et Sylvain FLEURY (ENSAM), ainsi que Nour EL-MAWAS (Université de Lorraine).",
+            "En appliquant une méthodologie de recherche orientée par la conception (design-based research), nous avons dans un premier temps étudié les besoins actuels des enseignants, notamment de ceux ayant déjà suivi une formation à la prise en charge du handicap ou ayant déjà accompagné au moins un apprenant présentant un TSA. À travers des questionnaires, des entretiens et des ateliers de co-conception, nous avons pu identifier ces besoins et concevoir trois scénarios pédagogiques susceptibles d'être intégrés à une application pédagogique.",
+            "Nous avons ensuite commencé à concevoir et à développer des applications VR intégrant ces différents scénarios. Pour cela, nous avons utilisé le moteur OpenSpace3D développé par I-MAGINEXR, qui permet de concevoir intégralement ces scénarios. Comme tous ces scénarios reposent sur des interactions avec des avatars virtuels représentant les apprenants, nous avons également utilisé l'IA générative pour créer des agents jouant leur rôle. Les réactions des avatars apparaissent ainsi naturelles et s'adaptent aux actions de l'utilisateur. L'IA générative est également utilisée à la fin de l'application pour réaliser un débriefing avec l'utilisateur et lui permettre d'évaluer sa performance au cours du scénario.",
+            "À l'heure actuelle, deux publications scientifiques sont en cours de rédaction sur cette thématique de recherche, et les travaux de préparation de l'application VR se poursuivent."
         ],
         "image": {
-            "alt": "Capture d'écran d'OpenSpace3D, logiciel open source utilisé pour le développement des applications pédagogiques."
+            "alt": "Capture d'écran d'OpenSpace3D, logiciel utilisé pour le développement des applications pédagogiques."
         }
     },
     "technologyGroups": [

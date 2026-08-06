@@ -102,7 +102,7 @@ function ResearchThemeDetailPage() {
 
         {publications.length > 0 ? (
           <PublicationList
-            title={page.sectionTitles.publications}
+            title={page.sectionTitles.publications.title}
             titleId={`${idPrefix}-publications-title`}
             items={publications}
             themes={themes.map((candidate) => ({

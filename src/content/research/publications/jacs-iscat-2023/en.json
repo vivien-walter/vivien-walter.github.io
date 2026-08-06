@@ -3,10 +3,10 @@
     "eyebrow": "Journal of the American Chemical Society",
     "description": {
         "paragraphs": [
-            "Methods capable of controlling synthesis at the level of an individual nanoparticle are a key step toward improved reproducibility and scalability in engineering complex nanomaterials. To address this, we combine the spatially patterned activation of the photoreductant sodium pyruvate with interferometric scattering microscopy to achieve fast, label-free monitoring and control of hundreds of gold nanoparticles in real time. Individual particle growth kinetics are well-described by a two-step nucleation–autocatalysis model but with a distribution of individual rate constants that change with reaction conditions."
+            "Methods capable of controlling synthesis at the level of an individual nanoparticle are a key step toward improved reproducibility and scalability in engineering complex nanomaterials. To address this, we combine the spatially patterned activation of the photoreductant sodium pyruvate with interferometric scattering microscopy to achieve fast, label-free monitoring and control of hundreds of gold nanoparticles in real time. Individual particle growth kinetics are well described by a two-step nucleation–autocatalysis model but with a distribution of individual rate constants that change with reaction conditions."
         ],
         "image": {
-            "alt": "Evolution de la taille de nanoparticules d'or au cours du temps, mesuré à l'aide d'un microscope à diffusion interférométrique."
+            "alt": "Change in the size of gold nanoparticles recorded over time using an iSCAT microscope."
         }
     }
 }

@@ -1,12 +1,18 @@
 {
     "title": "Research and publications",
-    "introduction": "My work connects biophysics, instrumentation, signal processing, machine learning and software development. This activity continues through publications, software and occasional collaborations.",
+    "introduction": "My professional projects regularly involve scientific research activities. Passionate and, above all, incredibly curious, I have had the opportunity to explore a variety of research fields: experimental biophysics, numerical simulations, molecular communication engineering, the development of artificial intelligence models, and even inclusive education. On this page, you will find all these research themes and the scientific publications that resulted from them.",
     "heroImage": {
         "alt": "Picture of the optical path of an iSCAT microscope."
     },
     "sectionTitles": {
-        "themes": "Research themes",
-        "publications": "Selected publications",
+        "themes": {
+            "title": "Research themes",
+            "description": "Discover the main research themes I have explored throughout my career."
+        },
+        "publications": {
+            "title": "Scientific publications",
+            "description": "Browse all my scientific publications and explore them by year, research theme or scientific journal."
+        },
         "activities": "Follow my activities"
     },
     "publications": {

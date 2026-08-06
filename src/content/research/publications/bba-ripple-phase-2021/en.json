@@ -1,12 +1,12 @@
 {
     "breadcrumbLabel": "BBA Biomembranes (2021)",
-    "eyebrow": "MLa",
+    "eyebrow": "Biochimica et Biophysica Acta - Biomembranes",
     "description": {
         "paragraphs": [
-            "Atomistic molecular dynamics simulations have reached a degree of maturity that makes it possible to investigate the lipid polymorphism of model bilayers over a wide range of temperatures. However if both the fluid and tilted gel states are routinely obtained, the ripple phase of phosphatidylcholine lipid bilayers is still unsatifactorily described. Performing simulations of lipid bilayers made of different numbers of DPPC (1,2-dipalmitoylphosphatidylcholine) molecules ranging from 32 to 512, we demonstrate that the tilted gel phase expected below the pretransition cannot be obtained for large systems (equal or larger than 94 DPPC molecules) through common simulations settings or temperature treatments. Large systems are instead found in a disordered gel phase which display configurations, topography and energies reminiscent from the ripple phase observed between the pretransition and the main melting transition. We show how the state of the bilayers below the melting transition can be controlled and depends on thermal history and conditions of preparations. A mechanism for the observed topographic instability is suggested."
+            "Atomistic molecular dynamics simulations have reached a degree of maturity that makes it possible to investigate the lipid polymorphism of model bilayers over a wide range of temperatures. However, although both the fluid and tilted gel states are routinely obtained, the ripple phase of phosphatidylcholine lipid bilayers is still unsatisfactorily described. By performing simulations of lipid bilayers containing different numbers of DPPC (1,2-dipalmitoylphosphatidylcholine) molecules, ranging from 32 to 512, we demonstrate that the tilted gel phase expected below the pretransition cannot be obtained for large systems (equal to or larger than 94 DPPC molecules) through common simulation settings or temperature treatments. Large systems are instead found in a disordered gel phase that displays configurations, topography and energies reminiscent of the ripple phase observed between the pretransition and the main melting transition. We show how the state of the bilayers below the melting transition can be controlled and depends on thermal history and preparation conditions. A mechanism for the observed topographic instability is suggested."
         ],
         "image": {
-            "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+            "alt": "Snapshot and topological representation of a ripple phase that appeared during a molecular dynamics simulation."
         }
     }
 }

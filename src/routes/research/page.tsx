@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { getLanguageFromPathname, getPageRoute, getResearchPublicationRoute, getResearchThemeRoute } from '@/app/routing/navigation';
 import PageHero from '@/components/page-hero';
-import { Section, SectionHeader, SectionTitle } from '@/components/section';
+import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
 import { getResearchPageContent } from '@/content/research/page';
 import { getPublicationCollection } from '@/content/research/publications/catalog';
@@ -83,7 +83,8 @@ function ResearchPage() {
         {themes.length > 0 ? (
           <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby="research-themes-title">
             <SectionHeader className="mb-8 sm:mb-10">
-              <SectionTitle id="research-themes-title">{page.sectionTitles.themes}</SectionTitle>
+              <SectionTitle id="research-themes-title">{page.sectionTitles.themes.title}</SectionTitle>
+              <SectionDescription>{page.sectionTitles.themes.description}</SectionDescription>
             </SectionHeader>
 
             <ul className={cn('m-0 flex list-none', 'items-center gap-3', 'p-0 pt-2', 'sm:gap-4')}>
@@ -120,7 +121,8 @@ function ResearchPage() {
 
         {publications.length > 0 ? (
           <PublicationList
-            title={page.sectionTitles.publications}
+            title={page.sectionTitles.publications.title}
+            description={page.sectionTitles.publications.description}
             titleId="research-publications-title"
             items={publications}
             themes={themeOptions}

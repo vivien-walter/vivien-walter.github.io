@@ -1,46 +1,89 @@
 {
     "breadcrumbLabel": "Biomembranes",
-    "eyebrow": "Expériences et simulations numériques",
+    "eyebrow": "Experiments and numerical simulations",
     "title": "Molecular interfaces and biophysics",
-    "introduction": "Study of lipid membranes, their phase transitions and their interactions through molecular simulation and data analysis.",
+    "introduction": "Study of lipid membranes, their phase transitions and their interactions through optical microscopy, as well as molecular simulation and data analysis.",
     "heroImage": {
-        "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        "alt": "3D rendering of a lipid bilayer exhibiting a ripple phase."
     },
     "highlights": [
         {
-            "label": "Research focus",
-            "value": "Lipid membranes, phase transitions and membrane instabilities."
+            "label": "Biophysics and soft matter",
+            "value": "Study of lipid membranes, from their thermodynamic properties to their interactions with biomolecules."
         },
         {
-            "label": "Computational approaches",
-            "value": "Molecular simulation, data analysis and machine learning."
+            "label": "Microscopy",
+            "value": "Experimental study of interactions with biomembranes using optical and interferometric microscopy."
         },
         {
-            "label": "Publications",
-            "value": "Three first-author articles dedicated to lipid membranes and MLLPA."
+            "label": "Numerical simulations",
+            "value": "Use of molecular dynamics simulations and artificial intelligence to study membranes."
         }
     ],
     "description": {
         "paragraphs": [
-            "My work focuses on phase transitions, membrane instabilities and the interactions of lipid membranes with peptides or proteins.",
-            "It combines molecular dynamics simulations, classification, scientific data processing and machine-learning approaches, including three-dimensional convolutional neural networks.",
-            "This research led to the development of MLLPA, a documented and reusable Python module for machine-learning-assisted analysis of lipid membrane phases.",
-            "I continue occasional scientific collaborations related to lipid membranes and MLLPA. Work associated with a three-dimensional CNN has not yet been published."
+            "Lipid membranes, and molecular interfaces more generally, represent the research theme I have worked on most extensively to date and constitute one of my greatest scientific passions. My research has covered several key aspects of biomembranes, examining both their thermodynamic properties, particularly their phase transitions, and their interactions with the surrounding environment: solvent properties, penetration by peptides and proteins, etc.",
+            "This research began during my first-year Master's internship under the supervision of Thierry CHARITAT (Université de Strasbourg) and gave me the opportunity to participate in international collaborations involving research laboratories in France (Carlos M MARQUES and Fabrice THALMANN), the United Kingdom (Mark I WALLACE), Canada (Céline RUSCHER) and the United States (Ashutosh CHILKOTI). Thanks to this international and multidisciplinary team, I was able to study lipid membranes through both experimental and computational work.",
+            "Initially, I experimentally studied the behaviour of model membranes, particularly using confocal microscopy, under varying electrical charge and temperature conditions in order to understand and model the conditions required to control the action of cell-penetrating peptides.",
+            "Building on this work, I then studied how the interactions of membranes with peptides and proteins could be observed at the single-molecule scale using interferometric scattering microscopy. This experimental technique makes it possible to observe changes over time in both the position and mass of proteins at the surface of membranes, particularly to investigate how these molecules can self-assemble to form pores.",
+            "In parallel, I conducted computational studies using molecular dynamics simulations, which allowed me to study lipid membrane phase transitions and how these changes in thermodynamic properties can influence the interaction and even the penetration of biomolecules. It was during this computational work that I began to familiarise myself with artificial intelligence, using Machine Learning and Deep Learning to analyse membrane composition.",
+            "This body of work enabled me to publish a total of 7 scientific papers. Although my experimental work has now been completed, I continue to collaborate occasionally on lipid membrane research with my international collaborators. Work associated with a 3D CNN model to generalise our research on the classification of lipids using artificial intelligence is still ongoing."
         ],
         "image": {
-            "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+            "alt": "Photograph of the confocal microscope used during my PhD research."
         }
     },
     "technologyGroups": [
         {
-            "title": "Molecular simulation and analysis",
+            "title": "Microscopy",
             "items": [
                 {
-                    "label": "GROMACS"
+                    "label": "Epifluorescence",
+                    "href": "https://en.wikipedia.org/wiki/Fluorescence_microscope"
                 },
                 {
-                    "label": "MDAnalysis"
+                    "label": "Confocal microscopy",
+                    "href": "https://en.wikipedia.org/wiki/Confocal_microscopy"
                 },
+                {
+                    "label": "iSCAT",
+                    "href": "https://en.wikipedia.org/wiki/Interferometric_scattering_microscopy"
+                }
+            ]
+        },
+        {
+            "title": "Model lipid membranes",
+            "items": [
+                {
+                    "label": "Vesicles",
+                    "description": "Preparation and study of giant unilamellar vesicles (GUVs) and small unilamellar vesicles (SUVs)."
+                },
+                {
+                    "label": "Bilayers",
+                    "description": "Preparation and study of supported lipid bilayers (SLBs), particularly using a Langmuir trough."
+                }
+            ]
+        },
+        {
+            "title": "Molecular dynamics simulation",
+            "items": [
+                {
+                    "label": "GROMACS",
+                    "href": "https://www.gromacs.org"
+                },
+                {
+                    "label": "MDAnalysis",
+                    "href": "https://www.mdanalysis.org"
+                },
+                {
+                    "label": "Slurm",
+                    "description": "Used to manage the computing server."
+                }
+            ]
+        },
+        {
+            "title": "Data analysis",
+            "items": [
                 {
                     "label": "NumPy"
                 },
@@ -49,31 +92,38 @@
                 },
                 {
                     "label": "h5py"
+                },
+                {
+                    "label": "scikit-image"
+                },
+                {
+                    "label": "Pillow"
                 }
             ]
         },
         {
-            "title": "Machine learning",
+            "title": "Artificial intelligence",
             "items": [
                 {
-                    "label": "TensorFlow"
+                    "label": "TensorFlow",
+                    "href": "https://www.tensorflow.org/?hl=fr"
                 },
                 {
-                    "label": "scikit-learn"
-                },
-                {
-                    "label": "3D CNN"
+                    "label": "scikit-learn",
+                    "href": "https://scikit-learn.org/stable/"
                 }
             ]
         },
         {
-            "title": "Development",
+            "title": "Development and languages",
             "items": [
                 {
-                    "label": "Python"
+                    "label": "Python",
+                    "description": "Used for image and data analysis, as well as for controlling and automating scientific platforms."
                 },
                 {
-                    "label": "MLLPA"
+                    "label": "Java",
+                    "description": "Used exclusively to develop plugins for ImageJ."
                 }
             ]
         }

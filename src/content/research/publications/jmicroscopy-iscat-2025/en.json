@@ -1,11 +1,12 @@
 {
-    "eyebrow": "Nature Communications",
+    "breadcrumbLabel": "J. Microscopy (2024)",
+    "eyebrow": "Journal of Microscopy",
     "description": {
         "paragraphs": [
-            "Signal processing over the molecular domain is critical for analysing, modifying, and synthesising chemical signals in molecular communication systems. However, the lack of chemical signal processing blocks and the wide use of electronic devices to process electrical signals in existing molecular communication platforms can hardly meet the biocompatible, non-invasive, and size-miniaturised requirements of applications in various fields, e.g., medicine, biology, and environment sciences. To tackle this, here we design and construct a liquid-based microfluidic molecular communication platform for performing chemical concentration signal processing and digital signal transmission over distances. By specifically designing chemical reactions and microfluidic geometry, the transmitter of our platform is capable of shaping the emitted signals, and the receiver is able to threshold, amplify, and detect the chemical signals after propagation. By encoding bit information into the concentration of sodium hydroxide, we demonstrate that our platform can achieve molecular signal modulation and demodulation functionalities, and reliably transmit text messages over long distances. This platform is further optimised to maximise data rate while minimising communication error. The presented methodology for real-time chemical signal processing can enable the implementation of signal processing units in biological settings and then unleash its potential for interdisciplinary applications."
+            "Interferometric scattering (iSCAT) microscopy enables high-speed and label-free detection of individual molecules and small nanoparticles. Here, we apply point spread function engineering to provide adaptive control of iSCAT images using spatial light modulation. With this approach, we demonstrate improved dynamic spatial filtering, real-time background subtraction, focus control, and signal modulation based on sample orientation."
         ],
         "image": {
-            "alt": "Capture et représentation topologique d'une phase ripple apparue au cours d'une simulation de dynamique moléculaire."
+            "alt": "Illustration of the optical path of the interferometric scattering microscope used in this article, showing the effect of the spatial light modulator display on the sample."
         }
     }
 }

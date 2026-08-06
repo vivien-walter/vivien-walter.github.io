@@ -2,18 +2,18 @@
     "breadcrumbLabel": "Biomembranes",
     "eyebrow": "Expériences et simulations numériques",
     "title": "Interfaces moléculaires et biophysique",
-    "introduction": "Etude des membranes lipidiques, de leurs transitions de phase et de leurs interactions, par microscopie photonique ainsi que par simulation moléculaire et analyse de données.",
+    "introduction": "Étude des membranes lipidiques, de leurs transitions de phase et de leurs interactions, par microscopie photonique ainsi que par simulation moléculaire et analyse de données.",
     "heroImage": {
-        "alt": "Rendu 3D d'une bicouche lipide présentant une phase ripple."
+        "alt": "Rendu 3D d'une bicouche lipidique présentant une phase ripple."
     },
     "highlights": [
         {
             "label": "Biophysique et matière molle",
-            "value": "Etude des membranes lipides, de leurs propriétés thermodynamiques à leurs interactions avec des biomolécules."
+            "value": "Étude des membranes lipidiques, de leurs propriétés thermodynamiques à leurs interactions avec des biomolécules."
         },
         {
             "label": "Microscopie",
-            "value": "Etude expérimentale des interactions avec les biomembranes grâce à la microscopie photonique et interférométrique."
+            "value": "Étude expérimentale des interactions avec les biomembranes grâce à la microscopie photonique et interférométrique."
         },
         {
             "label": "Simulations numériques",
@@ -22,12 +22,12 @@
     ],
     "description": {
         "paragraphs": [
-            "Les membranes lipidiques, et d'une manière plus générale les interfaces moléculaires, représentent la thématique de recherche sur laquelle j'ai le plus travaillé jusqu'à présent et qui a constitué l'une de mes plus grande passion en termes de domaine scientifique. Mes travaux de recherche ont couvert plusieurs aspect clés des biomembranes, étudiant autant leurs propriétés thermodynamiques et en particulier leurs transitions de phase que leurs interactions avec le milieu extérieur : propriétés du solvant, pénétration par pepties et protéines, etc.",
-            "Ces travaux, qui ont démarré dès mon stage en première année de Master sous la direction de Thierry CHARITAT (Université de Strasbourg), m'ont donné l'occasion de réaliser des travaux au sein de collaborations internationales impliquant des laboratoires de recherche en France (Carlos M MARQUES et Fabrice THALMANN), au Royaume-Uni (Mark I WALLACE), au Canada (Céline RUSCHER) et aux Etats-Unis (Ashutosh CHILKOTI). Grâce à cette équipe internationale et pluri-disciplinaire, j'ai pu étudier les membranes lipidiques autant au travers de travaux expérimentaux que numériques.",
-            "Dans un premier temps, j'ai étudié expérimentalement, notamment grâce à la microscopie confocale, le comportement de membranes modèles en présence de charges électriques et de la température du milieu, afin notamment de comprendre et modéliser les conditions permettant de contrôler l'action de peptides pénétrateurs de cellule.",
-            "Continuant dans cette voie, j'ai ensuite étudié comment les interactions entre les membranes et les peptides et protéines pouvaient être observé à l'échelle des molécules individuelles grâce à la microscopie à diffusion interférométrique. Cette technique expérimentale permet en effet d'observer l'évolution au cours du temps de la position mais aussi de la masse de protéines à la surface des membranes, afin notamment d'étudier comment ces molécules peuvent s'auto-assembler pour former des pores.",
-            "En parallèle, j'ai réalisé des études numériques au travers de simulations de dynamique moléculaire, qui me permettaient d'étudier les transitions de phase des membranes lipidiques et comment ces changements de propriétés thermodynamiques peuvent influencer l'interaction voire la pénétration de biomolécules. Ces notamment au cours de ces travaux numériques que j'ai commencé à me familiariser avec l'intelligence artificielle, utilisant Machine Learning et Deep Learning pour analyser la composition de la membrane.",
-            "L'ensemble de ces travaux m'ont permi de publier un total de 7 publications scientifiques. Bien que mes travaux expérimentaux soient achevés, je poursuis encore ponctuellement les collaborations scientifiques liées aux membranes lipidiques avec mes différents collaborateurs internationaux. Des travaux associés à un modèle CNN 3D pour généraliser nos travaux sur la classification de lipides par intelligence artificielle sont encore en cours."
+            "Les membranes lipidiques, et d'une manière plus générale les interfaces moléculaires, représentent la thématique de recherche sur laquelle j'ai le plus travaillé jusqu'à présent et constituent l'une de mes plus grandes passions scientifiques. Mes travaux de recherche ont couvert plusieurs aspects clés des biomembranes, en étudiant autant leurs propriétés thermodynamiques, et en particulier leurs transitions de phase, que leurs interactions avec le milieu extérieur : propriétés du solvant, pénétration par des peptides et des protéines, etc.",
+            "Ces recherches, qui ont débuté dès mon stage en première année de master sous la direction de Thierry CHARITAT (Université de Strasbourg), m'ont donné l'occasion de participer à des collaborations internationales impliquant des laboratoires de recherche en France (Carlos M MARQUES et Fabrice THALMANN), au Royaume-Uni (Mark I WALLACE), au Canada (Céline RUSCHER) et aux États-Unis (Ashutosh CHILKOTI). Grâce à cette équipe internationale et pluridisciplinaire, j'ai pu étudier les membranes lipidiques à travers des travaux aussi bien expérimentaux que numériques.",
+            "Dans un premier temps, j'ai étudié expérimentalement, notamment grâce à la microscopie confocale, le comportement de membranes modèles en fonction des charges électriques et de la température du milieu, afin de comprendre et de modéliser les conditions permettant de contrôler l'action de peptides pénétrateurs de cellule.",
+            "Continuant dans cette voie, j'ai ensuite étudié comment les interactions entre les membranes et les peptides et protéines pouvaient être observées à l'échelle des molécules individuelles grâce à la microscopie à diffusion interférométrique. Cette technique expérimentale permet en effet d'observer l'évolution au cours du temps de la position, mais aussi de la masse, de protéines à la surface des membranes, afin notamment d'étudier comment ces molécules peuvent s'auto-assembler pour former des pores.",
+            "En parallèle, j'ai réalisé des études numériques au travers de simulations de dynamique moléculaire, qui m'ont permis d'étudier les transitions de phase des membranes lipidiques ainsi que la manière dont ces changements de propriétés thermodynamiques peuvent influencer l'interaction, voire la pénétration, de biomolécules. C'est notamment au cours de ces travaux numériques que j'ai commencé à me familiariser avec l'intelligence artificielle, en utilisant le Machine Learning et le Deep Learning pour analyser la composition de la membrane.",
+            "L'ensemble de ces travaux m'a permis de publier un total de 7 publications scientifiques. Bien que mes travaux expérimentaux soient achevés, je poursuis encore ponctuellement les collaborations scientifiques liées aux membranes lipidiques avec mes différents collaborateurs internationaux. Des travaux associés à un modèle CNN 3D pour généraliser nos travaux sur la classification de lipides par intelligence artificielle sont encore en cours."
         ],
         "image": {
             "alt": "Photographie du microscope confocal utilisé au cours de mes travaux de thèse."
@@ -38,7 +38,7 @@
             "title": "Microscopie",
             "items": [
                 {
-                    "label": "Epifluorescence",
+                    "label": "Épifluorescence",
                     "href": "https://en.wikipedia.org/wiki/Fluorescence_microscope"
                 },
                 {

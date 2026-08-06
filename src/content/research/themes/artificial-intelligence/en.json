@@ -1,82 +1,95 @@
 {
-    "title": "Molecular communication",
-    "introduction": "Development of experimental systems using chemical reactions, molecular signals, microfluidics and detection methods.",
+    "eyebrow": "Data analysis and adaptability",
+    "title": "Artificial intelligence",
+    "introduction": "Design and development of artificial intelligence algorithms and models for scientific and educational applications, combining machine learning, deep learning and generative AI.",
     "heroImage": {
-        "alt": "Photographie du banc d'essai microfluidique développé pour le projet."
+        "alt": "Photograph of the microfluidic testbed developed for the project."
     },
     "highlights": [
         {
-            "label": "Experimental infrastructure",
-            "value": "Creation of a molecular communication laboratory and an operational testbed."
+            "label": "Machine Learning",
+            "value": "Design and development of statistical models for analysing and classifying numerical data."
         },
         {
-            "label": "Interdisciplinary system",
-            "value": "Chemistry, microfluidics, instrumentation, electronics and signal processing."
+            "label": "Deep Learning",
+            "value": "Construction and use of multidimensional neural networks to process complex chemical systems."
         },
         {
-            "label": "Publications",
-            "value": "Two articles as first author and lead writer."
+            "label": "Generative AI",
+            "value": "Training and use of generative AI models to create adaptive and inclusive educational scenarios."
         }
     ],
     "description": {
         "paragraphs": [
-            "My work in molecular communication involved creating a laboratory and an experimental platform combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning.",
-            "The testbed enabled the production, transmission and detection of molecular signals to experimentally validate chemical-reaction-based communication concepts.",
-            "I also developed a one-dimensional CNN with Python, TensorFlow and scikit-learn to analyse UV-Visible spectroscopy signals, together with six open-source syringe pumps combining mechanical design, 3D printing, Arduino, I²C communication, C++ and Python."
+            "My work on artificial intelligence began in 2016, alongside my PhD, when I discovered a deep interest in statistics and probability. With the help of Fabrice THALMANN and Olivier BENZERARA (Institut Charles Sadron, Strasbourg, France), I was able to design my own research topic, in which artificial intelligence, in the form of machine learning models (K-Nearest Neighbors, Support Vector Machine, etc.), was used to analyse the thermodynamic properties of lipid membranes.",
+            "I was then able to put my expertise in AI model development to use during my contract in Yansha DENG's team (Department of Engineering, King's College London, United Kingdom), where I designed, trained and used a one-dimensional convolutional neural network (CNN) to analyse molecular signals and decode the signal encoded in the chemical composition of the sample.",
+            "My work also focused on the use of generative AI, this time in a purely educational context: during my contract at I-MAGINEXR, I was asked to set up and train AI agents that made the educational content available on our online Formao platform both adaptive to users' needs and, above all, inclusive. During the same contract, I also had the opportunity to supervise a CIFRE PhD student in collaboration with Simon RICHIR, Sylvain FLEURY (ENSAM) and Nour EL-MAWAN (Université de Lorraine) to develop a virtual reality (VR) application designed to train teachers to support students with autism spectrum disorder.",
+            "All this work enabled me to publish a total of 4 scientific papers and to develop MLLPA, a documented, reusable and publicly available Python module that allows users to analyse lipid membrane phases. I continue to collaborate occasionally on artificial intelligence research with my international collaborators. Work on a 3D CNN model to generalise our research on AI-based lipid classification is still ongoing, as is work on the use of AI agents for inclusive education."
         ],
         "image": {
-            "alt": "Diagramme présentant le principe de base du banc d'essai microfluidique."
+            "alt": "Diagram showing the architecture of the convolutional neural network developed to analyse and decode molecular signals."
         }
     },
     "technologyGroups": [
         {
-            "title": "Experimental methods",
+            "title": "Machine Learning models",
             "items": [
                 {
-                    "label": "Microfluidics"
+                    "label": "K-Nearest Neighbors",
+                    "href": "https://scikit-learn.org/stable/modules/neighbors.html"
                 },
                 {
-                    "label": "UV-Visible spectroscopy"
+                    "label": "Support Vector Machine",
+                    "href": "https://scikit-learn.org/stable/modules/svm.html"
                 },
                 {
-                    "label": "Chemical reactions"
+                    "label": "Naive Bayes",
+                    "href": "https://scikit-learn.org/stable/modules/naive_bayes.html"
+                },
+                {
+                    "label": "Classification and Regression Tree",
+                    "href": "https://scikit-learn.org/stable/modules/tree.html"
                 }
             ]
         },
         {
-            "title": "Machine learning",
+            "title": "Deep Learning models",
+            "items": [
+                {
+                    "label": "1D CNN"
+                },
+                {
+                    "label": "3D CNN"
+                }
+            ]
+        },
+        {
+            "title": "Generative AI",
+            "items": [
+                {
+                    "label": "ChatGPT"
+                },
+                {
+                    "label": "Mistral AI"
+                },
+                {
+                    "label": "DeepSeek"
+                }
+            ]
+        },
+        {
+            "title": "Languages and libraries",
             "items": [
                 {
                     "label": "Python"
                 },
                 {
-                    "label": "TensorFlow"
+                    "label": "TensorFlow",
+                    "href": "https://www.tensorflow.org/?hl=fr"
                 },
                 {
-                    "label": "scikit-learn"
-                },
-                {
-                    "label": "1D CNN"
-                }
-            ]
-        },
-        {
-            "title": "Instrumentation and prototyping",
-            "items": [
-                {
-                    "label": "Autodesk Fusion 360"
-                },
-                {
-                    "label": "3D printing"
-                },
-                {
-                    "label": "Arduino"
-                },
-                {
-                    "label": "I²C"
-                },
-                {
-                    "label": "C++"
+                    "label": "scikit-learn",
+                    "href": "https://scikit-learn.org/stable/"
                 }
             ]
         }

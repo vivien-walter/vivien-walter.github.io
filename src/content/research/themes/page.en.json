@@ -4,8 +4,8 @@
     "description": "Description",
     "technologies": "Technologies used",
     "externalLinkLabel": "Opens an external website in a new tab",
-    "navigationLabel": "Research theme navigation",
-    "backLabel": "Return to Research and publications",
+    "navigationLabel": "Navigation between research themes",
+    "backLabel": "Return to the Research and publications page",
     "previousLabel": "Previous research theme",
     "nextLabel": "Next research theme"
 }

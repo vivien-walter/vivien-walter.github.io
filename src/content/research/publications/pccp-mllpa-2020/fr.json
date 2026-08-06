@@ -3,10 +3,10 @@
     "eyebrow": "Physical Chemistry Chemical Physics",
     "description": {
         "paragraphs": [
-            "We have adapted a set of classification algorithms, also known as machine learning, to the identification of fluid and gel domains close to the main transition of dipalmitoyl-phosphatidylcholine (DPPC) bilayers. Using atomistic molecular dynamics conformations in the low and high temperature phases as learning sets, the algorithm was trained to categorise individual lipid configurations as fluid or gel, in relation with the usual two-states phenomenological description of the lipid melting transition. We demonstrate that our machine can learn and sort lipids according to their most likely state without prior assumption regarding the nature of the order parameter of the transition. Results from our machine learning study provide strong support in favour of a two-states model approach of membrane fluidity."
+            "Nous avons adapté un ensemble d’algorithmes de classification, également connus sous le nom de machine learning, afin d’identifier les domaines fluides et gels à proximité de la transition principale de bicouches de dipalmitoylphosphatidylcholine (DPPC). En utilisant comme jeux d’entraînement des conformations issues de simulations de dynamique moléculaire atomistique dans les phases à basse et haute température, l’algorithme a été entraîné à classer chaque configuration lipidique comme fluide ou gel, conformément à la description phénoménologique habituelle à deux états de la transition de fusion des lipides. Nous démontrons que notre machine peut apprendre à trier les lipides selon leur état le plus probable sans aucune hypothèse préalable concernant la nature du paramètre d’ordre de la transition. Les résultats de notre étude par machine learning soutiennent fortement un modèle à deux états de la fluidité membranaire."
         ],
         "image": {
-            "alt": "Identification de l'état de lipides par la configuration de leurs queues hydrophobes."
+            "alt": "Identification de l'état des lipides à partir de la configuration de leurs queues hydrophobes."
         }
     }
 }

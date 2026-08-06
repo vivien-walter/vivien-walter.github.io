@@ -1,13 +1,19 @@
 {
     "breadcrumbLabel": "Recherche",
     "title": "Recherche et publications",
-    "introduction": "Mes projets professionnels s'articulent régulièrement autour d'activités de recherches scientifiques. Passioné et surtout incroyablement curieux, j'ai eu l'opportunité d'explorer différents domaines de recherche : biophysique expérimentale, simulations numériques, ingénierie en communication moléculaire, développement de modèles d'intelligence artificielle et même pédagogie inclusive. Vous retrouverez sur cette page tous ces thèmes de recherche et les publications scientifiques qui en ont découlé.",
+    "introduction": "Mes projets professionnels s'articulent régulièrement autour d'activités de recherche scientifique. Passionné et surtout incroyablement curieux, j'ai eu l'opportunité d'explorer différents domaines de recherche : biophysique expérimentale, simulations numériques, ingénierie en communication moléculaire, développement de modèles d'intelligence artificielle et même pédagogie inclusive. Vous retrouverez sur cette page tous ces thèmes de recherche et les publications scientifiques qui en ont découlé.",
     "heroImage": {
         "alt": "Photographie du chemin optique d'un microscope iSCAT."
     },
     "sectionTitles": {
-        "themes": "Thématiques de recherche",
-        "publications": "Publications sélectionnées",
+        "themes": {
+            "title": "Thématiques de recherche",
+            "description": "Découvrez les principales thématiques de recherche que j’ai explorées au cours de mon parcours."
+        },
+        "publications": {
+            "title": "Publications scientifiques",
+            "description": "Retrouvez l’ensemble de mes publications scientifiques et explorez-les par année, thématique de recherche ou revue scientifique."
+        },
         "activities": "Suivre mes activités"
     },
     "publications": {

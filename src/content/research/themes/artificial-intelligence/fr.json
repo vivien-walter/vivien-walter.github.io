@@ -1,7 +1,7 @@
 {
     "eyebrow": "Analyse de données et adaptativité",
     "title": "Intelligence artificielle",
-    "introduction": "Conception et développement d'algorithmes et de modèles d'intelligence artificielle pour des applications scientifiques et pédagogiques, alliant machine learning, deep learning et IA génératives.",
+    "introduction": "Conception et développement d'algorithmes et de modèles d'intelligence artificielle pour des applications scientifiques et pédagogiques, alliant machine learning, deep learning et IA générative.",
     "heroImage": {
         "alt": "Photographie du banc d'essai microfluidique développé pour le projet."
     },
@@ -15,16 +15,16 @@
             "value": "Construction et utilisation de réseaux neuronaux multidimensionnels pour traiter des systèmes chimiques complexes."
         },
         {
-            "label": "IA génératives",
-            "value": "Entraînement et utilisation d'IA génératives pour créer des scénarios pédagogiques adaptatifs et inclusifs."
+            "label": "IA générative",
+            "value": "Entraînement et utilisation de modèles d'IA générative pour créer des scénarios pédagogiques adaptatifs et inclusifs."
         }
     ],
     "description": {
         "paragraphs": [
-            "Mes travaux sur l'intelligence artificielle ont débuté en 2016 en parallèle de ma thèse, alors que j'ai découvert un immense intérêt pour les statistiques et les probabilités. Avec l'aide de Fabrice THALMANN et d'Olivier BENZERARA (Institut Charles Sadron, Strasbourg, France), j'ai pu concevoir mon propre sujet de recherche où l'intelligence artificielle, sous la forme de modèles de type Machine Learning (K-Nearest Neighbors, Support Vector Machine, etc.) conçus pour analyser les propriétés thermodynamiques de membranes lipidiques.",
-            "J'ai pu ensuite mettre à profit mon expertise en développement de modèles IA au cours de mon contrat dans l'équipe de Yansha DENG (département d'ingénierie, King's College London, Royaume-Uni), où j'ai conçu, entraîné et utilisé un réseau neuronal convolutif (CNN) monodimensionel pour analyser des signaux moléculaires et décoder le signal encrypté dans la composition chimique de l'échantillon.",
-            "Mes travaux ont également portés sur l'utilisation d'IA génératives, cette fois dans un contexte purement pédagogique : au cours de mon contrat dans la société I-MAGINEXR, j'ai en effet été amené à mettre en place et à entraîner des agents IA permettant de rendre les contenus pédagogiques disponibles sur notre plateforme en ligne Formao à la fois adaptatifs aux besoins des utilisateurs et surtout inclusifs. Au cours du même contrat, j'ai également eu l'opportunité d'encadrer une étudiante en thèse CIFRE en collaboration avec Simon RICHIR, Sylvain FLEURY (ENSAM) et Nour EL-MAWAN (Université de Lorraine) pour développer une application en réalité virtuelle (VR) permettant de former les enseignants à la prise en charge d'étudiants en situation de troubles sur le spectre de l'autisme.",
-            "L'ensemble de ces travaux m'ont permi de publier un total de 4 publications scientifiques ainsi qu'un module Python open source permettant à tous d'analyser les phases de membranes lipidiques (ML-LPA). Je poursuis encore ponctuellement les collaborations scientifiques liées à l'intelligence artificielle avec mes différents collaborateurs internationaux. Des travaux associés à un modèle CNN 3D pour généraliser nos travaux sur la classification de lipides par intelligence artificielle sont encore en cours, ainsi que des travaux sur l'utilisation d'agent IA pour la formation inclusive."
+            "Mes travaux sur l'intelligence artificielle ont débuté en 2016, en parallèle de ma thèse, lorsque je me suis découvert un immense intérêt pour les statistiques et les probabilités. Avec l'aide de Fabrice THALMANN et d'Olivier BENZERARA (Institut Charles Sadron, Strasbourg, France), j'ai pu concevoir mon propre sujet de recherche, dans lequel l'intelligence artificielle, sous la forme de modèles de type Machine Learning (K-Nearest Neighbors, Support Vector Machine, etc.), était utilisée pour analyser les propriétés thermodynamiques de membranes lipidiques.",
+            "J'ai ensuite pu mettre à profit mon expertise en développement de modèles d'IA au cours de mon contrat dans l'équipe de Yansha DENG (département d'ingénierie, King's College London, Royaume-Uni), où j'ai conçu, entraîné et utilisé un réseau neuronal convolutif (CNN) monodimensionnel pour analyser des signaux moléculaires et décoder le signal encodé dans la composition chimique de l'échantillon.",
+            "Mes travaux ont également porté sur l'utilisation de l'IA générative, cette fois dans un contexte purement pédagogique : au cours de mon contrat dans la société I-MAGINEXR, j'ai en effet été amené à mettre en place et à entraîner des agents d'IA permettant de rendre les contenus pédagogiques disponibles sur notre plateforme en ligne Formao à la fois adaptatifs aux besoins des utilisateurs et surtout inclusifs. Au cours du même contrat, j'ai également eu l'opportunité d'encadrer une étudiante en thèse CIFRE en collaboration avec Simon RICHIR, Sylvain FLEURY (ENSAM) et Nour EL-MAWAN (Université de Lorraine) pour développer une application en réalité virtuelle (VR) permettant de former les enseignants à la prise en charge d'étudiants présentant un trouble du spectre de l'autisme.",
+            "L'ensemble de ces travaux m'a permis de publier un total de 4 publications scientifiques et de développer un module Python documenté, réutilisable et disponible publiquement, permettant à tous d'analyser les phases de membranes lipidiques (MLLPA). Je poursuis encore ponctuellement les collaborations scientifiques liées à l'intelligence artificielle avec mes différents collaborateurs internationaux. Des travaux associés à un modèle CNN 3D pour généraliser nos travaux sur la classification de lipides par intelligence artificielle sont encore en cours, ainsi que des travaux sur l'utilisation d'agents d'IA pour la formation inclusive."
         ],
         "image": {
             "alt": "Diagramme présentant l'architecture du réseau neuronal convolutif développé pour analyser et décoder les signaux moléculaires."
@@ -47,7 +47,7 @@
                     "href": "https://scikit-learn.org/stable/modules/naive_bayes.html"
                 },
                 {
-                    "label": "Classification And Regression Tree",
+                    "label": "Classification and Regression Tree",
                     "href": "https://scikit-learn.org/stable/modules/tree.html"
                 }
             ]
@@ -64,7 +64,7 @@
             ]
         },
         {
-            "title": "IA génératives",
+            "title": "IA générative",
             "items": [
                 {
                     "label": "ChatGPT"

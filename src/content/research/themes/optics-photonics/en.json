@@ -1,70 +1,80 @@
 {
+    "breadcrumbLabel": "Microscopy",
+    "eyebrow": "Fluorescence and interference",
     "title": "Optics and photonics",
-    "introduction": "Design and operation of advanced optical platforms for observing and analysing biological and nanoscale systems.",
+    "introduction": "Design, construction and operation of optical microscopy platforms, ranging from fluorescence microscopy to interferometric scattering microscopy, to study biological and nanoscale systems.",
     "heroImage": {
-        "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        "alt": "Screenshot of my iSCAN software being used to analyse a sample."
     },
     "highlights": [
         {
-            "label": "Microscopy",
-            "value": "Construction, qualification and operation of a complete iSCAT microscope."
+            "label": "Optical microscopy",
+            "value": "Construction, qualification and operation of fluorescence microscopes and complete iSCAT microscopes."
         },
         {
-            "label": "Automation",
-            "value": "Development of LabVIEW software for control, acquisition and analysis."
+            "label": "Software development",
+            "value": "Development of software to control the platforms and analyse the images and sequences acquired using them."
         },
         {
-            "label": "Main publication",
-            "value": "Lead author of an article on spatial light modulation for iSCAT microscopy."
+            "label": "Platform automation",
+            "value": "Development and deployment of algorithms enabling the complete automation of microscopy platforms."
         }
     ],
     "description": {
         "paragraphs": [
-            "My work in optics and photonics focuses on the design, construction and operation of instrumental platforms for observing biological and nanoscale systems.",
-            "It includes the construction and qualification of a complete interferometric scattering microscope, the design of experimental protocols, sample preparation, and data acquisition and analysis.",
-            "It also includes the development of LabVIEW software for controlling and automating scientific instruments, together with work on an automated epifluorescence microscope conducted under a confidentiality agreement."
+            "My work in optics and photonics focuses on the design, construction and operation of microscopy platforms, including both the construction and calibration of optical paths and the development of the various control and analysis software applications required to operate these platforms. In particular, my work has enabled me to develop software for automating microscopy platforms.",
+            "My involvement in the design and development of microscopy platforms began during my contract in Mark I WALLACE's group, in the Department of Chemistry at King's College London, where my project involved building a custom interferometric scattering microscope (iSCAT). In addition to constructing the microscope, I was responsible for developing its control software using LabVIEW. The microscope was subsequently used for my own experimental project as well as for the projects of several employees whom I supervised.",
+            "I was also able to apply my microscopy platform development skills during a consulting assignment for Vidya Health Ltd (London, United Kingdom), where I contributed to the design and, in particular, the programming of a platform capable of automatically analysing a large number of medical samples. My work on this contract focused specifically on designing the autofocus program.",
+            "This body of work enabled me to publish a total of 3 scientific papers, including work studying the kinetics of polymerisation reactions by observing individual molecules."
         ],
         "image": {
-            "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+            "alt": "Photograph of the optical path of the interferometric scattering microscope (iSCAT) built for my project."
         }
     },
     "technologyGroups": [
         {
-            "title": "Microscopy and instrumentation",
+            "title": "Microscopy",
             "items": [
                 {
-                    "label": "iSCAT microscopy"
+                    "label": "Epifluorescence",
+                    "href": "https://en.wikipedia.org/wiki/Fluorescence_microscope"
                 },
                 {
-                    "label": "Epifluorescence microscopy"
-                },
-                {
-                    "label": "Spatial light modulation"
+                    "label": "iSCAT",
+                    "href": "https://en.wikipedia.org/wiki/Interferometric_scattering_microscopy"
                 }
             ]
         },
         {
-            "title": "Control and automation",
+            "title": "Data analysis",
             "items": [
                 {
-                    "label": "LabVIEW"
+                    "label": "NumPy"
                 },
                 {
-                    "label": "Automated acquisition"
+                    "label": "pandas"
                 },
                 {
-                    "label": "Autofocus"
+                    "label": "h5py"
+                },
+                {
+                    "label": "scikit-image"
+                },
+                {
+                    "label": "Pillow"
                 }
             ]
         },
         {
-            "title": "Analysis",
+            "title": "Development and languages",
             "items": [
                 {
-                    "label": "Image processing"
+                    "label": "LabVIEW",
+                    "description": "Used to develop the platform control and automation programs."
                 },
                 {
-                    "label": "Scientific data analysis"
+                    "label": "Python",
+                    "description": "Used to develop scripts and software for analysing images and sequences."
                 }
             ]
         }

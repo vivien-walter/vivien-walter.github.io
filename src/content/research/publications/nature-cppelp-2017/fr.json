@@ -1,9 +1,9 @@
 {
-    "breadcrumbLabel": "Biophys. J. (2024)",
-    "eyebrow": "Biophysical Journal",
+    "breadcrumbLabel": "Sc. Reports (2017)",
+    "eyebrow": "Scientific Reports",
     "description": {
         "paragraphs": [
-            "Although cationic cell-penetrating peptides (CPPs) are able to bind to cell membranes, thus promoting cell internalization by active pathways, attachment of cargo molecules to CPPs invariably reduces their cellular uptake. We show here that CPP binding to lipid bilayers, a simple model of the cell membrane, can be recovered by designing cargo molecules that self-assemble into spherical micelles and increase the local interfacial density of CPP on the surface of the cargo. Experiments performed on model giant unilamellar vesicles under a confocal laser scanning microscope show that a family of thermally responsive elastin-like polypeptides that exhibit temperature-triggered micellization can promote temperature triggered attachment of the micelles to membranes, thus rescuing by self-assembly the cargo-induced loss of the CPP affinity to bio-membranes."
+            "Bien que les peptides cationiques pénétrateurs de cellule (CPP) soient capables de se lier aux membranes cellulaires, favorisant ainsi leur internalisation par des voies actives, le greffage de molécules cargo sur les CPP réduit invariablement leur absorption cellulaire. Nous montrons ici que la liaison des CPP aux bicouches lipidiques, un modèle simple de la membrane cellulaire, peut être restaurée en concevant des molécules cargo qui s’auto-assemblent en micelles sphériques et augmentent la densité interfaciale locale de CPP à la surface du cargo. Des expériences réalisées sur des vésicules unilamellaires géantes modèles à l’aide d’un microscope confocal à balayage laser montrent qu’une famille de polypeptides de type élastine thermosensibles, présentant une micellisation déclenchée par la température, peut favoriser la fixation des micelles aux membranes sous l’effet de la température, restaurant ainsi par auto-assemblage la perte d’affinité des CPP pour les biomembranes induite par le cargo."
         ],
         "image": {
             "alt": "Image prise au microscope confocal de l'adsorption de CPP-ELP à la surface d'une vésicule après augmentation de la température de l'échantillon."

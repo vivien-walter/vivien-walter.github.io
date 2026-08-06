@@ -1,6 +1,6 @@
 import { type KeyboardEvent, useMemo, useState } from 'react';
 
-import { Section, SectionHeader, SectionTitle } from '@/components/section';
+import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Button } from '@/components/ui/button';
 import type { ResearchThemeId } from '@/content/research/registry';
 import { cn } from '@/lib/utils';
@@ -49,6 +49,7 @@ type PublicationListLabels = {
 
 type PublicationListProps = {
   readonly title: string;
+  readonly description?: string;
   readonly titleId: string;
   readonly items: readonly PublicationEntryItem[];
   readonly themes: readonly PublicationThemeOption[];
@@ -71,7 +72,7 @@ function updateSelection(currentSelection: ReadonlySet<string>, value: string, c
   return nextSelection;
 }
 
-function PublicationList({ title, titleId, items, themes, language, labels, showThemeFilter = true }: PublicationListProps) {
+function PublicationList({ title, description, titleId, items, themes, language, labels, showThemeFilter = true }: PublicationListProps) {
   const [activeTab, setActiveTab] = useState<PublicationKind>('article');
 
   const [sortBy, setSortBy] = useState<PublicationSortOption>('year-descending');
@@ -244,6 +245,7 @@ function PublicationList({ title, titleId, items, themes, language, labels, show
     <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-7 sm:mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
+        {description ? <SectionDescription>{description}</SectionDescription> : null}
       </SectionHeader>
 
       <div className={cn('flex flex-col', 'lg:flex-row', 'lg:items-end', 'lg:justify-between')}>

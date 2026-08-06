@@ -15,17 +15,17 @@
             "value": "Conception et optimisation de réactions chimiques au sein d'un réseau de tubes microfluidiques."
         },
         {
-            "label": "Intelligence Artificielle",
+            "label": "Intelligence artificielle",
             "value": "Utilisation de réseaux neuronaux convolutifs pour décoder des signaux moléculaires."
         }
     ],
     "description": {
         "paragraphs": [
-            "Mes travaux en communication moléculaire portent sur la création d'une plateforme expérimentale associant chimie, microfluidique, instrumentation, électronique et traitement du signal pour transmettre des signaux encodés dans des molécules. Ces travaux ont eu lieu au cours de mon contrat dans l'équipe de Yansha Deng au département d'ingénierie du King's College London.",
-            "Pour concevoir et réaliser ce banc d'essai moléculaire, j'ai conçu et fabriqué six pompes à seringues en associant conception mécanique par logiciel CAO, impression 3D, montage électronique et connexion à une carte Arduino, développement d'un protocole de communication I²C et développement d'un logiciel de contrôle à l'aide des langages C++ et Python. Les pompes ainsi que les logiciels sont tous open source pour que toute la communauté scientifique puisse en bénéficier.",
-            "J'ai ensuite pu démontrer l'efficacité de mon banc d'essai en générant et transmettant des signaux encodés dans des solutions chimiques sur une distance allant jusqu'à 25 mètres et en décodant avec succès le message au niveau du récepteur. Les signaux étaient également traités grâce à des réactions chimiques pour optimiser la qualité du signal.",
-            "En parallèle de ces travaux expérimentaux, j’ai pu mettre à profit mes connaissances en intelligence artificielle pour développer un réseau neuronal convolutif (CNN) à une dimension avec Python, TensorFlow et scikit-learn pour analyser des mesures de spectroscopie UV-Visible et décoder ainsi des signaux moléculaires complexes.",
-            "L'ensemble de ces travaux m'ont permi de publier un total de 2 publications scientifiques, mais m'a également donné l'opportunité de diriger la mise en place et l'organisation d'un laboratoire de chimie organique au sein d'un département, de l'achat de l'équipement à la mise en place des protocoles de sécurité et de contrôle qualité."
+            "Mes travaux en communication moléculaire portent sur la création d'une plateforme expérimentale associant chimie, microfluidique, instrumentation, électronique et traitement du signal pour transmettre des signaux encodés dans des molécules. Ces travaux ont été réalisés au cours de mon contrat dans l'équipe de Yansha DENG, au département d'ingénierie du King's College London.",
+            "Pour concevoir et réaliser ce banc d'essai moléculaire, j'ai conçu et fabriqué six pompes à seringues en associant la conception mécanique par CAO, l'impression 3D, le montage électronique et la connexion à une carte Arduino, le développement d'un protocole de communication I²C et celui d'un logiciel de contrôle à l'aide des langages C++ et Python. Les six pompes à seringues sont open source afin que l'ensemble de la communauté scientifique puisse en bénéficier.",
+            "J'ai ensuite pu démontrer l'efficacité de mon banc d'essai en générant et en transmettant des signaux encodés dans des solutions chimiques sur une distance allant jusqu'à 25 mètres, puis en décodant avec succès le message au niveau du récepteur. Les signaux étaient également traités grâce à des réactions chimiques afin d'optimiser leur qualité.",
+            "En parallèle de ces travaux expérimentaux, j'ai pu mettre à profit mes connaissances en intelligence artificielle pour développer un réseau neuronal convolutif (CNN) à une dimension avec Python, TensorFlow et scikit-learn afin d'analyser des mesures de spectroscopie UV-Visible et de décoder ainsi des signaux moléculaires complexes.",
+            "L'ensemble de ces travaux m'a permis de publier un total de 2 publications scientifiques, mais m'a également donné l'opportunité de diriger la mise en place et l'organisation d'un laboratoire de chimie organique au sein du département d'ingénierie, de l'achat des équipements à la mise en place des protocoles de sécurité et de contrôle qualité."
         ],
         "image": {
             "alt": "Diagramme présentant le principe de base du banc d'essai microfluidique."
@@ -59,7 +59,7 @@
                     "label": "Arduino"
                 },
                 {
-                    "label": "I2C",
+                    "label": "I²C",
                     "href": "https://fr.wikipedia.org/wiki/I2C"
                 }
             ]

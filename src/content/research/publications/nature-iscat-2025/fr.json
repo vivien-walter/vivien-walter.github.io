@@ -3,10 +3,10 @@
     "eyebrow": "Nature Communications",
     "description": {
         "paragraphs": [
-            "Living crystallization-driven self-assembly (CDSA) of semicrystalline block copolymers is a powerful method for the bottom-up construction of uniform polymer microstructures with complex hierarchies. Improving our ability to engineer such complex particles demands a better understanding of how to precisely control the self-assembly process. Here, we apply interferometric scattering (iSCAT) microscopy to observe the real-time growth of individual poly(ε-caprolactone)-based fibers and platelets. This label-free method enables us to map the role of key reaction parameters on platelet growth rate, size, and morphology. Furthermore, iSCAT provides a contrast mechanism for studying multi-annulus platelets formed via the sequential addition of different unimers, offering insights into the spatial distribution of polymer compositions within a single platelet."
+            "L’auto-assemblage vivant dirigé par la cristallisation (CDSA) de copolymères à blocs semi-cristallins est une méthode puissante pour la construction ascendante de microstructures polymères uniformes présentant des hiérarchies complexes. Améliorer notre capacité à concevoir de telles particules complexes exige de mieux comprendre comment contrôler précisément le processus d’auto-assemblage. Nous appliquons ici la microscopie à diffusion interférométrique (iSCAT) afin d’observer en temps réel la croissance de fibres et de plaquettes individuelles à base de poly(ε-caprolactone). Cette méthode sans marquage nous permet de cartographier les effets de paramètres réactionnels clés sur la vitesse de croissance, la taille et la morphologie des plaquettes. En outre, l’iSCAT fournit un mécanisme de contraste permettant d’étudier des plaquettes à anneaux multiples formées par l’ajout séquentiel de différents unimères, offrant ainsi un aperçu de la distribution spatiale des compositions polymères au sein d’une même plaquette."
         ],
         "image": {
-            "alt": "Présentation du processus de polymérisation dont la dynamique a été observé en utilisant la microscopie à diffusion interférométrique."
+            "alt": "Présentation du processus de polymérisation dont la dynamique a été observée en utilisant la microscopie à diffusion interférométrique."
         }
     }
 }

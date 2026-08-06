@@ -1,31 +1,34 @@
 {
+    "eyebrow": "At the interface between engineering and biochemistry",
     "title": "Molecular communication",
-    "introduction": "Development of experimental systems using chemical reactions, molecular signals, microfluidics and detection methods.",
+    "introduction": "Development of experimental microfluidic systems using chemical reactions to produce and modify molecular signals and demonstrate paradigms in the field of molecular communication.",
     "heroImage": {
-        "alt": "Photographie du banc d'essai microfluidique développé pour le projet."
+        "alt": "Photograph of the microfluidic testbed developed for the project."
     },
     "highlights": [
         {
-            "label": "Experimental infrastructure",
-            "value": "Creation of a molecular communication laboratory and an operational testbed."
+            "label": "Microfluidics",
+            "value": "Design, construction and programming of a testbed for molecular communication."
         },
         {
-            "label": "Interdisciplinary system",
-            "value": "Chemistry, microfluidics, instrumentation, electronics and signal processing."
+            "label": "Organic chemistry",
+            "value": "Design and optimisation of chemical reactions within a network of microfluidic tubing."
         },
         {
-            "label": "Publications",
-            "value": "Two articles as first author and lead writer."
+            "label": "Artificial intelligence",
+            "value": "Use of convolutional neural networks to decode molecular signals."
         }
     ],
     "description": {
         "paragraphs": [
-            "My work in molecular communication involved creating a laboratory and an experimental platform combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning.",
-            "The testbed enabled the production, transmission and detection of molecular signals to experimentally validate chemical-reaction-based communication concepts.",
-            "I also developed a one-dimensional CNN with Python, TensorFlow and scikit-learn to analyse UV-Visible spectroscopy signals, together with six open-source syringe pumps combining mechanical design, 3D printing, Arduino, I²C communication, C++ and Python."
+            "My work in molecular communication focuses on the creation of an experimental platform combining chemistry, microfluidics, instrumentation, electronics and signal processing to transmit signals encoded in molecules. This work was carried out during my contract in Yansha DENG's team, in the Department of Engineering at King's College London.",
+            "To design and build this molecular testbed, I designed and manufactured six syringe pumps by combining computer-aided design, 3D printing, electronic assembly and connection to an Arduino board, the development of an I²C communication protocol, and the development of control software using C++ and Python. The six syringe pumps are open source so that the wider scientific community can benefit from them.",
+            "I then demonstrated the effectiveness of my testbed by generating and transmitting signals encoded in chemical solutions over a distance of up to 25 metres, and successfully decoding the message at the receiver. The signals were also processed through chemical reactions to optimise their quality.",
+            "Alongside this experimental work, I applied my knowledge of artificial intelligence to develop a one-dimensional convolutional neural network (CNN) using Python, TensorFlow and scikit-learn to analyse UV-Visible spectroscopy measurements and decode complex molecular signals.",
+            "This work enabled me to publish a total of 2 scientific papers and also gave me the opportunity to lead the setup and organisation of an organic chemistry laboratory within the Department of Engineering, from purchasing equipment to implementing safety and quality-control protocols."
         ],
         "image": {
-            "alt": "Diagramme présentant le principe de base du banc d'essai microfluidique."
+            "alt": "Diagram showing the fundamental operating principle of the microfluidic testbed."
         }
     },
     "technologyGroups": [
@@ -39,24 +42,7 @@
                     "label": "UV-Visible spectroscopy"
                 },
                 {
-                    "label": "Chemical reactions"
-                }
-            ]
-        },
-        {
-            "title": "Machine learning",
-            "items": [
-                {
-                    "label": "Python"
-                },
-                {
-                    "label": "TensorFlow"
-                },
-                {
-                    "label": "scikit-learn"
-                },
-                {
-                    "label": "1D CNN"
+                    "label": "Organic chemistry"
                 }
             ]
         },
@@ -73,10 +59,34 @@
                     "label": "Arduino"
                 },
                 {
-                    "label": "I²C"
+                    "label": "I²C",
+                    "href": "https://fr.wikipedia.org/wiki/I2C"
+                }
+            ]
+        },
+        {
+            "title": "Artificial intelligence",
+            "items": [
+                {
+                    "label": "TensorFlow",
+                    "href": "https://www.tensorflow.org/?hl=fr"
                 },
                 {
-                    "label": "C++"
+                    "label": "scikit-learn",
+                    "href": "https://scikit-learn.org/stable/"
+                }
+            ]
+        },
+        {
+            "title": "Development and languages",
+            "items": [
+                {
+                    "label": "Python",
+                    "description": "Used to develop the platform control software and to analyse data."
+                },
+                {
+                    "label": "C++",
+                    "description": "Used to develop the control programs for the Arduino boards."
                 }
             ]
         }

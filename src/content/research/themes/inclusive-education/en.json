@@ -1,82 +1,77 @@
 {
-    "title": "Molecular communication",
-    "introduction": "Development of experimental systems using chemical reactions, molecular signals, microfluidics and detection methods.",
+    "breadcrumbLabel": "Education",
+    "eyebrow": "Supporting learners with disabilities",
+    "title": "Inclusive education",
+    "introduction": "Study and design of educational approaches and tools combining extended reality (VR and AR) and artificial intelligence to train teachers to better support learners with disabilities.",
     "heroImage": {
-        "alt": "Photographie du banc d'essai microfluidique développé pour le projet."
+        "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
     },
     "highlights": [
         {
-            "label": "Experimental infrastructure",
-            "value": "Creation of a molecular communication laboratory and an operational testbed."
+            "label": "Inclusive education",
+            "value": "Creation of educational content to train educators to better support learners with disabilities."
         },
         {
-            "label": "Interdisciplinary system",
-            "value": "Chemistry, microfluidics, instrumentation, electronics and signal processing."
+            "label": "Extended reality",
+            "value": "Use of virtual reality (VR) and augmented reality (AR) to create immersive educational scenarios."
         },
         {
-            "label": "Publications",
-            "value": "Two articles as first author and lead writer."
+            "label": "Artificial intelligence",
+            "value": "Use of generative AI to create applications that respond naturally to user actions."
         }
     ],
     "description": {
         "paragraphs": [
-            "My work in molecular communication involved creating a laboratory and an experimental platform combining chemistry, microfluidics, instrumentation, electronics, signal processing and machine learning.",
-            "The testbed enabled the production, transmission and detection of molecular signals to experimentally validate chemical-reaction-based communication concepts.",
-            "I also developed a one-dimensional CNN with Python, TensorFlow and scikit-learn to analyse UV-Visible spectroscopy signals, together with six open-source syringe pumps combining mechanical design, 3D printing, Arduino, I²C communication, C++ and Python."
+            "During my contract at I-MAGINEXR, I was responsible for supervising a CIFRE PhD student whose research focused on the use of virtual reality (VR) and generative artificial intelligence (AI) to improve teacher training in supporting learners with disabilities, particularly those with autism spectrum disorder (ASD). The supervision of this PhD formed part of a collaboration with Karine GALMICHE, also at I-MAGINEXR, Simon RICHIR and Sylvain FLEURY (ENSAM), and Nour EL-MAWAS (Université de Lorraine).",
+            "By applying a design-based research methodology, we first studied the current needs of teachers, particularly those who had already completed training on supporting learners with disabilities or had previously supported at least one learner with ASD. Through questionnaires, interviews and co-design workshops, we identified these needs and designed three educational scenarios that could be integrated into an educational application.",
+            "We then began designing and developing VR applications incorporating these different scenarios. For this purpose, we used the OpenSpace3D engine developed by I-MAGINEXR, which enabled us to design the scenarios in full. As all these scenarios rely on interactions with virtual avatars representing learners, we also used generative AI to create agents playing their roles. The avatars' reactions therefore appear natural and adapt to the user's actions. Generative AI is also used at the end of the application to conduct a debriefing with the user and allow them to assess their performance during the scenario.",
+            "At present, two scientific papers are being written on this research theme, and work on the VR application is continuing."
         ],
         "image": {
-            "alt": "Diagramme présentant le principe de base du banc d'essai microfluidique."
+            "alt": "Screenshot of OpenSpace3D, the software used to develop the educational applications."
         }
     },
     "technologyGroups": [
         {
-            "title": "Experimental methods",
+            "title": "Themes",
             "items": [
                 {
-                    "label": "Microfluidics"
+                    "label": "Inclusive education"
                 },
                 {
-                    "label": "UV-Visible spectroscopy"
+                    "label": "Autism spectrum disorders"
                 },
                 {
-                    "label": "Chemical reactions"
+                    "label": "Extended reality (XR)"
+                },
+                {
+                    "label": "Virtual reality (VR)"
+                },
+                {
+                    "label": "Generative AI"
                 }
             ]
         },
         {
-            "title": "Machine learning",
+            "title": "Extended reality",
             "items": [
                 {
-                    "label": "Python"
-                },
-                {
-                    "label": "TensorFlow"
-                },
-                {
-                    "label": "scikit-learn"
-                },
-                {
-                    "label": "1D CNN"
+                    "label": "OpenSpace3D",
+                    "href": "https://www.openspace3d.com/fr/"
                 }
             ]
         },
         {
-            "title": "Instrumentation and prototyping",
+            "title": "Artificial intelligence",
             "items": [
                 {
-                    "label": "Autodesk Fusion 360"
+                    "label": "ChatGPT"
                 },
                 {
-                    "label": "3D printing"
+                    "label": "Mistral AI"
                 },
                 {
-                    "label": "Arduino"
-                },
-                {
-                    "label": "I²C"
-                },
-                {
-                    "label": "C++"
+                    "label": "DeepSeek"
                 }
             ]
         }

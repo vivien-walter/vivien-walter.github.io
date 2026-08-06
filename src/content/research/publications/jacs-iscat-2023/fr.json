@@ -3,10 +3,10 @@
     "eyebrow": "Journal of the American Chemical Society",
     "description": {
         "paragraphs": [
-            "Methods capable of controlling synthesis at the level of an individual nanoparticle are a key step toward improved reproducibility and scalability in engineering complex nanomaterials. To address this, we combine the spatially patterned activation of the photoreductant sodium pyruvate with interferometric scattering microscopy to achieve fast, label-free monitoring and control of hundreds of gold nanoparticles in real time. Individual particle growth kinetics are well-described by a two-step nucleation–autocatalysis model but with a distribution of individual rate constants that change with reaction conditions."
+            "Les méthodes permettant de contrôler la synthèse à l’échelle d’une nanoparticule individuelle constituent une étape essentielle pour améliorer la reproductibilité et le passage à l’échelle lors de la conception de nanomatériaux complexes. Pour cela, nous combinons l’activation spatialement structurée du photoréducteur pyruvate de sodium avec la microscopie à diffusion interférométrique afin de suivre et de contrôler rapidement, sans marquage et en temps réel, des centaines de nanoparticules d’or. La cinétique de croissance des particules individuelles est bien décrite par un modèle en deux étapes de nucléation–autocatalyse, mais avec une distribution de constantes de vitesse individuelles qui évoluent selon les conditions de réaction."
         ],
         "image": {
-            "alt": "Présentation du banc d'essai microfluidique sous la forme d'un diagramme, de deux photos et d'une capture d'écran du logiciel de contrôle."
+            "alt": "Évolution de la taille de nanoparticules d'or, enregistrée au cours du temps grâce à un microscope iSCAT."
         }
     }
 }

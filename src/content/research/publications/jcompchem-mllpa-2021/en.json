@@ -1,12 +1,12 @@
 {
-    "breadcrumbLabel": "BBA Biomembranes (2021)",
-    "eyebrow": "MLa",
+    "breadcrumbLabel": "J. Comp. Chem. (2021)",
+    "eyebrow": "Journal of Computational Chemistry",
     "description": {
         "paragraphs": [
-            "Atomistic molecular dynamics simulations have reached a degree of maturity that makes it possible to investigate the lipid polymorphism of model bilayers over a wide range of temperatures. However if both the fluid and tilted gel states are routinely obtained, the ripple phase of phosphatidylcholine lipid bilayers is still unsatifactorily described. Performing simulations of lipid bilayers made of different numbers of DPPC (1,2-dipalmitoylphosphatidylcholine) molecules ranging from 32 to 512, we demonstrate that the tilted gel phase expected below the pretransition cannot be obtained for large systems (equal or larger than 94 DPPC molecules) through common simulations settings or temperature treatments. Large systems are instead found in a disordered gel phase which display configurations, topography and energies reminiscent from the ripple phase observed between the pretransition and the main melting transition. We show how the state of the bilayers below the melting transition can be controlled and depends on thermal history and conditions of preparations. A mechanism for the observed topographic instability is suggested."
+            "Machine Learning-assisted Lipid Phase Analysis (MLLPA) is a new Python 3 module developed to analyze phase domains in a lipid membrane based on lipid molecular states. Reading standard simulation coordinate and trajectory files, the software first analyzes the phase composition of the lipid membrane by using machine learning tools to label each individual molecule according to its state, and then decomposes the simulation box using Voronoi tessellations to analyze the local environment of all the molecules of interest. MLLPA is versatile, as it can read multiple formats (e.g., GROMACS, LAMMPS) and process data from either all-atom (e.g., CHARMM36) or coarse-grained models (e.g., Martini). It can also analyze multiple membrane geometries (e.g., bilayers, vesicles). Finally, the software allows for training with more than two phases, enabling the analysis of multiple coexisting phases."
         ],
         "image": {
-            "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+            "alt": "Analysis of the immediate environment of a lipid within a membrane."
         }
     }
 }
