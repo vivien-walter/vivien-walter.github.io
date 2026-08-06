@@ -1,0 +1,50 @@
+{
+    "eyebrow": "Just keep pumping...",
+    "title": "MolCommUI",
+    "summary": "Software designed to control the different components of a microfluidic testbed, specifically for molecular communication experiments.",
+    "heroImage": {
+        "alt": "Screenshot of MolCommUI in use."
+    },
+    "highlights": [
+        {
+            "label": "Microfluidics",
+            "value": "Software designed to control typical microfluidic equipment, including pumps, flow meters and detectors."
+        },
+        {
+            "label": "Graphical interface",
+            "value": "Designed for ease of use, with a complete graphical interface built with PyQt5."
+        },
+        {
+            "label": "Connectivity and automation",
+            "value": "Designed to fully synchronise all the equipment in the testbed and automate experiments."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "MolCommUI is software designed to control and program a microfluidic testbed. Particular emphasis is placed on synchronising and automating both the software and the entire testbed in order to perform complex molecular communication experiments. Syringe pumps inject specific molecules at controlled intervals and flow rates to transmit messages encoded in the molecular composition of the fluid. Through its connection to the available detectors, including a flow meter and a UV-Visible spectrometer, the testbed can also detect and decode the transmitted messages.",
+            "The central software was developed entirely with Python 3, and no command line is required. The graphical user interface (GUI) is built with PyQt5 and communicates with all the equipment connected to the computer through a standard I²C protocol, except for the UV-Visible spectrometer, which uses a library developed specifically for that instrument. Custom-built equipment, including the syringe pumps and pH probe, is controlled by Arduino boards programmed entirely in C++.",
+            "MolCommUI was developed as part of my work in Yansha DENG's research laboratory in the Department of Engineering at King's College London. It enabled the entire team to operate the microfluidic testbed that I designed and assembled and to use it for their own experiments."
+        ],
+        "image": {
+            "alt": "Excerpt from the logic used in MolCommUI."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Languages",
+            "items": [
+                {
+                    "label": "Python 3",
+                    "description": "Used to develop the software that controls and synchronises the equipment in the testbed."
+                },
+                {
+                    "label": "C++",
+                    "description": "Used to develop the control and synchronisation programs for each Arduino board, including the syringe pumps and pH probe."
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "GitHub repository"
+    }
+}

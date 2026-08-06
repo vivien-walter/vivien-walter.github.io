@@ -1,6 +1,8 @@
 import type { SupportedLanguage } from '@/types/localization';
 
 import { type ResearchThemeId, researchThemeOrder } from '../registry';
+import { getArtificialIntelligenceContent } from './artificial-intelligence';
+import { getInclusiveEducationContent } from './inclusive-education';
 import { getMolecularCommunicationContent } from './molecular-communication';
 import { getMolecularInterfacesContent } from './molecular-interfaces';
 import { getOpticsPhotonicsContent } from './optics-photonics';
@@ -12,6 +14,8 @@ function getResearchThemeCollectionById(language: SupportedLanguage) {
     'molecular-interfaces': getMolecularInterfacesContent(language),
     'optics-photonics': getOpticsPhotonicsContent(language),
     'molecular-communication': getMolecularCommunicationContent(language),
+    'inclusive-education': getInclusiveEducationContent(language),
+    'artificial-intelligence': getArtificialIntelligenceContent(language),
   } as const satisfies Readonly<Record<ResearchThemeId, unknown>>;
 }
 

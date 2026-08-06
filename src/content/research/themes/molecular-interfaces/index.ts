@@ -1,5 +1,7 @@
-import { ArticleIcon, AtomIcon, CodeIcon } from '@phosphor-icons/react';
+import { AtomIcon, DesktopTowerIcon, FlaskIcon, MicroscopeIcon } from '@phosphor-icons/react';
 
+import molecularInterfacesDescriptionImageSrc from '@/assets/images/research/themes/molecular-interfaces/description.png';
+import molecularInterfacesHeroImageSrc from '@/assets/images/research/themes/molecular-interfaces/hero.png';
 import { createResearchThemeContent } from '@/content/research/research-theme-content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -19,7 +21,9 @@ export function getMolecularInterfacesContent(language: SupportedLanguage) {
     id: itemId,
     icon: AtomIcon,
     localizedContent,
-    highlightIcons: [AtomIcon, CodeIcon, ArticleIcon],
+    highlightIcons: [FlaskIcon, MicroscopeIcon, DesktopTowerIcon],
+    heroImageSrc: molecularInterfacesHeroImageSrc,
+    descriptionImageSrc: molecularInterfacesDescriptionImageSrc,
   });
 }
 

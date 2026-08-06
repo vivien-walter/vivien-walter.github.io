@@ -2,6 +2,7 @@ import type { ExperienceId } from '@/content/experience/registry';
 import type { ProjectId } from '@/content/projects/registry';
 import type { SupportedLanguage } from '@/types/localization';
 
+import { getAutoCorrelationContent } from './items/autocorrelation';
 import { getFormaoContent } from './items/formao';
 import { getHPyMonContent } from './items/hpymon';
 import { getIscanContent } from './items/iscan';
@@ -26,6 +27,7 @@ function getSoftwareCollectionById(language: SupportedLanguage) {
     'qr-generator': getQrGeneratorContent(language),
     sentry: getSentryContent(language),
     molcomm: getMolCommContent(language),
+    autocorrelation: getAutoCorrelationContent(language),
   } as const satisfies Readonly<Record<SoftwareId, unknown>>;
 }
 

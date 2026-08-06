@@ -1,64 +1,80 @@
 {
+    "breadcrumbLabel": "Microscopie",
+    "eyebrow": "Fluorescence et interférences",
     "title": "Optique et photonique",
-    "introduction": "Conception et exploitation de plateformes optiques avancées pour observer et analyser des systèmes biologiques et nanométriques.",
+    "introduction": "Conception, construction et exploitation de plateformes de microscopie photonique, allant de la microscopie de fluorescence à la microscopie de diffusion interférométrique, pour étudier des systèmes biologiques et nanométriques.",
+    "heroImage": {
+        "alt": "Capture d'écran de mon logiciel iSCAN utilisé pour l'analyse d'un échantillon."
+    },
     "highlights": [
         {
-            "label": "Microscopie",
-            "value": "Construction, qualification et exploitation d’un microscope iSCAT complet."
+            "label": "Microscopie photonique",
+            "value": "Construction, qualification et exploitation de microscopes de fluorescence de microscopes iSCAT complets."
         },
         {
-            "label": "Automatisation",
-            "value": "Développement de logiciels LabVIEW de contrôle, d’acquisition et d’analyse."
+            "label": "Développement de logiciels",
+            "value": "Création de logiciels pour contrôler les plateformes et analyser les images et séquences obtenues sur ces plateformes."
         },
         {
-            "label": "Publication principale",
-            "value": "Auteur principal d’un article consacré à la modulation spatiale de lumière en microscopie iSCAT."
+            "label": "Automatisation de plateforme",
+            "value": "Développement et déploiement d'algorithmes permettant l'automatisation complète de plateformes de microscopie."
         }
     ],
     "description": {
         "paragraphs": [
-            "Mes travaux en optique et photonique portent sur la conception, la construction et l’exploitation de plateformes instrumentales destinées à l’observation de systèmes biologiques et nanométriques.",
-            "Ils comprennent la construction et la qualification d’un microscope de diffusion interférométrique iSCAT complet, la conception des protocoles expérimentaux, la préparation des échantillons ainsi que l’acquisition et l’analyse des données.",
-            "Ils incluent également le développement de logiciels LabVIEW pour le contrôle et l’automatisation d’instruments scientifiques, ainsi que des travaux sur un microscope d’épifluorescence automatisé réalisés sous accord de confidentialité."
-        ]
+            "Mes travaux en optique et photonique portent sur la conception, la construction et l’exploitation de plateformes de microscopie, incluant à la fois la construction et la calibration des chemins optiques mais également la programmation des différents logiciels de contrôle mais aussi d'analyse indispensasbles pour l'utilisation de ces plateformes. En particulier, mes travaux m'ont permis de mettre au point des logiciels d'automatisation des plateformes de microscopie",
+            "Mon implication dans la conception et le développement de plateforme de microscopie a commencé au cours de mon contrat au sein du groupe de Mark I WALLACE au département de chimie du King's College London, où mon projet consistait à construire sur mesure un microscope à diffusion interférométrique (iSCAT). En plus de construire le microscope, je devais développer son logiciel de contrôle à l'aide du langage LabVIEW. Le microscope a ensuite été utilisé pour mon propre projet expérimental ainsi que pour les projets de plusieurs employés que je supervisais.",
+            "J'ai également pu utiliser mes compétences en développement de plateforme microscopique au cours d'un contrat de consultance pour la société Vidya Health Ltd (Londres, Royaume-Uni), où j'ai contribué à la conception et surtout à la programmation d'une plateforme capable d'analyser automatiquement un grand nombre d'échantillons médicaux. En particulier, mes travaux sur ce contrat se sont concentrés sur la conception du programme d'auto-focus.",
+            "L'ensemble de ces travaux m'ont permi de publier un total de 3 publications scientifiques, notamment pour étudier la cinétique de réaction de polymérisation en observant des molécules individuellement. "
+        ],
+        "image": {
+            "alt": "Photographie du chemin optique du microscope à diffusion interférométrique (iSCAT) construit pour mon projet."
+        }
     },
     "technologyGroups": [
         {
-            "title": "Microscopie et instrumentation",
+            "title": "Microscopie",
             "items": [
                 {
-                    "label": "Microscopie iSCAT"
+                    "label": "Epifluorescence",
+                    "href": "https://en.wikipedia.org/wiki/Fluorescence_microscope"
                 },
                 {
-                    "label": "Microscopie d’épifluorescence"
-                },
-                {
-                    "label": "Modulation spatiale de lumière"
+                    "label": "iSCAT",
+                    "href": "https://en.wikipedia.org/wiki/Interferometric_scattering_microscopy"
                 }
             ]
         },
         {
-            "title": "Contrôle et automatisation",
+            "title": "Analyse de données",
             "items": [
                 {
-                    "label": "LabVIEW"
+                    "label": "NumPy"
                 },
                 {
-                    "label": "Acquisition automatisée"
+                    "label": "pandas"
                 },
                 {
-                    "label": "Autofocus"
+                    "label": "h5py"
+                },
+                {
+                    "label": "scikit-image"
+                },
+                {
+                    "label": "Pillow"
                 }
             ]
         },
         {
-            "title": "Analyse",
+            "title": "Développement et langages",
             "items": [
                 {
-                    "label": "Traitement d’images"
+                    "label": "LabVIEW",
+                    "description": "Utilisé pour développer les programmes de contrôle et d'automatisation des plateformes."
                 },
                 {
-                    "label": "Analyse de données scientifiques"
+                    "label": "Python",
+                    "description": "Utilisé pour développer les scripts et logiciels d'analyse d'images et de séquences."
                 }
             ]
         }

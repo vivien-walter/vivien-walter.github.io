@@ -82,9 +82,10 @@ function ResearchThemeDetailPage() {
             },
           ],
         }}
-        eyebrow={detail.eyebrow}
+        eyebrow={theme.eyebrow ?? detail.eyebrow}
         title={theme.title}
         introduction={theme.introduction}
+        image={theme.heroImage}
       />
 
       <DetailHighlightsBand ariaLabel={detail.highlightsLabel} items={theme.highlights} />
@@ -115,6 +116,7 @@ function ResearchThemeDetailPage() {
         ) : null}
 
         <DetailNavigation
+          className="mt-4 sm:mt-6"
           ariaLabel={detail.navigationLabel}
           backLink={{
             label: detail.backLabel,

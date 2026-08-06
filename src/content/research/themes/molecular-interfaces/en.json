@@ -1,6 +1,11 @@
 {
+    "breadcrumbLabel": "Biomembranes",
+    "eyebrow": "Expériences et simulations numériques",
     "title": "Molecular interfaces and biophysics",
     "introduction": "Study of lipid membranes, their phase transitions and their interactions through molecular simulation and data analysis.",
+    "heroImage": {
+        "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+    },
     "highlights": [
         {
             "label": "Research focus",
@@ -21,7 +26,10 @@
             "It combines molecular dynamics simulations, classification, scientific data processing and machine-learning approaches, including three-dimensional convolutional neural networks.",
             "This research led to the development of MLLPA, a documented and reusable Python module for machine-learning-assisted analysis of lipid membrane phases.",
             "I continue occasional scientific collaborations related to lipid membranes and MLLPA. Work associated with a three-dimensional CNN has not yet been published."
-        ]
+        ],
+        "image": {
+            "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        }
     },
     "technologyGroups": [
         {

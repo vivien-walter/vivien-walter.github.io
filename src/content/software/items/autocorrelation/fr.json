@@ -1,0 +1,46 @@
+{
+    "eyebrow": "Analyse de séquences d'images",
+    "title": "AutoCorrelation Function",
+    "summary": "Plugin pour le logiciel ImageJ conçu pour analyser des images et des séquences et mesurer les tailles et temps caractéristiques des fluctuations observables sur ces images.",
+    "heroImage": {
+        "alt": "Capture d'écran du logiciel ImageJ ou une zone de l'écran a été sélectionnée pour le calcul."
+    },
+    "highlights": [
+        {
+            "label": "Traitement d'image",
+            "value": "Conçu pour corriger et analyser des images et des séquences prises avec un microscope."
+        },
+        {
+            "label": "Mesure de corrélations",
+            "value": "Permets de mesurer les distances et tailles caractérisant l'autocorrelation de domaines dans les séquences."
+        },
+        {
+            "label": "Plugin ImageJ",
+            "value": "L'utilisation nécessite l'installation du logiciel ImageJ et l'importation du code dans les plugins du logiciel."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "AutoCorrelation Function est un plugin pour le logiciel ImageJ qui permet de réaliser des mesures d'autocorrelation spatiale ou temporelle sur des images et des séquences. Ces mesures permettent d'obtenir les distances caractéristiques d'une image (par exemple, la taille moyenne des domaines sur une surface tachetée) ainsi que les temps caractéristiques de séquences (période moyenne d'oscillation de l'intensité lumineuse).",
+            "Profitant des outils de création d'interfaces utilisateur offerts par ImageJ, AutoCorrelation Function permet à l'utilisateur de sélectionner des zones d'intérêt dans l'image ou la séquence qu'il souhaite analyser, afin de de contrôler la zone exacte où seront effectuées toutes les mesures. Dans le cadre de l'autocorrelation spatiale, le plugin permet à l'utilisateur de choisir entre un calcul rapide grâce aux FFT, et un calcul plus long mais plus précis ne passant pas par l'espace des phases.",
+            "AutoCorrelation Function a été réalisé dans le cadre de mes travaux de doctorat au sein du laboratoire de recherche de Carlos M MARQUES, à l'Institut Charles Sadron de l'Université de Strasbourg, afin de permettre à l'ensemble du personnel d'analyser les fluctuations des membranes lipidiques observées avec un microscope. Les travaux utilisant ce plugin n'ont été publiés que dans ma thèse de doctorat."
+        ],
+        "image": {
+            "alt": "Capture d'écran du logiciel ImageJ au cours de l'utilisation du plugin AutoCorrelation Function."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Langage",
+            "items": [
+                {
+                    "label": "Java",
+                    "description": "Utilisé spécifiquement pour développer un plug-in pour le logiciel ImageJ."
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "github": "Dépôt GitHub"
+    }
+}

@@ -1,6 +1,9 @@
 {
     "title": "Research and publications",
     "introduction": "My work connects biophysics, instrumentation, signal processing, machine learning and software development. This activity continues through publications, software and occasional collaborations.",
+    "heroImage": {
+        "alt": "Picture of the optical path of an iSCAT microscope."
+    },
     "sectionTitles": {
         "themes": "Research themes",
         "publications": "Selected publications",

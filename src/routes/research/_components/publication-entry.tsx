@@ -2,8 +2,8 @@ import { ArrowRightIcon, ArrowSquareOutIcon } from '@phosphor-icons/react';
 import { type ElementType, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
+import { InteractiveCard } from '@/components/interactive-card';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import type { PublicationId } from '@/content/research/publications/registry';
 import type { ResearchThemeId } from '@/content/research/registry';
 import { cn } from '@/lib/utils';
@@ -53,18 +53,9 @@ function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel =
 
   return (
     <article aria-labelledby={headingId} className="min-w-0">
-      <Card
-        className={cn(
-          'gap-0 overflow-hidden rounded-lg py-0',
-          'border-border-strong',
-          'bg-brand-background',
-          'shadow-none',
-          'transition-[border-color,background-color,box-shadow]',
-          'ease-standard duration-150',
-          'hover:border-brand-primary',
-          'hover:bg-action-soft/20',
-          'hover:shadow-subtle',
-        )}
+      <InteractiveCard
+        interaction="self"
+        className={cn('gap-0 overflow-hidden rounded-lg py-0', 'border-border-strong', 'bg-brand-background', 'shadow-none')}
       >
         <div
           className={cn(
@@ -194,7 +185,7 @@ function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel =
             ) : null}
           </div>
         </div>
-      </Card>
+      </InteractiveCard>
     </article>
   );
 }

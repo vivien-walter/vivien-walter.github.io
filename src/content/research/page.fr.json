@@ -1,7 +1,10 @@
 {
     "breadcrumbLabel": "Recherche",
     "title": "Recherche et publications",
-    "introduction": "Mes travaux relient biophysique, instrumentation, traitement du signal, apprentissage automatique et développement logiciel. Cette activité se poursuit à travers les publications, les logiciels et des collaborations ponctuelles.",
+    "introduction": "Mes projets professionnels s'articulent régulièrement autour d'activités de recherches scientifiques. Passioné et surtout incroyablement curieux, j'ai eu l'opportunité d'explorer différents domaines de recherche : biophysique expérimentale, simulations numériques, ingénierie en communication moléculaire, développement de modèles d'intelligence artificielle et même pédagogie inclusive. Vous retrouverez sur cette page tous ces thèmes de recherche et les publications scientifiques qui en ont découlé.",
+    "heroImage": {
+        "alt": "Photographie du chemin optique d'un microscope iSCAT."
+    },
     "sectionTitles": {
         "themes": "Thématiques de recherche",
         "publications": "Publications sélectionnées",

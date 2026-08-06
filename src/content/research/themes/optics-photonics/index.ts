@@ -1,5 +1,7 @@
-import { ApertureIcon, ArticleIcon, CodeIcon, MicroscopeIcon } from '@phosphor-icons/react';
+import { ApertureIcon, CodeIcon, GearIcon, MicroscopeIcon } from '@phosphor-icons/react';
 
+import opticsPhotonicsDescriptionImageSrc from '@/assets/images/research/themes/optics-photonics/description.jpg';
+import opticsPhotonicsHeroImageSrc from '@/assets/images/research/themes/optics-photonics/hero.png';
 import { createResearchThemeContent } from '@/content/research/research-theme-content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -19,7 +21,9 @@ export function getOpticsPhotonicsContent(language: SupportedLanguage) {
     id: itemId,
     icon: ApertureIcon,
     localizedContent,
-    highlightIcons: [MicroscopeIcon, CodeIcon, ArticleIcon],
+    highlightIcons: [MicroscopeIcon, CodeIcon, GearIcon],
+    heroImageSrc: opticsPhotonicsHeroImageSrc,
+    descriptionImageSrc: opticsPhotonicsDescriptionImageSrc,
   });
 }
 

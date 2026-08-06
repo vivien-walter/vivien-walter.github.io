@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
@@ -7,6 +8,7 @@ import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
 import { getResearchPageContent } from '@/content/research/page';
 import { getPublicationCollection } from '@/content/research/publications/catalog';
+import type { ResearchThemeId } from '@/content/research/registry';
 import { getResearchThemeCollection } from '@/content/research/themes/catalog';
 import { cn } from '@/lib/utils';
 
@@ -23,6 +25,14 @@ function ResearchPage() {
   const page = getResearchPageContent(language);
 
   const themes = getResearchThemeCollection(language);
+
+  const defaultThemeIndex = themes.length > 0 ? Math.floor((themes.length - 1) / 2) : -1;
+
+  const defaultThemeId = defaultThemeIndex >= 0 ? themes[defaultThemeIndex]?.id : undefined;
+
+  const [selectedThemeId, setSelectedThemeId] = useState<ResearchThemeId | undefined>(() => defaultThemeId);
+
+  const activeThemeId = selectedThemeId && themes.some((theme) => theme.id === selectedThemeId) ? selectedThemeId : defaultThemeId;
 
   const publications: readonly PublicationEntryItem[] = getPublicationCollection(language).map((publication) => ({
     id: publication.id,
@@ -66,6 +76,7 @@ function ResearchPage() {
         }}
         title={page.title}
         introduction={page.introduction}
+        image={page.heroImage}
       />
 
       <div className={cn('max-w-editorial px-page mx-auto w-full', 'pb-12 sm:pb-14 lg:pb-16')}>
@@ -75,12 +86,34 @@ function ResearchPage() {
               <SectionTitle id="research-themes-title">{page.sectionTitles.themes}</SectionTitle>
             </SectionHeader>
 
-            <ul className={cn('m-0 grid list-none gap-6 p-0', 'md:grid-cols-2', 'lg:grid-cols-3')}>
-              {themes.map((theme) => (
-                <li key={theme.id} className="m-0 min-w-0">
-                  <ResearchThemeCard theme={theme} to={getResearchThemeRoute(theme.id, language)} headingLevel={3} />
-                </li>
-              ))}
+            <ul className={cn('m-0 flex list-none', 'items-center gap-3', 'p-0 pt-2', 'sm:gap-4')}>
+              {themes.map((theme) => {
+                const isSelected = theme.id === activeThemeId;
+
+                return (
+                  <li
+                    key={theme.id}
+                    className={cn(
+                      'm-0 flex min-h-64 min-w-0 items-center',
+                      'transition-[flex-grow,flex-basis]',
+                      'ease-standard duration-200',
+                      isSelected ? 'flex-[1_1_0%]' : 'flex-[0_0_4rem]',
+                      'motion-reduce:transition-none',
+                    )}
+                  >
+                    <ResearchThemeCard
+                      theme={theme}
+                      to={getResearchThemeRoute(theme.id, language)}
+                      headingLevel={3}
+                      isSelected={isSelected}
+                      viewMoreLabel={page.publications.actions.viewMore}
+                      onSelect={() => {
+                        setSelectedThemeId(theme.id);
+                      }}
+                    />
+                  </li>
+                );
+              })}
             </ul>
           </Section>
         ) : null}

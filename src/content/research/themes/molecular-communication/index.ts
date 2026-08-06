@@ -1,5 +1,7 @@
-import { ArticleIcon, FlaskIcon, MicroscopeIcon, WavesIcon } from '@phosphor-icons/react';
+import { BrainIcon, DropIcon, FlaskIcon, WavesIcon } from '@phosphor-icons/react';
 
+import molecularCommunicationDescriptionImageSrc from '@/assets/images/research/themes/molecular-communication/description.png';
+import molecularCommunicationHeroImageSrc from '@/assets/images/research/themes/molecular-communication/hero.png';
 import { createResearchThemeContent } from '@/content/research/research-theme-content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -19,7 +21,9 @@ export function getMolecularCommunicationContent(language: SupportedLanguage) {
     id: itemId,
     icon: WavesIcon,
     localizedContent,
-    highlightIcons: [FlaskIcon, MicroscopeIcon, ArticleIcon],
+    highlightIcons: [DropIcon, FlaskIcon, BrainIcon],
+    heroImageSrc: molecularCommunicationHeroImageSrc,
+    descriptionImageSrc: molecularCommunicationDescriptionImageSrc,
   });
 }
 

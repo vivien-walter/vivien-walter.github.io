@@ -1,8 +1,7 @@
 {
-    "eyebrow": "Logiciels et applications",
     "title": "Mes logiciels et applications",
     "breadcrumbLabel": "Logiciels",
-    "introduction": "Conception, développement et mise en production de logiciels scientifiques, d’outils d’instrumentation et de solutions d’analyse de données.",
+    "introduction": "Vous trouverez dans cette page l'ensemble des logiciels, bibliothèques et applications web que j'ai conçu et développé, que ce soit seul ou au sein d'une collaboration avec d'autres programmeurs talentueux.",
     "heroActions": {
         "github": "Découvrir mes dépôts GitHub"
     },

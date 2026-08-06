@@ -1,0 +1,97 @@
+{
+    "eyebrow": "Analyse de données et adaptativité",
+    "title": "Intelligence artificielle",
+    "introduction": "Conception et développement d'algorithmes et de modèles d'intelligence artificielle pour des applications scientifiques et pédagogiques, alliant machine learning, deep learning et IA génératives.",
+    "heroImage": {
+        "alt": "Photographie du banc d'essai microfluidique développé pour le projet."
+    },
+    "highlights": [
+        {
+            "label": "Machine Learning",
+            "value": "Conception et développement de modèles statistiques pour analyser et classifier des données numériques."
+        },
+        {
+            "label": "Deep Learning",
+            "value": "Construction et utilisation de réseaux neuronaux multidimensionnels pour traiter des systèmes chimiques complexes."
+        },
+        {
+            "label": "IA génératives",
+            "value": "Entraînement et utilisation d'IA génératives pour créer des scénarios pédagogiques adaptatifs et inclusifs."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Mes travaux sur l'intelligence artificielle ont débuté en 2016 en parallèle de ma thèse, alors que j'ai découvert un immense intérêt pour les statistiques et les probabilités. Avec l'aide de Fabrice THALMANN et d'Olivier BENZERARA (Institut Charles Sadron, Strasbourg, France), j'ai pu concevoir mon propre sujet de recherche où l'intelligence artificielle, sous la forme de modèles de type Machine Learning (K-Nearest Neighbors, Support Vector Machine, etc.) conçus pour analyser les propriétés thermodynamiques de membranes lipidiques.",
+            "J'ai pu ensuite mettre à profit mon expertise en développement de modèles IA au cours de mon contrat dans l'équipe de Yansha DENG (département d'ingénierie, King's College London, Royaume-Uni), où j'ai conçu, entraîné et utilisé un réseau neuronal convolutif (CNN) monodimensionel pour analyser des signaux moléculaires et décoder le signal encrypté dans la composition chimique de l'échantillon.",
+            "Mes travaux ont également portés sur l'utilisation d'IA génératives, cette fois dans un contexte purement pédagogique : au cours de mon contrat dans la société I-MAGINEXR, j'ai en effet été amené à mettre en place et à entraîner des agents IA permettant de rendre les contenus pédagogiques disponibles sur notre plateforme en ligne Formao à la fois adaptatifs aux besoins des utilisateurs et surtout inclusifs. Au cours du même contrat, j'ai également eu l'opportunité d'encadrer une étudiante en thèse CIFRE en collaboration avec Simon RICHIR, Sylvain FLEURY (ENSAM) et Nour EL-MAWAN (Université de Lorraine) pour développer une application en réalité virtuelle (VR) permettant de former les enseignants à la prise en charge d'étudiants en situation de troubles sur le spectre de l'autisme.",
+            "L'ensemble de ces travaux m'ont permi de publier un total de 4 publications scientifiques ainsi qu'un module Python open source permettant à tous d'analyser les phases de membranes lipidiques (ML-LPA). Je poursuis encore ponctuellement les collaborations scientifiques liées à l'intelligence artificielle avec mes différents collaborateurs internationaux. Des travaux associés à un modèle CNN 3D pour généraliser nos travaux sur la classification de lipides par intelligence artificielle sont encore en cours, ainsi que des travaux sur l'utilisation d'agent IA pour la formation inclusive."
+        ],
+        "image": {
+            "alt": "Diagramme présentant l'architecture du réseau neuronal convolutif développé pour analyser et décoder les signaux moléculaires."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Modèles Machine Learning",
+            "items": [
+                {
+                    "label": "K-Nearest Neighbors",
+                    "href": "https://scikit-learn.org/stable/modules/neighbors.html"
+                },
+                {
+                    "label": "Support Vector Machine",
+                    "href": "https://scikit-learn.org/stable/modules/svm.html"
+                },
+                {
+                    "label": "Naive Bayes",
+                    "href": "https://scikit-learn.org/stable/modules/naive_bayes.html"
+                },
+                {
+                    "label": "Classification And Regression Tree",
+                    "href": "https://scikit-learn.org/stable/modules/tree.html"
+                }
+            ]
+        },
+        {
+            "title": "Modèles Deep Learning",
+            "items": [
+                {
+                    "label": "CNN 1D"
+                },
+                {
+                    "label": "CNN 3D"
+                }
+            ]
+        },
+        {
+            "title": "IA génératives",
+            "items": [
+                {
+                    "label": "ChatGPT"
+                },
+                {
+                    "label": "Mistral AI"
+                },
+                {
+                    "label": "DeepSeek"
+                }
+            ]
+        },
+        {
+            "title": "Langages et bibliothèques",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "TensorFlow",
+                    "href": "https://www.tensorflow.org/?hl=fr"
+                },
+                {
+                    "label": "scikit-learn",
+                    "href": "https://scikit-learn.org/stable/"
+                }
+            ]
+        }
+    ]
+}

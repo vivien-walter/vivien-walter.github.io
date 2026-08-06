@@ -1,8 +1,9 @@
 export const researchThemeOrder = [
-  "molecular-interfaces",
-  "optics-photonics",
-  "molecular-communication",
+  'optics-photonics',
+  'molecular-interfaces',
+  'artificial-intelligence',
+  'molecular-communication',
+  'inclusive-education',
 ] as const;
 
-export type ResearchThemeId =
-  (typeof researchThemeOrder)[number];
+export type ResearchThemeId = (typeof researchThemeOrder)[number];

@@ -46,7 +46,7 @@ const authors = [
   },
 ] as const satisfies readonly PublicationAuthor[];
 
-const themeIds = ['molecular-communication'] as const satisfies readonly ResearchThemeId[];
+const themeIds = ['optics-photonics'] as const satisfies readonly ResearchThemeId[];
 
 const projectIds = ['molecular-communication'] as const satisfies readonly ProjectId[];
 

@@ -1,0 +1,79 @@
+{
+    "breadcrumbLabel": "Pédagogie",
+    "eyebrow": "Prise en charge des handicaps",
+    "title": "Pédagogique inclusive",
+    "introduction": "Etude et conception d'approches et d'outils pédagogiques, alliant les réalités étendues (VR, AR) et l'intelligence artificielle, pour former les enseignants à mieux prendre en charge les apprenants présentant un handicap.",
+    "heroImage": {
+        "alt": "Photographie du banc d'essai microfluidique développé pour le projet."
+    },
+    "highlights": [
+        {
+            "label": "Pédagogie inclusive",
+            "value": "Création de contenus pédagogiques permettant de former les éducateurs à une meilleure prise en charge des handicaps."
+        },
+        {
+            "label": "Réalité étendue",
+            "value": "Utilisation de la réalité virtuelle (VR) et de la réalité étendue (AR) pour créer des scénarios pédagogiques immersifs."
+        },
+        {
+            "label": "Intelligence Artificielle",
+            "value": "Utilisation de l'IA générative pour créer des applications réagissant de façon naturelle aux actions de l'utilisateur."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Au cours de mon contrat au sein de la société I-MAGINEXR, j'ai eu pour mission d'encadrer une étudiante en thèse CIFRE dont les travaux portaient sur l'utilisation de la réalité virtuelle (VR) et de l'intelligence artificielle (IA) générative pour permettre une meilleure formation des enseignants à la prise en charge des apprenants en situation de handicap, en particulier ceux présentant un trouble du spectre autistique (TSA). L'encadrement de cette thèse était géré par une collaboration avec Karine GALMICHE (I-MAGINEXR également), Simon RICHIR, Sylvain FLEURY (ENSAM) et Nour EL-MAWAS (Université de Lorraine).",
+            "En décidant d'appliquer une méthodologie de type recherche orientée design (design-based recherche), nous avons dans un premier temps étudié les besoins actuels des enseignants, notamment ceux ayant déjà eu des expériences avec soit des formations de prise en charge du handicap, soit des expériences avec la prise en charge d'au moins un apprenant présentant un TSA. Au travers de questionnaires, d'entretiens et d'ateliers de co-conception, nous avons pu identifier à la fois ces besoins, mais avons également conçu 3 scénarios pédagogiques qui se montreraient pertinents pour une application pédagogique.",
+            "Nous avons ensuite commencé à concevoir et développer des applications VR intégrant ces différents scénarios. Nous avons pour cela utilisé le moteur open source OpenSpace3D développé par I-MAGINEXR qui permet une conception complète de ces scénarios. Tous ces scénarios se basant sur des interactions avec des avatars virtuels représentant les apprenants, nous avons également utilisé l'IA générative pour créer des agents jouant le rôle des apprenants. Ce faisant, les réactions des avatars apparaissent naturels et s'adaptent toujours parfaitement aux actions de l'utilisateur. L'IA générative est également utilisé à la fin de l'application, pour réaliser un debriefing avec l'utilisateur et lui permettre d'avoir une évaluation de sa performance au cours du scénario.",
+            "A l'heure actuelle, deux publications scientifiques sont en cours de rédaction sur cette thématique de recherche, et les travaux de préparation de l'application VR se poursuivent."
+        ],
+        "image": {
+            "alt": "Capture d'écran d'OpenSpace3D, logiciel open source utilisé pour le développement des applications pédagogiques."
+        }
+    },
+    "technologyGroups": [
+        {
+            "title": "Thématiques",
+            "items": [
+                {
+                    "label": "Pédagogie inclusive"
+                },
+                {
+                    "label": "Troubles du spectre autistique"
+                },
+                {
+                    "label": "Réalité étendue (XR)"
+                },
+                {
+                    "label": "Réalité virtuelle (VR)"
+                },
+                {
+                    "label": "IA générative"
+                }
+            ]
+        },
+        {
+            "title": "Réalité étendue",
+            "items": [
+                {
+                    "label": "OpenSpace3D",
+                    "href": "https://www.openspace3d.com/fr/"
+                }
+            ]
+        },
+        {
+            "title": "Intelligence artificielle",
+            "items": [
+                {
+                    "label": "ChatGPT"
+                },
+                {
+                    "label": "Mistral AI"
+                },
+                {
+                    "label": "DeepSeek"
+                }
+            ]
+        }
+    ]
+}

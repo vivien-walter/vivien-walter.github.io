@@ -1,5 +1,6 @@
 import type { Icon } from '@phosphor-icons/react';
 
+import researchHeroImageSrc from '@/assets/images/research/hero.jpg';
 import { publicProfile } from '@/content/common/profile';
 import { selectLocalizedContent } from '@/lib/content/localization';
 import type { SupportedLanguage } from '@/types/localization';
@@ -55,6 +56,10 @@ export function getResearchPageContent(language: SupportedLanguage) {
   return {
     ...localized,
     breadcrumbLabel,
+    heroImage: {
+      src: researchHeroImageSrc,
+      alt: localized.heroImage.alt,
+    },
     resources,
   } as const;
 }

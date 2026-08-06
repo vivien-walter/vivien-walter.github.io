@@ -1,6 +1,9 @@
 {
     "title": "Optics and photonics",
     "introduction": "Design and operation of advanced optical platforms for observing and analysing biological and nanoscale systems.",
+    "heroImage": {
+        "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+    },
     "highlights": [
         {
             "label": "Microscopy",
@@ -20,7 +23,10 @@
             "My work in optics and photonics focuses on the design, construction and operation of instrumental platforms for observing biological and nanoscale systems.",
             "It includes the construction and qualification of a complete interferometric scattering microscope, the design of experimental protocols, sample preparation, and data acquisition and analysis.",
             "It also includes the development of LabVIEW software for controlling and automating scientific instruments, together with work on an automated epifluorescence microscope conducted under a confidentiality agreement."
-        ]
+        ],
+        "image": {
+            "alt": "[CONTENU À FOURNIR — NE PAS PUBLIER]"
+        }
     },
     "technologyGroups": [
         {
