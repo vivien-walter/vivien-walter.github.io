@@ -18,7 +18,7 @@ const localizedContent = {
   en: enJson,
 } as const;
 
-const projectIds = ['mllpa-project'] as const satisfies readonly ProjectId[];
+const projectIds = ['molecular-dynamics'] as const satisfies readonly ProjectId[];
 
 const experienceIds = ['strasbourg-mllpa'] as const satisfies readonly ExperienceId[];
 

@@ -1,14 +1,3 @@
-export const projectOrder = [
-  "lxp-campus",
-  "molecular-communication",
-  "iscat-platform",
-  "mllpa-project",
-  "medical-microscope",
-] as const;
+export const projectOrder = ['lxp-campus', 'molecular-communication', 'molecular-dynamics', 'iscat-platform', 'lipid-membranes'] as const;
 
-export type ProjectId =
-  (typeof projectOrder)[number];
-
-export const featuredProjectIds = [
-  "lxp-campus",
-] as const satisfies readonly ProjectId[];
+export type ProjectId = (typeof projectOrder)[number];

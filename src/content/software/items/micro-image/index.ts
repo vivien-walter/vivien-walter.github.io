@@ -1,5 +1,6 @@
 import { BooksIcon, CodeIcon, GithubLogoIcon, MicroscopeIcon, MonitorIcon } from '@phosphor-icons/react';
 
+import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent, type SoftwareResource } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -13,6 +14,8 @@ const localizedContent = {
   fr: frJson,
   en: enJson,
 } as const;
+
+const projectIds = ['iscat-platform'] as const satisfies readonly ProjectId[];
 
 export function getMicroImageContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
@@ -31,6 +34,7 @@ export function getMicroImageContent(language: SupportedLanguage) {
         isExternal: true,
       },
     ],
+    projectIds,
   });
 }
 

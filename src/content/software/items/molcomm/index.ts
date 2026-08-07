@@ -2,6 +2,7 @@ import { CodeIcon, GithubLogoIcon, MonitorIcon, NetworkIcon, SyringeIcon } from 
 
 import molCommDescriptionImageSrc from '@/assets/images/softwares/items/molcomm/description.png';
 import molCommHeroImageSrc from '@/assets/images/softwares/items/molcomm/hero.png';
+import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent, type SoftwareResource } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -15,6 +16,8 @@ const localizedContent = {
   fr: frJson,
   en: enJson,
 } as const;
+
+const projectIds = ['molecular-communication'] as const satisfies readonly ProjectId[];
 
 export function getMolCommContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
@@ -33,6 +36,7 @@ export function getMolCommContent(language: SupportedLanguage) {
         isExternal: true,
       },
     ],
+    projectIds,
     heroImageSrc: molCommHeroImageSrc,
     descriptionImageSrc: molCommDescriptionImageSrc,
   });

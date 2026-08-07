@@ -2,6 +2,7 @@ import { CodeIcon, GearIcon, MicroscopeIcon, NetworkIcon } from '@phosphor-icons
 
 import sentryDescriptionImageSrc from '@/assets/images/softwares/items/sentry/description.png';
 import sentryHeroImageSrc from '@/assets/images/softwares/items/sentry/hero.png';
+import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -16,6 +17,8 @@ const localizedContent = {
   en: enJson,
 } as const;
 
+const projectIds = ['iscat-platform'] as const satisfies readonly ProjectId[];
+
 export function getSentryContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
     id: itemId,
@@ -25,6 +28,7 @@ export function getSentryContent(language: SupportedLanguage) {
     languages: ['LabVIEW'],
     localizedContent,
     highlightIcons: [MicroscopeIcon, NetworkIcon, GearIcon],
+    projectIds,
     heroImageSrc: sentryHeroImageSrc,
     descriptionImageSrc: sentryDescriptionImageSrc,
   });

@@ -1,18 +1,19 @@
 import type { Icon } from '@phosphor-icons/react';
 
-import { Section, SectionHeader, SectionTitle } from '@/components/section';
+import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { cn } from '@/lib/utils';
 
 type ProjectNarrativeSectionProps = {
   readonly title: string;
   readonly titleId: string;
   readonly icon: Icon;
+  readonly description?: string;
   readonly paragraphs?: readonly string[];
   readonly items?: readonly string[];
   readonly className?: string;
 };
 
-function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, paragraphs, items, className }: ProjectNarrativeSectionProps) {
+function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, description, paragraphs, items, className }: ProjectNarrativeSectionProps) {
   const visibleParagraphs = paragraphs?.filter((paragraph) => paragraph.trim().length > 0) ?? [];
 
   const visibleItems = items?.filter((item) => item.trim().length > 0) ?? [];
@@ -25,6 +26,8 @@ function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, paragraphs
     <Section contained={false} className={cn('border-border border-t py-12', 'sm:py-14 lg:py-16', className)} aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
+
+        {description?.trim() ? <SectionDescription>{description}</SectionDescription> : null}
       </SectionHeader>
 
       <div className={cn('grid min-w-0 gap-5', 'sm:grid-cols-[4rem_minmax(0,1fr)]', 'sm:items-start sm:gap-7')}>

@@ -5,7 +5,7 @@ import { getLanguageFromPathname, getPageRoute } from '@/app/routing/navigation'
 import PageHero from '@/components/page-hero';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { getExperienceCollection, getExperiencePage, getParallelActivityCollection } from '@/content/experience/page';
-import { getProjectsByExperienceId } from '@/content/projects/page';
+import { getProjectsByExperienceId } from '@/content/projects/catalog';
 
 import ExperienceExpertiseBand from './_components/experience-expertise-band';
 import ParallelActivitiesSection from './_components/parallel-activities-section';

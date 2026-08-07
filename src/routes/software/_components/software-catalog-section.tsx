@@ -1,7 +1,7 @@
 import { useId, useMemo, useState } from 'react';
 
 import { Section } from '@/components/section';
-import { getProjectCollection } from '@/content/projects/page';
+import { getProjectCollection } from '@/content/projects/catalog';
 import type { ProjectId } from '@/content/projects/registry';
 import { getSoftwareCollection, type SoftwareCatalogItem } from '@/content/software/catalog';
 import type { SoftwarePageContent } from '@/content/software/page';

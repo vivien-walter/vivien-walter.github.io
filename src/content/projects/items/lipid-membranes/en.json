@@ -1,0 +1,79 @@
+{
+    "breadcrumbLabel": "Lipid membranes",
+    "eyebrow": "Study of membranes using confocal microscopy",
+    "title": "Lipid membranes",
+    "summary": "Use of confocal microscopy to study interactions between lipid membranes and biomolecules such as cell-penetrating peptides or DNA fragments, as well as the effect of temperature or the electrical charge of the surrounding environment on these interactions.",
+    "heroImage": {
+        "alt": "Photograph of the confocal microscope used during my PhD research."
+    },
+    "overview": {
+        "image": {
+            "alt": "Confocal microscopy image showing the adsorption of peptides onto the surface of a lipid membrane."
+        },
+        "facts": [
+            {
+                "label": "Project type",
+                "value": "PhD research on the study of lipid membranes"
+            },
+            {
+                "label": "Employer",
+                "value": "University of Strasbourg"
+            },
+            {
+                "label": "Role",
+                "value": "PhD student"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "My PhD project was conducted within the MCUBE team at the Institut Charles Sadron (Strasbourg, France) under the supervision of Carlos M MARQUES, André P SCHRODER, Pierre MULLER and Tatiana SCHMATKO. The objective of this project was to study how the temperature and charge of a lipid membrane could activate or deactivate the ability of peptides to penetrate these membranes, using confocal microscopy, which notably makes it possible to produce 3D reconstructions of the sample.",
+            "To carry out this study, it was essential to design and build the necessary equipment, both to produce the model lipid membranes that would be studied under the microscope and to control and adjust the temperature of the sample while it was being observed.",
+            "In addition to conducting all the experiments required to answer the various scientific questions, another critical objective of this PhD project was the development of algorithms and analysis scripts to process all the images and data collected during the experiments."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "As a PhD student, this project allowed me to put my skills in managing a complete scientific project to the test, taking an active role in proposing the direction to follow and determining the experiments to perform. With 4 co-supervisors, I regularly led progress meetings and presented the results of my experiments and their analyses.",
+            "To meet the requirements of our experiments, I designed devices capable of generating large volumes of vesicles, spherical lipid membranes, by electroformation using a reusable and easy-to-use apparatus, and I improved the existing temperature-control equipment to achieve precise calibration compatible with our experiments.",
+            "I then conducted all the experiments required to complete the project and developed all the algorithms and scripts used to analyse the collected images and the data extracted from them. For this purpose, I notably developed custom software using Python as well as Java plugins for ImageJ."
+        ]
+    },
+    "features": [
+        {
+            "title": "Equipment construction",
+            "description": "Design of scientific equipment to produce lipid membranes and control the temperature of the sample."
+        },
+        {
+            "title": "Microscopy experiments",
+            "description": "Analysis of lipid membranes and their interactions with biomolecules using confocal microscopy."
+        },
+        {
+            "title": "Image and data analysis",
+            "description": "Development of algorithms and software to analyse the images and data extracted during the experiments."
+        }
+    ],
+    "resultsDescription": "Upon obtaining my PhD from the University of Strasbourg, and therefore at the end of my contract at the Institut Charles Sadron, I successfully completed the various objectives of the project. I subsequently continued working on lipid membranes through numerical simulations and the use of AI to analyse membrane properties. Regarding my PhD project, the following results were successfully achieved:",
+    "results": [
+        "Construction of equipment to produce model lipid membranes and precisely control the temperature of the sample while it was being observed under the microscope.",
+        "Publication of two scientific papers, including one as first author (Scientific Reports in 2017 and Biophysical Journal in 2024), on the results of experiments involving cell-penetrating peptides.",
+        "Publication of a scientific paper (Langmuir 2019) on the interaction between vesicles, produced using the equipment developed during this project, and dragonfly wings.",
+        "Award of a PhD in biophysics from the University of Strasbourg and publication of my PhD thesis manuscript."
+    ],
+    "technologies": [
+        "Confocal microscopy",
+        "Lipid membranes",
+        "Peptides",
+        "ImageJ",
+        "NumPy",
+        "scikit-image",
+        "Pillow"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "Java"
+    ],
+    "linkLabels": {
+        "molecularCommunicationPresentation": "Project presentation video"
+    }
+}

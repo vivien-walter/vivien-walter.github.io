@@ -1,0 +1,21 @@
+{
+    "eyebrow": "Project details",
+    "overview": "Project overview",
+    "context": "Context and objectives",
+    "contribution": "My contribution",
+    "features": "Key features",
+    "featuresDescription": "The main functional, technical and scientific aspects developed as part of the project.",
+    "results": "Results and impact",
+    "resources": "Resources",
+    "tags": "Technologies and languages",
+    "period": "Period",
+    "ongoing": "ongoing",
+    "relatedItems": "Related items",
+    "relatedExperiences": "Experience",
+    "relatedSoftware": "Software",
+    "relatedPublications": "Scientific publications",
+    "navigationLabel": "Project navigation",
+    "backLabel": "Return to all projects",
+    "previousLabel": "Previous project",
+    "nextLabel": "Next project"
+}

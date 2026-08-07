@@ -1,10 +1,11 @@
 {
-    "eyebrow": "Projects",
-    "title": "Projects at the intersection of research and innovation",
-    "introduction": "Design, management and delivery of complex systems combining scientific research, software and instrumentation. Each project addresses scientific and operational challenges while ensuring rigour, collaboration and high-quality deliverables.",
+    "breadcrumbLabel": "Projects",
+    "title": "Overview of my projects",
+    "introduction": "On this page, you will find a list of all the projects I have had the opportunity and honour to work on throughout my career, including those still ongoing.",
     "catalog": {
         "listLabel": "Project list",
         "periodLabel": "Period",
+        "ongoingLabel": "ongoing",
         "languagesLabel": "Languages",
         "technologiesLabel": "Technologies and methods",
         "controls": {
@@ -22,24 +23,5 @@
             "resultsOther": "{{count}} projects shown",
             "noResults": "No projects match the selected filters."
         }
-    },
-    "detail": {
-        "eyebrow": "Project details",
-        "overview": "Project overview",
-        "context": "Context and objectives",
-        "contribution": "My contribution",
-        "features": "Key features",
-        "results": "Results and impact",
-        "resources": "Resources",
-        "tags": "Technologies and languages",
-        "period": "Period",
-        "relatedItems": "Related items",
-        "relatedExperiences": "Experience",
-        "relatedSoftware": "Software",
-        "relatedPublications": "Scientific publications",
-        "navigationLabel": "Project navigation",
-        "backLabel": "Return to all projects",
-        "previousLabel": "Previous project",
-        "nextLabel": "Next project"
     }
 }

@@ -13,7 +13,8 @@ import {
 import DetailNavigation from '@/components/detail-navigation';
 import PageHero from '@/components/page-hero';
 import { getExperienceById } from '@/content/experience/page';
-import { getProjectById, getProjectNavigation, getProjectsPage } from '@/content/projects/page';
+import { getProjectDetailById, getProjectDetailContent, getProjectDetailNavigation } from '@/content/projects/detail/page';
+import { getProjectsPage } from '@/content/projects/page';
 import { getPublicationsByProjectId } from '@/content/research/publications/catalog';
 import { getSoftwareByProjectId } from '@/content/software/catalog';
 import NotFoundPage from '@/routes/not-found/page';
@@ -37,7 +38,9 @@ function ProjectDetailPage() {
 
   const page = getProjectsPage(language);
 
-  const project = slug ? getProjectById(language, slug) : undefined;
+  const detail = getProjectDetailContent(language);
+
+  const project = slug ? getProjectDetailById(language, slug) : undefined;
 
   if (!project) {
     return <NotFoundPage />;
@@ -51,6 +54,7 @@ function ProjectDetailPage() {
           {
             id: experience.id,
             label: experience.role,
+            secondaryText: experience.organization,
             to: getExperienceRoute(experience.id, language),
           },
         ]
@@ -60,18 +64,18 @@ function ProjectDetailPage() {
   const relatedSoftware = getSoftwareByProjectId(language, project.id).map((software) => ({
     id: software.id,
     label: software.title,
+    badges: software.languages,
     to: getSoftwareRoute(software.id, language),
   }));
 
   const relatedPublications = getPublicationsByProjectId(language, project.id).map((publication) => ({
     id: publication.id,
     label: publication.title,
+    secondaryText: `${publication.publication} (${publication.year})`,
     to: getResearchPublicationRoute(publication.id, language),
   }));
 
-  const { previous: previousProject, next: nextProject } = getProjectNavigation(language, project.id);
-
-  const resources = 'resources' in project ? project.resources : undefined;
+  const { previous: previousProject, next: nextProject } = getProjectDetailNavigation(language, project.id);
 
   const idPrefix = `project-${project.id}`;
 
@@ -90,57 +94,70 @@ function ProjectDetailPage() {
               to: getPageRoute('home', language),
             },
             {
-              label: page.eyebrow,
+              label: page.breadcrumbLabel,
               to: getPageRoute('projects', language),
             },
             {
-              label: project.title,
+              label: project.breadcrumbLabel,
             },
           ],
         }}
-        eyebrow={page.detail.eyebrow}
+        eyebrow={project.eyebrow ?? detail.eyebrow}
         title={project.title}
         introduction={project.summary}
+        image={project.heroImage}
       />
 
       <div className={['max-w-editorial px-page mx-auto w-full', 'py-12 sm:py-14 lg:py-16'].join(' ')}>
         <ProjectOverviewCard
-          ariaLabel={page.detail.overview}
+          ariaLabel={detail.overview}
           language={language}
+          ongoingLabel={detail.ongoing}
           overview={project.overview}
           period={project.period}
-          periodLabel={page.detail.period}
+          periodLabel={detail.period}
           programmingLanguages={project.programmingLanguages}
-          tagsLabel={page.detail.tags}
+          tagsLabel={detail.tags}
           technologies={project.technologies}
         />
 
         <ProjectNarrativeSection
-          title={page.detail.context}
+          title={detail.context}
           titleId={`${idPrefix}-context-title`}
           icon={TargetIcon}
-          paragraphs={project.context?.paragraphs}
+          paragraphs={project.context.paragraphs}
         />
 
         <ProjectNarrativeSection
-          title={page.detail.contribution}
+          title={detail.contribution}
           titleId={`${idPrefix}-contribution-title`}
           icon={CodeIcon}
-          paragraphs={project.contribution?.paragraphs}
+          paragraphs={project.contribution.paragraphs}
         />
 
-        <ProjectFeaturesSection title={page.detail.features} titleId={`${idPrefix}-features-title`} features={project.features} />
+        <ProjectFeaturesSection
+          title={detail.features}
+          titleId={`${idPrefix}-features-title`}
+          description={detail.featuresDescription}
+          features={project.features}
+        />
 
-        <ProjectNarrativeSection title={page.detail.results} titleId={`${idPrefix}-results-title`} icon={ArticleIcon} items={project.results} />
+        <ProjectNarrativeSection
+          title={detail.results}
+          titleId={`${idPrefix}-results-title`}
+          icon={ArticleIcon}
+          description={project.resultsDescription}
+          items={project.results}
+        />
 
-        <ProjectResourcesSection title={page.detail.resources} titleId={`${idPrefix}-resources-title`} resources={resources} />
+        <ProjectResourcesSection title={detail.resources} titleId={`${idPrefix}-resources-title`} resources={project.resources} />
 
         <ProjectRelatedItemsSection
-          title={page.detail.relatedItems}
+          title={detail.relatedItems}
           titleId={`${idPrefix}-related-items-title`}
-          experiencesTitle={page.detail.relatedExperiences}
-          softwareTitle={page.detail.relatedSoftware}
-          publicationsTitle={page.detail.relatedPublications}
+          experiencesTitle={detail.relatedExperiences}
+          softwareTitle={detail.relatedSoftware}
+          publicationsTitle={detail.relatedPublications}
           experiences={relatedExperiences}
           software={relatedSoftware}
           publications={relatedPublications}
@@ -148,13 +165,13 @@ function ProjectDetailPage() {
 
         <DetailNavigation
           className="mt-0 sm:mt-0"
-          ariaLabel={page.detail.navigationLabel}
+          ariaLabel={detail.navigationLabel}
           backLink={{
-            label: page.detail.backLabel,
+            label: detail.backLabel,
             to: getPageRoute('projects', language),
           }}
-          previousLabel={page.detail.previousLabel}
-          nextLabel={page.detail.nextLabel}
+          previousLabel={detail.previousLabel}
+          nextLabel={detail.nextLabel}
           previousLink={
             previousProject
               ? {

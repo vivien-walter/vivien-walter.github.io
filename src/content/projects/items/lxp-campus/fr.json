@@ -1,0 +1,108 @@
+{
+    "breadcrumbLabel": "Formao",
+    "eyebrow": "Learning eXperience Platform",
+    "title": "Formao Campus Virtuel",
+    "summary": "Création d’un campus virtuel conçu sur mesure et réunissant notamment contenus pédagogiques, accompagnement vers l’emploi, services liés à la santé et au handicap, intelligence artificielle générative et applications XR.",
+    "heroImage": {
+        "alt": "Capture d'écran de la page d'accueil de Formao Campus Virtuel."
+    },
+    "overview": {
+        "image": {
+            "alt": "Capture d'écran de l'Espace Cours de Formao Campus Virtuel."
+        },
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Plateforme LXP de type Campus Virtuel"
+            },
+            {
+                "label": "Employeur",
+                "value": "I-MAGINEXR"
+            },
+            {
+                "label": "Rôle",
+                "value": "Chef de projet (Chef de produit)"
+            },
+            {
+                "label": "Client",
+                "value": "ARINFO I-MAGINER"
+            },
+            {
+                "label": "Équipe",
+                "value": "11 personnes"
+            },
+            {
+                "label": "Financements",
+                "value": "2 M€ obtenus auprès de l'OPCO Atlas sur 4 ans"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Le projet Formao Campus Virtuel est né de la volonté du CFA ARINFO I-MAGINER de remplacer sa plateforme pédagogique vieillissante basée sur Moodle en développant une plateforme sur mesure, qui viendrait non seulement accompagner les apprenants mais également les formateurs et les personnels administratifs. Pour cela, l'objectif était de réaliser non pas une simple plateforme de cours en ligne (LMS), mais une plateforme d'expérience d'apprentissage (LXP). S'inscrivant dans une volonté d'innover, la plateforme irait également bien au-delà de la gestion de cours et intégrerait tous les éléments caractéristiques de la vie d'un apprenant, y compris en dehors des cours, pour constituer un véritable Campus Virtuel.",
+            "Comme dans toute création de solution sur-mesure, la conception de Formao Campus Virtuel nécessitait de mettre en place un stack technologique complet et adapté aux besoins identifiés : forte personnalisation des contenus et de toute l'expérience utilisateur, multiples types d'accès (utilisateurs, administrateurs, etc.), gestion de la charge au cours de l'utilisation de plus de 200 apprenants en parallèle, etc. Les principaux objectifs du développement étaient donc de construire une base forte, et d'intégrer ensuite un design offrant une expérience utilisateur optimale.",
+            "En parallèle, suivant la volonté de la société I-MAGINEXR de mettre en avant les nouvelles technologies et leur utilisation dans la pédagogie, la création de la plateforme fut accompagnée du développement d'applications et d'outils basés sur la réalité étendue (VR, AR, etc.) et sur les intelligences artificielles génératives, permettant ainsi aux utilisateurs de parcourir des scénarios immersifs et s'adaptant à leurs actions.",
+            "À l'issue du développement de Formao et du déploiement au sein du CFA partenaire, l'objectif était également de faire de Formao Campus Virtuel une application commercialisée en marque blanche par la société I-MAGINEXR."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "En tant que Chef de projet / Chef de produit avec un fort caractère opérationnel, mon rôle principal était d'une part de coordonner l'ensemble des équipes internes à l'entreprise travaillant sur le projet du Campus Virtuel, et d'autre part de coordonner les travaux de ces équipes avec les équipes de notre client, tout en communiquant sur la progression des travaux avec le principal organisme financeur du projet (OPCO Atlas). J'ai également mis à profit mon expérience dans l'enseignement pour m'occuper des apprentis recrutés par l'entreprise, en les formant aux technologies utilisées dans le projet et en les mentorant sur leurs propres projets individuels.",
+            "Dans un premier temps, j'ai défini l'ensemble des objectifs du projet et rédigé les cahiers des charges complets pour l'ensemble des équipes de l'entreprise, ainsi que pour les équipes de notre client nous accompagnant sur ce projet, notamment pour la communication sur notre progression. En parallèle, je préparais les candidatures aux appels à projets de l'OPCO Atlas et mettais à jour les cahiers des charges après obtention des nouveaux financements, et j'animais l'intégralité des réunions sur le projet.",
+            "J'ai accompagné le lead developer, Joachim BRASIER, dans l'établissement du stack technologique complet définissant la plateforme pédagogique : langage, framework et bibliothèques utilisés, algorithmes pour l'écriture et la lecture sur la base de données, et gestion de la charge sur les applications utilisant l'intelligence artificielle générative. J'ai également pris part activement au développement du backend de la plateforme, notamment l'intégration des normes SCORM, la connexion aux services IA externes (ChatGPT, Mistral AI, etc.) et la prise en charge complète des Open Badges. En parallèle, j'assistais le lead developer dans la formation et l'accompagnement de l'équipe de développeurs web de l'entreprise.",
+            "J'ai également travaillé étroitement avec Lodine GENDRAULT et Tristan ALBERT pour concevoir et créer le design des interfaces des différents espaces du Campus Virtuel. Ce travail incluait non seulement la production des maquettes de ces interfaces, mais également la gestion de l'équipe de design et sa formation à l'utilisation du logiciel Figma.",
+            "J'ai aussi géré l'équipe de recherche & développement de l'entreprise, en la guidant dans la création d'applications en réalité virtuelle et en réalité augmentée, ainsi que d'applications utilisant l'intelligence artificielle. Dans le cas spécifique des applications utilisant l'intelligence artificielle, je rédigeais et optimisais l'intégralité des prompts utilisés par les agents IA. En parallèle, je supervisais une thèse de doctorat CIFRE sur l'utilisation des applications VR et de l'IA générative pour former à la prise en charge des apprenants en situation de handicap, notamment ceux atteints d'un trouble du spectre autistique.",
+            "Pour mener à bien l'ensemble des travaux, j'ai géré un total de trois financements annuels consécutifs de l'OPCO Atlas (200 000 €, 200 000 € et 200 000 €) ainsi que la création des dossiers de candidature aux appels à projets de l'OPCO pour débloquer ces financements. L'intégralité des 3 candidatures que j'ai préparées ont été retenues par l'OPCO Atlas afin de financer le projet."
+        ]
+    },
+    "features": [
+        {
+            "title": "Pilotage du produit",
+            "description": "Définition du périmètre, des ressources, de l’organisation et de la feuille de route, puis coordination des décisions et validation des livrables."
+        },
+        {
+            "title": "Backend TypeScript",
+            "description": "Conception et développement de parties du backend avec TypeScript, Node.js, Express et MongoDB."
+        },
+        {
+            "title": "Architecture et sécurisation",
+            "description": "Migration du backend vers TypeScript, validation Zod, refonte des jetons d’authentification, clés d’accès API et pagination côté serveur."
+        },
+        {
+            "title": "Écosystème d’IA générative",
+            "description": "Conception de l’architecture et des protocoles nécessaires à l’utilisation de plusieurs fournisseurs d’intelligence artificielle générative."
+        },
+        {
+            "title": "Applications XR",
+            "description": "Pilotage du prompt engineering et de la production de quatre applications XR intégrées à l’écosystème du campus."
+        },
+        {
+            "title": "Recherche & Développement",
+            "description": "Encadrement d'une thèse de doctorat CIFRE sur l'utilisation de la XR en pédagogie pour favoriser l'inclusivité."
+        }
+    ],
+    "resultsDescription": "Le projet a malheureusement été interrompu suite à la liquidation judiciaire du CFA ARINFO I-MAGINER, mais également de la société I-MAGINEXR. La plateforme n'a pas pu être terminée à 100 %, et le code ne peut être rendu public suite à l'arrêt de l'activité de l'entreprise. Néanmoins, les résultats suivants ont pu être obtenus pendant la durée du contrat :",
+    "results": [
+        "Candidatures sélectionnées pendant 3 années consécutives par l'OPCO Atlas pour le financement du projet, pour un total de M€.",
+        "Mise en place de la stratégie de communication de l'entreprise I-MAGINEXR et création des documents technico-commerciaux.",
+        "Complétion du backend et de l'écosystème d’intelligence artificielle.",
+        "Réalisation de quatre applications utilisant la réalité virtuelle, la réalité augmentée et/ou l'intelligence artificielle générative.",
+        "Définition du design des interfaces utilisateurs pour 90 % des espaces du campus virtuel.",
+        "Intégration de 60 % des espaces."
+    ],
+    "technologies": [
+        "Node.js",
+        "Next.js",
+        "React",
+        "Express",
+        "MongoDB",
+        "Zod",
+        "Tailwind CSS",
+        "IA générative",
+        "VR",
+        "AR"
+    ],
+    "programmingLanguages": [
+        "TypeScript"
+    ]
+}

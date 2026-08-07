@@ -1,6 +1,6 @@
 import type { Icon } from '@phosphor-icons/react';
 
-import { Section, SectionHeader, SectionTitle } from '@/components/section';
+import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
@@ -14,9 +14,10 @@ type ProjectFeaturesSectionProps = {
   readonly features?: readonly ProjectFeature[];
   readonly title: string;
   readonly titleId: string;
+  readonly description?: string;
 };
 
-function ProjectFeaturesSection({ features, title, titleId }: ProjectFeaturesSectionProps) {
+function ProjectFeaturesSection({ description, features, title, titleId }: ProjectFeaturesSectionProps) {
   const visibleFeatures = features?.filter((feature) => feature.title.trim().length > 0 && feature.description.trim().length > 0) ?? [];
 
   if (visibleFeatures.length === 0) {
@@ -27,6 +28,8 @@ function ProjectFeaturesSection({ features, title, titleId }: ProjectFeaturesSec
     <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
+
+        {description?.trim() ? <SectionDescription>{description}</SectionDescription> : null}
       </SectionHeader>
 
       <ul className={cn('m-0 grid list-none gap-5 p-0', 'sm:grid-cols-2', 'lg:grid-cols-3')}>

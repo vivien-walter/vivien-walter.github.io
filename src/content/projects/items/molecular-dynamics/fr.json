@@ -1,0 +1,90 @@
+{
+    "breadcrumbLabel": "Dynamique moléculaire",
+    "eyebrow": "Utilisation de l'IA pour l'étude des lipides",
+    "title": "IA et dynamique moléculaire",
+    "summary": "Développement d'algorithmes d'intelligence artificielle pour analyser des simulations numériques de membranes lipidiques et étudier leurs propriétés thermodynamiques ainsi que leurs interactions avec des molécules.",
+    "heroImage": {
+        "alt": "Illustration d'une phase ripple apparaissant dans une membrane lipidique au cours d'une simulation numérique."
+    },
+    "overview": {
+        "image": {
+            "alt": "Cartographie d'une membrane lipidique faisant apparaître l'épaisseur de la membrane ainsi que la phase thermodynamique identifiée par les algorithmes d'intelligence artificielle."
+        },
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Création de modèles d'IA permettant l'analyse de simulations numériques de membranes lipidiques"
+            },
+            {
+                "label": "Employeur",
+                "value": "Université de Strasbourg, puis chercheur indépendant"
+            },
+            {
+                "label": "Rôle",
+                "value": "Chercheur principal (indépendant)"
+            },
+            {
+                "label": "Collaborateurs",
+                "value": "5 chercheurs provenant de France, du Royaume-Uni et du Canada"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Ce projet a débuté à l'Université de Strasbourg en parallèle de mes travaux de thèse de doctorat. Combinant mon sujet de thèse sur les membranes lipidiques et mon intérêt pour les statistiques ainsi que la programmation informatique, j'ai formé une collaboration avec Céline RUSCHER, Fabrice THALMANN et Olivier BENZERARA pour étudier la façon dont les algorithmes d'intelligence artificielle, de type Machine Learning et Deep Learning, pouvaient être utilisés dans le cadre de l'analyse de simulations de dynamique moléculaire de membranes lipidiques afin d'extraire les propriétés thermodynamiques de molécules.",
+            "L'objectif de ce projet est d'une part de réaliser des simulations numériques de dynamique moléculaire pour étudier le comportement de membranes lipidiques. Deux sujets de recherche sont étudiés : l'interaction des membranes avec des sucres (glucose, fructose, et tréhalose) au cours de variations de température, un sujet notamment critique pour des applications en cryogénie, ainsi que les conditions d'apparition de la phase ripple dans les membranes cellulaires.",
+            "D'autre part, l'objectif de ce projet est également d'utiliser l'intelligence artificielle, spécifiquement le Machine Learning puis le Deep Learning, pour analyser les systèmes et trajectoires obtenus grâce aux simulations numériques. Des algorithmes sont donc conçus et des modèles entraînés pour permettre d'identifier les phases thermodynamiques des lipides, ce qui nous permet de cartographier les membranes et d'étudier l'effet de la phase thermodynamique sur les propriétés et interactions des lipides."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "J'ai initié ce projet, tout d'abord en contactant les différents collaborateurs scientifiques pour les associer au projet, puis en définissant les thématiques et objectifs du projet. En tant que chercheur principal du projet, j'organise et anime les réunions de travail ainsi que les réunions d'avancement, et je propose les nouvelles directions prises par le projet à chaque complétion d'une nouvelle étape déterminante pour le projet.",
+            "Avec l'assistance d'Olivier BENZERARA, je réalise l'intégralité des simulations numériques sur les serveurs de calcul disponibles, en assemblant d'abord les systèmes pour créer les boîtes de simulations, puis en appliquant les transformations et propriétés désirées pour chaque système que nous souhaitions étudier. J'utilise le logiciel GROMACS pour l'intégralité des simulations.",
+            "Une fois les simulations terminées, je réalise également l'intégralité des analyses sur les systèmes obtenus. Cela va des analyses courantes à la conception et à l'entraînement de modèles d'intelligence artificielle, en utilisant scikit-learn et TensorFlow, pour déterminer les propriétés thermodynamiques avancées de ces membranes, en particulier la phase thermodynamique des lipides individuels.",
+            "Dans ce contexte, j’ai développé et publié le code de ML-LPA, un module Python qui utilise des modèles finement calibrés de Machine Learning pour permettre à tous les utilisateurs d'étudier des simulations de membranes lipidiques et d'en extraire une cartographie des phases des membranes. J'ai notamment réalisé le site internet présentant le module ML-LPA et incluant un guide complet pour son utilisation.",
+            "J'ai rédigé l'intégralité des articles scientifiques que nous avons publiés sur le sujet, et ai été invité à présenter nos travaux au cours de séminaires en Angleterre ainsi qu'en Allemagne."
+        ]
+    },
+    "features": [
+        {
+            "title": "Simulations de dynamique moléculaire",
+            "description": "Construction de membranes lipidiques et simulation de leur dynamique en utilisant le logiciel GROMACS."
+        },
+        {
+            "title": "Analyse des phases membranaires",
+            "description": "Structuration des traitements de données nécessaires à l’identification et à l’étude des états des systèmes membranaires."
+        },
+        {
+            "title": "Apprentissage automatique",
+            "description": "Développement d’approches avec scikit-learn, puis d’un réseau de neurones convolutif tridimensionnel avec TensorFlow."
+        },
+        {
+            "title": "Module Python réutilisable",
+            "description": "Organisation des méthodes scientifiques sous la forme d’un module documenté pouvant être réutilisé dans d’autres analyses."
+        }
+    ],
+    "resultsDescription": "Ce projet est toujours en cours et la collaboration autour de ce projet est toujours active. Nous étudions à présent de nouvelles méthodes basées sur les réseaux neuronaux convolutifs tridimensionnels pour proposer un modèle plus général d'analyse des phases thermodynamiques. Nous pouvons en revanche lister les accomplissements déjà réalisés à ce jour :",
+    "results": [
+        "Développement d'un module Python basé sur le Machine Learning pour analyser les phases des membranes lipidiques, ML-LPA, suivi de la publication du logiciel et de la création d'un site internet pour le présenter.",
+        "Publication de trois articles scientifiques en tant que premier auteur (PCCP 2020, J. Comp. Chem. 2021 et BBA Biomembranes 2021) sur l'analyse des transitions de phase dans les membranes lipidiques et l'application de cette analyse à l'étude de la phase ripple."
+    ],
+    "technologies": [
+        "GROMACS",
+        "NumPy",
+        "h5py",
+        "MDAnalysis",
+        "pandas",
+        "scikit-learn",
+        "TensorFlow",
+        "tqdm",
+        "Linux",
+        "SLURM"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "Bash"
+    ],
+    "linkLabels": {
+        "mllpaWebsite": "Site du module Python ML-LPA"
+    }
+}

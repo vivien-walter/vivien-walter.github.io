@@ -13,7 +13,7 @@ import {
 import heroImageSrc from '@/assets/images/home/hero.jpg';
 import { OrcidIcon } from '@/components/icons/orcid';
 import { publicProfile } from '@/content/common/profile';
-import { getProjectById } from '@/content/projects/page';
+import { getProjectById } from '@/content/projects/catalog';
 import type { ProjectId } from '@/content/projects/registry';
 import { getPublicationById } from '@/content/research/publications/catalog';
 import type { PublicationId } from '@/content/research/publications/registry';

@@ -2,6 +2,7 @@ import { CodeIcon, CursorClickIcon, GithubLogoIcon, MicroscopeIcon, RulerIcon } 
 
 import autoCorrelationDescriptionImageSrc from '@/assets/images/softwares/items/autocorrelation/description.png';
 import autoCorrelationHeroImageSrc from '@/assets/images/softwares/items/autocorrelation/hero.png';
+import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent, type SoftwareResource } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -15,6 +16,8 @@ const localizedContent = {
   fr: frJson,
   en: enJson,
 } as const;
+
+const projectIds = ['lipid-membranes'] as const satisfies readonly ProjectId[];
 
 export function getAutoCorrelationContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
@@ -33,6 +36,7 @@ export function getAutoCorrelationContent(language: SupportedLanguage) {
         isExternal: true,
       },
     ],
+    projectIds,
     heroImageSrc: autoCorrelationHeroImageSrc,
     descriptionImageSrc: autoCorrelationDescriptionImageSrc,
   });

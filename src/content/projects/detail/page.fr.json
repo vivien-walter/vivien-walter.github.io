@@ -1,0 +1,21 @@
+{
+    "eyebrow": "Projet détaillé",
+    "overview": "Résumé du projet",
+    "context": "Contexte et objectifs",
+    "contribution": "Ma contribution",
+    "features": "Fonctionnalités clés",
+    "featuresDescription": "Les principaux volets fonctionnels, techniques et scientifiques développés dans le cadre du projet.",
+    "results": "Résultats et impact",
+    "resources": "Ressources",
+    "tags": "Technologies et langages",
+    "period": "Période",
+    "ongoing": "en cours",
+    "relatedItems": "Éléments associés",
+    "relatedExperiences": "Parcours",
+    "relatedSoftware": "Logiciels",
+    "relatedPublications": "Publications scientifiques",
+    "navigationLabel": "Navigation entre les projets",
+    "backLabel": "Retour à tous les projets",
+    "previousLabel": "Projet précédent",
+    "nextLabel": "Projet suivant"
+}

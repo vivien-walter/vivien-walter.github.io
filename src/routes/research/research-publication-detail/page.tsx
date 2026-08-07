@@ -20,7 +20,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { getExperienceById } from '@/content/experience/page';
-import { getProjectById } from '@/content/projects/page';
+import { getProjectById } from '@/content/projects/catalog';
 import { getResearchPageContent } from '@/content/research/page';
 import {
   getResearchPublicationDetailById,

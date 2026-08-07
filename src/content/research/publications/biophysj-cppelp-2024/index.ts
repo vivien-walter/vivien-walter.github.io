@@ -43,7 +43,7 @@ const authors = [
 
 const themeIds = ['molecular-interfaces'] as const satisfies readonly ResearchThemeId[];
 
-const projectIds = ['molecular-communication'] as const satisfies readonly ProjectId[];
+const projectIds = ['lipid-membranes'] as const satisfies readonly ProjectId[];
 
 const experienceIds = ['kcl-molecular-communication'] as const satisfies readonly ExperienceId[];
 

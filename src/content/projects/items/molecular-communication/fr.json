@@ -1,0 +1,105 @@
+{
+    "breadcrumbLabel": "Communication moléculaire",
+    "eyebrow": "Banc d'essai et intelligence artificielle",
+    "title": "Communication moléculaire",
+    "summary": "Création d'un banc d'essai microfluidique pour tester et valider expérimentalement les modèles théoriques sur le traitement d'un signal chimique dans le cadre de la communication moléculaire, avec utilisation de l'intelligence artificielle pour décoder les signaux.",
+    "heroImage": {
+        "alt": "Photographie du banc d'essai microfluidique tel qu'utilisé pour les expériences de communication moléculaire."
+    },
+    "overview": {
+        "image": {
+            "alt": "Photographie des trois acteurs principaux du projet : moi-même, Yansha DENG et Dadi BI."
+        },
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Validation expérimentale de principes théoriques de la communication moléculaire"
+            },
+            {
+                "label": "Employeur",
+                "value": "King's College London, Département d'ingénierie"
+            },
+            {
+                "label": "Rôle",
+                "value": "Chef de projet R&D (Postdoctoral Research Associate)"
+            },
+            {
+                "label": "Équipe",
+                "value": "5 personnes"
+            },
+            {
+                "label": "Financements",
+                "value": "360 000 € obtenus auprès de l'EPSRC sur deux appels à projets"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Le projet a été initié par Yansha DENG au sein de son groupe au département d'ingénierie du King’s College London. L'objectif majeur de ce projet était de construire une plateforme microfluidique qui permettait de vérifier expérimentalement les modèles théoriques mis au point par Dadi BI et elle-même, afin de démontrer qu'il était possible d'utiliser des réactions chimiques pour modifier et contrôler un signal moléculaire. Ce projet s'inscrit dans le contexte de la recherche sur la communication moléculaire, et cherchait ainsi à démontrer qu'il était possible de reproduire en laboratoire les processus biochimiques en œuvre dans les organismes vivants pour se les approprier et mieux les contrôler, ce qui ouvrirait ainsi de nouvelles opportunités dans le domaine de la médecine.",
+            "Dans un premier temps, le premier objectif du projet était de venir répondre à un ensemble de défis technologiques : la construction d'un banc d'essai microfluidique complet nécessitait de concevoir et/ou d'acquérir tous les équipements formant la plateforme : pompes pour injecter les solutions, capillaires pour contrôler et diriger les flux, détecteurs pour mesurer le comportement du banc d'essai ainsi que pour décoder le signal, etc. Il fallait donc construire et calibrer un appareil qui répondait à un cahier des charges exigeant.",
+            "Après la construction du banc d'essai, le second objectif était de concevoir une sélection de réactions chimiques qui seraient testées dans le banc d'essai pour transmettre, modifier et détecter un signal encodé dans des molécules. En particulier, les réactions devaient permettre d'amplifier et de nettoyer le signal, permettant ainsi d'augmenter la distance sur laquelle le signal pouvait être transmis.",
+            "Finalement, le dernier objectif du projet était de développer un modèle d'intelligence artificielle de type Deep Learning, un réseau neuronal capable d'analyser les signaux moléculaires détectés par le banc d'essai et d'extraire le message encodé dans ce signal."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "En tant que Chef de projet R&D (officiellement, dans le milieu académique, Postdoctoral Research Assistant), mon rôle principal était de mettre tout en œuvre pour mener à bien la concrétisation du projet, de la construction du banc d'essai à la formation du personnel de recherche l'utilisant tout en conduisant mes propres recherches.",
+            "Avant même de concevoir le banc d'essai au centre du projet, ma première tâche fut de mettre en place un laboratoire de chimie capable d'accueillir le prototype étant donné que le département d'ingénierie du King's College London n'en possédait pas. J’ai identifié et préparé les locaux, sélectionné et commandé les équipements, matériels lourds et consommables, puis contribué à la définition des protocoles de sécurité et de fonctionnement avec l'appui du personnel administratif du département.",
+            "J'ai conçu et construit le prototype du banc d'essai, en sélectionnant le matériel nécessaire mais également en réalisant certains des équipements clés à l'aide de logiciels CAO et d'imprimantes 3D, tels que les pompes à seringues nécessaires pour injecter les produits chimiques dans le banc d'essai. J'ai également développé l'ensemble des logiciels de contrôle, utilisant les langages C++ pour les cartes Arduino des différents équipements et Python pour le logiciel central de contrôle et d'automatisation du banc d'essai.",
+            "Pour mener à bien l'ensemble des travaux, j’ai géré deux financements EPSRC de 300 000 € et 60 000 €, contribué partiellement au premier dossier et rédigé intégralement le second. J'ai également rédigé la documentation technique et préparé un dossier pour breveter le prototype du banc d'essai.",
+            "J’ai piloté une équipe moyenne de cinq personnes composée d’un PDRA junior, de deux doctorants et de deux stagiaires de Master. Neuf personnes ont été formées au total à l'utilisation du banc d'essai, et je co-supervisais leurs projets de recherche avec Yansha DENG. En parallèle, je menais mes propres recherches à l'aide du banc d'essai, ce qui m'a permis de concevoir un modèle d'intelligence artificielle basé sur les réseaux neuronaux convolutifs pour décoder les messages encodés dans les signaux moléculaires transmis par notre banc d'essai."
+        ]
+    },
+    "features": [
+        {
+            "title": "Création du laboratoire",
+            "description": "Préparation des locaux, sélection des équipements et définition des protocoles nécessaires au fonctionnement du laboratoire."
+        },
+        {
+            "title": "Banc d'essai microfluidique",
+            "description": "Conception d’une plateforme opérationnelle associant chimie, microfluidique, détection UV-Visible, électronique et logiciel."
+        },
+        {
+            "title": "Traitement chimique du signal",
+            "description": "Étude expérimentale de fonctions de filtrage, de saturation, d’amplification et d’encodage fondées sur des réactions chimiques."
+        },
+        {
+            "title": "Analyse par CNN 1D",
+            "description": "Développement d’un réseau de neurones convolutif unidimensionnel pour estimer la composition et les concentrations moléculaires de solutions aqueuses à partir de signaux UV-Visible."
+        },
+        {
+            "title": "Équipement open source",
+            "description": "Conception et fabrication de différents équipements pour le banc d'essai, notamment six pompes avec Fusion 360, impression 3D, électronique Arduino, communication I²C et logiciels de contrôle."
+        },
+        {
+            "title": "Pilotage et financement",
+            "description": "Coordination de l’équipe, formation des utilisateurs et gestion de deux financements EPSRC représentant 360 000 € au total."
+        }
+    ],
+    "resultsDescription": "À l'issue de mon contrat au sein du département d'ingénierie du King's College London, j'ai pu compléter avec succès les différents objectifs du projet et ainsi terminer la construction et la mise en service du banc d'essai pour la communication moléculaire. En particulier, les éléments suivants ont été réalisés avec succès :",
+    "results": [
+        "Mise en place d'un laboratoire de chimie au sein du département d'ingénierie du King's College London, avec conception des protocoles d'utilisation et de sécurité pour l'ensemble des utilisateurs du laboratoire.",
+        "Fabrication d'un banc d'essai microfluidique conçu spécifiquement pour la communication moléculaire, avec conception et programmation des équipements nécessaires au fonctionnement du banc d'essai (pompes à seringue, sonde pH, etc.).",
+        "Programmation du logiciel de contrôle et d'automatisation du banc d'essai et création de tous les scripts de traitement et d'analyse des données collectées par le banc d'essai, incluant un modèle d'intelligence artificielle de type réseau neuronal convolutif.",
+        "Réalisation de la preuve de concept du banc d'essai microfluidique ainsi que des différentes réactions chimiques permettant la transmission de signaux, avec validation expérimentale des concepts de la communication moléculaire.",
+        "Publication de deux articles scientifiques en tant que premier auteur (Nature Communications en 2023, et IEEE TMBMC en 2026) sur le banc d'essai microfluidique, son utilisation pour valider les principes de la communication moléculaire, et l'utilisation de l'intelligence artificielle pour décoder les signaux.",
+        "Réponse à un appel d'offres et sécurisation d'un financement de 60 000 € auprès de l'EPSRC, et préparation d'un dossier pour breveter le banc d'essai."
+    ],
+    "technologies": [
+        "TensorFlow",
+        "scikit-learn",
+        "Arduino",
+        "I²C",
+        "Autodesk Fusion 360",
+        "Impression 3D",
+        "Microfluidique",
+        "Spectroscopie UV-Visible"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "C++"
+    ],
+    "linkLabels": {
+        "molecularCommunicationPresentation": "Vidéo de présentation du projet"
+    }
+}

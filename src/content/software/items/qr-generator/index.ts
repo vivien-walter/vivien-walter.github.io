@@ -2,6 +2,7 @@ import { ArticleIcon, CodeIcon, MonitorIcon, QrCodeIcon } from '@phosphor-icons/
 
 import iscanDescriptionImageSrc from '@/assets/images/softwares/items/qr-generator/description.png';
 import iscanHeroImageSrc from '@/assets/images/softwares/items/qr-generator/hero.png';
+import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent, type SoftwareResource } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -16,6 +17,8 @@ const localizedContent = {
   en: enJson,
 } as const;
 
+const projectIds = ['lxp-campus'] as const satisfies readonly ProjectId[];
+
 export function getQrGeneratorContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
     id: itemId,
@@ -26,6 +29,7 @@ export function getQrGeneratorContent(language: SupportedLanguage) {
     localizedContent,
     highlightIcons: [QrCodeIcon, MonitorIcon, ArticleIcon],
     getResources: (): readonly SoftwareResource[] => [],
+    projectIds,
     heroImageSrc: iscanHeroImageSrc,
     descriptionImageSrc: iscanDescriptionImageSrc,
   });

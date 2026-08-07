@@ -1,14 +1,17 @@
 import { ArrowRightIcon } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 
+import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
-import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
 export type ProjectRelatedItem = {
   readonly id: string;
   readonly label: string;
   readonly to: string;
+  readonly secondaryText?: string;
+  readonly badges?: readonly string[];
 };
 
 type ProjectRelatedItemsSectionProps = {
@@ -21,15 +24,6 @@ type ProjectRelatedItemsSectionProps = {
   readonly software?: readonly ProjectRelatedItem[];
   readonly publications?: readonly ProjectRelatedItem[];
 };
-
-const relatedButtonClassName = cn(
-  'h-auto min-h-11 w-full justify-between',
-  'px-4 py-3 text-left whitespace-normal',
-  'border-border-strong bg-brand-background',
-  'text-brand-ink shadow-none',
-  'hover:border-brand-primary',
-  'hover:bg-action-soft hover:text-action-strong',
-);
 
 const relatedListClassName = cn('m-0 grid list-none gap-3 p-0', 'sm:grid-cols-2');
 
@@ -55,13 +49,57 @@ function RelatedItemsGroup({ items, title, titleId }: RelatedItemsGroupProps) {
       <ul className={relatedListClassName}>
         {items.map((item) => (
           <li key={item.id} className="m-0 min-w-0">
-            <Button asChild variant="outline" className={relatedButtonClassName}>
-              <Link to={item.to}>
-                <span className="min-w-0">{item.label}</span>
+            <Link
+              to={item.to}
+              className={cn(
+                'group block h-full rounded-lg',
+                'text-brand-ink no-underline',
+                'focus-visible:outline-none',
+                'focus-visible:ring-[3px]',
+                'focus-visible:ring-ring/50',
+                'focus-visible:ring-offset-2',
+              )}
+            >
+              <InteractiveCard className={cn('h-full gap-0 rounded-lg py-0', 'border-border-strong bg-brand-background', 'shadow-subtle')}>
+                <div className={cn('grid min-h-20 min-w-0', 'grid-cols-[minmax(0,1fr)_auto]', 'items-center gap-4 p-5', 'sm:p-6')}>
+                  <div className="min-w-0">
+                    <p className="leading-heading text-brand-ink !m-0 font-semibold">{item.label}</p>
 
-                <ArrowRightIcon aria-hidden="true" className="shrink-0" weight="bold" />
-              </Link>
-            </Button>
+                    {item.secondaryText?.trim() ? <p className="text-muted-foreground !mt-2 !mb-0 text-sm">{item.secondaryText}</p> : null}
+
+                    {item.badges && item.badges.length > 0 ? (
+                      <ul className="!mt-3 !mb-0 flex list-none flex-wrap gap-2 !p-0">
+                        {item.badges.map((badge) => (
+                          <li key={badge} className="!m-0">
+                            <Badge
+                              variant="secondary"
+                              className={cn(
+                                'border-border rounded-full border',
+                                'bg-brand-hero px-3 py-1',
+                                'font-mono font-medium',
+                                'text-muted-foreground',
+                              )}
+                            >
+                              {badge}
+                            </Badge>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+
+                  <ArrowRightIcon
+                    aria-hidden="true"
+                    className={cn(
+                      'text-brand-primary size-5 shrink-0',
+                      'ease-standard transition-transform duration-150',
+                      'group-hover:translate-x-1',
+                    )}
+                    weight="bold"
+                  />
+                </div>
+              </InteractiveCard>
+            </Link>
           </li>
         ))}
       </ul>

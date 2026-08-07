@@ -1,0 +1,79 @@
+{
+    "breadcrumbLabel": "Membranes lipidiques",
+    "eyebrow": "Étude de membranes par microscopie confocale",
+    "title": "Membranes lipidiques",
+    "summary": "Utilisation de la microscopie confocale pour étudier les interactions entre les membranes lipidiques et des biomolécules telles que les peptides pénétrateurs de cellules ou des fragments d'ADN, ainsi que l'effet de la température ou de la charge électrique du milieu sur ces interactions.",
+    "heroImage": {
+        "alt": "Photographie du microscope confocal utilisé pendant mes travaux de thèse."
+    },
+    "overview": {
+        "image": {
+            "alt": "Image prise au microscope confocal montrant l'adsorption de peptides à la surface d'une membrane lipidique."
+        },
+        "facts": [
+            {
+                "label": "Nature du projet",
+                "value": "Travaux de thèse de doctorat sur l'étude des membranes lipidiques"
+            },
+            {
+                "label": "Employeur",
+                "value": "Université de Strasbourg"
+            },
+            {
+                "label": "Rôle",
+                "value": "Doctorant"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "Mon projet de thèse s'est déroulé au sein de l'équipe MCUBE de l'Institut Charles Sadron (Strasbourg, France) sous la supervision de Carlos M MARQUES, André P SCHRODER, Pierre MULLER et Tatiana SCHMATKO. L'objectif de ce projet était d'étudier la façon dont la température et la charge d'une membrane lipidique pouvaient activer ou désactiver la capacité de peptides à pénétrer à l'intérieur de ces membranes, le tout au moyen de la microscopie confocale qui permet notamment de réaliser des reproductions 3D de l'échantillon.",
+            "Pour mener à bien cette étude, il était essentiel de concevoir et construire l'équipement nécessaire, autant pour produire les membranes lipidiques modèles qui allaient être étudiées au microscope que pour contrôler et moduler la température de l'échantillon pendant son observation au microscope.",
+            "En plus de réaliser l'intégralité des expériences nécessaires pour répondre aux différentes questions scientifiques, un autre objectif critique de ce projet de thèse fut le développement d'algorithmes et de scripts d'analyse pour traiter l'intégralité des images et données récoltées au cours des expériences."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "En tant qu'étudiant en doctorat, ce projet m'a permis de mettre à l'épreuve mes compétences pour gérer un projet scientifique complet, en étant force de proposition pour la direction à suivre et la détermination des expériences à effectuer. Ayant 4 co-encadrants, j'animais régulièrement les réunions de progression et présentais les résultats de mes expériences et de leurs analyses.",
+            "Pour répondre aux exigences de nos expériences, j'ai conçu des appareils permettant de générer d'importants volumes de vésicules, des membranes lipidiques sphériques, par électroformation grâce à un appareil réutilisable et facile d'emploi, et j'ai amélioré l'équipement existant de contrôle de la température pour obtenir une calibration fine et compatible avec nos expériences.",
+            "J'ai ensuite réalisé toutes les expériences nécessaires pour mener à bien ce projet et développé tous les algorithmes et scripts permettant l'analyse de l'ensemble des images collectées et des données extraites de ces mêmes images. Pour cela, j'ai notamment réalisé des logiciels sur-mesure à l'aide du langage Python ainsi que des plugins en langage Java pour le logiciel ImageJ."
+        ]
+    },
+    "features": [
+        {
+            "title": "Construction d'équipements",
+            "description": "Conception d'équipements scientifiques pour produire des membranes lipidiques et pour contrôler la température de l'échantillon."
+        },
+        {
+            "title": "Expérience de microscopie",
+            "description": "Analyse de membranes lipidiques et de leurs interactions avec des biomolécules au microscope confocal."
+        },
+        {
+            "title": "Analyse d'images et de données",
+            "description": "Développement d'algorithmes et de logiciels pour analyser les images et les données extraites lors des expériences."
+        }
+    ],
+    "resultsDescription": "À l'obtention de mon doctorat à l'Université de Strasbourg, et donc à l'issue de mon contrat au sein de l'Institut Charles Sadron, j'ai pu compléter avec succès les différents objectifs du projet. Par la suite, j'ai également continué de travailler sur les membranes lipidiques au travers de simulations numériques et de l'utilisation de l'IA pour analyser les propriétés des membranes. En ce qui concerne mon projet de thèse, les éléments suivants ont été réalisés avec succès :",
+    "results": [
+        "Construction d'équipements pour produire des membranes lipidiques modèles et pour contrôler précisément la température de l'échantillon au cours de son observation au microscope.",
+        "Publication de deux articles scientifiques, dont un en tant que premier auteur (Scientific Reports en 2017 et Biophysical Journal en 2024) sur les résultats des expériences sur les peptides pénétrateurs de cellule.",
+        "Publication d'un article scientifique (Langmuir 2019) sur l'interaction entre des vésicules, créées avec l'équipement développé au cours de ce projet, et des ailes de libellule.",
+        "Obtention du titre de docteur en biophysique de l'Université de Strasbourg et publication de mon manuscrit de thèse."
+    ],
+    "technologies": [
+        "Microscopie confocale",
+        "Membranes lipidiques",
+        "Peptides",
+        "ImageJ",
+        "NumPy",
+        "scikit-image",
+        "Pillow"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "Java"
+    ],
+    "linkLabels": {
+        "molecularCommunicationPresentation": "Vidéo de présentation du projet"
+    }
+}

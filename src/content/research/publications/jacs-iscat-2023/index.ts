@@ -46,7 +46,7 @@ const authors = [
 
 const themeIds = ['optics-photonics'] as const satisfies readonly ResearchThemeId[];
 
-const projectIds = ['molecular-communication'] as const satisfies readonly ProjectId[];
+const projectIds = ['iscat-platform'] as const satisfies readonly ProjectId[];
 
 const experienceIds = ['kcl-molecular-communication'] as const satisfies readonly ExperienceId[];
 

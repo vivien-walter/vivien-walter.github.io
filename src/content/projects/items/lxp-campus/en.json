@@ -1,0 +1,108 @@
+{
+    "breadcrumbLabel": "Formao",
+    "eyebrow": "Learning eXperience Platform",
+    "title": "Formao Virtual Campus",
+    "summary": "Creation of a custom-built virtual campus bringing together educational content, employment support, health- and disability-related services, generative artificial intelligence and XR applications.",
+    "heroImage": {
+        "alt": "Screenshot of the Formao Virtual Campus homepage."
+    },
+    "overview": {
+        "image": {
+            "alt": "Screenshot of the Course Area of Formao Virtual Campus."
+        },
+        "facts": [
+            {
+                "label": "Project type",
+                "value": "LXP platform designed as a Virtual Campus"
+            },
+            {
+                "label": "Employer",
+                "value": "I-MAGINEXR"
+            },
+            {
+                "label": "Role",
+                "value": "Project Manager (Product Manager)"
+            },
+            {
+                "label": "Client",
+                "value": "ARINFO I-MAGINER"
+            },
+            {
+                "label": "Team",
+                "value": "11 people"
+            },
+            {
+                "label": "Funding",
+                "value": "€2M obtained from OPCO Atlas over 4 years"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "The Formao Virtual Campus project originated from CFA ARINFO I-MAGINER's desire to replace its ageing Moodle-based learning platform by developing a custom-built platform designed to support not only learners but also trainers and administrative staff. The objective was therefore not to create a simple online course platform (LMS), but a Learning Experience Platform (LXP). As part of a drive to innovate, the platform would also go far beyond course management and incorporate all the elements characteristic of a learner's life, including outside lessons, to create a genuine Virtual Campus.",
+            "As with any custom-built solution, designing Formao Virtual Campus required the implementation of a complete technology stack adapted to the identified needs: extensive personalisation of content and the entire user experience, multiple types of access (users, administrators, etc.), load management with more than 200 learners using the platform concurrently, etc. The main development objectives were therefore to build a strong foundation and then integrate a design providing an optimal user experience.",
+            "At the same time, in line with I-MAGINEXR's desire to promote new technologies and their use in education, the creation of the platform was accompanied by the development of applications and tools based on extended reality (VR, AR, etc.) and generative artificial intelligence, enabling users to experience immersive scenarios that adapted to their actions.",
+            "Following the development of Formao and its deployment within the partner CFA, the objective was also to turn Formao Virtual Campus into a white-label application marketed by I-MAGINEXR."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "As Project Manager / Product Manager with a strong hands-on focus, my main role was, on the one hand, to coordinate all the company's internal teams working on the Virtual Campus project and, on the other hand, to coordinate their work with our client's teams, while communicating progress to the project's main funding body (OPCO Atlas). I also drew on my teaching experience to support the apprentices recruited by the company, training them in the technologies used in the project and mentoring them on their own individual projects.",
+            "Initially, I defined all the project's objectives and drafted complete specifications for all the company's teams, as well as for the teams from our client supporting us on the project, particularly with communication about our progress. At the same time, I prepared applications for OPCO Atlas calls for projects, updated the specifications after new funding was secured, and led all meetings relating to the project.",
+            "I worked with the lead developer, Joachim BRASIER, to establish the complete technology stack defining the learning platform: the language, framework and libraries used, algorithms for writing to and reading from the database, and load management for applications using generative artificial intelligence. I also actively contributed to the development of the platform's backend, particularly the integration of SCORM standards, connections to external AI services (ChatGPT, Mistral AI, etc.) and full support for Open Badges. At the same time, I assisted the lead developer with training and supporting the company's web development team.",
+            "I also worked closely with Lodine GENDRAULT and Tristan ALBERT to design and create the interfaces for the different areas of the Virtual Campus. This work included not only producing mock-ups for these interfaces, but also managing the design team and training it to use Figma.",
+            "I also managed the company's research & development team, guiding it in the creation of virtual-reality and augmented-reality applications, as well as applications using artificial intelligence. For applications specifically using artificial intelligence, I wrote and optimised all the prompts used by the AI agents. At the same time, I supervised a CIFRE PhD thesis on the use of VR applications and generative AI for training in the support of learners with disabilities, particularly those with autism spectrum disorder.",
+            "To carry out all this work, I managed a total of three consecutive annual OPCO Atlas funding awards (€200,000, €200,000 and €200,000), as well as the preparation of application dossiers for OPCO calls for projects to secure this funding. All 3 applications I prepared were selected by OPCO Atlas to fund the project."
+        ]
+    },
+    "features": [
+        {
+            "title": "Product leadership",
+            "description": "Definition of the scope, resources, organisation and roadmap, followed by decision management and validation of deliverables."
+        },
+        {
+            "title": "TypeScript backend",
+            "description": "Design and development of parts of the backend using TypeScript, Node.js, Express and MongoDB."
+        },
+        {
+            "title": "Architecture and security",
+            "description": "Migration of the backend to TypeScript, Zod validation, redesign of authentication tokens, API access keys and server-side pagination."
+        },
+        {
+            "title": "Generative-AI ecosystem",
+            "description": "Design of the architecture and protocols required to use several generative-artificial-intelligence providers."
+        },
+        {
+            "title": "XR applications",
+            "description": "Leadership of prompt engineering and the production of four XR applications integrated into the campus ecosystem."
+        },
+        {
+            "title": "Research & Development",
+            "description": "Supervision of a CIFRE PhD thesis on the use of XR in education to promote inclusivity."
+        }
+    ],
+    "resultsDescription": "The project was unfortunately interrupted following the judicial liquidation of CFA ARINFO I-MAGINER, as well as I-MAGINEXR. The platform could not be completed to 100%, and the code cannot be made public following the closure of the company's activities. Nevertheless, the following results were achieved during the contract:",
+    "results": [
+        "Applications selected by OPCO Atlas for project funding for 3 consecutive years, for a total of €M.",
+        "Implementation of I-MAGINEXR's communication strategy and creation of technical and commercial documents.",
+        "Completion of the backend and artificial-intelligence ecosystem.",
+        "Delivery of four applications using virtual reality, augmented reality and/or generative artificial intelligence.",
+        "Definition of the user-interface design for 90% of the Virtual Campus areas.",
+        "Integration of 60% of the areas."
+    ],
+    "technologies": [
+        "Node.js",
+        "Next.js",
+        "React",
+        "Express",
+        "MongoDB",
+        "Zod",
+        "Tailwind CSS",
+        "Generative AI",
+        "VR",
+        "AR"
+    ],
+    "programmingLanguages": [
+        "TypeScript"
+    ]
+}

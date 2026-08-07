@@ -1,0 +1,105 @@
+{
+    "breadcrumbLabel": "Molecular communication",
+    "eyebrow": "Experimental testbed and artificial intelligence",
+    "title": "Molecular communication",
+    "summary": "Creation of a microfluidic testbed to experimentally test and validate theoretical models for processing a chemical signal in the context of molecular communication, using artificial intelligence to decode the signals.",
+    "heroImage": {
+        "alt": "Photograph of the microfluidic testbed as used for the molecular communication experiments."
+    },
+    "overview": {
+        "image": {
+            "alt": "Photograph of the three main participants in the project: myself, Yansha DENG and Dadi BI."
+        },
+        "facts": [
+            {
+                "label": "Project type",
+                "value": "Experimental validation of theoretical principles of molecular communication"
+            },
+            {
+                "label": "Employer",
+                "value": "King's College London, Department of Engineering"
+            },
+            {
+                "label": "Role",
+                "value": "R&D Project Manager (Postdoctoral Research Associate)"
+            },
+            {
+                "label": "Team",
+                "value": "5 people"
+            },
+            {
+                "label": "Funding",
+                "value": "€360,000 obtained from EPSRC through two calls for projects"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "The project was initiated by Yansha DENG within her group in the Department of Engineering at King’s College London. The main objective of this project was to build a microfluidic platform that would make it possible to experimentally verify the theoretical models developed by Dadi BI and herself, in order to demonstrate that chemical reactions could be used to modify and control a molecular signal. This project was part of research into molecular communication and sought to demonstrate that it was possible to reproduce in the laboratory the biochemical processes at work in living organisms in order to harness and better control them, thereby opening up new opportunities in the field of medicine.",
+            "Initially, the first objective of the project was to address a range of technological challenges: building a complete microfluidic testbed required designing and/or acquiring all the equipment making up the platform: pumps to inject the solutions, capillaries to control and direct the flows, detectors to measure the behaviour of the testbed and decode the signal, etc. It was therefore necessary to build and calibrate a device that met demanding specifications.",
+            "After constructing the testbed, the second objective was to design a selection of chemical reactions that would be tested in the testbed to transmit, modify and detect a signal encoded in molecules. In particular, the reactions had to make it possible to amplify and clean the signal, thereby increasing the distance over which the signal could be transmitted.",
+            "Finally, the last objective of the project was to develop a Deep Learning artificial-intelligence model, a neural network capable of analysing the molecular signals detected by the testbed and extracting the message encoded in the signal."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "As R&D Project Manager (officially, in academia, Postdoctoral Research Assistant), my main role was to do everything necessary to bring the project to fruition, from constructing the testbed to training the research staff using it, while conducting my own research.",
+            "Before even designing the testbed at the centre of the project, my first task was to set up a chemistry laboratory capable of accommodating the prototype, as the Department of Engineering at King's College London did not have one. I identified and prepared the premises, selected and ordered the equipment, major instruments and consumables, and then contributed to defining the safety and operating protocols with the support of the department's administrative staff.",
+            "I designed and built the testbed prototype, selecting the necessary hardware but also producing some of the key equipment using CAD software and 3D printers, such as the syringe pumps required to inject chemicals into the testbed. I also developed all the control software, using C++ for the Arduino boards of the various pieces of equipment and Python for the central testbed control and automation software.",
+            "To carry out all the work, I managed two EPSRC grants of €300,000 and €60,000, contributed partially to the first proposal and wrote the second in full. I also wrote the technical documentation and prepared documentation to patent the testbed prototype.",
+            "I led an average team of five people comprising a junior PDRA, two doctoral researchers and two Master's interns. Nine people were trained in total to use the testbed, and I co-supervised their research projects with Yansha DENG. At the same time, I conducted my own research using the testbed, which enabled me to design an artificial-intelligence model based on convolutional neural networks to decode the messages encoded in the molecular signals transmitted by our testbed."
+        ]
+    },
+    "features": [
+        {
+            "title": "Laboratory creation",
+            "description": "Preparation of the premises, selection of equipment and definition of the protocols required to operate the laboratory."
+        },
+        {
+            "title": "Microfluidic testbed",
+            "description": "Design of an operational platform combining chemistry, microfluidics, UV-Visible detection, electronics and software."
+        },
+        {
+            "title": "Chemical signal processing",
+            "description": "Experimental investigation of filtering, saturation, amplification and encoding functions based on chemical reactions."
+        },
+        {
+            "title": "1D CNN analysis",
+            "description": "Development of a one-dimensional convolutional neural network to estimate the molecular composition and concentrations of aqueous solutions from UV-Visible signals."
+        },
+        {
+            "title": "Open-source equipment",
+            "description": "Design and manufacture of various pieces of equipment for the testbed, including six pumps using Fusion 360, 3D printing, Arduino electronics, I²C communication and control software."
+        },
+        {
+            "title": "Leadership and funding",
+            "description": "Coordination of the team, training of users and management of two EPSRC grants representing €360,000 in total."
+        }
+    ],
+    "resultsDescription": "At the end of my contract within the Department of Engineering at King's College London, I successfully completed the various objectives of the project and finished the construction and commissioning of the molecular communication testbed. In particular, the following elements were successfully completed:",
+    "results": [
+        "Establishment of a chemistry laboratory within the Department of Engineering at King's College London, including the design of operating and safety protocols for all laboratory users.",
+        "Construction of a microfluidic testbed designed specifically for molecular communication, including the design and programming of the equipment required to operate the testbed (syringe pumps, pH probe, etc.).",
+        "Programming of the testbed control and automation software and creation of all scripts for processing and analysing the data collected by the testbed, including an artificial-intelligence model based on a convolutional neural network.",
+        "Proof of concept of the microfluidic testbed and the various chemical reactions enabling signal transmission, with experimental validation of the concepts of molecular communication.",
+        "Publication of two scientific papers as first author (Nature Communications in 2023 and IEEE TMBMC in 2026) on the microfluidic testbed, its use to validate the principles of molecular communication, and the use of artificial intelligence to decode the signals.",
+        "Response to a call for proposals and securing €60,000 in funding from EPSRC, as well as preparation of documentation to patent the testbed."
+    ],
+    "technologies": [
+        "TensorFlow",
+        "scikit-learn",
+        "Arduino",
+        "I²C",
+        "Autodesk Fusion 360",
+        "3D printing",
+        "Microfluidics",
+        "UV-Visible spectroscopy"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "C++"
+    ],
+    "linkLabels": {
+        "molecularCommunicationPresentation": "Project presentation video"
+    }
+}

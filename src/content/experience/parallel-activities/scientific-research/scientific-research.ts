@@ -17,7 +17,7 @@ const localizedScientificResearchContent = {
   en: enScientificResearchJson,
 } as const;
 
-const projectIds = ['mllpa-project'] as const satisfies readonly ProjectId[];
+const projectIds = ['molecular-dynamics'] as const satisfies readonly ProjectId[];
 
 const softwareIds = ['mllpa'] as const satisfies readonly SoftwareId[];
 

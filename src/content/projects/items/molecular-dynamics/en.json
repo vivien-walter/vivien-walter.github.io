@@ -1,0 +1,90 @@
+{
+    "breadcrumbLabel": "Molecular dynamics",
+    "eyebrow": "Using AI to study lipids",
+    "title": "AI and molecular dynamics",
+    "summary": "Development of artificial-intelligence algorithms to analyse numerical simulations of lipid membranes and study their thermodynamic properties as well as their interactions with molecules.",
+    "heroImage": {
+        "alt": "Illustration of a ripple phase appearing in a lipid membrane during a numerical simulation."
+    },
+    "overview": {
+        "image": {
+            "alt": "Map of a lipid membrane showing its thickness as well as the thermodynamic phase identified by the artificial-intelligence algorithms."
+        },
+        "facts": [
+            {
+                "label": "Project type",
+                "value": "Creation of AI models for analysing numerical simulations of lipid membranes"
+            },
+            {
+                "label": "Employer",
+                "value": "University of Strasbourg, then independent researcher"
+            },
+            {
+                "label": "Role",
+                "value": "Principal investigator (independent)"
+            },
+            {
+                "label": "Collaborators",
+                "value": "5 researchers from France, the United Kingdom and Canada"
+            }
+        ]
+    },
+    "context": {
+        "paragraphs": [
+            "This project began at the University of Strasbourg alongside my PhD research. Combining my PhD topic on lipid membranes with my interest in statistics and computer programming, I formed a collaboration with Céline RUSCHER, Fabrice THALMANN and Olivier BENZERARA to study how artificial-intelligence algorithms, using Machine Learning and Deep Learning, could be applied to the analysis of molecular-dynamics simulations of lipid membranes in order to extract the thermodynamic properties of molecules.",
+            "One objective of this project is to carry out numerical molecular-dynamics simulations to study the behaviour of lipid membranes. Two research topics are being investigated: the interaction of membranes with sugars (glucose, fructose, and trehalose) during temperature variations, a topic of particular importance for cryogenic applications, as well as the conditions under which the ripple phase appears in cell membranes.",
+            "The other objective of this project is to use artificial intelligence, specifically Machine Learning and then Deep Learning, to analyse the systems and trajectories obtained through the numerical simulations. Algorithms are therefore designed and models trained to identify the thermodynamic phases of lipids, allowing us to map the membranes and study the effect of thermodynamic phase on the properties and interactions of lipids."
+        ]
+    },
+    "contribution": {
+        "paragraphs": [
+            "I initiated this project, first by contacting the various scientific collaborators to involve them in the project, and then by defining its research topics and objectives. As the project's principal investigator, I organise and lead working meetings and progress meetings, and propose new directions for the project whenever a new determining stage is completed.",
+            "With the assistance of Olivier BENZERARA, I carry out all the numerical simulations on the available computing servers, first assembling the systems to create the simulation boxes and then applying the desired transformations and properties to each system we wished to study. I use GROMACS for all the simulations.",
+            "Once the simulations are complete, I also perform all the analyses on the resulting systems. These range from standard analyses to the design and training of artificial-intelligence models, using scikit-learn and TensorFlow, to determine advanced thermodynamic properties of these membranes, particularly the thermodynamic phase of individual lipids.",
+            "In this context, I developed and published the code for ML-LPA, a Python module that uses finely calibrated Machine Learning models to enable users to study simulations of lipid membranes and extract maps of membrane phases. I also created the website presenting the ML-LPA module, including a complete guide to its use.",
+            "I wrote all the scientific papers we published on the subject and was invited to present our work at seminars in England and Germany."
+        ]
+    },
+    "features": [
+        {
+            "title": "Molecular-dynamics simulations",
+            "description": "Construction of lipid membranes and simulation of their dynamics using GROMACS."
+        },
+        {
+            "title": "Membrane-phase analysis",
+            "description": "Structuring of the data-processing workflows required to identify and study the states of membrane systems."
+        },
+        {
+            "title": "Machine learning",
+            "description": "Development of approaches using scikit-learn, followed by a three-dimensional convolutional neural network using TensorFlow."
+        },
+        {
+            "title": "Reusable Python module",
+            "description": "Organisation of the scientific methods into a documented module that can be reused for other analyses."
+        }
+    ],
+    "resultsDescription": "This project is still ongoing and the collaboration around it remains active. We are currently investigating new methods based on three-dimensional convolutional neural networks to develop a more general model for analysing thermodynamic phases. However, the achievements already completed to date include:",
+    "results": [
+        "Development of ML-LPA, a Python module based on Machine Learning for analysing the phases of lipid membranes, followed by publication of the software and creation of a website presenting it.",
+        "Publication of three scientific papers as first author (PCCP 2020, J. Comp. Chem. 2021 and BBA Biomembranes 2021) on the analysis of phase transitions in lipid membranes and the application of this analysis to the study of the ripple phase."
+    ],
+    "technologies": [
+        "GROMACS",
+        "NumPy",
+        "h5py",
+        "MDAnalysis",
+        "pandas",
+        "scikit-learn",
+        "TensorFlow",
+        "tqdm",
+        "Linux",
+        "SLURM"
+    ],
+    "programmingLanguages": [
+        "Python",
+        "Bash"
+    ],
+    "linkLabels": {
+        "mllpaWebsite": "ML-LPA Python module website"
+    }
+}

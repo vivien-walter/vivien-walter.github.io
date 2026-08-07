@@ -17,7 +17,7 @@ import PageHero from '@/components/page-hero';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
 import { getExperienceById, getExperienceNavigation, getExperiencePage } from '@/content/experience/page';
-import { getProjectsByExperienceId } from '@/content/projects/page';
+import { getProjectsByExperienceId } from '@/content/projects/catalog';
 import { getPublicationsByExperienceId } from '@/content/research/publications/catalog';
 import { getSoftwareByExperienceId } from '@/content/software/catalog';
 import { formatContentDateRange } from '@/lib/content/formatters';

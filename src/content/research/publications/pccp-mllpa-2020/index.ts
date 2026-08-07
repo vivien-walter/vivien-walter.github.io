@@ -38,7 +38,7 @@ const authors = [
 
 const themeIds = ['molecular-interfaces', 'artificial-intelligence'] as const satisfies readonly ResearchThemeId[];
 
-const projectIds = ['molecular-communication'] as const satisfies readonly ProjectId[];
+const projectIds = ['molecular-dynamics'] as const satisfies readonly ProjectId[];
 
 const experienceIds = ['kcl-molecular-communication'] as const satisfies readonly ExperienceId[];
 
