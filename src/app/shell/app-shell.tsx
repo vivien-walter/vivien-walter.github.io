@@ -4,7 +4,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import { siteIdentity } from '@/content/common/site';
 
-import { getLanguageFromPathname, getNavigationItemFromPathname } from '../routing/navigation';
+import { getLanguageFromPathname, getPageIdFromPathname } from '../routing/navigation';
 import SiteFooter from './site-footer';
 import SiteHeader from './site-header';
 
@@ -18,7 +18,7 @@ export default function AppShell() {
   const previousPathnameRef = useRef(location.pathname);
 
   /* Fetch all data for the translation */
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLanguage = getLanguageFromPathname(location.pathname);
 
   /* Synchronize the language */
@@ -34,29 +34,35 @@ export default function AppShell() {
 
   /* Update the title of the document */
   useEffect(() => {
-    /* Wait for the routed page to finish rendering before reading its title */
+    /*
+     * Wait for the routed page to finish rendering so the current
+     * breadcrumb is available in the document.
+     */
     const animationFrameId = window.requestAnimationFrame(() => {
-      /* Prefer the title rendered by the current page, especially for detail routes */
-      const renderedPageTitle = document.getElementById('page-title')?.textContent?.trim();
+      const currentPageId = getPageIdFromPathname(location.pathname);
 
-      /* Retrieve the navigation entry associated with the current route */
-      const navigationItem = getNavigationItemFromPathname(location.pathname);
+      /*
+       * The current page is always the last breadcrumb item and is
+       * rendered by BreadcrumbPage with this data-slot.
+       */
+      const breadcrumbLabel = document.querySelector<HTMLElement>('#main-content [data-slot="breadcrumb-page"]')?.textContent?.trim();
 
-      /* Provide a localized fallback for pages without a rendered title */
-      const fallbackPageTitle = t(navigationItem?.titleKey ?? 'errors.pageNotFound', {
-        lng: currentLanguage,
-      });
-      const pageTitle = renderedPageTitle || fallbackPageTitle;
+      /*
+       * The home page, as well as pages without a breadcrumb,
+       * use only the canonical website name.
+       */
+      if (currentPageId === 'home' || !breadcrumbLabel) {
+        document.title = siteIdentity.name;
+        return;
+      }
 
-      /* Combine the page title with the non-localized website name */
-      document.title = `${pageTitle} | ${siteIdentity.name}`;
+      document.title = `${breadcrumbLabel} | ${siteIdentity.name}`;
     });
 
-    /* Cancel a pending update when the route or language changes again */
     return () => {
       window.cancelAnimationFrame(animationFrameId);
     };
-  }, [currentLanguage, location.pathname, t]);
+  }, [currentLanguage, location.pathname]);
 
   /* Change the screen position on page change */
   useEffect(() => {

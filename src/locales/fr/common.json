@@ -3,7 +3,9 @@
         "skipToContent": "Aller au contenu principal",
         "externalLinkNewTab": "Ouvre un lien externe dans un nouvel onglet",
         "openImage": "Agrandir l’image : {{alt}}",
-        "closeImage": "Fermer l’agrandissement"
+        "closeImage": "Fermer l’agrandissement",
+        "previousResearchAxis": "Axe précédent",
+        "nextResearchAxis": "Axe suivant"
     },
     "navigation": {
         "primaryLabel": "Navigation principale",

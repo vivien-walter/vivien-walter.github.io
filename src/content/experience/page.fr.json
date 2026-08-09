@@ -3,10 +3,12 @@
     "introduction": "Mon parcours se caractérise par un profil multidisciplinaire, construit autour d'une passion pour la science des données et la programmation. De la recherche scientifique au développement web en passant par l'enseignement, vous trouverez ici le détail de mon profil et de mon parcours professionnel.",
     "sectionTitles": {
         "timeline": "Parcours professionnel",
+        "education": "Formation",
         "personalActivities": "Activités personnelles"
     },
     "sectionDescriptions": {
         "timeline": "Présentation dans l'ordre chronologique de l'ensemble de mes expériences professionnelles majeures. Cette liste inclut mes expériences professionnelles réalisées en parallèle de mes contrats principaux : consultance, enseignement, etc.",
+        "education": "Un bref résumé de ma formation académique.",
         "personalActivities": "Explorez cette section pour en apprendre plus sur qui je suis au-delà de mes projets professionnels, en découvrant les différentes activités qui me passionnent."
     },
     "timelineControls": {

@@ -1,13 +1,13 @@
 {
     "eyebrow": "Chef de projet multidisciplinaire et polyvalent",
     "title": "Accompagner le succès des projets scientifiques et numériques",
-    "introduction": "Je m'appelle Vivien PRAUD WALTER et je suis un chef de projet multidisciplinaire, ayant piloté des projets allant la recherche scientifique au développement web en passant par la construction de plateformes d'imagerie. Ce site présente tous mes travaux dans ces différents domaines pour vous permettre de découvrir mon activité.",
+    "introduction": "Je m'appelle Vivien PRAUD WALTER et je suis un chef de projet multidisciplinaire, ayant piloté des projets allant de la recherche scientifique au développement web en passant par la construction de plateformes d'imagerie. Ce site présente tous mes travaux dans ces domaines pour vous permettre de découvrir mon activité.",
     "heroActions": {
         "projects": "Explorer mes projets",
         "experience": "Découvrir mon parcours"
     },
     "heroImage": {
-        "alt": "Lorem ipsum dolor sit amet."
+        "alt": "Photographie présentant Vivien PRAUD WALTER"
     },
     "heroHighlights": {
         "projectManagement": "Pilotage de projets multidisciplinaires",
@@ -47,9 +47,8 @@
             "publication": "Publication"
         },
         "projectActionLabel": "Voir le projet détaillé",
-        "molecularCommunicationPublication": {
-            "actionLabel": "Consulter la publication"
-        }
+        "softwareActionLabel": "Voir le logiciel",
+        "publicationActionLabel": "Consulter la publication"
     },
     "statement": {
         "text": "Je conçois et développe des systèmes utiles, pérennes et compréhensibles, qui renforcent la confiance dans les mesures, les analyses et les décisions.",
@@ -57,7 +56,7 @@
     },
     "researchAxes": {
         "title": "Axes de recherche",
-        "description": "Contribuer à la recherche scientifique, y compris au travers de collaborations ponctuelles, est un de mes engagements les plus fort. N'hésitez pas à découvrir les différents domaines que j'explore au travers de mes travaux.",
+        "description": "Contribuer à la recherche scientifique, y compris à travers des collaborations ponctuelles, est un de mes engagements les plus forts. N'hésitez pas à découvrir les différents domaines que j'explore à travers mes travaux.",
         "actionLabel": "En savoir plus",
         "opticsAndPhotonics": {
             "title": "Optique et photonique",
@@ -78,6 +77,6 @@
     },
     "follow": {
         "title": "Me suivre au quotidien",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "description": "Si vous souhaitez en savoir plus sur mes projets et mon activité en général, n'hésitez pas à me suivre en utilisant les liens disponibles ci-dessous."
     }
 }

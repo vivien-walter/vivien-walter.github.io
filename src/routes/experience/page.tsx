@@ -18,10 +18,11 @@ import {
 } from '@/components/hero';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Switch } from '@/components/ui/switch';
-import { getExperienceCollection, getPersonalActivityCollection } from '@/content/experience/catalog';
+import { getEducationCollection, getExperienceCollection, getPersonalActivityCollection } from '@/content/experience/catalog';
 import { getExperiencePage } from '@/content/experience/page';
 import { getProjectsByExperienceId } from '@/content/projects/catalog';
 
+import EducationSection from './_components/education-section';
 import ExperienceContactBanner from './_components/experience-contact-banner';
 import ExperienceExpertiseBand from './_components/experience-expertise-band';
 import PersonalActivitiesSection from './_components/personal-activities-section';
@@ -38,6 +39,8 @@ function ExperiencePage() {
   const page = getExperiencePage(language);
 
   const experiences = getExperienceCollection(language);
+
+  const education = getEducationCollection(language);
 
   const personalActivities = getPersonalActivityCollection(language);
 
@@ -137,6 +140,8 @@ function ExperiencePage() {
             </div>
           </Section>
         ) : null}
+
+        <EducationSection title={page.sectionTitles.education} description={page.sectionDescriptions.education} items={education} />
       </div>
 
       <ExperienceContactBanner content={page.contactBanner} language={language} />

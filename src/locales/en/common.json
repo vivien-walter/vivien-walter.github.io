@@ -3,7 +3,9 @@
         "skipToContent": "Skip to main content",
         "externalLinkNewTab": "Opens an external link in a new tab",
         "openImage": "Enlarge image: {{alt}}",
-        "closeImage": "Close enlarged image"
+        "closeImage": "Close enlarged image",
+        "previousResearchAxis": "Previous research area",
+        "nextResearchAxis": "Next research area"
     },
     "navigation": {
         "primaryLabel": "Primary navigation",

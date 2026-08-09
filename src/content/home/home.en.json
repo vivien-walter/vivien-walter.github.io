@@ -1,55 +1,54 @@
 {
-    "eyebrow": "Home",
-    "title": "AI, software, scientific instrumentation and complex systems",
-    "introduction": "I support technical projects from requirements definition through to deliverable validation. My background combines team coordination, scientific understanding, technical decision-making and direct development work when the project requires it.",
+    "eyebrow": "Multidisciplinary and versatile project manager",
+    "title": "Supporting the success of scientific and digital projects",
+    "introduction": "My name is Vivien PRAUD WALTER, and I am a multidisciplinary project manager who has led projects ranging from scientific research and web development to the construction of imaging platforms. This website presents my work across these fields, allowing you to discover what I do.",
     "heroActions": {
-        "projects": "View my projects",
-        "experience": "Explore my experience"
+        "projects": "Explore my projects",
+        "experience": "Discover my experience"
     },
     "heroImage": {
-        "alt": "Lorem ipsum dolor sit amet."
+        "alt": "Image of Vivien PRAUD WALTER"
     },
     "heroHighlights": {
-        "projectManagement": "Complex and multidisciplinary project management",
+        "projectManagement": "Multidisciplinary project management",
         "softwareAndAi": "Software, web applications and artificial intelligence",
         "instrumentation": "Scientific and medical instrumentation",
-        "location": "Based in Vendée, France."
+        "location": "International profile based in Vendée, France."
     },
     "profileDimensions": {
         "title": "Three dimensions of one profile",
         "projectManagement": {
-            "title": "R&D project management",
+            "title": "Multidisciplinary project management",
             "description": "Scoping, requirements analysis, specifications, roadmaps, multidisciplinary coordination, risk management, quality, funding and validation."
         },
         "softwareAndAi": {
-            "title": "Software and artificial intelligence",
+            "title": "Software, web applications and artificial intelligence",
             "description": "Python and TypeScript development, generative AI integration, machine learning, data analysis, interfaces and automation."
         },
         "instrumentation": {
-            "title": "Instrumentation and complex systems",
-            "description": "Creation of laboratories and experimental platforms, microscopy, microfluidics, electronics, prototyping and control software."
+            "title": "Scientific and medical instrumentation",
+            "description": "Creation of laboratories, experimental platforms, microscopy, microfluidics, electronics, prototyping and control software."
         }
     },
     "practicalInformation": {
         "title": "Practical information",
         "location": "Based in Vendée, France.",
-        "employment": "Primarily open to permanent employment opportunities.",
+        "employment": "Primarily open to permanent positions.",
         "workMode": "Available for hybrid or fully remote work.",
         "travel": "Available for occasional travel to client or partner sites.",
         "languages": "Professional working proficiency in French and English."
     },
     "featuredWorks": {
         "title": "Recent work",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Discover my latest projects, software and scientific publications here. Want to find out more? Visit the corresponding sections to explore all the details!",
         "kindLabels": {
             "project": "Project",
             "software": "Software",
             "publication": "Publication"
         },
         "projectActionLabel": "View project details",
-        "molecularCommunicationPublication": {
-            "actionLabel": "View the publication"
-        }
+        "softwareActionLabel": "View software",
+        "publicationActionLabel": "View publication"
     },
     "statement": {
         "text": "I design and develop useful, sustainable and understandable systems that strengthen confidence in measurements, analyses and decisions.",
@@ -57,11 +56,11 @@
     },
     "researchAxes": {
         "title": "Research areas",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Contributing to scientific research, including through occasional collaborations, is one of my strongest commitments. Feel free to discover the different fields I explore through my work.",
         "actionLabel": "Learn more",
         "opticsAndPhotonics": {
             "title": "Optics and photonics",
-            "description": "Design, construction and operation of microscopy and optical instrumentation systems, including iSCAT."
+            "description": "Design, construction and operation of microscopy and optical instrumentation systems, particularly iSCAT."
         },
         "scientificAi": {
             "title": "Scientific artificial intelligence",
@@ -78,6 +77,6 @@
     },
     "follow": {
         "title": "Follow my work",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "description": "If you would like to learn more about my projects and my work in general, feel free to follow me using the links below."
     }
 }

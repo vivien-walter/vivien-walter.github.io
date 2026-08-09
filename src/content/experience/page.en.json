@@ -3,10 +3,12 @@
     "introduction": "My career is characterised by a multidisciplinary profile, built around a passion for data science and programming. From scientific research to web development and teaching, you will find here the details of my profile and professional career.",
     "sectionTitles": {
         "timeline": "Professional experience",
+        "education": "Education",
         "personalActivities": "Personal activities"
     },
     "sectionDescriptions": {
         "timeline": "A chronological presentation of all my major professional experiences. This list includes professional activities carried out alongside my main contracts: consulting, teaching, etc.",
+        "education": "A brief overview of my academic background.",
         "personalActivities": "Explore this section to learn more about who I am beyond my professional projects by discovering the different activities I am passionate about."
     },
     "timelineControls": {

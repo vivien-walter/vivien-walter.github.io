@@ -1,24 +1,18 @@
-import {
-  AtomIcon,
-  BrainIcon,
-  BriefcaseIcon,
-  CodeIcon,
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-  MapPinIcon,
-  MicroscopeIcon,
-  UsersThreeIcon,
-} from '@phosphor-icons/react';
+import { BriefcaseIcon, CodeIcon, GithubLogoIcon, LinkedinLogoIcon, MapPinIcon, MicroscopeIcon } from '@phosphor-icons/react';
 
 import heroImageSrc from '@/assets/images/home/hero.jpg';
 import { OrcidIcon } from '@/components/icons/orcid';
 import { publicProfile } from '@/content/common/profile';
-import { getProjectById } from '@/content/projects/catalog';
+import { getExperienceById } from '@/content/experience/catalog';
+import { getProjectCollection } from '@/content/projects/catalog';
 import type { ProjectId } from '@/content/projects/registry';
-import { getPublicationById } from '@/content/research/publications/catalog';
+import { getPublicationCollection } from '@/content/research/publications/catalog';
 import type { PublicationId } from '@/content/research/publications/registry';
-import { getSoftwareById } from '@/content/software/catalog';
+import type { ResearchThemeId } from '@/content/research/registry';
+import { getResearchThemeCollection } from '@/content/research/themes/catalog';
+import { getSoftwareCollection } from '@/content/software/catalog';
 import type { SoftwareId } from '@/content/software/registry';
+import { getSoftwareTags } from '@/content/software/tags';
 import { selectLocalizedContent } from '@/lib/content/localization';
 import type { LocalizedContent, SupportedLanguage } from '@/types/localization';
 
@@ -74,9 +68,8 @@ type LocalizedHomeContent = {
       readonly publication: string;
     };
     readonly projectActionLabel: string;
-    readonly molecularCommunicationPublication: {
-      readonly actionLabel: string;
-    };
+    readonly softwareActionLabel: string;
+    readonly publicationActionLabel: string;
   };
 
   readonly statement: {
@@ -149,13 +142,14 @@ type HomeFeaturedWorkBase<ContentId extends string> = {
   readonly contentId: ContentId;
   readonly kindLabel: string;
   readonly title: string;
-  readonly summary: string;
   readonly image?: HomeFeaturedWorkImage;
 };
 
 export type HomeFeaturedProject = HomeFeaturedWorkBase<ProjectId> & {
   readonly kind: 'project';
   readonly actionLabel: string;
+  readonly employer: string;
+  readonly role: string;
   readonly period: {
     readonly start: string;
     readonly end?: string;
@@ -165,17 +159,17 @@ export type HomeFeaturedProject = HomeFeaturedWorkBase<ProjectId> & {
 export type HomeFeaturedSoftware = HomeFeaturedWorkBase<SoftwareId> & {
   readonly kind: 'software';
   readonly actionLabel: string;
-  readonly projectId: ProjectId;
   readonly primaryLanguage: string;
+  readonly technologies: readonly string[];
 };
 
 export type HomeFeaturedPublication = HomeFeaturedWorkBase<PublicationId> & {
   readonly kind: 'publication';
+  readonly actionLabel: string;
   readonly journal: string;
-  readonly doi: {
-    readonly label: string;
-    readonly href: string;
-  };
+  readonly year: number;
+  readonly authors: readonly string[];
+  readonly href: string;
 };
 
 export type HomeFeaturedWork = HomeFeaturedProject | HomeFeaturedSoftware | HomeFeaturedPublication;
@@ -197,7 +191,7 @@ export type HomeStatementContent = {
 };
 
 export type HomeResearchAxis = {
-  readonly id: 'optics-photonics' | 'scientific-ai' | 'scientific-software' | 'collaborative-systems';
+  readonly id: ResearchThemeId;
   readonly title: string;
   readonly description: string;
   readonly icon: HomeIcon;
@@ -257,36 +251,6 @@ function getPublicProfileLink(id: HomeFollowLink['id']): (typeof publicProfile.e
   return link;
 }
 
-function getRequiredProject(language: SupportedLanguage, projectId: ProjectId) {
-  const project = getProjectById(language, projectId);
-
-  if (!project) {
-    throw new Error(`Missing canonical project: ${projectId}`);
-  }
-
-  return project;
-}
-
-function getRequiredSoftware(language: SupportedLanguage, softwareId: SoftwareId) {
-  const software = getSoftwareById(language, softwareId);
-
-  if (!software) {
-    throw new Error(`Missing canonical software: ${softwareId}`);
-  }
-
-  return software;
-}
-
-function getRequiredPublication(language: SupportedLanguage, publicationId: PublicationId) {
-  const publication = getPublicationById(language, publicationId);
-
-  if (!publication) {
-    throw new Error(`Missing canonical publication: ${publicationId}`);
-  }
-
-  return publication;
-}
-
 function assembleHomeContent(localizedContent: LocalizedHomeContent, language: SupportedLanguage): HomeContent {
   const linkedinProfile = getPublicProfileLink('linkedin');
 
@@ -294,40 +258,54 @@ function assembleHomeContent(localizedContent: LocalizedHomeContent, language: S
 
   const orcidProfile = getPublicProfileLink('orcid');
 
-  const lxpCampus = getRequiredProject(language, 'lxp-campus');
+  const [featuredProject] = getProjectCollection(language);
 
-  const mllpa = getRequiredSoftware(language, 'mllpa');
+  const [featuredSoftware] = getSoftwareCollection(language);
 
-  const molecularCommunicationPublication = getRequiredPublication(language, 'nature-molecular-communication-2023');
+  const [featuredPublication] = getPublicationCollection(language);
 
-  const [mllpaProjectId] = mllpa.projectIds;
+  const researchThemes = getResearchThemeCollection(language);
 
-  const [mllpaPrimaryLanguage] = mllpa.languages;
-
-  const publicationSummary = molecularCommunicationPublication.description?.paragraphs[0];
-
-  const publicationDoi = molecularCommunicationPublication.doi;
-
-  const publicationJournal = molecularCommunicationPublication.publication;
-
-  if (!mllpaProjectId) {
-    throw new Error('Missing canonical project relation for software: mllpa');
+  if (!featuredProject) {
+    throw new Error('Missing featured project.');
   }
 
-  if (!mllpaPrimaryLanguage) {
-    throw new Error('Missing canonical language for software: mllpa');
+  if (!featuredSoftware) {
+    throw new Error('Missing featured software.');
   }
 
-  if (!publicationSummary) {
-    throw new Error('Missing canonical description for publication: nature-molecular-communication-2023');
+  if (!featuredPublication) {
+    throw new Error('Missing featured publication.');
   }
 
-  if (!publicationDoi) {
-    throw new Error('Missing canonical DOI for publication: nature-molecular-communication-2023');
+  const [featuredProjectExperienceId] = featuredProject.experienceIds;
+
+  if (!featuredProjectExperienceId) {
+    throw new Error(`Missing experience relation for featured project: ${featuredProject.id}`);
   }
 
-  if (!publicationJournal) {
-    throw new Error('Missing canonical journal for publication: nature-molecular-communication-2023');
+  const featuredProjectExperience = getExperienceById(language, featuredProjectExperienceId);
+
+  if (!featuredProjectExperience) {
+    throw new Error(`Missing associated experience for featured project: ${featuredProject.id}`);
+  }
+
+  const [featuredSoftwarePrimaryLanguage] = featuredSoftware.languages;
+
+  if (!featuredSoftwarePrimaryLanguage) {
+    throw new Error(`Missing primary language for featured software: ${featuredSoftware.id}`);
+  }
+
+  const featuredPublicationJournal = featuredPublication.publication;
+
+  if (!featuredPublicationJournal) {
+    throw new Error(`Missing journal for featured publication: ${featuredPublication.id}`);
+  }
+
+  const featuredPublicationHref = featuredPublication.doi?.href ?? featuredPublication.website?.href ?? featuredPublication.pdf?.href;
+
+  if (!featuredPublicationHref) {
+    throw new Error(`Missing public resource for featured publication: ${featuredPublication.id}`);
   }
 
   const profileDimensions = [
@@ -407,33 +385,32 @@ function assembleHomeContent(localizedContent: LocalizedHomeContent, language: S
         {
           kind: 'project',
           kindLabel: localizedContent.featuredWorks.kindLabels.project,
-          contentId: lxpCampus.id,
-          title: lxpCampus.title,
-          summary: lxpCampus.summary,
+          contentId: featuredProject.id,
+          title: featuredProject.title,
           actionLabel: localizedContent.featuredWorks.projectActionLabel,
-          period: lxpCampus.period,
+          employer: featuredProjectExperience.organization,
+          role: featuredProjectExperience.role,
+          period: featuredProject.period,
         },
         {
           kind: 'software',
           kindLabel: localizedContent.featuredWorks.kindLabels.software,
-          contentId: mllpa.id,
-          projectId: mllpaProjectId,
-          title: mllpa.title,
-          summary: mllpa.summary,
-          actionLabel: localizedContent.featuredWorks.projectActionLabel,
-          primaryLanguage: mllpaPrimaryLanguage,
+          contentId: featuredSoftware.id,
+          title: featuredSoftware.title,
+          actionLabel: localizedContent.featuredWorks.softwareActionLabel,
+          primaryLanguage: featuredSoftwarePrimaryLanguage,
+          technologies: getSoftwareTags(featuredSoftware),
         },
         {
           kind: 'publication',
           kindLabel: localizedContent.featuredWorks.kindLabels.publication,
-          contentId: molecularCommunicationPublication.id,
-          title: molecularCommunicationPublication.title,
-          summary: publicationSummary,
-          journal: publicationJournal,
-          doi: {
-            label: localizedContent.featuredWorks.molecularCommunicationPublication.actionLabel,
-            href: publicationDoi.href,
-          },
+          contentId: featuredPublication.id,
+          title: featuredPublication.title,
+          actionLabel: localizedContent.featuredWorks.publicationActionLabel,
+          journal: featuredPublicationJournal,
+          year: featuredPublication.year,
+          authors: featuredPublication.authors.map((author) => author.name),
+          href: featuredPublicationHref,
         },
       ],
     },
@@ -453,32 +430,12 @@ function assembleHomeContent(localizedContent: LocalizedHomeContent, language: S
 
       actionLabel: localizedContent.researchAxes.actionLabel,
 
-      items: [
-        {
-          id: 'optics-photonics',
-          title: localizedContent.researchAxes.opticsAndPhotonics.title,
-          description: localizedContent.researchAxes.opticsAndPhotonics.description,
-          icon: AtomIcon,
-        },
-        {
-          id: 'scientific-ai',
-          title: localizedContent.researchAxes.scientificAi.title,
-          description: localizedContent.researchAxes.scientificAi.description,
-          icon: BrainIcon,
-        },
-        {
-          id: 'scientific-software',
-          title: localizedContent.researchAxes.scientificSoftware.title,
-          description: localizedContent.researchAxes.scientificSoftware.description,
-          icon: CodeIcon,
-        },
-        {
-          id: 'collaborative-systems',
-          title: localizedContent.researchAxes.collaborativeSystems.title,
-          description: localizedContent.researchAxes.collaborativeSystems.description,
-          icon: UsersThreeIcon,
-        },
-      ],
+      items: researchThemes.map((theme) => ({
+        id: theme.id,
+        title: theme.title,
+        description: theme.introduction,
+        icon: theme.icon,
+      })),
     },
 
     follow: {

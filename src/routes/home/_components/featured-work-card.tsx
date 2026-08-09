@@ -1,9 +1,8 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from '@phosphor-icons/react';
 import { createElement, type ElementType } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { getProjectRoute } from '@/app/routing/navigation';
+import { getProjectRoute, getSoftwareRoute } from '@/app/routing/navigation';
 import { InteractiveCard } from '@/components/interactive-card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -19,6 +18,8 @@ type FeaturedWorkCardProps = {
 };
 
 type FeaturedProjectPeriod = Extract<HomeFeaturedWork, { readonly kind: 'project' }>['period'];
+
+const maximumVisibleTechnologies = 3;
 
 const localeByLanguage = {
   fr: 'fr-FR',
@@ -73,51 +74,83 @@ function formatDateRange(period: FeaturedProjectPeriod, language: SupportedLangu
 }
 
 function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCardProps) {
-  const { t } = useTranslation();
   const Heading = `h${headingLevel}` as ElementType;
   const headingId = `featured-${work.kind}-${work.contentId}-title`;
 
+  const content =
+    work.kind === 'project' ? (
+      <div className="grid gap-2">
+        <p className="text-brand-ink !m-0 text-sm font-semibold">{work.employer}</p>
+
+        <p className="text-muted-foreground !m-0 text-sm">{work.role}</p>
+
+        <p className="text-muted-foreground !m-0 font-mono text-sm">{formatDateRange(work.period, language)}</p>
+      </div>
+    ) : work.kind === 'software' ? (
+      <div className="grid gap-4">
+        <p className="text-muted-foreground !m-0 font-mono text-sm font-medium">{work.primaryLanguage}</p>
+
+        {work.technologies.length > 0 ? (
+          <ul className="!m-0 flex list-none flex-wrap gap-2 !p-0">
+            {work.technologies.slice(0, maximumVisibleTechnologies).map((technology) => (
+              <li key={technology} className="!m-0">
+                <Badge variant="secondary" className="border-border bg-brand-hero text-muted-foreground border px-3 py-1 font-mono font-medium">
+                  {technology}
+                </Badge>
+              </li>
+            ))}
+
+            {work.technologies.length > maximumVisibleTechnologies ? (
+              <li className="!m-0">
+                <Badge variant="outline" className="border-border-strong bg-brand-background text-brand-primary px-3 py-1 font-mono font-semibold">
+                  +{work.technologies.length - maximumVisibleTechnologies}
+                </Badge>
+              </li>
+            ) : null}
+          </ul>
+        ) : null}
+      </div>
+    ) : (
+      <div className="grid gap-2">
+        <p className="!m-0 text-sm">
+          <span className="text-brand-ink font-semibold">{work.journal}</span>
+
+          <span className="text-muted-foreground"> · </span>
+
+          <time className="text-muted-foreground" dateTime={String(work.year)}>
+            {work.year}
+          </time>
+        </p>
+
+        <p className="text-muted-foreground !m-0 text-sm">{work.authors.join(', ')}</p>
+      </div>
+    );
+
   const footer =
     work.kind === 'project' ? (
-      <>
-        <span className="text-muted-foreground text-sm">{formatDateRange(work.period, language)}</span>
+      <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+        <Link to={getProjectRoute(work.contentId, language)}>
+          {work.actionLabel}
 
-        <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
-          <Link to={getProjectRoute(work.contentId, language)}>
-            {t('actions.viewProject', {
-              lng: language,
-            })}
-
-            <ArrowRightIcon aria-hidden="true" weight="bold" />
-          </Link>
-        </Button>
-      </>
+          <ArrowRightIcon aria-hidden="true" weight="bold" />
+        </Link>
+      </Button>
     ) : work.kind === 'software' ? (
-      <>
-        <span className={cn('font-mono text-sm font-medium', 'text-muted-foreground')}>{work.primaryLanguage}</span>
+      <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+        <Link to={getSoftwareRoute(work.contentId, language)}>
+          {work.actionLabel}
 
-        <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
-          <Link to={getProjectRoute(work.projectId, language)}>
-            {t('actions.viewProject', {
-              lng: language,
-            })}
-
-            <ArrowRightIcon aria-hidden="true" weight="bold" />
-          </Link>
-        </Button>
-      </>
+          <ArrowRightIcon aria-hidden="true" weight="bold" />
+        </Link>
+      </Button>
     ) : (
-      <>
-        <span className="text-muted-foreground text-sm">{work.journal}</span>
+      <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+        <a href={work.href} target="_blank" rel="noreferrer">
+          {work.actionLabel}
 
-        <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
-          <a href={work.doi.href} target="_blank" rel="noreferrer">
-            {work.doi.label}
-
-            <ArrowUpRightIcon aria-hidden="true" weight="bold" />
-          </a>
-        </Button>
-      </>
+          <ArrowUpRightIcon aria-hidden="true" weight="bold" />
+        </a>
+      </Button>
     );
 
   return (
@@ -143,17 +176,10 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
 
         <CardHeader className="gap-4 px-5 py-5 sm:px-6 sm:py-6">
           <Badge
-            variant="secondary"
-            className={cn(
-              'border-border w-fit rounded-sm border',
-              'bg-brand-hero px-2.5 py-1',
-              'font-mono text-xs font-semibold',
-              'text-brand-primary tracking-[0.06em] uppercase',
-            )}
+            variant="outline"
+            className="border-brand-primary/35 bg-brand-background text-brand-primary w-fit shrink-0 font-mono text-xs font-semibold"
           >
-            {t(`contentKinds.${work.kind}`, {
-              lng: language,
-            })}
+            {work.kindLabel}
           </Badge>
 
           <CardTitle>
@@ -168,13 +194,9 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="px-5 pb-6 sm:px-6">
-          <p className="text-muted-foreground !m-0 text-base">{work.summary}</p>
-        </CardContent>
+        <CardContent className="px-5 pb-6 sm:px-6">{content}</CardContent>
 
-        <CardFooter
-          className={cn('mt-auto flex min-h-16 flex-wrap', 'items-center justify-between gap-3', 'border-border border-t px-5 py-3 sm:px-6')}
-        >
+        <CardFooter className={cn('mt-auto flex min-h-16', 'items-center justify-end', 'border-border border-t px-5 py-3 sm:px-6')}>
           {footer}
         </CardFooter>
       </InteractiveCard>

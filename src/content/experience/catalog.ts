@@ -1,5 +1,9 @@
 import type { SupportedLanguage } from '@/types/localization';
 
+import { getBachelor2011Content } from './education/bachelor-2011';
+import { getMaster2013Content } from './education/master-2013';
+import { getMaster2014Content } from './education/master-2014';
+import { getPhd2017Content } from './education/phd-2017';
 import { getConsultantMicroscopeContent } from './experiences/consultant-microscope';
 import { getImaginexrContent } from './experiences/imaginexr';
 import { getKclIscatContent } from './experiences/kcl-iscat';
@@ -10,9 +14,11 @@ import { getTeachingAiContent } from './experiences/teaching-ai';
 import { getTeachingThermodynamicsContent } from './experiences/teaching-thermodynamics';
 import { getBoardgamesContent } from './personal-activities/boardgames';
 import { getMusicContent } from './personal-activities/music';
-import { type ExperienceId, experienceOrder, type PersonalActivityId, personalActivityOrder } from './registry';
+import { type EducationId, educationOrder, type ExperienceId, experienceOrder, type PersonalActivityId, personalActivityOrder } from './registry';
 
 export const publishedExperienceIds = experienceOrder;
+
+export const publishedEducationIds = educationOrder;
 
 export const publishedPersonalActivityIds = personalActivityOrder;
 
@@ -45,6 +51,21 @@ export function getExperiencesByIds(language: SupportedLanguage, experienceIds: 
   return experienceIds.map((experienceId) => collectionById[experienceId]);
 }
 
+function getEducationCollectionById(language: SupportedLanguage) {
+  return {
+    'phd-2017': getPhd2017Content(language),
+    'master-2014': getMaster2014Content(language),
+    'master-2013': getMaster2013Content(language),
+    'bachelor-2011': getBachelor2011Content(language),
+  } as const satisfies Readonly<Record<EducationId, unknown>>;
+}
+
+export function getEducationCollection(language: SupportedLanguage) {
+  const collectionById = getEducationCollectionById(language);
+
+  return publishedEducationIds.map((educationId) => collectionById[educationId]);
+}
+
 function getPersonalActivityCollectionById(language: SupportedLanguage) {
   return {
     music: getMusicContent(language),
@@ -69,5 +90,7 @@ export function getPersonalActivitiesByIds(language: SupportedLanguage, activity
 }
 
 export type ExperienceCatalogItem = ReturnType<typeof getExperienceCollection>[number];
+
+export type EducationCatalogItem = ReturnType<typeof getEducationCollection>[number];
 
 export type PersonalActivityCatalogItem = ReturnType<typeof getPersonalActivityCollection>[number];
