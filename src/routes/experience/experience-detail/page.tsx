@@ -13,10 +13,22 @@ import DetailDescriptionSection from '@/components/detail-description-section';
 import DetailHighlightsBand from '@/components/detail-highlights-band';
 import DetailNavigation from '@/components/detail-navigation';
 import DetailTechnologiesSection from '@/components/detail-technologies-section';
-import PageHero from '@/components/page-hero';
+import {
+  Hero,
+  HeroBreadcrumbs,
+  HeroContainer,
+  HeroContent,
+  HeroDescription,
+  HeroEyebrow,
+  HeroFooter,
+  HeroHeader,
+  HeroImage,
+  HeroMedia,
+  HeroTitle,
+} from '@/components/hero';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
-import { getExperienceById, getExperienceNavigation, getExperiencePage } from '@/content/experience/page';
+import { getExperienceDetailById, getExperienceDetailContent, getExperienceNavigation } from '@/content/experience/experiences/page';
 import { getProjectsByExperienceId } from '@/content/projects/catalog';
 import { getPublicationsByExperienceId } from '@/content/research/publications/catalog';
 import { getSoftwareByExperienceId } from '@/content/software/catalog';
@@ -25,6 +37,7 @@ import { cn } from '@/lib/utils';
 import NotFoundPage from '@/routes/not-found/page';
 
 import ExperienceDirectContributionsSection from '../_components/experience-direct-contributions-section';
+import ExperienceResourcesSection from '../_components/experience-resources-section';
 import RelatedContentSection from '../_components/related-content-section';
 
 function ExperienceDetailPage() {
@@ -38,9 +51,9 @@ function ExperienceDetailPage() {
 
   const language = getLanguageFromPathname(location.pathname);
 
-  const page = getExperiencePage(language);
+  const detail = getExperienceDetailContent(language);
 
-  const experience = slug ? getExperienceById(language, slug) : undefined;
+  const experience = slug ? getExperienceDetailById(language, slug) : undefined;
 
   if (!experience) {
     return <NotFoundPage />;
@@ -55,12 +68,14 @@ function ExperienceDetailPage() {
   const relatedSoftware = getSoftwareByExperienceId(language, experience.id).map((software) => ({
     id: software.id,
     title: software.title,
+    badges: software.languages,
     to: getSoftwareRoute(software.id, language),
   }));
 
   const relatedPublications = getPublicationsByExperienceId(language, experience.id).map((publication) => ({
     id: publication.id,
     title: publication.title,
+    secondaryText: publication.publication ? `${publication.publication} (${publication.year})` : String(publication.year),
     to: getResearchPublicationRoute(publication.id, language),
   }));
 
@@ -70,73 +85,93 @@ function ExperienceDetailPage() {
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
-      <PageHero
-        breadcrumbs={{
-          ariaLabel: t('breadcrumbs.label', {
-            lng: language,
-          }),
-          items: [
-            {
-              label: t('breadcrumbs.home', {
+      <Hero aria-labelledby="page-title">
+        <HeroContainer className={experience.heroImage ? undefined : 'lg:grid-cols-1'}>
+          <HeroContent>
+            <HeroBreadcrumbs
+              ariaLabel={t('breadcrumbs.label', {
                 lng: language,
-              }),
-              to: getPageRoute('home', language),
-            },
-            {
-              label: page.title,
-              to: getPageRoute('experience', language),
-            },
-            {
-              label: experience.role,
-            },
-          ],
-        }}
-        eyebrow={page.detail.eyebrow}
-        title={experience.role}
-        introduction={experience.summary}
-        footer={
-          <dl className={cn('m-0 grid gap-x-8 gap-y-5', 'sm:grid-cols-2 lg:grid-cols-3')}>
-            <div className="min-w-0">
-              <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
-                {page.detail.organization}
-              </dt>
+              })}
+              items={[
+                {
+                  label: t('breadcrumbs.home', {
+                    lng: language,
+                  }),
+                  to: getPageRoute('home', language),
+                },
+                {
+                  label: t('pages.experience.title', {
+                    lng: language,
+                  }),
+                  to: getPageRoute('experience', language),
+                },
+                {
+                  label: experience.breadcrumbLabel,
+                },
+              ]}
+            />
 
-              <dd className={cn('m-0 mt-1', 'font-semibold', 'text-brand-ink')}>{experience.organization}</dd>
-            </div>
+            <HeroHeader className="mt-4 sm:mt-5">
+              <HeroEyebrow>{experience.eyebrow ?? detail.eyebrow}</HeroEyebrow>
 
-            <div className="min-w-0">
-              <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
-                {page.detail.period}
-              </dt>
+              <HeroTitle id="page-title">{experience.role}</HeroTitle>
 
-              <dd className={cn('m-0 mt-1', 'font-semibold', 'text-brand-ink')}>{formatContentDateRange(experience.period, language)}</dd>
-            </div>
+              <HeroDescription>
+                <p className="!m-0">{experience.summary}</p>
+              </HeroDescription>
+            </HeroHeader>
 
-            {experience.location ? (
-              <div className="min-w-0">
-                <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
-                  {page.detail.location}
-                </dt>
+            <HeroFooter>
+              <dl className={cn('m-0 grid gap-x-8 gap-y-5', 'sm:grid-cols-2 lg:grid-cols-3')}>
+                <div className="min-w-0">
+                  <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
+                    {detail.organization}
+                  </dt>
 
-                <dd className={cn('m-0 mt-1', 'font-semibold', 'text-brand-ink')}>{experience.location}</dd>
-              </div>
-            ) : null}
-          </dl>
-        }
-      />
+                  <dd className={cn('m-0 mt-1 font-semibold', 'text-brand-ink')}>{experience.organization}</dd>
+                </div>
 
-      {experience.highlights.length > 0 ? <DetailHighlightsBand ariaLabel={page.detail.highlightsLabel} items={experience.highlights} /> : null}
+                <div className="min-w-0">
+                  <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
+                    {detail.period}
+                  </dt>
+
+                  <dd className={cn('m-0 mt-1 font-semibold', 'text-brand-ink')}>{formatContentDateRange(experience.period, language)}</dd>
+                </div>
+
+                {experience.location ? (
+                  <div className="min-w-0">
+                    <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
+                      {detail.location}
+                    </dt>
+
+                    <dd className={cn('m-0 mt-1 font-semibold', 'text-brand-ink')}>{experience.location}</dd>
+                  </div>
+                ) : null}
+              </dl>
+            </HeroFooter>
+          </HeroContent>
+
+          {experience.heroImage ? (
+            <HeroMedia>
+              <HeroImage src={experience.heroImage.src} alt={experience.heroImage.alt} objectPosition={experience.heroImage.objectPosition} />
+            </HeroMedia>
+          ) : null}
+        </HeroContainer>
+      </Hero>
+
+      <DetailHighlightsBand ariaLabel={detail.highlightsLabel} items={experience.highlights} />
 
       <div className={cn('mx-auto w-full', 'max-w-editorial px-page', 'pt-12 pb-12', 'sm:pt-14 sm:pb-14', 'lg:pt-16 lg:pb-16')}>
-        <DetailDescriptionSection description={experience.description} idPrefix={idPrefix} title={page.detail.description} />
+        <DetailDescriptionSection description={experience.description} idPrefix={idPrefix} title={detail.description} />
 
-        <ExperienceDirectContributionsSection idPrefix={idPrefix} items={experience.directContributions} title={page.detail.directContributions} />
+        <ExperienceDirectContributionsSection idPrefix={idPrefix} items={experience.directContributions} title={detail.directContributions} />
 
         <DetailTechnologiesSection
-          externalLinkLabel={page.detail.externalLinkLabel}
+          externalLinkLabel={detail.externalLinkLabel}
           groups={experience.technologyGroups}
           idPrefix={idPrefix}
-          title={page.detail.technologies}
+          title={detail.technologies}
         />
 
         {experience.finalState ? (
@@ -149,42 +184,51 @@ function ExperienceDetailPage() {
               <SectionTitle id={`${idPrefix}-final-state-title`}>{experience.finalState.title}</SectionTitle>
             </SectionHeader>
 
-            <Card className={cn('gap-0 rounded-lg py-0', 'border-border-strong', 'bg-brand-hero', 'shadow-subtle')}>
-              <p className={cn('max-w-readable !m-0', 'px-5 py-6', 'text-foreground', 'sm:px-6 sm:py-7')}>{experience.finalState.text}</p>
+            <Card
+              className={cn(
+                'gap-0 rounded-lg py-0',
+                'shadow-subtle',
+                experience.finalState.completed ? 'border-brand-primary/30 bg-action-soft' : 'border-brand-accent/30 bg-copper-soft',
+              )}
+            >
+              <p className={cn('max-w-readable !m-0', 'px-5 py-6', 'text-brand-ink', 'sm:px-6 sm:py-7')}>{experience.finalState.text}</p>
             </Card>
           </Section>
         ) : null}
 
+        <ExperienceResourcesSection resources={experience.resources} title={detail.resources} titleId={`${idPrefix}-resources-title`} />
+
         <RelatedContentSection
           idPrefix={idPrefix}
-          title={page.detail.relatedItems}
+          title={detail.relatedItems}
           groups={[
             {
               id: 'projects',
-              title: page.detail.relatedProjects,
+              title: detail.relatedProjects,
               items: relatedProjects,
             },
             {
               id: 'software',
-              title: page.detail.relatedSoftware,
+              title: detail.relatedSoftware,
               items: relatedSoftware,
             },
             {
               id: 'publications',
-              title: page.detail.relatedPublications,
+              title: detail.relatedPublications,
               items: relatedPublications,
             },
           ]}
         />
 
         <DetailNavigation
-          ariaLabel={page.detail.navigationLabel}
+          className="!mt-4 sm:!mt-6"
+          ariaLabel={detail.navigationLabel}
           backLink={{
-            label: page.detail.backLabel,
+            label: detail.backLabel,
             to: getPageRoute('experience', language),
           }}
-          previousLabel={page.detail.previousLabel}
-          nextLabel={page.detail.nextLabel}
+          previousLabel={detail.previousLabel}
+          nextLabel={detail.nextLabel}
           previousLink={
             previousExperience
               ? {

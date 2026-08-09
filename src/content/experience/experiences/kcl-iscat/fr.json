@@ -1,0 +1,112 @@
+{
+    "breadcrumbLabel": "King's College London (2018-2021)",
+    "eyebrow": "Construction d'un microscope interférométrique",
+    "role": "Chef de projet R&D",
+    "summary": "Construction d'un microscope à diffusion interférométrique (iSCAT) pour l'étude de l'interaction entre des membranes lipidiques et des nanoparticules, allant de particules d'or à des macroprotéines pouvant s'auto-assembler pour former des pores cellulaires.",
+    "highlights": [
+        {
+            "label": "Nature du projet",
+            "value": "Construction d’un microscope iSCAT complet et étude du déplacement et de l'évolution de nanoparticules"
+        },
+        {
+            "label": "Budget géré",
+            "value": "Gestion d'un total de 500 000 € financés par le BBSRC et co-financés par l'entreprise Oxford Nanopore Technologies"
+        },
+        {
+            "label": "Équipe encadrée",
+            "value": "5 personnes : 3 doctorants et 2 stagiaires de Master"
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Contrat de Postdoctoral Research Associate (équivalent Chef de projet R&D dans le milieu académique) au sein de l'équipe de Mark I WALLACE, au département de chimie du King's College London, avec pour mission principale la conception et la construction d'un microscope à diffusion interférométrique (iSCAT) afin de pouvoir étudier le déplacement et l'évolution de nanoparticules au contact de membranes lipidiques.",
+            "J'ai intégralement conçu et construit le microscope nécessaire au projet. Après une étude de nos besoins, j'ai ainsi soit identifié et acheté l'équipement nécessaire, soit je l'ai conçu et construit sur mesure au moyen d'une imprimante 3D ou d'une machine CNC. Après assemblage sur une table optique, j'ai également développé le logiciel de contrôle et d'optimisation du microscope à l'aide du langage LabVIEW. Une fois le microscope complété et opérationnel, j'ai également construit un clone du microscope sur une autre table optique afin de permettre à plus d'utilisateurs d'y avoir accès simultanément.",
+            "Gérant ensuite une équipe de 5 doctorants et stagiaires de Master en chimie, j'ai guidé plusieurs projets dont le but était d'utiliser le microscope iSCAT pour étudier l'interaction entre des membranes lipidiques et les particules au centre de leur propre sujet de thèse. Dans cette optique, je guidais chaque étudiant dans son projet concernant l'utilisation du microscope et je les formais à l'utilisation du microscope ainsi qu'à l'utilisation du langage Python pour analyser leurs images et leurs données.",
+            "À l'issue de mon contrat, l'ensemble de mes objectifs a été atteint : le microscope iSCAT a été construit et était utilisé par l'équipe de recherche, et tous les projets expérimentaux ont été conclus avec succès et leurs résultats ont été publiés dans des journaux scientifiques."
+        ],
+        "image": {
+            "alt": "Photographie du microscope iSCAT construit au cours du projet, et déguisé ici par les étudiants."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Gestion de projet",
+            "text": "Gestion des achats et conception des équipements sur mesure nécessaires pour la construction du microscope iSCAT. Conception des projets expérimentaux pour démontrer le fonctionnement du microscope et son utilisation par les étudiants. Animation des réunions de progression, y compris avec le partenaire industriel Oxford Nanopore Technologies. Rédaction des articles scientifiques pour publier les résultats obtenus."
+        },
+        {
+            "label": "Gestion d'équipe",
+            "text": "Encadrement d'une équipe de 5 étudiants, en Master ou en doctorat. Définition puis supervision des projets de recherche de tous les collaborateurs et formation à l'utilisation du langage Python pour l'analyse des images et des données."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Conception et fabrication du microscope iSCAT et programmation du logiciel de contrôle et d'automatisation dans le langage LabVIEW."
+        },
+        {
+            "label": "Analyse des images et des données",
+            "text": "Analyse des images et des données à l'aide de scripts codés en Python. Développement d'un logiciel en Python avec une interface utilisateur graphique (GUI) pour l'analyse des images et des séquences obtenues avec le microscope."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Gestion de projet",
+            "items": [
+                {
+                    "label": "Animation de réunion"
+                },
+                {
+                    "label": "Gestion d'équipe"
+                }
+            ]
+        },
+        {
+            "title": "Instrumentation et prototypage",
+            "items": [
+                {
+                    "label": "Autodesk Fusion 360"
+                },
+                {
+                    "label": "Impression 3D"
+                },
+                {
+                    "label": "Machine CNC"
+                }
+            ]
+        },
+        {
+            "title": "Expérimentation",
+            "items": [
+                {
+                    "label": "Microscopie iSCAT"
+                },
+                {
+                    "label": "Membranes lipidiques"
+                },
+                {
+                    "label": "Nanoparticules métalliques"
+                },
+                {
+                    "label": "Protéines membranaires"
+                }
+            ]
+        },
+        {
+            "title": "Langages de programmation",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "LabVIEW"
+                },
+                {
+                    "label": "Java",
+                    "description": "Utilisé pour la création de plugins pour le logiciel ImageJ."
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Microscope iSCAT complet, qualifié et opérationnel, logiciel LabVIEW de contrôle et d’automatisation développé, chaîne expérimentale mise en place et plusieurs publications scientifiques issues du projet."
+    }
+}

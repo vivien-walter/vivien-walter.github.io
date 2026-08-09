@@ -1,0 +1,77 @@
+{
+    "breadcrumbLabel": "ECPM (2021-2023)",
+    "eyebrow": "Application of AI to chemistry",
+    "role": "Guest Lecturer",
+    "summary": "Teaching the principles and algorithms of artificial intelligence and their application to chemistry to second-year engineering students at the European School of Chemistry, Polymers and Materials of the University of Strasbourg.",
+    "highlights": [
+        {
+            "label": "Teaching",
+            "value": "Creation of the entire course curriculum and classroom teaching."
+        },
+        {
+            "label": "Artificial intelligence",
+            "value": "Principles of statistics, Machine Learning, Deep Learning and tokenization."
+        },
+        {
+            "label": "Programming",
+            "value": "Teaching Python for scientific computing and AI training."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Guest Lecturer contract at the ECPM engineering school (European School of Chemistry, Polymers and Materials) of the University of Strasbourg to create a course on artificial intelligence and its application to chemistry, including the fundamentals of statistics, the training of AI models, their application to chemistry and the teaching of the Python programming language for practical sessions.",
+            "My responsibility was to design the entire course curriculum, defining its objectives and organising the course into chapters. I then had to prepare all the course materials and exercises. I taught the course to several cohorts at the school (an average of 20 students per cohort), while also preparing the examinations and marking the students' work.",
+            "The course also included a group-work sequence in which students worked on projects designed to directly apply the skills acquired during the course. I prepared the project topics, ideally using my academic network to involve research laboratories in the projects. I then organised oral examinations to assess the students' work."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Teaching materials",
+            "text": "Creation of the course curriculum, preparation and production of course materials, and design of exercises and examinations."
+        },
+        {
+            "label": "Teaching",
+            "text": "Classroom teaching for several cohorts of approximately 20 second-year engineering students."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Teaching",
+            "items": [
+                {
+                    "label": "Curriculum design"
+                },
+                {
+                    "label": "Course creation"
+                },
+                {
+                    "label": "Exercise creation"
+                },
+                {
+                    "label": "Course delivery"
+                },
+                {
+                    "label": "Exam creation"
+                }
+            ]
+        },
+        {
+            "title": "Scientific curriculum",
+            "items": [
+                {
+                    "label": "Statistics"
+                },
+                {
+                    "label": "Artificial intelligence"
+                },
+                {
+                    "label": "Python"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "Course curriculum established and ready to be reused in subsequent years."
+    }
+}

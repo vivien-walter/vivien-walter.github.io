@@ -2,6 +2,7 @@ import { BooksIcon, CodeIcon, RobotIcon, UserIcon } from '@phosphor-icons/react'
 
 import formaoDescriptionImageSrc from '@/assets/images/softwares/items/formao/description.png';
 import formaoHeroImageSrc from '@/assets/images/softwares/items/formao/hero.svg';
+import type { ExperienceId } from '@/content/experience/registry';
 import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
@@ -19,6 +20,8 @@ const localizedContent = {
 
 const projectIds = ['lxp-campus'] as const satisfies readonly ProjectId[];
 
+const experienceIds = ['imaginexr'] as const satisfies readonly ExperienceId[];
+
 export function getFormaoContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
     id: itemId,
@@ -29,6 +32,7 @@ export function getFormaoContent(language: SupportedLanguage) {
     localizedContent,
     highlightIcons: [BooksIcon, UserIcon, RobotIcon],
     projectIds,
+    experienceIds,
     heroImageSrc: formaoHeroImageSrc,
     descriptionImageSrc: formaoDescriptionImageSrc,
   });

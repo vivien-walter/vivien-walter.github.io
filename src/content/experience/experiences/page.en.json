@@ -1,0 +1,20 @@
+{
+    "eyebrow": "Experience details",
+    "highlightsLabel": "Key information about the experience",
+    "organization": "Organisation",
+    "period": "Period",
+    "location": "Location",
+    "description": "Description",
+    "directContributions": "Direct contributions",
+    "technologies": "Technologies used",
+    "externalLinkLabel": "Opens an external website in a new tab",
+    "relatedItems": "Related items",
+    "relatedProjects": "Projects",
+    "relatedSoftware": "Software",
+    "relatedPublications": "Scientific publications",
+    "resources": "Resources",
+    "navigationLabel": "Navigation between experiences",
+    "backLabel": "Back to career",
+    "previousLabel": "Previous experience",
+    "nextLabel": "Next experience"
+}

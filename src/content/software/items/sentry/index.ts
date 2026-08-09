@@ -2,6 +2,7 @@ import { CodeIcon, GearIcon, MicroscopeIcon, NetworkIcon } from '@phosphor-icons
 
 import sentryDescriptionImageSrc from '@/assets/images/softwares/items/sentry/description.png';
 import sentryHeroImageSrc from '@/assets/images/softwares/items/sentry/hero.png';
+import type { ExperienceId } from '@/content/experience/registry';
 import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
@@ -19,6 +20,8 @@ const localizedContent = {
 
 const projectIds = ['iscat-platform'] as const satisfies readonly ProjectId[];
 
+const experienceIds = ['kcl-iscat'] as const satisfies readonly ExperienceId[];
+
 export function getSentryContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
     id: itemId,
@@ -29,6 +32,7 @@ export function getSentryContent(language: SupportedLanguage) {
     localizedContent,
     highlightIcons: [MicroscopeIcon, NetworkIcon, GearIcon],
     projectIds,
+    experienceIds,
     heroImageSrc: sentryHeroImageSrc,
     descriptionImageSrc: sentryDescriptionImageSrc,
   });

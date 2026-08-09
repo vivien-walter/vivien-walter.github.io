@@ -1,0 +1,113 @@
+{
+    "breadcrumbLabel": "Université de Strasbourg (2017-2018)",
+    "eyebrow": "Direction complète d'un projet scientifique",
+    "role": "Chef de projet R&D",
+    "summary": "Direction scientifique et opérationnelle de travaux sur les membranes lipidiques, la simulation moléculaire et l’apprentissage automatique, avec développement principal de MLLPA.",
+    "highlights": [
+        {
+            "label": "Nature du projet",
+            "value": "Recherche sur les membranes lipidiques et leurs transitions de phase par simulation numérique"
+        },
+        {
+            "label": "Programmation et IA",
+            "value": "Réalisation de scripts d'analyse, incluant un module Python utilisant le Machine Learning"
+        },
+        {
+            "label": "Direction scientifique",
+            "value": "Définition des objectifs et organisation d'une collaboration internationale pour le projet"
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Contrat de Postdoctoral Research Associate (équivalent Chef de projet R&D dans le milieu académique) au sein de l'équipe de Fabrice THALMANN à l'Institut Charles Sadron de l'Université de Strasbourg. Le projet à la base de ce contrat a été conçu par Fabrice THALMANN et moi-même au cours de mon doctorat et consistait à explorer l'utilisation de l'intelligence artificielle, en particulier les modèles de type Machine Learning et Deep Learning, pour étudier les propriétés des membranes cellulaires.",
+            "Afin de me permettre de préparer les compétences requises pour être chercheur indépendant dans le milieu académique, j'ai bénéficié pour ce contrat d'une grande autonomie et d'une grande liberté de décision. En utilisant mon réseau professionnel, j'ai pu ainsi rapidement former une collaboration internationale avec des chercheurs venant d'Allemagne, du Royaume-Uni, du Brésil et du Canada.",
+            "Dans un premier temps, j'ai réalisé des simulations numériques de type dynamique moléculaire pour générer des membranes lipidiques virtuelles et faire évoluer ces systèmes dans différentes conditions expérimentales. Les trajectoires obtenues étaient ensuite caractérisées et analysées une première fois à l'aide de scripts réalisés avec les langages Bash ou Python.",
+            "Une fois qu'un nombre suffisant de simulations avaient été réalisées, j'ai ensuite entraîné des modèles de type Machine Learning afin de classifier les lipides selon leurs phases thermodynamiques, et détecter ainsi les transitions de phase ainsi que la formation de domaines au sein de la membrane. Pour cela, j'ai utilisé Python et la bibliothèque scikit-learn.",
+            "À l'issue de ce contrat relativement court, j'ai décidé de continuer le projet en entretenant la collaboration internationale et en programmant sur mon temps personnel. Depuis, nous avons publié notre code en tant que module Python disponible pour tous, accompagné d'un site pour guider les utilisateurs, et publié 3 articles scientifiques. Ce projet se poursuit, et nous prévoyons la création de nouveaux modèles, cette fois basés sur des réseaux neuronaux convolutifs."
+        ],
+        "image": {
+            "alt": "Illustration d'une membrane lipidique simulée numériquement au cours de ce contrat."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Gestion de projet",
+            "text": "Direction scientifique du projet, définition des objectifs et formation de la collaboration internationale. Organisation et animation des réunions de progression. Rédaction de candidatures à des appels à projets pour obtenir des quotas d'heures de calcul sur des supercalculateurs. Rédaction des articles scientifiques pour publier les résultats obtenus."
+        },
+        {
+            "label": "Simulations numériques",
+            "text": "Création de membranes lipidiques numériques et simulation de ces membranes avec le logiciel GROMACS. Utilisation du langage Bash pour réaliser une première analyse des systèmes et valider la réussite des simulations."
+        },
+        {
+            "label": "Analyse des données et intelligence artificielle",
+            "text": "Analyse des simulations en codant des scripts avec Python et utilisation de scikit-learn pour entraîner un modèle Machine Learning afin d'analyser les propriétés thermodynamiques de la membrane."
+        },
+        {
+            "label": "Développement de modules",
+            "text": "Développement d'un module Python pour l'analyse des membranes lipidiques et publication du module et du site internet le présentant."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Gestion de projet",
+            "items": [
+                {
+                    "label": "Direction scientifique"
+                },
+                {
+                    "label": "Organisation de collaboration"
+                },
+                {
+                    "label": "Animation de réunion"
+                },
+                {
+                    "label": "Obtention d'heures de calcul"
+                }
+            ]
+        },
+        {
+            "title": "Simulation numérique",
+            "items": [
+                {
+                    "label": "GROMACS"
+                },
+                {
+                    "label": "Dynamique moléculaire"
+                },
+                {
+                    "label": "Membranes lipidiques"
+                }
+            ]
+        },
+        {
+            "title": "Langages de programmation",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "Bash",
+                    "description": "Utilisé pour vérifier l'état des simulations à la fin des calculs."
+                }
+            ]
+        },
+        {
+            "title": "Intelligence artificielle",
+            "items": [
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "TensorFlow"
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "mllpaWebsite": "Site et documentation du module ML-LPA"
+    },
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Le projet a été étendu au-delà de mon contrat, ce qui nous a permis de poursuivre nos expériences et analyses. Cela nous a conduits à développer et publier le module ML-LPA pour Python, ainsi qu'à publier 3 articles dans des revues scientifiques pour présenter nos résultats et notre module."
+    }
+}

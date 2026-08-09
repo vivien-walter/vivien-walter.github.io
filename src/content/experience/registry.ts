@@ -1,18 +1,16 @@
 export const experienceOrder = [
-  "imaginexr",
-  "kcl-molecular-communication",
-  "kcl-iscat",
-  "strasbourg-mllpa",
+  'imaginexr',
+  'kcl-molecular-communication',
+  'teaching-thermodynamics',
+  'teaching-ai',
+  'kcl-iscat',
+  'consultant-microscope',
+  'strasbourg-mllpa',
+  'strasbourg-thesis',
 ] as const;
 
-export type ExperienceId =
-  (typeof experienceOrder)[number];
+export type ExperienceId = (typeof experienceOrder)[number];
 
-export const parallelActivityOrder = [
-  "consulting",
-  "scientific-research",
-  "teaching",
-] as const;
+export const personalActivityOrder = ['music', 'boardgames'] as const;
 
-export type ParallelActivityId =
-  (typeof parallelActivityOrder)[number];
+export type PersonalActivityId = (typeof personalActivityOrder)[number];

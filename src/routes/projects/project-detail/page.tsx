@@ -12,7 +12,7 @@ import {
 } from '@/app/routing/navigation';
 import DetailNavigation from '@/components/detail-navigation';
 import PageHero from '@/components/page-hero';
-import { getExperienceById } from '@/content/experience/page';
+import { getExperienceById } from '@/content/experience/catalog';
 import { getProjectDetailById, getProjectDetailContent, getProjectDetailNavigation } from '@/content/projects/detail/page';
 import { getProjectsPage } from '@/content/projects/page';
 import { getPublicationsByProjectId } from '@/content/research/publications/catalog';

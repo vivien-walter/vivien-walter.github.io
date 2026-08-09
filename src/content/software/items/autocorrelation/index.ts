@@ -2,6 +2,7 @@ import { CodeIcon, CursorClickIcon, GithubLogoIcon, MicroscopeIcon, RulerIcon } 
 
 import autoCorrelationDescriptionImageSrc from '@/assets/images/softwares/items/autocorrelation/description.png';
 import autoCorrelationHeroImageSrc from '@/assets/images/softwares/items/autocorrelation/hero.png';
+import type { ExperienceId } from '@/content/experience/registry';
 import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent, type SoftwareResource } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
@@ -18,6 +19,8 @@ const localizedContent = {
 } as const;
 
 const projectIds = ['lipid-membranes'] as const satisfies readonly ProjectId[];
+
+const experienceIds = ['strasbourg-thesis'] as const satisfies readonly ExperienceId[];
 
 export function getAutoCorrelationContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
@@ -37,6 +40,7 @@ export function getAutoCorrelationContent(language: SupportedLanguage) {
       },
     ],
     projectIds,
+    experienceIds,
     heroImageSrc: autoCorrelationHeroImageSrc,
     descriptionImageSrc: autoCorrelationDescriptionImageSrc,
   });

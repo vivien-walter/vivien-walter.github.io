@@ -1,29 +1,22 @@
-import { ArrowRightIcon, type Icon } from '@phosphor-icons/react';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 
 import { getParallelActivityRoute } from '@/app/routing/navigation';
-import { Section, SectionHeader, SectionTitle } from '@/components/section';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import type { ParallelActivityId } from '@/content/experience/registry';
+import { InteractiveCard } from '@/components/interactive-card';
+import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
+import type { ParallelActivityCatalogItem } from '@/content/experience/catalog';
 import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
 
-type ParallelActivityCardContent = {
-  readonly id: ParallelActivityId;
-  readonly icon: Icon;
-  readonly title: string;
-  readonly summary: string;
-};
-
 type ParallelActivitiesSectionProps = {
   readonly title: string;
-  readonly items: readonly ParallelActivityCardContent[];
+  readonly description?: string;
+  readonly items: readonly ParallelActivityCatalogItem[];
   readonly language: SupportedLanguage;
   readonly actionLabel: string;
 };
 
-function ParallelActivitiesSection({ title, items, language, actionLabel }: ParallelActivitiesSectionProps) {
+function ParallelActivitiesSection({ title, description, items, language, actionLabel }: ParallelActivitiesSectionProps) {
   if (items.length === 0) {
     return null;
   }
@@ -32,51 +25,72 @@ function ParallelActivitiesSection({ title, items, language, actionLabel }: Para
     <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby="parallel-activities-title">
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id="parallel-activities-title">{title}</SectionTitle>
+
+        {description ? <SectionDescription>{description}</SectionDescription> : null}
       </SectionHeader>
 
       <ul className={cn('m-0 grid list-none gap-5 p-0', 'md:grid-cols-3')}>
         {items.map((item) => {
           const ActivityIcon = item.icon;
           const titleId = `parallel-activity-${item.id}-title`;
-          const actionId = `parallel-activity-${item.id}-action`;
 
           return (
             <li key={item.id} className="m-0 min-w-0">
-              <Card
+              <Link
+                to={getParallelActivityRoute(item.id, language)}
                 className={cn(
-                  'h-full gap-0 overflow-hidden py-0',
-                  'border-border-strong bg-card shadow-subtle',
-                  'transition-[border-color,box-shadow]',
-                  'ease-standard duration-150',
-                  'hover:border-brand-primary hover:shadow-elevated',
+                  'group block h-full rounded-lg',
+                  'text-inherit no-underline',
+                  'focus-visible:outline-none',
+                  'focus-visible:ring-[3px]',
+                  'focus-visible:ring-ring/50',
+                  'focus-visible:ring-offset-2',
                 )}
+                aria-labelledby={titleId}
               >
-                <CardHeader className="gap-5 px-6 pt-7 pb-0">
-                  <ActivityIcon aria-hidden="true" className="text-brand-primary size-11" weight="regular" />
+                <InteractiveCard className={cn('h-full gap-0 overflow-hidden py-0', 'border-border-strong', 'bg-brand-background shadow-subtle')}>
+                  <div className={cn('flex h-full min-w-0 flex-col', 'p-6 sm:p-7')}>
+                    <ActivityIcon
+                      aria-hidden="true"
+                      className={cn('text-brand-primary size-11', 'transition-colors duration-150', 'group-hover:text-action-strong')}
+                      weight="regular"
+                    />
 
-                  <CardTitle id={titleId} className={cn('leading-heading text-lg font-bold', 'text-brand-ink tracking-[-0.015em]')}>
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
+                    <h3
+                      id={titleId}
+                      className={cn(
+                        '!mt-5 !mb-0 text-lg font-bold',
+                        'leading-heading tracking-[-0.015em]',
+                        'text-brand-ink',
+                        'transition-colors duration-150',
+                        'group-hover:text-brand-primary',
+                      )}
+                    >
+                      {item.title}
+                    </h3>
 
-                <CardContent className="flex-1 px-6 pt-4">
-                  <p className="text-foreground !m-0">{item.summary}</p>
-                </CardContent>
+                    <p className={cn('!mt-4 !mb-0', 'text-foreground')}>{item.summary}</p>
 
-                <CardFooter className="px-6 pt-5 pb-6">
-                  <Button
-                    asChild
-                    variant="link"
-                    className={cn('h-auto min-h-11 justify-start px-0 py-2', 'text-brand-primary font-semibold', 'hover:text-action-strong')}
-                  >
-                    <Link to={getParallelActivityRoute(item.id, language)} aria-labelledby={`${titleId} ${actionId}`}>
-                      <span id={actionId}>{actionLabel}</span>
+                    <span
+                      className={cn(
+                        'text-brand-primary mt-auto',
+                        'flex items-center gap-2 pt-6',
+                        'font-semibold',
+                        'transition-colors duration-150',
+                        'group-hover:text-action-strong',
+                      )}
+                    >
+                      <span>{actionLabel}</span>
 
-                      <ArrowRightIcon aria-hidden="true" weight="bold" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+                      <ArrowRightIcon
+                        aria-hidden="true"
+                        className={cn('size-4 shrink-0', 'transition-transform', 'ease-standard duration-150', 'group-hover:translate-x-1')}
+                        weight="bold"
+                      />
+                    </span>
+                  </div>
+                </InteractiveCard>
+              </Link>
             </li>
           );
         })}

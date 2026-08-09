@@ -1,0 +1,113 @@
+{
+    "breadcrumbLabel": "University of Strasbourg (2017-2018)",
+    "eyebrow": "Full leadership of a scientific project",
+    "role": "R&D Project Manager",
+    "summary": "Scientific and operational leadership of work on lipid membranes, molecular simulation and machine learning, with primary development of MLLPA.",
+    "highlights": [
+        {
+            "label": "Project type",
+            "value": "Research on lipid membranes and their phase transitions using numerical simulations"
+        },
+        {
+            "label": "Programming and AI",
+            "value": "Development of analysis scripts, including a Python module using Machine Learning"
+        },
+        {
+            "label": "Scientific leadership",
+            "value": "Definition of objectives and organisation of an international collaboration for the project"
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Postdoctoral Research Associate contract (equivalent to an R&D Project Manager in an academic environment) within Fabrice THALMANN's team at the Institut Charles Sadron, University of Strasbourg. The project underlying this contract was designed by Fabrice THALMANN and myself during my PhD and aimed to explore the use of artificial intelligence, particularly Machine Learning and Deep Learning models, to study the properties of cell membranes.",
+            "To allow me to develop the skills required to become an independent researcher in academia, I was given a high degree of autonomy and freedom of decision during this contract. Using my professional network, I was thus able to quickly establish an international collaboration with researchers from Germany, the United Kingdom, Brazil and Canada.",
+            "Initially, I performed molecular dynamics simulations to generate virtual lipid membranes and evolve these systems under different experimental conditions. The resulting trajectories were then characterised and analysed for the first time using scripts written in Bash or Python.",
+            "Once a sufficient number of simulations had been performed, I then trained Machine Learning models to classify lipids according to their thermodynamic phases, thereby detecting phase transitions as well as the formation of domains within the membrane. For this, I used Python and the scikit-learn library.",
+            "At the end of this relatively short contract, I decided to continue the project by maintaining the international collaboration and programming in my personal time. Since then, we have published our code as a Python module available to everyone, accompanied by a website to guide users, and published 3 scientific articles. The project is continuing, and we plan to create new models, this time based on convolutional neural networks."
+        ],
+        "image": {
+            "alt": "Illustration of a lipid membrane simulated numerically during this contract."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Project management",
+            "text": "Scientific leadership of the project, definition of objectives and establishment of the international collaboration. Organisation and facilitation of progress meetings. Preparation of applications to calls for projects to obtain computing-time allocations on supercomputers. Preparation of scientific articles to publish the results obtained."
+        },
+        {
+            "label": "Numerical simulations",
+            "text": "Creation of numerical lipid membranes and simulation of these membranes using GROMACS. Use of Bash to perform an initial analysis of the systems and validate the successful completion of the simulations."
+        },
+        {
+            "label": "Data analysis and artificial intelligence",
+            "text": "Analysis of the simulations using scripts written in Python and use of scikit-learn to train a Machine Learning model to analyse the thermodynamic properties of the membrane."
+        },
+        {
+            "label": "Module development",
+            "text": "Development of a Python module for the analysis of lipid membranes and publication of the module and its accompanying website."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Project management",
+            "items": [
+                {
+                    "label": "Scientific leadership"
+                },
+                {
+                    "label": "Collaboration organisation"
+                },
+                {
+                    "label": "Meeting facilitation"
+                },
+                {
+                    "label": "Securing computing time"
+                }
+            ]
+        },
+        {
+            "title": "Numerical simulation",
+            "items": [
+                {
+                    "label": "GROMACS"
+                },
+                {
+                    "label": "Molecular dynamics"
+                },
+                {
+                    "label": "Lipid membranes"
+                }
+            ]
+        },
+        {
+            "title": "Programming languages",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "Bash",
+                    "description": "Used to check the state of the simulations after calculations were completed."
+                }
+            ]
+        },
+        {
+            "title": "Artificial intelligence",
+            "items": [
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "TensorFlow"
+                }
+            ]
+        }
+    ],
+    "linkLabels": {
+        "mllpaWebsite": "ML-LPA module website and documentation"
+    },
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "The project was extended beyond my contract, allowing us to continue our experiments and analyses. This led us to develop and publish the ML-LPA Python module, as well as to publish 3 articles in scientific journals presenting our results and the module."
+    }
+}

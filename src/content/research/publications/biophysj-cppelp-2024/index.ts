@@ -45,7 +45,7 @@ const themeIds = ['molecular-interfaces'] as const satisfies readonly ResearchTh
 
 const projectIds = ['lipid-membranes'] as const satisfies readonly ProjectId[];
 
-const experienceIds = ['kcl-molecular-communication'] as const satisfies readonly ExperienceId[];
+const experienceIds = ['strasbourg-thesis'] as const satisfies readonly ExperienceId[];
 
 export function getBiophysJCppelp2024Content(language: SupportedLanguage) {
   return createPublicationContent(language, {

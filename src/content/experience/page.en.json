@@ -1,87 +1,38 @@
 {
-    "eyebrow": "Across science, software and R&D project leadership",
-    "title": "A career across science, software and project leadership",
-    "introduction": "My career has developed around projects requiring an understanding of several disciplines, organised collective work and direct contributions to the solution.",
+    "title": "My profile and career",
+    "introduction": "My career is characterised by a multidisciplinary profile, built around a passion for data science and programming. From scientific research to web development and teaching, you will find here the details of my profile and professional career.",
     "sectionTitles": {
         "timeline": "Professional experience",
-        "parallelActivities": "Alongside my main roles",
         "personalActivities": "Personal activities"
+    },
+    "sectionDescriptions": {
+        "timeline": "A chronological presentation of all my major professional experiences. This list includes professional activities carried out alongside my main contracts: consulting, teaching, etc.",
+        "personalActivities": "Explore this section to learn more about who I am beyond my professional projects by discovering the different activities I am passionate about."
+    },
+    "timelineControls": {
+        "parallelActivityLabel": "Parallel activity",
+        "showParallelActivities": "Show parallel professional activities"
     },
     "actions": {
         "viewExperience": "View more",
-        "relatedProjects": "Projects",
-        "learnMore": "Learn more"
+        "relatedProjects": "Projects"
+    },
+    "contactBanner": {
+        "message": "I am currently looking for a new professional opportunity! Feel free to contact me to learn more about my profile.",
+        "actionLabel": "Contact me"
     },
     "expertise": {
         "projectLeadership": {
-            "title": "R&D project leadership",
-            "description": "From defining objectives to operational delivery."
+            "title": "Project leadership",
+            "description": "From project definition to operational delivery, including securing funding and team management."
         },
         "softwareAi": {
-            "title": "Software & AI",
-            "description": "Python and TypeScript development, generative AI, machine learning and data analysis."
+            "title": "Programming & AI",
+            "description": "Development using Python, LabVIEW and TypeScript; building AI models and using generative AI."
         },
         "instrumentation": {
             "title": "Instrumentation",
-            "description": "Optical systems, control, acquisition and analysis."
-        },
-        "collaboration": {
-            "title": "Collaboration",
-            "description": "Multidisciplinary teams, academic and industrial partners."
+            "description": "Use and construction of scientific platforms, 3D design and printing, control, automation and analysis."
         }
-    },
-    "personalActivities": {
-        "music": {
-            "title": "Music",
-            "description": "Trombone and bass, with experience performing in bands and concerts."
-        },
-        "visualArts": {
-            "title": "Drawing and painting",
-            "description": "Drawing, painting and the creation of a webcomic."
-        },
-        "shortFilms": {
-            "title": "Short films",
-            "description": "Creation of short films."
-        }
-    },
-    "detail": {
-        "eyebrow": "Experience details",
-        "highlightsLabel": "Key information about the experience",
-        "organization": "Organisation",
-        "period": "Period",
-        "location": "Location",
-        "description": "Description",
-        "directContributions": "Direct contributions",
-        "technologies": "Technologies used",
-        "externalLinkLabel": "Opens an external website in a new tab",
-        "relatedItems": "Related items",
-        "relatedProjects": "Projects",
-        "relatedSoftware": "Software",
-        "relatedPublications": "Scientific publications",
-        "resources": "Resources",
-        "navigationLabel": "Experience navigation",
-        "backLabel": "Return to experience",
-        "previousLabel": "Previous experience",
-        "nextLabel": "Next experience"
-    },
-    "parallelActivityDetail": {
-        "eyebrow": "Activity alongside main roles",
-        "highlightsLabel": "Key information about the activity",
-        "organization": "Organisation",
-        "period": "Period",
-        "location": "Location",
-        "description": "Description",
-        "directContributions": "Direct contributions",
-        "technologies": "Technologies used",
-        "externalLinkLabel": "Opens an external website in a new tab",
-        "relatedItems": "Related items",
-        "relatedProjects": "Projects",
-        "relatedSoftware": "Software",
-        "relatedPublications": "Scientific publications",
-        "resources": "Resources",
-        "navigationLabel": "Parallel activity navigation",
-        "backLabel": "Return to experience",
-        "previousLabel": "Previous activity",
-        "nextLabel": "Next activity"
     }
 }

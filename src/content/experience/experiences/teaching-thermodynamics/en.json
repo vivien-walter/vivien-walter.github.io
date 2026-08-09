@@ -1,0 +1,81 @@
+{
+    "breadcrumbLabel": "King's College London (2023)",
+    "eyebrow": "Statistical thermodynamics",
+    "role": "Lecturer",
+    "summary": "Teaching statistical thermodynamics to third-year chemistry undergraduate students at King's College London.",
+    "highlights": [
+        {
+            "label": "Teaching",
+            "value": "Contribution to the design of the course curriculum and classroom teaching."
+        },
+        {
+            "label": "Statistical thermodynamics",
+            "value": "Principles of thermodynamics, statistical physics and numerical simulation."
+        },
+        {
+            "label": "Programming",
+            "value": "Teaching Python for scientific calculations."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Temporary Lecturer contract in the Department of Chemistry at King's College London, under the supervision of Micaela MATTA, to teach statistical thermodynamics, including the fundamentals of numerical simulation and molecular dynamics, to third-year chemistry undergraduate students.",
+            "My responsibility was to assist Micaela MATTA in creating the course curriculum, from establishing the order of the chapters to defining the objectives to be achieved in each class. I then had to prepare all the teaching materials for the chapters assigned to me (10 out of a total of 12 chapters), together with the corresponding class exercises.",
+            "I then taught the course to a class of approximately 90 students, presenting all the chapters planned for the course and correcting the class exercises to demonstrate the methodologies students were expected to apply.",
+            "Finally, I contributed to the creation and marking of the exercises and examinations."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Teaching materials",
+            "text": "Design of the course curriculum, preparation and production of teaching materials, and design of exercises and examinations."
+        },
+        {
+            "label": "Teaching",
+            "text": "Teaching a class of 90 third-year chemistry undergraduate students, marking exercises and examinations."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Teaching",
+            "items": [
+                {
+                    "label": "Curriculum design"
+                },
+                {
+                    "label": "Course creation"
+                },
+                {
+                    "label": "Exercise creation"
+                },
+                {
+                    "label": "Course delivery"
+                },
+                {
+                    "label": "Exam marking"
+                }
+            ]
+        },
+        {
+            "title": "Scientific curriculum",
+            "items": [
+                {
+                    "label": "Thermodynamics"
+                },
+                {
+                    "label": "Statistical physics"
+                },
+                {
+                    "label": "Numerical simulation"
+                },
+                {
+                    "label": "Python"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "Statistical thermodynamics course curriculum established and ready to be reused in subsequent years."
+    }
+}

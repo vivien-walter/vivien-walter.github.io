@@ -1,0 +1,142 @@
+{
+    "breadcrumbLabel": "King's College London (2021-2023)",
+    "eyebrow": "Construction d'une plateforme microfluidique",
+    "role": "Chef de projet R&D",
+    "summary": "Création d’un laboratoire de communication moléculaire et d’un banc d'essai microfluidique opérationnel associant chimie réactionnelle et analytique, microfluidique, ingénierie en communication, conception d'appareillages électroniques, traitement du signal et apprentissage automatique.",
+    "highlights": [
+        {
+            "label": "Nature du projet",
+            "value": "Création d’un banc d'essai pour la communication moléculaire et vérification expérimentale des preuves de concept"
+        },
+        {
+            "label": "Budget géré",
+            "value": "Gestion d'un total de 360 000 £ financés par l'EPSRC, dont 60 000 £ obtenus via mon dossier de candidature"
+        },
+        {
+            "label": "Équipe gérée",
+            "value": "5 personnes : post-doctorants juniors, doctorants et stagiaires en Master"
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Contrat de Postdoctoral Research Associate (équivalent Chef de projet R&D dans le milieu académique) au sein de l'équipe de Yansha DENG au département d'ingénierie du King's College London, avec pour mission principale la conception et la construction d'un banc d'essai microfluidique dédié à la communication moléculaire et dont le but est la vérification expérimentale de concepts démontrés théoriquement par l'équipe.",
+            "Le département d'ingénierie ne disposant pas d'un laboratoire de chimie pouvant accueillir le banc d'essai à mon arrivée, ma mission démarra avec la mise en place d'un laboratoire dédié : identification des locaux, sélection et achat des équipements et consommables, rédaction et mise en place des protocoles de sécurité et de traitement des déchets, etc.",
+            "J'ai ensuite conçu intégralement le banc d'essai, incluant le design sur un logiciel de CAO, l'impression 3D et la programmation d'appareils conçus sur mesure pour répondre à nos besoins (pompes à seringues, sondes pH, etc.). Une fois le banc d'essai assemblé, j'ai également réalisé intégralement le programme de contrôle, de synchronisation et d'automatisation de ce banc d'essai en codant un logiciel avec le langage Python et disposant d'une interface utilisateur graphique complète : MolCommUI.",
+            "Gérant ensuite une équipe de 5 chercheurs en ingénierie de communication et/ou en chimie organique, allant de stagiaires en Master à des postdoctorants juniors, j'ai guidé plusieurs projets dont le but était de vérifier expérimentalement les concepts théoriques déjà établis par l'équipe et portant sur le traitement d'un signal moléculaire via des réactions chimiques. J'ai également géré un projet où un modèle d'intelligence artificielle de type Deep Learning a été entraîné à l'analyse de la composition d'une solution pour en extraire plusieurs signaux encodés en parallèle.",
+            "Pour financer ces différents projets, j'ai notamment participé activement à la préparation du dossier de demande de financement auprès de l'EPSRC pour un montant de 60 000 £ qui a été obtenu. J'ai également participé à la valorisation des travaux en participant à la création d'une vidéo promotionnelle et à la rédaction d'un dossier pour déposer un brevet sur notre banc d'essai.",
+            "À l'issue de mon contrat, l'ensemble de mes objectifs a été atteint : le laboratoire de chimie du département d'ingénierie était installé et opérationnel, le banc d'essai a été construit et était utilisé par l'équipe de recherche, et tous les projets expérimentaux ont été conclus avec succès et leurs résultats ont été publiés dans des journaux scientifiques."
+        ],
+        "image": {
+            "alt": "Photographie du banc d'essai microfluidique construit au cours du projet."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Gestion de projet",
+            "text": "Définition des objectifs pour la mise en place du laboratoire de chimie et la construction du banc d'essai. Conception des projets expérimentaux pour démontrer le fonctionnement du banc d'essai. Animation des réunions de progression. Rédaction des dossiers de financements et de demandes de brevet. Rédaction des articles scientifiques pour publier les résultats obtenus."
+        },
+        {
+            "label": "Gestion d'équipe",
+            "text": "Encadrement d'une équipe de 5 chercheurs, allant du niveau Master au niveau postdoctoral. Définition puis supervision des projets de recherche de tous les collaborateurs et formation à l'utilisation du langage Python pour l'analyse des données et mise à niveau sur les concepts de chimie organique pour les chercheurs en ingénierie."
+        },
+        {
+            "label": "Organisation administrative",
+            "text": "Création du laboratoire de chimie, depuis l'identification des locaux à l'achat des équipements et consommables. Mise en place des comités de sécurité, de gestion de laboratoire et de gestion des déchets. Établissement des protocoles d'utilisation du laboratoire."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Conception et fabrication du banc d'essai microfluidique, incluant la construction de six pompes à seringues open source avec le logiciel Fusion 360, impression 3D des pompes, contrôle et programmation des pompes à l'aide de cartes Arduino, et des technologies et langages I²C et C++. Programmation du logiciel de contrôle en Python."
+        },
+        {
+            "label": "Communication moléculaire",
+            "text": "Conception et démonstration de l'utilisation de réactions chimiques pour contrôler et moduler un signal encodé dans une solution et transmis à l'aide du banc d'essai microfluidique. Utilisation de la spectroscopie UV-Visible pour détecter et analyser la composition des solutions en sortie du banc d'essai."
+        },
+        {
+            "label": "Analyse des données et intelligence artificielle",
+            "text": "Analyse des données à l'aide de scripts codés en Python. Développement d’un réseau neuronal convolutif 1D avec les bibliothèques Python TensorFlow et scikit-learn pour analyser les signaux UV-Visible et décoder plusieurs signaux encodés dans la même solution."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Gestion de projet",
+            "items": [
+                {
+                    "label": "Cahier des charges"
+                },
+                {
+                    "label": "Animation de réunion"
+                },
+                {
+                    "label": "Obtention de financements"
+                },
+                {
+                    "label": "Gestion d'équipe"
+                }
+            ]
+        },
+        {
+            "title": "Instrumentation et prototypage",
+            "items": [
+                {
+                    "label": "Autodesk Fusion 360"
+                },
+                {
+                    "label": "Impression 3D"
+                },
+                {
+                    "label": "Arduino"
+                },
+                {
+                    "label": "I²C"
+                }
+            ]
+        },
+        {
+            "title": "Expérimentation",
+            "items": [
+                {
+                    "label": "Communication moléculaire"
+                },
+                {
+                    "label": "Chimie organique"
+                },
+                {
+                    "label": "Microfluidique"
+                },
+                {
+                    "label": "Spectroscopie UV-Visible"
+                }
+            ]
+        },
+        {
+            "title": "Langages de programmation",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "C++",
+                    "description": "Utilisé pour la programmation des cartes Arduino contrôlant les différents équipements conçus sur mesure pour le projet."
+                }
+            ]
+        },
+        {
+            "title": "Intelligence artificielle",
+            "items": [
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "CNN 1D"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Laboratoire créé, banc d'essai microfluidique expérimental opérationnel, six pompes à seringues open source conçues et fabriquées, et deux publications scientifiques produites en premier auteur et rédacteur principal."
+    }
+}

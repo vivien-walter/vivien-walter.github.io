@@ -2,6 +2,7 @@ import { CodeIcon, FlaskIcon, GithubLogoIcon, MonitorIcon, NetworkIcon } from '@
 
 import hpymonDescriptionImageSrc from '@/assets/images/softwares/items/hpymon/description.png';
 import hpymonHeroImageSrc from '@/assets/images/softwares/items/hpymon/hero.png';
+import type { ExperienceId } from '@/content/experience/registry';
 import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent, type SoftwareResource } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
@@ -18,6 +19,8 @@ const localizedContent = {
 } as const;
 
 const projectIds = ['molecular-dynamics'] as const satisfies readonly ProjectId[];
+
+const experienceIds = ['strasbourg-mllpa'] as const satisfies readonly ExperienceId[];
 
 export function getHPyMonContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
@@ -37,6 +40,7 @@ export function getHPyMonContent(language: SupportedLanguage) {
       },
     ],
     projectIds,
+    experienceIds,
     heroImageSrc: hpymonHeroImageSrc,
     descriptionImageSrc: hpymonDescriptionImageSrc,
   });

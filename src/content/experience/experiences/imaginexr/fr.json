@@ -1,0 +1,140 @@
+{
+    "breadcrumbLabel": "i-magineXR (2024-2026)",
+    "eyebrow": "Développement d'applications web",
+    "role": "Chef de produit",
+    "summary": "Pilotage de la création d’un campus virtuel LXP pour le compte du CFA ARINFO I-MAGINEXR, associant une plateforme web construite sur mesure à des outils et applications utilisant l'IA générative et la réalité étendue.",
+    "highlights": [
+        {
+            "label": "Nature du projet",
+            "value": "Développement d’une application web sur mesure, développée en TypeScript et conçue pour être commercialisée."
+        },
+        {
+            "label": "Budget débloqué et géré",
+            "value": "Obtention d'un total de 500 000 € auprès de l’OPCO Atlas, avec 4 candidatures successives retenues."
+        },
+        {
+            "label": "Équipe gérée",
+            "value": "11 personnes : développeurs web, développeurs XR, designers UX/UI, experts en communication et chercheurs."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Contrat de chef de produit incluant la gestion du projet de création d'une application web, Formao Campus Virtuel, une plateforme LXP conçue pour gérer l'ensemble de la formation d'apprenants en CFA ou dans d'autres établissements de l'enseignement supérieur.",
+            "Mes missions incluaient la préparation des cahiers des charges pour tous les sous-projets contribuant à la création de la plateforme, la gestion de l'intégralité de l'équipe travaillant sur tous les aspects du projet, l'organisation et l'animation de réunions avec le client, la préparation des réponses aux appels à projets pour débloquer des financements, et le développement du backend de la plateforme en soutien au lead developer du projet.",
+            "L'équipe dont j'avais la responsabilité était constituée de développeurs web, de développeurs d'applications en réalité étendue (réalité virtuelle et augmentée), de designers UX/UI chargés de créer toutes les interfaces, d'un pôle communication chargé de préparer la commercialisation et la stratégie de communication de l'entreprise, d'un pôle IT chargé de la maintenance des serveurs, et d'une équipe de recherche et développement comprenant notamment une doctorante en thèse CIFRE. Au cours de ce contrat, j'accompagnais l'ensemble des équipes et formais les utilisateurs aux différents logiciels nécessaires au projet.",
+            "Je réalisais également le développement du backend de l'application web, en programmant l'API du serveur en TypeScript et en utilisant Node.js, Express, Mongoose pour gérer la base de données MongoDB, et Zod. Je participais également à la conception de l'interface utilisateur de l'espace d'administration du campus virtuel, en utilisant les frameworks et bibliothèques Next.js, React et shadcn.",
+            "En parallèle, je gérais, au sein de l'équipe R&D, le développement et l'entraînement des modèles d'IA générative nécessaires au fonctionnement des applications pédagogiques et des applications basées sur la réalité virtuelle qui venaient enrichir la plateforme. En outre, j'ai conçu une approche de prompt engineering basée sur la génération procédurale qui permet aux utilisateurs non expérimentés de créer leurs propres scénarios pour un agent IA.",
+            "Mes dossiers de candidature aux appels à projets de l'OPCO Atlas ont été retenus 3 années de suite, pour un budget total de 500 000 €.",
+            "Le contrat a pris fin avec la fermeture de l'entreprise I-MAGINEXR pour liquidation judiciaire pendant l'été 2026. Le déploiement de la plateforme était prévu pour le dernier semestre 2026 ; le projet n'a donc pas pu être mené à terme avec l'arrêt des activités. À la date d'arrêt de l'entreprise, le backend était en phase de finalisation et 60 % des interfaces avaient été intégrées. 4 applications utilisant l'IA générative, la réalité virtuelle et/ou la réalité augmentée avaient été complétées."
+        ],
+        "image": {
+            "alt": "Capture d'écran de l'accueil de Formao Campus Virtuel."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Gestion de projet",
+            "text": "Définition des objectifs avec le client et rédaction des cahiers des charges. Organisation et animation des réunions de progression et mise en place d'une méthodologie de type Agile adaptée aux besoins de l'équipe. Rédaction de candidatures aux appels à projets de l'OPCO Atlas, avec succès total sur 3 années consécutives. Rédaction des bilans annuels à transmettre à l'OPCO Atlas sur l'intégralité des activités de développement de l'entreprise."
+        },
+        {
+            "label": "Gestion d'équipe",
+            "text": "Encadrement d'une équipe de 11 personnes : formation aux outils et technologies nécessaires au projet, organisation de réunions ponctuelles pour suivre les projets et contrôle qualité. Encadrement d'une thèse CIFRE sur l'utilisation de la réalité étendue et de l'IA générative pour la formation des enseignants à la prise en charge des handicaps."
+        },
+        {
+            "label": "Développement web (backend)",
+            "text": "Conception et développement de parties du backend avec TypeScript, Node.js, Express et MongoDB pour connecter le campus virtuel aux IA génératives (ChatGPT, Mistral AI, DeepSeek, etc.), permettre la gestion intégrale des Open Badges, ou encore gérer les différents espaces du campus virtuel."
+        },
+        {
+            "label": "Développement web (frontend)",
+            "text": "Conception de maquettes et de prototypes avec Figma, développement des interfaces de l'espace d'administration avec React et Tailwind CSS."
+        },
+        {
+            "label": "IA générative",
+            "text": "Prompt engineering pour le fonctionnement des différentes applications pédagogiques développées dans le cadre du projet."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Gestion de projet",
+            "items": [
+                {
+                    "label": "Cahier des charges"
+                },
+                {
+                    "label": "Animation de réunion"
+                },
+                {
+                    "label": "Obtention de financements"
+                },
+                {
+                    "label": "Gestion d'équipe"
+                },
+                {
+                    "label": "Méthodologie Agile"
+                }
+            ]
+        },
+        {
+            "title": "Langages de programmation",
+            "items": [
+                {
+                    "label": "TypeScript"
+                },
+                {
+                    "label": "Python",
+                    "description": "Utilisé pour la construction d'utilitaires pour assister l'équipe travaillant sur le projet."
+                }
+            ]
+        },
+        {
+            "title": "Frameworks et bibliothèques",
+            "items": [
+                {
+                    "label": "Next.js"
+                },
+                {
+                    "label": "Node.js"
+                },
+                {
+                    "label": "Express"
+                },
+                {
+                    "label": "MongoDB"
+                },
+                {
+                    "label": "Zod"
+                },
+                {
+                    "label": "React"
+                },
+                {
+                    "label": "Shadcn"
+                },
+                {
+                    "label": "Tailwind CSS"
+                }
+            ]
+        },
+        {
+            "title": "IA générative",
+            "items": [
+                {
+                    "label": "Prompt engineering"
+                },
+                {
+                    "label": "ChatGPT"
+                },
+                {
+                    "label": "Mistral AI"
+                },
+                {
+                    "label": "DeepSeek"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Backend et écosystème IA opérationnels et prêts à être déployés, quatre applications XR terminées et interface utilisateur approximativement achevée à 60 %, avec notamment trois espaces secondaires restants."
+    }
+}

@@ -1,87 +1,38 @@
 {
-    "eyebrow": "Entre sciences, logiciels et pilotage de projets",
-    "title": "Mon parcours",
-    "introduction": "Mon parcours s’est construit autour de projets nécessitant de comprendre plusieurs disciplines, d’organiser le travail collectif et de contribuer directement aux solutions.",
+    "title": "Mon profil et mon parcours",
+    "introduction": "Mon parcours se caractérise par un profil multidisciplinaire, construit autour d'une passion pour la science des données et la programmation. De la recherche scientifique au développement web en passant par l'enseignement, vous trouverez ici le détail de mon profil et de mon parcours professionnel.",
     "sectionTitles": {
         "timeline": "Parcours professionnel",
-        "parallelActivities": "En parallèle",
         "personalActivities": "Activités personnelles"
+    },
+    "sectionDescriptions": {
+        "timeline": "Présentation dans l'ordre chronologique de l'ensemble de mes expériences professionnelles majeures. Cette liste inclut mes expériences professionnelles réalisées en parallèle de mes contrats principaux : consultance, enseignement, etc.",
+        "personalActivities": "Explorez cette section pour en apprendre plus sur qui je suis au-delà de mes projets professionnels, en découvrant les différentes activités qui me passionnent."
+    },
+    "timelineControls": {
+        "parallelActivityLabel": "Activité parallèle",
+        "showParallelActivities": "Afficher les activités professionnelles parallèles"
     },
     "actions": {
         "viewExperience": "Voir plus",
-        "relatedProjects": "Projets",
-        "learnMore": "En savoir plus"
+        "relatedProjects": "Projets"
+    },
+    "contactBanner": {
+        "message": "Je suis actuellement à la recherche d’une nouvelle opportunité professionnelle ! N'hésitez pas à me contacter pour en savoir plus sur mon profil.",
+        "actionLabel": "Me contacter"
     },
     "expertise": {
         "projectLeadership": {
-            "title": "Pilotage de projets R&D",
-            "description": "De la définition des objectifs à la livraison opérationnelle."
+            "title": "Pilotage de projets",
+            "description": "De la définition des projets à la livraison opérationnelle, y compris la recherche de financement et la gestion d'équipe."
         },
         "softwareAi": {
-            "title": "Logiciels & IA",
-            "description": "Développement Python et TypeScript, IA générative, apprentissage automatique et analyse de données."
+            "title": "Programmation & IA",
+            "description": "Développement avec les langages Python, LabVIEW et TypeScript ; construction de modèles IA et utilisation de l'IA générative."
         },
         "instrumentation": {
             "title": "Instrumentation",
-            "description": "Systèmes optiques, contrôle-commande, acquisition et analyse."
-        },
-        "collaboration": {
-            "title": "Collaboration",
-            "description": "Équipes pluridisciplinaires, partenaires académiques et industriels."
+            "description": "Utilisation et construction de plateformes scientifiques, conception et impression 3D, contrôle, automatisation et analyse."
         }
-    },
-    "personalActivities": {
-        "music": {
-            "title": "Musique",
-            "description": "Trombone et basse, avec une expérience de groupe et de concerts."
-        },
-        "visualArts": {
-            "title": "Dessin et peinture",
-            "description": "Dessin, peinture et création d’un webcomic."
-        },
-        "shortFilms": {
-            "title": "Courts-métrages",
-            "description": "Création de courts-métrages."
-        }
-    },
-    "detail": {
-        "eyebrow": "Expérience détaillée",
-        "highlightsLabel": "Informations clés sur l’expérience",
-        "organization": "Organisation",
-        "period": "Période",
-        "location": "Localisation",
-        "description": "Description",
-        "directContributions": "Contributions directes",
-        "technologies": "Technologies utilisées",
-        "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
-        "relatedItems": "Éléments associés",
-        "relatedProjects": "Projets",
-        "relatedSoftware": "Logiciels",
-        "relatedPublications": "Publications scientifiques",
-        "resources": "Ressources",
-        "navigationLabel": "Navigation entre les expériences",
-        "backLabel": "Retour au parcours",
-        "previousLabel": "Expérience précédente",
-        "nextLabel": "Expérience suivante"
-    },
-    "parallelActivityDetail": {
-        "eyebrow": "Activité menée en parallèle",
-        "highlightsLabel": "Informations clés sur l’activité",
-        "organization": "Organisation",
-        "period": "Période",
-        "location": "Localisation",
-        "description": "Description",
-        "directContributions": "Contributions directes",
-        "technologies": "Technologies utilisées",
-        "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
-        "relatedItems": "Éléments associés",
-        "relatedProjects": "Projets",
-        "relatedSoftware": "Logiciels",
-        "relatedPublications": "Publications scientifiques",
-        "resources": "Ressources",
-        "navigationLabel": "Navigation entre les activités parallèles",
-        "backLabel": "Retour au parcours",
-        "previousLabel": "Activité précédente",
-        "nextLabel": "Activité suivante"
     }
 }

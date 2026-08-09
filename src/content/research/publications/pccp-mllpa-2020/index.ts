@@ -40,7 +40,7 @@ const themeIds = ['molecular-interfaces', 'artificial-intelligence'] as const sa
 
 const projectIds = ['molecular-dynamics'] as const satisfies readonly ProjectId[];
 
-const experienceIds = ['kcl-molecular-communication'] as const satisfies readonly ExperienceId[];
+const experienceIds = ['strasbourg-mllpa'] as const satisfies readonly ExperienceId[];
 
 export function getPccpMllpa2020Content(language: SupportedLanguage) {
   return createPublicationContent(language, {

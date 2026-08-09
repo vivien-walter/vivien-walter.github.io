@@ -1,0 +1,81 @@
+{
+    "breadcrumbLabel": "King's College London (2023)",
+    "eyebrow": "Thermodynamique statistique",
+    "role": "Maître de conférences",
+    "summary": "Enseignement de la thermodynamique statistique à des étudiants en 3e année de licence de chimie au King's College London.",
+    "highlights": [
+        {
+            "label": "Enseignement",
+            "value": "Accompagnement à la conception du programme du cours et enseignement en classe."
+        },
+        {
+            "label": "Thermodynamique statistique",
+            "value": "Principes de thermodynamique, de physique statistique et de simulation numérique."
+        },
+        {
+            "label": "Programmation",
+            "value": "Enseignement du langage Python pour la réalisation de calculs scientifiques."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Contrat de Maître de conférences (Lecturer selon la terminologie britannique) temporaire au sein du département de chimie du King's College London, sous la supervision de Micaela MATTA pour enseigner la thermodynamique statistique, incluant les bases de la simulation numérique et de la dynamique moléculaire, à des étudiants en 3e année de licence de chimie.",
+            "Ma mission était d'accompagner Micaela MATTA dans la création du programme du cours, de l'établissement de l'ordre des chapitres à la liste des objectifs à atteindre au cours de chaque cours. Je devais ensuite préparer l'intégralité des supports de cours pour les chapitres qui m'étaient attribués (10 sur un total de 12 chapitres) et les exercices de cours qui allaient avec.",
+            "Je donnais ensuite les cours devant une classe composée d'environ 90 élèves pour présenter l'intégralité des chapitres prévus pour le cours, incluant la correction des exercices de cours pour présenter les méthodologies à appliquer aux apprenants.",
+            "Finalement, je participais à la création et à la correction des exercices et des examens"
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Contenus pédagogiques",
+            "text": "Conception du programme du cours, préparation et réalisation des supports de cours, conception des exercices et des examens."
+        },
+        {
+            "label": "Enseignement",
+            "text": "Dispense des cours devant une classe de 90 étudiants en 3e année de licence de chimie, correction des exercices et correction des examens."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Enseignement",
+            "items": [
+                {
+                    "label": "Conception du programme"
+                },
+                {
+                    "label": "Création des cours"
+                },
+                {
+                    "label": "Création des exercices"
+                },
+                {
+                    "label": "Présentation des cours"
+                },
+                {
+                    "label": "Correction des examens"
+                }
+            ]
+        },
+        {
+            "title": "Programme scientifique",
+            "items": [
+                {
+                    "label": "Thermodynamique"
+                },
+                {
+                    "label": "Physique statistique"
+                },
+                {
+                    "label": "Simulation numérique"
+                },
+                {
+                    "label": "Python"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Programme mis en place pour le cours de thermodynamique statistique et prêt à être réutilisé les années suivantes."
+    }
+}

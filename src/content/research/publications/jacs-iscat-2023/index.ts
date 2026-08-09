@@ -48,7 +48,7 @@ const themeIds = ['optics-photonics'] as const satisfies readonly ResearchThemeI
 
 const projectIds = ['iscat-platform'] as const satisfies readonly ProjectId[];
 
-const experienceIds = ['kcl-molecular-communication'] as const satisfies readonly ExperienceId[];
+const experienceIds = ['kcl-iscat'] as const satisfies readonly ExperienceId[];
 
 export function getjacsIScat2023Content(language: SupportedLanguage) {
   return createPublicationContent(language, {

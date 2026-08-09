@@ -2,6 +2,7 @@ import { CodeIcon, CursorClickIcon, GithubLogoIcon, MicroscopeIcon, MonitorIcon 
 
 import iscanDescriptionImageSrc from '@/assets/images/softwares/items/iscan/description.png';
 import iscanHeroImageSrc from '@/assets/images/softwares/items/iscan/hero.png';
+import type { ExperienceId } from '@/content/experience/registry';
 import type { ProjectId } from '@/content/projects/registry';
 import { createSoftwareContent, type SoftwareResource } from '@/content/software/software-content';
 import type { SupportedLanguage } from '@/types/localization';
@@ -18,6 +19,8 @@ const localizedContent = {
 } as const;
 
 const projectIds = ['iscat-platform'] as const satisfies readonly ProjectId[];
+
+const experienceIds = ['kcl-iscat'] as const satisfies readonly ExperienceId[];
 
 export function getIscanContent(language: SupportedLanguage) {
   return createSoftwareContent(language, {
@@ -37,6 +40,7 @@ export function getIscanContent(language: SupportedLanguage) {
       },
     ],
     projectIds,
+    experienceIds,
     heroImageSrc: iscanHeroImageSrc,
     descriptionImageSrc: iscanDescriptionImageSrc,
   });

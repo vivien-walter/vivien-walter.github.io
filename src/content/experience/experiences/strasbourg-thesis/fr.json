@@ -1,0 +1,93 @@
+{
+    "breadcrumbLabel": "Université de Strasbourg (2014-2017)",
+    "eyebrow": "Microscopie confocale et membranes lipidiques",
+    "role": "Doctorant en biophysique",
+    "summary": "Travaux pour la préparation de ma thèse de doctorat sur l'interaction entre les membranes lipidiques et des peptides pénétrateurs de cellules auto-assemblants et d'autres biomolécules.",
+    "highlights": [
+        {
+            "label": "Nature du projet",
+            "value": "Recherche sur les membranes lipidiques et leurs interactions avec diverses biomolécules"
+        },
+        {
+            "label": "Microscopie",
+            "value": "Utilisation de la microscopie confocale et de la microscopie de fluorescence"
+        },
+        {
+            "label": "Analyse des données",
+            "value": "Traitement des images collectées et analyse des données à l'aide de Python et Java"
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Contrat de recherche dans le cadre de la préparation de ma thèse de doctorat à l'Université de Strasbourg, réalisé sous la co-supervision de Carlos M MARQUES, André P SCHRODER, Pierre MULLER et Tatiana SCHMATKO. Ce projet avait deux buts : d'une part, l'étude des membranes lipidiques et de leurs interactions avec de nombreuses biomolécules, dont des peptides pénétrateurs de cellules utilisés dans la recherche contre le cancer, et, d'autre part, de me donner l'opportunité d'apprendre les compétences et connaissances nécessaires à la gestion de projet, et spécifiquement la gestion de projets scientifiques.",
+            "Mes missions incluaient l'identification des objectifs à accomplir pour répondre à la question de recherche et la proposition d'un plan d'action et d'un cahier des charges pour mener à bien ces objectifs. Au cours du projet, toutes mes idées étaient soumises et discutées avec mes encadrants avant d'être mises en œuvre.",
+            "Pour réaliser les nombreuses expériences prévues pour remplir mes objectifs, j'ai dû commencer par concevoir et construire plusieurs équipements scientifiques : un appareil permettant de créer des membranes lipidiques simplement, et un appareil permettant de contrôler et modifier la température d'un échantillon sur le microscope. Ces appareils ont été réalisés grâce à l'aide de l'atelier de mécanique de l'institut.",
+            "J'ai ensuite réalisé l'intégralité des expériences et des observations au microscope confocal pour étudier les échantillons et les analyser. J'ai ensuite écrit des scripts à l'aide de Java et de Python pour extraire toutes les données quantitatives indispensables pour étudier les phénomènes observés et valider les objectifs.",
+            "À la fin du contrat, j'ai rédigé mon manuscrit de thèse ainsi que deux articles qui ont été publiés dans des journaux scientifiques."
+        ],
+        "image": {
+            "alt": "Photographie du microscope confocal utilisé pendant mes travaux de thèse."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Gestion de projet",
+            "text": "Définition des objectifs du projet, organisation et animation des réunions de progression. Rédaction des articles scientifiques pour publier les résultats obtenus."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Conception et fabrication de plusieurs appareils pour les expériences au microscope, utilisation du microscope confocal pour analyser les échantillons."
+        },
+        {
+            "label": "Biophysique",
+            "text": "Création de membranes lipidiques, étude de leurs interactions avec diverses biomolécules, analyse des résultats."
+        },
+        {
+            "label": "Analyse des images et des données",
+            "text": "Analyse des images et des données à l'aide de scripts codés en Python ou de plugins en Java pour le logiciel ImageJ."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Gestion de projet",
+            "items": [
+                {
+                    "label": "Animation de réunion"
+                }
+            ]
+        },
+        {
+            "title": "Expérimentation",
+            "items": [
+                {
+                    "label": "Microscopie confocale"
+                },
+                {
+                    "label": "Membranes lipidiques"
+                },
+                {
+                    "label": "Peptides pénétrateurs de cellules"
+                },
+                {
+                    "label": "ADN"
+                }
+            ]
+        },
+        {
+            "title": "Langages de programmation",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "Java",
+                    "description": "Utilisé pour la création de plugins pour le logiciel ImageJ."
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Atteinte de tous les objectifs fixés, rédaction du manuscrit de thèse et obtention du diplôme de docteur en biophysique. Publication de deux articles scientifiques sur les travaux."
+    }
+}

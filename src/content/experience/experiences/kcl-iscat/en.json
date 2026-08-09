@@ -1,0 +1,112 @@
+{
+    "breadcrumbLabel": "King's College London (2018-2021)",
+    "eyebrow": "Construction of an interferometric microscope",
+    "role": "R&D Project Manager",
+    "summary": "Construction of an interferometric scattering microscope (iSCAT) to study interactions between lipid membranes and nanoparticles, ranging from gold particles to large proteins capable of self-assembling to form cellular pores.",
+    "highlights": [
+        {
+            "label": "Project type",
+            "value": "Construction of a complete iSCAT microscope and study of the movement and evolution of nanoparticles"
+        },
+        {
+            "label": "Budget managed",
+            "value": "Management of a total of €500,000 funded by the BBSRC and co-funded by Oxford Nanopore Technologies"
+        },
+        {
+            "label": "Team supervised",
+            "value": "5 people: 3 PhD students and 2 Master's interns"
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Postdoctoral Research Associate contract (equivalent to an R&D Project Manager in an academic environment) within Mark I WALLACE's team in the Department of Chemistry at King's College London, with the main responsibility of designing and constructing an interferometric scattering microscope (iSCAT) to study the movement and evolution of nanoparticles in contact with lipid membranes.",
+            "I designed and built the microscope required for the project in its entirety. After assessing our requirements, I either identified and purchased the necessary equipment or designed and built it myself using a 3D printer or CNC machine. After assembling the system on an optical table, I also developed the microscope control and optimisation software using LabVIEW. Once the microscope was complete and operational, I also built a duplicate of the microscope on another optical table to allow more users to access it simultaneously.",
+            "I then managed a team of 5 chemistry PhD students and Master's interns, guiding several projects that used the iSCAT microscope to study interactions between lipid membranes and the particles at the centre of their respective research projects. In this context, I guided each student in their project involving the use of the microscope and trained them both in operating the microscope and in using Python to analyse their images and data.",
+            "By the end of my contract, all my objectives had been achieved: the iSCAT microscope had been built and was being used by the research team, while all the experimental projects had been successfully completed and their results published in scientific journals."
+        ],
+        "image": {
+            "alt": "Photograph of the iSCAT microscope built during the project, shown here decorated by the students."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Project management",
+            "text": "Management of procurement and design of the custom equipment required to construct the iSCAT microscope. Design of experimental projects to demonstrate the microscope's operation and its use by students. Facilitation of progress meetings, including with the industrial partner Oxford Nanopore Technologies. Preparation of scientific articles to publish the results obtained."
+        },
+        {
+            "label": "Team management",
+            "text": "Supervision of a team of 5 Master's and PhD students. Definition and supervision of all collaborators' research projects and training in the use of Python for image and data analysis."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Design and construction of the iSCAT microscope and development of the control and automation software using LabVIEW."
+        },
+        {
+            "label": "Image and data analysis",
+            "text": "Analysis of images and data using scripts written in Python. Development of Python software with a graphical user interface (GUI) for analysing images and sequences acquired with the microscope."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Project management",
+            "items": [
+                {
+                    "label": "Meeting facilitation"
+                },
+                {
+                    "label": "Team management"
+                }
+            ]
+        },
+        {
+            "title": "Instrumentation and prototyping",
+            "items": [
+                {
+                    "label": "Autodesk Fusion 360"
+                },
+                {
+                    "label": "3D printing"
+                },
+                {
+                    "label": "CNC machine"
+                }
+            ]
+        },
+        {
+            "title": "Experimental work",
+            "items": [
+                {
+                    "label": "iSCAT microscopy"
+                },
+                {
+                    "label": "Lipid membranes"
+                },
+                {
+                    "label": "Metal nanoparticles"
+                },
+                {
+                    "label": "Membrane proteins"
+                }
+            ]
+        },
+        {
+            "title": "Programming languages",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "LabVIEW"
+                },
+                {
+                    "label": "Java",
+                    "description": "Used to create plugins for ImageJ."
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "Complete, qualified and operational iSCAT microscope, LabVIEW control and automation software developed, experimental workflow established and several scientific publications resulting from the project."
+    }
+}

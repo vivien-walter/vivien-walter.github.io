@@ -1,0 +1,20 @@
+{
+    "eyebrow": "Expérience détaillée",
+    "highlightsLabel": "Informations clés sur l’expérience",
+    "organization": "Organisation",
+    "period": "Période",
+    "location": "Localisation",
+    "description": "Description",
+    "directContributions": "Contributions directes",
+    "technologies": "Technologies utilisées",
+    "externalLinkLabel": "Ouvre un site externe dans un nouvel onglet",
+    "relatedItems": "Éléments associés",
+    "relatedProjects": "Projets",
+    "relatedSoftware": "Logiciels",
+    "relatedPublications": "Publications scientifiques",
+    "resources": "Ressources",
+    "navigationLabel": "Navigation entre les expériences",
+    "backLabel": "Retour au parcours",
+    "previousLabel": "Expérience précédente",
+    "nextLabel": "Expérience suivante"
+}

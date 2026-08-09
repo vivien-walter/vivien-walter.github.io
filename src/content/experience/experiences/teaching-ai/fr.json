@@ -1,0 +1,77 @@
+{
+    "breadcrumbLabel": "ECPM (2021-2023)",
+    "eyebrow": "Application de l'IA à la chimie",
+    "role": "Maître de conférences invité",
+    "summary": "Enseignement des principes et algorithmes de l'intelligence artificielle et de son application à la chimie à des étudiants en 2e année d'école d'ingénieur à l'École européenne de Chimie, Polymères et Matériaux de l'Université de Strasbourg.",
+    "highlights": [
+        {
+            "label": "Enseignement",
+            "value": "Création de l'intégralité du programme du cours et enseignement en classe."
+        },
+        {
+            "label": "Intelligence artificielle",
+            "value": "Principes de statistique, Machine Learning, Deep Learning et tokenization."
+        },
+        {
+            "label": "Programmation",
+            "value": "Enseignement du langage Python pour le calcul scientifique et l'entraînement d'IA."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Contrat de Maître de conférences invité au sein de l'école d'ingénieur ECPM (École européenne de Chimie, Polymères et Matériaux) de l'Université de Strasbourg pour créer le cours sur l'intelligence artificielle et son application à la chimie, incluant les bases de la statistique, l'entraînement de modèles IA, leur application à la chimie et l'apprentissage du langage de programmation Python pour les travaux pratiques.",
+            "Ma mission était de concevoir l'intégralité du programme du cours, en définissant les objectifs et en organisant le cours sous forme de chapitres. Je devais ensuite préparer l'intégralité des supports de cours et des exercices. J'ai enseigné ce cours à plusieurs promotions de l'école (moyenne de 20 élèves par promotion), préparant également les examens et corrigeant les copies des étudiants.",
+            "Le cours incluait également une séquence de travail en groupe des étudiants sur des projets conçus pour appliquer directement les compétences obtenues au cours de l'enseignement. Je préparais les sujets des projets, idéalement en utilisant mon réseau académique pour impliquer des laboratoires de recherche dans le projet. J'organisais ensuite les oraux pour évaluer le travail des étudiants."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Contenus pédagogiques",
+            "text": "Création du programme du cours, préparation et réalisation des supports de cours, conception des exercices et des examens."
+        },
+        {
+            "label": "Enseignement",
+            "text": "Dispense des cours en classe à plusieurs promotions d'environ 20 étudiants en 2e année d'école d'ingénieur."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Enseignement",
+            "items": [
+                {
+                    "label": "Conception du programme"
+                },
+                {
+                    "label": "Création des cours"
+                },
+                {
+                    "label": "Création des exercices"
+                },
+                {
+                    "label": "Présentation des cours"
+                },
+                {
+                    "label": "Création des examens"
+                }
+            ]
+        },
+        {
+            "title": "Programme scientifique",
+            "items": [
+                {
+                    "label": "Statistiques"
+                },
+                {
+                    "label": "Intelligence artificielle"
+                },
+                {
+                    "label": "Python"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Programme mis en place pour le cours et prêt à être réutilisé les années suivantes."
+    }
+}

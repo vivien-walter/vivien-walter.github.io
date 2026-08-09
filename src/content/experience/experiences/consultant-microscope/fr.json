@@ -1,0 +1,62 @@
+{
+    "breadcrumbLabel": "Vidya Health Ltd (2020)",
+    "eyebrow": "Automatisation d'un microscope de fluorescence",
+    "role": "Consultant en microscopie",
+    "summary": "Contrat de consultance pour une entreprise biomédicale dans le cadre du développement d'une plateforme de microscopie de fluorescence pour l'analyse d'échantillons médicaux au cours de la pandémie de la COVID-19.",
+    "highlights": [
+        {
+            "label": "Objectif du projet",
+            "value": "Accompagnement à la création et au développement d'une plateforme d'analyse médicale dans le contexte de la crise de la COVID-19."
+        },
+        {
+            "label": "Microscopie de fluorescence",
+            "value": "Construction d'un microscope de fluorescence à haut débit d'échantillons entièrement automatisé."
+        },
+        {
+            "label": "Logiciel d'automatisation",
+            "value": "Utilisation du langage LabVIEW pour développer l'algorithme d'autofocus et permettre l'automatisation complète du microscope."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Contrat de consultant en microscopie au sein de la société Vidya Health Ltd, située à Londres (Royaume-Uni). Ma mission principale au cours de ce contrat était d'accompagner les équipes en place dans la construction d'un microscope de fluorescence à haut débit d'échantillons. La conception de ce microscope exigeait en particulier le développement d'un logiciel permettant d'automatiser complètement le microscope pour optimiser la vitesse d'analyse. La construction de cet équipement était notamment indispensable dans les efforts menés pour combattre la pandémie de la COVID-19.",
+            "La première partie de ma mission fut d'achever la construction du prototype du microscope qui intégrerait le système d'autofocus mis en place pour assurer l'automatisation complète, dans un cadre où le confinement et l'état médical général avaient réduit l'équipe disponible pour le projet. Après l'achèvement du microscope, ma mission était de modifier le programme de contrôle du microscope déjà en place pour y inclure tous les algorithmes d'automatisation et d'autofocus.",
+            "À la fin de cette mission, mon rôle consistait à suivre l'utilisation du microscope pour ajuster et optimiser l'algorithme du logiciel afin d'optimiser la vitesse d'échantillonnage et de réduire le taux d'erreur de mesure. Cette étape a duré jusqu'à la fin de l'année et a permis de reproduire le prototype du microscope pour déployer trois plateformes complètes.",
+            "Ce projet a été réalisé en parallèle de mon contrat de chef de projet R&D à King's College London pendant le confinement lié à la crise de la COVID-19 afin d'assister l'effort de recherche alors que mon département était déclaré en chômage technique. Les détails techniques et médicaux de ce projet sont protégés par une clause de confidentialité dans le contrat."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Instrumentation",
+            "text": "Conception et fabrication du microscope de fluorescence à haut débit selon le cahier des charges fourni par le chef de projet. Programmation du logiciel de contrôle et d'automatisation dans le langage LabVIEW."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Expérimentation",
+            "items": [
+                {
+                    "label": "Microscopie de fluorescence"
+                },
+                {
+                    "label": "Microscope à haut débit"
+                },
+                {
+                    "label": "Autofocus"
+                }
+            ]
+        },
+        {
+            "title": "Langages de programmation",
+            "items": [
+                {
+                    "label": "LabVIEW"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "État à la fin du projet",
+        "text": "Microscope construit et opérationnel, logiciel optimisé et capable d'analyser le nombre d'échantillons requis dans la durée déterminée. Trois plateformes de microscopie ont pu être produites à partir du prototype."
+    }
+}

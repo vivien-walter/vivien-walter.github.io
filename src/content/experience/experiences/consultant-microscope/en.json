@@ -1,0 +1,62 @@
+{
+    "breadcrumbLabel": "Vidya Health Ltd (2020)",
+    "eyebrow": "Automation of a fluorescence microscope",
+    "role": "Microscopy Consultant",
+    "summary": "Consulting contract for a biomedical company involving the development of a fluorescence microscopy platform for the analysis of medical samples during the COVID-19 pandemic.",
+    "highlights": [
+        {
+            "label": "Project objective",
+            "value": "Support for the creation and development of a medical analysis platform in the context of the COVID-19 crisis."
+        },
+        {
+            "label": "Fluorescence microscopy",
+            "value": "Construction of a fully automated high-throughput fluorescence microscope."
+        },
+        {
+            "label": "Automation software",
+            "value": "Use of LabVIEW to develop the autofocus algorithm and enable complete automation of the microscope."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Microscopy consulting contract with Vidya Health Ltd, based in London (United Kingdom). My main responsibility during this contract was to support the existing teams in the construction of a high-throughput fluorescence microscope. The design of this microscope required, in particular, the development of software to fully automate the microscope and optimise the analysis speed. The construction of this equipment was notably essential to the efforts undertaken to combat the COVID-19 pandemic.",
+            "The first part of my assignment was to complete the construction of the microscope prototype that would incorporate the autofocus system developed to provide full automation, in a context where the lockdown and the general medical situation had reduced the team available for the project. After the microscope was completed, my task was to modify the existing microscope control program to incorporate all the automation and autofocus algorithms.",
+            "At the end of this assignment, my role consisted of monitoring the use of the microscope and adjusting and optimising the software algorithm in order to improve the sampling speed and reduce the measurement error rate. This stage continued until the end of the year and made it possible to reproduce the microscope prototype and deploy three complete platforms.",
+            "This project was carried out alongside my R&D Project Manager contract at King's College London during the lockdown associated with the COVID-19 crisis, in order to support the research effort while my department was placed on furlough. The technical and medical details of this project are protected by a confidentiality clause in the contract."
+        ]
+    },
+    "directContributions": [
+        {
+            "label": "Instrumentation",
+            "text": "Design and construction of the high-throughput fluorescence microscope according to the specifications provided by the project manager. Programming of the control and automation software using LabVIEW."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Experimental work",
+            "items": [
+                {
+                    "label": "Fluorescence microscopy"
+                },
+                {
+                    "label": "High-throughput microscope"
+                },
+                {
+                    "label": "Autofocus"
+                }
+            ]
+        },
+        {
+            "title": "Programming languages",
+            "items": [
+                {
+                    "label": "LabVIEW"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "Microscope built and operational, with optimised software capable of analysing the required number of samples within the specified time. Three microscopy platforms were produced from the prototype."
+    }
+}

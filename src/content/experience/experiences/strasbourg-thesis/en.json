@@ -1,0 +1,93 @@
+{
+    "breadcrumbLabel": "University of Strasbourg (2014-2017)",
+    "eyebrow": "Confocal microscopy and lipid membranes",
+    "role": "PhD researcher in biophysics",
+    "summary": "Research carried out for my PhD thesis on interactions between lipid membranes and self-assembling cell-penetrating peptides and other biomolecules.",
+    "highlights": [
+        {
+            "label": "Project type",
+            "value": "Research on lipid membranes and their interactions with various biomolecules"
+        },
+        {
+            "label": "Microscopy",
+            "value": "Use of confocal microscopy and fluorescence microscopy"
+        },
+        {
+            "label": "Data analysis",
+            "value": "Processing of collected images and data analysis using Python and Java"
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Research contract undertaken as part of my PhD at the University of Strasbourg, under the joint supervision of Carlos M MARQUES, André P SCHRODER, Pierre MULLER and Tatiana SCHMATKO. This project had two objectives: firstly, to study lipid membranes and their interactions with numerous biomolecules, including cell-penetrating peptides used in cancer research, and secondly, to give me the opportunity to acquire the skills and knowledge required for project management, specifically the management of scientific projects.",
+            "My responsibilities included identifying the objectives required to answer the research question and proposing an action plan and specifications to achieve these objectives. Throughout the project, all my ideas were submitted to and discussed with my supervisors before being implemented.",
+            "To carry out the numerous experiments planned to meet my objectives, I first had to design and build several pieces of scientific equipment: a device for easily creating lipid membranes and a device for controlling and modifying the temperature of a sample on the microscope. These devices were built with the assistance of the institute's mechanical workshop.",
+            "I then carried out all the experiments and confocal microscope observations required to study and analyse the samples. I subsequently wrote scripts using Java and Python to extract all the quantitative data required to study the observed phenomena and validate the objectives.",
+            "At the end of the contract, I wrote my PhD thesis manuscript as well as two articles that were published in scientific journals."
+        ],
+        "image": {
+            "alt": "Photograph of the confocal microscope used during my PhD research."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Project management",
+            "text": "Definition of the project objectives, organisation and facilitation of progress meetings. Preparation of scientific articles to publish the results obtained."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Design and construction of several devices for microscopy experiments, and use of the confocal microscope to analyse samples."
+        },
+        {
+            "label": "Biophysics",
+            "text": "Creation of lipid membranes, study of their interactions with various biomolecules, and analysis of the results."
+        },
+        {
+            "label": "Image and data analysis",
+            "text": "Analysis of images and data using scripts written in Python or Java plugins for ImageJ."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Project management",
+            "items": [
+                {
+                    "label": "Meeting facilitation"
+                }
+            ]
+        },
+        {
+            "title": "Experimental work",
+            "items": [
+                {
+                    "label": "Confocal microscopy"
+                },
+                {
+                    "label": "Lipid membranes"
+                },
+                {
+                    "label": "Cell-penetrating peptides"
+                },
+                {
+                    "label": "DNA"
+                }
+            ]
+        },
+        {
+            "title": "Programming languages",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "Java",
+                    "description": "Used to create plugins for ImageJ."
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "All objectives achieved, PhD thesis manuscript completed and PhD in biophysics obtained. Two scientific articles were published based on the work."
+    }
+}

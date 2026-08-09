@@ -1,0 +1,142 @@
+{
+    "breadcrumbLabel": "King's College London (2021-2023)",
+    "eyebrow": "Construction of a microfluidic platform",
+    "role": "R&D Project Manager",
+    "summary": "Creation of a molecular communication laboratory and an operational microfluidic testbed combining reaction and analytical chemistry, microfluidics, communication engineering, electronic device design, signal processing and machine learning.",
+    "highlights": [
+        {
+            "label": "Project type",
+            "value": "Creation of a molecular communication testbed and experimental validation of proofs of concept"
+        },
+        {
+            "label": "Budget managed",
+            "value": "Management of a total of £360,000 funded by the EPSRC, including £60,000 secured through my funding application"
+        },
+        {
+            "label": "Team managed",
+            "value": "5 people: junior postdoctoral researchers, PhD students and Master's interns"
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Postdoctoral Research Associate contract (equivalent to an R&D Project Manager in an academic environment) within Yansha DENG's team in the Department of Engineering at King's College London, with the main responsibility of designing and constructing a microfluidic testbed dedicated to molecular communication, with the aim of experimentally validating concepts previously demonstrated theoretically by the team.",
+            "As the Department of Engineering did not have a chemistry laboratory capable of housing the testbed when I arrived, my work began with setting up a dedicated laboratory: identifying the premises, selecting and purchasing equipment and consumables, writing and implementing safety and waste-management protocols, etc.",
+            "I then designed the entire testbed, including CAD design, 3D printing and programming custom-built devices to meet our requirements (syringe pumps, pH probes, etc.). Once the testbed had been assembled, I also developed the complete control, synchronisation and automation program for the testbed, writing software in Python with a complete graphical user interface: MolCommUI.",
+            "I then managed a team of 5 researchers in communication engineering and/or organic chemistry, ranging from Master's interns to junior postdoctoral researchers, and guided several projects aimed at experimentally validating theoretical concepts already established by the team involving the processing of a molecular signal through chemical reactions. I also managed a project in which a Deep Learning model was trained to analyse the composition of a solution and extract several signals encoded in parallel.",
+            "To fund these different projects, I notably contributed actively to preparing an EPSRC funding application for £60,000, which was awarded. I also contributed to promoting the work by participating in the creation of a promotional video and preparing an application to patent our testbed.",
+            "By the end of my contract, all my objectives had been achieved: the chemistry laboratory in the Department of Engineering was installed and operational, the testbed had been built and was being used by the research team, and all the experimental projects had been successfully completed and their results published in scientific journals."
+        ],
+        "image": {
+            "alt": "Photograph of the microfluidic testbed built during the project."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Project management",
+            "text": "Definition of objectives for setting up the chemistry laboratory and constructing the testbed. Design of experimental projects to demonstrate the operation of the testbed. Facilitation of progress meetings. Preparation of funding and patent applications. Preparation of scientific articles to publish the results obtained."
+        },
+        {
+            "label": "Team management",
+            "text": "Supervision of a team of 5 researchers, ranging from Master's to postdoctoral level. Definition and supervision of all collaborators' research projects, training in the use of Python for data analysis, and training in organic chemistry concepts for engineering researchers."
+        },
+        {
+            "label": "Administrative organisation",
+            "text": "Creation of the chemistry laboratory, from identifying the premises to purchasing equipment and consumables. Establishment of safety, laboratory-management and waste-management committees. Establishment of laboratory operating protocols."
+        },
+        {
+            "label": "Instrumentation",
+            "text": "Design and construction of the microfluidic testbed, including the construction of six open-source syringe pumps using Fusion 360, 3D printing of the pumps, and control and programming of the pumps using Arduino boards, I²C and C++. Programming of the control software in Python."
+        },
+        {
+            "label": "Molecular communication",
+            "text": "Design and demonstration of the use of chemical reactions to control and modulate a signal encoded in a solution and transmitted using the microfluidic testbed. Use of UV-Visible spectroscopy to detect and analyse the composition of solutions at the output of the testbed."
+        },
+        {
+            "label": "Data analysis and artificial intelligence",
+            "text": "Data analysis using scripts written in Python. Development of a 1D convolutional neural network using the Python libraries TensorFlow and scikit-learn to analyse UV-Visible signals and decode several signals encoded in the same solution."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Project management",
+            "items": [
+                {
+                    "label": "Specifications"
+                },
+                {
+                    "label": "Meeting facilitation"
+                },
+                {
+                    "label": "Securing funding"
+                },
+                {
+                    "label": "Team management"
+                }
+            ]
+        },
+        {
+            "title": "Instrumentation and prototyping",
+            "items": [
+                {
+                    "label": "Autodesk Fusion 360"
+                },
+                {
+                    "label": "3D printing"
+                },
+                {
+                    "label": "Arduino"
+                },
+                {
+                    "label": "I²C"
+                }
+            ]
+        },
+        {
+            "title": "Experimental work",
+            "items": [
+                {
+                    "label": "Molecular communication"
+                },
+                {
+                    "label": "Organic chemistry"
+                },
+                {
+                    "label": "Microfluidics"
+                },
+                {
+                    "label": "UV-Visible spectroscopy"
+                }
+            ]
+        },
+        {
+            "title": "Programming languages",
+            "items": [
+                {
+                    "label": "Python"
+                },
+                {
+                    "label": "C++",
+                    "description": "Used to program the Arduino boards controlling the different custom-built devices developed for the project."
+                }
+            ]
+        },
+        {
+            "title": "Artificial intelligence",
+            "items": [
+                {
+                    "label": "TensorFlow"
+                },
+                {
+                    "label": "scikit-learn"
+                },
+                {
+                    "label": "1D CNN"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "Laboratory created, experimental microfluidic testbed operational, six open-source syringe pumps designed and manufactured, and two scientific publications produced as first author and principal writer."
+    }
+}

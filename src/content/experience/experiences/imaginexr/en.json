@@ -1,0 +1,140 @@
+{
+    "breadcrumbLabel": "i-magineXR (2024-2026)",
+    "eyebrow": "Web application development",
+    "role": "Product Manager",
+    "summary": "Led the creation of a virtual LXP campus for CFA ARINFO I-MAGINEXR, combining a custom-built web platform with tools and applications using generative AI and extended reality.",
+    "highlights": [
+        {
+            "label": "Project type",
+            "value": "Development of a custom web application built with TypeScript and designed to be commercialised."
+        },
+        {
+            "label": "Funding secured and managed",
+            "value": "A total of €500,000 obtained from OPCO Atlas, with 4 successive applications approved."
+        },
+        {
+            "label": "Team managed",
+            "value": "11 people: web developers, XR developers, UX/UI designers, communication specialists and researchers."
+        }
+    ],
+    "description": {
+        "paragraphs": [
+            "Product Manager contract involving management of the project to create a web application, Formao Campus Virtuel, an LXP platform designed to manage the full training journey of learners in CFAs or other higher-education institutions.",
+            "My responsibilities included preparing specifications for all sub-projects contributing to the creation of the platform, managing the entire team working on all aspects of the project, organising and facilitating meetings with the client, preparing responses to calls for projects to secure funding, and developing the platform backend in support of the project's lead developer.",
+            "The team I was responsible for consisted of web developers, extended-reality application developers (virtual and augmented reality), UX/UI designers responsible for creating all interfaces, a communication team responsible for preparing the company's commercialisation and communication strategy, an IT team responsible for server maintenance, and a research and development team that included a CIFRE PhD student. During this contract, I supported all the teams and trained users in the various software tools required for the project.",
+            "I also developed the web application's backend, programming the server API in TypeScript and using Node.js, Express, Mongoose to manage the MongoDB database, and Zod. I also contributed to the design of the virtual campus administration interface, using the Next.js, React and shadcn frameworks and libraries.",
+            "At the same time, within the R&D team, I managed the development and training of the generative AI models required for the educational applications and virtual-reality-based applications that enriched the platform. In addition, I designed a prompt-engineering approach based on procedural generation that enables non-expert users to create their own scenarios for an AI agent.",
+            "My applications to OPCO Atlas calls for projects were approved for 3 consecutive years, for a total budget of €500,000.",
+            "The contract ended when I-MAGINEXR closed following judicial liquidation in summer 2026. Deployment of the platform was planned for the second half of 2026; the project therefore could not be completed after operations ceased. When the company closed, the backend was in the finalisation stage and 60% of the interfaces had been integrated. 4 applications using generative AI, virtual reality and/or augmented reality had been completed."
+        ],
+        "image": {
+            "alt": "Screenshot of the Formao Campus Virtuel home page."
+        }
+    },
+    "directContributions": [
+        {
+            "label": "Project management",
+            "text": "Definition of objectives with the client and preparation of specifications. Organisation and facilitation of progress meetings and implementation of an Agile-style methodology adapted to the team's needs. Preparation of applications to OPCO Atlas calls for projects, with all applications successful over 3 consecutive years. Preparation of annual reports for OPCO Atlas covering all of the company's development activities."
+        },
+        {
+            "label": "Team management",
+            "text": "Management of an 11-person team: training in the tools and technologies required for the project, organisation of ad hoc meetings to monitor projects, and quality control. Supervision of a CIFRE PhD project on the use of extended reality and generative AI to train teachers in supporting people with disabilities."
+        },
+        {
+            "label": "Web development (backend)",
+            "text": "Design and development of parts of the backend using TypeScript, Node.js, Express and MongoDB to connect the virtual campus to generative AI systems (ChatGPT, Mistral AI, DeepSeek, etc.), enable full management of Open Badges, and manage the various areas of the virtual campus."
+        },
+        {
+            "label": "Web development (frontend)",
+            "text": "Design of mock-ups and prototypes with Figma, and development of the administration area interfaces using React and Tailwind CSS."
+        },
+        {
+            "label": "Generative AI",
+            "text": "Prompt engineering for the various educational applications developed as part of the project."
+        }
+    ],
+    "technologyGroups": [
+        {
+            "title": "Project management",
+            "items": [
+                {
+                    "label": "Specifications"
+                },
+                {
+                    "label": "Meeting facilitation"
+                },
+                {
+                    "label": "Securing funding"
+                },
+                {
+                    "label": "Team management"
+                },
+                {
+                    "label": "Agile methodology"
+                }
+            ]
+        },
+        {
+            "title": "Programming languages",
+            "items": [
+                {
+                    "label": "TypeScript"
+                },
+                {
+                    "label": "Python",
+                    "description": "Used to build utilities to support the team working on the project."
+                }
+            ]
+        },
+        {
+            "title": "Frameworks and libraries",
+            "items": [
+                {
+                    "label": "Next.js"
+                },
+                {
+                    "label": "Node.js"
+                },
+                {
+                    "label": "Express"
+                },
+                {
+                    "label": "MongoDB"
+                },
+                {
+                    "label": "Zod"
+                },
+                {
+                    "label": "React"
+                },
+                {
+                    "label": "Shadcn"
+                },
+                {
+                    "label": "Tailwind CSS"
+                }
+            ]
+        },
+        {
+            "title": "Generative AI",
+            "items": [
+                {
+                    "label": "Prompt engineering"
+                },
+                {
+                    "label": "ChatGPT"
+                },
+                {
+                    "label": "Mistral AI"
+                },
+                {
+                    "label": "DeepSeek"
+                }
+            ]
+        }
+    ],
+    "finalState": {
+        "title": "State at the end of the project",
+        "text": "Backend and AI ecosystem operational and ready for deployment, four XR applications completed, and user interface approximately 60% complete, with three secondary areas remaining."
+    }
+}
