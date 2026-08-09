@@ -14,17 +14,17 @@
         },
         {
             "label": "Équipe gérée",
-            "value": "5 personnes : post-doctorants juniors, doctorants et stagiaires en Master"
+            "value": "5 personnes : postdoctorants juniors, doctorants et stagiaires en Master"
         }
     ],
     "description": {
         "paragraphs": [
-            "Contrat de Postdoctoral Research Associate (équivalent Chef de projet R&D dans le milieu académique) au sein de l'équipe de Yansha DENG au département d'ingénierie du King's College London, avec pour mission principale la conception et la construction d'un banc d'essai microfluidique dédié à la communication moléculaire et dont le but est la vérification expérimentale de concepts démontrés théoriquement par l'équipe.",
-            "Le département d'ingénierie ne disposant pas d'un laboratoire de chimie pouvant accueillir le banc d'essai à mon arrivée, ma mission démarra avec la mise en place d'un laboratoire dédié : identification des locaux, sélection et achat des équipements et consommables, rédaction et mise en place des protocoles de sécurité et de traitement des déchets, etc.",
-            "J'ai ensuite conçu intégralement le banc d'essai, incluant le design sur un logiciel de CAO, l'impression 3D et la programmation d'appareils conçus sur mesure pour répondre à nos besoins (pompes à seringues, sondes pH, etc.). Une fois le banc d'essai assemblé, j'ai également réalisé intégralement le programme de contrôle, de synchronisation et d'automatisation de ce banc d'essai en codant un logiciel avec le langage Python et disposant d'une interface utilisateur graphique complète : MolCommUI.",
-            "Gérant ensuite une équipe de 5 chercheurs en ingénierie de communication et/ou en chimie organique, allant de stagiaires en Master à des postdoctorants juniors, j'ai guidé plusieurs projets dont le but était de vérifier expérimentalement les concepts théoriques déjà établis par l'équipe et portant sur le traitement d'un signal moléculaire via des réactions chimiques. J'ai également géré un projet où un modèle d'intelligence artificielle de type Deep Learning a été entraîné à l'analyse de la composition d'une solution pour en extraire plusieurs signaux encodés en parallèle.",
-            "Pour financer ces différents projets, j'ai notamment participé activement à la préparation du dossier de demande de financement auprès de l'EPSRC pour un montant de 60 000 £ qui a été obtenu. J'ai également participé à la valorisation des travaux en participant à la création d'une vidéo promotionnelle et à la rédaction d'un dossier pour déposer un brevet sur notre banc d'essai.",
-            "À l'issue de mon contrat, l'ensemble de mes objectifs a été atteint : le laboratoire de chimie du département d'ingénierie était installé et opérationnel, le banc d'essai a été construit et était utilisé par l'équipe de recherche, et tous les projets expérimentaux ont été conclus avec succès et leurs résultats ont été publiés dans des journaux scientifiques."
+            "Contrat de Postdoctoral Research Associate (équivalent à un poste de chef de projet R&D dans le milieu académique) au sein de l'équipe de Yansha DENG au département d'ingénierie du King's College London, avec pour mission principale la conception et la construction d'un banc d'essai microfluidique dédié à la communication moléculaire, dont le but était de vérifier expérimentalement des concepts démontrés théoriquement par l'équipe.",
+            "Le département d'ingénierie ne disposant pas d'un laboratoire de chimie pouvant accueillir le banc d'essai à mon arrivée, ma mission a commencé par la mise en place d'un laboratoire dédié : identification des locaux, sélection et achat des équipements et consommables, rédaction et mise en place des protocoles de sécurité et de traitement des déchets, etc.",
+            "J'ai ensuite conçu intégralement le banc d'essai, incluant la conception sur un logiciel de CAO, l'impression 3D et la programmation d'appareils conçus sur mesure pour répondre à nos besoins (pompes à seringues, sondes pH, etc.). Une fois le banc d'essai assemblé, j'ai également développé intégralement son logiciel de contrôle, de synchronisation et d'automatisation en Python, avec une interface utilisateur graphique complète : MolCommUI.",
+            "J'ai ensuite géré une équipe de 5 chercheurs en ingénierie de communication et/ou en chimie organique, allant de stagiaires en Master à des postdoctorants juniors. J'ai guidé plusieurs projets visant à vérifier expérimentalement les concepts théoriques déjà établis par l'équipe et portant sur le traitement d'un signal moléculaire par des réactions chimiques. J'ai également géré un projet dans lequel un modèle d'intelligence artificielle de type Deep Learning a été entraîné pour analyser la composition d'une solution et en extraire plusieurs signaux encodés en parallèle.",
+            "Pour financer ces différents projets, j'ai notamment rédigé intégralement le dossier de demande de financement de 60 000 £ auprès de l'EPSRC, qui a été retenu. J'ai également contribué à la valorisation des travaux par la création d'une vidéo promotionnelle et la rédaction d'un dossier de dépôt de brevet portant sur notre banc d'essai.",
+            "À l'issue de mon contrat, l'ensemble de mes objectifs a été atteint : le laboratoire de chimie du département d'ingénierie était installé et opérationnel, le banc d'essai avait été construit et était utilisé par l'équipe de recherche, et tous les projets expérimentaux avaient été conclus avec succès et leurs résultats publiés dans des revues scientifiques."
         ],
         "image": {
             "alt": "Photographie du banc d'essai microfluidique construit au cours du projet."
@@ -33,19 +33,19 @@
     "directContributions": [
         {
             "label": "Gestion de projet",
-            "text": "Définition des objectifs pour la mise en place du laboratoire de chimie et la construction du banc d'essai. Conception des projets expérimentaux pour démontrer le fonctionnement du banc d'essai. Animation des réunions de progression. Rédaction des dossiers de financements et de demandes de brevet. Rédaction des articles scientifiques pour publier les résultats obtenus."
+            "text": "Définition des objectifs pour la mise en place du laboratoire de chimie et la construction du banc d'essai. Conception des projets expérimentaux pour démontrer le fonctionnement du banc d'essai. Animation des réunions de progression. Gestion de deux financements EPSRC représentant 360 000 £ au total et rédaction intégrale du dossier de candidature ayant permis d'obtenir le financement de 60 000 £. Rédaction des demandes de brevet et des articles scientifiques pour publier les résultats obtenus."
         },
         {
             "label": "Gestion d'équipe",
-            "text": "Encadrement d'une équipe de 5 chercheurs, allant du niveau Master au niveau postdoctoral. Définition puis supervision des projets de recherche de tous les collaborateurs et formation à l'utilisation du langage Python pour l'analyse des données et mise à niveau sur les concepts de chimie organique pour les chercheurs en ingénierie."
+            "text": "Encadrement d'une équipe de 5 chercheurs, allant du niveau Master au niveau postdoctoral. Définition puis supervision des projets de recherche de tous les collaborateurs, formation à l'utilisation du langage Python pour l'analyse des données et mise à niveau sur les concepts de chimie organique pour les chercheurs en ingénierie."
         },
         {
             "label": "Organisation administrative",
-            "text": "Création du laboratoire de chimie, depuis l'identification des locaux à l'achat des équipements et consommables. Mise en place des comités de sécurité, de gestion de laboratoire et de gestion des déchets. Établissement des protocoles d'utilisation du laboratoire."
+            "text": "Création du laboratoire de chimie, depuis l'identification des locaux jusqu'à l'achat des équipements et consommables. Mise en place des comités de sécurité, de gestion du laboratoire et de gestion des déchets. Établissement des protocoles d'utilisation du laboratoire."
         },
         {
             "label": "Instrumentation",
-            "text": "Conception et fabrication du banc d'essai microfluidique, incluant la construction de six pompes à seringues open source avec le logiciel Fusion 360, impression 3D des pompes, contrôle et programmation des pompes à l'aide de cartes Arduino, et des technologies et langages I²C et C++. Programmation du logiciel de contrôle en Python."
+            "text": "Conception et fabrication du banc d'essai microfluidique, incluant la construction de six pompes à seringues open source avec le logiciel Fusion 360, leur impression 3D, leur contrôle et leur programmation à l'aide de cartes Arduino, du protocole I²C et du langage C++. Programmation du logiciel de contrôle en Python."
         },
         {
             "label": "Communication moléculaire",

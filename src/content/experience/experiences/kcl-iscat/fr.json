@@ -2,7 +2,7 @@
     "breadcrumbLabel": "King's College London (2018-2021)",
     "eyebrow": "Construction d'un microscope interférométrique",
     "role": "Chef de projet R&D",
-    "summary": "Construction d'un microscope à diffusion interférométrique (iSCAT) pour l'étude de l'interaction entre des membranes lipidiques et des nanoparticules, allant de particules d'or à des macroprotéines pouvant s'auto-assembler pour former des pores cellulaires.",
+    "summary": "Construction d'un microscope à diffusion interférométrique (iSCAT) pour l'étude de l'interaction entre des membranes lipidiques et des nanoparticules, allant des particules d'or aux macroprotéines pouvant s'auto-assembler pour former des pores cellulaires.",
     "highlights": [
         {
             "label": "Nature du projet",
@@ -10,7 +10,7 @@
         },
         {
             "label": "Budget géré",
-            "value": "Gestion d'un total de 500 000 £ financés par le BBSRC et co-financés par l'entreprise Oxford Nanopore Technologies"
+            "value": "Gestion d'un total de 500 000 £ financés par le BBSRC et cofinancés par l'entreprise Oxford Nanopore Technologies"
         },
         {
             "label": "Équipe encadrée",
@@ -19,13 +19,13 @@
     ],
     "description": {
         "paragraphs": [
-            "Contrat de Postdoctoral Research Associate (équivalent Chef de projet R&D dans le milieu académique) au sein de l'équipe de Mark I WALLACE, au département de chimie du King's College London, avec pour mission principale la conception et la construction d'un microscope à diffusion interférométrique (iSCAT) afin de pouvoir étudier le déplacement et l'évolution de nanoparticules au contact de membranes lipidiques.",
-            "J'ai intégralement conçu et construit le microscope nécessaire au projet. Après une étude de nos besoins, j'ai ainsi soit identifié et acheté l'équipement nécessaire, soit je l'ai conçu et construit sur mesure au moyen d'une imprimante 3D ou d'une machine CNC. Après assemblage sur une table optique, j'ai également développé le logiciel de contrôle et d'optimisation du microscope à l'aide du langage LabVIEW. Une fois le microscope complété et opérationnel, j'ai également construit un clone du microscope sur une autre table optique afin de permettre à plus d'utilisateurs d'y avoir accès simultanément.",
-            "Gérant ensuite une équipe de 5 doctorants et stagiaires de Master en chimie, j'ai guidé plusieurs projets dont le but était d'utiliser le microscope iSCAT pour étudier l'interaction entre des membranes lipidiques et les particules au centre de leur propre sujet de thèse. Dans cette optique, je guidais chaque étudiant dans son projet concernant l'utilisation du microscope et je les formais à l'utilisation du microscope ainsi qu'à l'utilisation du langage Python pour analyser leurs images et leurs données.",
-            "À l'issue de mon contrat, l'ensemble de mes objectifs a été atteint : le microscope iSCAT a été construit et était utilisé par l'équipe de recherche, et tous les projets expérimentaux ont été conclus avec succès et leurs résultats ont été publiés dans des journaux scientifiques."
+            "Contrat de Postdoctoral Research Associate (équivalent à un poste de chef de projet R&D dans le milieu académique) au sein de l'équipe de Mark I WALLACE, au département de chimie du King's College London, avec pour mission principale la conception et la construction d'un microscope à diffusion interférométrique (iSCAT) afin d'étudier le déplacement et l'évolution de nanoparticules au contact de membranes lipidiques.",
+            "J'ai intégralement conçu et construit le microscope nécessaire au projet. Après une étude de nos besoins, j'ai ainsi soit identifié et acheté l'équipement nécessaire, soit je l'ai conçu et construit sur mesure au moyen d'une imprimante 3D ou d'une machine CNC. Après assemblage sur une table optique, j'ai également développé le logiciel de contrôle et d'optimisation du microscope à l'aide du langage LabVIEW. Une fois le microscope achevé et opérationnel, j'ai également construit un clone du microscope sur une autre table optique afin de permettre à plus d'utilisateurs d'y avoir accès simultanément.",
+            "Gérant ensuite une équipe de 5 doctorants et stagiaires de Master en chimie, j'ai guidé plusieurs projets dont le but était d'utiliser le microscope iSCAT pour étudier l'interaction entre des membranes lipidiques et les particules au cœur de leur propre sujet de thèse. Dans cette optique, j'accompagnais chaque étudiant dans son projet d'utilisation du microscope et je les formais à son utilisation ainsi qu'au langage Python pour analyser leurs images et leurs données.",
+            "À l'issue de mon contrat, l'ensemble de mes objectifs a été atteint : le microscope iSCAT a été construit et était utilisé par l'équipe de recherche, et tous les projets expérimentaux ont été conclus avec succès et leurs résultats ont été publiés dans des revues scientifiques."
         ],
         "image": {
-            "alt": "Photographie du microscope iSCAT construit au cours du projet, et déguisé ici par les étudiants."
+            "alt": "Photographie du microscope iSCAT construit au cours du projet et déguisé ici par les étudiants."
         }
     },
     "directContributions": [
