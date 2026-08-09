@@ -29,20 +29,20 @@
             },
             {
                 "label": "Funding",
-                "value": "€500,000 obtained from the BBSRC, with co-funding from Oxford Nanopore Technologies"
+                "value": "£500,000 obtained from the BBSRC, with co-funding from Oxford Nanopore Technologies"
             }
         ]
     },
     "context": {
         "paragraphs": [
-            "The project was conducted within Mark I WALLANCE's team in the Department of Chemistry at King's College London. The main objective of this project, funded by the BBSRC with support from Oxford Nanopore Technologies, was to build an interferometric scattering microscopy platform, also known as iSCAT microscopy. Taking advantage of the interference naturally caused by the presence of nanoscale objects in a sample illuminated by a laser, iSCAT microscopy makes it possible to observe individual nanoparticles and proteins, which in this project would allow us to follow and study the formation of pores on the surface of cell membranes, particularly through self-assembly.",
+            "The project was conducted within Mark I WALLACE's team in the Department of Chemistry at King's College London. The main objective of this project, funded by the BBSRC with support from Oxford Nanopore Technologies, was to build an interferometric scattering microscopy platform, also known as iSCAT microscopy. Taking advantage of the interference naturally caused by the presence of nanoscale objects in a sample illuminated by a laser, iSCAT microscopy makes it possible to observe individual nanoparticles and proteins, which in this project would allow us to follow and study the formation of pores on the surface of cell membranes, particularly through self-assembly.",
             "Initially, the priority of the project was to design and then build the custom iSCAT microscope by purchasing the various essential pieces of equipment, then assembling them and adjusting their positions on an optical table. At the same time, the microscope control and automation program had to be developed to enable its operation.",
             "After the microscope had been built, the second objective of the project was for the entire research laboratory team to use it to carry out their own experimental projects. This stage included training and supporting the other researchers while they used the microscope, as well as helping with the processing of images and data collected using the microscope. For users preparing their doctoral theses, the mission also included direct supervision of their research projects."
         ]
     },
     "contribution": {
         "paragraphs": [
-            "As R&D Project Manager (officially, in academia, Postdoctoral Research Assistant), my main role was to do everything necessary to bring the project to fruition, including building the microscope, training the research staff using it, supervising the doctoral researchers' work, all while conducting my own research.",
+            "As R&D Project Manager (officially, in academia, Postdoctoral Research Associate), my main role was to do everything necessary to bring the project to fruition, including building the microscope, training the research staff using it, supervising the doctoral researchers' work, all while conducting my own research.",
             "To build the iSCAT microscope essential to the project, I identified and purchased all the necessary components: mirrors, light sources, stages, objectives, camera, etc. I then precisely assembled these devices on an optical table and calibrated the resulting microscope to complete my first objective. At the same time, I developed the microscope control, synchronisation and automation software using LabVIEW, designed specifically for interfacing between different pieces of scientific equipment.",
             "Once construction of the microscope was complete, I supported its use by members of the research laboratory. In addition to training users, I supervised three doctoral researchers and two Master's interns, leading their projects and helping them on a daily basis with their use of the microscope. I also developed and programmed the various algorithms and software used to analyse the images and data collected with the microscope, using Java to create plugins for ImageJ, and even developing complete custom software with Python.",
             "Finally, I also built a copy of the iSCAT microscope developed during this project to allow a larger number of users to access the capabilities offered by the instrument."
@@ -79,7 +79,7 @@
         "Construction of two complete, qualified and operational iSCAT microscopes, enabling members of the research team to analyse their biochemical samples.",
         "Programming of the microscope control and automation software and creation of all scripts and software for processing and analysing the images, sequences and data collected by the microscope.",
         "Training of all users in the operation of the iSCAT microscope and support towards independent use of the platform, including its calibration.",
-        "Publication of three scientific papers (JACS 2023, Journal of Microscopy 2024 and Nature Communications 2025), including one as first author, on the use of the iSCAT microscope to observe the kinetics of complex chemical reactions, as well as the use of optical equipment capable of amplifying and correcting the microscope signal."
+        "Publication of three scientific papers (JACS 2023, Journal of Microscopy 2025 and Nature Communications 2025), including one as first author, on the use of the iSCAT microscope to observe the kinetics of complex chemical reactions, as well as the use of optical equipment capable of amplifying and correcting the microscope signal."
     ],
     "technologies": [
         "LabVIEW",

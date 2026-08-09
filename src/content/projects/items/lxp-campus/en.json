@@ -33,7 +33,7 @@
             },
             {
                 "label": "Funding",
-                "value": "€2M obtained from OPCO Atlas over 4 years"
+                "value": "€1.4M awarded by OPCO Atlas over 4 years"
             }
         ]
     },
@@ -52,7 +52,7 @@
             "I worked with the lead developer, Joachim BRASIER, to establish the complete technology stack defining the learning platform: the language, framework and libraries used, algorithms for writing to and reading from the database, and load management for applications using generative artificial intelligence. I also actively contributed to the development of the platform's backend, particularly the integration of SCORM standards, connections to external AI services (ChatGPT, Mistral AI, etc.) and full support for Open Badges. At the same time, I assisted the lead developer with training and supporting the company's web development team.",
             "I also worked closely with Lodine GENDRAULT and Tristan ALBERT to design and create the interfaces for the different areas of the Virtual Campus. This work included not only producing mock-ups for these interfaces, but also managing the design team and training it to use Figma.",
             "I also managed the company's research & development team, guiding it in the creation of virtual-reality and augmented-reality applications, as well as applications using artificial intelligence. For applications specifically using artificial intelligence, I wrote and optimised all the prompts used by the AI agents. At the same time, I supervised a CIFRE PhD thesis on the use of VR applications and generative AI for training in the support of learners with disabilities, particularly those with autism spectrum disorder.",
-            "To carry out all this work, I managed a total of three consecutive annual OPCO Atlas funding awards (€200,000, €200,000 and €200,000), as well as the preparation of application dossiers for OPCO calls for projects to secure this funding. All 3 applications I prepared were selected by OPCO Atlas to fund the project."
+            "To carry out all this work, I managed the budgets associated with the three successful applications from 2023 to 2025, representing approximately €3.0M in total, including €1.2M funded by OPCO Atlas. I also prepared the three applications submitted in 2024, 2025 and 2026, all of which were approved, representing approximately €800,000 in Atlas funding awarded."
         ]
     },
     "features": [
@@ -83,7 +83,7 @@
     ],
     "resultsDescription": "The project was unfortunately interrupted following the judicial liquidation of CFA ARINFO I-MAGINER, as well as I-MAGINEXR. The platform could not be completed to 100%, and the code cannot be made public following the closure of the company's activities. Nevertheless, the following results were achieved during the contract:",
     "results": [
-        "Applications selected by OPCO Atlas for project funding for 3 consecutive years, for a total of €M.",
+        "Preparation of three applications to OPCO Atlas calls for projects between 2024 and 2026, all of which were approved, representing approximately €800,000 in funding awarded.",
         "Implementation of I-MAGINEXR's communication strategy and creation of technical and commercial documents.",
         "Completion of the backend and artificial-intelligence ecosystem.",
         "Delivery of four applications using virtual reality, augmented reality and/or generative artificial intelligence.",

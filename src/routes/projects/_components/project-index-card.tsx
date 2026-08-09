@@ -2,8 +2,8 @@ import { CalendarBlankIcon, CodeIcon } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 
 import { getProjectRoute } from '@/app/routing/navigation';
+import { InteractiveCard } from '@/components/interactive-card';
 import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
 import type { ProjectId } from '@/content/projects/registry';
 import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
@@ -79,20 +79,13 @@ function ProjectIndexCard({ project, language, labels }: ProjectIndexCardProps) 
           'focus-visible:ring-offset-2',
         )}
       >
-        <Card
+        <InteractiveCard
+          interaction="group"
           className={cn(
             'grid gap-0 overflow-hidden',
             'rounded-lg py-0',
             'border-border-strong',
             'bg-brand-background shadow-none',
-            'transition-[transform,border-color,background-color,box-shadow]',
-            'ease-standard duration-200',
-            'group-hover:-translate-y-1',
-            'group-hover:border-brand-primary',
-            'group-hover:bg-action-soft/70',
-            'group-hover:shadow-elevated',
-            'group-hover:ring-2',
-            'group-hover:ring-brand-primary/30',
             hasMetadata && 'md:grid-cols-[minmax(0,1fr)_13rem]',
           )}
         >
@@ -186,7 +179,7 @@ function ProjectIndexCard({ project, language, labels }: ProjectIndexCardProps) 
               ) : null}
             </dl>
           ) : null}
-        </Card>
+        </InteractiveCard>
       </Link>
     </article>
   );

@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { getLanguageFromPathname, getPageRoute } from '@/app/routing/navigation';
 import heroImageSrc from '@/assets/images/projects/hero.png';
 import { Hero, HeroBreadcrumbs, HeroContainer, HeroContent, HeroDescription, HeroHeader, HeroImage, HeroMedia, HeroTitle } from '@/components/hero';
+import { Section } from '@/components/section';
 import { getProjectCollection } from '@/content/projects/catalog';
 import { getProjectsPage } from '@/content/projects/page';
 
@@ -172,7 +173,7 @@ function ProjectsPage() {
       </Hero>
 
       <div className={['max-w-editorial px-page mx-auto w-full', 'py-10 sm:py-12 lg:py-14'].join(' ')}>
-        <section aria-label={page.catalog.listLabel}>
+        <Section contained={false} aria-label={page.catalog.listLabel}>
           <ProjectControls
             sortBy={sortBy}
             projectOptions={projectOptions}
@@ -230,7 +231,7 @@ function ProjectsPage() {
               {controls.noResults}
             </p>
           )}
-        </section>
+        </Section>
       </div>
     </div>
   );

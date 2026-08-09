@@ -14,7 +14,7 @@ import {
 } from '@/app/routing/navigation';
 import DetailDescriptionSection from '@/components/detail-description-section';
 import DetailNavigation from '@/components/detail-navigation';
-import PageHero from '@/components/page-hero';
+import { Hero, HeroBreadcrumbs, HeroContainer, HeroContent, HeroEyebrow, HeroHeader, HeroTitle } from '@/components/hero';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -190,30 +190,38 @@ function ResearchPublicationDetailPage() {
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
-      <PageHero
-        breadcrumbs={{
-          ariaLabel: t('breadcrumbs.label', {
-            lng: language,
-          }),
-          items: [
-            {
-              label: t('breadcrumbs.home', {
+      <Hero aria-labelledby="page-title">
+        <HeroContainer className="lg:grid-cols-1">
+          <HeroContent>
+            <HeroBreadcrumbs
+              ariaLabel={t('breadcrumbs.label', {
                 lng: language,
-              }),
-              to: getPageRoute('home', language),
-            },
-            {
-              label: page.breadcrumbLabel,
-              to: getPageRoute('research', language),
-            },
-            {
-              label: publication.breadcrumbLabel,
-            },
-          ],
-        }}
-        eyebrow={eyebrow}
-        title={publication.title}
-      />
+              })}
+              items={[
+                {
+                  label: t('breadcrumbs.home', {
+                    lng: language,
+                  }),
+                  to: getPageRoute('home', language),
+                },
+                {
+                  label: page.breadcrumbLabel,
+                  to: getPageRoute('research', language),
+                },
+                {
+                  label: publication.breadcrumbLabel,
+                },
+              ]}
+            />
+
+            <HeroHeader className="mt-4 sm:mt-5">
+              <HeroEyebrow>{eyebrow}</HeroEyebrow>
+
+              <HeroTitle id="page-title">{publication.title}</HeroTitle>
+            </HeroHeader>
+          </HeroContent>
+        </HeroContainer>
+      </Hero>
 
       <div className={cn('mx-auto w-full', 'max-w-editorial px-page', 'pb-12 sm:pb-14 lg:pb-16')}>
         <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={`${idPrefix}-metadata-title`}>

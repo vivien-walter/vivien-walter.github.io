@@ -23,7 +23,7 @@ export function getIscatPlatformContent(language: SupportedLanguage) {
   return createProjectContent(language, {
     id: itemId,
     period: {
-      start: '2018-03',
+      start: '2018-04',
       end: '2021-03',
     },
     localizedContent,

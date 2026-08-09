@@ -53,7 +53,7 @@ export function getIeeeMolecularCommunication2026Content(language: SupportedLang
       href: 'https://doi.org/10.1109/TMBMC.2026.3677602',
     },
     reference:
-      'Walter, V., Bi, D., Ruiz Blanco, D. L., and Deng, Y. (2023). CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication. IEEE Transactions on Molecular, Biological, and Multi-Scale Communications, 12, 434-445.',
+      'Walter, V., Bi, D., Ruiz Blanco, D. L., and Deng, Y. (2026). CNN-Based Detection of Mixed-Molecule Concentrations in Molecular Communication. IEEE Transactions on Molecular, Biological, and Multi-Scale Communications, 12, 434-445.',
     localizedContent,
     website: {
       href: 'https://ieeexplore.ieee.org/document/11456236',

@@ -6,13 +6,19 @@ import { cn } from '@/lib/utils';
 
 import { getEquivalentLanguagePath, getLanguageFromPathname } from '../routing/navigation';
 
-export default function LanguageSwitcher() {
-  /* Check the location on the website */
+type LanguageSwitcherProps = {
+  readonly variant?: 'default' | 'inverse';
+  readonly onNavigate?: () => void;
+};
+
+export default function LanguageSwitcher({ variant = 'default', onNavigate }: LanguageSwitcherProps) {
   const location = useLocation();
 
-  /* Fetch all data for the translation */
   const { t } = useTranslation();
+
   const currentLanguage = getLanguageFromPathname(location.pathname);
+
+  const isInverse = variant === 'inverse';
 
   return (
     <nav
@@ -32,7 +38,7 @@ export default function LanguageSwitcher() {
           return (
             <li key={language} className="m-0 inline-flex items-center">
               {index > 0 ? (
-                <span aria-hidden="true" className="text-brand-ink/55 text-sm">
+                <span aria-hidden="true" className={cn('text-sm', isInverse ? 'text-brand-background/55' : 'text-brand-ink/55')}>
                   |
                 </span>
               ) : null}
@@ -44,18 +50,28 @@ export default function LanguageSwitcher() {
                 aria-label={languageName}
                 aria-current={isCurrentLanguage ? 'page' : undefined}
                 title={languageName}
+                onClick={onNavigate}
                 className={cn(
-                  'inline-flex min-h-11 min-w-11 items-center justify-center',
-                  'rounded-sm px-2 py-2',
-                  'text-sm tracking-[0.02em] no-underline',
+                  'inline-flex min-h-11 items-center justify-center',
+                  'rounded-sm text-sm no-underline',
                   'ease-standard transition-colors duration-150',
                   'focus-visible:ring-[3px] focus-visible:outline-none',
-                  'focus-visible:ring-ring/50',
-                  'focus-visible:ring-offset-2',
-                  'focus-visible:ring-offset-background',
+                  isInverse
+                    ? ['min-w-10 px-1.5', 'focus-visible:ring-white/70']
+                    : [
+                        'min-w-11 px-2 py-2',
+                        'tracking-[0.02em]',
+                        'focus-visible:ring-ring/50',
+                        'focus-visible:ring-offset-2',
+                        'focus-visible:ring-offset-background',
+                      ],
                   isCurrentLanguage
-                    ? ['text-brand-ink font-semibold underline', 'decoration-brand-primary decoration-2', 'underline-offset-4']
-                    : ['text-brand-ink/75 font-medium', 'hover:text-brand-primary'],
+                    ? isInverse
+                      ? ['font-semibold', 'text-brand-background', 'underline', 'decoration-2', 'decoration-brand-background', 'underline-offset-4']
+                      : ['font-semibold', 'text-brand-ink underline', 'decoration-brand-primary decoration-2', 'underline-offset-4']
+                    : isInverse
+                      ? ['font-medium', 'text-brand-background/70', 'hover:text-brand-background']
+                      : ['font-medium', 'text-brand-ink/75', 'hover:text-brand-primary'],
                 )}
               >
                 {language.toUpperCase()}

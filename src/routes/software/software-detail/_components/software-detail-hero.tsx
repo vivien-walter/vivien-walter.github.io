@@ -1,7 +1,18 @@
 import { useTranslation } from 'react-i18next';
 
 import { getPageRoute } from '@/app/routing/navigation';
-import { Hero, HeroBreadcrumbs, HeroContainer, HeroContent, HeroDescription, HeroEyebrow, HeroHeader, HeroMedia, HeroTitle } from '@/components/hero';
+import {
+  Hero,
+  HeroBreadcrumbs,
+  HeroContainer,
+  HeroContent,
+  HeroDescription,
+  HeroEyebrow,
+  HeroHeader,
+  HeroImage,
+  HeroMedia,
+  HeroTitle,
+} from '@/components/hero';
 import type { SoftwareCatalogItem } from '@/content/software/catalog';
 import { getSoftwareContent } from '@/content/software/page';
 import type { SupportedLanguage } from '@/types/localization';
@@ -54,7 +65,7 @@ function SoftwareDetailHero({ language, software }: SoftwareDetailHeroProps) {
         </HeroContent>
         <HeroMedia className="bg-action-soft text-brand-primary relative flex items-center justify-center overflow-hidden p-8 sm:p-10 lg:p-12">
           {software.heroImage ? (
-            <img src={software.heroImage.src} alt={software.heroImage.alt} className="absolute inset-0 h-full w-full object-cover" decoding="async" />
+            <HeroImage src={software.heroImage.src} alt={software.heroImage.alt} />
           ) : (
             <SoftwareIcon aria-hidden="true" className="size-24 sm:size-28 lg:size-32" weight="regular" />
           )}

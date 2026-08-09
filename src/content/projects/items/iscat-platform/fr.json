@@ -29,20 +29,20 @@
             },
             {
                 "label": "Financements",
-                "value": "500 000 € obtenus auprès de la BBSRC, avec un cofinancement d'Oxford Nanopore Technologies"
+                "value": "500 000 £ obtenus auprès de la BBSRC, avec un cofinancement d'Oxford Nanopore Technologies"
             }
         ]
     },
     "context": {
         "paragraphs": [
-            "Le projet a été mené au sein de l'équipe de Mark I WALLANCE au département de chimie du King's College London. L'objectif majeur de ce projet, financé par la BBSRC avec le soutien d'Oxford Nanopore Technologies, était de construire une plateforme de microscopie à diffusion interférométrique, aussi appelée microscopie iSCAT. Tirant avantage des interférences naturellement causées par la présence d'objets nanoscopiques dans un échantillon illuminé par un laser, la microscopie iSCAT permet en effet d'observer des nanoparticules et des protéines individuelles, ce qui nous permettrait dans le cadre de ce projet de suivre et d'étudier la formation de pores à la surface de membranes cellulaires, notamment par auto-assemblage.",
+            "Le projet a été mené au sein de l'équipe de Mark I WALLACE au département de chimie du King's College London. L'objectif majeur de ce projet, financé par la BBSRC avec le soutien d'Oxford Nanopore Technologies, était de construire une plateforme de microscopie à diffusion interférométrique, aussi appelée microscopie iSCAT. Tirant avantage des interférences naturellement causées par la présence d'objets nanoscopiques dans un échantillon illuminé par un laser, la microscopie iSCAT permet en effet d'observer des nanoparticules et des protéines individuelles, ce qui nous permettrait dans le cadre de ce projet de suivre et d'étudier la formation de pores à la surface de membranes cellulaires, notamment par auto-assemblage.",
             "Dans un premier temps, la priorité du projet fut de concevoir puis de construire le microscope iSCAT sur-mesure, en achetant les différents équipements indispensables, puis en les assemblant et en réglant leur position sur une table optique. En parallèle, il fallut développer le programme de contrôle et d'automatisation du microscope pour permettre son utilisation.",
             "Après la construction du microscope, le second objectif du projet était son exploitation par l'ensemble de l'équipe du laboratoire de recherche pour mener à bien leurs propres projets expérimentaux. Cette étape incluait la formation et l'accompagnement des autres chercheurs au cours de leur utilisation du microscope, et l'aide au traitement des images et des données récoltées avec le microscope. Dans le cas d'utilisateurs préparant leur thèse de doctorat, la mission incluait également la supervision directe du projet de recherche des utilisateurs."
         ]
     },
     "contribution": {
         "paragraphs": [
-            "En tant que Chef de projet R&D (officiellement dans le milieu académique, Postdoctoral Research Assistant), mon rôle principal était de mettre tout en œuvre pour mener à bien la concrétisation du projet, incluant la construction du microscope, la formation du personnel de recherche l'utilisant, la supervision des recherches des doctorants, le tout en conduisant mes propres recherches.",
+            "En tant que Chef de projet R&D (officiellement dans le milieu académique, Postdoctoral Research Associate), mon rôle principal était de mettre tout en œuvre pour mener à bien la concrétisation du projet, incluant la construction du microscope, la formation du personnel de recherche l'utilisant, la supervision des recherches des doctorants, le tout en conduisant mes propres recherches.",
             "Pour construire le microscope iSCAT essentiel au projet, j'ai identifié et acheté tous les composants nécessaires : miroirs, sources lumineuses, platines, objectifs, caméra, etc. J'ai ensuite assemblé précisément ces appareils sur une table optique et ai calibré le microscope ainsi formé pour compléter mon premier objectif. En parallèle, j'ai développé le logiciel de contrôle, synchronisation et automatisation du microscope à l'aide du langage LabVIEW, conçu spécifiquement pour l'interfaçage entre différents équipements scientifiques.",
             "Une fois la construction du microscope achevée, j'ai accompagné son utilisation par les membres du laboratoire de recherche. En plus de former les utilisateurs, j’ai encadré trois doctorants ainsi que deux stagiaires de Master, pilotant leurs projets et les aidant au quotidien dans leur utilisation du microscope. J'ai également développé et programmé les différents algorithmes et logiciels permettant d'analyser les images et données récoltées à l'aide du microscope, en utilisant Java pour réaliser des plugins pour le logiciel ImageJ, voire en créant des logiciels complets sur-mesure avec Python.",
             "Finalement, j'ai également construit une copie du microscope iSCAT développé au cours de ce projet pour permettre à un plus grand nombre d'utilisateurs d'avoir accès aux capacités offertes par l'appareil."
@@ -79,7 +79,7 @@
         "Fabrication de deux microscopes iSCAT complets, qualifiés et opérationnels, permettant aux membres de l'équipe de recherche d'analyser leurs échantillons biochimiques.",
         "Programmation du logiciel de contrôle et d'automatisation du microscope et création de tous les scripts et logiciels de traitement et d'analyse des images, séquences et données collectées par le microscope.",
         "Formation de l'ensemble des utilisateurs au fonctionnement du microscope iSCAT et accompagnement dans leur utilisation indépendante de la plateforme, incluant sa calibration.",
-        "Publication de trois articles scientifiques (JACS 2023, Journal of Microscopy 2024 et Nature Communications 2025), dont un en tant que premier auteur, sur l'utilisation du microscope iSCAT pour observer la cinétique de réactions chimiques complexes, ainsi que sur l'utilisation d'équipements optiques pouvant amplifier et corriger le signal du microscope."
+        "Publication de trois articles scientifiques (JACS 2023, Journal of Microscopy 2025 et Nature Communications 2025), dont un en tant que premier auteur, sur l'utilisation du microscope iSCAT pour observer la cinétique de réactions chimiques complexes, ainsi que sur l'utilisation d'équipements optiques pouvant amplifier et corriger le signal du microscope."
     ],
     "technologies": [
         "LabVIEW",

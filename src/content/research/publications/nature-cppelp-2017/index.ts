@@ -63,7 +63,7 @@ export function getNatureCppelp2017Content(language: SupportedLanguage) {
       href: 'https://doi.org/10.1038/srep43963',
     },
     reference:
-      'Weinberger, A., Walter, V., MacEwan, S. R., Schmatko, T., Muller, P., Schroder, A. P., Chilkoti, A., and Marques, C. M. (2024). Cargo self-assembly rescues affinity of cell-penetrating peptides to lipid membranes. Scientifc Reports, 7, 73963.',
+      'Weinberger, A., Walter, V., MacEwan, S. R., Schmatko, T., Muller, P., Schroder, A. P., Chilkoti, A., and Marques, C. M. (2017). Cargo self-assembly rescues affinity of cell-penetrating peptides to lipid membranes. Scientifc Reports, 7, 73963.',
     localizedContent,
     website: {
       href: 'https://www.nature.com/articles/srep43963',

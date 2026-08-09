@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
 import { getLanguageFromPathname, getPageRoute, getResearchPublicationRoute, getResearchThemeRoute } from '@/app/routing/navigation';
-import PageHero from '@/components/page-hero';
+import { Hero, HeroBreadcrumbs, HeroContainer, HeroContent, HeroDescription, HeroHeader, HeroImage, HeroMedia, HeroTitle } from '@/components/hero';
+import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
-import { Card } from '@/components/ui/card';
 import { getResearchPageContent } from '@/content/research/page';
 import { getPublicationCollection } from '@/content/research/publications/catalog';
 import type { ResearchThemeId } from '@/content/research/registry';
@@ -57,27 +57,40 @@ function ResearchPage() {
 
   return (
     <div className="overflow-hidden">
-      <PageHero
-        breadcrumbs={{
-          ariaLabel: t('breadcrumbs.label', {
-            lng: language,
-          }),
-          items: [
-            {
-              label: t('breadcrumbs.home', {
+      <Hero aria-labelledby="page-title">
+        <HeroContainer>
+          <HeroContent>
+            <HeroBreadcrumbs
+              ariaLabel={t('breadcrumbs.label', {
                 lng: language,
-              }),
-              to: getPageRoute('home', language),
-            },
-            {
-              label: page.breadcrumbLabel,
-            },
-          ],
-        }}
-        title={page.title}
-        introduction={page.introduction}
-        image={page.heroImage}
-      />
+              })}
+              items={[
+                {
+                  label: t('breadcrumbs.home', {
+                    lng: language,
+                  }),
+                  to: getPageRoute('home', language),
+                },
+                {
+                  label: page.breadcrumbLabel,
+                },
+              ]}
+            />
+
+            <HeroHeader className="mt-4 sm:mt-5">
+              <HeroTitle id="page-title">{page.title}</HeroTitle>
+
+              <HeroDescription>
+                <p className="!m-0">{page.introduction}</p>
+              </HeroDescription>
+            </HeroHeader>
+          </HeroContent>
+
+          <HeroMedia>
+            <HeroImage src={page.heroImage.src} alt={page.heroImage.alt} />
+          </HeroMedia>
+        </HeroContainer>
+      </Hero>
 
       <div className={cn('max-w-editorial px-page mx-auto w-full', 'pb-12 sm:pb-14 lg:pb-16')}>
         {themes.length > 0 ? (
@@ -157,22 +170,9 @@ function ResearchPage() {
                         'focus-visible:ring-offset-2',
                       )}
                     >
-                      <Card
-                        className={cn(
-                          'h-full min-h-40 gap-0',
-                          'rounded-lg py-0',
-                          'border-border-strong',
-                          'bg-brand-background',
-                          'shadow-none',
-                          'transition-[transform,border-color,background-color,box-shadow]',
-                          'ease-standard duration-200',
-                          'group-hover:-translate-y-1',
-                          'group-hover:border-brand-primary',
-                          'group-hover:bg-action-soft/70',
-                          'group-hover:shadow-elevated',
-                          'group-hover:ring-2',
-                          'group-hover:ring-brand-primary/30',
-                        )}
+                      <InteractiveCard
+                        interaction="group"
+                        className={cn('h-full min-h-40 gap-0', 'rounded-lg py-0', 'border-border-strong', 'bg-brand-background', 'shadow-none')}
                       >
                         <span
                           className={cn(
@@ -202,7 +202,7 @@ function ResearchPage() {
                         >
                           {resource.label}
                         </span>
-                      </Card>
+                      </InteractiveCard>
                     </a>
                   </li>
                 );

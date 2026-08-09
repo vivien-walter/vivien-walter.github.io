@@ -1,6 +1,7 @@
 import { ImageIcon } from '@phosphor-icons/react';
 import { useId, useState } from 'react';
 
+import { Section } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { formatContentDateRange } from '@/lib/content/formatters';
@@ -68,7 +69,7 @@ function ProjectOverviewCard({
   }
 
   return (
-    <section aria-label={ariaLabel}>
+    <Section contained={false} aria-label={ariaLabel}>
       <Card
         className={cn(
           'grid gap-0 overflow-hidden rounded-lg py-0',
@@ -141,7 +142,7 @@ function ProjectOverviewCard({
           </div>
         ) : null}
       </Card>
-    </section>
+    </Section>
   );
 }
 

@@ -29,7 +29,7 @@
             },
             {
                 "label": "Funding",
-                "value": "€360,000 obtained from EPSRC through two calls for projects"
+                "value": "£360,000 obtained from EPSRC through two calls for projects"
             }
         ]
     },
@@ -43,10 +43,10 @@
     },
     "contribution": {
         "paragraphs": [
-            "As R&D Project Manager (officially, in academia, Postdoctoral Research Assistant), my main role was to do everything necessary to bring the project to fruition, from constructing the testbed to training the research staff using it, while conducting my own research.",
+            "As R&D Project Manager (officially, in academia, Postdoctoral Research Associate), my main role was to do everything necessary to bring the project to fruition, from constructing the testbed to training the research staff using it, while conducting my own research.",
             "Before even designing the testbed at the centre of the project, my first task was to set up a chemistry laboratory capable of accommodating the prototype, as the Department of Engineering at King's College London did not have one. I identified and prepared the premises, selected and ordered the equipment, major instruments and consumables, and then contributed to defining the safety and operating protocols with the support of the department's administrative staff.",
             "I designed and built the testbed prototype, selecting the necessary hardware but also producing some of the key equipment using CAD software and 3D printers, such as the syringe pumps required to inject chemicals into the testbed. I also developed all the control software, using C++ for the Arduino boards of the various pieces of equipment and Python for the central testbed control and automation software.",
-            "To carry out all the work, I managed two EPSRC grants of €300,000 and €60,000, contributed partially to the first proposal and wrote the second in full. I also wrote the technical documentation and prepared documentation to patent the testbed prototype.",
+            "To carry out all the work, I managed two EPSRC grants of £300,000 and £60,000, contributed partially to the first proposal and wrote the second in full. I also wrote the technical documentation and prepared documentation to patent the testbed prototype.",
             "I led an average team of five people comprising a junior PDRA, two doctoral researchers and two Master's interns. Nine people were trained in total to use the testbed, and I co-supervised their research projects with Yansha DENG. At the same time, I conducted my own research using the testbed, which enabled me to design an artificial-intelligence model based on convolutional neural networks to decode the messages encoded in the molecular signals transmitted by our testbed."
         ]
     },
@@ -73,7 +73,7 @@
         },
         {
             "title": "Leadership and funding",
-            "description": "Coordination of the team, training of users and management of two EPSRC grants representing €360,000 in total."
+            "description": "Coordination of the team, training of users and management of two EPSRC grants representing £360,000 in total."
         }
     ],
     "resultsDescription": "At the end of my contract within the Department of Engineering at King's College London, I successfully completed the various objectives of the project and finished the construction and commissioning of the molecular communication testbed. In particular, the following elements were successfully completed:",
@@ -83,7 +83,7 @@
         "Programming of the testbed control and automation software and creation of all scripts for processing and analysing the data collected by the testbed, including an artificial-intelligence model based on a convolutional neural network.",
         "Proof of concept of the microfluidic testbed and the various chemical reactions enabling signal transmission, with experimental validation of the concepts of molecular communication.",
         "Publication of two scientific papers as first author (Nature Communications in 2023 and IEEE TMBMC in 2026) on the microfluidic testbed, its use to validate the principles of molecular communication, and the use of artificial intelligence to decode the signals.",
-        "Response to a call for proposals and securing €60,000 in funding from EPSRC, as well as preparation of documentation to patent the testbed."
+        "Response to a call for proposals and securing £60,000 in funding from EPSRC, as well as preparation of documentation to patent the testbed."
     ],
     "technologies": [
         "TensorFlow",

@@ -21,7 +21,7 @@ export function getConsultantMicroscopeContent(language: SupportedLanguage) {
     location: 'London, United Kingdom',
     period: {
       start: '2020-04',
-      end: '2020-10',
+      end: '2020-11',
     },
     parallelActivity: true,
     localizedContent,

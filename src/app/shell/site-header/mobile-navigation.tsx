@@ -11,16 +11,16 @@ import {
 } from '@phosphor-icons/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { curriculumVitaeDocuments } from '@/content/common/documents';
-import { supportedLanguages } from '@/lib/content/localization';
 import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
 
-import { getEquivalentLanguagePath, navigationItems, type NavigationPageId } from '../../routing/navigation';
+import { navigationItems, type NavigationPageId } from '../../routing/navigation';
+import LanguageSwitcher from '../language-switcher';
 
 const navigationIcons = {
   home: HouseIcon,
@@ -39,7 +39,6 @@ interface MobileNavigationProps {
 }
 
 export default function MobileNavigation({ siteName, shortSiteName, currentLanguage, currentPageId }: MobileNavigationProps) {
-  const location = useLocation();
   const { t } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -94,69 +93,12 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
             <span className={cn('truncate text-xs', 'leading-tight font-medium', 'tracking-[-0.01em]', 'text-brand-background/85')}>{siteName}</span>
           </SheetTitle>
 
-          <nav
-            className="shrink-0"
-            aria-label={t('languageSwitcher.label', {
-              lng: currentLanguage,
-            })}
-          >
-            <ul className={cn('m-0 inline-flex', 'list-none items-center p-0')}>
-              {supportedLanguages.map((language, index) => {
-                const isCurrentLanguage = language === currentLanguage;
-
-                const languageName = t(`languages.${language}`, {
-                  lng: currentLanguage,
-                });
-
-                return (
-                  <li key={language} className={cn('m-0 inline-flex', 'items-center')}>
-                    {index > 0 ? (
-                      <span aria-hidden="true" className={cn('text-sm', 'text-brand-background/55')}>
-                        |
-                      </span>
-                    ) : null}
-
-                    <Link
-                      to={getEquivalentLanguagePath(location.pathname, language)}
-                      lang={language}
-                      hrefLang={language}
-                      aria-label={languageName}
-                      aria-current={isCurrentLanguage ? 'page' : undefined}
-                      title={languageName}
-                      onClick={() => {
-                        setIsOpen(false);
-                      }}
-                      className={cn(
-                        'inline-flex min-h-11',
-                        'min-w-10 items-center',
-                        'justify-center rounded-sm',
-                        'px-1.5 text-sm',
-                        'no-underline',
-                        'transition-colors',
-                        'duration-150',
-                        'ease-standard',
-                        'focus-visible:outline-none',
-                        'focus-visible:ring-[3px]',
-                        'focus-visible:ring-white/70',
-                        isCurrentLanguage
-                          ? [
-                              'font-semibold',
-                              'text-brand-background',
-                              'underline',
-                              'decoration-2',
-                              'decoration-brand-background',
-                              'underline-offset-4',
-                            ]
-                          : ['font-medium', 'text-brand-background/70', 'hover:text-brand-background'],
-                      )}
-                    >
-                      {language.toUpperCase()}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <LanguageSwitcher
+            variant="inverse"
+            onNavigate={() => {
+              setIsOpen(false);
+            }}
+          />
 
           <SheetClose asChild>
             <Button

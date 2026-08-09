@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon, type Icon } from '@phosphor-icons/react';
 
+import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
-import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 type PublicationResource = {
@@ -52,22 +52,7 @@ function PublicationResourcesSection({ resources, title, titleId }: PublicationR
                   'focus-visible:ring-offset-2',
                 )}
               >
-                <Card
-                  className={cn(
-                    'h-full min-h-40 gap-0',
-                    'rounded-lg py-0',
-                    'border-border-strong',
-                    'bg-brand-background shadow-none',
-                    'transition-[transform,border-color,background-color,box-shadow]',
-                    'ease-standard duration-200',
-                    'group-hover:-translate-y-1',
-                    'group-hover:border-brand-primary',
-                    'group-hover:bg-action-soft/70',
-                    'group-hover:shadow-elevated',
-                    'group-hover:ring-2',
-                    'group-hover:ring-brand-primary/30',
-                  )}
-                >
+                <InteractiveCard interaction="group" className={cn('h-full', 'border-border-strong', 'bg-brand-background shadow-none')}>
                   <span className={cn('grid h-full min-w-0', 'grid-cols-[auto_minmax(0,1fr)_auto]', 'items-start gap-4', 'p-5 sm:p-6')}>
                     <span
                       aria-hidden="true"
@@ -116,7 +101,7 @@ function PublicationResourcesSection({ resources, title, titleId }: PublicationR
                       weight="bold"
                     />
                   </span>
-                </Card>
+                </InteractiveCard>
               </a>
             </li>
           );

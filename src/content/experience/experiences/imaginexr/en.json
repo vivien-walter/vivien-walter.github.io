@@ -2,15 +2,15 @@
     "breadcrumbLabel": "i-magineXR (2024-2026)",
     "eyebrow": "Web application development",
     "role": "Product Manager",
-    "summary": "Led the creation of a virtual LXP campus for CFA ARINFO I-MAGINEXR, combining a custom-built web platform with tools and applications using generative AI and extended reality.",
+    "summary": "Led the creation of a virtual LXP campus for CFA ARINFO I-MAGINER, combining a custom-built web platform with tools and applications using generative AI and extended reality.",
     "highlights": [
         {
             "label": "Project type",
             "value": "Development of a custom web application built with TypeScript and designed to be commercialised."
         },
         {
-            "label": "Funding secured and managed",
-            "value": "A total of €500,000 obtained from OPCO Atlas, with 4 successive applications approved."
+            "label": "Budgets managed",
+            "value": "Approximately €3.0M in budgets managed, including €1.2M funded by OPCO Atlas."
         },
         {
             "label": "Team managed",
@@ -24,7 +24,7 @@
             "The team I was responsible for consisted of web developers, extended-reality application developers (virtual and augmented reality), UX/UI designers responsible for creating all interfaces, a communication team responsible for preparing the company's commercialisation and communication strategy, an IT team responsible for server maintenance, and a research and development team that included a CIFRE PhD student. During this contract, I supported all the teams and trained users in the various software tools required for the project.",
             "I also developed the web application's backend, programming the server API in TypeScript and using Node.js, Express, Mongoose to manage the MongoDB database, and Zod. I also contributed to the design of the virtual campus administration interface, using the Next.js, React and shadcn frameworks and libraries.",
             "At the same time, within the R&D team, I managed the development and training of the generative AI models required for the educational applications and virtual-reality-based applications that enriched the platform. In addition, I designed a prompt-engineering approach based on procedural generation that enables non-expert users to create their own scenarios for an AI agent.",
-            "My applications to OPCO Atlas calls for projects were approved for 3 consecutive years, for a total budget of €500,000.",
+            "I prepared three applications to OPCO Atlas calls for projects, in 2024, 2025 and 2026, all of which were approved, representing approximately €800,000 in Atlas funding awarded.",
             "The contract ended when I-MAGINEXR closed following judicial liquidation in summer 2026. Deployment of the platform was planned for the second half of 2026; the project therefore could not be completed after operations ceased. When the company closed, the backend was in the finalisation stage and 60% of the interfaces had been integrated. 4 applications using generative AI, virtual reality and/or augmented reality had been completed."
         ],
         "image": {
@@ -34,7 +34,7 @@
     "directContributions": [
         {
             "label": "Project management",
-            "text": "Definition of objectives with the client and preparation of specifications. Organisation and facilitation of progress meetings and implementation of an Agile-style methodology adapted to the team's needs. Preparation of applications to OPCO Atlas calls for projects, with all applications successful over 3 consecutive years. Preparation of annual reports for OPCO Atlas covering all of the company's development activities."
+            "text": "Definition of objectives with the client and preparation of specifications. Organisation and facilitation of progress meetings and implementation of an Agile-style methodology adapted to the team's needs. Preparation of three applications to OPCO Atlas calls for projects between 2024 and 2026, all of which were approved. Preparation of annual reports for OPCO Atlas covering all of the company's development activities."
         },
         {
             "label": "Team management",
@@ -135,6 +135,6 @@
     ],
     "finalState": {
         "title": "State at the end of the project",
-        "text": "Backend and AI ecosystem operational and ready for deployment, four XR applications completed, and user interface approximately 60% complete, with three secondary areas remaining."
+        "text": "Backend and AI ecosystem operational and ready for deployment, four XR applications completed, interface design and mock-ups 90% complete, and interface integration into the code 60% complete, with three secondary areas remaining."
     }
 }

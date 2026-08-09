@@ -11,7 +11,18 @@ import {
   getSoftwareRoute,
 } from '@/app/routing/navigation';
 import DetailNavigation from '@/components/detail-navigation';
-import PageHero from '@/components/page-hero';
+import {
+  Hero,
+  HeroBreadcrumbs,
+  HeroContainer,
+  HeroContent,
+  HeroDescription,
+  HeroEyebrow,
+  HeroHeader,
+  HeroImage,
+  HeroMedia,
+  HeroTitle,
+} from '@/components/hero';
 import { getExperienceById } from '@/content/experience/catalog';
 import { getProjectDetailById, getProjectDetailContent, getProjectDetailNavigation } from '@/content/projects/detail/page';
 import { getProjectsPage } from '@/content/projects/page';
@@ -81,32 +92,48 @@ function ProjectDetailPage() {
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
-      <PageHero
-        breadcrumbs={{
-          ariaLabel: t('breadcrumbs.label', {
-            lng: language,
-          }),
-          items: [
-            {
-              label: t('breadcrumbs.home', {
+      <Hero aria-labelledby="page-title">
+        <HeroContainer className={project.heroImage ? undefined : 'lg:grid-cols-1'}>
+          <HeroContent>
+            <HeroBreadcrumbs
+              ariaLabel={t('breadcrumbs.label', {
                 lng: language,
-              }),
-              to: getPageRoute('home', language),
-            },
-            {
-              label: page.breadcrumbLabel,
-              to: getPageRoute('projects', language),
-            },
-            {
-              label: project.breadcrumbLabel,
-            },
-          ],
-        }}
-        eyebrow={project.eyebrow ?? detail.eyebrow}
-        title={project.title}
-        introduction={project.summary}
-        image={project.heroImage}
-      />
+              })}
+              items={[
+                {
+                  label: t('breadcrumbs.home', {
+                    lng: language,
+                  }),
+                  to: getPageRoute('home', language),
+                },
+                {
+                  label: page.breadcrumbLabel,
+                  to: getPageRoute('projects', language),
+                },
+                {
+                  label: project.breadcrumbLabel,
+                },
+              ]}
+            />
+
+            <HeroHeader className="mt-4 sm:mt-5">
+              <HeroEyebrow>{project.eyebrow ?? detail.eyebrow}</HeroEyebrow>
+
+              <HeroTitle id="page-title">{project.title}</HeroTitle>
+
+              <HeroDescription>
+                <p className="!m-0">{project.summary}</p>
+              </HeroDescription>
+            </HeroHeader>
+          </HeroContent>
+
+          {project.heroImage ? (
+            <HeroMedia>
+              <HeroImage src={project.heroImage.src} alt={project.heroImage.alt} objectPosition={project.heroImage.objectPosition} />
+            </HeroMedia>
+          ) : null}
+        </HeroContainer>
+      </Hero>
 
       <div className={['max-w-editorial px-page mx-auto w-full', 'py-12 sm:py-14 lg:py-16'].join(' ')}>
         <ProjectOverviewCard

@@ -6,7 +6,18 @@ import DetailDescriptionSection from '@/components/detail-description-section';
 import DetailHighlightsBand from '@/components/detail-highlights-band';
 import DetailNavigation from '@/components/detail-navigation';
 import DetailTechnologiesSection from '@/components/detail-technologies-section';
-import PageHero from '@/components/page-hero';
+import {
+  Hero,
+  HeroBreadcrumbs,
+  HeroContainer,
+  HeroContent,
+  HeroDescription,
+  HeroEyebrow,
+  HeroHeader,
+  HeroImage,
+  HeroMedia,
+  HeroTitle,
+} from '@/components/hero';
 import { getResearchPageContent } from '@/content/research/page';
 import { getPublicationsByThemeId } from '@/content/research/publications/catalog';
 import { getResearchThemeCollection } from '@/content/research/themes/catalog';
@@ -61,32 +72,48 @@ function ResearchThemeDetailPage() {
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
-      <PageHero
-        breadcrumbs={{
-          ariaLabel: t('breadcrumbs.label', {
-            lng: language,
-          }),
-          items: [
-            {
-              label: t('breadcrumbs.home', {
+      <Hero aria-labelledby="page-title">
+        <HeroContainer className={theme.heroImage ? undefined : 'lg:grid-cols-1'}>
+          <HeroContent>
+            <HeroBreadcrumbs
+              ariaLabel={t('breadcrumbs.label', {
                 lng: language,
-              }),
-              to: getPageRoute('home', language),
-            },
-            {
-              label: page.breadcrumbLabel,
-              to: getPageRoute('research', language),
-            },
-            {
-              label: theme.breadcrumbLabel,
-            },
-          ],
-        }}
-        eyebrow={theme.eyebrow ?? detail.eyebrow}
-        title={theme.title}
-        introduction={theme.introduction}
-        image={theme.heroImage}
-      />
+              })}
+              items={[
+                {
+                  label: t('breadcrumbs.home', {
+                    lng: language,
+                  }),
+                  to: getPageRoute('home', language),
+                },
+                {
+                  label: page.breadcrumbLabel,
+                  to: getPageRoute('research', language),
+                },
+                {
+                  label: theme.breadcrumbLabel,
+                },
+              ]}
+            />
+
+            <HeroHeader className="mt-4 sm:mt-5">
+              <HeroEyebrow>{theme.eyebrow ?? detail.eyebrow}</HeroEyebrow>
+
+              <HeroTitle id="page-title">{theme.title}</HeroTitle>
+
+              <HeroDescription>
+                <p className="!m-0">{theme.introduction}</p>
+              </HeroDescription>
+            </HeroHeader>
+          </HeroContent>
+
+          {theme.heroImage ? (
+            <HeroMedia>
+              <HeroImage src={theme.heroImage.src} alt={theme.heroImage.alt} objectPosition={theme.heroImage.objectPosition} />
+            </HeroMedia>
+          ) : null}
+        </HeroContainer>
+      </Hero>
 
       <DetailHighlightsBand ariaLabel={detail.highlightsLabel} items={theme.highlights} />
 

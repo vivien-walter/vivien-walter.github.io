@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon, type Icon } from '@phosphor-icons/react';
 
+import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
-import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 type ProjectResource = {
@@ -55,20 +55,7 @@ function ProjectResourcesSection({ resources, title, titleId }: ProjectResources
                   'focus-visible:ring-offset-2',
                 )}
               >
-                <Card
-                  className={cn(
-                    'h-full gap-0 rounded-lg py-0',
-                    'border-border-strong',
-                    'bg-brand-background',
-                    'shadow-subtle',
-                    'transition-[transform,border-color,background-color,box-shadow]',
-                    'ease-standard duration-200',
-                    'group-hover:-translate-y-1',
-                    'group-hover:border-brand-primary',
-                    'group-hover:bg-action-soft',
-                    'group-hover:shadow-elevated',
-                  )}
-                >
+                <InteractiveCard interaction="group" className={cn('h-full', 'border-border-strong', 'bg-brand-background shadow-none')}>
                   <div className={cn('grid min-h-20 min-w-0', 'grid-cols-[auto_minmax(0,1fr)_auto]', 'items-center gap-4 p-5', 'sm:p-6')}>
                     <span
                       aria-hidden="true"
@@ -104,7 +91,7 @@ function ProjectResourcesSection({ resources, title, titleId }: ProjectResources
                       />
                     ) : null}
                   </div>
-                </Card>
+                </InteractiveCard>
               </a>
             </li>
           );

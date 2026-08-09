@@ -29,7 +29,7 @@
             },
             {
                 "label": "Financements",
-                "value": "360 000 € obtenus auprès de l'EPSRC sur deux appels à projets"
+                "value": "360 000 £ obtenus auprès de l'EPSRC sur deux appels à projets"
             }
         ]
     },
@@ -43,10 +43,10 @@
     },
     "contribution": {
         "paragraphs": [
-            "En tant que Chef de projet R&D (officiellement, dans le milieu académique, Postdoctoral Research Assistant), mon rôle principal était de mettre tout en œuvre pour mener à bien la concrétisation du projet, de la construction du banc d'essai à la formation du personnel de recherche l'utilisant tout en conduisant mes propres recherches.",
+            "En tant que Chef de projet R&D (officiellement, dans le milieu académique, Postdoctoral Research Associate), mon rôle principal était de mettre tout en œuvre pour mener à bien la concrétisation du projet, de la construction du banc d'essai à la formation du personnel de recherche l'utilisant tout en conduisant mes propres recherches.",
             "Avant même de concevoir le banc d'essai au centre du projet, ma première tâche fut de mettre en place un laboratoire de chimie capable d'accueillir le prototype étant donné que le département d'ingénierie du King's College London n'en possédait pas. J’ai identifié et préparé les locaux, sélectionné et commandé les équipements, matériels lourds et consommables, puis contribué à la définition des protocoles de sécurité et de fonctionnement avec l'appui du personnel administratif du département.",
             "J'ai conçu et construit le prototype du banc d'essai, en sélectionnant le matériel nécessaire mais également en réalisant certains des équipements clés à l'aide de logiciels CAO et d'imprimantes 3D, tels que les pompes à seringues nécessaires pour injecter les produits chimiques dans le banc d'essai. J'ai également développé l'ensemble des logiciels de contrôle, utilisant les langages C++ pour les cartes Arduino des différents équipements et Python pour le logiciel central de contrôle et d'automatisation du banc d'essai.",
-            "Pour mener à bien l'ensemble des travaux, j’ai géré deux financements EPSRC de 300 000 € et 60 000 €, contribué partiellement au premier dossier et rédigé intégralement le second. J'ai également rédigé la documentation technique et préparé un dossier pour breveter le prototype du banc d'essai.",
+            "Pour mener à bien l'ensemble des travaux, j’ai géré deux financements EPSRC de 300 000 £ et 60 000 £, contribué partiellement au premier dossier et rédigé intégralement le second. J'ai également rédigé la documentation technique et préparé un dossier pour breveter le prototype du banc d'essai.",
             "J’ai piloté une équipe moyenne de cinq personnes composée d’un PDRA junior, de deux doctorants et de deux stagiaires de Master. Neuf personnes ont été formées au total à l'utilisation du banc d'essai, et je co-supervisais leurs projets de recherche avec Yansha DENG. En parallèle, je menais mes propres recherches à l'aide du banc d'essai, ce qui m'a permis de concevoir un modèle d'intelligence artificielle basé sur les réseaux neuronaux convolutifs pour décoder les messages encodés dans les signaux moléculaires transmis par notre banc d'essai."
         ]
     },
@@ -73,7 +73,7 @@
         },
         {
             "title": "Pilotage et financement",
-            "description": "Coordination de l’équipe, formation des utilisateurs et gestion de deux financements EPSRC représentant 360 000 € au total."
+            "description": "Coordination de l’équipe, formation des utilisateurs et gestion de deux financements EPSRC représentant 360 000 £ au total."
         }
     ],
     "resultsDescription": "À l'issue de mon contrat au sein du département d'ingénierie du King's College London, j'ai pu compléter avec succès les différents objectifs du projet et ainsi terminer la construction et la mise en service du banc d'essai pour la communication moléculaire. En particulier, les éléments suivants ont été réalisés avec succès :",
@@ -83,7 +83,7 @@
         "Programmation du logiciel de contrôle et d'automatisation du banc d'essai et création de tous les scripts de traitement et d'analyse des données collectées par le banc d'essai, incluant un modèle d'intelligence artificielle de type réseau neuronal convolutif.",
         "Réalisation de la preuve de concept du banc d'essai microfluidique ainsi que des différentes réactions chimiques permettant la transmission de signaux, avec validation expérimentale des concepts de la communication moléculaire.",
         "Publication de deux articles scientifiques en tant que premier auteur (Nature Communications en 2023, et IEEE TMBMC en 2026) sur le banc d'essai microfluidique, son utilisation pour valider les principes de la communication moléculaire, et l'utilisation de l'intelligence artificielle pour décoder les signaux.",
-        "Réponse à un appel d'offres et sécurisation d'un financement de 60 000 € auprès de l'EPSRC, et préparation d'un dossier pour breveter le banc d'essai."
+        "Réponse à un appel d'offres et sécurisation d'un financement de 60 000 £ auprès de l'EPSRC, et préparation d'un dossier pour breveter le banc d'essai."
     ],
     "technologies": [
         "TensorFlow",

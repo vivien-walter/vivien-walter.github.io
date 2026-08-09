@@ -33,7 +33,7 @@
             },
             {
                 "label": "Financements",
-                "value": "2 M€ obtenus auprès de l'OPCO Atlas sur 4 ans"
+                "value": "1,4 M€ accordés par l'OPCO Atlas sur 4 ans"
             }
         ]
     },
@@ -52,7 +52,7 @@
             "J'ai accompagné le lead developer, Joachim BRASIER, dans l'établissement du stack technologique complet définissant la plateforme pédagogique : langage, framework et bibliothèques utilisés, algorithmes pour l'écriture et la lecture sur la base de données, et gestion de la charge sur les applications utilisant l'intelligence artificielle générative. J'ai également pris part activement au développement du backend de la plateforme, notamment l'intégration des normes SCORM, la connexion aux services IA externes (ChatGPT, Mistral AI, etc.) et la prise en charge complète des Open Badges. En parallèle, j'assistais le lead developer dans la formation et l'accompagnement de l'équipe de développeurs web de l'entreprise.",
             "J'ai également travaillé étroitement avec Lodine GENDRAULT et Tristan ALBERT pour concevoir et créer le design des interfaces des différents espaces du Campus Virtuel. Ce travail incluait non seulement la production des maquettes de ces interfaces, mais également la gestion de l'équipe de design et sa formation à l'utilisation du logiciel Figma.",
             "J'ai aussi géré l'équipe de recherche & développement de l'entreprise, en la guidant dans la création d'applications en réalité virtuelle et en réalité augmentée, ainsi que d'applications utilisant l'intelligence artificielle. Dans le cas spécifique des applications utilisant l'intelligence artificielle, je rédigeais et optimisais l'intégralité des prompts utilisés par les agents IA. En parallèle, je supervisais une thèse de doctorat CIFRE sur l'utilisation des applications VR et de l'IA générative pour former à la prise en charge des apprenants en situation de handicap, notamment ceux atteints d'un trouble du spectre autistique.",
-            "Pour mener à bien l'ensemble des travaux, j'ai géré un total de trois financements annuels consécutifs de l'OPCO Atlas (200 000 €, 200 000 € et 200 000 €) ainsi que la création des dossiers de candidature aux appels à projets de l'OPCO pour débloquer ces financements. L'intégralité des 3 candidatures que j'ai préparées ont été retenues par l'OPCO Atlas afin de financer le projet."
+            "Pour mener à bien l'ensemble des travaux, j'ai géré les budgets associés aux trois candidatures retenues entre 2023 et 2025, représentant environ 3,0 M€ au total, dont 1,2 M€ financés par l'OPCO Atlas. J'ai par ailleurs rédigé les trois candidatures déposées en 2024, 2025 et 2026, toutes retenues, représentant environ 800 000 € de financements Atlas accordés."
         ]
     },
     "features": [
@@ -83,7 +83,7 @@
     ],
     "resultsDescription": "Le projet a malheureusement été interrompu suite à la liquidation judiciaire du CFA ARINFO I-MAGINER, mais également de la société I-MAGINEXR. La plateforme n'a pas pu être terminée à 100 %, et le code ne peut être rendu public suite à l'arrêt de l'activité de l'entreprise. Néanmoins, les résultats suivants ont pu être obtenus pendant la durée du contrat :",
     "results": [
-        "Candidatures sélectionnées pendant 3 années consécutives par l'OPCO Atlas pour le financement du projet, pour un total de M€.",
+        "Rédaction de trois candidatures aux appels à projets de l'OPCO Atlas entre 2024 et 2026, toutes retenues, représentant environ 800 000 € de financements accordés.",
         "Mise en place de la stratégie de communication de l'entreprise I-MAGINEXR et création des documents technico-commerciaux.",
         "Complétion du backend et de l'écosystème d’intelligence artificielle.",
         "Réalisation de quatre applications utilisant la réalité virtuelle, la réalité augmentée et/ou l'intelligence artificielle générative.",

@@ -54,7 +54,7 @@ export function getJMicroscopyIScat2025Content(language: SupportedLanguage) {
       href: 'https://doi.org/10.1111/jmi.13347',
     },
     reference:
-      'Walter, V., Guo, Y., Parperis, C., and Wallace, M. I. (2023). Spatial light modulation for interferometric scattering microscopy. Journal of Microscopy, 297 (1), 88-95.',
+      'Walter, V., Guo, Y., Parperis, C., and Wallace, M. I. (2025). Spatial light modulation for interferometric scattering microscopy. Journal of Microscopy, 297 (1), 88-95.',
     localizedContent,
     website: {
       href: 'https://onlinelibrary.wiley.com/doi/10.1111/jmi.13347',

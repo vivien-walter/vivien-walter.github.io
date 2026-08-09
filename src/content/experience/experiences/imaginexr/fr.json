@@ -2,15 +2,15 @@
     "breadcrumbLabel": "i-magineXR (2024-2026)",
     "eyebrow": "Développement d'applications web",
     "role": "Chef de produit",
-    "summary": "Pilotage de la création d’un campus virtuel LXP pour le compte du CFA ARINFO I-MAGINEXR, associant une plateforme web construite sur mesure à des outils et applications utilisant l'IA générative et la réalité étendue.",
+    "summary": "Pilotage de la création d’un campus virtuel LXP pour le compte du CFA ARINFO I-MAGINER, associant une plateforme web construite sur mesure à des outils et applications utilisant l'IA générative et la réalité étendue.",
     "highlights": [
         {
             "label": "Nature du projet",
             "value": "Développement d’une application web sur mesure, développée en TypeScript et conçue pour être commercialisée."
         },
         {
-            "label": "Budget débloqué et géré",
-            "value": "Obtention d'un total de 500 000 € auprès de l’OPCO Atlas, avec 4 candidatures successives retenues."
+            "label": "Budgets gérés",
+            "value": "Environ 3,0 M€ de budgets gérés, dont 1,2 M€ financés par l’OPCO Atlas."
         },
         {
             "label": "Équipe gérée",
@@ -24,7 +24,7 @@
             "L'équipe dont j'avais la responsabilité était constituée de développeurs web, de développeurs d'applications en réalité étendue (réalité virtuelle et augmentée), de designers UX/UI chargés de créer toutes les interfaces, d'un pôle communication chargé de préparer la commercialisation et la stratégie de communication de l'entreprise, d'un pôle IT chargé de la maintenance des serveurs, et d'une équipe de recherche et développement comprenant notamment une doctorante en thèse CIFRE. Au cours de ce contrat, j'accompagnais l'ensemble des équipes et formais les utilisateurs aux différents logiciels nécessaires au projet.",
             "Je réalisais également le développement du backend de l'application web, en programmant l'API du serveur en TypeScript et en utilisant Node.js, Express, Mongoose pour gérer la base de données MongoDB, et Zod. Je participais également à la conception de l'interface utilisateur de l'espace d'administration du campus virtuel, en utilisant les frameworks et bibliothèques Next.js, React et shadcn.",
             "En parallèle, je gérais, au sein de l'équipe R&D, le développement et l'entraînement des modèles d'IA générative nécessaires au fonctionnement des applications pédagogiques et des applications basées sur la réalité virtuelle qui venaient enrichir la plateforme. En outre, j'ai conçu une approche de prompt engineering basée sur la génération procédurale qui permet aux utilisateurs non expérimentés de créer leurs propres scénarios pour un agent IA.",
-            "Mes dossiers de candidature aux appels à projets de l'OPCO Atlas ont été retenus 3 années de suite, pour un budget total de 500 000 €.",
+            "J'ai rédigé trois dossiers de candidature aux appels à projets de l'OPCO Atlas, en 2024, 2025 et 2026, tous trois retenus, représentant environ 800 000 € de financements Atlas accordés.",
             "Le contrat a pris fin avec la fermeture de l'entreprise I-MAGINEXR pour liquidation judiciaire pendant l'été 2026. Le déploiement de la plateforme était prévu pour le dernier semestre 2026 ; le projet n'a donc pas pu être mené à terme avec l'arrêt des activités. À la date d'arrêt de l'entreprise, le backend était en phase de finalisation et 60 % des interfaces avaient été intégrées. 4 applications utilisant l'IA générative, la réalité virtuelle et/ou la réalité augmentée avaient été complétées."
         ],
         "image": {
@@ -34,7 +34,7 @@
     "directContributions": [
         {
             "label": "Gestion de projet",
-            "text": "Définition des objectifs avec le client et rédaction des cahiers des charges. Organisation et animation des réunions de progression et mise en place d'une méthodologie de type Agile adaptée aux besoins de l'équipe. Rédaction de candidatures aux appels à projets de l'OPCO Atlas, avec succès total sur 3 années consécutives. Rédaction des bilans annuels à transmettre à l'OPCO Atlas sur l'intégralité des activités de développement de l'entreprise."
+            "text": "Définition des objectifs avec le client et rédaction des cahiers des charges. Organisation et animation des réunions de progression et mise en place d'une méthodologie de type Agile adaptée aux besoins de l'équipe. Rédaction de trois candidatures aux appels à projets de l'OPCO Atlas entre 2024 et 2026, toutes retenues. Rédaction des bilans annuels à transmettre à l'OPCO Atlas sur l'intégralité des activités de développement de l'entreprise."
         },
         {
             "label": "Gestion d'équipe",
@@ -135,6 +135,6 @@
     ],
     "finalState": {
         "title": "État à la fin du projet",
-        "text": "Backend et écosystème IA opérationnels et prêts à être déployés, quatre applications XR terminées et interface utilisateur approximativement achevée à 60 %, avec notamment trois espaces secondaires restants."
+        "text": "Backend et écosystème IA opérationnels et prêts à être déployés, quatre applications XR terminées, design et maquettes des interfaces réalisés à 90 %, et intégration des interfaces dans le code réalisée à 60 %, avec notamment trois espaces secondaires restants."
     }
 }
