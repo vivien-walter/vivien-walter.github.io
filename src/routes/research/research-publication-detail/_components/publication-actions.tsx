@@ -11,19 +11,6 @@ type PublicationActionsProps = {
   readonly pdfLabel: string;
 };
 
-const actionLinkClassName = cn(
-  'group block h-full rounded-lg',
-  'text-brand-ink no-underline',
-  'focus-visible:outline-none',
-  'focus-visible:ring-[3px]',
-  'focus-visible:ring-ring/50',
-  'focus-visible:ring-offset-2',
-);
-
-const actionCardClassName = cn('h-full min-h-28 gap-0 overflow-hidden py-0', 'border-border-strong', 'bg-brand-background', 'shadow-none');
-
-const actionIconClassName = cn('flex size-12 shrink-0', 'items-center justify-center', 'text-brand-primary', 'transition-colors duration-200');
-
 function PublicationActions({ website, pdf, websiteLabel, pdfLabel }: PublicationActionsProps) {
   if (!website && !pdf) {
     return null;
@@ -34,12 +21,24 @@ function PublicationActions({ website, pdf, websiteLabel, pdfLabel }: Publicatio
       <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
         {website ? (
           <li className="m-0 min-w-0">
-            <a href={website.href} target="_blank" rel="noopener noreferrer" data-external="true" className={actionLinkClassName}>
-              <InteractiveCard interaction="group" className={actionCardClassName}>
-                <span className={cn('grid h-full min-w-0', 'grid-cols-[auto_minmax(0,1fr)_auto]', 'items-center gap-4 p-5')}>
+            <a
+              href={website.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-external="true"
+              className="group text-brand-ink focus-visible:ring-ring/50 block h-full rounded-lg no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+              <InteractiveCard
+                interaction="group"
+                className="border-border-strong bg-brand-background h-full min-h-28 gap-0 overflow-hidden py-0 shadow-none"
+              >
+                <span className="grid h-full min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 p-5">
                   <span
                     aria-hidden="true"
-                    className={cn(actionIconClassName, website.iconSrc ? 'rounded-none bg-transparent' : 'bg-action-soft rounded-md')}
+                    className={cn(
+                      'text-brand-primary flex size-12 shrink-0 items-center justify-center transition-colors duration-200',
+                      website.iconSrc ? 'rounded-none bg-transparent' : 'bg-action-soft rounded-md',
+                    )}
                   >
                     {website.iconSrc ? (
                       <img src={website.iconSrc} alt="" className="max-h-10 max-w-12 object-contain" />
@@ -48,14 +47,7 @@ function PublicationActions({ website, pdf, websiteLabel, pdfLabel }: Publicatio
                     )}
                   </span>
 
-                  <span
-                    className={cn(
-                      'min-w-0 font-semibold',
-                      'leading-heading text-brand-ink',
-                      'transition-colors duration-200',
-                      'group-hover:text-brand-primary',
-                    )}
-                  >
+                  <span className="leading-heading text-brand-ink group-hover:text-brand-primary min-w-0 font-semibold transition-colors duration-200">
                     {websiteLabel}
                   </span>
                 </span>
@@ -66,21 +58,24 @@ function PublicationActions({ website, pdf, websiteLabel, pdfLabel }: Publicatio
 
         {pdf ? (
           <li className="m-0 min-w-0">
-            <a href={pdf.href} download={pdf.downloadName} className={actionLinkClassName}>
-              <InteractiveCard interaction="group" className={actionCardClassName}>
-                <span className={cn('grid h-full min-w-0', 'grid-cols-[auto_minmax(0,1fr)]', 'items-center gap-4 p-5')}>
-                  <span aria-hidden="true" className={actionIconClassName}>
+            <a
+              href={pdf.href}
+              download={pdf.downloadName}
+              className="group text-brand-ink focus-visible:ring-ring/50 block h-full rounded-lg no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+              <InteractiveCard
+                interaction="group"
+                className="border-border-strong bg-brand-background h-full min-h-28 gap-0 overflow-hidden py-0 shadow-none"
+              >
+                <span className="grid h-full min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-4 p-5">
+                  <span
+                    aria-hidden="true"
+                    className="text-brand-primary flex size-12 shrink-0 items-center justify-center transition-colors duration-200"
+                  >
                     <DownloadSimpleIcon className="size-6" weight="regular" />
                   </span>
 
-                  <span
-                    className={cn(
-                      'min-w-0 font-semibold',
-                      'leading-heading text-brand-ink',
-                      'transition-colors duration-200',
-                      'group-hover:text-brand-primary',
-                    )}
-                  >
+                  <span className="leading-heading text-brand-ink group-hover:text-brand-primary min-w-0 font-semibold transition-colors duration-200">
                     {pdfLabel}
                   </span>
                 </span>

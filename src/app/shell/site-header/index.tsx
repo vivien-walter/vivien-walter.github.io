@@ -5,7 +5,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { curriculumVitaeDocuments } from '@/content/common/documents';
 import { siteIdentity } from '@/content/common/site';
-import { cn } from '@/lib/utils';
 
 import { getLanguageFromPathname, getPageIdFromPathname, getPageRoute } from '../../routing/navigation';
 import LanguageSwitcher from '../language-switcher';
@@ -31,59 +30,35 @@ export default function SiteHeader() {
   const { name: siteName, shortName: shortSiteName } = siteIdentity;
 
   return (
-    <header className={cn('sticky top-0 z-40', 'border-border border-b', 'bg-brand-background/95', 'supports-[backdrop-filter]:backdrop-blur-md')}>
-      <div className={cn('flex min-h-20 w-full', 'px-page items-stretch gap-3', 'lg:gap-5 2xl:gap-8')}>
+    <header className="border-border bg-brand-background/95 sticky top-0 z-40 border-b supports-[backdrop-filter]:backdrop-blur-md">
+      <div className="px-page flex min-h-20 w-full items-stretch gap-3 lg:gap-5 2xl:gap-8">
         <Link
           to={getPageRoute('home', currentLanguage)}
           aria-current={isHomePage ? 'page' : undefined}
-          className={cn(
-            'relative flex min-w-0 flex-1',
-            'items-center self-stretch py-3',
-            'text-brand-ink no-underline',
-            'transition-colors duration-150',
-            'ease-standard',
-            'hover:text-brand-primary',
-            'focus-visible:rounded-sm',
-            'focus-visible:outline-none',
-            'focus-visible:ring-[3px]',
-            'focus-visible:ring-ring/50',
-            'focus-visible:ring-offset-2',
-            'focus-visible:ring-offset-background',
-            'lg:flex-none lg:shrink-0',
-          )}
+          className="text-brand-ink ease-standard hover:text-brand-primary focus-visible:ring-ring/50 focus-visible:ring-offset-background relative flex min-w-0 flex-1 items-center self-stretch py-3 no-underline transition-colors duration-150 focus-visible:rounded-sm focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none lg:flex-none lg:shrink-0"
         >
           <span className="grid min-w-0 gap-1 lg:hidden">
-            <span className={cn('text-xl font-bold', 'leading-none', 'tracking-[-0.035em]')}>{shortSiteName}</span>
+            <span className="text-xl leading-none font-bold tracking-[-0.035em]">{shortSiteName}</span>
 
-            <span className={cn('truncate text-xs', 'leading-tight font-medium', 'tracking-[-0.01em]', 'text-brand-ink')}>{siteName}</span>
+            <span className="text-brand-ink truncate text-xs leading-tight font-medium tracking-[-0.01em]">{siteName}</span>
           </span>
 
-          <span
-            className={cn('hidden truncate lg:block', 'text-[clamp(1.25rem,1rem+0.8vw,1.875rem)]', 'leading-none font-bold', 'tracking-[-0.035em]')}
-          >
+          <span className="hidden truncate text-[clamp(1.25rem,1rem+0.8vw,1.875rem)] leading-none font-bold tracking-[-0.035em] lg:block">
             {siteName}
           </span>
 
-          {isHomePage ? <span aria-hidden="true" className={cn('absolute bottom-[-1px]', 'left-0 h-1 w-12', 'bg-brand-primary')} /> : null}
+          {isHomePage ? <span aria-hidden="true" className="bg-brand-primary absolute bottom-[-1px] left-0 h-1 w-12" /> : null}
         </Link>
 
         <DesktopNavigation currentLanguage={currentLanguage} currentPageId={currentPageId} />
 
-        <div className={cn('flex shrink-0', 'items-center justify-end', 'gap-2')}>
+        <div className="flex shrink-0 items-center justify-end gap-2">
           <div className="hidden lg:block">
             <LanguageSwitcher />
           </div>
           <Button
             asChild
-            className={cn(
-              'hidden h-12',
-              'rounded-sm px-5',
-              'bg-brand-primary',
-              'text-base font-medium',
-              'text-primary-foreground',
-              'shadow-subtle',
-              'lg:inline-flex',
-            )}
+            className="bg-brand-primary text-primary-foreground shadow-subtle hidden h-12 rounded-sm px-5 text-base font-medium lg:inline-flex"
           >
             <a href={curriculumVitae.href} download={curriculumVitae.downloadName}>
               <DownloadSimpleIcon aria-hidden="true" size={20} weight="bold" />

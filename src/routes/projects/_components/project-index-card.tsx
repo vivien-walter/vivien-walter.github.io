@@ -70,51 +70,30 @@ function ProjectIndexCard({ project, language, labels }: ProjectIndexCardProps) 
     <article className="min-w-0" aria-labelledby={headingId}>
       <Link
         to={getProjectRoute(project.id, language)}
-        className={cn(
-          'group block rounded-lg',
-          'text-inherit no-underline',
-          'focus-visible:outline-none',
-          'focus-visible:ring-[3px]',
-          'focus-visible:ring-ring/50',
-          'focus-visible:ring-offset-2',
-        )}
+        className="group focus-visible:ring-ring/50 block rounded-lg text-inherit no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none"
       >
         <InteractiveCard
           interaction="group"
           className={cn(
-            'grid gap-0 overflow-hidden',
-            'rounded-lg py-0',
-            'border-border-strong',
-            'bg-brand-background shadow-none',
+            'border-border-strong bg-brand-background grid gap-0 overflow-hidden rounded-lg py-0 shadow-none',
             hasMetadata && 'md:grid-cols-[minmax(0,1fr)_13rem]',
           )}
         >
           <div className="min-w-0 p-5 sm:p-6">
             <h2
               id={headingId}
-              className={cn(
-                '!m-0 text-xl font-bold',
-                'leading-heading',
-                'tracking-[-0.025em]',
-                'text-brand-ink',
-                'transition-colors',
-                'ease-standard duration-150',
-                'group-hover:text-brand-primary',
-              )}
+              className="leading-heading text-brand-ink ease-standard group-hover:text-brand-primary !m-0 text-xl font-bold tracking-[-0.025em] transition-colors duration-150"
             >
               {project.title}
             </h2>
 
-            <p className={cn('!mt-4 !mb-0', 'max-w-readable', 'text-foreground')}>{project.summary}</p>
+            <p className="max-w-readable text-foreground !mt-4 !mb-0">{project.summary}</p>
 
             {visibleTechnologies.length > 0 ? (
-              <ul className={cn('!mt-5 !mb-0 flex', 'list-none flex-wrap gap-2 !p-0')} aria-label={labels.technologies}>
+              <ul className="!mt-5 !mb-0 flex list-none flex-wrap gap-2 !p-0" aria-label={labels.technologies}>
                 {visibleTechnologies.map((technology) => (
                   <li key={technology} className="!m-0">
-                    <Badge
-                      variant="secondary"
-                      className={cn('border-border border', 'bg-muted px-3 py-1', 'font-mono font-medium', 'text-muted-foreground')}
-                    >
+                    <Badge variant="secondary" className="border-border bg-muted text-muted-foreground border px-3 py-1 font-mono font-medium">
                       {technology}
                     </Badge>
                   </li>
@@ -124,50 +103,34 @@ function ProjectIndexCard({ project, language, labels }: ProjectIndexCardProps) 
           </div>
 
           {hasMetadata ? (
-            <dl className={cn('!m-0 grid content-start gap-6', 'border-border border-t', 'bg-brand-hero/45 p-5', 'md:border-t-0 md:border-l')}>
+            <dl className="border-border bg-brand-hero/45 !m-0 grid content-start gap-6 border-t p-5 md:border-t-0 md:border-l">
               {period ? (
                 <div className="m-0 grid gap-2">
-                  <dt
-                    className={cn(
-                      'flex items-center gap-2',
-                      'font-mono text-xs',
-                      'font-semibold uppercase',
-                      'tracking-[0.04em]',
-                      'text-muted-foreground',
-                    )}
-                  >
+                  <dt className="text-muted-foreground flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.04em] uppercase">
                     <CalendarBlankIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
 
                     {labels.period}
                   </dt>
 
-                  <dd className={cn('m-0 text-sm font-semibold', 'leading-heading', 'text-brand-ink')}>{period}</dd>
+                  <dd className="leading-heading text-brand-ink m-0 text-sm font-semibold">{period}</dd>
                 </div>
               ) : null}
 
               {programmingLanguages.length > 0 ? (
                 <div className="m-0 grid gap-3">
-                  <dt
-                    className={cn(
-                      'flex items-center gap-2',
-                      'font-mono text-xs',
-                      'font-semibold uppercase',
-                      'tracking-[0.04em]',
-                      'text-muted-foreground',
-                    )}
-                  >
+                  <dt className="text-muted-foreground flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.04em] uppercase">
                     <CodeIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
 
                     {labels.languages}
                   </dt>
 
                   <dd className="m-0">
-                    <ul className={cn('m-0 flex list-none', 'flex-wrap gap-2 p-0')}>
+                    <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
                       {programmingLanguages.map((programmingLanguage) => (
                         <li key={programmingLanguage} className="m-0">
                           <Badge
                             variant="outline"
-                            className={cn('border-brand-primary/35', 'bg-background', 'font-mono text-xs', 'font-semibold', 'text-brand-primary')}
+                            className="border-brand-primary/35 bg-background text-brand-primary font-mono text-xs font-semibold"
                           >
                             {programmingLanguage}
                           </Badge>

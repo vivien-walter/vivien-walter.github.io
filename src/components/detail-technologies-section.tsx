@@ -30,13 +30,8 @@ type TechnologyDescriptionBadgeProps = {
   readonly popoverId: string;
 };
 
-const badgeClassName = cn(
-  'inline-flex min-h-10 max-w-full items-center gap-2',
-  'border-border-strong rounded-full border',
-  'bg-brand-hero px-3',
-  'leading-heading font-mono text-sm font-medium',
-  'text-brand-ink no-underline',
-);
+const badgeClassName =
+  'inline-flex min-h-10 max-w-full items-center gap-2 border-border-strong rounded-full border bg-brand-hero px-3 leading-heading font-mono text-sm font-medium text-brand-ink no-underline';
 
 function TechnologyDescriptionBadge({ item, popoverId }: TechnologyDescriptionBadgeProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,14 +62,7 @@ function TechnologyDescriptionBadge({ item, popoverId }: TechnologyDescriptionBa
             type="button"
             className={cn(
               badgeClassName,
-              'cursor-help outline-none',
-              'transition-[border-color,background-color,color]',
-              'ease-standard duration-150',
-              'hover:border-brand-primary hover:bg-action-soft',
-              'hover:text-action-strong',
-              'focus-visible:border-brand-primary',
-              'focus-visible:ring-[3px]',
-              'focus-visible:ring-ring/50',
+              'ease-standard hover:border-brand-primary hover:bg-action-soft hover:text-action-strong focus-visible:border-brand-primary focus-visible:ring-ring/50 cursor-help transition-[border-color,background-color,color] duration-150 outline-none focus-visible:ring-[3px]',
             )}
             aria-describedby={isOpen ? popoverId : undefined}
           >
@@ -90,13 +78,7 @@ function TechnologyDescriptionBadge({ item, popoverId }: TechnologyDescriptionBa
           align="start"
           side="top"
           sideOffset={8}
-          className={cn(
-            'w-80 max-w-[calc(100vw-2rem)]',
-            'border-border-strong',
-            'bg-brand-background',
-            'leading-body text-brand-ink text-sm',
-            'shadow-elevated',
-          )}
+          className="border-border-strong bg-brand-background leading-body text-brand-ink shadow-elevated w-80 max-w-[calc(100vw-2rem)] text-sm"
           onOpenAutoFocus={(event) => {
             event.preventDefault();
           }}
@@ -121,7 +103,7 @@ function DetailTechnologiesSection({ description, externalLinkLabel, groups, idP
   const titleId = `${idPrefix}-technologies-title`;
 
   return (
-    <Section contained={false} className={cn('border-border border-t', 'py-12 sm:py-14 lg:py-16')} aria-labelledby={titleId}>
+    <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 
@@ -140,7 +122,7 @@ function DetailTechnologiesSection({ description, externalLinkLabel, groups, idP
                 </SectionTitle>
               </SectionHeader>
 
-              <ul className={cn('m-0 flex list-none flex-wrap', 'items-center gap-2 p-0')}>
+              <ul className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
                 {group.items.map((item, itemIndex) => {
                   const itemKey = `${groupIndex}-` + `${itemIndex}-` + item.label;
 
@@ -153,14 +135,7 @@ function DetailTechnologiesSection({ description, externalLinkLabel, groups, idP
                           rel="noreferrer"
                           className={cn(
                             badgeClassName,
-                            'transition-[border-color,background-color,color]',
-                            'ease-standard duration-150',
-                            'hover:border-brand-primary',
-                            'hover:bg-action-soft',
-                            'hover:text-action-strong',
-                            'focus-visible:outline-none',
-                            'focus-visible:ring-[3px]',
-                            'focus-visible:ring-ring/50',
+                            'ease-standard hover:border-brand-primary hover:bg-action-soft hover:text-action-strong focus-visible:ring-ring/50 transition-[border-color,background-color,color] duration-150 focus-visible:ring-[3px] focus-visible:outline-none',
                           )}
                           aria-label={`${item.label} — ` + externalLinkLabel}
                         >

@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from '@/components/ui/navigation-menu';
-import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
 
 import { type NavigationPageId, primaryNavigationItems } from '../../routing/navigation';
@@ -22,9 +21,9 @@ export default function DesktopNavigation({ currentLanguage, currentPageId }: De
       aria-label={t('navigation.primaryLabel', {
         lng: currentLanguage,
       })}
-      className={cn('hidden h-full min-w-0', 'max-w-none flex-1', 'justify-center lg:flex')}
+      className="hidden h-full max-w-none min-w-0 flex-1 justify-center lg:flex"
     >
-      <NavigationMenuList className={cn('m-0 h-full min-w-0', 'gap-1 p-0', 'xl:gap-2 2xl:gap-4')}>
+      <NavigationMenuList className="m-0 h-full min-w-0 gap-1 p-0 xl:gap-2 2xl:gap-4">
         {primaryNavigationItems.map((item) => {
           const isCurrentPage = currentPageId === item.id;
 
@@ -45,30 +44,7 @@ export default function DesktopNavigation({ currentLanguage, currentPageId }: De
               <NavigationMenuLink
                 asChild
                 active={isCurrentPage}
-                className={cn(
-                  'relative h-full',
-                  'min-h-20 justify-center',
-                  'rounded-none',
-                  'bg-transparent px-3 py-0',
-                  'text-[0.9375rem]',
-                  'font-medium whitespace-nowrap',
-                  'text-brand-ink',
-                  'no-underline shadow-none',
-                  'transition-colors',
-                  'duration-150',
-                  'ease-standard',
-                  'hover:bg-transparent',
-                  'hover:text-brand-primary',
-                  'focus:bg-transparent',
-                  'focus:text-brand-primary',
-                  'focus-visible:outline-none',
-                  'focus-visible:ring-[3px]',
-                  'focus-visible:ring-ring/50',
-                  'focus-visible:ring-offset-2',
-                  'focus-visible:ring-offset-background',
-                  'data-[active=true]:bg-transparent',
-                  'data-[active=true]:text-brand-ink',
-                )}
+                className="text-brand-ink ease-standard hover:text-brand-primary focus:text-brand-primary focus-visible:ring-ring/50 focus-visible:ring-offset-background data-[active=true]:text-brand-ink relative h-full min-h-20 justify-center rounded-none bg-transparent px-3 py-0 text-[0.9375rem] font-medium whitespace-nowrap no-underline shadow-none transition-colors duration-150 hover:bg-transparent focus:bg-transparent focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none data-[active=true]:bg-transparent"
               >
                 <Link
                   to={item.routes[currentLanguage]}
@@ -88,9 +64,7 @@ export default function DesktopNavigation({ currentLanguage, currentPageId }: De
                   ) : (
                     fullLabel
                   )}
-                  {isCurrentPage ? (
-                    <span aria-hidden="true" className={cn('absolute right-3', 'bottom-[-1px] left-3', 'h-1', 'bg-brand-primary')} />
-                  ) : null}
+                  {isCurrentPage ? <span aria-hidden="true" className="bg-brand-primary absolute right-3 bottom-[-1px] left-3 h-1" /> : null}
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>

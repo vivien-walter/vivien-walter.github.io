@@ -41,7 +41,7 @@ function SectionHeader({ className, variant = 'default', ...props }: SectionHead
       <header
         data-slot="section-header"
         data-variant={variant}
-        className={cn('flex flex-col gap-y-5', 'sm:flex-row sm:flex-wrap sm:items-start', 'sm:gap-x-6', className)}
+        className={cn('flex flex-col gap-y-5 sm:flex-row sm:flex-wrap sm:items-start sm:gap-x-6', className)}
         {...props}
       />
     </SectionHeaderVariantContext.Provider>
@@ -61,9 +61,7 @@ function SectionTitle({ children, className, headingLevel = 2, showAccent = true
           ...props,
           'data-slot': 'section-title',
           className: cn(
-            '!m-0 text-xl font-bold',
-            'leading-heading',
-            'tracking-[-0.025em]',
+            'leading-heading !m-0 text-xl font-bold tracking-[-0.025em]',
             variant === 'inverse' ? '!text-white' : 'text-brand-ink',
             className,
           ),
@@ -77,7 +75,7 @@ function SectionTitle({ children, className, headingLevel = 2, showAccent = true
 }
 
 function SectionAction({ className, ...props }: ComponentProps<'div'>) {
-  return <div data-slot="section-action" className={cn('flex shrink-0 items-start', 'sm:ml-auto sm:justify-end', className)} {...props} />;
+  return <div data-slot="section-action" className={cn('flex shrink-0 items-start sm:ml-auto sm:justify-end', className)} {...props} />;
 }
 
 function SectionDescription({ className, ...props }: ComponentProps<'p'>) {
@@ -87,8 +85,7 @@ function SectionDescription({ className, ...props }: ComponentProps<'p'>) {
     <p
       data-slot="section-description"
       className={cn(
-        '!m-0 w-full text-base',
-        'sm:shrink-0 sm:basis-full',
+        '!m-0 w-full text-base sm:shrink-0 sm:basis-full',
         variant === 'inverse' ? 'font-medium !text-white/90' : 'text-muted-foreground',
         className,
       )}

@@ -92,7 +92,7 @@ function ResearchPage() {
         </HeroContainer>
       </Hero>
 
-      <div className={cn('max-w-editorial px-page mx-auto w-full', 'pb-12 sm:pb-14 lg:pb-16')}>
+      <div className="max-w-editorial px-page mx-auto w-full pb-12 sm:pb-14 lg:pb-16">
         {themes.length > 0 ? (
           <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby="research-themes-title">
             <SectionHeader className="mb-8 sm:mb-10">
@@ -100,7 +100,7 @@ function ResearchPage() {
               <SectionDescription>{page.sectionTitles.themes.description}</SectionDescription>
             </SectionHeader>
 
-            <ul className={cn('m-0 flex list-none', 'items-center gap-3', 'p-0 pt-2', 'sm:gap-4')}>
+            <ul className="m-0 flex list-none items-center gap-3 p-0 pt-2 sm:gap-4">
               {themes.map((theme) => {
                 const isSelected = theme.id === activeThemeId;
 
@@ -108,9 +108,7 @@ function ResearchPage() {
                   <li
                     key={theme.id}
                     className={cn(
-                      'm-0 flex min-h-64 min-w-0 items-center',
-                      'transition-[flex-grow,flex-basis]',
-                      'ease-standard duration-200',
+                      'ease-standard m-0 flex min-h-64 min-w-0 items-center transition-[flex-grow,flex-basis] duration-200',
                       isSelected ? 'flex-[1_1_0%]' : 'flex-[0_0_4rem]',
                       'motion-reduce:transition-none',
                     )}
@@ -150,7 +148,7 @@ function ResearchPage() {
               <SectionTitle id="research-activities-title">{page.sectionTitles.activities}</SectionTitle>
             </SectionHeader>
 
-            <ul className={cn('m-0 grid list-none gap-5 p-0', 'sm:grid-cols-2', 'lg:grid-cols-3')}>
+            <ul className="m-0 grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
               {page.resources.map((resource) => {
                 const ResourceIcon = resource.icon;
 
@@ -161,45 +159,17 @@ function ResearchPage() {
                       target="_blank"
                       rel="noreferrer"
                       data-external="true"
-                      className={cn(
-                        'group block h-full rounded-lg',
-                        'text-brand-ink no-underline',
-                        'focus-visible:outline-none',
-                        'focus-visible:ring-[3px]',
-                        'focus-visible:ring-ring/50',
-                        'focus-visible:ring-offset-2',
-                      )}
+                      className="group text-brand-ink focus-visible:ring-ring/50 block h-full rounded-lg no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none"
                     >
                       <InteractiveCard
                         interaction="group"
-                        className={cn('h-full min-h-40 gap-0', 'rounded-lg py-0', 'border-border-strong', 'bg-brand-background', 'shadow-none')}
+                        className="border-border-strong bg-brand-background h-full min-h-40 gap-0 rounded-lg py-0 shadow-none"
                       >
-                        <span
-                          className={cn(
-                            'flex flex-1',
-                            'items-center justify-center',
-                            'px-5 pt-7 pb-4',
-                            'text-brand-primary',
-                            'transition-colors',
-                            'duration-200',
-                            'group-hover:text-brand-dark',
-                          )}
-                        >
+                        <span className="text-brand-primary group-hover:text-brand-dark flex flex-1 items-center justify-center px-5 pt-7 pb-4 transition-colors duration-200">
                           <ResourceIcon aria-hidden="true" className="size-12" weight="regular" />
                         </span>
 
-                        <span
-                          className={cn(
-                            'flex min-h-14',
-                            'items-center justify-center',
-                            'px-5 py-3',
-                            'text-center font-semibold',
-                            'text-brand-ink',
-                            'transition-colors',
-                            'duration-200',
-                            'group-hover:text-brand-primary',
-                          )}
-                        >
+                        <span className="text-brand-ink group-hover:text-brand-primary flex min-h-14 items-center justify-center px-5 py-3 text-center font-semibold transition-colors duration-200">
                           {resource.label}
                         </span>
                       </InteractiveCard>

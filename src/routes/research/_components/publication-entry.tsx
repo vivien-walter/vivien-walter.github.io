@@ -6,7 +6,6 @@ import { InteractiveCard } from '@/components/interactive-card';
 import { Button } from '@/components/ui/button';
 import type { PublicationId } from '@/content/research/publications/registry';
 import type { ResearchThemeId } from '@/content/research/registry';
-import { cn } from '@/lib/utils';
 
 type PublicationKind = 'article' | 'thesis';
 
@@ -53,51 +52,27 @@ function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel =
 
   return (
     <article aria-labelledby={headingId} className="min-w-0">
-      <InteractiveCard
-        interaction="self"
-        className={cn('gap-0 overflow-hidden rounded-lg py-0', 'border-border-strong', 'bg-brand-background', 'shadow-none')}
-      >
-        <div
-          className={cn(
-            'grid min-w-0 gap-4',
-            'px-4 py-4 sm:px-5',
-            'sm:grid-cols-[4.5rem_minmax(0,1fr)]',
-            'sm:gap-x-5',
-            'lg:grid-cols-[4.5rem_minmax(0,1fr)_13rem]',
-            'lg:items-start lg:gap-x-7',
-          )}
-        >
+      <InteractiveCard interaction="self" className="border-border-strong bg-brand-background gap-0 overflow-hidden rounded-lg py-0 shadow-none">
+        <div className="grid min-w-0 gap-4 px-4 py-4 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:gap-x-5 sm:px-5 lg:grid-cols-[4.5rem_minmax(0,1fr)_13rem] lg:items-start lg:gap-x-7">
           <time
             dateTime={String(publication.year)}
-            className={cn(
-              'flex min-h-16 min-w-16',
-              'items-center justify-center',
-              'self-start rounded-md',
-              'bg-action-soft',
-              'px-3 py-3',
-              'font-mono text-base',
-              'font-semibold',
-              'text-brand-primary',
-            )}
+            className="bg-action-soft text-brand-primary flex min-h-16 min-w-16 items-center justify-center self-start rounded-md px-3 py-3 font-mono text-base font-semibold"
           >
             {publication.year}
           </time>
 
           <div className="min-w-0">
-            <Heading
-              id={headingId}
-              className={cn('!m-0 text-sm', 'leading-heading font-bold', 'tracking-[-0.005em]', 'text-brand-ink', 'sm:text-base')}
-            >
+            <Heading id={headingId} className="leading-heading text-brand-ink !m-0 text-sm font-bold tracking-[-0.005em] sm:text-base">
               <Link
                 to={publication.detailsPath}
-                className={cn('text-inherit no-underline', 'transition-colors', 'ease-standard duration-150', 'hover:text-brand-primary')}
+                className="ease-standard hover:text-brand-primary text-inherit no-underline transition-colors duration-150"
               >
                 {publication.title}
               </Link>
             </Heading>
 
             {publication.authors.length > 0 ? (
-              <p className={cn('!mt-1.5 !mb-0', 'text-sm leading-normal', 'text-foreground')}>
+              <p className="text-foreground !mt-1.5 !mb-0 text-sm leading-normal">
                 {publication.authors.map((author, index) => (
                   <Fragment key={`${author.name}-${index}`}>
                     {index > 0 ? ', ' : null}
@@ -107,17 +82,7 @@ function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel =
                         href={author.href}
                         target={isExternalHref(author.href) ? '_blank' : undefined}
                         rel={isExternalHref(author.href) ? 'noreferrer' : undefined}
-                        className={cn(
-                          'font-medium',
-                          'text-brand-primary',
-                          'underline',
-                          'decoration-transparent',
-                          'underline-offset-4',
-                          'transition-colors',
-                          'duration-150',
-                          'hover:text-action-strong',
-                          'hover:decoration-current',
-                        )}
+                        className="text-brand-primary hover:text-action-strong font-medium underline decoration-transparent underline-offset-4 transition-colors duration-150 hover:decoration-current"
                       >
                         {author.name}
                       </a>
@@ -129,20 +94,11 @@ function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel =
               </p>
             ) : null}
 
-            {citation.length > 0 ? <p className={cn('!mt-1.5 !mb-0', 'text-sm leading-normal', 'text-muted-foreground')}>{citation}</p> : null}
+            {citation.length > 0 ? <p className="text-muted-foreground !mt-1.5 !mb-0 text-sm leading-normal">{citation}</p> : null}
           </div>
 
-          <div
-            className={cn(
-              'flex min-w-0 flex-col',
-              'items-stretch gap-2',
-              'sm:col-span-2',
-              'sm:ml-[5.75rem]',
-              'lg:col-span-1 lg:ml-0',
-              'lg:w-52 lg:justify-self-end',
-            )}
-          >
-            <Button asChild className={cn('min-h-10 w-full', 'justify-between')}>
+          <div className="flex min-w-0 flex-col items-stretch gap-2 sm:col-span-2 sm:ml-[5.75rem] lg:col-span-1 lg:ml-0 lg:w-52 lg:justify-self-end">
+            <Button asChild className="min-h-10 w-full justify-between">
               <Link to={publication.detailsPath}>
                 {viewMoreLabel}
 
@@ -154,16 +110,7 @@ function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel =
               <Button
                 asChild
                 variant="ghost"
-                className={cn(
-                  'h-auto min-h-10',
-                  'w-full justify-start',
-                  'overflow-hidden',
-                  'px-2 py-2',
-                  'text-left',
-                  'text-brand-primary',
-                  'hover:bg-action-soft',
-                  'hover:text-action-strong',
-                )}
+                className="text-brand-primary hover:bg-action-soft hover:text-action-strong h-auto min-h-10 w-full justify-start overflow-hidden px-2 py-2 text-left"
               >
                 <a
                   href={publication.doi.href}
@@ -177,7 +124,7 @@ function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel =
                     {' :'}
                   </span>
 
-                  <span className={cn('min-w-0 flex-1', 'truncate text-xs')}>{publication.doi.value}</span>
+                  <span className="min-w-0 flex-1 truncate text-xs">{publication.doi.value}</span>
 
                   <ArrowSquareOutIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
                 </a>

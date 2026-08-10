@@ -25,11 +25,7 @@ function DialogOverlay({ className, ...props }: React.ComponentProps<typeof Dial
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        'bg-heading/80 fixed inset-0 z-50',
-        'data-[state=closed]:animate-out',
-        'data-[state=closed]:fade-out-0',
-        'data-[state=open]:animate-in',
-        'data-[state=open]:fade-in-0',
+        'bg-heading/80 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0 fixed inset-0 z-50',
         className,
       )}
       {...props}
@@ -54,19 +50,7 @@ function DialogContent({
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          'fixed top-1/2 left-1/2 z-50',
-          'grid w-full max-w-[calc(100%-2rem)]',
-          '-translate-x-1/2 -translate-y-1/2 gap-4',
-          'border-border-strong bg-background text-foreground',
-          'rounded-lg border p-6 shadow-lg',
-          'duration-200',
-          'data-[state=closed]:animate-out',
-          'data-[state=closed]:fade-out-0',
-          'data-[state=closed]:zoom-out-95',
-          'data-[state=open]:animate-in',
-          'data-[state=open]:fade-in-0',
-          'data-[state=open]:zoom-in-95',
-          'sm:max-w-lg',
+          'border-border-strong bg-background text-foreground data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg',
           className,
         )}
         {...props}
@@ -74,17 +58,7 @@ function DialogContent({
         {children}
 
         {showCloseButton ? (
-          <DialogPrimitive.Close
-            className={cn(
-              'absolute top-3 right-3 inline-flex size-11',
-              'items-center justify-center rounded-md',
-              'text-muted-foreground transition-colors',
-              'hover:bg-muted hover:text-heading',
-              'focus-visible:ring-[3px] focus-visible:outline-none',
-              'focus-visible:ring-ring/50',
-              'disabled:pointer-events-none disabled:opacity-50',
-            )}
-          >
+          <DialogPrimitive.Close className="text-muted-foreground hover:bg-muted hover:text-heading focus-visible:ring-ring/50 absolute top-3 right-3 inline-flex size-11 items-center justify-center rounded-md transition-colors focus-visible:ring-[3px] focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
             <XIcon aria-hidden="true" size={20} weight="bold" />
             <span className="sr-only">{closeLabel}</span>
           </DialogPrimitive.Close>

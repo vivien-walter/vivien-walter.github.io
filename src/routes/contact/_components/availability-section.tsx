@@ -55,7 +55,7 @@ export default function ContactAvailabilitySection({ content }: ContactAvailabil
         <SectionTitle id="contact-availability-title">{content.title}</SectionTitle>
       </SectionHeader>
 
-      <ul className={cn('m-0 grid list-none items-stretch gap-5 p-0', 'lg:grid-cols-3')}>
+      <ul className="m-0 grid list-none items-stretch gap-5 p-0 lg:grid-cols-3">
         {content.items.map((item) => (
           <li key={item.id} className="m-0 h-full min-w-0">
             <AvailabilityCard item={item} />

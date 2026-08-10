@@ -29,7 +29,6 @@ import {
 } from '@/content/research/publications/page';
 import { getResearchThemeById } from '@/content/research/themes/catalog';
 import { getSoftwareById } from '@/content/software/catalog';
-import { cn } from '@/lib/utils';
 import NotFoundPage from '@/routes/not-found/page';
 
 import PublicationActions from './_components/publication-actions';
@@ -43,14 +42,10 @@ type PublicationMetadataRowProps = {
 
 type ReferenceCopyState = 'idle' | 'copied' | 'error';
 
-const metadataRowClassName = cn('grid min-w-0 gap-2 px-5 py-5', 'sm:grid-cols-[10rem_minmax(0,1fr)]', 'sm:gap-6 sm:px-6');
-
-const metadataTermClassName = cn('font-mono text-xs font-semibold uppercase', 'text-muted-foreground tracking-[0.06em]');
-
 function PublicationMetadataRow({ label, children }: PublicationMetadataRowProps) {
   return (
-    <div className={metadataRowClassName}>
-      <dt className={metadataTermClassName}>{label}</dt>
+    <div className="grid min-w-0 gap-2 px-5 py-5 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6 sm:px-6">
+      <dt className="text-muted-foreground font-mono text-xs font-semibold tracking-[0.06em] uppercase">{label}</dt>
 
       <dd className="text-foreground m-0 min-w-0">{children}</dd>
     </div>
@@ -223,13 +218,13 @@ function ResearchPublicationDetailPage() {
         </HeroContainer>
       </Hero>
 
-      <div className={cn('mx-auto w-full', 'max-w-editorial px-page', 'pb-12 sm:pb-14 lg:pb-16')}>
+      <div className="max-w-editorial px-page mx-auto w-full pb-12 sm:pb-14 lg:pb-16">
         <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={`${idPrefix}-metadata-title`}>
           <SectionHeader className="mb-8">
             <SectionTitle id={`${idPrefix}-metadata-title`}>{detail.metadata}</SectionTitle>
           </SectionHeader>
 
-          <Card className={cn('gap-0 overflow-hidden py-0', 'border-border-strong', 'bg-brand-background', 'shadow-subtle')}>
+          <Card className="border-border-strong bg-brand-background shadow-subtle gap-0 overflow-hidden py-0">
             <CardContent className="p-0">
               <dl className="divide-border m-0 divide-y">
                 <PublicationMetadataRow label={detail.title}>
@@ -254,16 +249,7 @@ function ResearchPublicationDetailPage() {
                               href={author.href}
                               target={isExternalHref(author.href) ? '_blank' : undefined}
                               rel={isExternalHref(author.href) ? 'noreferrer' : undefined}
-                              className={cn(
-                                'font-medium',
-                                'text-brand-primary',
-                                'underline',
-                                'decoration-transparent',
-                                'underline-offset-4',
-                                'transition-colors',
-                                'hover:text-action-strong',
-                                'hover:decoration-current',
-                              )}
+                              className="text-brand-primary hover:text-action-strong font-medium underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current"
                             >
                               {author.name}
                             </a>
@@ -281,10 +267,7 @@ function ResearchPublicationDetailPage() {
                 </PublicationMetadataRow>
 
                 <PublicationMetadataRow label={detail.year}>
-                  <Badge
-                    variant="outline"
-                    className={cn('border-brand-accent/50', 'bg-copper-soft px-3 py-1', 'font-mono font-semibold', 'text-copper-strong')}
-                  >
+                  <Badge variant="outline" className="border-brand-accent/50 bg-copper-soft text-copper-strong px-3 py-1 font-mono font-semibold">
                     <time dateTime={String(publication.year)}>{publication.year}</time>
                   </Badge>
                 </PublicationMetadataRow>
@@ -324,7 +307,7 @@ function ResearchPublicationDetailPage() {
         </Section>
 
         {hasDescription && publication.description ? (
-          <div className={cn('border-border border-t', 'pt-12 sm:pt-14 lg:pt-16')}>
+          <div className="border-border border-t pt-12 sm:pt-14 lg:pt-16">
             <DetailDescriptionSection description={publication.description} idPrefix={idPrefix} title={detail.description} />
           </div>
         ) : null}

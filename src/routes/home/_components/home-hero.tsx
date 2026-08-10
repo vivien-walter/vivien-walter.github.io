@@ -17,7 +17,6 @@ import {
 } from '@/components/hero';
 import { Button } from '@/components/ui/button';
 import { getHomeContent } from '@/content/home/home';
-import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
 
 interface HomeHeroProps {
@@ -56,12 +55,7 @@ export default function HomeHero({ language }: HomeHeroProps) {
               asChild
               variant="outline"
               size="lg"
-              className={cn(
-                'min-h-11 rounded-sm px-5',
-                'border-brand-primary bg-transparent',
-                'text-brand-primary shadow-none',
-                'hover:bg-action-soft hover:text-brand-primary',
-              )}
+              className="border-brand-primary text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-11 rounded-sm bg-transparent px-5 shadow-none"
             >
               <Link to={getPageRoute('experience', language)}>
                 {content.heroActions.experience}
@@ -71,7 +65,7 @@ export default function HomeHero({ language }: HomeHeroProps) {
           </HeroActions>
 
           <HeroFooter className="hidden lg:block">
-            <ul className={cn('m-0 grid list-none p-0', 'grid-cols-4 gap-x-5 gap-y-6')}>
+            <ul className="m-0 grid list-none grid-cols-4 gap-x-5 gap-y-6 p-0">
               {content.heroHighlights.map(({ id, label, icon: HighlightIcon }) => (
                 <li key={id} className="m-0 grid content-start gap-2">
                   <HighlightIcon aria-hidden="true" className="text-brand-accent size-6 justify-self-center" weight="regular" />

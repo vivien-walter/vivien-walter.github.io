@@ -2,7 +2,6 @@ import { ArrowUpRightIcon, type Icon } from '@phosphor-icons/react';
 
 import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
-import { cn } from '@/lib/utils';
 
 type PublicationResource = {
   readonly icon: Icon;
@@ -27,12 +26,12 @@ function PublicationResourcesSection({ resources, title, titleId }: PublicationR
   }
 
   return (
-    <Section contained={false} className={cn('border-border border-t', 'py-12 sm:py-14 lg:py-16')} aria-labelledby={titleId}>
+    <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
       </SectionHeader>
 
-      <ul className={cn('m-0 grid list-none gap-4 p-0', 'sm:grid-cols-2 lg:grid-cols-3')}>
+      <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {visibleResources.map((resource, index) => {
           const ResourceIcon = resource.icon;
 
@@ -43,61 +42,28 @@ function PublicationResourcesSection({ resources, title, titleId }: PublicationR
                 target="_blank"
                 rel="noreferrer"
                 data-external="true"
-                className={cn(
-                  'group block h-full rounded-lg',
-                  'text-brand-ink no-underline',
-                  'focus-visible:outline-none',
-                  'focus-visible:ring-[3px]',
-                  'focus-visible:ring-ring/50',
-                  'focus-visible:ring-offset-2',
-                )}
+                className="group text-brand-ink focus-visible:ring-ring/50 block h-full rounded-lg no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none"
               >
-                <InteractiveCard interaction="group" className={cn('h-full', 'border-border-strong', 'bg-brand-background shadow-none')}>
-                  <span className={cn('grid h-full min-w-0', 'grid-cols-[auto_minmax(0,1fr)_auto]', 'items-start gap-4', 'p-5 sm:p-6')}>
+                <InteractiveCard interaction="group" className="border-border-strong bg-brand-background h-full shadow-none">
+                  <span className="grid h-full min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-4 p-5 sm:p-6">
                     <span
                       aria-hidden="true"
-                      className={cn(
-                        'flex size-11 shrink-0',
-                        'items-center justify-center',
-                        'bg-action-soft rounded-md',
-                        'text-brand-primary',
-                        'transition-colors',
-                        'duration-200',
-                        'group-hover:bg-brand-primary',
-                        'group-hover:text-white',
-                      )}
+                      className="bg-action-soft text-brand-primary group-hover:bg-brand-primary flex size-11 shrink-0 items-center justify-center rounded-md transition-colors duration-200 group-hover:text-white"
                     >
                       <ResourceIcon className="size-6" weight="regular" />
                     </span>
 
                     <span className="min-w-0">
-                      <span
-                        className={cn(
-                          'block font-bold',
-                          'leading-heading',
-                          'text-brand-ink',
-                          'transition-colors',
-                          'duration-200',
-                          'group-hover:text-brand-primary',
-                        )}
-                      >
+                      <span className="leading-heading text-brand-ink group-hover:text-brand-primary block font-bold transition-colors duration-200">
                         {resource.label}
                       </span>
 
-                      <span className={cn('mt-3 block', 'leading-body text-sm', 'text-muted-foreground')}>{resource.description}</span>
+                      <span className="leading-body text-muted-foreground mt-3 block text-sm">{resource.description}</span>
                     </span>
 
                     <ArrowUpRightIcon
                       aria-hidden="true"
-                      className={cn(
-                        'mt-1 size-4 shrink-0',
-                        'text-brand-ink',
-                        'transition-[color,transform]',
-                        'duration-200',
-                        'group-hover:-translate-y-0.5',
-                        'group-hover:translate-x-0.5',
-                        'group-hover:text-brand-primary',
-                      )}
+                      className="text-brand-ink group-hover:text-brand-primary mt-1 size-4 shrink-0 transition-[color,transform] duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                       weight="bold"
                     />
                   </span>

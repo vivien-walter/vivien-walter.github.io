@@ -2,7 +2,6 @@ import type { Icon } from '@phosphor-icons/react';
 
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
 
 type ProjectFeature = {
   readonly icon: Icon;
@@ -32,7 +31,7 @@ function ProjectFeaturesSection({ description, features, title, titleId }: Proje
         {description?.trim() ? <SectionDescription>{description}</SectionDescription> : null}
       </SectionHeader>
 
-      <ul className={cn('m-0 grid list-none gap-5 p-0', 'sm:grid-cols-2', 'lg:grid-cols-3')}>
+      <ul className="m-0 grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {visibleFeatures.map((feature, index) => {
           const FeatureIcon = feature.icon;
 
@@ -40,21 +39,18 @@ function ProjectFeaturesSection({ description, features, title, titleId }: Proje
 
           return (
             <li key={`${feature.title}-${index}`} className="m-0 min-w-0">
-              <Card className={cn('h-full gap-0 rounded-lg py-0', 'border-border-strong', 'bg-brand-background', 'shadow-subtle')}>
-                <article className={cn('grid h-full content-start', 'gap-5 p-5 sm:p-6')} aria-labelledby={featureTitleId}>
-                  <span
-                    aria-hidden="true"
-                    className={cn('flex size-14', 'items-center justify-center', 'rounded-md', 'bg-brand-primary', 'shadow-subtle text-white')}
-                  >
+              <Card className="border-border-strong bg-brand-background shadow-subtle h-full gap-0 rounded-lg py-0">
+                <article className="grid h-full content-start gap-5 p-5 sm:p-6" aria-labelledby={featureTitleId}>
+                  <span aria-hidden="true" className="bg-brand-primary shadow-subtle flex size-14 items-center justify-center rounded-md text-white">
                     <FeatureIcon className="size-7" weight="regular" />
                   </span>
 
                   <div className="min-w-0">
-                    <h3 id={featureTitleId} className={cn('!m-0 text-lg', 'leading-heading font-bold', 'tracking-[-0.0125em]', 'text-brand-ink')}>
+                    <h3 id={featureTitleId} className="leading-heading text-brand-ink !m-0 text-lg font-bold tracking-[-0.0125em]">
                       {feature.title}
                     </h3>
 
-                    <p className={cn('!mt-3 !mb-0', 'leading-body text-sm', 'text-muted-foreground', 'sm:text-base')}>{feature.description}</p>
+                    <p className="leading-body text-muted-foreground !mt-3 !mb-0 text-sm sm:text-base">{feature.description}</p>
                   </div>
                 </article>
               </Card>

@@ -52,26 +52,17 @@ export default function LanguageSwitcher({ variant = 'default', onNavigate }: La
                 title={languageName}
                 onClick={onNavigate}
                 className={cn(
-                  'inline-flex min-h-11 items-center justify-center',
-                  'rounded-sm text-sm no-underline',
-                  'ease-standard transition-colors duration-150',
-                  'focus-visible:ring-[3px] focus-visible:outline-none',
+                  'ease-standard inline-flex min-h-11 items-center justify-center rounded-sm text-sm no-underline transition-colors duration-150 focus-visible:ring-[3px] focus-visible:outline-none',
                   isInverse
-                    ? ['min-w-10 px-1.5', 'focus-visible:ring-white/70']
-                    : [
-                        'min-w-11 px-2 py-2',
-                        'tracking-[0.02em]',
-                        'focus-visible:ring-ring/50',
-                        'focus-visible:ring-offset-2',
-                        'focus-visible:ring-offset-background',
-                      ],
+                    ? 'min-w-10 px-1.5 focus-visible:ring-white/70'
+                    : 'focus-visible:ring-ring/50 focus-visible:ring-offset-background min-w-11 px-2 py-2 tracking-[0.02em] focus-visible:ring-offset-2',
                   isCurrentLanguage
                     ? isInverse
-                      ? ['font-semibold', 'text-brand-background', 'underline', 'decoration-2', 'decoration-brand-background', 'underline-offset-4']
-                      : ['font-semibold', 'text-brand-ink underline', 'decoration-brand-primary decoration-2', 'underline-offset-4']
+                      ? 'text-brand-background decoration-brand-background font-semibold underline decoration-2 underline-offset-4'
+                      : 'text-brand-ink decoration-brand-primary font-semibold underline decoration-2 underline-offset-4'
                     : isInverse
-                      ? ['font-medium', 'text-brand-background/70', 'hover:text-brand-background']
-                      : ['font-medium', 'text-brand-ink/75', 'hover:text-brand-primary'],
+                      ? 'text-brand-background/70 hover:text-brand-background font-medium'
+                      : 'text-brand-ink/75 hover:text-brand-primary font-medium',
                 )}
               >
                 {language.toUpperCase()}

@@ -23,18 +23,15 @@ function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, descriptio
   }
 
   return (
-    <Section contained={false} className={cn('border-border border-t py-12', 'sm:py-14 lg:py-16', className)} aria-labelledby={titleId}>
+    <Section contained={false} className={cn('border-border border-t py-12 sm:py-14 lg:py-16', className)} aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 
         {description?.trim() ? <SectionDescription>{description}</SectionDescription> : null}
       </SectionHeader>
 
-      <div className={cn('grid min-w-0 gap-5', 'sm:grid-cols-[4rem_minmax(0,1fr)]', 'sm:items-start sm:gap-7')}>
-        <span
-          aria-hidden="true"
-          className={cn('flex size-14 items-center justify-center', 'bg-brand-primary rounded-md', 'shadow-subtle text-white')}
-        >
+      <div className="grid min-w-0 gap-5 sm:grid-cols-[4rem_minmax(0,1fr)] sm:items-start sm:gap-7">
+        <span aria-hidden="true" className="bg-brand-primary shadow-subtle flex size-14 items-center justify-center rounded-md text-white">
           <SectionIcon className="size-7" weight="regular" />
         </span>
 
@@ -49,7 +46,7 @@ function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, descriptio
           ))}
 
           {visibleItems.length > 0 ? (
-            <ul className={cn('!m-0 grid list-disc gap-3', 'marker:text-brand-accent !pl-6')}>
+            <ul className="marker:text-brand-accent !m-0 grid list-disc gap-3 !pl-6">
               {visibleItems.map((item, itemIndex) => (
                 <li key={`${itemIndex}-${item}`} className="text-foreground !m-0 pl-1">
                   {item}

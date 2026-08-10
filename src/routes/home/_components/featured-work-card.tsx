@@ -8,7 +8,6 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import type { HomeFeaturedWork } from '@/content/home/home';
-import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
 
 type FeaturedWorkCardProps = {
@@ -128,7 +127,7 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
 
   const footer =
     work.kind === 'project' ? (
-      <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+      <Button asChild variant="ghost" className="text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-10 px-2">
         <Link to={getProjectRoute(work.contentId, language)}>
           {work.actionLabel}
 
@@ -136,7 +135,7 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
         </Link>
       </Button>
     ) : work.kind === 'software' ? (
-      <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+      <Button asChild variant="ghost" className="text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-10 px-2">
         <Link to={getSoftwareRoute(work.contentId, language)}>
           {work.actionLabel}
 
@@ -144,7 +143,7 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
         </Link>
       </Button>
     ) : (
-      <Button asChild variant="ghost" className={cn('text-brand-primary min-h-10 px-2', 'hover:bg-action-soft hover:text-brand-primary')}>
+      <Button asChild variant="ghost" className="text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-10 px-2">
         <a href={work.href} target="_blank" rel="noreferrer">
           {work.actionLabel}
 
@@ -157,7 +156,7 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
     <article className="h-full min-w-0" aria-labelledby={headingId}>
       <InteractiveCard
         interaction="self"
-        className={cn('h-full gap-0 overflow-hidden rounded-sm py-0', 'border-border-strong bg-brand-background', 'shadow-subtle')}
+        className="border-border-strong bg-brand-background shadow-subtle h-full gap-0 overflow-hidden rounded-sm py-0"
       >
         {work.image ? (
           <div className="bg-muted aspect-[16/9] overflow-hidden">
@@ -187,7 +186,7 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
               Heading,
               {
                 id: headingId,
-                className: cn('leading-heading !m-0 text-lg font-bold', 'text-brand-ink tracking-[-0.015em]', 'sm:text-xl'),
+                className: 'leading-heading !m-0 text-lg font-bold text-brand-ink tracking-[-0.015em] sm:text-xl',
               },
               work.title,
             )}
@@ -196,9 +195,7 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
 
         <CardContent className="px-5 pb-6 sm:px-6">{content}</CardContent>
 
-        <CardFooter className={cn('mt-auto flex min-h-16', 'items-center justify-end', 'border-border border-t px-5 py-3 sm:px-6')}>
-          {footer}
-        </CardFooter>
+        <CardFooter className="border-border mt-auto flex min-h-16 items-center justify-end border-t px-5 py-3 sm:px-6">{footer}</CardFooter>
       </InteractiveCard>
     </article>
   );

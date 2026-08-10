@@ -5,7 +5,6 @@ import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 
 export type RelatedItem = {
   readonly id: string;
@@ -28,32 +27,14 @@ type RelatedItemsSectionProps = {
   readonly variant?: 'card' | 'button';
 };
 
-const relatedListClassName = cn('m-0 grid list-none gap-3 p-0', 'sm:grid-cols-2');
-
-const relatedButtonClassName = cn(
-  'h-auto min-h-11 w-full justify-between',
-  'px-4 py-3 text-left whitespace-normal',
-  'border-border-strong bg-brand-background',
-  'text-brand-ink shadow-none',
-  'hover:border-brand-primary',
-  'hover:bg-action-soft hover:text-action-strong',
-);
-
 function RelatedCardItem({ item }: { readonly item: RelatedItem }) {
   return (
     <Link
       to={item.to}
-      className={cn(
-        'group block h-full rounded-lg',
-        'text-brand-ink no-underline',
-        'focus-visible:outline-none',
-        'focus-visible:ring-[3px]',
-        'focus-visible:ring-ring/50',
-        'focus-visible:ring-offset-2',
-      )}
+      className="group text-brand-ink focus-visible:ring-ring/50 block h-full rounded-lg no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none"
     >
-      <InteractiveCard className={cn('h-full gap-0 rounded-lg py-0', 'border-border-strong bg-brand-background', 'shadow-subtle')}>
-        <div className={cn('grid min-h-20 min-w-0', 'grid-cols-[minmax(0,1fr)_auto]', 'items-center gap-4 p-5', 'sm:p-6')}>
+      <InteractiveCard className="border-border-strong bg-brand-background shadow-subtle h-full gap-0 rounded-lg py-0">
+        <div className="grid min-h-20 min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 p-5 sm:p-6">
           <div className="min-w-0">
             <p className="leading-heading text-brand-ink !m-0 font-semibold">{item.label}</p>
 
@@ -65,7 +46,7 @@ function RelatedCardItem({ item }: { readonly item: RelatedItem }) {
                   <li key={badge} className="!m-0">
                     <Badge
                       variant="secondary"
-                      className={cn('border-border rounded-full border', 'bg-brand-hero px-3 py-1', 'font-mono font-medium', 'text-muted-foreground')}
+                      className="border-border bg-brand-hero text-muted-foreground rounded-full border px-3 py-1 font-mono font-medium"
                     >
                       {badge}
                     </Badge>
@@ -77,7 +58,7 @@ function RelatedCardItem({ item }: { readonly item: RelatedItem }) {
 
           <ArrowRightIcon
             aria-hidden="true"
-            className={cn('text-brand-primary size-5 shrink-0', 'ease-standard transition-transform duration-150', 'group-hover:translate-x-1')}
+            className="text-brand-primary ease-standard size-5 shrink-0 transition-transform duration-150 group-hover:translate-x-1"
             weight="bold"
           />
         </div>
@@ -88,7 +69,11 @@ function RelatedCardItem({ item }: { readonly item: RelatedItem }) {
 
 function RelatedButtonItem({ item }: { readonly item: RelatedItem }) {
   return (
-    <Button asChild variant="outline" className={relatedButtonClassName}>
+    <Button
+      asChild
+      variant="outline"
+      className="border-border-strong bg-brand-background text-brand-ink hover:border-brand-primary hover:bg-action-soft hover:text-action-strong h-auto min-h-11 w-full justify-between px-4 py-3 text-left whitespace-normal shadow-none"
+    >
       <Link to={item.to}>
         <span className="min-w-0">{item.label}</span>
 
@@ -111,11 +96,7 @@ function RelatedItemsSection({ title, titleId, groups, variant = 'card' }: Relat
   }
 
   return (
-    <Section
-      contained={false}
-      className={cn('border-border border-t', 'pt-12 pb-6', 'sm:pt-14 sm:pb-8', 'lg:pt-16 lg:pb-10')}
-      aria-labelledby={titleId}
-    >
+    <Section contained={false} className="border-border border-t pt-12 pb-6 sm:pt-14 sm:pb-8 lg:pt-16 lg:pb-10" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
       </SectionHeader>
@@ -132,7 +113,7 @@ function RelatedItemsSection({ title, titleId, groups, variant = 'card' }: Relat
                 </SectionTitle>
               </SectionHeader>
 
-              <ul className={relatedListClassName}>
+              <ul className="m-0 grid list-none gap-3 p-0 sm:grid-cols-2">
                 {group.items.map((item) => (
                   <li key={item.id} className="m-0 min-w-0">
                     {variant === 'button' ? <RelatedButtonItem item={item} /> : <RelatedCardItem item={item} />}

@@ -6,7 +6,6 @@ import { getLanguageFromPathname, getPageRoute } from '@/app/routing/navigation'
 import { Section, SectionAction, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Button } from '@/components/ui/button';
 import { getHomeContent } from '@/content/home/home';
-import { cn } from '@/lib/utils';
 
 import FeaturedWorkCard from './_components/featured-work-card';
 import HomeFollowGrid from './_components/home-follow-grid';
@@ -51,11 +50,7 @@ export default function HomePage() {
             <SectionTitle id="home-research-axes-title">{content.researchAxes.title}</SectionTitle>
 
             <SectionAction className="hidden sm:flex">
-              <Button
-                asChild
-                variant="ghost"
-                className={cn('min-h-11 px-2', 'text-brand-primary', 'hover:bg-action-soft', 'hover:text-brand-primary')}
-              >
+              <Button asChild variant="ghost" className="text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-11 px-2">
                 <Link to={getPageRoute('research', language)}>
                   {t('pages.research.title', {
                     lng: language,
@@ -83,7 +78,7 @@ export default function HomePage() {
         </Section>
       ) : null}
 
-      <Section aria-labelledby="home-follow-daily-title" containerClassName={cn('border-border border-t', 'py-12 sm:py-14 lg:py-16')}>
+      <Section aria-labelledby="home-follow-daily-title" containerClassName="border-border border-t py-12 sm:py-14 lg:py-16">
         <SectionHeader className="mb-8 sm:mb-10">
           <SectionTitle id="home-follow-daily-title">
             {t('pages.home.followDaily', {

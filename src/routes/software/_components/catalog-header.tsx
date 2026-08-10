@@ -24,24 +24,11 @@ type CatalogHeaderProps = {
 
 const softwareKinds = ['software', 'web-application', 'library'] as const satisfies readonly SoftwareKind[];
 
-const tabClassName = cn(
-  'relative min-h-12 shrink-0',
-  'rounded-none border-0',
-  'bg-transparent px-1 py-3',
-  'text-sm font-semibold',
-  'text-muted-foreground shadow-none',
-  'hover:bg-transparent',
-  'hover:text-brand-primary',
-  'focus-visible:bg-transparent',
-);
+const tabClassName =
+  'relative min-h-12 shrink-0 rounded-none border-0 bg-transparent px-1 py-3 text-sm font-semibold text-muted-foreground shadow-none hover:bg-transparent hover:text-brand-primary focus-visible:bg-transparent';
 
-const activeTabClassName = cn(
-  'text-brand-primary',
-  'after:absolute after:right-0',
-  'after:bottom-0 after:left-0',
-  'after:z-10 after:h-0.5',
-  'after:bg-brand-primary',
-);
+const activeTabClassName =
+  'text-brand-primary after:absolute after:right-0 after:bottom-0 after:left-0 after:z-10 after:h-0.5 after:bg-brand-primary';
 
 export default function CatalogHeader({
   content,

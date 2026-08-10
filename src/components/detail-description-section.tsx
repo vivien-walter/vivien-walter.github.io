@@ -85,23 +85,19 @@ function DetailDescriptionSection({ description, idPrefix, title }: DetailDescri
       <div className="flow-root">
         {showImage ? (
           <Dialog>
-            <figure className={cn('float-right m-0 mb-4 ml-5', 'w-1/2 max-w-[50%]', 'sm:mb-5 sm:ml-8')}>
+            <figure className="float-right m-0 mb-4 ml-5 w-1/2 max-w-[50%] sm:mb-5 sm:ml-8">
               <DialogTrigger asChild>
                 <button
                   type="button"
                   aria-label={t('accessibility.openImage', {
                     alt: image.alt,
                   })}
-                  className={cn(
-                    'block w-full cursor-zoom-in rounded-lg border-0 bg-transparent p-0',
-                    'focus-visible:ring-[3px] focus-visible:outline-none',
-                    'focus-visible:ring-ring/50',
-                  )}
+                  className="focus-visible:ring-ring/50 block w-full cursor-zoom-in rounded-lg border-0 bg-transparent p-0 focus-visible:ring-[3px] focus-visible:outline-none"
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className={cn('mx-auto block h-auto w-full', 'border-border-strong rounded-lg border', 'object-contain')}
+                    className="border-border-strong mx-auto block h-auto w-full rounded-lg border object-contain"
                     style={{
                       maxHeight: textHeight !== undefined ? `${textHeight}px` : undefined,
                       objectPosition: image.objectPosition ?? 'center',
@@ -119,24 +115,13 @@ function DetailDescriptionSection({ description, idPrefix, title }: DetailDescri
             <DialogContent
               aria-describedby={undefined}
               showCloseButton={false}
-              className={cn(
-                'w-fit max-w-[90vw] gap-0 overflow-hidden p-0',
-                'border-border-strong bg-background rounded-lg border',
-                'sm:max-w-[90vw]',
-              )}
+              className="border-border-strong bg-background w-fit max-w-[90vw] gap-0 overflow-hidden rounded-lg border p-0 sm:max-w-[90vw]"
             >
               <figure className="relative m-0 flex max-h-[90dvh] max-w-[90vw] flex-col">
                 <DialogClose
                   type="button"
                   aria-label={t('accessibility.closeImage')}
-                  className={cn(
-                    'absolute top-3 right-3 z-10 inline-flex size-11',
-                    'items-center justify-center rounded-md',
-                    'bg-heading/85 border border-white/30 text-white',
-                    'hover:bg-heading transition-colors',
-                    'focus-visible:ring-[3px] focus-visible:outline-none',
-                    'focus-visible:ring-white/70',
-                  )}
+                  className="bg-heading/85 hover:bg-heading absolute top-3 right-3 z-10 inline-flex size-11 items-center justify-center rounded-md border border-white/30 text-white transition-colors focus-visible:ring-[3px] focus-visible:ring-white/70 focus-visible:outline-none"
                 >
                   <XIcon aria-hidden="true" className="size-5" weight="bold" />
                 </DialogClose>

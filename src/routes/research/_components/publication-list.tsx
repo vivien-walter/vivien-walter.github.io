@@ -248,12 +248,12 @@ function PublicationList({ title, description, titleId, items, themes, language,
         {description ? <SectionDescription>{description}</SectionDescription> : null}
       </SectionHeader>
 
-      <div className={cn('flex flex-col', 'lg:flex-row', 'lg:items-end', 'lg:justify-between')}>
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between">
         <div
           role="tablist"
           aria-label={title}
           onKeyDown={handleTabKeyDown}
-          className={cn('order-2 flex min-w-0', 'items-end gap-7', 'overflow-x-auto', 'sm:gap-10', 'lg:order-1')}
+          className="order-2 flex min-w-0 items-end gap-7 overflow-x-auto sm:gap-10 lg:order-1"
         >
           <Button
             id={articlesTabId}
@@ -264,26 +264,9 @@ function PublicationList({ title, description, titleId, items, themes, language,
             aria-controls={panelId}
             tabIndex={activeTab === 'article' ? 0 : -1}
             className={cn(
-              'relative min-h-12',
-              'shrink-0 rounded-none',
-              'border-0 bg-transparent',
-              'px-1 py-3',
-              'text-sm font-semibold',
-              'text-muted-foreground',
-              'shadow-none',
-              'hover:bg-transparent',
-              'hover:text-brand-primary',
-              'focus-visible:bg-transparent',
-              activeTab === 'article' && [
-                'text-brand-primary',
-                'after:absolute',
-                'after:right-0',
-                'after:bottom-0',
-                'after:left-0',
-                'after:z-10',
-                'after:h-0.5',
-                'after:bg-brand-primary',
-              ],
+              'text-muted-foreground hover:text-brand-primary relative min-h-12 shrink-0 rounded-none border-0 bg-transparent px-1 py-3 text-sm font-semibold shadow-none hover:bg-transparent focus-visible:bg-transparent',
+              activeTab === 'article' &&
+                'text-brand-primary after:bg-brand-primary after:absolute after:right-0 after:bottom-0 after:left-0 after:z-10 after:h-0.5',
             )}
             onClick={() => {
               changeTab('article');
@@ -301,26 +284,9 @@ function PublicationList({ title, description, titleId, items, themes, language,
             aria-controls={panelId}
             tabIndex={activeTab === 'thesis' ? 0 : -1}
             className={cn(
-              'relative min-h-12',
-              'shrink-0 rounded-none',
-              'border-0 bg-transparent',
-              'px-1 py-3',
-              'text-sm font-semibold',
-              'text-muted-foreground',
-              'shadow-none',
-              'hover:bg-transparent',
-              'hover:text-brand-primary',
-              'focus-visible:bg-transparent',
-              activeTab === 'thesis' && [
-                'text-brand-primary',
-                'after:absolute',
-                'after:right-0',
-                'after:bottom-0',
-                'after:left-0',
-                'after:z-10',
-                'after:h-0.5',
-                'after:bg-brand-primary',
-              ],
+              'text-muted-foreground hover:text-brand-primary relative min-h-12 shrink-0 rounded-none border-0 bg-transparent px-1 py-3 text-sm font-semibold shadow-none hover:bg-transparent focus-visible:bg-transparent',
+              activeTab === 'thesis' &&
+                'text-brand-primary after:bg-brand-primary after:absolute after:right-0 after:bottom-0 after:left-0 after:z-10 after:h-0.5',
             )}
             onClick={() => {
               changeTab('thesis');
@@ -330,7 +296,7 @@ function PublicationList({ title, description, titleId, items, themes, language,
           </Button>
         </div>
 
-        <div className={cn('order-1 mb-4', 'flex justify-end', 'lg:order-2 lg:mb-2')}>
+        <div className="order-1 mb-4 flex justify-end lg:order-2 lg:mb-2">
           <PublicationControls
             sortBy={sortBy}
             themeOptions={themeOptions}
@@ -366,14 +332,12 @@ function PublicationList({ title, description, titleId, items, themes, language,
         className={cn(
           'rounded-lg',
           hasVisiblePublications ? 'mt-3 sm:mt-4' : 'mt-4',
-          'focus-visible:outline-none',
-          'focus-visible:ring-[3px]',
-          'focus-visible:ring-ring/50',
+          'focus-visible:ring-ring/50 focus-visible:ring-[3px] focus-visible:outline-none',
         )}
       >
         {hasVisiblePublications ? (
           <>
-            <ul aria-label={labels.tableLabel} className={cn('m-0 grid list-none', 'gap-3 p-0')}>
+            <ul aria-label={labels.tableLabel} className="m-0 grid list-none gap-3 p-0">
               {displayedItems.map((publication) => (
                 <li key={publication.id} className="m-0 min-w-0">
                   <PublicationEntry publication={publication} viewMoreLabel={labels.actions.viewMore} doiLabel={labels.actions.doi} />
@@ -386,16 +350,7 @@ function PublicationList({ title, description, titleId, items, themes, language,
                 <Button
                   type="button"
                   variant="outline"
-                  className={cn(
-                    'min-h-11',
-                    'border-brand-primary',
-                    'bg-brand-background',
-                    'px-6',
-                    'text-brand-primary',
-                    'shadow-none',
-                    'hover:bg-action-soft',
-                    'hover:text-action-strong',
-                  )}
+                  className="border-brand-primary bg-brand-background text-brand-primary hover:bg-action-soft hover:text-action-strong min-h-11 px-6 shadow-none"
                   onClick={() => {
                     setShowAllPublications(true);
                   }}
@@ -406,7 +361,7 @@ function PublicationList({ title, description, titleId, items, themes, language,
             ) : null}
           </>
         ) : (
-          <p className={cn('!m-0 rounded-lg', 'bg-brand-hero', 'px-5 py-8', 'text-center', 'text-muted-foreground')}>
+          <p className="bg-brand-hero text-muted-foreground !m-0 rounded-lg px-5 py-8 text-center">
             {activeTab === 'article' ? labels.emptyStates.articles : labels.emptyStates.theses}
           </p>
         )}

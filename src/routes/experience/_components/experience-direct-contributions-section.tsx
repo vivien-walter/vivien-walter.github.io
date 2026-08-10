@@ -1,5 +1,4 @@
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
-import { cn } from '@/lib/utils';
 
 type DirectContribution = {
   readonly label: string;
@@ -25,7 +24,7 @@ function ExperienceDirectContributionsSection({ idPrefix, items, title }: Experi
         <SectionTitle id={titleId}>{title}</SectionTitle>
       </SectionHeader>
 
-      <ul className={cn('!m-0 grid list-disc gap-3', 'marker:text-copper !pl-6')}>
+      <ul className="marker:text-copper !m-0 grid list-disc gap-3 !pl-6">
         {items.map((item, index) => (
           <li key={`${item.label}-${index}`} className="text-foreground !m-0 pl-1">
             <strong className="text-brand-ink font-bold">{item.label}</strong>

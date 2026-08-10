@@ -135,24 +135,7 @@ function ResearchAxisList({ items, language }: ResearchAxisListProps) {
             aria-label={t('accessibility.previousResearchAxis', {
               lng: language,
             })}
-            className={cn(
-              'absolute top-1/2 left-0 z-10',
-              'size-11 -translate-y-1/2 cursor-pointer rounded-full p-0',
-              'border-border-strong',
-              'bg-brand-background/95',
-              'text-brand-primary shadow-subtle',
-              'backdrop-blur-sm',
-              'opacity-0',
-              'transition-[opacity,border-color,background-color]',
-              'duration-150 ease-out',
-              'group-hover/carousel:opacity-100',
-              'hover:border-brand-primary',
-              'hover:bg-action-soft',
-              'hover:text-brand-primary',
-              'hover:opacity-100',
-              'focus-visible:opacity-100',
-              'lg:-left-5',
-            )}
+            className="border-border-strong bg-brand-background/95 text-brand-primary shadow-subtle hover:border-brand-primary hover:bg-action-soft hover:text-brand-primary absolute top-1/2 left-0 z-10 size-11 -translate-y-1/2 cursor-pointer rounded-full p-0 opacity-0 backdrop-blur-sm transition-[opacity,border-color,background-color] duration-150 ease-out group-hover/carousel:opacity-100 hover:opacity-100 focus-visible:opacity-100 lg:-left-5"
           >
             <CaretLeftIcon aria-hidden="true" className="size-5" weight="bold" />
           </Button>
@@ -164,24 +147,7 @@ function ResearchAxisList({ items, language }: ResearchAxisListProps) {
             aria-label={t('accessibility.nextResearchAxis', {
               lng: language,
             })}
-            className={cn(
-              'absolute top-1/2 right-0 z-10',
-              'size-11 -translate-y-1/2 cursor-pointer rounded-full p-0',
-              'border-border-strong',
-              'bg-brand-background/95',
-              'text-brand-primary shadow-subtle',
-              'backdrop-blur-sm',
-              'opacity-0',
-              'transition-[opacity,border-color,background-color]',
-              'duration-150 ease-out',
-              'group-hover/carousel:opacity-100',
-              'hover:border-brand-primary',
-              'hover:bg-action-soft',
-              'hover:text-brand-primary',
-              'hover:opacity-100',
-              'focus-visible:opacity-100',
-              'lg:-right-5',
-            )}
+            className="border-border-strong bg-brand-background/95 text-brand-primary shadow-subtle hover:border-brand-primary hover:bg-action-soft hover:text-brand-primary absolute top-1/2 right-0 z-10 size-11 -translate-y-1/2 cursor-pointer rounded-full p-0 opacity-0 backdrop-blur-sm transition-[opacity,border-color,background-color] duration-150 ease-out group-hover/carousel:opacity-100 hover:opacity-100 focus-visible:opacity-100 lg:-right-5"
           >
             <CaretRightIcon aria-hidden="true" className="size-5" weight="bold" />
           </Button>
@@ -190,7 +156,7 @@ function ResearchAxisList({ items, language }: ResearchAxisListProps) {
 
       <div ref={viewportRef} className="overflow-hidden" aria-labelledby="home-research-axes-title">
         <ul
-          className={cn('m-0 flex list-none p-0', 'transition-transform duration-300 ease-out', 'motion-reduce:transition-none')}
+          className="m-0 flex list-none p-0 transition-transform duration-300 ease-out motion-reduce:transition-none"
           style={{
             transform: `translateX(-${translatePercentage}%)`,
           }}
@@ -204,46 +170,25 @@ function ResearchAxisList({ items, language }: ResearchAxisListProps) {
               <li
                 key={axis.id}
                 ref={index === 0 ? firstItemRef : undefined}
-                className={cn('border-border m-0 shrink-0 basis-full', 'px-6', 'md:basis-1/2', 'lg:basis-1/3', index > 0 && 'border-l')}
+                className={cn('border-border m-0 shrink-0 basis-full px-6 md:basis-1/2 lg:basis-1/3', index > 0 && 'border-l')}
               >
                 <article className="flex h-full min-w-0 flex-col items-start" aria-labelledby={titleId}>
                   <Icon aria-hidden="true" className="text-brand-primary size-8 self-center" weight="regular" />
 
-                  <h3 id={titleId} className={cn('!mx-0 !mt-4 !mb-0', 'text-md leading-heading font-bold', 'text-brand-ink tracking-[-0.015em]')}>
+                  <h3 id={titleId} className="text-md leading-heading text-brand-ink !mx-0 !mt-4 !mb-0 font-bold tracking-[-0.015em]">
                     {axis.title}
                   </h3>
 
-                  <p className={cn('!mx-0 !mt-4 !mb-0', 'text-sm leading-relaxed', 'text-muted-foreground')}>{axis.description}</p>
+                  <p className="text-muted-foreground !mx-0 !mt-4 !mb-0 text-sm leading-relaxed">{axis.description}</p>
 
                   <div className="mt-auto pt-6">
                     <Button
                       asChild
                       variant="ghost"
-                      className={cn(
-                        'group -ml-2 min-h-10 w-fit gap-0 px-2',
-                        'text-brand-primary',
-                        'hover:bg-action-soft',
-                        'hover:text-brand-primary',
-                      )}
+                      className="group text-brand-primary hover:bg-action-soft hover:text-brand-primary -ml-2 min-h-10 w-fit gap-0 px-2"
                     >
                       <Link to={themeRoute}>
-                        <span
-                          className={cn(
-                            'max-w-0 -translate-x-2 overflow-hidden',
-                            'opacity-0',
-                            'transition-[max-width,margin,opacity,transform]',
-                            'duration-500 ease-out',
-                            'group-hover:mr-2 group-hover:max-w-40',
-                            'group-hover:translate-x-0',
-                            'group-hover:opacity-100',
-                            'group-focus-visible:mr-2',
-                            'group-focus-visible:max-w-40',
-                            'group-focus-visible:translate-x-0',
-                            'group-focus-visible:opacity-100',
-                            'motion-reduce:transition-none',
-                            'motion-reduce:transform-none',
-                          )}
-                        >
+                        <span className="max-w-0 -translate-x-2 overflow-hidden opacity-0 transition-[max-width,margin,opacity,transform] duration-500 ease-out group-hover:mr-2 group-hover:max-w-40 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:mr-2 group-focus-visible:max-w-40 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:transform-none motion-reduce:transition-none">
                           {t('actions.learnMore', {
                             lng: language,
                           })}

@@ -48,18 +48,10 @@ export default function SoftwareCatalogEntry({ software, language, technologiesL
         <div className="grid min-w-0 sm:grid-cols-[9rem_minmax(0,1fr)] lg:grid-cols-[11rem_minmax(0,1fr)_13rem]">
           <div
             className={cn(
-              'relative flex min-h-36 items-center justify-center overflow-hidden',
-              'sm:row-span-2 sm:min-h-full lg:row-span-1',
+              'relative flex min-h-36 items-center justify-center overflow-hidden sm:row-span-2 sm:min-h-full lg:row-span-1',
               software.heroImage
                 ? 'bg-brand-background'
-                : [
-                    'bg-action-soft text-brand-primary',
-                    'transition-colors duration-200',
-                    'group-hover:bg-brand-primary',
-                    'group-hover:text-primary-foreground',
-                    'group-focus-within:bg-brand-primary',
-                    'group-focus-within:text-primary-foreground',
-                  ],
+                : 'bg-action-soft text-brand-primary group-hover:bg-brand-primary group-hover:text-primary-foreground group-focus-within:bg-brand-primary group-focus-within:text-primary-foreground transition-colors duration-200',
             )}
           >
             {software.heroImage ? (
@@ -94,7 +86,7 @@ export default function SoftwareCatalogEntry({ software, language, technologiesL
                   return (
                     <ul
                       key={limit}
-                      className={cn('!m-0 min-w-0', 'list-none flex-nowrap', 'items-center gap-2 !p-0', 'overflow-hidden', className)}
+                      className={cn('!m-0 min-w-0 list-none flex-nowrap items-center gap-2 overflow-hidden !p-0', className)}
                       aria-label={technologiesLabel}
                     >
                       {visibleTags.map((tag) => (

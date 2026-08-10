@@ -22,7 +22,7 @@ function HeroContainer({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="hero-container"
-      className={cn('max-w-editorial mx-auto grid w-full', 'lg:grid-cols-[minmax(0,1.1fr)_minmax(20rem,0.9fr)]', className)}
+      className={cn('max-w-editorial mx-auto grid w-full lg:grid-cols-[minmax(0,1.1fr)_minmax(20rem,0.9fr)]', className)}
       {...props}
     />
   );
@@ -30,11 +30,7 @@ function HeroContainer({ className, ...props }: ComponentProps<'div'>) {
 
 function HeroContent({ className, ...props }: ComponentProps<'div'>) {
   return (
-    <div
-      data-slot="hero-content"
-      className={cn('px-page min-w-0', 'pt-5 pb-8', 'sm:pt-6 sm:pb-10', 'lg:pt-6 lg:pb-12', 'xl:pb-14', className)}
-      {...props}
-    />
+    <div data-slot="hero-content" className={cn('px-page min-w-0 pt-5 pb-8 sm:pt-6 sm:pb-10 lg:pt-6 lg:pb-12 xl:pb-14', className)} {...props} />
   );
 }
 
@@ -54,7 +50,7 @@ function HeroEyebrow({ className, ...props }: ComponentProps<'p'>) {
   return (
     <p
       data-slot="hero-eyebrow"
-      className={cn('!m-0 mb-3', 'font-mono text-xs font-semibold uppercase', 'text-brand-accent tracking-[0.12em]', 'sm:mb-4', className)}
+      className={cn('text-brand-accent !m-0 mb-3 font-mono text-xs font-semibold tracking-[0.12em] uppercase sm:mb-4', className)}
       {...props}
     />
   );
@@ -64,35 +60,29 @@ function HeroTitle({ className, ...props }: ComponentProps<'h1'>) {
   return (
     <h1
       data-slot="hero-title"
-      className={cn(
-        '!m-0 max-w-[18ch]',
-        '!text-[clamp(2.25rem,1.55rem+2.5vw,4rem)]',
-        '!leading-tight !tracking-[-0.04em]',
-        'text-brand-ink',
-        className,
-      )}
+      className={cn('text-brand-ink !m-0 max-w-[18ch] !text-[clamp(2.25rem,1.55rem+2.5vw,4rem)] !leading-tight !tracking-[-0.04em]', className)}
       {...props}
     />
   );
 }
 
 function HeroDescription({ className, ...props }: ComponentProps<'div'>) {
-  return <div data-slot="hero-description" className={cn('mt-6 max-w-[42rem]', 'text-md text-muted-foreground', className)} {...props} />;
+  return <div data-slot="hero-description" className={cn('text-md text-muted-foreground mt-6 max-w-[42rem]', className)} {...props} />;
 }
 
 function HeroActions({ className, ...props }: ComponentProps<'div'>) {
-  return <div data-slot="hero-actions" className={cn('mt-8 flex flex-wrap items-center', 'gap-3 sm:gap-4', className)} {...props} />;
+  return <div data-slot="hero-actions" className={cn('mt-8 flex flex-wrap items-center gap-3 sm:gap-4', className)} {...props} />;
 }
 
 function HeroFooter({ className, ...props }: ComponentProps<'div'>) {
-  return <div data-slot="hero-footer" className={cn('border-border mt-10 border-t pt-6', 'sm:mt-12 sm:pt-8', className)} {...props} />;
+  return <div data-slot="hero-footer" className={cn('border-border mt-10 border-t pt-6 sm:mt-12 sm:pt-8', className)} {...props} />;
 }
 
 function HeroMedia({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="hero-media"
-      className={cn('bg-brand-background min-h-64 min-w-0', 'sm:min-h-80', 'lg:border-border lg:min-h-full lg:border-l', className)}
+      className={cn('bg-brand-background lg:border-border min-h-64 min-w-0 sm:min-h-80 lg:min-h-full lg:border-l', className)}
       {...props}
     />
   );

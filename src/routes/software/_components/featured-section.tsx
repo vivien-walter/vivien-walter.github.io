@@ -66,8 +66,7 @@ export default function FeaturedSection({ language }: FeaturedSectionProps) {
         <article className="grid min-w-0 md:grid-cols-[10rem_minmax(0,1fr)]" aria-labelledby={`featured-software-${featuredSoftware.id}`}>
           <div
             className={cn(
-              'relative flex min-h-36 items-center justify-center overflow-hidden',
-              'md:min-h-full',
+              'relative flex min-h-36 items-center justify-center overflow-hidden md:min-h-full',
               featuredSoftware.heroImage ? 'bg-brand-background' : 'bg-action-soft text-brand-primary',
             )}
           >

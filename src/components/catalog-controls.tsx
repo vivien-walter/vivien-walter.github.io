@@ -26,10 +26,7 @@ type CatalogSortSelectProps = {
 function CatalogSortSelect({ value, label, placeholder, options, onValueChange, className }: CatalogSortSelectProps) {
   return (
     <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger
-        className={cn('min-h-11', 'border-border-strong', 'bg-brand-background', 'text-brand-ink shadow-none', className)}
-        aria-label={label}
-      >
+      <SelectTrigger className={cn('border-border-strong bg-brand-background text-brand-ink min-h-11 shadow-none', className)} aria-label={label}>
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
 
@@ -57,11 +54,9 @@ type CatalogFilterGroupProps = {
 function CatalogFilterGroup({ value, label, groupId, options, selectedValues, onChange, scrollable = true }: CatalogFilterGroupProps) {
   return (
     <AccordionItem value={value}>
-      <AccordionTrigger className={cn('rounded-none px-4 py-3', 'text-sm font-semibold', 'text-brand-ink', 'hover:no-underline')}>
-        {label}
-      </AccordionTrigger>
+      <AccordionTrigger className="text-brand-ink rounded-none px-4 py-3 text-sm font-semibold hover:no-underline">{label}</AccordionTrigger>
 
-      <AccordionContent className={cn('border-border border-t', 'bg-brand-hero/50', 'px-4 py-4')}>
+      <AccordionContent className="border-border bg-brand-hero/50 border-t px-4 py-4">
         <div className={cn('grid gap-3', scrollable && 'max-h-64 overflow-y-auto pr-1')} role="group" aria-label={label}>
           {options.map((option, index) => {
             const inputId = `${groupId}-${index}`;
@@ -77,7 +72,7 @@ function CatalogFilterGroup({ value, label, groupId, options, selectedValues, on
                   }}
                 />
 
-                <label htmlFor={inputId} className={cn('min-w-0 cursor-pointer', 'text-sm leading-snug', 'text-foreground')}>
+                <label htmlFor={inputId} className="text-foreground min-w-0 cursor-pointer text-sm leading-snug">
                   {option.label}
                 </label>
               </div>
@@ -100,32 +95,14 @@ function CatalogFilterTrigger({ label, activeFilterCount }: CatalogFilterTrigger
       <Button
         type="button"
         variant="outline"
-        className={cn(
-          'border-border-strong min-h-11',
-          'bg-brand-background',
-          'text-brand-ink shadow-none',
-          'hover:bg-brand-background',
-          'hover:text-brand-ink',
-          'dark:bg-brand-background',
-          'dark:hover:bg-brand-background',
-          'dark:hover:text-brand-ink',
-        )}
+        className="border-border-strong bg-brand-background text-brand-ink hover:bg-brand-background hover:text-brand-ink dark:bg-brand-background dark:hover:bg-brand-background dark:hover:text-brand-ink min-h-11 shadow-none"
       >
         <FunnelIcon aria-hidden="true" className="size-4" weight="regular" />
 
         {label}
 
         {activeFilterCount > 0 ? (
-          <span
-            className={cn(
-              'inline-flex min-w-5',
-              'items-center justify-center',
-              'bg-brand-primary rounded-full',
-              'px-1.5 py-0.5',
-              'text-xs font-semibold',
-              'text-primary-foreground',
-            )}
-          >
+          <span className="bg-brand-primary text-primary-foreground inline-flex min-w-5 items-center justify-center rounded-full px-1.5 py-0.5 text-xs font-semibold">
             {activeFilterCount}
           </span>
         ) : null}
@@ -144,7 +121,7 @@ type CatalogFilterContentProps = {
 
 function CatalogFilterContent({ activeFilterCount, clearLabel, onClearFilters, children, className }: CatalogFilterContentProps) {
   return (
-    <PopoverContent align="end" sideOffset={8} className={cn('border-border-strong', 'shadow-elevated p-0', className)}>
+    <PopoverContent align="end" sideOffset={8} className={cn('border-border-strong shadow-elevated p-0', className)}>
       {children}
 
       {activeFilterCount > 0 ? (
@@ -155,7 +132,7 @@ function CatalogFilterContent({ activeFilterCount, clearLabel, onClearFilters, c
             <Button
               type="button"
               variant="ghost"
-              className={cn('min-h-10 w-full justify-center', 'text-brand-primary', 'hover:bg-action-soft', 'hover:text-brand-dark')}
+              className="text-brand-primary hover:bg-action-soft hover:text-brand-dark min-h-10 w-full justify-center"
               onClick={onClearFilters}
             >
               {clearLabel}

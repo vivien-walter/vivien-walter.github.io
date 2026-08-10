@@ -122,30 +122,24 @@ function ExperienceDetailPage() {
             </HeroHeader>
 
             <HeroFooter>
-              <dl className={cn('m-0 grid gap-x-8 gap-y-5', 'sm:grid-cols-2 lg:grid-cols-3')}>
+              <dl className="m-0 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
                 <div className="min-w-0">
-                  <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
-                    {detail.organization}
-                  </dt>
+                  <dt className="text-muted-foreground font-mono text-xs font-semibold tracking-[0.08em] uppercase">{detail.organization}</dt>
 
-                  <dd className={cn('m-0 mt-1 font-semibold', 'text-brand-ink')}>{experience.organization}</dd>
+                  <dd className="text-brand-ink m-0 mt-1 font-semibold">{experience.organization}</dd>
                 </div>
 
                 <div className="min-w-0">
-                  <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
-                    {detail.period}
-                  </dt>
+                  <dt className="text-muted-foreground font-mono text-xs font-semibold tracking-[0.08em] uppercase">{detail.period}</dt>
 
-                  <dd className={cn('m-0 mt-1 font-semibold', 'text-brand-ink')}>{formatContentDateRange(experience.period, language)}</dd>
+                  <dd className="text-brand-ink m-0 mt-1 font-semibold">{formatContentDateRange(experience.period, language)}</dd>
                 </div>
 
                 {experience.location ? (
                   <div className="min-w-0">
-                    <dt className={cn('font-mono text-xs', 'font-semibold uppercase', 'tracking-[0.08em]', 'text-muted-foreground')}>
-                      {detail.location}
-                    </dt>
+                    <dt className="text-muted-foreground font-mono text-xs font-semibold tracking-[0.08em] uppercase">{detail.location}</dt>
 
-                    <dd className={cn('m-0 mt-1 font-semibold', 'text-brand-ink')}>{experience.location}</dd>
+                    <dd className="text-brand-ink m-0 mt-1 font-semibold">{experience.location}</dd>
                   </div>
                 ) : null}
               </dl>
@@ -162,7 +156,7 @@ function ExperienceDetailPage() {
 
       <DetailHighlightsBand ariaLabel={detail.highlightsLabel} items={experience.highlights} />
 
-      <div className={cn('mx-auto w-full', 'max-w-editorial px-page', 'pt-12 pb-12', 'sm:pt-14 sm:pb-14', 'lg:pt-16 lg:pb-16')}>
+      <div className="max-w-editorial px-page mx-auto w-full pt-12 pb-12 sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16">
         <DetailDescriptionSection description={experience.description} idPrefix={idPrefix} title={detail.description} />
 
         <ExperienceDirectContributionsSection idPrefix={idPrefix} items={experience.directContributions} title={detail.directContributions} />
@@ -175,23 +169,18 @@ function ExperienceDetailPage() {
         />
 
         {experience.finalState ? (
-          <Section
-            contained={false}
-            className={cn('border-border border-t', 'py-12 sm:py-14 lg:py-16')}
-            aria-labelledby={`${idPrefix}-final-state-title`}
-          >
+          <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={`${idPrefix}-final-state-title`}>
             <SectionHeader className="mb-8">
               <SectionTitle id={`${idPrefix}-final-state-title`}>{experience.finalState.title}</SectionTitle>
             </SectionHeader>
 
             <Card
               className={cn(
-                'gap-0 rounded-lg py-0',
-                'shadow-subtle',
+                'shadow-subtle gap-0 rounded-lg py-0',
                 experience.finalState.completed ? 'border-brand-primary/30 bg-action-soft' : 'border-brand-accent/30 bg-copper-soft',
               )}
             >
-              <p className={cn('max-w-readable !m-0', 'px-5 py-6', 'text-brand-ink', 'sm:px-6 sm:py-7')}>{experience.finalState.text}</p>
+              <p className="max-w-readable text-brand-ink !m-0 px-5 py-6 sm:px-6 sm:py-7">{experience.finalState.text}</p>
             </Card>
           </Section>
         ) : null}

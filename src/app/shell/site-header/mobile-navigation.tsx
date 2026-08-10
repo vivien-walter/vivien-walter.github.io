@@ -54,13 +54,7 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
           aria-label={t('navigation.mobile.open', {
             lng: currentLanguage,
           })}
-          className={cn(
-            'size-11 rounded-sm',
-            'text-brand-ink shadow-none',
-            'hover:bg-brand-hero',
-            'hover:text-brand-primary',
-            'focus-visible:ring-brand-primary/50',
-          )}
+          className="text-brand-ink hover:bg-brand-hero hover:text-brand-primary focus-visible:ring-brand-primary/50 size-11 rounded-sm shadow-none"
         >
           <ListIcon aria-hidden="true" size={24} weight="bold" />
         </Button>
@@ -69,28 +63,13 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
       <SheetContent
         side="right"
         showCloseButton={false}
-        className={cn(
-          'h-svh w-full max-w-none',
-          'gap-0 p-0 sm:max-w-none',
-          'border-l border-white/20',
-          'bg-brand-dark',
-          'text-brand-background',
-          'shadow-elevated',
-        )}
+        className="bg-brand-dark text-brand-background shadow-elevated h-svh w-full max-w-none gap-0 border-l border-white/20 p-0 sm:max-w-none"
       >
-        <SheetHeader
-          className={cn(
-            'relative grid',
-            'grid-cols-[minmax(0,1fr)_auto_auto]',
-            'items-center gap-2',
-            'border-b border-white/20',
-            'px-6 py-5 pr-4 text-left',
-          )}
-        >
-          <SheetTitle className={cn('m-0 grid min-w-0 gap-1', 'text-brand-background')}>
-            <span className={cn('text-xl leading-none', 'font-bold', 'tracking-[-0.035em]')}>{shortSiteName}</span>
+        <SheetHeader className="relative grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-2 border-b border-white/20 px-6 py-5 pr-4 text-left">
+          <SheetTitle className="text-brand-background m-0 grid min-w-0 gap-1">
+            <span className="text-xl leading-none font-bold tracking-[-0.035em]">{shortSiteName}</span>
 
-            <span className={cn('truncate text-xs', 'leading-tight font-medium', 'tracking-[-0.01em]', 'text-brand-background/85')}>{siteName}</span>
+            <span className="text-brand-background/85 truncate text-xs leading-tight font-medium tracking-[-0.01em]">{siteName}</span>
           </SheetTitle>
 
           <LanguageSwitcher
@@ -107,14 +86,7 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
               aria-label={t('navigation.mobile.close', {
                 lng: currentLanguage,
               })}
-              className={cn(
-                'size-11 rounded-sm',
-                'text-brand-background',
-                'shadow-none',
-                'hover:bg-white/10',
-                'hover:text-brand-background',
-                'focus-visible:ring-white/70',
-              )}
+              className="text-brand-background hover:text-brand-background size-11 rounded-sm shadow-none hover:bg-white/10 focus-visible:ring-white/70"
             >
               <XIcon aria-hidden="true" size={24} weight="regular" />
             </Button>
@@ -131,7 +103,7 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
           aria-label={t('navigation.primaryLabel', {
             lng: currentLanguage,
           })}
-          className={cn('min-h-0 flex-1', 'overflow-y-auto', 'overscroll-contain', 'px-6 py-6')}
+          className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-6"
         >
           <ul className="m-0 grid list-none gap-1 p-0">
             {navigationItems.map((item) => {
@@ -148,20 +120,10 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
                       setIsOpen(false);
                     }}
                     className={cn(
-                      'relative grid min-h-12',
-                      'grid-cols-[1.5rem_minmax(0,1fr)]',
-                      'items-center gap-4',
-                      'px-3 py-3',
-                      'text-base no-underline',
-                      'transition-colors',
-                      'duration-150',
-                      'ease-standard',
-                      'focus-visible:outline-none',
-                      'focus-visible:ring-[3px]',
-                      'focus-visible:ring-white/70',
+                      'ease-standard relative grid min-h-12 grid-cols-[1.5rem_minmax(0,1fr)] items-center gap-4 px-3 py-3 text-base no-underline transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-white/70 focus-visible:outline-none',
                       isCurrentPage
-                        ? ['bg-white/10', 'font-semibold', 'text-brand-background']
-                        : ['font-medium', 'text-brand-background/90', 'hover:bg-white/10', 'hover:text-brand-background'],
+                        ? 'text-brand-background bg-white/10 font-semibold'
+                        : 'text-brand-background/90 hover:text-brand-background font-medium hover:bg-white/10',
                     )}
                   >
                     <NavigationIcon aria-hidden="true" size={22} weight={isCurrentPage ? 'bold' : 'regular'} />
@@ -172,7 +134,7 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
                       })}
                     </span>
 
-                    {isCurrentPage ? <span aria-hidden="true" className={cn('absolute right-3', 'bottom-0 left-3', 'h-px bg-white')} /> : null}
+                    {isCurrentPage ? <span aria-hidden="true" className="absolute right-3 bottom-0 left-3 h-px bg-white" /> : null}
                   </Link>
                 </li>
               );
@@ -185,17 +147,7 @@ export default function MobileNavigation({ siteName, shortSiteName, currentLangu
             <Button
               asChild
               variant="ghost"
-              className={cn(
-                'h-12 w-full',
-                'justify-start rounded-sm',
-                'px-3 text-base',
-                'font-medium',
-                'text-brand-background',
-                'shadow-none',
-                'hover:bg-white/10',
-                'hover:text-brand-background',
-                'focus-visible:ring-white/70',
-              )}
+              className="text-brand-background hover:text-brand-background h-12 w-full justify-start rounded-sm px-3 text-base font-medium shadow-none hover:bg-white/10 focus-visible:ring-white/70"
             >
               <a
                 href={curriculumVitae.href}

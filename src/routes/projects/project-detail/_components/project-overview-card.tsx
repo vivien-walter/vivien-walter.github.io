@@ -5,7 +5,6 @@ import { Section } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { formatContentDateRange } from '@/lib/content/formatters';
-import { cn } from '@/lib/utils';
 import type { ContentDateRange, ContentImage } from '@/types/content';
 import type { SupportedLanguage } from '@/types/localization';
 
@@ -70,23 +69,8 @@ function ProjectOverviewCard({
 
   return (
     <Section contained={false} aria-label={ariaLabel}>
-      <Card
-        className={cn(
-          'grid gap-0 overflow-hidden rounded-lg py-0',
-          'border-border-strong bg-brand-background',
-          'shadow-subtle',
-          'md:grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.2fr)]',
-        )}
-      >
-        <div
-          className={cn(
-            'flex min-h-52 items-center justify-center',
-            'border-border overflow-hidden border-b',
-            'bg-brand-hero text-muted-foreground',
-            'sm:min-h-64',
-            'md:min-h-full md:border-r md:border-b-0',
-          )}
-        >
+      <Card className="border-border-strong bg-brand-background shadow-subtle grid gap-0 overflow-hidden rounded-lg py-0 md:grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.2fr)]">
+        <div className="border-border bg-brand-hero text-muted-foreground flex min-h-52 items-center justify-center overflow-hidden border-b sm:min-h-64 md:min-h-full md:border-r md:border-b-0">
           {showImage ? (
             <img
               src={image.src}
@@ -106,11 +90,11 @@ function ProjectOverviewCard({
           )}
         </div>
 
-        <div className={cn('flex min-w-0 items-center', 'px-5 py-7 sm:px-7 sm:py-8')}>
+        <div className="flex min-w-0 items-center px-5 py-7 sm:px-7 sm:py-8">
           <dl className="m-0 grid w-full gap-4">
             {facts.map((fact, index) => (
-              <div key={`${fact.label}-${index}`} className={cn('grid min-w-0 gap-1', 'sm:grid-cols-[8.5rem_minmax(0,1fr)]', 'sm:gap-5')}>
-                <dt className={cn('text-brand-ink font-semibold', 'sm:text-right')}>
+              <div key={`${fact.label}-${index}`} className="grid min-w-0 gap-1 sm:grid-cols-[8.5rem_minmax(0,1fr)] sm:gap-5">
+                <dt className="text-brand-ink font-semibold sm:text-right">
                   {fact.label}
                   <span aria-hidden="true">{' :'}</span>
                 </dt>
@@ -122,17 +106,17 @@ function ProjectOverviewCard({
         </div>
 
         {tags.length > 0 ? (
-          <div className={cn('border-border border-t px-5 py-5', 'sm:px-7', 'md:col-span-2')}>
+          <div className="border-border border-t px-5 py-5 sm:px-7 md:col-span-2">
             <p id={tagsLabelId} className="sr-only">
               {tagsLabel}
             </p>
 
-            <ul className={cn('m-0 flex list-none flex-wrap', 'gap-2 p-0')} aria-labelledby={tagsLabelId}>
+            <ul className="m-0 flex list-none flex-wrap gap-2 p-0" aria-labelledby={tagsLabelId}>
               {tags.map((tag) => (
                 <li key={tag} className="m-0">
                   <Badge
                     variant="secondary"
-                    className={cn('border-border rounded-full border', 'bg-brand-hero px-3 py-1', 'font-mono font-medium', 'text-muted-foreground')}
+                    className="border-border bg-brand-hero text-muted-foreground rounded-full border px-3 py-1 font-mono font-medium"
                   >
                     {tag}
                   </Badge>

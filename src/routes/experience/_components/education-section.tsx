@@ -2,7 +2,6 @@ import { GraduationCapIcon } from '@phosphor-icons/react';
 
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import type { EducationCatalogItem } from '@/content/experience/catalog';
-import { cn } from '@/lib/utils';
 
 type EducationSectionProps = {
   readonly title: string;
@@ -39,16 +38,16 @@ function EducationSection({ title, description, items }: EducationSectionProps) 
 
                 {!isLast ? <span aria-hidden="true" className="bg-brand-primary/35 absolute top-6 right-0 left-1/2 h-px" /> : null}
 
-                <div className={cn('bg-brand-background relative z-10', 'flex size-12 items-center justify-center')}>
+                <div className="bg-brand-background relative z-10 flex size-12 items-center justify-center">
                   <GraduationCapIcon aria-hidden="true" className="text-brand-primary size-10" weight="regular" />
                 </div>
 
                 <div className="mt-5 min-w-0">
-                  <h3 className={cn('!m-0 text-base font-bold', 'leading-heading text-brand-ink')}>{item.level}</h3>
+                  <h3 className="leading-heading text-brand-ink !m-0 text-base font-bold">{item.level}</h3>
 
                   <p className="text-foreground !mt-2 !mb-0">{item.subject}</p>
 
-                  <p className={cn('!mt-3 !mb-0 font-mono text-sm font-semibold', 'leading-heading text-brand-primary')}>{item.year}</p>
+                  <p className="leading-heading text-brand-primary !mt-3 !mb-0 font-mono text-sm font-semibold">{item.year}</p>
 
                   <p className="text-muted-foreground !mt-1 !mb-0 text-sm">{item.place}</p>
                 </div>

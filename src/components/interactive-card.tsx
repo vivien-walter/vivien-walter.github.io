@@ -10,29 +10,10 @@ type InteractiveCardProps = ComponentProps<typeof Card> & {
 };
 
 const interactionClassNames = {
-  group: cn(
-    'transition-all',
-    'ease-standard duration-200',
-    'group-hover:-translate-y-1',
-    'group-hover:border-brand-primary',
-    'group-hover:bg-action-soft/70',
-    'group-hover:shadow-elevated',
-    'group-hover:ring-2',
-    'group-hover:ring-brand-primary/30',
-    'motion-reduce:group-hover:translate-y-0',
-  ),
+  group:
+    'transition-all ease-standard duration-200 group-hover:-translate-y-1 group-hover:border-brand-primary group-hover:bg-action-soft/70 group-hover:shadow-elevated group-hover:ring-2 group-hover:ring-brand-primary/30 motion-reduce:group-hover:translate-y-0',
 
-  self: cn(
-    'transition-all',
-    'ease-standard duration-200',
-    'hover:-translate-y-1',
-    'hover:border-brand-primary',
-    'hover:bg-action-soft/70',
-    'hover:shadow-elevated',
-    'hover:ring-2',
-    'hover:ring-brand-primary/30',
-    'motion-reduce:hover:translate-y-0',
-  ),
+  self: 'transition-all ease-standard duration-200 hover:-translate-y-1 hover:border-brand-primary hover:bg-action-soft/70 hover:shadow-elevated hover:ring-2 hover:ring-brand-primary/30 motion-reduce:hover:translate-y-0',
 } satisfies Readonly<Record<InteractiveCardInteraction, string>>;
 
 function InteractiveCard({ className, interaction = 'group', ...props }: InteractiveCardProps) {
