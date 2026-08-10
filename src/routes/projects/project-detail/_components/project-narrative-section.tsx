@@ -23,7 +23,7 @@ function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, descriptio
   }
 
   return (
-    <Section contained={false} className={cn('border-border border-t py-12 sm:py-14 lg:py-16', className)} aria-labelledby={titleId}>
+    <Section contained={false} className={cn('py-12 sm:py-14 lg:py-16', className)} aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 

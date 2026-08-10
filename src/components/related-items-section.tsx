@@ -96,7 +96,7 @@ function RelatedItemsSection({ title, titleId, groups, variant = 'card' }: Relat
   }
 
   return (
-    <Section contained={false} className="border-border border-t pt-12 pb-6 sm:pt-14 sm:pb-8 lg:pt-16 lg:pb-10" aria-labelledby={titleId}>
+    <Section contained={false} className="pt-12 pb-6 sm:pt-14 sm:pb-8 lg:pt-16 lg:pb-10" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
       </SectionHeader>

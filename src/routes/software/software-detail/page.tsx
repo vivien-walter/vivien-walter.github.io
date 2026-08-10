@@ -2,6 +2,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import { getLanguageFromPathname } from '@/app/routing/navigation';
 import DetailHighlightsBand from '@/components/detail-highlights-band';
+import { Separator } from '@/components/ui/separator';
 import { getSoftwareDetailById, getSoftwareDetailContent } from '@/content/software/detail/page';
 import NotFoundPage from '@/routes/not-found/page';
 
@@ -24,7 +25,10 @@ export default function SoftwareDetailPage() {
   }
 
   const hasDisclaimer = Boolean(software.disclaimer?.trim());
+
   const hasVisibleResources = software.resources?.some((resource) => resource.label.trim().length > 0 && resource.href.trim().length > 0) ?? false;
+
+  const hasNavigationSeparator = !hasDisclaimer || hasVisibleResources;
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
@@ -35,11 +39,17 @@ export default function SoftwareDetailPage() {
       <div className="max-w-editorial px-page mx-auto w-full pt-12 pb-12 sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16">
         <SoftwareDetailContent software={software} labels={detail} />
 
+        {hasNavigationSeparator ? (
+          <div className="mt-2 sm:mt-2">
+            <Separator />
+          </div>
+        ) : null}
+
         <SoftwareDetailNavigation
+          className={hasNavigationSeparator ? 'mt-6 sm:mt-6' : 'mt-2 sm:mt-2'}
           language={language}
           softwareId={software.id}
           labels={detail}
-          showTopSeparator={!hasDisclaimer || hasVisibleResources}
         />
       </div>
     </article>

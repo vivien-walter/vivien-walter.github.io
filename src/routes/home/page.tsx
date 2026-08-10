@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { getLanguageFromPathname, getPageRoute } from '@/app/routing/navigation';
 import { Section, SectionAction, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 import { getHomeContent } from '@/content/home/home';
 
 import FeaturedWorkCard from './_components/featured-work-card';
@@ -78,7 +79,9 @@ export default function HomePage() {
         </Section>
       ) : null}
 
-      <Section aria-labelledby="home-follow-daily-title" containerClassName="border-border border-t py-12 sm:py-14 lg:py-16">
+      <Separator className="max-w-editorial mx-auto" />
+
+      <Section aria-labelledby="home-follow-daily-title" containerClassName="py-12 sm:py-14 lg:py-16">
         <SectionHeader className="mb-8 sm:mb-10">
           <SectionTitle id="home-follow-daily-title">
             {t('pages.home.followDaily', {

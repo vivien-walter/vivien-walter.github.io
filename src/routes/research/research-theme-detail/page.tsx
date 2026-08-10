@@ -18,6 +18,7 @@ import {
   HeroMedia,
   HeroTitle,
 } from '@/components/hero';
+import { Separator } from '@/components/ui/separator';
 import { getResearchPageContent } from '@/content/research/page';
 import { getPublicationsByThemeId } from '@/content/research/publications/catalog';
 import { getResearchThemeCollection } from '@/content/research/themes/catalog';
@@ -70,6 +71,8 @@ function ResearchThemeDetailPage() {
 
   const idPrefix = `research-theme-${theme.id}`;
 
+  const hasTechnologies = theme.technologyGroups?.some((group) => group.items.length > 0) ?? false;
+
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
       <Hero aria-labelledby="page-title">
@@ -120,6 +123,8 @@ function ResearchThemeDetailPage() {
       <div className={['mx-auto w-full', 'max-w-editorial px-page', 'pt-12 pb-12', 'sm:pt-14 sm:pb-14', 'lg:pt-16 lg:pb-16'].join(' ')}>
         <DetailDescriptionSection idPrefix={idPrefix} title={detail.description} description={theme.description} />
 
+        {hasTechnologies ? <Separator /> : null}
+
         <DetailTechnologiesSection
           idPrefix={idPrefix}
           title={detail.technologies}
@@ -128,22 +133,30 @@ function ResearchThemeDetailPage() {
         />
 
         {publications.length > 0 ? (
-          <PublicationList
-            title={page.sectionTitles.publications.title}
-            titleId={`${idPrefix}-publications-title`}
-            items={publications}
-            themes={themes.map((candidate) => ({
-              id: candidate.id,
-              title: candidate.title,
-            }))}
-            language={language}
-            labels={page.publications}
-            showThemeFilter={false}
-          />
+          <>
+            <Separator />
+
+            <PublicationList
+              title={page.sectionTitles.publications.title}
+              titleId={`${idPrefix}-publications-title`}
+              items={publications}
+              themes={themes.map((candidate) => ({
+                id: candidate.id,
+                title: candidate.title,
+              }))}
+              language={language}
+              labels={page.publications}
+              showThemeFilter={false}
+            />
+          </>
         ) : null}
 
+        <div className="mt-4 sm:mt-6">
+          <Separator />
+        </div>
+
         <DetailNavigation
-          className="mt-4 sm:mt-6"
+          className="mt-6 sm:mt-6"
           ariaLabel={detail.navigationLabel}
           backLink={{
             label: detail.backLabel,

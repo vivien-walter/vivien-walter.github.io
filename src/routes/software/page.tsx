@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 
 import { getLanguageFromPathname } from '@/app/routing/navigation';
+import { Separator } from '@/components/ui/separator';
 import { getSoftwareContent } from '@/content/software/page';
 
 import FeaturedSection from './_components/featured-section';
@@ -28,6 +29,8 @@ function SoftwarePage() {
             kindLabels: page.kindLabels,
           }}
         />
+
+        {page.resources.length > 0 ? <Separator /> : null}
 
         <FollowActivitiesSection
           content={{

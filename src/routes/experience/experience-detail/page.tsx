@@ -28,6 +28,7 @@ import {
 } from '@/components/hero';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 import { getExperienceDetailById, getExperienceDetailContent, getExperienceNavigation } from '@/content/experience/experiences/page';
 import { getProjectsByExperienceId } from '@/content/projects/catalog';
 import { getPublicationsByExperienceId } from '@/content/research/publications/catalog';
@@ -82,6 +83,18 @@ function ExperienceDetailPage() {
   const { previous: previousExperience, next: nextExperience } = getExperienceNavigation(language, experience.id);
 
   const idPrefix = `experience-${experience.id}`;
+
+  const hasTechnologies = experience.technologyGroups?.some((group) => group.items.length > 0) ?? false;
+
+  const hasVisibleResources = experience.resources?.some((resource) => resource.label.trim().length > 0 && resource.href.trim().length > 0) ?? false;
+
+  const hasRelatedContent =
+    (detail.relatedProjects.trim().length > 0 &&
+      relatedProjects.some((item) => item.id.trim().length > 0 && item.title.trim().length > 0 && item.to.trim().length > 0)) ||
+    (detail.relatedSoftware.trim().length > 0 &&
+      relatedSoftware.some((item) => item.id.trim().length > 0 && item.title.trim().length > 0 && item.to.trim().length > 0)) ||
+    (detail.relatedPublications.trim().length > 0 &&
+      relatedPublications.some((item) => item.id.trim().length > 0 && item.title.trim().length > 0 && item.to.trim().length > 0));
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
@@ -159,7 +172,11 @@ function ExperienceDetailPage() {
       <div className="max-w-editorial px-page mx-auto w-full pt-12 pb-12 sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16">
         <DetailDescriptionSection description={experience.description} idPrefix={idPrefix} title={detail.description} />
 
+        <Separator />
+
         <ExperienceDirectContributionsSection idPrefix={idPrefix} items={experience.directContributions} title={detail.directContributions} />
+
+        {hasTechnologies ? <Separator /> : null}
 
         <DetailTechnologiesSection
           externalLinkLabel={detail.externalLinkLabel}
@@ -169,23 +186,31 @@ function ExperienceDetailPage() {
         />
 
         {experience.finalState ? (
-          <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={`${idPrefix}-final-state-title`}>
-            <SectionHeader className="mb-8">
-              <SectionTitle id={`${idPrefix}-final-state-title`}>{experience.finalState.title}</SectionTitle>
-            </SectionHeader>
+          <>
+            <Separator />
 
-            <Card
-              className={cn(
-                'shadow-subtle gap-0 rounded-lg py-0',
-                experience.finalState.completed ? 'border-brand-primary/30 bg-action-soft' : 'border-brand-accent/30 bg-copper-soft',
-              )}
-            >
-              <p className="max-w-readable text-brand-ink !m-0 px-5 py-6 sm:px-6 sm:py-7">{experience.finalState.text}</p>
-            </Card>
-          </Section>
+            <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby={`${idPrefix}-final-state-title`}>
+              <SectionHeader className="mb-8">
+                <SectionTitle id={`${idPrefix}-final-state-title`}>{experience.finalState.title}</SectionTitle>
+              </SectionHeader>
+
+              <Card
+                className={cn(
+                  'shadow-subtle gap-0 rounded-lg py-0',
+                  experience.finalState.completed ? 'border-brand-primary/30 bg-action-soft' : 'border-brand-accent/30 bg-copper-soft',
+                )}
+              >
+                <p className="max-w-readable text-brand-ink !m-0 px-5 py-6 sm:px-6 sm:py-7">{experience.finalState.text}</p>
+              </Card>
+            </Section>
+          </>
         ) : null}
 
+        {hasVisibleResources ? <Separator /> : null}
+
         <ExperienceResourcesSection resources={experience.resources} title={detail.resources} titleId={`${idPrefix}-resources-title`} />
+
+        {hasRelatedContent ? <Separator /> : null}
 
         <RelatedContentSection
           idPrefix={idPrefix}
@@ -209,8 +234,12 @@ function ExperienceDetailPage() {
           ]}
         />
 
+        <div className="mt-4 sm:mt-6">
+          <Separator />
+        </div>
+
         <DetailNavigation
-          className="!mt-4 sm:!mt-6"
+          className="!mt-6 sm:!mt-6"
           ariaLabel={detail.navigationLabel}
           backLink={{
             label: detail.backLabel,

@@ -14,7 +14,7 @@ function PersonalActivitiesSection({ title, description, items }: PersonalActivi
   }
 
   return (
-    <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby="personal-activities-title">
+    <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby="personal-activities-title">
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id="personal-activities-title">{title}</SectionTitle>
 

@@ -19,6 +19,7 @@ import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 import { getExperienceById } from '@/content/experience/catalog';
 import { getProjectById } from '@/content/projects/catalog';
 import { getResearchPageContent } from '@/content/research/page';
@@ -173,6 +174,12 @@ function ResearchPublicationDetailPage() {
     },
   ];
 
+  const hasRelatedItems = relatedGroups.some(
+    (group) =>
+      group.title.trim().length > 0 &&
+      group.items.some((item) => item.id.trim().length > 0 && item.label.trim().length > 0 && item.to.trim().length > 0),
+  );
+
   const { previous: previousPublication, next: nextPublication } = getResearchPublicationNavigation(language, publication.id);
 
   const defaultEyebrow = publication.kind === 'article' ? detail.articleEyebrow : detail.thesisEyebrow;
@@ -182,6 +189,11 @@ function ResearchPublicationDetailPage() {
   const idPrefix = `publication-${publication.id}`;
 
   const hasDescription = publication.description !== undefined && publication.description.paragraphs.length > 0;
+
+  const hasVisibleResources =
+    publication.resources?.some(
+      (resource) => resource.label.trim().length > 0 && resource.description.trim().length > 0 && resource.href.trim().length > 0,
+    ) ?? false;
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
@@ -219,7 +231,9 @@ function ResearchPublicationDetailPage() {
       </Hero>
 
       <div className="max-w-editorial px-page mx-auto w-full pb-12 sm:pb-14 lg:pb-16">
-        <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={`${idPrefix}-metadata-title`}>
+        <Separator />
+
+        <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby={`${idPrefix}-metadata-title`}>
           <SectionHeader className="mb-8">
             <SectionTitle id={`${idPrefix}-metadata-title`}>{detail.metadata}</SectionTitle>
           </SectionHeader>
@@ -307,9 +321,13 @@ function ResearchPublicationDetailPage() {
         </Section>
 
         {hasDescription && publication.description ? (
-          <div className="border-border border-t pt-12 sm:pt-14 lg:pt-16">
-            <DetailDescriptionSection description={publication.description} idPrefix={idPrefix} title={detail.description} />
-          </div>
+          <>
+            <Separator />
+
+            <div className="pt-12 sm:pt-14 lg:pt-16">
+              <DetailDescriptionSection description={publication.description} idPrefix={idPrefix} title={detail.description} />
+            </div>
+          </>
         ) : null}
 
         <PublicationActions
@@ -319,12 +337,20 @@ function ResearchPublicationDetailPage() {
           pdfLabel={detail.downloadPdf}
         />
 
+        {hasVisibleResources ? <Separator /> : null}
+
         <PublicationResourcesSection resources={publication.resources} title={detail.resources} titleId={`${idPrefix}-resources-title`} />
+
+        {hasRelatedItems ? <Separator /> : null}
 
         <PublicationRelatedItemsSection groups={relatedGroups} title={detail.relatedItems} titleId={`${idPrefix}-related-items-title`} />
 
+        <div className="mt-8 sm:mt-10">
+          <Separator />
+        </div>
+
         <DetailNavigation
-          className="mt-8 sm:mt-10"
+          className="mt-6 sm:mt-6"
           ariaLabel={detail.navigationLabel}
           backLink={{
             label: detail.backLabel,

@@ -17,6 +17,7 @@ import {
   HeroTitle,
 } from '@/components/hero';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
+import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
 import { getEducationCollection, getExperienceCollection, getPersonalActivityCollection } from '@/content/experience/catalog';
 import { getExperiencePage } from '@/content/experience/page';
@@ -141,12 +142,16 @@ function ExperiencePage() {
           </Section>
         ) : null}
 
+        {education.length > 0 ? <Separator className="bg-brand-primary/15" /> : null}
+
         <EducationSection title={page.sectionTitles.education} description={page.sectionDescriptions.education} items={education} />
       </div>
 
       <ExperienceContactBanner content={page.contactBanner} language={language} />
 
       <div className="max-w-editorial px-page mx-auto w-full">
+        {personalActivities.length > 0 ? <Separator /> : null}
+
         <PersonalActivitiesSection
           title={page.sectionTitles.personalActivities}
           description={page.sectionDescriptions.personalActivities}

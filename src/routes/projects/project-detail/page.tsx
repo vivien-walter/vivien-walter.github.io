@@ -23,6 +23,7 @@ import {
   HeroMedia,
   HeroTitle,
 } from '@/components/hero';
+import { Separator } from '@/components/ui/separator';
 import { getExperienceById } from '@/content/experience/catalog';
 import { getProjectDetailById, getProjectDetailContent, getProjectDetailNavigation } from '@/content/projects/detail/page';
 import { getProjectsPage } from '@/content/projects/page';
@@ -86,9 +87,27 @@ function ProjectDetailPage() {
     to: getResearchPublicationRoute(publication.id, language),
   }));
 
+  const hasRelatedItems =
+    (detail.relatedExperiences.trim().length > 0 &&
+      relatedExperiences.some((item) => item.id.trim().length > 0 && item.label.trim().length > 0 && item.to.trim().length > 0)) ||
+    (detail.relatedSoftware.trim().length > 0 &&
+      relatedSoftware.some((item) => item.id.trim().length > 0 && item.label.trim().length > 0 && item.to.trim().length > 0)) ||
+    (detail.relatedPublications.trim().length > 0 &&
+      relatedPublications.some((item) => item.id.trim().length > 0 && item.label.trim().length > 0 && item.to.trim().length > 0));
+
   const { previous: previousProject, next: nextProject } = getProjectDetailNavigation(language, project.id);
 
   const idPrefix = `project-${project.id}`;
+
+  const hasContext = project.context.paragraphs.some((paragraph) => paragraph.trim().length > 0);
+
+  const hasContribution = project.contribution.paragraphs.some((paragraph) => paragraph.trim().length > 0);
+
+  const hasFeatures = project.features?.some((feature) => feature.title.trim().length > 0 && feature.description.trim().length > 0) ?? false;
+
+  const hasResults = project.results?.some((item) => item.trim().length > 0) ?? false;
+
+  const hasVisibleResources = project.resources?.some((resource) => resource.label.trim().length > 0 && resource.href.trim().length > 0) ?? false;
 
   return (
     <article className="overflow-hidden" aria-labelledby="page-title">
@@ -148,12 +167,16 @@ function ProjectDetailPage() {
           technologies={project.technologies}
         />
 
+        {hasContext ? <Separator /> : null}
+
         <ProjectNarrativeSection
           title={detail.context}
           titleId={`${idPrefix}-context-title`}
           icon={TargetIcon}
           paragraphs={project.context.paragraphs}
         />
+
+        {hasContribution ? <Separator /> : null}
 
         <ProjectNarrativeSection
           title={detail.contribution}
@@ -162,12 +185,16 @@ function ProjectDetailPage() {
           paragraphs={project.contribution.paragraphs}
         />
 
+        {hasFeatures ? <Separator /> : null}
+
         <ProjectFeaturesSection
           title={detail.features}
           titleId={`${idPrefix}-features-title`}
           description={detail.featuresDescription}
           features={project.features}
         />
+
+        {hasResults ? <Separator /> : null}
 
         <ProjectNarrativeSection
           title={detail.results}
@@ -177,7 +204,11 @@ function ProjectDetailPage() {
           items={project.results}
         />
 
+        {hasVisibleResources ? <Separator /> : null}
+
         <ProjectResourcesSection title={detail.resources} titleId={`${idPrefix}-resources-title`} resources={project.resources} />
+
+        {hasRelatedItems ? <Separator /> : null}
 
         <ProjectRelatedItemsSection
           title={detail.relatedItems}
@@ -189,6 +220,8 @@ function ProjectDetailPage() {
           software={relatedSoftware}
           publications={relatedPublications}
         />
+
+        <Separator />
 
         <DetailNavigation
           className="mt-0 sm:mt-0"

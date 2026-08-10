@@ -242,7 +242,7 @@ function PublicationList({ title, description, titleId, items, themes, language,
   }
 
   return (
-    <Section contained={false} className="border-border border-t py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
+    <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-7 sm:mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
         {description ? <SectionDescription>{description}</SectionDescription> : null}

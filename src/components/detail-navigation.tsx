@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { InteractiveCard } from '@/components/interactive-card';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 
 export type DetailNavigationLink = {
@@ -19,24 +18,12 @@ type DetailNavigationProps = {
   readonly nextLink?: DetailNavigationLink;
   readonly previousLabel: string;
   readonly nextLabel: string;
-  readonly showTopSeparator?: boolean;
   readonly className?: string;
 };
 
-function DetailNavigation({
-  ariaLabel,
-  backLink,
-  previousLink,
-  nextLink,
-  previousLabel,
-  nextLabel,
-  showTopSeparator = true,
-  className,
-}: DetailNavigationProps) {
+function DetailNavigation({ ariaLabel, backLink, previousLink, nextLink, previousLabel, nextLabel, className }: DetailNavigationProps) {
   return (
     <nav className={cn('mt-16 grid gap-6 sm:mt-20', className)} aria-label={ariaLabel}>
-      {showTopSeparator ? <Separator /> : null}
-
       <Button asChild variant="link" className="text-primary hover:text-action-strong h-auto min-h-11 w-fit justify-start px-0 py-2 font-semibold">
         <Link to={backLink.to}>
           <ArrowLeftIcon aria-hidden="true" weight="bold" />

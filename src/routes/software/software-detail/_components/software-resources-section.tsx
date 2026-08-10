@@ -4,17 +4,15 @@ import { Link } from 'react-router-dom';
 import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import type { SoftwareCatalogItem } from '@/content/software/catalog';
-import { cn } from '@/lib/utils';
 
 type SoftwareResourcesSectionProps = {
   readonly description: string;
   readonly resources?: SoftwareCatalogItem['resources'];
-  readonly showTopSeparator?: boolean;
   readonly title: string;
   readonly titleId: string;
 };
 
-function SoftwareResourcesSection({ description, resources, showTopSeparator = true, title, titleId }: SoftwareResourcesSectionProps) {
+function SoftwareResourcesSection({ description, resources, title, titleId }: SoftwareResourcesSectionProps) {
   const resourceLinkClassName =
     'group text-brand-ink focus-visible:ring-ring/50 block h-full rounded-lg no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none';
 
@@ -25,7 +23,7 @@ function SoftwareResourcesSection({ description, resources, showTopSeparator = t
   }
 
   return (
-    <Section contained={false} className={cn('pt-12 sm:py-14 lg:py-16', showTopSeparator && 'border-border border-t')} aria-labelledby={titleId}>
+    <Section contained={false} className="pt-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 
