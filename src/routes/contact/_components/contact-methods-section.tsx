@@ -1,14 +1,21 @@
 import { ArrowRightIcon, ArrowSquareOutIcon } from '@phosphor-icons/react';
 
 import { InteractiveCard } from '@/components/interactive-card';
+import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import type { ContactMethod } from '@/content/contact/contact';
+
+type ContactMethodsSectionProps = {
+  readonly externalLinkLabel: string;
+  readonly methods: readonly ContactMethod[];
+  readonly title: string;
+};
 
 type ContactMethodCardProps = {
   readonly externalLinkLabel: string;
   readonly method: ContactMethod;
 };
 
-export default function ContactMethodCard({ externalLinkLabel, method }: ContactMethodCardProps) {
+function ContactMethodCard({ externalLinkLabel, method }: ContactMethodCardProps) {
   const { opensInNewTab, icon: Icon } = method;
 
   return (
@@ -46,5 +53,23 @@ export default function ContactMethodCard({ externalLinkLabel, method }: Contact
         </div>
       </InteractiveCard>
     </a>
+  );
+}
+
+export default function ContactMethodsSection({ externalLinkLabel, methods, title }: ContactMethodsSectionProps) {
+  return (
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="contact-methods-title">
+      <SectionHeader className="mb-8 sm:mb-10">
+        <SectionTitle id="contact-methods-title">{title}</SectionTitle>
+      </SectionHeader>
+
+      <ul className="m-0 grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-4">
+        {methods.map((method) => (
+          <li key={method.id} className="m-0 min-w-0">
+            <ContactMethodCard method={method} externalLinkLabel={externalLinkLabel} />
+          </li>
+        ))}
+      </ul>
+    </Section>
   );
 }

@@ -1,10 +1,10 @@
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import { Card } from '@/components/ui/card';
-import type { ContactAvailabilityCard, ContactAvailabilitySection as ContactAvailabilitySectionContent } from '@/content/contact/contact';
+import type { ContactAvailabilityCard, ContactAvailabilitySection } from '@/content/contact/contact';
 import { cn } from '@/lib/utils';
 
-type ContactAvailabilitySectionProps = {
-  readonly content: ContactAvailabilitySectionContent;
+type AvailabilitySectionProps = {
+  readonly content: ContactAvailabilitySection;
 };
 
 type AvailabilityCardProps = {
@@ -48,7 +48,7 @@ function AvailabilityCard({ item }: AvailabilityCardProps) {
   );
 }
 
-export default function ContactAvailabilitySection({ content }: ContactAvailabilitySectionProps) {
+export default function AvailabilitySection({ content }: AvailabilitySectionProps) {
   return (
     <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="contact-availability-title">
       <SectionHeader className="mb-8 sm:mb-10">
