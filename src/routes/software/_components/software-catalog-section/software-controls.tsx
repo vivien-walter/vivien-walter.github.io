@@ -10,9 +10,7 @@ import {
 import { Accordion } from '@/components/ui/accordion';
 import { Popover } from '@/components/ui/popover';
 
-export type SoftwareSortOption = 'year-descending' | 'year-ascending' | 'title-ascending' | 'title-descending';
-
-export type SoftwareFilterOption = CatalogControlOption;
+import type { SoftwareFilterOption, SoftwareSortOption } from './helpers';
 
 type SoftwareControlsLabels = {
   readonly sortLabel: string;
@@ -56,11 +54,8 @@ function SoftwareControls({
   const languageGroupId = useId();
 
   const hasProjectFilters = projectOptions.length > 0;
-
   const hasLanguageFilters = languageOptions.length > 0;
-
   const hasAvailableFilters = hasProjectFilters || hasLanguageFilters;
-
   const activeFilterCount = selectedProjects.size + selectedLanguages.size;
 
   const sortOptions: readonly CatalogControlOption[] = [

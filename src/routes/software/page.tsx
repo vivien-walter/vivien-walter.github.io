@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 
 import { getLanguageFromPathname } from '@/app/routing/navigation';
-import { Separator } from '@/components/ui/separator';
+import PageDivider from '@/components/page-divider';
 import { getSoftwareContent } from '@/content/software/page';
 
 import FeaturedSection from './_components/featured-section';
@@ -21,24 +21,23 @@ function SoftwarePage() {
 
       <FeaturedSection language={language} />
 
-      <div className="max-w-editorial px-page mx-auto w-full">
-        <SoftwareCatalogSection
-          language={language}
-          content={{
-            catalog: page.catalog,
-            kindLabels: page.kindLabels,
-          }}
-        />
+      <PageDivider />
 
-        {page.resources.length > 0 ? <Separator /> : null}
+      <SoftwareCatalogSection
+        language={language}
+        content={{
+          catalog: page.catalog,
+        }}
+      />
 
-        <FollowActivitiesSection
-          content={{
-            followActivities: page.followActivities,
-            resources: page.resources,
-          }}
-        />
-      </div>
+      {page.resources.length > 0 ? <PageDivider /> : null}
+
+      <FollowActivitiesSection
+        content={{
+          followActivities: page.followActivities,
+          resources: page.resources,
+        }}
+      />
     </div>
   );
 }

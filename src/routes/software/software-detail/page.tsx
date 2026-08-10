@@ -1,12 +1,15 @@
 import { useLocation, useParams } from 'react-router-dom';
 
 import { getLanguageFromPathname } from '@/app/routing/navigation';
+import DetailDescriptionSection from '@/components/detail-description-section';
 import DetailHighlightsBand from '@/components/detail-highlights-band';
-import { Separator } from '@/components/ui/separator';
+import DetailTechnologiesSection from '@/components/detail-technologies-section';
+import PageDivider from '@/components/page-divider';
 import { getSoftwareDetailById, getSoftwareDetailContent } from '@/content/software/detail/page';
 import NotFoundPage from '@/routes/not-found/page';
 
-import SoftwareDetailContent from './_components/software-detail-content';
+import DisclaimerBanner from './_components/disclaimer-banner';
+import ResourcesSection from './_components/resources-section';
 import SoftwareDetailHero from './_components/software-detail-hero';
 import SoftwareDetailNavigation from './_components/software-detail-navigation';
 
@@ -24,6 +27,10 @@ export default function SoftwareDetailPage() {
     return <NotFoundPage />;
   }
 
+  const idPrefix = `software-${software.id}`;
+
+  const hasTechnologies = software.technologyGroups?.some((group) => group.items.length > 0) ?? false;
+
   const hasDisclaimer = Boolean(software.disclaimer?.trim());
 
   const hasVisibleResources = software.resources?.some((resource) => resource.label.trim().length > 0 && resource.href.trim().length > 0) ?? false;
@@ -36,22 +43,33 @@ export default function SoftwareDetailPage() {
 
       <DetailHighlightsBand ariaLabel={detail.highlightsLabel} items={software.highlights} />
 
-      <div className="max-w-editorial px-page mx-auto w-full pt-12 pb-12 sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16">
-        <SoftwareDetailContent software={software} labels={detail} />
+      <DetailDescriptionSection contained description={software.description} idPrefix={idPrefix} title={detail.descriptionTitle} />
 
-        {hasNavigationSeparator ? (
-          <div className="mt-2 sm:mt-2">
-            <Separator />
-          </div>
-        ) : null}
+      {hasTechnologies ? <PageDivider /> : null}
 
-        <SoftwareDetailNavigation
-          className={hasNavigationSeparator ? 'mt-6 sm:mt-6' : 'mt-2 sm:mt-2'}
-          language={language}
-          softwareId={software.id}
-          labels={detail}
-        />
-      </div>
+      <DetailTechnologiesSection
+        contained
+        description={detail.technologiesDescription}
+        externalLinkLabel={detail.externalLinkLabel}
+        groups={software.technologyGroups}
+        idPrefix={idPrefix}
+        title={detail.technologiesTitle}
+      />
+
+      <DisclaimerBanner text={software.disclaimer} />
+
+      {!hasDisclaimer && hasVisibleResources ? <PageDivider /> : null}
+
+      <ResourcesSection
+        description={detail.resourcesDescription}
+        resources={software.resources}
+        title={detail.resourcesTitle}
+        titleId={`${idPrefix}-resources-title`}
+      />
+
+      {hasNavigationSeparator ? <PageDivider className="mt-2 sm:mt-2" /> : null}
+
+      <SoftwareDetailNavigation language={language} softwareId={software.id} labels={detail} hasNavigationSeparator={hasNavigationSeparator} />
     </article>
   );
 }

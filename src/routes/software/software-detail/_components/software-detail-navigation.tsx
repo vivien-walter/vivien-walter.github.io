@@ -8,15 +8,15 @@ interface SoftwareDetailNavigationProps {
   readonly language: SupportedLanguage;
   readonly softwareId: SoftwareId;
   readonly labels: SoftwareDetailPageContent;
-  readonly className?: string;
+  readonly hasNavigationSeparator: boolean;
 }
 
-function SoftwareDetailNavigation({ language, softwareId, labels, className }: SoftwareDetailNavigationProps) {
+export default function SoftwareDetailNavigation({ language, softwareId, labels, hasNavigationSeparator }: SoftwareDetailNavigationProps) {
   const { previous: previousSoftware, next: nextSoftware } = getSoftwareDetailNavigation(language, softwareId);
 
   return (
     <DetailNavigation
-      className={className}
+      className={`max-w-editorial px-page mx-auto w-full pb-12 sm:pb-14 lg:pb-16 ${hasNavigationSeparator ? 'mt-6 sm:mt-6' : 'mt-2 sm:mt-2'}`}
       ariaLabel={labels.navigationLabel}
       backLink={{
         label: labels.backLabel,
@@ -43,5 +43,3 @@ function SoftwareDetailNavigation({ language, softwareId, labels, className }: S
     />
   );
 }
-
-export default SoftwareDetailNavigation;

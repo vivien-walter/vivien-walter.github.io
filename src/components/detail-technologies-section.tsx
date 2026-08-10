@@ -18,6 +18,7 @@ export type DetailTechnologyGroup = {
 };
 
 type DetailTechnologiesSectionProps = {
+  readonly contained?: boolean;
   readonly description?: string;
   readonly externalLinkLabel: string;
   readonly groups?: readonly DetailTechnologyGroup[];
@@ -93,7 +94,7 @@ function TechnologyDescriptionBadge({ item, popoverId }: TechnologyDescriptionBa
   );
 }
 
-function DetailTechnologiesSection({ description, externalLinkLabel, groups, idPrefix, title }: DetailTechnologiesSectionProps) {
+function DetailTechnologiesSection({ contained = false, description, externalLinkLabel, groups, idPrefix, title }: DetailTechnologiesSectionProps) {
   const populatedGroups = groups?.filter((group) => group.items.length > 0) ?? [];
 
   if (populatedGroups.length === 0) {
@@ -103,7 +104,7 @@ function DetailTechnologiesSection({ description, externalLinkLabel, groups, idP
   const titleId = `${idPrefix}-technologies-title`;
 
   return (
-    <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
+    <Section contained={contained} className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 

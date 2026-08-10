@@ -3,10 +3,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { getSoftwareRoute } from '@/app/routing/navigation';
+import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { getSoftwareByIds } from '@/content/software/catalog';
 import { getSoftwareContent } from '@/content/software/page';
 import type { SoftwareId } from '@/content/software/registry';
@@ -55,14 +55,14 @@ export default function FeaturedSection({ language }: FeaturedSectionProps) {
   const hiddenTagCount = softwareTags.length - visibleTags.length;
 
   return (
-    <Section className="border-border border-b" containerClassName="py-12 sm:py-14 lg:py-16" aria-labelledby="featured-software-title">
+    <Section containerClassName="py-12 sm:py-14 lg:py-16" aria-labelledby="featured-software-title">
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id="featured-software-title">{page.featured.title}</SectionTitle>
 
         <SectionDescription>{page.featured.description}</SectionDescription>
       </SectionHeader>
 
-      <Card className="border-border-strong bg-brand-background shadow-subtle gap-0 overflow-hidden rounded-lg py-0">
+      <InteractiveCard interaction="self" className="border-border-strong bg-brand-background shadow-subtle gap-0 overflow-hidden rounded-lg py-0">
         <article className="grid min-w-0 md:grid-cols-[10rem_minmax(0,1fr)]" aria-labelledby={`featured-software-${featuredSoftware.id}`}>
           <div
             className={cn(
@@ -154,7 +154,7 @@ export default function FeaturedSection({ language }: FeaturedSectionProps) {
             </div>
           </div>
         </article>
-      </Card>
+      </InteractiveCard>
     </Section>
   );
 }

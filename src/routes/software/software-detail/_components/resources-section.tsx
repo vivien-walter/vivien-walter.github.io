@@ -5,14 +5,14 @@ import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import type { SoftwareCatalogItem } from '@/content/software/catalog';
 
-type SoftwareResourcesSectionProps = {
+type ResourcesSectionProps = {
   readonly description: string;
   readonly resources?: SoftwareCatalogItem['resources'];
   readonly title: string;
   readonly titleId: string;
 };
 
-function SoftwareResourcesSection({ description, resources, title, titleId }: SoftwareResourcesSectionProps) {
+export default function ResourcesSection({ description, resources, title, titleId }: ResourcesSectionProps) {
   const resourceLinkClassName =
     'group text-brand-ink focus-visible:ring-ring/50 block h-full rounded-lg no-underline focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none';
 
@@ -23,7 +23,7 @@ function SoftwareResourcesSection({ description, resources, title, titleId }: So
   }
 
   return (
-    <Section contained={false} className="pt-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
+    <Section className="pt-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 
@@ -70,5 +70,3 @@ function SoftwareResourcesSection({ description, resources, title, titleId }: So
     </Section>
   );
 }
-
-export default SoftwareResourcesSection;

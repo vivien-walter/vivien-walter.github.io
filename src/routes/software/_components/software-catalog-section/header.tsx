@@ -2,15 +2,13 @@ import { type ComponentProps, type KeyboardEvent, useRef } from 'react';
 
 import { SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Button } from '@/components/ui/button';
-import type { SoftwareCatalogItem } from '@/content/software/catalog';
 import type { SoftwarePageContent } from '@/content/software/page';
 import { cn } from '@/lib/utils';
 
+import type { SoftwareKind } from './helpers';
 import SoftwareControls from './software-controls';
 
-type SoftwareKind = SoftwareCatalogItem['kind'];
-
-type CatalogHeaderProps = {
+type HeaderProps = {
   readonly content: SoftwarePageContent['catalog'];
   readonly titleId: string;
   readonly panelId: string;
@@ -30,7 +28,7 @@ const tabClassName =
 const activeTabClassName =
   'text-brand-primary after:absolute after:right-0 after:bottom-0 after:left-0 after:z-10 after:h-0.5 after:bg-brand-primary';
 
-export default function CatalogHeader({
+export default function Header({
   content,
   titleId,
   panelId,
@@ -40,7 +38,7 @@ export default function CatalogHeader({
   activeKind,
   controls,
   onKindChange,
-}: CatalogHeaderProps) {
+}: HeaderProps) {
   const softwareTabRef = useRef<HTMLButtonElement>(null);
   const webApplicationsTabRef = useRef<HTMLButtonElement>(null);
   const librariesTabRef = useRef<HTMLButtonElement>(null);

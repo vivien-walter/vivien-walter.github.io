@@ -18,6 +18,7 @@ export type DetailDescriptionContent = {
 };
 
 type DetailDescriptionSectionProps = {
+  readonly contained?: boolean;
   readonly description?: DetailDescriptionContent;
   readonly idPrefix: string;
   readonly title: string;
@@ -25,7 +26,7 @@ type DetailDescriptionSectionProps = {
 
 const EMPTY_PARAGRAPHS: readonly string[] = [];
 
-function DetailDescriptionSection({ description, idPrefix, title }: DetailDescriptionSectionProps) {
+function DetailDescriptionSection({ contained = false, description, idPrefix, title }: DetailDescriptionSectionProps) {
   const { t } = useTranslation();
 
   const textRef = useRef<HTMLDivElement>(null);
@@ -77,7 +78,7 @@ function DetailDescriptionSection({ description, idPrefix, title }: DetailDescri
   }
 
   return (
-    <Section contained={false} className="pb-12 sm:pb-14 lg:pb-16" aria-labelledby={titleId}>
+    <Section contained={contained} className="pt-12 pb-12 sm:pt-14 sm:pb-14 lg:pt-16 lg:pb-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
       </SectionHeader>
