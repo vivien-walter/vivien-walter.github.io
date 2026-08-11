@@ -22,28 +22,42 @@ function EducationSection({ title, description, items }: EducationSectionProps) 
         <SectionDescription>{description}</SectionDescription>
       </SectionHeader>
 
-      <div className="overflow-x-auto">
-        <ul className="grid min-w-max list-none auto-cols-[minmax(12rem,1fr)] grid-flow-col">
+      <div>
+        <ul className="grid list-none gap-y-8 lg:auto-cols-fr lg:grid-flow-col lg:gap-y-0">
           {items.map((item, index) => {
             const isFirst = index === 0;
             const isLast = index === items.length - 1;
 
             return (
-              <li key={item.id} className="relative m-0 grid min-w-0 justify-items-center px-4 text-center">
-                {!isFirst ? <span aria-hidden="true" className="bg-brand-primary/35 absolute top-6 right-1/2 left-0 h-px" /> : null}
+              <li
+                key={item.id}
+                className="relative m-0 grid min-w-0 grid-cols-[3rem_minmax(0,1fr)] items-start gap-x-4 text-left lg:grid-cols-1 lg:justify-items-center lg:px-4 lg:text-center"
+              >
+                {!isFirst ? (
+                  <span aria-hidden="true" className="bg-brand-primary/35 absolute hidden lg:top-6 lg:right-1/2 lg:left-0 lg:block lg:h-px" />
+                ) : null}
 
-                {!isLast ? <span aria-hidden="true" className="bg-brand-primary/35 absolute top-6 right-0 left-1/2 h-px" /> : null}
+                {!isLast ? (
+                  <span
+                    aria-hidden="true"
+                    className="bg-brand-primary/35 absolute top-9 bottom-[-2rem] left-6 w-px lg:top-6 lg:right-0 lg:bottom-auto lg:left-1/2 lg:h-px lg:w-auto"
+                  />
+                ) : null}
 
-                <div className="bg-brand-background relative z-10 flex size-12 items-center justify-center">
+                <div className="bg-brand-background relative z-10 flex size-12 -translate-y-3 items-center justify-center lg:translate-y-0">
                   <GraduationCapIcon aria-hidden="true" className="text-brand-primary size-10" weight="regular" />
                 </div>
 
-                <div className="mt-5 min-w-0">
-                  <h3 className="leading-heading text-brand-ink !m-0 text-base font-bold">{item.level}</h3>
+                <div className="min-w-0 lg:mt-5">
+                  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 lg:block">
+                    <h3 className="leading-heading text-brand-ink !m-0 min-w-0 text-base font-bold">{item.level}</h3>
+
+                    <p className="leading-heading text-brand-primary !m-0 shrink-0 font-mono text-sm font-semibold lg:hidden">{item.year}</p>
+                  </div>
 
                   <p className="text-foreground !mt-2 !mb-0">{item.subject}</p>
 
-                  <p className="leading-heading text-brand-primary !mt-3 !mb-0 font-mono text-sm font-semibold">{item.year}</p>
+                  <p className="leading-heading text-brand-primary !mt-3 !mb-0 hidden font-mono text-sm font-semibold lg:block">{item.year}</p>
 
                   <p className="text-muted-foreground !mt-1 !mb-0 text-sm">{item.place}</p>
                 </div>

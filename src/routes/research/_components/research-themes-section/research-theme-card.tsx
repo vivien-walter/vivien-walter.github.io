@@ -58,8 +58,8 @@ export default function ResearchThemeCard({ theme, to, isSelected, viewMoreLabel
   return (
     <li
       className={cn(
-        'ease-standard m-0 flex min-h-64 min-w-0 items-center transition-[flex-grow,flex-basis] duration-200',
-        isSelected ? 'flex-[1_1_0%]' : 'flex-[0_0_4rem]',
+        'ease-standard m-0 w-full min-w-0 transition-[flex-grow,flex-basis] duration-200 lg:flex lg:min-h-64 lg:w-auto lg:items-center',
+        isSelected ? 'lg:flex-[1_1_0%]' : 'lg:flex-[0_0_4rem]',
         'motion-reduce:transition-none',
       )}
     >
@@ -70,15 +70,17 @@ export default function ResearchThemeCard({ theme, to, isSelected, viewMoreLabel
           aria-pressed={false}
           title={theme.title}
           onClick={onSelect}
-          className="border-brand-primary bg-brand-primary shadow-subtle ease-standard hover:bg-brand-dark hover:shadow-elevated focus-visible:ring-ring/50 flex size-16 shrink-0 items-center justify-center rounded-lg border text-white transition-[transform,background-color,box-shadow] duration-150 hover:-translate-y-1 focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+          className="border-brand-primary bg-brand-primary shadow-subtle ease-standard hover:bg-brand-dark hover:shadow-elevated focus-visible:ring-ring/50 flex min-h-16 w-full items-center gap-4 rounded-lg border px-4 text-left text-white transition-[transform,background-color,box-shadow] duration-150 focus-visible:ring-[3px] focus-visible:ring-offset-2 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:translate-y-0 lg:size-16 lg:shrink-0 lg:justify-center lg:px-0 lg:hover:-translate-y-1"
         >
-          <ThemeIcon aria-hidden="true" className="size-8" weight="regular" />
+          <ThemeIcon aria-hidden="true" className="size-8 shrink-0" weight="regular" />
+
+          <span className="min-w-0 font-semibold lg:hidden">{theme.title}</span>
         </button>
       ) : (
-        <article className="min-w-0 flex-1" aria-labelledby={headingId}>
+        <article className="w-full min-w-0 lg:flex-1" aria-labelledby={headingId}>
           <InteractiveCard
             interaction="self"
-            className="group border-border-strong shadow-subtle relative isolate min-h-64 gap-0 overflow-hidden rounded-lg bg-transparent py-0 hover:bg-transparent"
+            className="group border-border-strong shadow-subtle relative isolate min-h-0 gap-0 overflow-hidden rounded-lg bg-transparent py-0 hover:bg-transparent lg:min-h-64"
           >
             {theme.heroImage ? (
               <>
@@ -105,7 +107,7 @@ export default function ResearchThemeCard({ theme, to, isSelected, viewMoreLabel
             )}
 
             {showContent ? (
-              <div className="animate-in fade-in relative z-10 flex min-h-64 min-w-0 flex-col p-5 duration-150 motion-reduce:animate-none sm:p-6">
+              <div className="animate-in fade-in relative z-10 flex min-w-0 flex-col p-5 duration-150 motion-reduce:animate-none sm:p-6 lg:min-h-64">
                 <div className="flex min-w-0 items-start gap-4">
                   <span
                     aria-hidden="true"
@@ -138,7 +140,7 @@ export default function ResearchThemeCard({ theme, to, isSelected, viewMoreLabel
                 </div>
               </div>
             ) : (
-              <div aria-hidden="true" className="relative z-10 flex min-h-64 items-start justify-start p-5 sm:p-6">
+              <div aria-hidden="true" className="relative z-10 flex items-start justify-start p-5 sm:p-6 lg:min-h-64">
                 <span className="bg-brand-primary shadow-subtle flex size-16 shrink-0 items-center justify-center rounded-lg text-white">
                   <ThemeIcon className="size-8" weight="regular" />
                 </span>

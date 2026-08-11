@@ -54,7 +54,7 @@ export default function SiteFooter() {
                 <li key={item.id} className="m-0">
                   <Link
                     to={item.routes[currentLanguage]}
-                    className="text-brand-background/78 ease-standard hover:text-brand-backgroun focus-visible:ring-offset-brand-dark inline-flex min-h-9 items-center rounded-sm py-1.5 text-sm font-medium no-underline transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:outline-none"
+                    className="text-brand-background/78 ease-standard hover:text-brand-background focus-visible:ring-offset-brand-dark inline-flex min-h-9 items-center rounded-sm py-1.5 text-sm font-medium no-underline transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:outline-none"
                   >
                     {t(item.labelKey, {
                       lng: currentLanguage,

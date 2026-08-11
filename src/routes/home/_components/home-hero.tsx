@@ -42,8 +42,8 @@ export default function HomeHero({ language }: HomeHeroProps) {
             </HeroDescription>
           </HeroHeader>
 
-          <HeroActions>
-            <Button asChild size="lg" className="min-h-11 rounded-sm px-5 shadow-none">
+          <HeroActions className="flex-col items-stretch sm:flex-row sm:items-center">
+            <Button asChild size="lg" className="min-h-11 w-full rounded-sm px-5 shadow-none sm:w-auto">
               <Link to={getPageRoute('projects', language)}>
                 <span>{content.heroActions.projects}</span>
 
@@ -55,7 +55,7 @@ export default function HomeHero({ language }: HomeHeroProps) {
               asChild
               variant="outline"
               size="lg"
-              className="border-brand-primary text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-11 rounded-sm bg-transparent px-5 shadow-none"
+              className="border-brand-primary text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-11 w-full rounded-sm bg-transparent px-5 shadow-none sm:w-auto"
             >
               <Link to={getPageRoute('experience', language)}>
                 {content.heroActions.experience}

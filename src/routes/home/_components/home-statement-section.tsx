@@ -17,8 +17,8 @@ export default function HomeStatementSection({ content, language }: HomeStatemen
     <Section className="bg-brand-dark py-12 sm:py-14 lg:py-16">
       <aside className="rounded-sm border border-white/70 bg-white/7 px-6 py-8 text-white sm:px-8 sm:py-9 lg:px-10 lg:py-10">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-8">
-          <div className="grid items-start gap-4 sm:grid-cols-[auto_minmax(0,1fr)]">
-            <span aria-hidden="true" className="text-brand-accent block text-5xl leading-none sm:mt-0.5">
+          <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
+            <span aria-hidden="true" className="text-brand-accent block text-5xl leading-[0.6] sm:mt-0.5 sm:leading-none">
               “
             </span>
 

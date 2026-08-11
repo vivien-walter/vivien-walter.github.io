@@ -37,7 +37,7 @@ export default function ResearchThemesSection({ description, language, themes, t
         <SectionDescription>{description}</SectionDescription>
       </SectionHeader>
 
-      <ul className="m-0 flex list-none items-center gap-3 p-0 pt-2 sm:gap-4">
+      <ul className="m-0 flex list-none flex-col items-stretch gap-3 p-0 pt-2 sm:gap-4 lg:flex-row lg:items-center">
         {themes.map((theme) => (
           <ResearchThemeCard
             key={theme.id}

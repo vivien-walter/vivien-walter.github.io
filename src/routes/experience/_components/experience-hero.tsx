@@ -27,7 +27,7 @@ export default function ExperienceHero({ eyebrow, language, page }: ExperienceHe
   const { t } = useTranslation();
 
   return (
-    <Hero aria-labelledby="page-title">
+    <Hero className="border-b-0" aria-labelledby="page-title">
       <HeroContainer>
         <HeroContent>
           <HeroBreadcrumbs

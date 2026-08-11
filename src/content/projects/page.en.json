@@ -8,6 +8,7 @@
         "ongoingLabel": "ongoing",
         "languagesLabel": "Languages",
         "technologiesLabel": "Technologies and methods",
+        "discoverLabel": "Discover the project",
         "controls": {
             "sortLabel": "Sort projects",
             "sortPlaceholder": "Sort by",

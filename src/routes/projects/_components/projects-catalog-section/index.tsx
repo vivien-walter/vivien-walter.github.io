@@ -101,6 +101,7 @@ export default function ProjectsCatalogSection({ language, catalog }: ProjectsCa
                   ongoing: catalog.ongoingLabel,
                   languages: catalog.languagesLabel,
                   technologies: catalog.technologiesLabel,
+                  discover: catalog.discoverLabel,
                 }}
               />
             ))}

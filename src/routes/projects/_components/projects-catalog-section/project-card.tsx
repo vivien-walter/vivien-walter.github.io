@@ -1,4 +1,4 @@
-import { CalendarBlankIcon, CodeIcon } from '@phosphor-icons/react';
+import { ArrowRightIcon, CalendarBlankIcon, CodeIcon } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 
 import { getProjectRoute } from '@/app/routing/navigation';
@@ -25,6 +25,7 @@ type ProjectCardLabels = {
   readonly ongoing: string;
   readonly languages: string;
   readonly technologies: string;
+  readonly discover: string;
 };
 
 type ProjectCardProps = {
@@ -103,44 +104,52 @@ export default function ProjectCard({ project, language, labels }: ProjectCardPr
           </div>
 
           {hasMetadata ? (
-            <dl className="border-border bg-brand-hero/45 !m-0 grid content-start gap-6 border-t p-5 md:border-t-0 md:border-l">
-              {period ? (
-                <div className="m-0 grid gap-2">
-                  <dt className="text-muted-foreground flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.04em] uppercase">
-                    <CalendarBlankIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
+            <div className="border-border bg-brand-hero/45 border-t p-5 md:border-t-0 md:border-l">
+              <dl className="!m-0 grid grid-cols-2 content-start gap-5 md:grid-cols-1 md:gap-6">
+                {period ? (
+                  <div className="m-0 grid content-start gap-2">
+                    <dt className="text-muted-foreground flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.04em] uppercase">
+                      <CalendarBlankIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
 
-                    {labels.period}
-                  </dt>
+                      {labels.period}
+                    </dt>
 
-                  <dd className="leading-heading text-brand-ink m-0 text-sm font-semibold">{period}</dd>
-                </div>
-              ) : null}
+                    <dd className="leading-heading text-brand-ink m-0 text-sm font-semibold">{period}</dd>
+                  </div>
+                ) : null}
 
-              {programmingLanguages.length > 0 ? (
-                <div className="m-0 grid gap-3">
-                  <dt className="text-muted-foreground flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.04em] uppercase">
-                    <CodeIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
+                {programmingLanguages.length > 0 ? (
+                  <div className="m-0 grid content-start gap-3">
+                    <dt className="text-muted-foreground flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.04em] uppercase">
+                      <CodeIcon aria-hidden="true" className="size-4 shrink-0" weight="bold" />
 
-                    {labels.languages}
-                  </dt>
+                      {labels.languages}
+                    </dt>
 
-                  <dd className="m-0">
-                    <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
-                      {programmingLanguages.map((programmingLanguage) => (
-                        <li key={programmingLanguage} className="m-0">
-                          <Badge
-                            variant="outline"
-                            className="border-brand-primary/35 bg-background text-brand-primary font-mono text-xs font-semibold"
-                          >
-                            {programmingLanguage}
-                          </Badge>
-                        </li>
-                      ))}
-                    </ul>
-                  </dd>
-                </div>
-              ) : null}
-            </dl>
+                    <dd className="m-0">
+                      <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
+                        {programmingLanguages.map((programmingLanguage) => (
+                          <li key={programmingLanguage} className="m-0">
+                            <Badge
+                              variant="outline"
+                              className="border-brand-primary/35 bg-background text-brand-primary font-mono text-xs font-semibold"
+                            >
+                              {programmingLanguage}
+                            </Badge>
+                          </li>
+                        ))}
+                      </ul>
+                    </dd>
+                  </div>
+                ) : null}
+              </dl>
+
+              <span className="text-brand-primary mt-5 flex min-h-10 w-fit items-center gap-2 text-sm font-semibold md:hidden">
+                {labels.discover}
+
+                <ArrowRightIcon aria-hidden="true" weight="bold" />
+              </span>
+            </div>
           ) : null}
         </InteractiveCard>
       </Link>

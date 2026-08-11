@@ -133,7 +133,7 @@ export default function ResearchAxesSection({ content, language }: ResearchAxesS
       </SectionHeader>
 
       <div
-        className={cn('group/carousel relative min-w-0', hasNavigation && 'px-12 sm:px-14 lg:px-0')}
+        className={cn('group/carousel relative min-w-0', hasNavigation && 'px-8 sm:px-14 lg:px-0')}
         onMouseEnter={() => {
           setIsPaused(true);
         }}
@@ -158,7 +158,7 @@ export default function ResearchAxesSection({ content, language }: ResearchAxesS
               aria-label={t('accessibility.previousResearchAxis', {
                 lng: language,
               })}
-              className="border-border-strong bg-brand-background/95 text-brand-primary shadow-subtle hover:border-brand-primary hover:bg-action-soft hover:text-brand-primary absolute top-1/2 left-0 z-10 size-11 -translate-y-1/2 cursor-pointer rounded-full p-0 opacity-0 backdrop-blur-sm transition-[opacity,border-color,background-color] duration-150 ease-out group-hover/carousel:opacity-100 hover:opacity-100 focus-visible:opacity-100 lg:-left-5"
+              className="border-border-strong bg-brand-background/95 text-brand-primary shadow-subtle hover:border-brand-primary hover:bg-action-soft hover:text-brand-primary absolute top-1/2 left-0 z-10 size-11 -translate-y-1/2 cursor-pointer rounded-full p-0 opacity-100 backdrop-blur-sm transition-[opacity,border-color,background-color] duration-150 ease-out lg:-left-5 lg:opacity-0 lg:group-hover/carousel:opacity-100 lg:hover:opacity-100 lg:focus-visible:opacity-100"
             >
               <CaretLeftIcon aria-hidden="true" className="size-5" weight="bold" />
             </Button>
@@ -170,7 +170,7 @@ export default function ResearchAxesSection({ content, language }: ResearchAxesS
               aria-label={t('accessibility.nextResearchAxis', {
                 lng: language,
               })}
-              className="border-border-strong bg-brand-background/95 text-brand-primary shadow-subtle hover:border-brand-primary hover:bg-action-soft hover:text-brand-primary absolute top-1/2 right-0 z-10 size-11 -translate-y-1/2 cursor-pointer rounded-full p-0 opacity-0 backdrop-blur-sm transition-[opacity,border-color,background-color] duration-150 ease-out group-hover/carousel:opacity-100 hover:opacity-100 focus-visible:opacity-100 lg:-right-5"
+              className="border-border-strong bg-brand-background/95 text-brand-primary shadow-subtle hover:border-brand-primary hover:bg-action-soft hover:text-brand-primary absolute top-1/2 right-0 z-10 size-11 -translate-y-1/2 cursor-pointer rounded-full p-0 opacity-100 backdrop-blur-sm transition-[opacity,border-color,background-color] duration-150 ease-out lg:-right-5 lg:opacity-0 lg:group-hover/carousel:opacity-100 lg:hover:opacity-100 lg:focus-visible:opacity-100"
             >
               <CaretRightIcon aria-hidden="true" className="size-5" weight="bold" />
             </Button>
@@ -193,7 +193,7 @@ export default function ResearchAxesSection({ content, language }: ResearchAxesS
                 <li
                   key={axis.id}
                   ref={index === 0 ? firstItemRef : undefined}
-                  className={cn('border-border m-0 shrink-0 basis-full px-6 md:basis-1/2 lg:basis-1/3', index > 0 && 'border-l')}
+                  className={cn('border-border m-0 shrink-0 basis-full px-4 sm:px-6 md:basis-1/2 lg:basis-1/3', index > 0 && 'md:border-l')}
                 >
                   <article className="flex h-full min-w-0 flex-col items-start" aria-labelledby={titleId}>
                     <Icon aria-hidden="true" className="text-brand-primary size-8 self-center" weight="regular" />
@@ -208,10 +208,10 @@ export default function ResearchAxesSection({ content, language }: ResearchAxesS
                       <Button
                         asChild
                         variant="ghost"
-                        className="group text-brand-primary hover:bg-action-soft hover:text-brand-primary -ml-2 min-h-10 w-fit gap-0 px-2"
+                        className="group text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-10 w-fit gap-0 px-2 lg:-ml-2"
                       >
                         <Link to={themeRoute}>
-                          <span className="max-w-0 -translate-x-2 overflow-hidden opacity-0 transition-[max-width,margin,opacity,transform] duration-500 ease-out group-hover:mr-2 group-hover:max-w-40 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:mr-2 group-focus-visible:max-w-40 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:transform-none motion-reduce:transition-none">
+                          <span className="mr-2 max-w-40 translate-x-0 overflow-hidden opacity-100 transition-[max-width,margin,opacity,transform] duration-500 ease-out motion-reduce:transform-none motion-reduce:transition-none lg:mr-0 lg:max-w-0 lg:-translate-x-2 lg:opacity-0 lg:group-hover:mr-2 lg:group-hover:max-w-40 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 lg:group-focus-visible:mr-2 lg:group-focus-visible:max-w-40 lg:group-focus-visible:translate-x-0 lg:group-focus-visible:opacity-100">
                             {t('actions.learnMore', {
                               lng: language,
                             })}

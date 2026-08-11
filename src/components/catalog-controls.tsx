@@ -95,11 +95,12 @@ function CatalogFilterTrigger({ label, activeFilterCount }: CatalogFilterTrigger
       <Button
         type="button"
         variant="outline"
-        className="border-border-strong bg-brand-background text-brand-ink hover:bg-brand-background hover:text-brand-ink dark:bg-brand-background dark:hover:bg-brand-background dark:hover:text-brand-ink min-h-11 shadow-none"
+        aria-label={label}
+        className="border-border-strong bg-brand-background text-brand-ink hover:bg-brand-background hover:text-brand-ink dark:bg-brand-background dark:hover:bg-brand-background dark:hover:text-brand-ink min-h-11 px-3 shadow-none sm:px-4"
       >
         <FunnelIcon aria-hidden="true" className="size-4" weight="regular" />
 
-        {label}
+        <span className="hidden sm:inline">{label}</span>
 
         {activeFilterCount > 0 ? (
           <span className="bg-brand-primary text-primary-foreground inline-flex min-w-5 items-center justify-center rounded-full px-1.5 py-0.5 text-xs font-semibold">
