@@ -1,20 +1,24 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import './index.css';
+import { StrictMode } from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 
-import App from "@/app/app";
-import "@/app/i18n";
-import "./index.css";
+import App from '@/app/app';
+import '@/app/i18n';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 
 if (!rootElement) {
-  throw new Error(
-    "Impossible d’initialiser l’application : l’élément #root est introuvable.",
-  );
+  throw new Error('Impossible d’initialiser l’application : l’élément #root est introuvable.');
 }
 
-createRoot(rootElement).render(
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );
+
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, app);
+} else {
+  createRoot(rootElement).render(app);
+}

@@ -5,7 +5,7 @@ export const navigationPageIds = ['home', 'experience', 'projects', 'research', 
 
 export type NavigationPageId = (typeof navigationPageIds)[number];
 
-export const detailPageKinds = ['experience', 'parallel-activity', 'project', 'research-theme', 'research-publication', 'software'] as const;
+export const detailPageKinds = ['experience', 'project', 'research-theme', 'research-publication', 'software'] as const;
 
 export type DetailPageKind = (typeof detailPageKinds)[number];
 
@@ -105,7 +105,6 @@ export const primaryNavigationItems = navigationItems.filter((item) => item.show
 
 const detailListPageIds = {
   experience: 'experience',
-  'parallel-activity': 'experience',
   project: 'projects',
   'research-theme': 'research',
   'research-publication': 'research',
@@ -161,10 +160,6 @@ export function getDetailRoute(kind: DetailPageKind, slug: string, language: Sup
 
   const encodedSlug = encodeURIComponent(normalizedSlug);
 
-  if (kind === 'parallel-activity') {
-    return `${listRoute}activities/${encodedSlug}/`;
-  }
-
   if (kind === 'research-publication') {
     return `${listRoute}publications/${encodedSlug}/`;
   }
@@ -174,10 +169,6 @@ export function getDetailRoute(kind: DetailPageKind, slug: string, language: Sup
 
 export function getExperienceRoute(experienceId: string, language: SupportedLanguage): string {
   return getDetailRoute('experience', experienceId, language);
-}
-
-export function getParallelActivityRoute(activityId: string, language: SupportedLanguage): string {
-  return getDetailRoute('parallel-activity', activityId, language);
 }
 
 export function getProjectRoute(projectId: string, language: SupportedLanguage): string {
@@ -199,10 +190,6 @@ export function getSoftwareRoute(softwareId: string, language: SupportedLanguage
 export function getDetailRoutePattern(kind: DetailPageKind, language: SupportedLanguage): string {
   const listPageId = detailListPageIds[kind];
   const listRoute = getPageRoute(listPageId, language);
-
-  if (kind === 'parallel-activity') {
-    return `${listRoute}activities/:slug/`;
-  }
 
   if (kind === 'research-publication') {
     return `${listRoute}publications/:slug/`;
@@ -232,14 +219,6 @@ export function getRouteMatchFromPathname(pathname: string): RouteMatch {
     const [, section, subsection, encodedSlug] = segments;
 
     const slug = decodeSlug(encodedSlug);
-
-    if (slug && section === 'experience' && subsection === 'activities') {
-      return {
-        kind: 'parallel-activity',
-        language,
-        slug,
-      };
-    }
 
     if (slug && section === 'research' && subsection === 'publications') {
       return {
@@ -300,7 +279,7 @@ export function getNavigationItemFromPathname(pathname: string): NavigationItem 
     return navigationItems.find((item) => item.id === routeMatch.pageId);
   }
 
-  if (routeMatch.kind === 'experience' || routeMatch.kind === 'parallel-activity') {
+  if (routeMatch.kind === 'experience') {
     return navigationItems.find((item) => item.id === 'experience');
   }
 
@@ -326,7 +305,7 @@ export function getPageIdFromPathname(pathname: string): NavigationPageId | unde
     return routeMatch.pageId;
   }
 
-  if (routeMatch.kind === 'experience' || routeMatch.kind === 'parallel-activity') {
+  if (routeMatch.kind === 'experience') {
     return 'experience';
   }
 
@@ -354,10 +333,6 @@ export function getEquivalentLanguagePath(pathname: string, language: SupportedL
 
   if (routeMatch.kind === 'experience') {
     return getExperienceRoute(routeMatch.slug, language);
-  }
-
-  if (routeMatch.kind === 'parallel-activity') {
-    return getParallelActivityRoute(routeMatch.slug, language);
   }
 
   if (routeMatch.kind === 'project') {
