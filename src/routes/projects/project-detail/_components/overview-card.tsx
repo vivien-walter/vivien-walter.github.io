@@ -68,7 +68,7 @@ export default function OverviewCard({
   }
 
   return (
-    <Section className="pt-12 sm:pt-14 lg:pt-16" aria-label={ariaLabel}>
+    <Section className="py-12 sm:py-14 lg:py-16" aria-label={ariaLabel}>
       <Card className="border-border-strong bg-brand-background shadow-subtle grid gap-0 overflow-hidden rounded-lg py-0 md:grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.2fr)]">
         <div className="border-border bg-brand-hero text-muted-foreground flex min-h-52 items-center justify-center overflow-hidden border-b sm:min-h-64 md:min-h-full md:border-r md:border-b-0">
           {showImage ? (

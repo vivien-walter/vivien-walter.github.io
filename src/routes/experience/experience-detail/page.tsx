@@ -123,7 +123,7 @@ export default function ExperienceDetailPage() {
         ]}
       />
 
-      <PageDivider className="mt-4 sm:mt-6" />
+      <PageDivider className={hasRelatedContent ? 'mt-4 sm:mt-6' : undefined} />
 
       <ExperienceDetailNavigation detail={detail} experienceId={experience.id} language={language} />
     </article>

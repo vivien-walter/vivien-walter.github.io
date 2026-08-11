@@ -67,7 +67,7 @@ export default function SoftwareDetailPage() {
         titleId={`${idPrefix}-resources-title`}
       />
 
-      {hasNavigationSeparator ? <PageDivider className="mt-2 sm:mt-2" /> : null}
+      {hasNavigationSeparator ? <PageDivider /> : null}
 
       <SoftwareDetailNavigation language={language} softwareId={software.id} labels={detail} hasNavigationSeparator={hasNavigationSeparator} />
     </article>

@@ -17,7 +17,7 @@ export default function ProjectDetailNavigation({ language, projectId, labels }:
 
   return (
     <DetailNavigation
-      className="max-w-editorial px-page mx-auto mt-0 w-full pb-12 sm:mt-0 sm:pb-14 lg:pb-16"
+      className="max-w-editorial px-page mx-auto mt-6 w-full pb-12 sm:mt-6 sm:pb-14 lg:pb-16"
       ariaLabel={labels.navigationLabel}
       backLink={{
         label: labels.backLabel,

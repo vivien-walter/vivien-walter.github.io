@@ -50,7 +50,7 @@ export default function PublicationPage() {
 
       <PublicationRelatedItemsSection language={language} publication={publication} />
 
-      <PageDivider className="mt-8 sm:mt-10" />
+      <PageDivider className="mt-4 sm:mt-6" />
 
       <PublicationNavigation language={language} publicationId={publication.id} labels={detail} />
     </article>

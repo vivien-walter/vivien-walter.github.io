@@ -15,7 +15,7 @@ function EducationSection({ title, description, items }: EducationSectionProps) 
   }
 
   return (
-    <Section className="pt-10 pb-12 sm:pt-12 sm:pb-14 lg:pt-14 lg:pb-16" aria-labelledby="education-section-title">
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="education-section-title">
       <SectionHeader className="mb-10 sm:mb-12">
         <SectionTitle id="education-section-title">{title}</SectionTitle>
 

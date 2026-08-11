@@ -88,7 +88,7 @@ export default function ProjectDetailPage() {
 
       <ProjectDetailRelatedItemsSection language={language} project={project} />
 
-      <PageDivider />
+      <PageDivider className="mt-4 sm:mt-6" />
 
       <ProjectDetailNavigation language={language} projectId={project.id} labels={detail} />
     </article>

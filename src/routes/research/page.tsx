@@ -20,7 +20,7 @@ export default function ResearchPage() {
   const publications = getPublicationCollection(language);
 
   return (
-    <div className="overflow-hidden pb-12 sm:pb-14 lg:pb-16">
+    <div className="overflow-hidden">
       <ResearchHero language={language} />
 
       <ResearchThemesSection

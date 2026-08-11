@@ -23,7 +23,7 @@ export default function ResourcesSection({ description, resources, title, titleI
   }
 
   return (
-    <Section className="pt-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 
