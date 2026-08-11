@@ -3,10 +3,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { getSoftwareRoute } from '@/app/routing/navigation';
-import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { getSoftwareByIds } from '@/content/software/catalog';
 import { getSoftwareContent } from '@/content/software/page';
 import type { SoftwareId } from '@/content/software/registry';
@@ -62,7 +62,7 @@ export default function FeaturedSection({ language }: FeaturedSectionProps) {
         <SectionDescription>{page.featured.description}</SectionDescription>
       </SectionHeader>
 
-      <InteractiveCard interaction="self" className="border-border-strong bg-brand-background shadow-subtle gap-0 overflow-hidden rounded-lg py-0">
+      <Card className="border-border-strong bg-brand-background shadow-subtle gap-0 overflow-hidden rounded-lg py-0">
         <article className="grid min-w-0 md:grid-cols-[10rem_minmax(0,1fr)]" aria-labelledby={`featured-software-${featuredSoftware.id}`}>
           <div
             className={cn(
@@ -92,7 +92,12 @@ export default function FeaturedSection({ language }: FeaturedSectionProps) {
                 id={`featured-software-${featuredSoftware.id}`}
                 className="leading-heading text-brand-ink !m-0 min-w-0 flex-1 text-xl font-bold tracking-[-0.025em]"
               >
-                {featuredSoftware.title}
+                <Link
+                  to={getSoftwareRoute(featuredSoftware.id, language)}
+                  className="hover:text-brand-primary focus-visible:text-brand-primary focus-visible:ring-brand-primary/30 rounded-sm transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                >
+                  {featuredSoftware.title}
+                </Link>
               </h3>
 
               <Badge
@@ -154,7 +159,7 @@ export default function FeaturedSection({ language }: FeaturedSectionProps) {
             </div>
           </div>
         </article>
-      </InteractiveCard>
+      </Card>
     </Section>
   );
 }

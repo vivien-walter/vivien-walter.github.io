@@ -2,7 +2,6 @@ import { publicProfile } from '@/content/common/profile';
 import { selectLocalizedContent } from '@/lib/content/localization';
 import type { SupportedLanguage } from '@/types/localization';
 
-import { getMllpaContent } from './items/mllpa';
 import enSoftwarePageJson from './page.en.json';
 import frSoftwarePageJson from './page.fr.json';
 
@@ -25,8 +24,6 @@ export function getSoftwareContent(language: SupportedLanguage) {
   const localized = selectLocalizedContent(localizedSoftwarePageContent, language);
 
   const githubProfile = getGithubProfile();
-  const mllpa = getMllpaContent(language);
-  const [mllpaWebsite] = mllpa.resources;
 
   const breadcrumbLabel =
     'breadcrumbLabel' in localized && typeof localized.breadcrumbLabel === 'string' && localized.breadcrumbLabel.trim().length > 0
@@ -44,17 +41,7 @@ export function getSoftwareContent(language: SupportedLanguage) {
     ...localized,
     breadcrumbLabel,
     githubResource,
-    resources: [
-      githubResource,
-      ...(mllpaWebsite
-        ? [
-            {
-              id: 'mllpa-website',
-              ...mllpaWebsite,
-            },
-          ]
-        : []),
-    ],
+    resources: [githubResource],
   } as const;
 }
 
