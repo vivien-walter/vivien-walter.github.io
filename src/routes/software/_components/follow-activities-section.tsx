@@ -41,11 +41,6 @@ function FollowActivityItem({ resource }: FollowActivityItemProps) {
 }
 
 export default function FollowActivitiesSection({ content }: FollowActivitiesSectionProps) {
-  /* If no resources can be found */
-  if (content.resources.length === 0) {
-    return null;
-  }
-
   return (
     <Section containerClassName="py-12 sm:py-14 lg:py-16" aria-labelledby="software-activities-title">
       <SectionHeader className="mb-8 sm:mb-10">
