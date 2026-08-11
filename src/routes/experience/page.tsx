@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 import { getLanguageFromPathname } from '@/app/routing/navigation';
 import PageDivider from '@/components/page-divider';
+import { showJobSearchContent } from '@/config/feature-flags';
 import { getEducationCollection, getPersonalActivityCollection } from '@/content/experience/catalog';
 import { getExperiencePage } from '@/content/experience/page';
 
@@ -33,7 +34,7 @@ export default function ExperiencePage() {
 
       <EducationSection title={page.sectionTitles.education} description={page.sectionDescriptions.education} items={education} />
 
-      <ContactBanner content={page.contactBanner} language={language} />
+      {showJobSearchContent ? <ContactBanner content={page.contactBanner} language={language} /> : null}
 
       {personalActivities.length > 0 ? <PageDivider /> : null}
 

@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 
 import { getLanguageFromPathname } from '@/app/routing/navigation';
+import { showJobSearchContent } from '@/config/feature-flags';
 import { getSiteContent } from '@/content/common/site';
 import { getContactContent } from '@/content/contact/contact';
 
@@ -22,9 +23,13 @@ export default function ContactPage() {
 
       <ContactMethodsSection title={content.methodsTitle} methods={content.links} externalLinkLabel={siteContent.accessibility.externalLinkNewTab} />
 
-      <JobSearchBanner content={content.jobSearch} />
+      {showJobSearchContent ? (
+        <>
+          <JobSearchBanner content={content.jobSearch} />
 
-      <AvailabilitySection content={content.availability} />
+          <AvailabilitySection content={content.availability} />
+        </>
+      ) : null}
     </>
   );
 }
