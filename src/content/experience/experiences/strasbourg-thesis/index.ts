@@ -1,7 +1,7 @@
-import { CodeIcon, GlobeHemisphereWestIcon, MicroscopeIcon, TargetIcon } from '@phosphor-icons/react';
+import { CodeIcon, MicroscopeIcon, TargetIcon } from '@phosphor-icons/react';
 
 import descriptionImage from '@/assets/images/experiences/strasbourg-thesis/description.png';
-import { createExperienceContent, type ExperienceResource } from '@/content/experience/experience-content';
+import { createExperienceContent } from '@/content/experience/experience-content';
 import type { SupportedLanguage } from '@/types/localization';
 
 import type { ExperienceId } from '../../registry';

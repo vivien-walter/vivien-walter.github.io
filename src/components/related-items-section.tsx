@@ -100,7 +100,7 @@ function RelatedItemsSection({ title, titleId, groups, contained = false }: Rela
 
               <ul className="m-0 grid list-none gap-3 p-0 sm:grid-cols-2">
                 {group.items.map((item) => (
-                  <RelatedCardItem item={item} />
+                  <RelatedCardItem key={item.id} item={item} />
                 ))}
               </ul>
             </Section>

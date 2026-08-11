@@ -10,7 +10,6 @@ import {
   HeroContainer,
   HeroContent,
   HeroDescription,
-  HeroEyebrow,
   HeroHeader,
   HeroImage,
   HeroMedia,
@@ -50,8 +49,6 @@ export default function SoftwareHero({ language }: SoftwareHeroProps) {
           />
 
           <HeroHeader className="mt-4 sm:mt-5">
-            <HeroEyebrow>{content.eyebrow}</HeroEyebrow>
-
             <HeroTitle id="page-title">{content.title}</HeroTitle>
 
             <HeroDescription>
