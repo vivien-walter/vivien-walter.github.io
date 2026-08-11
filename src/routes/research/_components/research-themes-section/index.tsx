@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { getResearchThemeRoute } from '@/app/routing/navigation';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
@@ -18,6 +18,8 @@ type ResearchThemesSectionProps = {
   readonly viewMoreLabel: string;
 };
 
+const desktopRotationIntervalMs = 5000;
+
 export default function ResearchThemesSection({ description, language, themes, title, viewMoreLabel }: ResearchThemesSectionProps) {
   const defaultThemeIndex = themes.length > 0 ? Math.floor((themes.length - 1) / 2) : -1;
   const defaultThemeId = defaultThemeIndex >= 0 ? themes[defaultThemeIndex]?.id : undefined;
@@ -25,6 +27,48 @@ export default function ResearchThemesSection({ description, language, themes, t
   const [selectedThemeId, setSelectedThemeId] = useState<ResearchThemeId | undefined>(() => defaultThemeId);
 
   const activeThemeId = selectedThemeId && themes.some((theme) => theme.id === selectedThemeId) ? selectedThemeId : defaultThemeId;
+
+  useEffect(() => {
+    if (themes.length <= 1) {
+      return;
+    }
+
+    const desktopMediaQuery = window.matchMedia('(min-width: 64rem)');
+    let intervalId: number | undefined;
+
+    function stopRotation() {
+      if (intervalId !== undefined) {
+        window.clearInterval(intervalId);
+        intervalId = undefined;
+      }
+    }
+
+    function startRotation() {
+      stopRotation();
+
+      if (!desktopMediaQuery.matches) {
+        return;
+      }
+
+      intervalId = window.setInterval(() => {
+        setSelectedThemeId((currentThemeId) => {
+          const currentIndex = themes.findIndex((theme) => theme.id === currentThemeId);
+          const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % themes.length : 0;
+
+          return themes[nextIndex]?.id ?? defaultThemeId;
+        });
+      }, desktopRotationIntervalMs);
+    }
+
+    startRotation();
+
+    desktopMediaQuery.addEventListener('change', startRotation);
+
+    return () => {
+      stopRotation();
+      desktopMediaQuery.removeEventListener('change', startRotation);
+    };
+  }, [defaultThemeId, themes]);
 
   if (themes.length === 0) {
     return null;

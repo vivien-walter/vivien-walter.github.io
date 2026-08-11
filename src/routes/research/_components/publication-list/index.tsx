@@ -181,7 +181,7 @@ export default function PublicationList({
                 <Button
                   type="button"
                   variant="outline"
-                  className="border-brand-primary bg-brand-background text-brand-primary hover:bg-action-soft hover:text-action-strong min-h-11 px-6 shadow-none"
+                  className="border-brand-primary bg-brand-background text-brand-primary hover:bg-action-soft hover:text-action-strong min-h-11 cursor-pointer px-6 shadow-none"
                   onClick={() => {
                     setShowAllPublications(true);
                   }}
