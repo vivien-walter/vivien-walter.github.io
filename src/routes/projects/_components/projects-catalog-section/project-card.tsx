@@ -8,7 +8,7 @@ import type { ProjectId } from '@/content/projects/registry';
 import { cn } from '@/lib/utils';
 import type { SupportedLanguage } from '@/types/localization';
 
-type ProjectIndexCardContent = {
+type ProjectCardContent = {
   readonly id: ProjectId;
   readonly title: string;
   readonly summary: string;
@@ -20,22 +20,22 @@ type ProjectIndexCardContent = {
   readonly technologies?: readonly string[];
 };
 
-type ProjectIndexCardLabels = {
+type ProjectCardLabels = {
   readonly period: string;
   readonly ongoing: string;
   readonly languages: string;
   readonly technologies: string;
 };
 
-type ProjectIndexCardProps = {
-  readonly project: ProjectIndexCardContent;
+type ProjectCardProps = {
+  readonly project: ProjectCardContent;
   readonly language: SupportedLanguage;
-  readonly labels: ProjectIndexCardLabels;
+  readonly labels: ProjectCardLabels;
 };
 
 const maximumVisibleTechnologies = 3;
 
-function formatProjectYears(period: ProjectIndexCardContent['period'], ongoingLabel: string): string | undefined {
+function formatProjectYears(period: ProjectCardContent['period'], ongoingLabel: string): string | undefined {
   if (!period) {
     return undefined;
   }
@@ -51,7 +51,7 @@ function formatProjectYears(period: ProjectIndexCardContent['period'], ongoingLa
   return startYear === endYear ? startYear : `${startYear} – ${endYear}`;
 }
 
-function ProjectIndexCard({ project, language, labels }: ProjectIndexCardProps) {
+export default function ProjectCard({ project, language, labels }: ProjectCardProps) {
   const headingId = `project-index-${project.id}-title`;
 
   const period = formatProjectYears(project.period, labels.ongoing);
@@ -147,5 +147,3 @@ function ProjectIndexCard({ project, language, labels }: ProjectIndexCardProps) 
     </article>
   );
 }
-
-export default ProjectIndexCard;

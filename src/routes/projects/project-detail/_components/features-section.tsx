@@ -9,14 +9,14 @@ type ProjectFeature = {
   readonly description: string;
 };
 
-type ProjectFeaturesSectionProps = {
+type FeaturesSectionProps = {
   readonly features?: readonly ProjectFeature[];
   readonly title: string;
   readonly titleId: string;
   readonly description?: string;
 };
 
-function ProjectFeaturesSection({ description, features, title, titleId }: ProjectFeaturesSectionProps) {
+export default function FeaturesSection({ description, features, title, titleId }: FeaturesSectionProps) {
   const visibleFeatures = features?.filter((feature) => feature.title.trim().length > 0 && feature.description.trim().length > 0) ?? [];
 
   if (visibleFeatures.length === 0) {
@@ -24,7 +24,7 @@ function ProjectFeaturesSection({ description, features, title, titleId }: Proje
   }
 
   return (
-    <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 
@@ -61,5 +61,3 @@ function ProjectFeaturesSection({ description, features, title, titleId }: Proje
     </Section>
   );
 }
-
-export default ProjectFeaturesSection;

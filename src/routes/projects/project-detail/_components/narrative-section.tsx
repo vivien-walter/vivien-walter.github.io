@@ -3,7 +3,7 @@ import type { Icon } from '@phosphor-icons/react';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { cn } from '@/lib/utils';
 
-type ProjectNarrativeSectionProps = {
+type NarrativeSectionProps = {
   readonly title: string;
   readonly titleId: string;
   readonly icon: Icon;
@@ -13,7 +13,7 @@ type ProjectNarrativeSectionProps = {
   readonly className?: string;
 };
 
-function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, description, paragraphs, items, className }: ProjectNarrativeSectionProps) {
+export default function NarrativeSection({ title, titleId, icon: SectionIcon, description, paragraphs, items, className }: NarrativeSectionProps) {
   const visibleParagraphs = paragraphs?.filter((paragraph) => paragraph.trim().length > 0) ?? [];
 
   const visibleItems = items?.filter((item) => item.trim().length > 0) ?? [];
@@ -23,7 +23,7 @@ function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, descriptio
   }
 
   return (
-    <Section contained={false} className={cn('py-12 sm:py-14 lg:py-16', className)} aria-labelledby={titleId}>
+    <Section className={cn('py-12 sm:py-14 lg:py-16', className)} aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
 
@@ -59,5 +59,3 @@ function ProjectNarrativeSection({ title, titleId, icon: SectionIcon, descriptio
     </Section>
   );
 }
-
-export default ProjectNarrativeSection;

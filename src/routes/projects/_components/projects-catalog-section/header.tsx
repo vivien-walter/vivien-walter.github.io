@@ -10,11 +10,9 @@ import {
 import { Accordion } from '@/components/ui/accordion';
 import { Popover } from '@/components/ui/popover';
 
-export type ProjectSortOption = 'date-descending' | 'date-ascending' | 'name-ascending' | 'name-descending';
+import type { ProjectSortOption } from './helpers';
 
-export type ProjectFilterOption = CatalogControlOption;
-
-type ProjectControlsLabels = {
+type HeaderLabels = {
   readonly sortLabel: string;
   readonly sortPlaceholder: string;
   readonly sortByDateDescending: string;
@@ -27,20 +25,20 @@ type ProjectControlsLabels = {
   readonly clearFilters: string;
 };
 
-type ProjectControlsProps = {
+type HeaderProps = {
   readonly sortBy: ProjectSortOption;
-  readonly projectOptions: readonly ProjectFilterOption[];
-  readonly languageOptions: readonly ProjectFilterOption[];
+  readonly projectOptions: readonly CatalogControlOption[];
+  readonly languageOptions: readonly CatalogControlOption[];
   readonly selectedProjects: ReadonlySet<string>;
   readonly selectedLanguages: ReadonlySet<string>;
-  readonly labels: ProjectControlsLabels;
+  readonly labels: HeaderLabels;
   readonly onSortChange: (value: ProjectSortOption) => void;
   readonly onProjectChange: (value: string, checked: boolean) => void;
   readonly onLanguageChange: (value: string, checked: boolean) => void;
   readonly onClearFilters: () => void;
 };
 
-function ProjectControls({
+export default function Header({
   sortBy,
   projectOptions,
   languageOptions,
@@ -51,7 +49,7 @@ function ProjectControls({
   onProjectChange,
   onLanguageChange,
   onClearFilters,
-}: ProjectControlsProps) {
+}: HeaderProps) {
   const projectGroupId = useId();
   const languageGroupId = useId();
 
@@ -125,5 +123,3 @@ function ProjectControls({
     </div>
   );
 }
-
-export default ProjectControls;

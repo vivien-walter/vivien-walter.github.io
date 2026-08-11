@@ -18,7 +18,7 @@ type ProjectOverview = {
   readonly facts?: readonly ProjectOverviewFact[];
 };
 
-type ProjectOverviewCardProps = {
+type OverviewCardProps = {
   readonly ariaLabel: string;
   readonly language: SupportedLanguage;
   readonly ongoingLabel: string;
@@ -30,7 +30,7 @@ type ProjectOverviewCardProps = {
   readonly technologies?: readonly string[];
 };
 
-function ProjectOverviewCard({
+export default function OverviewCard({
   ariaLabel,
   language,
   ongoingLabel,
@@ -40,7 +40,7 @@ function ProjectOverviewCard({
   programmingLanguages,
   tagsLabel,
   technologies,
-}: ProjectOverviewCardProps) {
+}: OverviewCardProps) {
   const tagsLabelId = useId();
 
   const [failedImageSrc, setFailedImageSrc] = useState<string>();
@@ -68,7 +68,7 @@ function ProjectOverviewCard({
   }
 
   return (
-    <Section contained={false} aria-label={ariaLabel}>
+    <Section className="pt-12 sm:pt-14 lg:pt-16" aria-label={ariaLabel}>
       <Card className="border-border-strong bg-brand-background shadow-subtle grid gap-0 overflow-hidden rounded-lg py-0 md:grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.2fr)]">
         <div className="border-border bg-brand-hero text-muted-foreground flex min-h-52 items-center justify-center overflow-hidden border-b sm:min-h-64 md:min-h-full md:border-r md:border-b-0">
           {showImage ? (
@@ -129,5 +129,3 @@ function ProjectOverviewCard({
     </Section>
   );
 }
-
-export default ProjectOverviewCard;

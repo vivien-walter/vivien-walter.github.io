@@ -7,7 +7,7 @@ import { Hero, HeroContainer, HeroContent, HeroDescription, HeroEyebrow, HeroHea
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-function NotFoundPage() {
+export default function NotFoundPage() {
   const location = useLocation();
   const { t } = useTranslation();
 
@@ -116,5 +116,3 @@ function NotFoundPage() {
     </article>
   );
 }
-
-export default NotFoundPage;
