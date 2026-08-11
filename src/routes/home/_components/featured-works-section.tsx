@@ -1,12 +1,11 @@
-import { ArrowRightIcon, ArrowUpRightIcon } from '@phosphor-icons/react';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 import { createElement, type ElementType } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getProjectRoute, getSoftwareRoute } from '@/app/routing/navigation';
+import { getProjectRoute, getResearchPublicationRoute, getSoftwareRoute } from '@/app/routing/navigation';
 import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import type { HomeFeaturedWork, HomeFeaturedWorksContent } from '@/content/home/home';
 import type { SupportedLanguage } from '@/types/localization';
@@ -82,6 +81,13 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
   const Heading = `h${headingLevel}` as ElementType;
   const headingId = `featured-${work.kind}-${work.contentId}-title`;
 
+  const route =
+    work.kind === 'project'
+      ? getProjectRoute(work.contentId, language)
+      : work.kind === 'software'
+        ? getSoftwareRoute(work.contentId, language)
+        : getResearchPublicationRoute(work.contentId, language);
+
   const cardContent =
     work.kind === 'project' ? (
       <div className="grid gap-2">
@@ -116,93 +122,72 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
         ) : null}
       </div>
     ) : (
-      <div className="grid gap-2">
-        <p className="!m-0 text-sm">
-          <span className="text-brand-ink font-semibold">{work.journal}</span>
+      <p className="!m-0 text-sm">
+        <span className="text-brand-ink font-semibold">{work.journal}</span>
 
-          <span className="text-muted-foreground"> · </span>
+        <span className="text-muted-foreground"> · </span>
 
-          <time className="text-muted-foreground" dateTime={String(work.year)}>
-            {work.year}
-          </time>
-        </p>
-
-        <p className="text-muted-foreground !m-0 text-sm">{work.authors.join(', ')}</p>
-      </div>
-    );
-
-  const footer =
-    work.kind === 'project' ? (
-      <Button asChild variant="ghost" className="text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-10 px-2">
-        <Link to={getProjectRoute(work.contentId, language)}>
-          {work.actionLabel}
-
-          <ArrowRightIcon aria-hidden="true" weight="bold" />
-        </Link>
-      </Button>
-    ) : work.kind === 'software' ? (
-      <Button asChild variant="ghost" className="text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-10 px-2">
-        <Link to={getSoftwareRoute(work.contentId, language)}>
-          {work.actionLabel}
-
-          <ArrowRightIcon aria-hidden="true" weight="bold" />
-        </Link>
-      </Button>
-    ) : (
-      <Button asChild variant="ghost" className="text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-10 px-2">
-        <a href={work.href} target="_blank" rel="noreferrer">
-          {work.actionLabel}
-
-          <ArrowUpRightIcon aria-hidden="true" weight="bold" />
-        </a>
-      </Button>
+        <time className="text-muted-foreground" dateTime={String(work.year)}>
+          {work.year}
+        </time>
+      </p>
     );
 
   return (
     <article className="h-full min-w-0" aria-labelledby={headingId}>
-      <InteractiveCard
-        interaction="self"
-        className="border-border-strong bg-brand-background shadow-subtle h-full gap-0 overflow-hidden rounded-sm py-0"
-      >
-        {work.image ? (
-          <div className="bg-muted aspect-[16/9] overflow-hidden">
-            <img
-              src={work.image.src}
-              alt={work.image.alt}
-              className="h-full w-full object-cover"
-              style={{
-                objectPosition: work.image.objectPosition ?? 'center',
-              }}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        ) : null}
+      <Link to={route} aria-label={`${work.actionLabel}: ${work.title}`} className="group block h-full rounded-sm focus-visible:outline-none">
+        <InteractiveCard
+          interaction="self"
+          className="border-border-strong bg-brand-background shadow-subtle group-focus-visible:border-brand-primary group-focus-visible:bg-action-soft/70 group-focus-visible:shadow-elevated group-focus-visible:ring-brand-primary/30 h-full gap-0 overflow-hidden rounded-sm py-0 group-focus-visible:ring-2"
+        >
+          {work.image ? (
+            <div className="bg-muted aspect-[16/9] overflow-hidden">
+              <img
+                src={work.image.src}
+                alt={work.image.alt}
+                className="h-full w-full object-cover"
+                style={{
+                  objectPosition: work.image.objectPosition ?? 'center',
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ) : null}
 
-        <CardHeader className="gap-4 px-5 py-5 sm:px-6 sm:py-6">
-          <Badge
-            variant="outline"
-            className="border-brand-primary/35 bg-brand-background text-brand-primary w-fit shrink-0 font-mono text-xs font-semibold"
-          >
-            {work.kindLabel}
-          </Badge>
+          <CardHeader className="gap-4 px-5 py-5 sm:px-6 sm:py-6">
+            <Badge
+              variant="outline"
+              className="border-brand-primary/35 bg-brand-background text-brand-primary w-fit shrink-0 font-mono text-xs font-semibold"
+            >
+              {work.kindLabel}
+            </Badge>
 
-          <CardTitle>
-            {createElement(
-              Heading,
-              {
-                id: headingId,
-                className: 'leading-heading !m-0 text-lg font-bold text-brand-ink tracking-[-0.015em] sm:text-xl',
-              },
-              work.title,
-            )}
-          </CardTitle>
-        </CardHeader>
+            <CardTitle>
+              {createElement(
+                Heading,
+                {
+                  id: headingId,
+                  className: 'leading-heading !m-0 text-lg font-bold text-brand-ink tracking-[-0.015em] sm:text-xl',
+                },
+                work.title,
+              )}
+            </CardTitle>
+          </CardHeader>
 
-        <CardContent className="px-5 pb-6 sm:px-6">{cardContent}</CardContent>
+          <CardContent className="px-5 pb-6 sm:px-6">{cardContent}</CardContent>
 
-        <CardFooter className="border-border mt-auto flex min-h-16 items-center justify-end border-t px-5 py-3 sm:px-6">{footer}</CardFooter>
-      </InteractiveCard>
+          <CardFooter className="mt-auto flex min-h-16 items-center justify-end px-5 py-3 sm:px-6">
+            <span aria-hidden="true" className="text-brand-primary inline-flex items-center justify-end gap-2 font-semibold">
+              <span className="ease-standard max-w-0 -translate-x-1 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-200 group-hover:max-w-48 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:max-w-48 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:translate-x-0 motion-reduce:transition-none">
+                {work.actionLabel}
+              </span>
+
+              <ArrowRightIcon aria-hidden="true" weight="bold" />
+            </span>
+          </CardFooter>
+        </InteractiveCard>
+      </Link>
     </article>
   );
 }
