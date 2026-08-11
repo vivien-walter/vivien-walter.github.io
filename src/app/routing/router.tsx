@@ -9,8 +9,8 @@ import NotFoundPage from '@/routes/not-found/page';
 import ProjectsPage from '@/routes/projects/page';
 import ProjectDetailPage from '@/routes/projects/project-detail/page';
 import ResearchPage from '@/routes/research/page';
-import ResearchPublicationDetailPage from '@/routes/research/research-publication-detail/page';
-import ResearchThemeDetailPage from '@/routes/research/research-theme-detail/page';
+import PublicationPage from '@/routes/research/publication/page';
+import ResearchThemePage from '@/routes/research/research-theme/page';
 import SoftwarePage from '@/routes/software/page';
 import SoftwareDetailPage from '@/routes/software/software-detail/page';
 
@@ -26,8 +26,8 @@ function AppRouter() {
         <Route path={getPageRoute('projects', 'fr')} element={<ProjectsPage />} />
         <Route path={getDetailRoutePattern('project', 'fr')} element={<ProjectDetailPage />} />
         <Route path={getPageRoute('research', 'fr')} element={<ResearchPage />} />
-        <Route path={getDetailRoutePattern('research-publication', 'fr')} element={<ResearchPublicationDetailPage />} />
-        <Route path={getDetailRoutePattern('research-theme', 'fr')} element={<ResearchThemeDetailPage />} />
+        <Route path={getDetailRoutePattern('research-publication', 'fr')} element={<PublicationPage />} />
+        <Route path={getDetailRoutePattern('research-theme', 'fr')} element={<ResearchThemePage />} />
         <Route path={getPageRoute('software', 'fr')} element={<SoftwarePage />} />
         <Route path={getDetailRoutePattern('software', 'fr')} element={<SoftwareDetailPage />} />
         <Route path={getPageRoute('contact', 'fr')} element={<ContactPage />} />
@@ -38,8 +38,8 @@ function AppRouter() {
         <Route path={getPageRoute('projects', 'en')} element={<ProjectsPage />} />
         <Route path={getDetailRoutePattern('project', 'en')} element={<ProjectDetailPage />} />
         <Route path={getPageRoute('research', 'en')} element={<ResearchPage />} />
-        <Route path={getDetailRoutePattern('research-publication', 'en')} element={<ResearchPublicationDetailPage />} />
-        <Route path={getDetailRoutePattern('research-theme', 'en')} element={<ResearchThemeDetailPage />} />
+        <Route path={getDetailRoutePattern('research-publication', 'en')} element={<PublicationPage />} />
+        <Route path={getDetailRoutePattern('research-theme', 'en')} element={<ResearchThemePage />} />
         <Route path={getPageRoute('software', 'en')} element={<SoftwarePage />} />
         <Route path={getDetailRoutePattern('software', 'en')} element={<SoftwareDetailPage />} />
         <Route path={getPageRoute('contact', 'en')} element={<ContactPage />} />

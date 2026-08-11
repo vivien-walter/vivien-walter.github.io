@@ -4,20 +4,20 @@ import { InteractiveCard } from '@/components/interactive-card';
 import type { PublicationPdf, PublicationWebsite } from '@/content/research/publication-content';
 import { cn } from '@/lib/utils';
 
-type PublicationActionsProps = {
+type ActionsProps = {
   readonly website?: PublicationWebsite;
   readonly pdf?: PublicationPdf;
   readonly websiteLabel: string;
   readonly pdfLabel: string;
 };
 
-function PublicationActions({ website, pdf, websiteLabel, pdfLabel }: PublicationActionsProps) {
+export default function Actions({ website, pdf, websiteLabel, pdfLabel }: ActionsProps) {
   if (!website && !pdf) {
     return null;
   }
 
   return (
-    <div className="pb-8 sm:pb-10">
+    <div className="max-w-editorial px-page mx-auto w-full pb-8 sm:pb-10">
       <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
         {website ? (
           <li className="m-0 min-w-0">
@@ -87,5 +87,3 @@ function PublicationActions({ website, pdf, websiteLabel, pdfLabel }: Publicatio
     </div>
   );
 }
-
-export default PublicationActions;

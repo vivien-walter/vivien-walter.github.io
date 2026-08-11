@@ -43,7 +43,7 @@ function isExternalHref(href: string): boolean {
   return /^https?:\/\//i.test(href);
 }
 
-function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel = 3 }: PublicationEntryProps) {
+export default function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel = 3 }: PublicationEntryProps) {
   const headingId = `publication-${publication.id}-title`;
 
   const Heading = `h${headingLevel}` as ElementType;
@@ -136,5 +136,3 @@ function PublicationEntry({ publication, viewMoreLabel, doiLabel, headingLevel =
     </article>
   );
 }
-
-export default PublicationEntry;

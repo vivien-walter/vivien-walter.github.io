@@ -10,15 +10,7 @@ import {
 import { Accordion } from '@/components/ui/accordion';
 import { Popover } from '@/components/ui/popover';
 
-export type PublicationSortOption =
-  | 'year-descending'
-  | 'year-ascending'
-  | 'title-ascending'
-  | 'title-descending'
-  | 'journal-ascending'
-  | 'journal-descending';
-
-export type PublicationFilterOption = CatalogControlOption;
+import type { PublicationFilterOption, PublicationSortOption } from './helpers';
 
 type PublicationControlsLabels = {
   readonly sortLabel: string;
@@ -49,7 +41,7 @@ type PublicationControlsProps = {
   readonly onClearFilters: () => void;
 };
 
-function PublicationControls({
+export default function PublicationControls({
   sortBy,
   themeOptions,
   journalOptions,
@@ -155,5 +147,3 @@ function PublicationControls({
     </div>
   );
 }
-
-export default PublicationControls;
