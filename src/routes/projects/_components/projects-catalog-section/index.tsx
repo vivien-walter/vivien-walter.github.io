@@ -52,7 +52,7 @@ export default function ProjectsCatalogSection({ language, catalog }: ProjectsCa
   const resultCountLabel = formatResultCount(visibleProjects.length, controls.resultsOne, controls.resultsOther);
 
   return (
-    <div className={['max-w-editorial px-page mx-auto w-full', 'py-10 sm:py-12 lg:py-14'].join(' ')}>
+    <div className="max-w-editorial px-page mx-auto w-full py-10 sm:py-12 lg:py-14">
       <Section contained={false} aria-label={catalog.listLabel}>
         <Header
           sortBy={sortBy}
@@ -106,9 +106,7 @@ export default function ProjectsCatalogSection({ language, catalog }: ProjectsCa
             ))}
           </div>
         ) : (
-          <p className={['!m-0 mt-7 rounded-lg', 'border-border bg-brand-hero border', 'px-5 py-8 text-center', 'text-muted-foreground'].join(' ')}>
-            {controls.noResults}
-          </p>
+          <p className="border-border bg-brand-hero text-muted-foreground !m-0 mt-7 rounded-lg border px-5 py-8 text-center">{controls.noResults}</p>
         )}
       </Section>
     </div>

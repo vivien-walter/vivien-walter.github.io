@@ -8,13 +8,13 @@ type PersonalActivitiesSectionProps = {
   readonly items: readonly PersonalActivityCatalogItem[];
 };
 
-function PersonalActivitiesSection({ title, description, items }: PersonalActivitiesSectionProps) {
+export default function PersonalActivitiesSection({ title, description, items }: PersonalActivitiesSectionProps) {
   if (items.length === 0) {
     return null;
   }
 
   return (
-    <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby="personal-activities-title">
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="personal-activities-title">
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id="personal-activities-title">{title}</SectionTitle>
 
@@ -26,32 +26,9 @@ function PersonalActivitiesSection({ title, description, items }: PersonalActivi
           <AccordionItem
             key={item.id}
             value={item.id}
-            className={[
-              'border-border-strong bg-card overflow-hidden rounded-lg border',
-              'shadow-subtle',
-              'transition-all',
-              'ease-standard duration-200',
-              'last:border-b',
-              'has-[[data-slot=accordion-trigger]:hover]:-translate-y-1',
-              'has-[[data-slot=accordion-trigger]:hover]:border-brand-primary',
-              'has-[[data-slot=accordion-trigger]:hover]:bg-action-soft/70',
-              'has-[[data-slot=accordion-trigger]:hover]:shadow-elevated',
-              'has-[[data-slot=accordion-trigger]:hover]:ring-2',
-              'has-[[data-slot=accordion-trigger]:hover]:ring-brand-primary/30',
-              'motion-reduce:has-[[data-slot=accordion-trigger]:hover]:translate-y-0',
-              'data-[state=open]:border-brand-primary',
-              'data-[state=open]:shadow-elevated',
-            ].join(' ')}
+            className="border-border-strong bg-card shadow-subtle ease-standard has-[[data-slot=accordion-trigger]:hover]:border-brand-primary has-[[data-slot=accordion-trigger]:hover]:bg-action-soft/70 has-[[data-slot=accordion-trigger]:hover]:shadow-elevated has-[[data-slot=accordion-trigger]:hover]:ring-brand-primary/30 data-[state=open]:border-brand-primary data-[state=open]:shadow-elevated overflow-hidden rounded-lg border transition-all duration-200 last:border-b has-[[data-slot=accordion-trigger]:hover]:-translate-y-1 has-[[data-slot=accordion-trigger]:hover]:ring-2 motion-reduce:has-[[data-slot=accordion-trigger]:hover]:translate-y-0"
           >
-            <AccordionTrigger
-              className={[
-                'min-h-16 cursor-pointer px-5 py-4 sm:px-6',
-                'text-brand-ink text-base font-bold',
-                'leading-heading no-underline',
-                'hover:text-brand-primary hover:no-underline',
-                'focus-visible:ring-inset',
-              ].join(' ')}
-            >
+            <AccordionTrigger className="text-brand-ink leading-heading hover:text-brand-primary min-h-16 cursor-pointer px-5 py-4 text-base font-bold no-underline hover:no-underline focus-visible:ring-inset sm:px-6">
               {item.title}
             </AccordionTrigger>
 
@@ -76,5 +53,3 @@ function PersonalActivitiesSection({ title, description, items }: PersonalActivi
     </Section>
   );
 }
-
-export default PersonalActivitiesSection;

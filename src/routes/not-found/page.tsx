@@ -43,7 +43,7 @@ export default function NotFoundPage() {
         </HeroContainer>
       </Hero>
 
-      <div className={['max-w-editorial px-page mx-auto w-full', 'py-12 sm:py-14 lg:py-16'].join(' ')}>
+      <div className="max-w-editorial px-page mx-auto w-full py-12 sm:py-14 lg:py-16">
         <nav
           aria-label={t('notFound.navigationLabel', {
             lng: language,
@@ -59,7 +59,7 @@ export default function NotFoundPage() {
               </CardTitle>
             </CardHeader>
 
-            <CardContent className={['flex flex-col gap-3 p-5', 'sm:flex-row sm:flex-wrap sm:p-6'].join(' ')}>
+            <CardContent className="flex flex-col gap-3 p-5 sm:flex-row sm:flex-wrap sm:p-6">
               <Button asChild size="lg" className="min-h-11 sm:min-w-40">
                 <Link to={getPageRoute('home', language)}>
                   <HouseIcon aria-hidden="true" weight="bold" />
@@ -74,12 +74,7 @@ export default function NotFoundPage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className={[
-                  'border-border-strong bg-card min-h-11',
-                  'text-heading shadow-none',
-                  'hover:border-primary hover:bg-action-soft',
-                  'hover:text-action-strong',
-                ].join(' ')}
+                className="border-border-strong bg-card text-heading hover:border-primary hover:bg-action-soft hover:text-action-strong min-h-11 shadow-none"
               >
                 <Link to={getPageRoute('projects', language)}>
                   {t('notFound.projectsLink', {
@@ -94,12 +89,7 @@ export default function NotFoundPage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className={[
-                  'border-border-strong bg-card min-h-11',
-                  'text-heading shadow-none',
-                  'hover:border-primary hover:bg-action-soft',
-                  'hover:text-action-strong',
-                ].join(' ')}
+                className="border-border-strong bg-card text-heading hover:border-primary hover:bg-action-soft hover:text-action-strong min-h-11 shadow-none"
               >
                 <Link to={getPageRoute('software', language)}>
                   {t('notFound.softwareLink', {

@@ -5,13 +5,13 @@ import { InteractiveCard } from '@/components/interactive-card';
 import { Section, SectionHeader, SectionTitle } from '@/components/section';
 import type { ExperienceCatalogItem } from '@/content/experience/catalog';
 
-type ExperienceResourcesSectionProps = {
+type ResourcesSectionProps = {
   readonly resources?: ExperienceCatalogItem['resources'];
   readonly title: string;
   readonly titleId: string;
 };
 
-function ExperienceResourcesSection({ resources, title, titleId }: ExperienceResourcesSectionProps) {
+export default function ResourcesSection({ resources, title, titleId }: ResourcesSectionProps) {
   const visibleResources = resources?.filter((resource) => resource.label.trim().length > 0 && resource.href.trim().length > 0) ?? [];
 
   if (visibleResources.length === 0) {
@@ -19,7 +19,7 @@ function ExperienceResourcesSection({ resources, title, titleId }: ExperienceRes
   }
 
   return (
-    <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8 sm:mb-10">
         <SectionTitle id={titleId}>{title}</SectionTitle>
       </SectionHeader>
@@ -27,7 +27,6 @@ function ExperienceResourcesSection({ resources, title, titleId }: ExperienceRes
       <ul className="m-0 grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {visibleResources.map((resource) => {
           const ResourceIcon = resource.icon;
-
           const LinkIndicatorIcon = resource.isExternal ? ArrowUpRightIcon : ArrowRightIcon;
 
           const card = (
@@ -71,5 +70,3 @@ function ExperienceResourcesSection({ resources, title, titleId }: ExperienceRes
     </Section>
   );
 }
-
-export default ExperienceResourcesSection;

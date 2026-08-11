@@ -5,13 +5,13 @@ type DirectContribution = {
   readonly text: string;
 };
 
-type ExperienceDirectContributionsSectionProps = {
+type DirectContributionsSectionProps = {
   readonly idPrefix: string;
   readonly items?: readonly DirectContribution[];
   readonly title: string;
 };
 
-function ExperienceDirectContributionsSection({ idPrefix, items, title }: ExperienceDirectContributionsSectionProps) {
+export default function DirectContributionsSection({ idPrefix, items, title }: DirectContributionsSectionProps) {
   if (!items || items.length === 0) {
     return null;
   }
@@ -19,7 +19,7 @@ function ExperienceDirectContributionsSection({ idPrefix, items, title }: Experi
   const titleId = `${idPrefix}-direct-contributions-title`;
 
   return (
-    <Section contained={false} className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby={titleId}>
       <SectionHeader className="mb-8">
         <SectionTitle id={titleId}>{title}</SectionTitle>
       </SectionHeader>
@@ -38,5 +38,3 @@ function ExperienceDirectContributionsSection({ idPrefix, items, title }: Experi
     </Section>
   );
 }
-
-export default ExperienceDirectContributionsSection;

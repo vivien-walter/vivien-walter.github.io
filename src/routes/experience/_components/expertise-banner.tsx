@@ -1,10 +1,10 @@
 import type { ExperienceExpertise } from '@/content/experience/page';
 
-type ExperienceExpertiseBandProps = {
+type ExpertiseBannerProps = {
   readonly items: readonly ExperienceExpertise[];
 };
 
-function ExperienceExpertiseBand({ items }: ExperienceExpertiseBandProps) {
+export default function ExpertiseBanner({ items }: ExpertiseBannerProps) {
   return (
     <div className="bg-brand-primary text-white">
       <ul
@@ -36,5 +36,3 @@ function ExperienceExpertiseBand({ items }: ExperienceExpertiseBandProps) {
     </div>
   );
 }
-
-export default ExperienceExpertiseBand;

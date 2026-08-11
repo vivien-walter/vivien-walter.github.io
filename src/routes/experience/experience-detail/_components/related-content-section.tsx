@@ -20,7 +20,7 @@ type RelatedContentSectionProps = {
   readonly groups: readonly RelatedContentGroup[];
 };
 
-function RelatedContentSection({ idPrefix, title, groups }: RelatedContentSectionProps) {
+export default function RelatedContentSection({ idPrefix, title, groups }: RelatedContentSectionProps) {
   const relatedGroups: readonly RelatedItemsGroup[] = groups.map((group) => ({
     id: group.id,
     title: group.title,
@@ -43,7 +43,5 @@ function RelatedContentSection({ idPrefix, title, groups }: RelatedContentSectio
     ),
   }));
 
-  return <RelatedItemsSection title={title} titleId={`${idPrefix}-related-items-title`} groups={relatedGroups} />;
+  return <RelatedItemsSection contained title={title} titleId={`${idPrefix}-related-items-title`} groups={relatedGroups} />;
 }
-
-export default RelatedContentSection;

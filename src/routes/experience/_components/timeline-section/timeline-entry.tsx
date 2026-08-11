@@ -52,7 +52,7 @@ function formatExperienceYears(start: string, end: string | undefined): string {
   return startYear === endYear ? startYear : `${startYear} – ${endYear}`;
 }
 
-function TimelineEntry({
+export default function TimelineEntry({
   experience,
   language,
   viewExperienceLabel,
@@ -162,5 +162,3 @@ function TimelineEntry({
     </article>
   );
 }
-
-export default TimelineEntry;

@@ -7,12 +7,12 @@ import { Button } from '@/components/ui/button';
 import type { ExperiencePageContent } from '@/content/experience/page';
 import type { SupportedLanguage } from '@/types/localization';
 
-type ExperienceContactBannerProps = {
+type ContactBannerProps = {
   readonly content: ExperiencePageContent['contactBanner'];
   readonly language: SupportedLanguage;
 };
 
-function ExperienceContactBanner({ content, language }: ExperienceContactBannerProps) {
+export default function ContactBanner({ content, language }: ContactBannerProps) {
   return (
     <Section className="bg-brand-accent py-10 sm:py-12">
       <div className="rounded-sm border border-white/70 bg-white/10 px-6 py-7 sm:px-8 sm:py-8 lg:px-10">
@@ -42,5 +42,3 @@ function ExperienceContactBanner({ content, language }: ExperienceContactBannerP
     </Section>
   );
 }
-
-export default ExperienceContactBanner;
