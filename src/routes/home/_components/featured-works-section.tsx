@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom';
 
 import { getProjectRoute, getSoftwareRoute } from '@/app/routing/navigation';
 import { InteractiveCard } from '@/components/interactive-card';
+import { Section, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import type { HomeFeaturedWork } from '@/content/home/home';
+import type { HomeFeaturedWork, HomeFeaturedWorksContent } from '@/content/home/home';
 import type { SupportedLanguage } from '@/types/localization';
+
+type FeaturedWorksSectionProps = {
+  readonly content: HomeFeaturedWorksContent;
+  readonly language: SupportedLanguage;
+};
 
 type FeaturedWorkCardProps = {
   readonly work: HomeFeaturedWork;
@@ -76,7 +82,7 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
   const Heading = `h${headingLevel}` as ElementType;
   const headingId = `featured-${work.kind}-${work.contentId}-title`;
 
-  const content =
+  const cardContent =
     work.kind === 'project' ? (
       <div className="grid gap-2">
         <p className="text-brand-ink !m-0 text-sm font-semibold">{work.employer}</p>
@@ -193,7 +199,7 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="px-5 pb-6 sm:px-6">{content}</CardContent>
+        <CardContent className="px-5 pb-6 sm:px-6">{cardContent}</CardContent>
 
         <CardFooter className="border-border mt-auto flex min-h-16 items-center justify-end border-t px-5 py-3 sm:px-6">{footer}</CardFooter>
       </InteractiveCard>
@@ -201,4 +207,24 @@ function FeaturedWorkCard({ work, language, headingLevel = 3 }: FeaturedWorkCard
   );
 }
 
-export default FeaturedWorkCard;
+export default function FeaturedWorksSection({ content, language }: FeaturedWorksSectionProps) {
+  if (content.items.length === 0) {
+    return null;
+  }
+
+  return (
+    <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="home-featured-works-title">
+      <SectionHeader className="mb-8 sm:mb-10">
+        <SectionTitle id="home-featured-works-title">{content.title}</SectionTitle>
+
+        <SectionDescription>{content.description}</SectionDescription>
+      </SectionHeader>
+
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {content.items.map((work, index) => (
+          <FeaturedWorkCard key={`featured-work-${index}`} work={work} language={language} />
+        ))}
+      </div>
+    </Section>
+  );
+}

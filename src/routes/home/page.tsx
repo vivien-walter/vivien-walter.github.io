@@ -1,22 +1,17 @@
-import { ArrowRightIcon } from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-import { getLanguageFromPathname, getPageRoute } from '@/app/routing/navigation';
-import { Section, SectionAction, SectionDescription, SectionHeader, SectionTitle } from '@/components/section';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+import { getLanguageFromPathname } from '@/app/routing/navigation';
+import PageDivider from '@/components/page-divider';
 import { getHomeContent } from '@/content/home/home';
 
-import FeaturedWorkCard from './_components/featured-work-card';
-import HomeFollowGrid from './_components/home-follow-grid';
+import FeaturedWorksSection from './_components/featured-works-section';
+import HomeFollowSection from './_components/home-follow-section';
 import HomeHero from './_components/home-hero';
-import HomeStatement from './_components/home-statement';
-import ResearchAxisList from './_components/research-axis-list';
+import HomeStatementSection from './_components/home-statement-section';
+import ResearchAxesSection from './_components/research-axes-section';
 
 export default function HomePage() {
   /* Fetch all data for the translation */
-  const { t } = useTranslation();
   const location = useLocation();
   const language = getLanguageFromPathname(location.pathname);
   const content = getHomeContent(language);
@@ -25,75 +20,15 @@ export default function HomePage() {
     <div className="overflow-hidden">
       <HomeHero language={language} />
 
-      {content.featuredWorks.items.length > 0 ? (
-        <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="home-featured-works-title">
-          <SectionHeader className="mb-8 sm:mb-10">
-            <SectionTitle id="home-featured-works-title">{content.featuredWorks.title}</SectionTitle>
-            <SectionDescription>{content.featuredWorks.description}</SectionDescription>
-          </SectionHeader>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {content.featuredWorks.items.map((work, index) => (
-              <FeaturedWorkCard key={`featured-work-${index}`} work={work} language={language} />
-            ))}
-          </div>
-        </Section>
-      ) : null}
+      <FeaturedWorksSection content={content.featuredWorks} language={language} />
 
-      <div className="bg-brand-dark py-12 sm:py-14 lg:py-16">
-        <div className="max-w-editorial px-page mx-auto w-full">
-          <HomeStatement content={content.statement} language={language} />
-        </div>
-      </div>
+      <HomeStatementSection content={content.statement} language={language} />
 
-      {content.researchAxes.items.length > 0 ? (
-        <Section className="py-12 sm:py-14 lg:py-16" aria-labelledby="home-research-axes-title">
-          <SectionHeader className="mb-8 sm:mb-10">
-            <SectionTitle id="home-research-axes-title">{content.researchAxes.title}</SectionTitle>
+      <ResearchAxesSection content={content.researchAxes} language={language} />
 
-            <SectionAction className="hidden sm:flex">
-              <Button asChild variant="ghost" className="text-brand-primary hover:bg-action-soft hover:text-brand-primary min-h-11 px-2">
-                <Link to={getPageRoute('research', language)}>
-                  {t('pages.research.title', {
-                    lng: language,
-                  })}
+      <PageDivider />
 
-                  <ArrowRightIcon aria-hidden="true" weight="bold" />
-                </Link>
-              </Button>
-            </SectionAction>
-
-            <SectionDescription>{content.researchAxes.description}</SectionDescription>
-          </SectionHeader>
-
-          <ResearchAxisList items={content.researchAxes.items} language={language} />
-
-          <SectionAction className="mt-6 w-full sm:hidden">
-            <Button asChild className="min-h-11 w-full px-5">
-              <Link to={getPageRoute('research', language)}>
-                {t('pages.research.title', {
-                  lng: language,
-                })}
-              </Link>
-            </Button>
-          </SectionAction>
-        </Section>
-      ) : null}
-
-      <Separator className="max-w-editorial mx-auto" />
-
-      <Section aria-labelledby="home-follow-daily-title" containerClassName="py-12 sm:py-14 lg:py-16">
-        <SectionHeader className="mb-8 sm:mb-10">
-          <SectionTitle id="home-follow-daily-title">
-            {t('pages.home.followDaily', {
-              lng: language,
-            })}
-          </SectionTitle>
-
-          <SectionDescription>{content.follow.description}</SectionDescription>
-        </SectionHeader>
-
-        <HomeFollowGrid content={content.follow} />
-      </Section>
+      <HomeFollowSection content={content.follow} language={language} />
     </div>
   );
 }
